@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhanabi_github_io=self.webpackChunkhanabi_github_io||[]).push([["6079"],{26402(e,i,a){a.d(i,{createArchitectureServices:()=>h.S});var h=a(45016);a(69302)}}]);
