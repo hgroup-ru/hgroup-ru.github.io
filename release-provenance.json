@@ -1,6 +1,6 @@
 {
   "source_repository": "hgroup-ru/hgroup-ru",
-  "source_commit": "193ef71aa6a17f23bf5806910f6fdf6ddd43edc3",
-  "source_tag": "v1.0.0",
-  "qualified_build_manifest_sha256": "6780b0cf3c98e3b987b93414de6320c22a4900cd63243892f514953f37b0095a"
+  "source_commit": "1d12a57423077890ff9594c5295fbc6ba15eb337",
+  "source_tag": "v1.0.1",
+  "qualified_build_manifest_sha256": "173de69910601ab6c007cf673e6d4ba0ba19cf58ef5845c7b5e25678adecbdaa"
 }
