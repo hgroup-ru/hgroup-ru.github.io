@@ -1,0 +1,499 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-11" data-root="../../" data-route="levels/11">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="11" data-page-key="level-11" id="level-11-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-11">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 11 — Bluffs</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 11</span><span class="badge">Bluffs</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 11 — Bluffs</h1>
+<ul>
+<li>На этом уровне появляются <em>Bluffs</em>: они позволяют временно ввести следующего игрока в заблуждение (<em>Fib</em>), чтобы тот сделал blind-play.</li>
+<li><em>Bluffs</em> заметно расширяют возможности команды и позволяют разыгрывать вслепую гораздо больше карт, чем на предыдущих уровнях.</li>
+<li>Но как только игроки перестают всегда говорить друг другу правду, интерпретация подсказок резко усложняется. Поэтому этот уровень заметно труднее освоить, чем предыдущие.</li>
+<li>Прежде чем добавлять <em>Bluffs</em> в игру, убедитесь, что уверенно владеете материалом предыдущих уровней. Мы рекомендуем хотя бы 100–200 сыгранных партий.</li>
+</ul>
+<section data-toc="Специальные ходы" id="l11-special-moves">
+<h2>Специальные ходы</h2>
+</section>
+<section data-sub="1" data-toc="Bluff" id="l11-the-bluff">
+<h3>Bluff</h3>
+<ul>
+<li><em>Finesse</em> — очень эффективный приём. Если в чужой <em>Finesse Position</em> лежит играбельная карта, часто выгоднее разыграть её через <em>Finesse</em>, чем подсказывать напрямую. Но иногда подходящей связующей карты просто нет.</li>
+<li>Тогда можно поступить иначе: дать подсказку по несвязанной <em>one-away-from-playable</em> карте. Следующий игрок примет её за <em>Finesse</em>, решит, что связующая карта находится у него, и вслепую сыграет карту из своей <em>Finesse Position</em>. Такой ход называется <em>Bluff</em>.</li>
+<li>После blind-play получатель подсказки видит, что сыгранная вслепую карта <strong>не соединяется</strong> с типом подсказки. Значит, подсказанная карта пока неиграбельна и должна быть <em>one-away-from-playable</em>.</li>
+<li>Например, в игре на троих:<ul>
+<li>Все 2 уже сыграны.</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную 4 как <em>Play Clue</em>.</li>
+<li>Наступает ход Боба. Он видит, что красная подсказка как будто обещает Кэти красную 3.</li>
+<li>Для Боба это выглядит как <em>Finesse</em>: если он сейчас не сыграет красную 3 вслепую, Кэти позже попытается сыграть красную 4 как красную 3 и сделает мисплей.</li>
+<li>Боб вслепую играет карту из слота 1, ожидая красную 3. Там оказывается синяя 3, и розыгрыш проходит успешно. Боб понимает, что Алиса сделала на него <em>Bluff</em>.</li>
+<li>Кэти видит, что сразу после красной подсказки Боб вслепую сыграл синюю 3. Значит, её красная карта должна быть <em>one-away-from-playable</em>, то есть красной 4. Кэти сохраняет её на потом и сбрасывает.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-bluff"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Bluff Seat" id="l11-the-bluff-seat">
+<h4>Bluff Seat</h4>
+<ul>
+<li><strong>Делать <em>Bluff</em> может только игрок, сидящий непосредственно перед тем, кто должен выполнить blind-play.</strong></li>
+<li>Для этого используется термин <em>Bluff Seat</em>: игрок находится в <em>Bluff Seat</em> относительно другого игрока, если ему разрешено сделать на него <em>Bluff</em>.</li>
+<li>Например:<ul>
+<li>Если Алиса сидит непосредственно перед Бобом, то Алиса находится в <em>Bluff Seat</em> для Боба и ей разрешено сделать <em>Bluff</em> на Боба.</li>
+<li>Алиса не может делать <em>Bluff</em> на Кэти или любого другого игрока, кроме Боба.</li>
+<li>Боб, в свою очередь, находится в <em>Bluff Seat</em> для Кэти и может делать <em>Bluff</em> на неё; дальше правило работает так же по кругу.</li>
+</ul>
+</li>
+<li>Если игрок заставляет другого игрока сделать blind-play, не находясь для него в <em>Bluff Seat</em>, такой ход <strong>обязан быть настоящим <em>Finesse</em></strong>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Lie Principle" id="l11-lie-principle">
+<h4>Lie Principle</h4>
+<ul>
+<li>Важно: <strong><em>Bluff</em> разрешён только тогда, когда следующий по очереди игрок делает blind-play сразу, на своём ближайшем ходу.</strong></li>
+<li>Это формализует <em>Lie Principle</em>:<ul>
+<li>Если игроку дают понять, что карта имеет другое значение, но заблуждение раскрывается немедленно — уже на следующем ходу, — это <em>Fib</em>. <em>Fib</em> допустим.</li>
+<li>Если такое заблуждение не раскрывается сразу, это <em>Lie</em>. <em>Lie</em> <strong>запрещён</strong>, и игроки никогда не должны строить интерпретацию на предположении, что им сообщили <em>Lie</em>.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Self-Bluff" id="l11-the-self-bluff">
+<h3>Self-Bluff</h3>
+<ul>
+<li>По аналогии с <em>Self-Finesse</em> можно сделать <em>Self-Bluff</em>: дать игроку подсказку так, чтобы он вслепую сыграл собственную карту из <em>Finesse Position</em>.</li>
+<li><em>Self-Bluff</em> можно инициировать только подсказкой по числу: вариант с подсказкой по цвету не имеет смысла.<ul>
+<li>Для игроков максимального уровня см. раздел <a href="https://hanabi.github.io/extras/special-bluffs#self-color-bluffs-1-for-1-form-scb" rel="noopener" target="_blank">Self Color Bluff ↗</a>.</li>
+</ul>
+</li>
+<li>Например, в игре на троих:<ul>
+<li>На столе сыграна красная 2.</li>
+<li>Алиса даёт Бобу подсказку числом 4, впервые затрагивая одну 4 как <em>Play Clue</em>.</li>
+<li>Боб не видит играбельных карт в руках других игроков.</li>
+<li>Ближе всего к играбельности красная 4, поэтому Боб предполагает, что его 4 — красная 4.</li>
+<li>Красной 3 в чужих руках Боб тоже не видит. Значит, она должна быть у него, и Боб вслепую играет карту из своей <em>Finesse Position</em>. Там оказывается синяя 1, и розыгрыш проходит успешно.</li>
+<li>Теперь Боб понимает, что Алиса сделала на него <em>Bluff</em>, а его 4 действительно красная 4.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-self-bluff"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Bluffs через карты с уже имеющимися подсказками" id="l11-bluffs-through-already-clued-cards">
+<h3>Bluffs через карты с уже имеющимися подсказками</h3>
+<ul>
+<li><em>Bluff</em> можно проводить и «через» карту, на которой уже есть подсказка. Иногда это даже выгоднее обычного <em>Bluff</em>: помимо blind-play, ход сообщает дополнительную информацию игроку с промежуточной картой.</li>
+<li>Например, в игре на четверых:<ul>
+<li>Все 1 уже сыграны на стол.</li>
+<li>В руке Боба нет карт с подсказками.</li>
+<li>У Кэти есть карта с подсказкой числом 3; фактически это красная 3, но Кэти не знает её цвет.</li>
+<li>Алиса даёт Дональду красную подсказку, затрагивая красную 4 как <em>Play Clue</em>.</li>
+<li>Боб понимает, что у него должна быть красная 2. При обычном <em>Finesse</em> он сыграл бы красную 2 вслепую, Кэти затем сыграла бы красную 3 как <em>Prompt</em>, а Дональд — красную 4.</li>
+<li>Боб играет карту из своей <em>Finesse Position</em>, ожидая красную 2. Там оказывается синяя 2, и розыгрыш проходит успешно.</li>
+<li>Для Кэти это означает, что красная 4 изначально была <em>two-away-from-playable</em>, а не <em>one-away-from-playable</em>. Обычно по такой карте нельзя делать <em>Bluff</em>. Следовательно, неизвестная 3 в руке Кэти обязана быть красной 3 — и тогда красная 4 всё-таки становится <em>one-away-from-playable</em>.</li>
+<li>Кэти сбрасывает.</li>
+<li>Дональд видит, что красная подсказка не соединяется с синей 2, сыгранной вслепую. Значит, это <em>Bluff</em>. Обычно при сыгранной красной 1 он решил бы, что его карта — красная 3, то есть <em>one-away-from-playable</em> красная карта.</li>
+<li>Но у Кэти уже есть красная 3 с подсказкой. Если бы у Дональда тоже была красная 3, подсказка Алисы нарушала бы <em>Good Touch Principle</em>. Поэтому у Дональда должна быть красная 4.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-bluff-through-clued"></div>
+</div>
+<ul>
+<li>Иногда у игрока с промежуточной картой есть несколько подходящих карт с подсказками. Тогда ему обещано, что нужная промежуточная карта находится в его руке, но её конкретный слот не обещан.</li>
+<li>Например, если бы в предыдущей ситуации у Кэти было две разные красные карты с подсказками, красной 3 могла бы оказаться любая из них; позиция карты не обещана.</li>
+</ul>
+</section>
+<section data-toc="Общие принципы" id="l11-general-principles">
+<h2>Общие принципы</h2>
+</section>
+<section data-sub="1" data-toc="Bob's Truth Principle (Part 1)" id="l11-bobs-truth-principle-part-1">
+<h3>Bob's Truth Principle (Part 1)</h3>
+<ul>
+<li>Иногда подсказка выглядит так, будто она может быть и <em>Finesse</em>, и <em>Bluff</em>. Какая из этих интерпретаций имеет приоритет?</li>
+<li>Например, в игре на четверых:<ul>
+<li>Все 1 уже сыграны на стол.</li>
+<li>У Кэти синяя 2 находится в <em>Finesse Position</em>.</li>
+<li>Алиса даёт Дональду синюю подсказку, затрагивая синюю 3. Это <em>Play Clue</em>.</li>
+<li>Теперь ход Боба.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-truth-principle"></div>
+</div>
+<ul>
+<li>Интерпретация зависит от того, кто рассуждает: для Боба — следующего игрока — правило отличается от правила для остальных членов команды.</li>
+<li>Сначала разберём Боба. Если подсказку можно правдиво объяснить как <em>Finesse</em>, Боб <strong>всегда выбирает эту интерпретацию, а не <em>Bluff</em></strong>. С его точки зрения:<ul>
+<li>Если это <em>Finesse</em>, Кэти сыграет синюю 2 вслепую, после чего Дональд поймёт, что у него синяя 3. Бобу ничего специального делать не нужно.</li>
+<li>Если это <em>Bluff</em>, Боб должен немедленно сыграть вслепую карту из своей <em>Finesse Position</em>.</li>
+<li>Пока существует хотя бы одна правдивая интерпретация через <em>Finesse</em>, Боб исходит из того, что подсказка правдива. Поэтому в этом примере он ждёт <em>Finesse</em> на Кэти и ничего не играет вслепую.</li>
+</ul>
+</li>
+<li>Это и есть <em>Bob's Truth Principle</em>: если правдивое объяснение возможно, Боб выбирает его, а не интерпретацию через <em>Fib</em>.</li>
+<li>Правило легко запомнить: в момент потенциального blind-play Боб действует так же, как на Level 10, — просто предполагает, что подсказка правдива.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Cathy's Connecting Principle (Part 2)" id="l11-cathys-connecting-principle-part-2">
+<h3>Cathy's Connecting Principle (Part 2)</h3>
+<ul>
+<li>Сначала см. раздел <a href="#l11-bobs-truth-principle-part-1"><em>Bob's Truth Principle</em></a>.</li>
+<li>Выше мы разбирали, как должен рассуждать Боб <strong>до</strong> blind-play.</li>
+<li>Теперь рассмотрим ситуацию <strong>после</strong> blind-play Боба. Кэти и остальные игроки должны определить, был ли ход Алисы <em>Finesse</em> или <em>Bluff</em>.</li>
+<li>Для этого проверяют, <strong>соединяется ли сыгранная вслепую карта с подсказкой</strong>. Если соединяется — это <em>Finesse</em>; если не соединяется — <em>Bluff</em>.</li>
+<li>Это правило называется <em>Cathy's Connecting Principle</em>: после blind-play команда ориентируется на фактически сыгранную карту и не обязана придерживаться исходной интерпретации Боба.</li>
+<li>Если всё ещё неясно, соединяется сыгранная карта с подсказкой или нет, команда считает ход <strong><em>Bluff</em>, а не <em>Finesse</em></strong>. Здесь приоритет обратный тому, что задаёт <em>Bob's Truth Principle</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Пример 1: Color Connect → Finesse" id="l11-example-1-color-connect----finesse">
+<h4>Пример 1: Color Connect → <em>Finesse</em></h4>
+<ul>
+<li>На столе сыграна красная 1.</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную карту как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет красную 2.</li>
+<li>Это должен быть <em>Finesse</em>: <strong>красная карта соединяется с красной подсказкой</strong>. Значит, Кэти должна считать, что у неё красная 3.</li>
+<li>Это совершенно базовый, классический <em>Finesse</em>. Проще уже не бывает.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-color-connect"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 2: Color Disconnect → Bluff" id="l11-example-2-color-disconnect----bluff">
+<h4>Пример 2: Color Disconnect → <em>Bluff</em></h4>
+<ul>
+<li>На столе сыграна красная 1.</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную карту как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет синюю 1.</li>
+<li>Это должен быть <em>Bluff</em>: <strong>синяя карта не соединяется с красной подсказкой</strong>. Значит, Кэти должна считать, что у неё <em>one-away-from-playable</em> красная карта — красная 3.</li>
+<li>Это совершенно базовый, классический <em>Bluff</em>. Проще уже не бывает.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-color-disconnect"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 3: Rank Connect → Finesse" id="l11-example-3-rank-connect----finesse">
+<h4>Пример 3: Rank Connect → <em>Finesse</em></h4>
+<ul>
+<li>На столе сыграна красная 2.</li>
+<li>Алиса даёт Кэти подсказку числом 4, затрагивая 4 как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет красную 3.</li>
+<li>Это должен быть <em>Finesse</em>, потому что <strong>3 соединяется с 4</strong>. Значит, Кэти должна считать, что у неё красная 4.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-rank-connect"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 4: Rank Disconnect → Bluff" id="l11-example-4-rank-disconnect----bluff">
+<h4>Пример 4: Rank Disconnect → <em>Bluff</em></h4>
+<ul>
+<li>На столе сыграна красная 2.</li>
+<li>Алиса даёт Кэти подсказку числом 4, затрагивая 4 как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет синюю 1.</li>
+<li>Это мог бы быть <em>Triple Finesse</em> — синяя 1 + синяя 2 + синяя 3 к синей 4, — либо <em>Bluff</em> только на синюю 1 к красной 4.</li>
+<li>Но это должен быть <em>Bluff</em>, потому что <strong>1 не соединяется с 4</strong>. Значит, Кэти должна считать, что у неё <em>one-away-from-playable</em> 4 — красная 4.</li>
+<li>Смысл примера: поскольку на столе уже сыграна 2, красная 4 является <em>one-away-from-playable</em> и потому становится допустимой целью для <em>Bluff</em>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-rank-disconnect"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 5: Rank Disconnect, где Bluff невозможен → Triple Finesse" id="l11-example-5-rank-disconnect-where-a-bluff-is-impossible----triple-finesse">
+<h4>Пример 5: Rank Disconnect, где <em>Bluff</em> невозможен → <em>Triple Finesse</em></h4>
+<ul>
+<li>Игра на четверых.</li>
+<li>На столе ничего не сыграно.</li>
+<li>Алиса даёт Дональду подсказку числом 4, затрагивая 4 как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет красную 1.</li>
+<li>Кэти сбрасывает.</li>
+<li>Дональд должен определить, является ли подсказка Алисы <em>Finesse</em> или <em>Bluff</em>. Он знает, что <em>Bluff</em> <strong>невозможен</strong>, потому что сейчас нет ни одной <em>one-away-from-playable</em> 4. Поэтому, хотя <strong>1 не соединяется с 4</strong>, это должен быть <em>Finesse</em>: нельзя делать <em>Bluff</em> по произвольной карте.</li>
+<li>Дональд не видит других красных карт в руке Боба. Поэтому он должен считать, что у него красная 4: такое значение соединялось бы с сыгранной вслепую красной 1. Следовательно, в его собственной <em>Finesse Position</em> должна быть красная 2, а в <em>Second Finesse Position</em> — красная 3.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-rank-disconnect-bluff-impossible"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 6: Rank Connect, где Finesse невозможен → Bluff" id="l11-example-6-rank-connect-where-a-finesse-is-impossible----bluff">
+<h4>Пример 6: Rank Connect, где <em>Finesse</em> невозможен → <em>Bluff</em></h4>
+<ul>
+<li>На столе сыграны красная 2 и синяя 2.</li>
+<li>Алиса даёт Кэти подсказку числом 4, затрагивая 4 как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет синюю 3.</li>
+<li>Обычно Кэти решила бы, что это <em>Finesse</em>, потому что <strong>3 соединяется с 4</strong>, то есть её 4 должна быть синей 4.</li>
+<li>Но Кэти замечает, что на её 4 есть негативная синяя подсказка. Значит, это не может быть синяя 4.</li>
+<li>Следовательно, это должен быть <em>Bluff</em>. Кэти помечает свою 4 как красную 4, поскольку красная 4 — единственная другая <em>one-away-from-playable</em> 4.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-rank-connect-finesse-impossible"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 7: Color Connect с радужной картой → Finesse" id="l11-example-7-color-connect-with-rainbow----finesse">
+<h4>Пример 7: Color Connect с радужной картой → <em>Finesse</em></h4>
+<ul>
+<li>Это партия с радужным цветом. (Остальные примеры в этом разделе относятся к обычной игре без вариантов.)</li>
+<li>На столе сыграна радужная 1.</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную карту как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет радужную 2.</li>
+<li>Это должен быть <em>Finesse</em>: связь по цвету есть, потому что радужная карта соединяется с подсказкой любого цвета, в том числе с красной. Значит, Кэти должна считать, что у неё радужная 3.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-color-connect-rainbow"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 8: Color Connect с радужной картой, где Finesse невозможен → Bluff" id="l11-example-8-color-connect-with-rainbow-where-a-finesse-is-impossible----bluff">
+<h4>Пример 8: Color Connect с радужной картой, где <em>Finesse</em> невозможен → <em>Bluff</em></h4>
+<ul>
+<li>Это партия с радужным цветом. (Остальные примеры в этом разделе относятся к обычной игре без вариантов.)</li>
+<li>На столе сыграны радужная 1 и красная 2.</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную карту как <em>Play Clue</em>.</li>
+<li>Боб вслепую играет радужную 2.</li>
+<li>Обычно Кэти решила бы, что это <em>Finesse</em>: связь по цвету есть, потому что радужная карта соединяется с подсказкой любого цвета, в том числе с красной. Тогда красная карта Кэти должна была бы быть радужной 3.</li>
+<li>Но Кэти замечает, что на её красной карте есть негативная синяя подсказка. Значит, это не может быть радужная 3.</li>
+<li>Следовательно, это должен быть <em>Bluff</em>. Кэти помечает красную карту как красную 4, поскольку красная 4 — <em>one-away-from-playable</em> красная карта.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-color-connect-rainbow-finesse-impossible"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Guide Principle" id="l11-guide-principle">
+<h3>Guide Principle</h3>
+<ul>
+<li>Одна из задач Hanabi — следить, чтобы после вашего действия другой игрок не сбросил ничего важного, например по <em>Save Principle</em>. Другая задача — учитывать все возможные варианты, например по <em>Schrödinger's Cat Principle</em>.</li>
+<li>Вместе эти два принципа обычно заставляют игроков выбирать максимально консервативный путь, даже если риск проиграть от определённого действия очень мал.</li>
+<li>Есть важное исключение. Пока Боб отыгрывает <em>Finesse</em> или <em>Bluff</em>, он знает, что Алиса его «ведёт», и поэтому не обязан самостоятельно спасать chop Кэти. Если бы chop Кэти требовала немедленного <em>Save</em>, Алиса сначала решила бы эту проблему и только потом запускала <em>Finesse</em> или <em>Bluff</em>.</li>
+<li>Например, в игре на четверых:<ul>
+<li>На столе ничего не сыграно.</li>
+<li>Алиса даёт Дональду красную подсказку, затрагивая красную 2 как <em>Play Clue</em>.</li>
+<li>Боб не видит красных 1 в чужих руках и понимает, что Алиса ожидает от него blind-play.</li>
+<li>Для Боба это может быть либо <em>Finesse</em> именно на красную 1, либо <em>Bluff</em> на 1 другого цвета.</li>
+<li>На chop Кэти лежит критическая 5.</li>
+<li>Что делать Бобу: рискнуть и сыграть вслепую или сначала спасти эту 5?</li>
+<li>Обычно безопаснее было бы спасти эту 5. Но здесь действует <em>Guide Principle</em>: Алиса ведёт Боба и ожидает розыгрыша прямо сейчас.</li>
+<li>Боб вслепую играет карту из своей <em>Finesse Position</em>. Это красная 1, и розыгрыш проходит успешно.</li>
+<li>Кэти не сбрасывает: Алиса видела её руку и, если бы chop действительно требовала немедленного спасения, дала бы соответствующую подсказку.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-guide-principle"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Интерпретация подсказок и бритва Оккама (Occam's Razor)" id="l11-clue-interpretation--occams-razor">
+<h3>Интерпретация подсказок и бритва Оккама (Occam's Razor)</h3>
+<ul>
+<li>Сначала см. раздел <a href="../5/#l5-schrodinger">Schrödinger's Cat Principle</a>.</li>
+<li>Когда подсказка допускает несколько интерпретаций, обычно включается <em>Schrödinger's Cat Principle</em>: игроки ждут круг и смотрят, что сделают партнёры, чтобы определить настоящий смысл. Но что делать, если интерпретаций несколько, а игроку <strong>не нужно</strong> ждать дополнительной информации от кого-то ещё?</li>
+<li>Например:<ul>
+<li>Алиса даёт Кэти странную подсказку.</li>
+<li>Боб не видит ни у кого «связующих» карт, поэтому может исключить <em>Prompt</em> и <em>Reverse Finesse</em>.</li>
+</ul>
+</li>
+<li>В такой ситуации Боб — <strong>реагирующий игрок</strong>. Если он никак явно не отреагирует на подсказку, кто-то другой затем сделает мисплей. Поэтому реагирующий игрок должен сразу выбрать интерпретацию и выполнить соответствующее действие.<ul>
+<li>Иногда реагирующих игроков двое подряд. Например, если Алиса подсказывает <em>two-away-from-playable</em> карту, сначала должен отреагировать Боб, а затем Кэти.</li>
+</ul>
+</li>
+<li>Как выбрать между несколькими интерпретациями? Реагирующий игрок применяет <strong>бритву Оккама (Occam's Razor)</strong> и выбирает самую простую допустимую интерпретацию.</li>
+</ul>
+<ol>
+<li>Предположить прямую <em>Play Clue</em> или <em>Delayed Play Clue</em>, если возможно объяснение без <em>Prompts</em> и blind-play.</li>
+<li>Предположить <em>Prompt</em>, если возможно объяснение без blind-play.</li>
+<li>Предположить <em>Finesse</em> — или <em>Prompt</em> + <em>Finesse</em> — вместо <em>Bluff</em>.</li>
+<li>Выбрать интерпретацию с наименьшим количеством blind-play.<ul>
+<li>Обычно это означает выбрать <em>Bluff</em> с одним blind-play вместо <em>Finesse</em> с двумя. Но <em>Bluff</em> допустим только по определённым целям: нельзя объявить <em>Bluff</em> на произвольной карте.</li>
+</ul>
+</li>
+<li>Если количество blind-play одинаково, выбрать интерпретацию с наименьшим количеством <em>Prompts</em>.<ul>
+<li>Например, если возможны обычный <em>Finesse</em> с одним blind-play и тот же <em>Finesse</em> с дополнительным <em>Prompt</em>, более простой считается первая интерпретация.</li>
+</ul>
+</li>
+</ol>
+</section>
+<section data-toc="Типичные ошибки" id="l11-common-mistakes">
+<h2>Типичные ошибки</h2>
+</section>
+<section data-sub="1" data-toc="Укол вины (The Pang of Guilt)" id="l11-the-pang-of-guilt">
+<h3>Укол вины (The Pang of Guilt)</h3>
+<ul>
+<li>Сначала см. раздел <a href="#l11-the-bluff-seat"><em>Bluff Seat</em></a>.</li>
+<li>Прежде чем напрямую подсказывать карту, нужно проверить, не находится ли она в <em>Finesse Position</em>. Если находится и вы подскажете её напрямую, вы можете «украсть» чей-то <em>Finesse</em> или <em>Bluff</em>.</li>
+<li>Поэтому иногда лучше сбросить и оставить игроку в <em>Bluff Seat</em> возможность разыграть эту карту через <em>Finesse</em> или <em>Bluff</em>. Если вы всё-таки подсказываете её напрямую, стоит хотя бы почувствовать <em>Укол вины</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Когда Layered Finesse ошибочно принимают за Bluff" id="l11-mistaking-a-layered-finesse-for-a-bluff">
+<h3>Когда Layered Finesse ошибочно принимают за Bluff</h3>
+<ul>
+<li>Сначала см. раздел <a href="../5/#l5-layered-finesse"><em>Layered Finesse</em></a>.</li>
+<li>Иногда игроки разыгрывают только одну карту в <em>Layered Finesse</em>, а затем останавливаются, хотя должны продолжать «копать» до обещанной карты.</li>
+<li>Поскольку <em>Bluff</em> разрешён только из <em>Bluff Seat</em>, если дающий подсказку не находится в <em>Bluff Seat</em>, такая подсказка <strong>всегда</strong> является <em>Layered Finesse</em>, а не <em>Bluff</em>.</li>
+<li>Но из <em>Bluff Seat</em> приоритет меняется: <em>Bluff</em> имеет приоритет над <em>Layered Finesse</em>.<ul>
+<li>Если подсказка Алисы заставляет Боба немедленно сыграть вслепую несвязанную карту, Боб по возможности должен трактовать ход как <em>Bluff</em>.</li>
+<li>Иными словами, из <em>Bluff Seat</em> <em>Layered Finesse</em> обычно не рассматривается как допустимая интерпретация.</li>
+<li>Разумеется, это верно только тогда, когда сама подсказка удовлетворяет условиям <em>Bluff</em>.<ul>
+<li>Если Боб не делает blind-play сразу, <em>Lie Principle</em> исключает <em>Bluff</em>, и подсказку нужно трактовать как <em>Layered Finesse</em>.</li>
+<li>То же самое верно, если подсказанная карта вообще не является допустимой целью для <em>Bluff</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Bluff Prompts / Prompt Bluffs (запрещены)" id="l11-bluff-prompts--prompt-bluffs-illegal">
+<h3>Bluff Prompts / Prompt Bluffs (запрещены)</h3>
+<ul>
+<li>Нельзя обманывать игрока так, чтобы он ошибочно решил, будто его карта должна сыграть через <em>Prompt</em>. <strong><em>Prompt</em> всегда должен быть правдивым.</strong></li>
+<li>Например, в игре на четверых:<ul>
+<li>На столе сыграны красная 1 и синяя 1.</li>
+<li>У Боба есть карта с подсказкой числом 2, но её точное значение ему неизвестно.</li>
+<li>Алиса даёт Дональду красную подсказку, затрагивая красную 3 как <em>Play Clue</em>.</li>
+<li>Поскольку красная 1 уже сыграна, Боб понимает: подсказка сообщает команде, что у кого-то есть красная 2.</li>
+<li>В чужих руках Боб красную 2 не видит, поэтому решает, что это <em>Prompt</em>, а его неизвестная 2 — красная 2. Он играет её, но там оказывается синяя 2; розыгрыш проходит успешно.</li>
+<li>Кэти удивлена, но допускает, что Боб мог сам вывести точное значение своей карты.</li>
+<li>Затем Кэти повторяет то же рассуждение: Алиса указывает на существование красной 2, а в чужих руках Кэти её не видит.</li>
+<li>Кэти заключает, что красная подсказка Дональду должна быть <em>Finesse</em>, а красная 2 находится в её <em>Finesse Position</em>. Она играет эту карту, но там синяя 5 — происходит мисплей.</li>
+<li>Ошибка Алисы: <em>Bluff</em> допустим только тогда, когда обман раскрывается немедленно через blind-play.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l11-diagram-bluff-prompts-prompt-bluffs"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Queued Bluffs (запрещены)" id="l11-queued-bluffs-illegal">
+<h3>Queued Bluffs (запрещены)</h3>
+<ul>
+<li>Сначала см. раздел <a href="../5/#l5-queued-finesse"><em>Queued Finesse</em></a>.</li>
+<li><em>Queued Finesses</em> обычно полезны и допустимы: у них мало недостатков.</li>
+<li>Но нельзя ставить <em>Bluff</em> в очередь, пока игрок уже находится под <em>Finesse</em>. Игрок, выполняющий blind-play, решит, что начался <em>Layered Finesse</em>, и продолжит разыгрывать исходный <em>Finesse</em>. Новый <em>Bluff</em> не раскроется немедленно, нарушит <em>Lie Principle</em> и вызовет серьёзную рассинхронизацию информации (<em>Information Desynchronization</em>).</li>
+</ul>
+</section>
+<section data-toc="Тренировочные вопросы" id="l11-training">
+<h2>Тренировочные вопросы</h2>
+<p class="source-mini">В официальном источнике отдельного набора Official Challenge Questions для Level 11 нет; ниже — наши Training Questions по материалу этого уровня.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. Когда разрешён <em>Bluff</em>?</summary>
+<div class="answer">
+<p>Только из <em>Bluff Seat</em>: дающий подсказку должен сидеть непосредственно перед игроком, который выполнит blind-play, а blind-play должен произойти сразу на ближайшем ходу.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Чем Fib отличается от Lie?</summary>
+<div class="answer">
+<p><em>Fib</em> — временная дезинформация, которая раскрывается уже на следующем ходу; она допустима. <em>Lie</em> не раскрывается немедленно и запрещён, поэтому игроки не должны строить интерпретацию на предположении о <em>Lie</em>.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Боб видит одновременно интерпретации через <em>Finesse</em> и <em>Bluff</em>. Какую выбрать?</summary>
+<div class="answer">
+<p>До blind-play действует <em>Bob's Truth Principle</em>: если подсказку можно правдиво объяснить как <em>Finesse</em>, Боб выбирает эту интерпретацию, а не <em>Bluff</em>.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Как после blind-play Кэти отличает <em>Finesse</em> от <em>Bluff</em>?</summary>
+<div class="answer">
+<p>По <em>Cathy's Connecting Principle</em>: если сыгранная вслепую карта соединяется с подсказкой, это <em>Finesse</em>; если не соединяется — <em>Bluff</em>. Если связь всё ещё нельзя определить однозначно, после blind-play выбирают <em>Bluff</em>, а не <em>Finesse</em>.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Почему перед blind-play Боб иногда не обязан спасать критическую карту на chop Кэти?</summary>
+<div class="answer">
+<p>По <em>Guide Principle</em> Боб знает, что дающий подсказку ведёт его по линии <em>Finesse</em>/<em>Bluff</em>. Если бы chop Кэти требовала немедленного <em>Save</em>, дающий подсказку сначала решил бы эту проблему и только потом запускал эту линию.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Можно ли делать <em>Queued Bluff</em>, если игрок уже находится под <em>Finesse</em>?</summary>
+<div class="answer">
+<p>Нет. Игрок примет новый ход за продолжение <em>Layered Finesse</em>, поэтому <em>Bluff</em> не раскроется сразу. Это нарушит <em>Lie Principle</em> и вызовет сильную рассинхронизацию информации.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Полный перевод текущего официального <a href="https://hanabi.github.io/level-11" rel="noopener" target="_blank">Level 11 — Bluffs</a>.</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

@@ -1,0 +1,571 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-5" data-root="../../" data-route="levels/5">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="5" data-page-key="level-5" id="level-5-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-5">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 5 — Finesse: средний уровень (Intermediate Finesses)</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 5</span><span class="badge">Intermediate Finesses</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 5 — Finesse: средний уровень (Intermediate Finesses)</h1>
+<div class="preview-note"><strong>Формат:</strong> Обычный текст переведён на русский; составные названия конвенций H-Group / Hanabi, буквенная нотация заметок и подписи внутри схем сохраняются в исходном виде; имена игроков в русском тексте передаются как Алиса, Боб, Кэти, Дональд и Эмили. Level 5 сверён с текущей официальной страницей H-Group.</div>
+<section data-toc="Специальные приёмы" id="l5-special">
+<h2>Специальные приёмы</h2>
+</section>
+<section data-sub="1" data-toc="Prompts in Multi-Color Variants" id="l5-prompt-multicolor">
+<h3>Prompts in Multi-Color Variants</h3>
+<ul>
+<li>В вариантах с multi-color <em>Prompt</em> выбирает карту с <strong>наибольшим количеством положительной информации</strong>.</li>
+<li>Например, в игре с радужными картами на троих:<ul>
+<li>На столе сыграна красная 2.</li>
+<li>Алиса даёт Кэти красную подсказку по красной 4 как <em>Play Clue</em>. Это <em>Prompt</em> на Боба для красной 3.</li>
+<li>В слоте 1 у Боба карта только с красной подсказкой. Значит, она может быть любой красной картой или любой радужной картой.</li>
+<li>В слоте 2 у Боба карта одновременно с красной подсказкой и подсказкой числом 3. Значит, она может быть красной 3 или радужной 3.</li>
+<li>В слоте 2 больше положительной информации, поэтому Боб играет <strong>слот 2</strong> как красную 3, хотя слот 1 находится левее.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-prompt-multicolor"></div>
+</div>
+<ul>
+<li>При выборе карты для <em>Prompt</em> игроки <strong>не должны использовать негативную информацию</strong>.</li>
+<li>Например, в игре с радужными картами на троих:<ul>
+<li>На столе сыграна красная 2.</li>
+<li>Алиса даёт Кэти красную подсказку по красной 4 как <em>Play Clue</em>. Это снова <em>Prompt</em> на Боба для красной 3.</li>
+<li>В слоте 1 у Боба карта с положительной красной подсказкой. Она может быть любой красной или радужной картой.</li>
+<li>В слоте 2 у Боба тоже есть положительная красная подсказка, а дополнительно — негативная зелёная подсказка. Формально эта карта теперь вероятнее является обычной красной картой.</li>
+<li>Но Боб знает, что для выбора карты в <em>Prompt</em> негативная информация <strong>не учитывается</strong>. Поэтому две карты имеют одинаковый объём положительной информации, и действует обычное правило: Боб играет крайнюю слева, то есть слот 1.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-prompt-no-negative"></div>
+</div>
+<ul>
+<li>На продвинутом уровне существует отдельное правило для <em>Double Prompts in Multi-Color Variants</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Hidden Finesse" id="l5-hidden-finesse">
+<h3>Hidden Finesse</h3>
+<ul>
+<li>Иногда хочется сделать <em>Finesse</em> игроку, у которого в руке уже есть карта с подсказкой. Но если попытаться сделать ему <em>Finesse</em>, он решит, что это <em>Prompt</em>, и сыграет свою карту с подсказкой. Поэтому во многих случаях <em>Finesse</em> дать нельзя и вместо этого приходится напрямую подсказывать связующую карту.</li>
+<li>Но что, если карта с подсказкой на самом деле играбельна? Тогда <em>Finesse</em> всё ещё можно сделать: игрок сыграет <em>Prompted</em>-карту, увидит, что это была не та карта, которую вы имели в виду, а на следующем ходу вслепую сыграет свою вторую по новизне карту. Это называется <em>Hidden Finesse</em>, потому что <em>Finesse</em> временно скрыт наличием карты с подсказкой.</li>
+<li>Например, в игре на троих:<ul>
+<li>На столе сыграны красная 1 и радужная 2.</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая её красную 3.</li>
+<li>У Боба в руке радужная 3 с красной подсказкой, и он не знает, какая именно это карта.</li>
+<li>Боб видит, что подсказка Алисы должна быть <em>Prompt</em>, поэтому играет свою красную карту как красную 2. К его удивлению, это радужная 3.</li>
+<li>Боб знает, что настоящая красная 2 у него всё равно должна быть и в момент исходной подсказки Алисы находилась в <em>Finesse Position</em>. Поскольку после розыгрыша радужной 3 он добрал новую карту, теперь Боб знает, что красная 2 находится в слоте 2 — во второй по новизне позиции.</li>
+<li>На следующем ходу Боб вслепую играет красную 2 из слота 2.</li>
+<li>В этом примере красная 2 была «скрыта» радужной 3.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-hidden-finesse"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Layered Finesse" id="l5-layered-finesse">
+<h3>Layered Finesse</h3>
+<ul>
+<li>Обычно <em>Finesse</em> обещает точную копию карты в <em>Finesse Position</em>. Однако если все карты перед ней играбельны, можно всё равно обещать точную копию этой карты. Мы <strong>не</strong> считаем такой ход <em>Lie</em>, поскольку игрок, делающий blind-play, действительно держит настоящую копию карты.</li>
+<li>Мы называем это <em>Layered Finesse</em>, потому что целевая карта blind-play для <em>Finesse</em> находится «под слоем» других играбельных карт.</li>
+<li>Например, в игре на троих:<ul>
+<li>Первый ход, на столе ничего не сыграно.</li>
+<li>Алиса даёт Бобу красную подсказку, затрагивая красную 2 как <em>Play Clue</em>.</li>
+<li>Обычно Боб решил бы, что у него красная 1. Однако он также видит, что это может быть <em>Reverse Layered Finesse</em> на Кэти. Поэтому Боб сейчас не может ничего играть — он должен подождать и посмотреть, что сделает Кэти.</li>
+<li>Боб делает постороннее действие.</li>
+<li>Кэти знает, что это <em>Reverse Finesse</em> и что у неё красная 1. Кэти вслепую играет карту из своей <em>Finesse Position</em>. Но на самом деле это синяя 1, и её удаётся успешно разыграть. Кэти удивлённо ахает.</li>
+<li>Алиса делает постороннее действие.</li>
+<li>Боб знает, что Кэти должна была пытаться вслепую сыграть красную 1. Значит, у Боба должна быть красная 2, и Алиса действительно сделала <em>Layered Finesse</em>.</li>
+<li>Боб делает постороннее действие.</li>
+<li>Кэти удивлена, что вслепую сыграла синюю 1 вместо красной 1. Значит, это должен быть <em>Layered Finesse</em>, и у Кэти действительно должна быть красная 1. Кэти играет свою <em>Second Finesse Position</em> — там оказывается красная 1.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-layered-finesse"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Clandestine Finesse" id="l5-clandestine-finesse">
+<h3>Clandestine Finesse</h3>
+<ul>
+<li>Игроку, который получает подсказку, запускающую <em>Layered Finesse</em>, обычно очевидно, что происходит. Например, в игре на четверых:<ul>
+<li>Алиса даёт Дональду синюю подсказку, затрагивая одну синюю карту.</li>
+<li>Боб сбрасывает.</li>
+<li>Кэти вслепую играет зелёную 1.</li>
+<li>Дональд ясно понимает, что это <em>Layered Finesse</em> на Кэти: Кэти будет продолжать играть карты, пока не найдёт синюю карту, которая соединяется с картой в его руке.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-layered-obvious"></div>
+</div>
+<ul>
+<li>Иными словами, большинство <em>Layered Finesse</em> заставляют вслепую играть посторонние карты, которые не соединяются с типом данной подсказки.</li>
+<li>При этом можно сделать <em>Layered Finesse</em> для посторонних карт, которые <strong>соединяются</strong> с типом данной подсказки. Тогда это скрыто от получателя подсказки, поэтому такой ход называется <em>Clandestine Finesse</em>, чтобы отличать его от более очевидного <em>Layered Finesse</em>.</li>
+<li>Например, в игре на троих:<ul>
+<li>Алиса даёт Кэти подсказку числом 3, затрагивая красную 3 в слоте 2. Поэтому красная 3 находится в фокусе подсказки. Это должна быть <em>Play Clue</em> на красную 3.</li>
+<li>Боб знает, что красная 3 сейчас неиграбельна, поэтому это должен быть <em>Finesse</em>. Он вслепую играет свою <em>Finesse Position</em> как красную 2. Но это синяя 2, и её удаётся успешно разыграть. Боб удивлён.</li>
+<li>Обычно Кэти решила бы, что у неё синяя 3, потому что она соединяется с сыгранной вслепую синей 2. Число 2 соединяется с числом 3.</li>
+<li>Однако Кэти также видит, что в момент подсказки у Боба в <em>Second Finesse Position</em> была красная 2. Поэтому остаётся возможность, что это <em>Clandestine Finesse</em>, а не обычный <em>Finesse</em>. Кэти должна дать Бобу возможность вслепую сыграть красную 2. Если он этого не сделает, тогда у Кэти действительно синяя 3.</li>
+<li>Кэти делает постороннее действие.</li>
+<li>Алиса делает постороннее действие.</li>
+<li>Боб был удивлён, что вслепую сыграл синюю 2 вместо красной 2. Значит, это должен быть <em>Clandestine Finesse</em>, и у Боба действительно должна быть красная 2.</li>
+<li>Боб вслепую играет карту из слота 2. Это красная 2, и её удаётся успешно разыграть. Боб знает, что если он этого не сделает, Кэти затем сделает мисплей, сыграв красную 3 как синюю 3.</li>
+<li>Кэти играет красную 3.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-clandestine-finesse"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Queued Finesse" id="l5-queued-finesse">
+<h3>Queued Finesse</h3>
+<ul>
+<li>Если игрок был <em>Finessed</em>, его <em>Finesse Position</em> сдвигается на один слот вправо — точно так же, как если бы карта, которую нужно сыграть вслепую, получила подсказку. Это похоже на то, как после <em>Chop Move</em> chop сдвигается на один слот влево.</li>
+<li>Поэтому можно сделать <strong>ещё один</strong> <em>Finesse</em> игроку, который уже был <em>Finessed</em>. В таком случае второй <em>Finesse</em> ставится в очередь после первого. Игрок должен выполнять blind-play в порядке <em>Finesse</em> — от самого раннего к самому позднему.<ul>
+<li>Эта конвенция нужна, чтобы <em>Layered Finesse</em> работали правильно. Иными словами, если Боб считает, что он <em>Finessed</em> дважды, он также должен учитывать возможность, что на самом деле он один раз получил <em>Layered Finesse</em>.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Ambiguous Finesse" id="l5-ambiguous-finesse">
+<h3>Ambiguous Finesse</h3>
+<ul>
+<li>Иногда неясно, какой игрок должен вслепую сыграть карту в <em>Finesse</em>. Например, в игре на четверых:<ul>
+<li>На столе ничего не сыграно.</li>
+<li>Алиса даёт Дональду <em>Play Clue</em> на красную 2.</li>
+<li>И у Боба, и у Кэти в <em>Finesse Position</em> находится красная 1.</li>
+<li>Боб думает, что <em>Finesse</em> направлен на Кэти, и сбрасывает.</li>
+<li>Затем Кэти думает, что Боб ошибся и «пропустил» <em>Finesse</em>. Кэти сбрасывает.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-ambiguous-finesse"></div>
+</div>
+<ul>
+<li>На самом деле здесь ошибается Кэти. <em>Finesse</em> считается базовым ходом, поэтому нужно доверять, что товарищи не совершают ошибку. Если Боб сбрасывает, это означает, что у Кэти есть точно такая же копия карты, и Кэти должна немедленно сыграть её вслепую.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Layered Finesse Dupe Clue" id="l5-layered-dupe-clue">
+<h3>Layered Finesse Dupe Clue</h3>
+<ul>
+<li>Иногда игроки после <em>Layered Finesse</em> не могут сразу сыграть свои карты вслепую. В таких случаях они будут давать подсказки или сбрасывать.</li>
+<li>Поэтому игрок после <em>Layered Finesse</em> может случайно дать <em>Play Clue</em> карте в чужой руке, которая уже была «получена» внутри <em>Layered Finesse</em> его собственной руки.</li>
+<li>Когда это происходит, обычно случается одно из двух:<ul>
+<li>Если Боб — игрок, получивший подсказку — знает точное значение карты, очевидно, что Алиса случайно её продублировала. Тогда Боб может безопасно сбросить карту, чтобы передать её обратно Алисе. Это важно, чтобы позже не произошёл взрыв, когда Алиса начнёт «разворачивать» <em>Layered Finesse</em>.</li>
+<li>Если Боб не знает точного значения карты, он вынужден просто сыграть её. Боб не должен в этой ситуации «возиться» и предпринимать посторонние действия, потому что это может ещё сильнее запутать команду. После того как Боб сыграет карту, если она действительно оказалась дубликатом, команда должна дать Алисе <em>Fix Clue</em>. Сначала Алиса удивится, что подсказка направлена на карту «внутри её слоя». Но вместе с контекстом того, что Алиса сама дала подсказку похожей карте, происходящее должно стать очевидным.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-toc="Общие принципы" id="l5-general">
+<h2>Общие принципы</h2>
+</section>
+<section data-sub="1" data-toc="Urgency Principle" id="l5-urgency">
+<h3>Urgency Principle</h3>
+<ul>
+<li>Обычно после <em>Finesse</em> кто-то сразу делает blind-play. Это крайне важно, потому что так информация внутри команды снова синхронизируется. Поэтому группа договаривается <strong>играть карты вслепую настолько быстро, насколько это разумно возможно</strong>. Это называется <em>Urgency Principle</em>.</li>
+<li>Следовательно, если вы видите, что игрок <strong>не</strong> делает blind-play в <em>Finesse</em>, вы знаете, что <em>Finesse</em> должен быть <strong>на вас</strong>.</li>
+<li>Однако есть два важных исключения:<ol>
+<li>Игроку разрешено <strong>отложить</strong> розыгрыш в <em>Finesse</em>, если он даёт подсказку, которая сама вызывает <em>Finesse</em>, и никто другой в команде не мог сделать это.</li>
+<li>Игроку разрешено <strong>отложить</strong> розыгрыш в <em>Finesse</em>, если он делает что-то действительно важное — например, спасает 5 на chop или даёт <em>Play Clue</em> карте, которую вот-вот сбросят.</li>
+</ol>
+</li>
+<li>Если выполняется одно из этих двух условий, нужно <strong>подождать</strong> и дать игроку ещё один ход, чтобы он показал, будет ли делать blind-play.</li>
+<li>Например, в игре на пятерых:<ul>
+<li>Все 1 уже сыграны на стол.</li>
+<li>В запасе 1 жетон подсказки.</li>
+<li>Алиса даёт Эмили красную подсказку, затрагивая красную 3 как <em>Play Clue</em>. Это <em>Finesse</em> на красную 2.</li>
+<li>Боб видит, что <em>Finesse</em> направлен на Кэти: красная 2 находится в её <em>Finesse Position</em>. Поскольку у команды теперь 0 жетонов подсказок, Боб сбрасывает.</li>
+<li>Кэти знает, что Алиса делает <em>Finesse</em> и что у Кэти должна быть красная 2. Первая мысль Кэти — вслепую сыграть красную 2. Это срочно, потому что иначе Эмили решит, что её красная карта может быть красной 2, и сделает мисплей.</li>
+<li>Однако Кэти также видит синюю 5 на chop Дональда, которую нужно спасти. Более того, с точки зрения Кэти Дональд может сбросить на своём ходу, поэтому синяя 5 находится под непосредственной угрозой. Если Кэти сыграет в <em>Finesse</em>, синюю 5 могут сбросить.</li>
+<li>Вместо blind-play Кэти даёт Дональду подсказку числом 5 как <em>5 Save</em>.</li>
+<li>Поскольку у команды 0 жетонов подсказок, Дональд сбрасывает.</li>
+<li>После подсказки Алисы Эмили записала на своей красной карте: «красная 2 или красная 3, если Кэти вслепую сыграет красную 2». Хотя Кэти не сыграла красную 2, Эмили видит, что Кэти выполняла важное срочное действие, чтобы команда не проиграла. Поэтому Эмили знает, что нужно дать Кэти ещё один шанс вслепую сыграть красную 2. Если на следующем ходу Кэти не сыграет красную 2 — и не происходит ничего другого особенного — Эмили может сыграть собственную красную карту как красную 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-diagram-urgency"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Schrödinger's Cat Principle" id="l5-schrodinger">
+<h3>Schrödinger's Cat Principle</h3>
+<ul>
+<li>Часто после получения подсказки карта может иметь два или больше возможных значений. Например:<ul>
+<li>В игре без вариантов красная <em>Play Clue</em> может означать красную 2 или красную 3 — в зависимости от того, сыграет ли красная 2 вслепую из руки другого игрока.</li>
+<li>В игре с радужными картами красная подсказка может означать либо <em>Play Clue</em> на красную 1, либо <em>Delayed Play Clue</em> на радужную 2 через ещё не сыгранную радужную 1 другого игрока.</li>
+</ul>
+</li>
+<li>Получив подсказку, нужно сразу записать на карте все возможные варианты.</li>
+<li>На всех последующих ходах нужно обращаться с этой картой так, будто она <strong>одновременно является всеми возможными вариантами</strong>. Это похоже на квантово-физическую аналогию с <em>Schrödinger's Cat</em>: кот одновременно жив и мёртв, и вы не узнаете состояние, пока не откроете коробку и не посмотрите. Точно так же неизвестную карту нужно считать одновременно всеми возможными вариантами, а точно узнать её значение получится только после розыгрыша.</li>
+<li>Следствие <em>Schrödinger's Cat Principle</em> — игрокам нужно быть очень осторожными. Перед розыгрышем карты часто приходится дождаться, пока походят все остальные, чтобы оставить возможность для <em>Prompt</em>, <em>Reverse Finesse</em> и других интерпретаций.</li>
+</ul>
+</section>
+<section data-toc="Тренировочные вопросы" id="l5-training">
+<h2>Тренировочные вопросы</h2>
+<p>Дополнительные вопросы по Level 5; ответы исключены из поиска.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. В радужной игре для Prompt подходят две карты: крайняя слева имеет только красную подсказку, следующая — красную и подсказку числом 3. Какую играть? <span class="qtag">Multi-Color Prompt</span></summary>
+<div class="answer">
+<p>Вторую. Для Prompt выбирается карта с наибольшим количеством положительной информации.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Вторая карта отличается от первой только негативной информацией: известно, что она не зелёная. Делает ли это её предпочтительной для Prompt? <span class="qtag">Negative Info</span></summary>
+<div class="answer">
+<p>Нет. Негативная информация не используется для выбора кандидата на Prompt; играется крайняя слева подходящая карта.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Prompted-карту удаётся успешно разыграть, но она оказывается не той связующей картой, которую обещала исходная подсказка. Что проверять дальше? <span class="qtag">Hidden Finesse</span></summary>
+<div class="answer">
+<p>Нужно вернуться к Finesse Position на момент исходной подсказки. После добора это обычно будет вторая по новизне карта; на следующем ходу её играют вслепую как настоящую связующую.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Игрок играет вслепую ожидаемую красную 1, но получает синюю 1, которую удаётся успешно разыграть. Может ли обещанная красная 1 всё ещё быть в его руке? <span class="qtag">Layered Finesse</span></summary>
+<div class="answer">
+<p>Да. Если промежуточная карта была играбельна, это может быть Layered Finesse; обещанная красная 1 может находиться на Second Finesse Position.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Blind-play неожиданной синей 2 сам по себе соединяется с подсказанной 3. Можно ли сразу считать подсказанную карту синей 3? <span class="qtag">Clandestine Finesse</span></summary>
+<div class="answer">
+<p>Не всегда. Если в момент подсказки на Second Finesse Position была подходящая красная 2, нужно дать игроку шанс продолжить слой; это может быть Clandestine Finesse.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Игрок уже получил Finesse и до его выполнения получает ещё один. В каком порядке играть? <span class="qtag">Queued Finesse</span></summary>
+<div class="answer">
+<p>От самого раннего Finesse к самому позднему. Новый Finesse ставится в очередь за уже существующим.</p>
+</div>
+</details>
+<details class="qa">
+<summary>7. У двух игроков одна и та же точная карта находится на Finesse Position. Первый не играет и сбрасывает. Что должен сделать второй? <span class="qtag">Ambiguous Finesse</span></summary>
+<div class="answer">
+<p>Не считать первый сброс ошибкой. Второй игрок должен понять, что Finesse направлен на него, и сыграть вслепую свою копию.</p>
+</div>
+</details>
+<details class="qa">
+<summary>8. Игрок должен выполнить Finesse, но перед ним обязан немедленно спасти 5 на chop. Нарушает ли 5 Save Urgency Principle? <span class="qtag">Urgency</span></summary>
+<div class="answer">
+<p>Нет. Срочное спасение важной карты — разрешённое исключение. После него игроку дают ещё один шанс выполнить Finesse.</p>
+</div>
+</details>
+<details class="qa">
+<summary>9. Карта может быть красной 2 или красной 3 в зависимости от будущего blind-play. Можно ли выбрать более удобный вариант заранее? <span class="qtag">Schrödinger's Cat</span></summary>
+<div class="answer">
+<p>Нет. До появления новой информации нужно считать оба варианта одновременно возможными и действовать безопасно для обоих.</p>
+</div>
+</details>
+</div>
+</section>
+<section data-toc="Challenge Questions" id="l5-challenges">
+<h2>Challenge Questions</h2>
+<div class="official-set">
+<p class="official-intro">Официальные H-Group Challenge Questions для Level 5. Question и Solution отделены от наших Training Questions.</p>
+<article class="official-q" id="l5-official-q-1">
+<div class="official-head">
+<h3>1. What's Hidden?</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Красная 1 и синяя 1 сыграны на стол.</li>
+<li>У Боба:<ul>
+<li>неподсказанная синяя 2 в слоте 1;</li>
+<li>красная 2 в слоте 4 с подсказкой числом 2; Боб не знает её точного значения.</li>
+</ul>
+</li>
+<li>Алиса даёт Кэти подсказку числом 3, затрагивая 3 в слоте 3 как <em>Play Clue</em>.</li>
+<li>Боб играет красную 2.</li>
+<li>Какие заметки должна записать Кэти на своей 3?</li>
+<li>Что Кэти должна сделать дальше?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>3 Кэти может быть красной 3; тогда подсказка Алисы была <em>Prompt</em> на красную 2 Боба.</li>
+<li>3 Кэти также может быть синей 3; тогда подсказка Алисы была <em>Hidden Finesse</em> на синюю 2 Боба.</li>
+<li>Поскольку обе подсказки допустимы, Кэти пишет на карте <code>r3, b3 if b2 f</code>.</li>
+<li>Следовательно, Кэти сейчас не может играть свою 3 и должна сбросить или дать какую-то постороннюю подсказку. В частности, Кэти не должна подсказывать синюю 2, потому что это может <em>Stomp</em> по <em>Hidden Finesse</em>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q" id="l5-official-q-2">
+<div class="official-head">
+<h3>2. Multiple Possibilities</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>На столе сыграны красная 2, жёлтая 1 и зелёная 1.</li>
+<li>Рука Боба от новой к старой: <code>синяя 1, синяя 2, зелёная 1, жёлтая 4</code>.</li>
+<li>Рука Кэти от новой к старой: <code>зелёная 2, фиолетовая 1, фиолетовая 2, жёлтая 2 (с подсказкой числом 2)</code>.</li>
+<li>Алиса даёт Дональду подсказку числом 3, затрагивая 3 в слоте 2.</li>
+<li>Какие <strong>точные</strong> заметки должен записать Дональд?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Это может быть красная 3 как обычная <em>Play Clue</em>.</li>
+<li>Это может быть жёлтая 3 как <em>Prompt</em> на жёлтую 2 Кэти.</li>
+<li>Это может быть зелёная 3 как <em>Hidden Finesse</em> на зелёную 2 Кэти: сначала жёлтая 2 должна быть сыграна как зелёная 2.</li>
+<li>Это может быть синяя 3 как <em>Double Finesse</em> через синюю 1 и синюю 2 Боба.</li>
+<li>Это может быть фиолетовая 3 как <em>Clandestine Finesse</em> через карты Кэти. Технически этот частный вариант называется <em>Surreptitious Finesse</em>, но на Level 5 различие знать не требуется.</li>
+<li>Поэтому полная заметка Дональда: <code>r3, y3 if y2 p, g3 if g2 f, b3 if b1 f, p3 if p1 f</code>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q" id="l5-official-q-3">
+<div class="official-head">
+<h3>3. Two Finesses in a Row</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Первый ход партии.</li>
+<li>Алиса даёт Дональду синюю подсказку по синей 3 в слоте 2.</li>
+<li>Это <em>Double Finesse</em> на Боба, поэтому Боб играет слот 1 вслепую как синюю 1.</li>
+<li>Затем Кэти даёт Дональду красную подсказку по красной 2 в слоте 3.</li>
+<li>В руке Алисы нет красных карт.</li>
+<li>Какие заметки должен сделать Боб после второй подсказки?</li>
+<li>Что Боб должен сделать на следующем ходу?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб не видит отсутствующую красную 1, значит она должна быть у него.</li>
+<li>Следовательно, Боб снова <em>Finessed</em> — теперь через <em>Queued Finesse</em>.</li>
+<li>При этом Боб ещё не знает, был ли исходный синий <em>Finesse</em> обычным или <em>Layered Finesse</em>.</li>
+<li>Поэтому свой слот 2 он должен пометить как <strong>красную 1 или синюю 2</strong>.<ul>
+<li>Если слот 2 — красная 1, подсказка Алисы была <em>Layered Finesse</em>, а подсказка Кэти — обычная <em>Play Clue</em>; тогда синяя 2 должна быть у Боба в слоте 3.</li>
+<li>Если слот 2 — синяя 2, исходный ход был обычным <em>Double Finesse</em>, а подсказка Кэти — <em>Queued Finesse</em>; тогда у Боба красная 1 находится в слоте 1.</li>
+</ul>
+</li>
+<li>В любом случае Боб сначала играет вслепую <strong>слот 2</strong>, а увидев карту, обновляет заметки.</li>
+<li>Теоретически слот 2 может оказаться посторонней играбельной картой вроде жёлтой 1. Это маловероятный вариант; по умолчанию Боб не обязан заранее расписывать такие случайные играбельные слои и добавит их ретроактивно, если они реально возникнут.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q" id="l5-official-q-4">
+<div class="official-head">
+<h3>4. A Tricky Spot, I</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Фиолетовая 1 сыграна.</li>
+<li>Алиса видит:<ul>
+<li>у Боба красная 1 в <em>Finesse Position</em>;</li>
+<li>рука Кэти от новой к старой: <code>красная 2, жёлтая 4, зелёная 1, синяя 3</code>;</li>
+<li>зелёная 1 Кэти ранее получила зелёную подсказку и известна всей команде как зелёная 1;</li>
+<li>рука Дональда от новой к старой: <code>красная 2, фиолетовая 4, зелёная 4, синяя 5</code>.</li>
+</ul>
+</li>
+<li>Какие подсказки доступны Алисе?</li>
+<li>Какая из них лучшая?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алисе доступны следующие подсказки:<ul>
+<li>Можно сделать <em>5 Save</em> синей 5. Это безопасно, но не даёт ни одной новой карты для розыгрыша.</li>
+<li>Можно дать <em>Play Clue</em> красной 1 Боба — красным или числом 1. Это будет 1-for-1.</li>
+<li>Можно дать <em>Play Clue</em> красной 2 Кэти — красным или числом 2. Это вызовет <em>Finesse</em> и будет 2-for-1.</li>
+<li>Можно дать <em>Play Clue</em> красной 2 Дональда — красным или числом 2. Это вызовет <em>Finesse</em> и будет 2-for-1.</li>
+</ul>
+</li>
+<li>Однако обе красные 2 находятся в <em>Finesse Position</em>. Если Алиса запустит <em>Finesse</em> красной подсказкой, и Кэти, и Дональд отметят свои красные карты как возможные красные 3, что приведёт к <em>Ambiguous Finesse</em>.</li>
+<li>Поэтому правильный способ запустить <em>Finesse</em> — подсказка числом 2, которая не создаёт неоднозначности.</li>
+<li>Что лучше — красная 2 Кэти или красная 2 Дональда? У Кэти уже есть зелёная 1 для розыгрыша, а у Дональда на chop важная карта. Поэтому лучшая подсказка Алисы — подсказка числом 2 Дональду, запускающая <em>Finesse</em>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-4-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q" id="l5-official-q-5">
+<div class="official-head">
+<h3>5. A Tricky Spot, II</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Фиолетовая 1 сыграна на стол.</li>
+<li>Алиса видит:<ul>
+<li>у Боба красная 1 в <em>Finesse Position</em>;</li>
+<li>рука Кэти от новой к старой: <code>красная 2, жёлтая 4, зелёная 1, синяя 3</code>;</li>
+<li>зелёная 1 Кэти ранее получила зелёную подсказку и известна всей команде как зелёная 1;</li>
+<li>рука Дональда от новой к старой: <code>красная 2, фиолетовая 4, зелёная 4, синяя 2</code>.</li>
+</ul>
+</li>
+<li>Какие подсказки доступны Алисе?</li>
+<li>Какую подсказку лучше всего дать?</li>
+<li>С точки зрения игрока, получающего лучшую подсказку, какую заметку он запишет? Укажите точно и покажите полную эволюцию заметки.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-5-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алисе доступны следующие подсказки:<ul>
+<li>Можно сделать <em>2 Save</em> синей 2. Это будет 2-for-1, но не даёт ни одной новой карты для розыгрыша.</li>
+<li>Можно дать <em>Play Clue</em> красной 1 Боба — красным или числом 1. Это будет 1-for-1.</li>
+<li>Можно дать <em>Play Clue</em> красной 2 Кэти — красным или числом 2. Это вызовет <em>Finesse</em> и будет 2-for-1.</li>
+<li>Можно дать красную <em>Play Clue</em> красной 2 Дональда. Это вызовет <em>Finesse</em> и будет 2-for-1.</li>
+</ul>
+</li>
+<li>Однако обе красные 2 находятся в <em>Finesse Position</em>. Если Алиса запустит <em>Finesse</em> красной подсказкой, и Кэти, и Дональд отметят свои красные карты как возможные красные 3, что приведёт к <em>Ambiguous Finesse</em>.</li>
+<li>Поскольку у Кэти уже есть карта для розыгрыша, а у Дональда на chop важная карта, лучший ход Алисы — сделать <em>Finesse</em> на красную 2 Дональда. Это безопасно благодаря <em>Urgency Principle</em>:<ul>
+<li>Сразу после подсказки Алисы Дональд записывает на своей красной карте <code>r1, r2 if r1 f, r3 if r2 f</code>.</li>
+<li>Боб знает, что ему обещана красная 1, поэтому успешно разыгрывает красную 1 вслепую из <em>Finesse Position</em>.</li>
+<li>Дональд обновляет заметку с <code>r1, r2 if r1 f, r3 if r2 f</code> до <code>r2, r3 if r2 f</code>.</li>
+<li>Кэти играет свою зелёную 1.</li>
+<li>Дональд обновляет заметку с <code>r2, r3 if r2 f</code> до <code>r2</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-5-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q" id="l5-official-q-6">
+<div class="official-head">
+<h3>6. Боб ленится</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Первый ход, стол пуст.</li>
+<li>Алиса даёт Кэти подсказку числом 2 по слотам 1 и 4; это <em>Play Clue</em> на слот 1 Кэти.</li>
+<li>У Боба красная 1 в <em>Finesse Position</em>, поэтому Кэти допускает, что Боб сыграет её вслепую и подсказка Алисы окажется <em>Finesse</em> красная 1 → красная 2.</li>
+<li>Но Боб вместо blind-play даёт Алисе подсказку числом 1 по зелёной 1 в слоте 1.</li>
+<li>Что должна сделать Кэти?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-6-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб, по-видимому, откладывает blind-play и вместо этого даёт 1-for-1 подсказку карте, которую с тем же успехом могла получить Кэти.</li>
+<li><em>Urgency Principle</em> говорит, что blind-play должен происходить <strong>как можно скорее</strong>. Следовательно, Боб изначально вообще не был <em>Finessed</em>.</li>
+<li>Однако подсказка Алисы должна быть каким-то <em>Finesse</em>, потому что карта Кэти в слоте 1 была обозначена как играбельная. Поэтому ход классифицируется как <em>Ambiguous Self-Finesse</em> на Кэти: Кэти должна вслепую сыграть свою <em>Finesse Position</em> как любую играбельную 1.</li>
+<li>Когда Кэти успешно разыгрывает вслепую жёлтую 1 из <em>Finesse Position</em>, она понимает, что её ранее неизвестная 2 — цель <em>Finesse</em> — должна совпадать по цвету и быть ровно жёлтой 2.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l5-official-6-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<div class="source-box">Адаптировано по текущей официальной странице H-Group <a href="https://hanabi.github.io/level-5" rel="noopener" target="_blank">Level 5 — Intermediate Finesses</a>. Официальные <a href="https://hanabi.github.io/challenge-questions/level-5" rel="noopener" target="_blank">Level 5 Challenge Questions</a> встроены ниже вместе с нашими Training Questions.</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

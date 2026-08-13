@@ -1,0 +1,293 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-22" data-root="../../" data-route="levels/22">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="22" data-page-key="level-22" id="level-22-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-22">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 22 — Редкие экстренные сбросы (Rare Emergency Discards)</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 22</span><span class="badge">Rare Emergency Discards</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 22 — Редкие экстренные сбросы (Rare Emergency Discards)</h1>
+<section data-toc="Конвенции" id="l22-conventions">
+<h2>Конвенции</h2>
+</section>
+<section data-sub="1" data-toc="Phantom Playable Cards" id="l22-phantom-playable-cards">
+<h3>Phantom Playable Cards</h3>
+<ul>
+<li>Сначала см. раздел об <a href="../1/#l1-playable">определении играбельных карт</a>.</li>
+<li>Чтобы карта считалась <em>delayed playable</em>, она должна стать играбельной «через» другие карты с подсказками или «через» карты на <em>Finesse Position</em>. Иными словами, <em>delayed playable</em>-картам разрешено давать <em>Play Clues</em>.</li>
+<li>Есть немного другая категория карт. Карта считается <em>Phantom Playable</em>, если она станет играбельной «через» карты, которые видны в чьей-то руке, но промежуточные карты ещё не находятся на <em>Finesse Position</em> и не имеют подсказок. <em>Phantom Playable</em>-картам <strong>нельзя</strong> давать <em>Play Clues</em> — по крайней мере до тех пор, пока сначала не будут подсказаны промежуточные карты.</li>
+<li>Из <em>Save Principle</em> мы знаем, что команда договаривается не позволять сбрасывать <em>playable</em> и <em>delayed playable</em>-карты.</li>
+<li>По возможности команда должна стараться защищать от сброса и <em>Phantom Playable</em>-карты: по важности они почти не уступают <em>delayed playable</em>. Например, часто другие игроки сбрасывают, чтобы именно владелец <em>Phantom Playable</em>-карты смог дать <em>Play Clue</em> по промежуточной карте.</li>
+<li>Иногда <em>Phantom Playable</em>-карту всё же приходится сбросить, когда у команды мало жетонов подсказок или ситуация иным образом очень напряжённая. Это неприятно, но вполне допустимо и время от времени действительно происходит.</li>
+</ul>
+</section>
+<section data-toc="Специальные ходы" id="l22-special-moves">
+<h2>Специальные ходы</h2>
+</section>
+<section data-sub="1" data-toc="Scream Discard для Phantom Playable-карты" id="l22-the-scream-discard-for-a-phantom-playable-card">
+<h3>Scream Discard для Phantom Playable-карты</h3>
+<ul>
+<li>Сначала см. раздел о <a href="../7/#l7-scream"><em>Scream Discard</em></a> и раздел о <a href="#l22-phantom-playable-cards"><em>Phantom Playable Cards</em></a>.</li>
+<li>Обычно <em>Scream Discard</em> разрешён только ради критической или играбельной карты. Но что делать с <em>Phantom Playable Card</em>?</li>
+<li>В большинстве случаев ради <em>Phantom Playable Card</em> тоже следует сделать <em>Scream Discard</em>, но решение зависит от ситуации:<ul>
+<li>всем ли будет понятно, что происходит;</li>
+<li>получат ли промежуточные карты подсказки сразу;</li>
+<li>есть ли на chop другие критические карты, которые нужно спасти сейчас или вскоре;</li>
+<li>является ли <em>Phantom Playable</em>-карта 3 или 4.</li>
+</ul>
+</li>
+<li>В итоге в сложной или очень напряжённой ситуации лучше позволить <em>Phantom Playable</em>-карте сброситься, <strong>особенно</strong> если это 4.</li>
+<li>Иначе говоря, команде не следует «лезть из кожи вон» ради <em>Phantom Playable</em>-карты. Нужно помнить, что любой <em>Scream Discard</em> несёт небольшой риск проиграть партию, если сама сброшенная через <em>Scream Discard</em> карта окажется критической.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Sacrifice Discard" id="l22-the-sacrifice-discard">
+<h3>Sacrifice Discard</h3>
+<ul>
+<li>Сначала см. раздел о <a href="../7/#l7-scream"><em>Scream Discard</em></a>.</li>
+<li>Обычно нежелательно, чтобы рука игрока была <em>Locked</em>, но иногда это происходит. При этом одна из карт в Locked-руке может быть полезна в будущем, но не быть критической — то есть другая её копия находится в чьей-то руке или ещё остаётся в колоде.</li>
+<li>В нормальной ситуации карты с подсказками вообще не следует сбрасывать; такой сброс обычно означает <em>Sarcastic Discard</em> или <em>Gentleman's Discard</em>. Но Locked-игрок может решить «пожертвовать» некритической картой из своей руки. В этой ситуации сброс <strong>не</strong> означает ни <em>Sarcastic Discard</em>, ни <em>Gentleman's Discard</em>.</li>
+<li>Когда Locked-игрок сбрасывает некритическую карту, это иногда <em>Generation Discard</em>, а иногда <em>Sacrifice Discard</em>. Остальные игроки определяют интерпретацию по тому, насколько хорошо или плохо идёт партия. Обычно выбор очевиден: <em>Sacrifice Discard</em> очень редок и применяется только в по-настоящему тяжёлых ситуациях.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Echo Scream Discard Chop Move (ESDCM)" id="l22-the-echo-scream-discard-chop-move-esdcm">
+<h3>Echo Scream Discard Chop Move (ESDCM)</h3>
+<ul>
+<li>Сначала см. раздел о <a href="../7/#l7-scream"><em>Scream Discard</em></a>.</li>
+<li><em>Scream Discard Chop Move</em> делается только как крайняя мера. Поэтому, если у следующего игрока на chop лежит неважная карта, такой сброс обычно является <em>Generation Discard</em> и никого не делает <em>Chop Moved</em>.</li>
+<li>Но что, если после <em>Scream Discard</em> у следующего игрока есть одно из следующего:<ul>
+<li>известная играбельная карта;</li>
+<li>известный безопасный мусор для сброса.</li>
+</ul>
+</li>
+<li>Поскольку <em>Scream Discard</em> используется только как крайняя мера, у действия должен быть дополнительный смысл. Тогда оно делает <em>Chop Moved</em> и следующего игрока, <strong>и</strong> игрока после него. Это называется <em>Echo Scream Discard</em>: сигнал как бы «отскакивает» от следующего игрока и идёт дальше как «двойной крик».</li>
+<li>Как и после обычного <em>Scream Discard</em>, все игроки, ставшие <em>Chop Moved</em>, не имеют права сбрасывать chop на своём следующем ходу.</li>
+<li>В маловероятном случае, когда <strong>два</strong> игрока подряд имеют известные розыгрыши или известные безопасные сбросы, <em>Echo Scream Discard</em> «отскакивает» от обоих и в сумме вызывает <strong>три</strong> <em>Chop Moves</em>. Три таких игрока подряд дают четыре <em>Chop Moves</em> и так далее.</li>
+<li><em>Echo Scream Discard</em> работает так же и в форме, когда у сбрасывающего есть известный безопасный мусор, но вместо него он сбрасывает chop.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Echo Shout Discard (недопустимо)" id="l22-the-echo-shout-discard-illegal">
+<h3>Echo Shout Discard (недопустимо)</h3>
+<ul>
+<li>В отличие от <em>Scream Discard</em>, <em>Shout Discard</em> не может вызывать <em>Echo Chop Moves</em>. Причина в том, что сброс известного мусора значительно менее серьёзен, чем намеренный сброс неизвестной карты с риском проиграть партию.</li>
+<li>Поэтому сброс известного мусора вместо розыгрыша всегда является либо одиночным <em>Shout Discard Chop Move</em>, либо <em>Generation Discard</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Composition Discard" id="l22-the-composition-discard">
+<h3>Composition Discard</h3>
+<ul>
+<li>Сначала см. разделы о <a href="../7/#l7-scream"><em>Scream Discard</em></a> и <a href="../7/#l7-generation"><em>Generation Discard</em></a>.</li>
+<li>В редких случаях один и тот же сброс может одновременно быть <em>Scream Discard</em> для одного игрока и <em>Generation Discard</em> для другого.</li>
+<li>Например, в игре на четверых:<ul>
+<li>в банке 0 жетонов подсказок;</li>
+<li>Алисе нужно заранее спланировать свой ход;</li>
+<li>у Боба и Дональда на chop лежат критические карты, а у Кэти есть безопасный сброс;</li>
+<li>у Алисы и Боба есть по одной известной играбельной карте;</li>
+<li>если Алиса сыграет свою карту, Боб будет вынужден сделать <em>Generation Discard</em> и сбросит критическую карту. Такой вариант недопустим;</li>
+<li>поэтому Алиса должна сбросить. Для Боба это <em>Scream Discard</em>, и он должен сделать <em>Chop Move</em>. Для Кэти это одновременно <em>Generation Discard</em>, поэтому Кэти не должна делать <em>Chop Move</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l22-diagram-composition-discard"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Rebellious Discard" id="l22-the-rebellious-discard">
+<h3>Rebellious Discard</h3>
+<ul>
+<li>Сначала см. раздел о <a href="../7/#l7-scream"><em>Scream Discard</em></a>.</li>
+<li>По правилам <em>Scream Discard</em> следующий игрок после такого сброса <strong>не может</strong> сбрасывать. Если полезной подсказки нет, ему приходится полностью потратить жетон впустую.</li>
+<li>Однако иногда игрок, на которого «кричали», видит: если он даст подсказку, следующий игрок останется с 0 жетонов и будет вынужден сбросить критическую карту.</li>
+<li>В такой ситуации игрок должен как обычно сделать <em>Chop Move</em>, а затем сбросить свою новую chop-карту. Этот второй <em>Scream Discard</em> называется <em>Rebellious Discard</em>, потому что игрок не выполняет то, что ему «велели».</li>
+<li>Например, в игре на троих:<ul>
+<li>красная 4 находится в сбросе;</li>
+<li>доступно 0 жетонов подсказок;</li>
+<li>у Алисы есть известная играбельная синяя 2;</li>
+<li>у Боба на chop находится критическая красная 4. Играбельных карт у Боба нет;</li>
+<li>рука Кэти <em>Locked</em>. Все карты Кэти критические, и ни одна из них сейчас не играбельна;</li>
+<li>Алиса смотрит на будущие ходы и понимает: если она сыграет синюю 2, Боб будет вынужден сбросить критическую красную 4, потому что у команды сейчас 0 жетонов;</li>
+<li>поэтому Алиса делает <em>Scream Discard</em>: вместо розыгрыша известной играбельной синей 2 она сбрасывает карту;</li>
+<li>Боб понимает, что Алиса сделала <em>Scream Discard</em>, и помечает свою chop-карту как <em>Chop Moved</em>;</li>
+<li>Боб также знает, что по правилам <em>Scream Discard</em> на этом ходу он не имеет права сбрасывать и должен дать какую-нибудь подсказку — это защищает случай, когда подряд лежат две критические карты;</li>
+<li>но здесь, если Боб даст подсказку, он потратит последний жетон, после чего Кэти останется без подсказки и будет вынуждена сбросить критическую карту;</li>
+<li>значит, Боб должен сделать <em>Rebellious Discard</em>, чтобы вернуть жетон и дать Кэти возможность выполнить другое действие.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l22-diagram-rebellious-discard"></div>
+</div>
+</section>
+<section data-toc="Общие принципы" id="l22-general-principles">
+<h2>Общие принципы</h2>
+</section>
+<section data-sub="1" data-toc="Блок-схема Scream Discard" id="l22-a-scream-discard-flowchart">
+<h3>Блок-схема Scream Discard</h3>
+<p>Ниже приведена блок-схема, которая помогает определить, является ли сброс <em>Scream Discard Chop Move</em> или <em>Generation Discard</em>:</p>
+<div class="hanabi-block flowchart-panel" data-flowchart-panel="">
+<div class="visual-toolbar"><button aria-label="Развернуть блок-схему Scream Discard" class="visual-expand-btn" data-expand-flowchart="" type="button">⛶ Развернуть схему</button></div>
+<div class="flowchart-wrap"><svg aria-label="Блок-схема Scream Discard" class="flowchart-l22" role="img" viewbox="0 0 1120 940"><g>
+<rect class="fc-box fc-start" height="78" rx="14" width="740" x="190" y="20"></rect><text class="fc-text" x="560" y="48"><tspan dy="0" x="560">Алиса сбрасывает, хотя у неё есть известный розыгрыш.</tspan><tspan class="fc-small" dy="24" x="560">Или: у неё есть известный безопасный сброс, но вместо него она сбрасывает chop.</tspan></text>
+<path class="fc-edge" d="M560 98 V125"></path><polygon fill="var(--muted)" points="554,120 566,120 560,130"></polygon>
+<rect class="fc-box fc-alert" height="58" rx="14" width="410" x="355" y="130"></rect><text class="fc-text" x="560" y="166">Это экстренная ситуация!</text>
+<path class="fc-edge" d="M560 188 V215"></path><polygon fill="var(--muted)" points="554,210 566,210 560,220"></polygon>
+<rect class="fc-box" height="86" rx="14" width="620" x="250" y="220"></rect><text class="fc-text" x="560" y="254"><tspan x="560">У Боба есть известный розыгрыш</tspan><tspan dy="23" x="560">или известный безопасный сброс?</tspan></text>
+<path class="fc-edge" d="M370 306 V342"></path><polygon fill="var(--muted)" points="364,337 376,337 370,347"></polygon><text class="fc-label" x="333" y="332">Нет</text>
+<path class="fc-edge" d="M750 306 V342"></path><polygon fill="var(--muted)" points="744,337 756,337 750,347"></polygon><text class="fc-label" x="765" y="332">Да</text>
+<rect class="fc-box" height="86" rx="14" width="500" x="50" y="350"></rect><text class="fc-text" x="300" y="383"><tspan x="300">У Кэти есть известный розыгрыш</tspan><tspan dy="23" x="300">или известный безопасный сброс?</tspan></text>
+<rect class="fc-box" height="86" rx="14" width="500" x="570" y="350"></rect><text class="fc-text" x="820" y="383"><tspan x="820">У Кэти есть известный розыгрыш</tspan><tspan dy="23" x="820">или известный безопасный сброс?</tspan></text>
+<!-- Left branch: Bob has no known action -->
+<path class="fc-edge" d="M175 436 V480"></path><polygon fill="var(--muted)" points="169,475 181,475 175,485"></polygon><text class="fc-label" x="188" y="464">Да</text>
+<rect class="fc-box fc-warn" height="112" rx="14" width="300" x="25" y="485"></rect><text class="fc-text" x="175" y="518"><tspan x="175">Scream Discard</tspan><tspan dy="22" x="175">Chop Move</tspan><tspan class="fc-small" dy="25" x="175">Боб делает Chop Move</tspan><tspan class="fc-small" dy="20" x="175">и не сбрасывает в этот ход.</tspan></text>
+<path class="fc-edge" d="M425 436 V485"></path><polygon fill="var(--muted)" points="419,480 431,480 425,490"></polygon><text class="fc-label" x="438" y="464">Нет</text>
+<rect class="fc-box" height="128" rx="14" width="220" x="330" y="490"></rect><text class="fc-text" x="440" y="520"><tspan class="fc-small" x="440">На chop Кэти:</tspan><tspan class="fc-small" dy="21" x="440">уникальная играбельная,</tspan><tspan class="fc-small" dy="21" x="440">критическая карта</tspan><tspan class="fc-small" dy="21" x="440">или уникальная 2?</tspan></text>
+<path class="fc-edge" d="M385 618 V686 H175 V716"></path><polygon fill="var(--muted)" points="169,711 181,711 175,721"></polygon><text class="fc-label" x="194" y="681">Да</text>
+<rect class="fc-box fc-good" height="112" rx="14" width="300" x="25" y="720"></rect><text class="fc-text" x="175" y="755"><tspan x="175">Generation Discard</tspan><tspan class="fc-small" dy="26" x="175">Боб должен дать Play Clue</tspan><tspan class="fc-small" dy="20" x="175">или Save Clue по chop Кэти.</tspan></text>
+<path class="fc-edge" d="M495 618 V686 H435 V716"></path><polygon fill="var(--muted)" points="429,711 441,711 435,721"></polygon><text class="fc-label" x="505" y="681">Нет</text>
+<rect class="fc-box fc-warn" height="112" rx="14" width="300" x="335" y="720"></rect><text class="fc-text" x="485" y="753"><tspan x="485">Scream Discard</tspan><tspan dy="22" x="485">Chop Move</tspan><tspan class="fc-small" dy="25" x="485">Боб делает Chop Move</tspan><tspan class="fc-small" dy="20" x="485">и не сбрасывает в этот ход.</tspan></text>
+<!-- Right branch: Bob has a known action -->
+<path class="fc-edge" d="M695 436 V480"></path><polygon fill="var(--muted)" points="689,475 701,475 695,485"></polygon><text class="fc-label" x="708" y="464">Да</text>
+<rect class="fc-box fc-danger" height="112" rx="14" width="240" x="575" y="485"></rect><text class="fc-text" x="695" y="519"><tspan x="695">Продвинутый случай</tspan><tspan class="fc-small" dy="25" x="695">вне этой блок-схемы:</tspan><tspan class="fc-small" dy="20" x="695">нужно рассуждать о спасении</tspan><tspan class="fc-small" dy="20" x="695">карт и безопасных chop.</tspan></text>
+<path class="fc-edge" d="M945 436 V485"></path><polygon fill="var(--muted)" points="939,480 951,480 945,490"></polygon><text class="fc-label" x="958" y="464">Нет</text>
+<rect class="fc-box" height="128" rx="14" width="270" x="825" y="490"></rect><text class="fc-text" x="960" y="520"><tspan class="fc-small" x="960">На chop Кэти:</tspan><tspan class="fc-small" dy="21" x="960">уникальная играбельная,</tspan><tspan class="fc-small" dy="21" x="960">критическая карта</tspan><tspan class="fc-small" dy="21" x="960">или уникальная 2?</tspan></text>
+<path class="fc-edge" d="M900 618 V690 H800 V716"></path><polygon fill="var(--muted)" points="794,711 806,711 800,721"></polygon><text class="fc-label" x="820" y="681">Да</text>
+<rect class="fc-box fc-good" height="112" rx="14" width="290" x="655" y="720"></rect><text class="fc-text" x="800" y="753"><tspan x="800">Echo Scream Discard</tspan><tspan dy="22" x="800">Chop Move</tspan><tspan class="fc-small" dy="25" x="800">И Боб, и Кэти делают Chop Move.</tspan><tspan class="fc-small" dy="20" x="800">Бобу не нужно подсказывать Кэти.</tspan></text>
+<path class="fc-edge" d="M1020 618 V690 H1015 V716"></path><polygon fill="var(--muted)" points="1009,711 1021,711 1015,721"></polygon><text class="fc-label" x="1030" y="681">Нет</text>
+<rect class="fc-box fc-danger" height="112" rx="14" width="155" x="955" y="720"></rect><text class="fc-text" x="1032" y="753"><tspan class="fc-small" x="1032">Продвинутый</tspan><tspan class="fc-small" dy="21" x="1032">случай вне</tspan><tspan class="fc-small" dy="21" x="1032">этой схемы.</tspan></text>
+<text class="fc-label" text-anchor="middle" x="560" y="878">Scream Discard и Generation Discard — только крайняя мера.</text><text class="fc-label" text-anchor="middle" x="560" y="902">В продвинутой ветке нужно учитывать спасаемые карты, безопасные chop и возможность ошибки Алисы.</text>
+</g></svg>
+</div>
+</div>
+</section>
+<section data-toc="Тренировочные вопросы" id="l22-training">
+<h2>Тренировочные вопросы</h2>
+<p class="source-mini">В официальном источнике отдельного набора Official Challenge Questions для Level 22 нет; ниже — наши Training Questions по материалу этого уровня.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. Чем Phantom Playable отличается от delayed playable?</summary>
+<div class="answer">
+<p><em>Delayed playable</em> соединяется через уже подсказанные карты или карты на <em>Finesse Position</em>, поэтому по ней можно дать <em>Play Clue</em>. <em>Phantom Playable</em> соединяется через видимые, но ещё неподсказанные и не находящиеся на Finesse Position промежуточные карты, поэтому прямую Play Clue ей пока давать нельзя.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Нужно ли любой ценой делать Scream Discard ради Phantom Playable-карты?</summary>
+<div class="answer">
+<p>Нет. Обычно её стоит защищать, но в сложной или тесной ситуации безопаснее позволить ей сброситься, особенно если это 4. Команда не должна чрезмерно рисковать ради Phantom Playable.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Когда сброс подсказанной некритической карты может быть Sacrifice Discard?</summary>
+<div class="answer">
+<p>Когда рука игрока <em>Locked</em> и ситуация действительно тяжёлая. Такой сброс не обязан означать Sarcastic или Gentleman's Discard; команда отличает Sacrifice от Generation Discard по контексту.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Что заставляет Scream Discard «отскочить» как Echo Scream Discard?</summary>
+<div class="answer">
+<p>Если следующий игрок уже имеет известный розыгрыш или известный безопасный сброс, обычный Scream на него был бы бессмыслен как крайняя мера. Тогда Chop Move распространяется ещё на следующего игрока; цепочка может продолжаться дальше.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Может ли Shout Discard вызвать Echo Chop Moves?</summary>
+<div class="answer">
+<p>Нет. Сброс известного мусора недостаточно серьёзен для такого сигнала. Это либо одиночный Shout Discard Chop Move, либо Generation Discard.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Что такое Composition Discard?</summary>
+<div class="answer">
+<p>Один сброс одновременно несёт два разных сообщения: для одного игрока он является Scream Discard и требует Chop Move, а для другого — Generation Discard и, наоборот, не требует Chop Move.</p>
+</div>
+</details>
+<details class="qa">
+<summary>7. Почему Rebellious Discard нарушает обычное правило Scream Discard?</summary>
+<div class="answer">
+<p>После Scream Discard следующий игрок обычно не имеет права сбрасывать. Но если трата последнего жетона подсказки вынудит следующего игрока сбросить критическую карту, он сначала делает положенный Chop Move, а затем сам сбрасывает новую chop-карту, возвращая команде жетон.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Полный перевод официального <a href="https://hanabi.github.io/level-22" rel="noopener" target="_blank">Level 22 — Rare Emergency Discards</a>. Официальный source не содержит отдельного набора Challenge Questions для этого уровня.</div>
+</article>
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

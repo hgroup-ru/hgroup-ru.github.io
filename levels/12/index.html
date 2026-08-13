@@ -1,0 +1,459 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-12" data-root="../../" data-route="levels/12">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="12" data-page-key="level-12" id="level-12-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-12">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 12 — Контекст (Context)</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 12</span><span class="badge">Context</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 12 — Контекст (Context)</h1>
+<section data-toc="Конвенции" id="l12-conventions">
+<h2>Конвенции</h2>
+</section>
+<section data-sub="1" data-toc="Предположение об асимметричной информации" id="l12-assuming-asymmetric-information">
+<h3>Предположение об асимметричной информации</h3>
+<ul>
+<li>Иногда игроки получают асимметричную информацию о точном значении карт в собственной руке.</li>
+<li>Например, в игре на четверых:<ul>
+<li>Идёт <em>Early Game</em>, доступно 3 жетона подсказок.</li>
+<li>Алиса сбрасывает и тем самым начинает <em>Mid-Game</em>.</li>
+<li>Боб понимает, что больше нечего подсказывать: иначе Алиса была бы обязана дать подсказку вместо сброса.</li>
+<li>В руке Боба находятся три 2, которые ранее были сохранены одной <em>2 Save</em>.</li>
+<li>Боб видит красную 2 на chop Кэти. Раз Алиса её не подсказала, в руке Боба должна находиться другая копия красной 2.</li>
+<li>После той старой <em>2 Save</em> Боб ещё не сбрасывал карты. Значит, одна из трёх его подсказанных 2 обязана быть второй красной 2, и Боб помечает все три карты как «возможная красная 2».</li>
+<li>Но эти заметки асимметричны: Алиса, Боб и Дональд записывают их, а Кэти — нет. Кэти вообще не понимает, что это происходит, потому что не видит собственную красную 2 на chop.</li>
+<li>Дальше Алиса, Боб и Дональд должны помнить об этой рассинхронизации информации.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-assuming-asymmetric-information"></div>
+</div>
+<ul>
+<li>По умолчанию игроки никогда не должны предполагать, что у другого игрока есть асимметричная информация. Асимметричная информация — <strong>исключение</strong>, а не нормальное состояние игры.</li>
+<li>В предыдущем примере Боб позже может сделать ход, который будто бы показывает, что он знает о красной 2 в своей руке. Но Кэти не должна предполагать, что Боб это знает, пока для его действия существует <strong>хоть какое-то другое объяснение</strong>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Duplication Responsibility" id="l12-duplication-responsibility">
+<h3>Duplication Responsibility</h3>
+<ul>
+<li>Обычно, если нужно сохранить 2, это не обязанность игрока, у которого уже есть подсказанные 2: дав новую подсказку, он потенциально нарушит <em>Good Touch Principle</em>. Поэтому такой игрок должен уступить и позволить сохранить карту кому-то другому. Тот же общий принцип действует, например, при подсказке играбельной карты на chop.</li>
+<li>Но если подсказанная 2 есть у <strong>каждого</strong> игрока, кому-то всё равно придётся рискнуть нарушить <em>Good Touch Principle</em>, чтобы выполнить <em>Save Principle</em>. Кто должен это сделать?</li>
+<li>В такой ситуации ответственность берёт игрок с <strong>наименьшим количеством подходящих подсказанных карт</strong>. Если 2 или больше игроков равны по этому критерию, ответственность берёт тот, чьи подсказки на этих картах менее конкретны.</li>
+<li>Если у 2 или более игроков совпадают и количество подсказанных карт, и тип информации на них, сохранить карту может любой из них.</li>
+<li>Пример 1:<ul>
+<li>В игре на троих у Алисы на chop синяя 2, которую нужно сохранить.</li>
+<li>У Боба две неизвестные 2.</li>
+<li>У Кэти одна неизвестная 2.</li>
+<li>Боб должен позволить Кэти сделать Save: одна подходящая карта — меньше, чем две.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-duplication-responsibility1"></div>
+</div>
+<ul>
+<li>Пример 2:<ul>
+<li>В игре на троих у Алисы на chop синяя 2, которую нужно сохранить.</li>
+<li>У Боба две неизвестные 2.</li>
+<li>У Кэти две неизвестные 2.</li>
+<li>Ответственность разделена. Боб должен дать подсказку, если у Кэти хороший сброс; либо Боб может сбросить сам и позволить Кэти сделать Save.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-duplication-responsibility2"></div>
+</div>
+<ul>
+<li>Пример 3:<ul>
+<li>В игре на троих у Алисы на chop синяя 2, которую нужно сохранить.</li>
+<li>У Боба две неизвестные синие карты.</li>
+<li>У Кэти одна неизвестная 2.</li>
+<li>Боб должен позволить Кэти сделать Save: одна подходящая карта — меньше, чем две.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-duplication-responsibility3"></div>
+</div>
+<ul>
+<li>Пример 4:<ul>
+<li>В игре на троих у Алисы на chop синяя 2, которую нужно сохранить.</li>
+<li>У Боба две неизвестные синие карты. На синем столе ещё ничего не сыграно, поэтому с точки зрения Боба каждая синяя карта имеет вероятность 1/9 оказаться синей 2.</li>
+<li>У Кэти две неизвестные 2. Ни одна 2 ещё не сыграна, поэтому с точки зрения Кэти каждая 2 имеет вероятность 1/9 оказаться синей 2.</li>
+<li>Ответственность разделена. Боб должен дать подсказку, если у Кэти хороший сброс; либо Боб может сбросить и позволить Кэти сделать Save.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-duplication-responsibility4"></div>
+</div>
+<ul>
+<li>Пример 5:<ul>
+<li>В игре на троих у Алисы на chop синяя 2, которую нужно сохранить.</li>
+<li>У Боба две неизвестные синие карты. На синем столе ещё ничего не сыграно, поэтому с точки зрения Боба каждая синяя карта имеет вероятность 1/9 оказаться синей 2.</li>
+<li>У Кэти две неизвестные 2. Одна 2 уже сыграна, поэтому с точки зрения Кэти каждая её 2 имеет вероятность 1/8 оказаться синей 2.</li>
+<li>Следовательно, сохранить синюю 2 обязан Боб.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-duplication-responsibility5"></div>
+</div>
+</section>
+<section data-toc="Специальные ходы" id="l12-special-moves">
+<h2>Специальные ходы</h2>
+</section>
+<section data-sub="1" data-toc="Selfish Clue" id="l12-the-selfish-clue">
+<h3>Selfish Clue</h3>
+<ul>
+<li><em>Selfish Clue</em> — это ситуация, когда игрок:<ol>
+<li>имеет в руке играбельную карту, например красную 2;</li>
+<li>даёт <em>Play Clue</em> следующей связующей карте, например красной 3.</li>
+</ol>
+</li>
+<li>Почти всегда давать <em>Selfish Clue</em> незачем. Игрок может просто сыграть свою играбельную карту и позволить кому-то другому в команде «получить» следующую. Эгоистичный подход обычно связан с плохой командной игрой.</li>
+<li>Но в редких случаях <em>Selfish Clue</em> может быть хорошей.</li>
+<li>Например, в игре на троих:<ul>
+<li>Все 1 уже сыграны на стол.</li>
+<li>В руке Алисы находится известная всей команде играбельная красная 2.</li>
+<li>Рука Боба от новой карты к старой: <code>синяя 1, красная 3, красная 4, красная 5, синяя 1</code>.</li>
+<li>И у Боба, и у Кэти есть безопасный сброс.</li>
+<li>Алиса понимает, что на этом ходу от неё ожидают розыгрыша красной 2, если только у неё нет действительно хорошей подсказки.</li>
+<li>Алиса видит: если она сыграет красную 2, Боб, скорее всего, останется без полезного действия и сбросит синюю 1.</li>
+<li>После этого красная 5 окажется на chop, и команде станет трудно получить все красные карты. В частности, кому-то, вероятно, придётся дать Бобу подсказку числом 3 как 1-for-1 по красной 3.</li>
+<li>Алиса видит, что если дать Бобу красную подсказку <strong>прямо сейчас</strong>, до розыгрыша красной 2, команда заранее обеспечит хороший 3-for-1. Команда потеряет темп, но здесь это несущественно: и у Боба, и у Кэти есть безопасный сброс.</li>
+<li>Алиса даёт Бобу красную подсказку как <em>Selfish Play Clue</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-selfish-clue"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Selfish Finesse (Finesse через собственную руку)" id="l12-the-selfish-finesse-a-finesse-through-your-own-hand">
+<h3>Selfish Finesse (Finesse через собственную руку)</h3>
+<ul>
+<li>Сначала см. раздел <a href="#l12-the-selfish-clue"><em>Selfish Clue</em></a>.</li>
+<li>Одна из отличных причин дать <em>Selfish Clue</em> — <strong>не упустить возможность сделать <em>Finesse<em>, пока карты не ушли из </em>Finesse Position</em></strong>. Это называется <em>Selfish Finesse</em>.</li>
+<li>Как и при любом другом <em>Finesse</em>, игроки в такой ситуации должны просто пометить карты на будущее и терпеливо дождаться, когда давший подсказку сыграет свою карту.</li>
+<li>Например, в игре на троих:<ul>
+<li>Первый ход, на столе ничего не сыграно.</li>
+<li>Алиса даёт Бобу красную подсказку, затрагивая красную 1 в слоте 1 как <em>Play Clue</em>. Теперь это известная всей команде красная 1, поскольку в руке Кэти других красных 1 нет.</li>
+<li>Боб даёт Кэти красную подсказку, затрагивая красную 3 в слоте 1 как <em>Play Clue</em>.</li>
+<li>Кэти видит красную 2 в <em>Finesse Position</em> Алисы, поэтому это должен быть <em>Selfish Finesse</em>. Боб не хотел сначала играть красную 1: после этого возможность <em>Finesse</em> могла исчезнуть, и он решил воспользоваться ею заранее. Кэти помечает свою красную карту как возможную красную 3 и сбрасывает.</li>
+<li>Алиса видит, что Боб дал <em>Play Clue</em> красной 3. Боб точно знает о своей красной 1, значит, красная 2 должна находиться у Алисы в <em>Finesse Position</em>. Алиса помечает карту в <em>Finesse Position</em> как красную 2 и сбрасывает.</li>
+<li>Боб играет красную 1.</li>
+<li>Кэти сбрасывает.</li>
+<li>Алиса вслепую играет красную 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-selfish-finesse"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Ego Clue (ошибка)" id="l12-the-ego-clue-mistake">
+<h3>Ego Clue (ошибка)</h3>
+<ul>
+<li>Когда у вас есть играбельная карта, обычно ошибочно откладывать её розыгрыш ради того, чтобы «украсть» подсказку у другого игрока и заставить его сбросить.</li>
+<li>Такая ситуация называется <em>Ego Clue</em>.</li>
+<li>Например, в игре на троих:<ul>
+<li>На столе сыграна красная 1.</li>
+<li>У Алисы известная всей команде синяя 1.</li>
+<li>У Боба на chop красная 2, а сразу за ней ещё одна красная 2.</li>
+<li>Алиса хочет, чтобы Боб сбросил, после чего она сможет дать прямую подсказку на красную 2 и отправить её в игру. Поэтому Алиса решает дать Кэти <em>Play Clue</em> по жёлтой 1, надеясь, что у Боба не окажется других полезных действий.</li>
+<li>Боб сбрасывает.</li>
+<li>Здесь Алиса сделала ошибку: линия с лучшей командной игрой — Алиса играет синюю 1, а Боб подсказывает жёлтую 1. Ускорить красную 2 не так важно, как оставить Бобу возможность потенциально подсказать руку Алисы.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-ego-clue"></div>
+</div>
+<ul>
+<li><em>Ego Clues</em> обычно плохи, потому что дающий подсказку забывает: он не видит собственную руку. Иногда действительно важно заставить Боба сбросить как можно быстрее, но это исключение, а не правило. Хорошие игроки Hanabi знают, что лучшие линии дают партнёрам больше возможностей, а не заставляют их делать то, что выглядит хорошо только с одной конкретной точки зрения.</li>
+<li><em>Ego Clue</em> применяется только когда у дающего подсказку есть играбельная карта. Если у него известный мусор, это не <em>Ego Clue</em>.</li>
+<li><em>Ego Clues</em> отличаются от <a href="#l12-the-selfish-clue"><em>Selfish Clues</em></a>: <em>Ego Clue</em> определяется подсказкой карты <strong>другого цвета</strong>, а <em>Selfish Clue</em> — связующей карты того же цвета.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Stale 1's Clue" id="l12-the-stale-1s-clue">
+<h3>Stale 1's Clue</h3>
+<ul>
+<li>У нас есть много конвенций, которые определяют смысл подсказок. Но одновременно от игроков всегда ожидается, что они смотрят на контекст партии.</li>
+<li>Иногда игрок получает подсказку, которая просто выглядит странно. Если эту хорошую подсказку можно было дать много ходов назад, почему её дают только сейчас? Остальные игроки всё это время не замечали карту и лишь наконец решили её подсказать?</li>
+<li>В таких ситуациях можно предположить, что команда не совершает ошибок, а значит, смысл подсказки должен отличаться от «учебникового». Мы называем такие подсказки <em>Context Clues</em>, потому что их чтение опирается на контекст состояния партии.</li>
+<li>Самая распространённая <em>Context Clue</em> в начале игры даётся по «залежавшимся» 1. Например, в игре на четверых:<ul>
+<li>После нескольких обычных подсказок Алиса сбрасывает, завершая <em>Early Game</em> и начиная <em>Mid-Game</em>. Этим она показывает, что полезных подсказок больше нет: в <em>Early Game</em> игроки обязаны «исчерпать» все доступные <em>Play Clues</em> и <em>Save Clues</em> до обычного сброса.</li>
+<li>Сразу после этого Боб даёт Кэти подсказку по двум 1.</li>
+<li>Обычно по <em>Good Touch Principle</em> Кэти решила бы, что обе 1 «хорошие», и сыграла бы обе.</li>
+<li>Но Кэти также знает: если обе 1 были хорошими, Алиса была обязана подсказать их до сброса.</li>
+<li>Значит, одна из 1 плохая. По конвенции Кэти знает, что плохая — самая старая, крайняя справа 1, поскольку именно её она обычно сыграла бы первой.</li>
+<li>Кэти должна пропустить самую старую, крайнюю справа 1 и сыграть другую. Самую старую 1 она также должна считать известным мусором.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-stale1s-clue"></div>
+</div>
+<ul>
+<li><em>Stale 1's Clue</em> — частный случай более общего понятия <em>Focus Inversion</em>, которое описано ниже.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Focus Inversion" id="l12-focus-inversion">
+<h3>Focus Inversion</h3>
+<ul>
+<li>Иногда <em>Play Clue</em> одновременно затрагивает chop и одну или несколько других карт. Обычная интерпретация — считать её chop-focus <em>Play Clue</em> и сыграть chop. Но иногда игрок знает, что chop на самом деле неиграбельна. Это можно определить по:<ul>
+<li>явной информации — негативным подсказкам на карте;</li>
+<li>неявной информации — историческим или контекстным выводам о карте из более ранних действий партнёров.</li>
+</ul>
+</li>
+<li>В таком случае <em>Play Clue</em> относится к <strong>крайней слева карте вместо chop</strong>.</li>
+<li>Как и при обычной <em>Play Clue</em>, затрагивающей несколько впервые затронутых карт, chop и остальные новые карты не обязаны быть играбельными прямо сейчас.</li>
+<li>Например, в игре на троих:<ul>
+<li>Алиса даёт Бобу подсказку числом 1, впервые затрагивая одну карту в слоте 1.</li>
+<li>Боб играет эту 1. Это красная 1, её удаётся успешно разыграть.</li>
+<li>Кэти даёт Бобу синюю подсказку, впервые затрагивая две карты — в слотах 1 и 5.</li>
+<li>Обычно Боб решил бы, что это <em>Chop-Focus</em> и нужно сыграть синюю 1 из слота 5.</li>
+<li>Но на карте Боба в слоте 5 есть негативная информация по числу 1 из предыдущей подсказки Алисы, поэтому она явно не может быть синей 1.</li>
+<li>Значит, это <em>Focus Inversion</em>, и синяя 1 должна находиться в слоте 1. Синяя карта в слоте 5 может быть синей 2, синей 3, синей 4 или синей 5.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-focus-inversion"></div>
+</div>
+<ul>
+<li>Обратите внимание: <strong><em>Self-Finesse</em> через подсказку по числу всегда имеет приоритет над <em>Focus Inversion</em></strong>. Это отдельный случай, где <em>Occam's Razor</em> не применяется. <em>Self-Finesses</em> по числу довольно распространены, а <em>Self-Finesses</em> по цвету бессмысленны.</li>
+</ul>
+</section>
+<section data-toc="Общие принципы" id="l12-general-principles">
+<h2>Общие принципы</h2>
+</section>
+<section data-sub="1" data-toc="Контекст (Context)" id="l12-context">
+<h3>Контекст (Context)</h3>
+<ul>
+<li>Если вы читаете этот раздел, вероятно, вы уже достаточно опытный игрок Hanabi и хорошо знаете основы. Поэтому сейчас подходящий момент разобрать возможное неправильное представление о наших конвенциях.</li>
+<li>До сих пор могло казаться, что у группы очень много конвенций и достаточно просто запомнить их все, чтобы стать очень сильным игроком. Или что конвенции похожи на законы, которым всегда нужно следовать. Ни то, ни другое неверно.</li>
+<li><strong>Контекст (Context)</strong> — это вся метаинформация о состоянии партии. В играх среднего и высокого уровня при определении смысла подсказки игроки должны <strong>всегда</strong> учитывать полный контекст. Поэтому понять подсказку никогда не сводится буквально к следованию одной из схем или таблиц на сайте.</li>
+<li>В стратегической документации было бы тяжело постоянно вставлять «вероятно» и «это может не работать в каждой ситуации». Для опытных игроков это очевидно: Hanabi достаточно сложна, чтобы любую конвенцию иногда требовалось нарушить, если конкретная позиция этого требует.</li>
+<li>Поэтому Reference нужно читать <strong>с некоторой долей условности</strong>, особенно когда встречается слово «всегда». Хотя сайт описывает «правильное» действие во многих ситуациях, это не строгие законы. Скорее, это описание стандартного или наиболее частого случая. Знать стандартные случаи очень полезно и игрокам среднего уровня, и экспертам. Но в каждой конкретной позиции всё равно необходимо думать самостоятельно.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Выбор между играбельными картами" id="l12-choosing-between-playable-cards">
+<h3>Выбор между играбельными картами</h3>
+<ul>
+<li>Обычно у игрока в конкретный момент есть только одна карта для розыгрыша. Если нет особенно хорошей подсказки, выбирать тут нечего: он просто играет эту карту.</li>
+<li>А что если играбельных карт две или больше? Какую играть первой?</li>
+<li>Если одна из них продолжает цепочку в руку партнёра, лучше сыграть её — это хорошая командная игра. В противном случае можно выбрать любую.</li>
+<li>Однако если игрок разыгрывает свои карты не в каком-то определённом порядке, это само по себе ничего специального не означает. Иными словами:<ul>
+<li>Когда <strong>у вас</strong> несколько играбельных карт, здраво оцените, какая из них сейчас лучше, и сыграйте её.</li>
+<li>Когда <strong>у другого игрока</strong> несколько играбельных карт, попробуйте предсказать его выбор. Но если он сыграл неожиданную карту, не пытайтесь делать из этого слишком далеко идущие выводы: он либо допустил небольшую ошибку, либо следует плану, который пока вам не виден.</li>
+</ul>
+</li>
+<li>На Level 25 карты уже нужно разыгрывать в <a href="https://hanabi.github.io/level-25" rel="noopener" target="_blank">очень определённом порядке</a>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Подсказки по 1 в Early Game" id="l12-cluing-1s-in-the-early-game">
+<h3>Подсказки по 1 в Early Game</h3>
+<ul>
+<li>Как описано в <a href="../3/#l3-tempo">стратегии Level 3</a>, Hanabi требует баланса между <em>Efficiency</em> и темпом.</li>
+<li>Как описано в <a href="../6/#l6-one-away">стратегии Level 6</a>, <em>one-away-from-playable</em> карты ценны.</li>
+<li>Поэтому игроки балансируют <em>Efficiency</em>, темп и возможность заранее затронуть <em>one-away-from-playable</em> карты, пока она не исчезла.</li>
+<li>В <em>Early Game</em> очень часто дают подсказку числом 1 по руке с двумя или более 1, и такая подсказка обычно хороша. Но из-за предыдущих соображений иногда выгоднее получить эти 1 несколькими подсказками по цвету.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Пример 1" id="l12-example-1">
+<h4>Пример 1</h4>
+<ul>
+<li>Нужно оценивать не только ценность собственной подсказки, но и то, как партнёры смогут <strong>развить</strong> её дальше.</li>
+<li>Например, в игре на троих:<ul>
+<li>Первый ход, на столе ничего не сыграно.</li>
+<li>Рука Боба от новой карты к старой: <code>зелёная 4, красная 1, красная 3, синяя 2, синяя 1</code>.</li>
+<li>Алиса хочет получить красную 1 и синюю 1 из руки Боба. Других красных 1 и синих 1 ни у кого нет. Что лучше подсказать: число 1, красный или синий цвет?</li>
+<li>Если Алиса подскажет число 1, это будет 2-for-1. Но затем команде, скорее всего, придётся потратить подсказку на синюю 2. Получится Efficiency 3-for-2, а красная 3, вероятно, в итоге будет сброшена. Плохо.</li>
+<li>Если Алиса подскажет синий цвет, это будет 2-for-1. Но после этого команда уже не сможет дать красную подсказку: она будет <em>Chop-Focused</em> на красной 3. Значит, придётся дать подсказку числом 1, и снова получится 3-for-2. Плохо.</li>
+<li>Поэтому Алиса должна сначала подсказать красный цвет, а позже — синий. В сумме получится Efficiency 4-for-2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-cluing-ones1"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 2" id="l12-example-2">
+<h4>Пример 2</h4>
+<ul>
+<li>Выбирая между подсказкой числом 1 и подсказкой по цвету, нужно учитывать и карты в руках остальных игроков.</li>
+<li>Например, в игре на четверых:<ul>
+<li>Первый ход, на столе ничего не сыграно.</li>
+<li>Рука Кэти от новой карты к старой: <code>красная 1, зелёная 4, синяя 3, синяя 1</code>.</li>
+<li>Дональд держит красную 2, которую можно нормально подсказать.</li>
+<li>Алиса хочет получить красную 1 и синюю 1. Других красных 1 и синих 1 ни у кого нет. Что лучше подсказать: 1, красный или синий цвет?</li>
+<li>Как и в предыдущем примере, подсказка числом 1 означает, что красную 2 потом придётся подсказывать как 1-for-1. Общая Efficiency получится 3-for-2.</li>
+<li>Вместо этого Алиса даёт Дональду красную подсказку и делает <em>Finesse</em> как 2-for-1. Затем Боб даёт Кэти синюю подсказку как 2-for-1. В сумме получается 4-for-2.<ul>
+<li>Эти две подсказки можно дать и в обратном порядке, но немного безопаснее, чтобы именно Алиса сначала сделала <em>Finesse</em>: в её собственной руке может находиться блокирующая карта.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-cluing-ones2"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Пример 3" id="l12-example-3">
+<h4>Пример 3</h4>
+<ul>
+<li>Как объясняется в <a href="https://hanabi.github.io/beginner/other-general-strategy" rel="noopener" target="_blank">Beginner’s Guide</a>, если в руке игрока есть играбельная карта, почти всегда лучше дать <em>Play Clue</em>, чем <em>Save Clue</em>.</li>
+<li>Однако иногда выгоднее сначала дать <em>Save Clue</em>, а <em>Play Clue</em> — позже.</li>
+<li>Например, в игре на троих:<ul>
+<li>Первый ход, на столе ничего не сыграно.</li>
+<li>Рука Кэти от новой карты к старой: <code>синяя 4, синяя 4, красная 3, красная 1, синяя 5</code>.</li>
+<li>Алиса хочет получить красную 1. Других красных 1 ни у кого нет. Алиса также знает, что команде в итоге нужно сохранить синюю 5.</li>
+<li>Если Алиса сначала даст подсказку числом 1 ради красной 1, затем команде понадобится <em>5 Save</em> для синей 5. Получится Efficiency 2-for-2.</li>
+<li>Вместо этого Алиса даёт подсказку числом 5 как <em>5 Save</em>. После неё Боб может продолжить красной <em>Chop-Focus Play Clue</em>, которая заодно затрагивает красную 3 и становится 2-for-1. Общая Efficiency — 3-for-2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l12-diagram-cluing-ones3"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Другие соображения" id="l12-other-considerations">
+<h4>Другие соображения</h4>
+<ul>
+<li>На случай если Hanabi всё ещё кажется вам недостаточно сложной, при выборе лучшей подсказки есть ещё несколько факторов:<ul>
+<li>Помещает ли подсказка по цвету играбельную карту в <em>Finesse Position</em>? Если да, возможно, подсказка по цвету лучше.</li>
+<li>Даёт ли подсказка числом 1 игроку возможность сделать полезный <em>Order Chop Move</em>? Если да, возможно, подсказка числом 1 лучше.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-toc="Тренировочные вопросы" id="l12-training">
+<h2>Тренировочные вопросы</h2>
+<p class="source-mini">В официальном источнике отдельного набора Official Challenge Questions для Level 12 нет; ниже — наши Training Questions по материалу этого уровня.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. Нужно ли по умолчанию предполагать у партнёра асимметричную информацию?</summary>
+<div class="answer">
+<p>Нет. Асимметричная информация — исключение. Предполагать её следует только когда для наблюдаемого действия не остаётся другого объяснения.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Кто отвечает за Save, если у нескольких игроков уже есть подходящие подсказанные карты?</summary>
+<div class="answer">
+<p>Ответственность берёт игрок с меньшим числом совпадающих подсказанных карт; при равенстве — с менее конкретной информацией. При полном равенстве ответственность разделена.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Когда Selfish Clue может быть оправдана?</summary>
+<div class="answer">
+<p>Редко: например, когда подсказка заранее обеспечивает особенно эффективную линию, а потеря темпа безопасна благодаря хорошим сбросам команды.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Зачем делать Selfish Finesse?</summary>
+<div class="answer">
+<p>Чтобы не упустить возможность Finesse, пока карты ещё находятся в нужных Finesse Position. Игроки помечают обещанные карты и ждут, пока дающий подсказку разыграет свою связующую карту.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Что делает Focus Inversion?</summary>
+<div class="answer">
+<p>Если chop затронута Play Clue, но игрок знает, что chop неиграбельна, фокус переносится на крайнюю слева карту вместо chop.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Почему Context важнее механического следования конвенциям?</summary>
+<div class="answer">
+<p>Поздние уровни считают конвенции стандартными интерпретациями, а не абсолютными законами: полный контекст партии может требовать отступления от классического случая.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Полный перевод текущего официального <a href="https://hanabi.github.io/level-12" rel="noopener" target="_blank">Level 12 — Context</a>.</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

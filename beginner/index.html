@@ -1,0 +1,2192 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="beginner" data-root="../" data-route="beginner">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="#bg-card-layout">Расположение карт</a><a class="guide-link" href="#bg-chop">Chop</a><a class="guide-link" href="#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="#bg-play-clues">Play Clues</a><a class="guide-link sub" href="#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="#bg-save-clues">Save Clues</a><a class="guide-link sub" href="#bg-5-save">5 Save</a><a class="guide-link sub" href="#bg-2-save">2 Save</a><a class="guide-link sub" href="#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="#bg-principles">Три основных принципа</a><a class="guide-link sub" href="#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="#bg-save-principle">Save Principle</a><a class="guide-link sub" href="#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="#bg-early-game">Early Game</a><a class="guide-link sub" href="#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="#bg-special">Особые приёмы</a><a class="guide-link sub" href="#bg-prompt">Prompt</a><a class="guide-link sub" href="#bg-finesse">Finesse</a><a class="guide-link sub" href="#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+<article class="content-page guide-page" data-page-key="beginner" data-page-label="Beginner’s Guide" id="beginner-top">
+<div class="guide-hero">
+<div><span class="guide-eyebrow">H-GROUP · РУССКАЯ АДАПТАЦИЯ</span><h1>Beginner’s Guide</h1><p>Пошаговое введение перед Reference: от Chop и заметок на картах до Prompt и Finesse.</p></div>
+<div class="guide-stat"><strong>≈60</strong><span>минут</span></div>
+</div>
+<div class="guide-progress-strip"><span>Введение + 22 главы</span><span>47 официальных Challenge Questions</span><span>Решения не входят в поиск</span></div>
+<div class="preview-note"><strong>Формат:</strong> Объяснения — по-русски; составные названия конвенций H-Group / Hanabi и буквенная нотация заметок сохраняются на английском. В русской прозе используются имена Алиса, Боб, Кэти, Дональд и Эмили; официальные подписи внутри схем сохраняются без изменений. Все 47 официальных Beginner Challenge Questions доступны вместе с 94 схемами состояний «Вопрос»/«Решение». Все необходимые ресурсы схем включены в документ, поэтому для их отображения не нужен интернет.</div>
+<section data-toc="Beginner’s Guide — Введение" id="bg-intro">
+<h2>Beginner’s Guide — Введение</h2>
+<ul>
+<li>H-Group всегда рад новым игрокам. Если вы хотите начать играть с группой, выделите около 60 минут и пройдите это руководство, чтобы освоить базовые договорённости.</li>
+<li>Если же вы хотите просто освоить надёжные фундаментальные стратегии для Hanabi со своей компанией, смело используйте эти принципы и там.</li>
+<li>Нужен ли действительно целый час вводного материала? И да, и нет. Если прийти играть с H-Group, не понимая смысла базовых подсказок, получится примерно как если бы группа людей пыталась найти друг друга в тёмной комнате, бегая с вытянутыми руками.</li>
+<li>Мы понимаем, что 60 минут — долго. Поэтому руководство разбито на небольшие части, а в конце почти каждого раздела есть Challenge Questions, чтобы материал было легче проходить и проверять себя.</li>
+</ul>
+<h3>Предупреждение</h3>
+<ul>
+<li>Beginner’s Guide предполагает, что вы уже знаете базовые правила Hanabi. Если их нужно освежить, можно <a href="https://github.com/hanabi/hanabi.github.io/blob/main/misc/rules.md">прочитать официальные правила</a> или посмотреть видео, указанное в оригинальном руководстве.</li>
+<li>Если правила вы знаете, но <strong>никогда ещё не играли</strong> в Hanabi, лучше сначала сыграть одну-две пробные партии. Тогда механика игры будет привычнее и дальнейшие объяснения окажутся понятнее.</li>
+</ul>
+<h3>Обзор</h3>
+<p>В этом руководстве разбираются следующие стратегии и договорённости:</p>
+<ol>
+<li><strong>Chop</strong> — самая старая карта без подсказки.</li>
+<li><strong>Card Notes</strong> — после каждой подсказки вручную записывать информацию, которая понадобится позже.</li>
+<li>Два типа подсказок:<ul>
+<li><strong>Play Clue</strong> — обещает, что сфокусированную карту можно сыграть;</li>
+<li><strong>Save Clue</strong> — не даёт сфокусированной карте быть сброшенной.</li>
+</ul>
+</li>
+<li><strong>Single-Card Focus</strong> — у каждой подсказки есть ровно одна карта в фокусе.</li>
+<li><strong>Good Touch Principle</strong> — затрагивать подсказками только карты, которые в итоге будут сыграны; не затрагивать карты, которые никогда не понадобятся.</li>
+<li><strong>Save Principle</strong> — спасать все важные карты.</li>
+<li><strong>Minimum Clue Value Principle</strong> — каждой подсказкой получать как минимум одну новую карту.</li>
+<li><strong>Prompts</strong> и <strong>Finesses</strong> — по возможности получать два и более розыгрыша одной подсказкой.</li>
+</ol>
+<h3>Готовы?</h3>
+<p>Если да — переходите к следующему разделу.</p>
+</section>
+<section data-toc="Расположение карт" id="bg-card-layout">
+<h2>Расположение карт</h2>
+<p>В руководстве используются схемы, которые показывают игровые ситуации и новые понятия.</p>
+<h3>Стол и руки игроков</h3>
+<ul>
+<li>Пять <strong>стопок розыгрыша</strong> находятся слева.</li>
+<li><strong>Руки игроков</strong> находятся справа.</li>
+<li>Алиса всегда игрок №1 и всегда ходит первой.</li>
+<li>Боб всегда игрок №2 и всегда ходит вторым.</li>
+<li>Новые карты добираются и добавляются <strong>слева</strong> в руку.<ul>
+<li>Поэтому самая новая карта Алисы — синяя 1, а самая новая карта Боба — красная 2.</li>
+</ul>
+</li>
+<li>Соответственно, самая старая карта находится <strong>крайне справа</strong>.<ul>
+<li>Поэтому самая старая карта Алисы — синяя 5, а самая старая карта Боба — красная 1.</li>
+</ul>
+</li>
+<li><strong>Слот</strong> карты — её позиция в руке слева направо.<ul>
+<li>Синяя 1 находится в слоте 1, синяя 2 — в слоте 2 и так далее.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-card-layout-1"></div>
+</div>
+<h3>Подсказки</h3>
+<ul>
+<li>Стрелки показывают, что карта была <strong>затронута</strong> последней данной подсказкой.</li>
+<li>Карты с подсказкой постоянно имеют жёлтую рамку. У карт без подсказки такой рамки нет.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-card-layout-2"></div>
+</div>
+<ul>
+<li>Когда подсказка затрагивает карту <strong>впервые</strong>, на неё указывает белая стрелка и появляется жёлтая рамка.</li>
+<li>Если последующая подсказка снова затрагивает уже подсказанную карту, на неё указывает серая стрелка.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-card-layout-3"></div>
+</div>
+<h3>Challenge Questions</h3>
+<p>После каждого раздела будет один или несколько Challenge Questions. Сначала решите задачу самостоятельно, затем откройте вкладку <strong>«Решение»</strong>, чтобы посмотреть ответ.</p>
+</section>
+<section data-toc="Chop" id="bg-chop">
+<h2>Chop</h2>
+<ul>
+<li>В Hanabi игроки сбрасывают карты из руки, чтобы возвращать команде жетоны подсказок. Но какую именно карту следует сбрасывать?</li>
+<li>Крайняя справа <strong>карта без подсказки</strong> называется картой на <strong>chop</strong>.<ul>
+<li>Это метафора карты, лежащей «на плахе».</li>
+</ul>
+</li>
+<li>Когда игроку нужно сбросить карту, он должен сбрасывать свою карту на chop. Благодаря этому <strong>все сбрасывают предсказуемо</strong>.</li>
+</ul>
+<h3>Без подсказок</h3>
+<ul>
+<li>В примере ниже:<ul>
+<li>chop Алисы — красная 5 в слоте 5;</li>
+<li>chop Боба — красная 3 в слоте 5.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-chop-1"></div>
+</div>
+<h3>С подсказками</h3>
+<ul>
+<li>В примере ниже:<ul>
+<li>chop Алисы — синяя 4 в слоте 4, потому что слот 5 уже с подсказкой;</li>
+<li>chop Боба — синяя 3 в слоте 2, потому что слоты 3, 4 и 5 уже с подсказками.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-chop-2"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-chop-question-1">
+<div class="official-head">
+<h3>1. Chop</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какой слот является chop Алисы?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 5, зелёная 1, потому что ни на одной карте нет подсказки.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-chop-question-2">
+<div class="official-head">
+<h3>2. Chop</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какой слот является chop Алисы?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 2, синяя 3, потому что слоты 3, 4 и 5 уже с подсказками.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-chop-question-3">
+<div class="official-head">
+<h3>3. Chop</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какой слот является chop Алисы?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 3, синяя 2, потому что слоты 4 и 5 уже с подсказками.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-chop-question-4">
+<div class="official-head">
+<h3>4. Chop</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какой слот является chop Алисы?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Это вопрос с подвохом. У Алисы <strong>нет chop</strong>, потому что все её карты уже с подсказками. Алиса <strong>не имеет права сбрасывать</strong>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-chop-question-4-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Заметки на картах (Card Notes)" id="bg-card-notes">
+<h2>Заметки на картах (Card Notes)</h2>
+<p>Во время игры в Hanabi нужно писать <strong>заметки на картах (Card Notes)</strong>. Этот раздел объясняет, почему это необходимо.</p>
+<h3>Явная и неявная информация</h3>
+<ul>
+<li>О картах в своей руке игроки знают <strong>явную</strong> и <strong>неявную</strong> информацию:<ul>
+<li>явная информация приходит непосредственно от подсказок, которые находятся «на» карте;</li>
+<li>неявная информация следует из контекста игры <strong>в тот момент, когда карта получила подсказку</strong>.</li>
+</ul>
+</li>
+<li>Например, в игре на троих:<ul>
+<li>это самый первый ход партии;</li>
+<li>Алиса даёт Бобу красную подсказку, затрагивая его карту в слоте 1. Алиса намерена дать <strong>Play Clue</strong>: Боб должен понять, что у него красная 1 и её нужно сыграть на стол прямо сейчас;</li>
+<li>с точки зрения Боба, <strong>явно</strong> его красная карта может быть красной 1, 2, 3, 4 или 5;</li>
+<li>но <strong>неявно</strong> Боб понимает, что Алиса хочет немедленного розыгрыша этой карты, значит это должна быть именно красная 1;</li>
+<li>цвета в заметках на картах принято сокращать до первой буквы.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-card-notes-1"></div>
+</div>
+<h3>Игроки должны отслеживать неявную информацию</h3>
+<ul>
+<li>На <a href="https://hanab.live/">Hanab Live</a> интерфейс автоматически запоминает, какие подсказки затрагивали карты, и автоматически сужает возможные значения карт по мере того, как они получают дополнительную <strong>явную</strong> информацию.</li>
+<li>Однако одного автоматического отслеживания явной информации недостаточно: в Hanabi <strong>неявной информации гораздо больше, чем явной</strong>.</li>
+<li>Если игроки дают друг другу только простейшие Play Clues, как в предыдущем примере, помнить неявную информацию легко. Но чем сложнее становится партия, тем менее реально удерживать в голове неявную информацию о каждой карте.</li>
+<li>Поэтому для правильной игры недостаточно автоматического отслеживания: игроки <strong>обязаны сами записывать всю неявную информацию</strong>.</li>
+</ul>
+<h3>Запись заметок на картах</h3>
+<ul>
+<li>На Hanab Live можно отслеживать неявную информацию, щёлкнув по карте правой кнопкой. Появится текстовое поле, куда можно записать всё необходимое. Это и называется <strong>заметкой на карте (card note)</strong>.</li>
+<li><strong>После каждой без исключения подсказки игроки должны записывать заметку на затронутой карте.</strong></li>
+<li>В предыдущем примере Боб должен щёлкнуть правой кнопкой по своей красной карте и записать <code>r1</code>, чтобы не забыть эту информацию позже.</li>
+<li>Более того, Алиса и Кэти <strong>тоже</strong> должны записать <code>r1</code> на красной карте Боба, чтобы отслеживать, что именно Боб думает о своей карте. Иными словами, <strong>все пишут заметки на картах всех игроков</strong>.</li>
+</ul>
+<h3>Как избегать ошибок</h3>
+<ul>
+<li>Поскольку красная подсказка в примере очень простая, может показаться, что записывать <code>r1</code> бессмысленно и это только тратит время. Но Боб <strong>может не сыграть красную 1 ещё очень много ходов</strong>, а к тому моменту состояние игры может радикально измениться.</li>
+<li>Самая частая ошибка начинающих, которую видит H-Group, — не записать заметку на карте, а позже забыть эту информацию.</li>
+<li>Не пропускайте этот шаг: пишите Card Notes после <strong>каждой подсказки</strong>, независимо от того, насколько она простая или сложная.</li>
+</ul>
+</section>
+<section data-toc="Два типа подсказок" id="bg-two-types">
+<h2>Два типа подсказок</h2>
+<ul>
+<li>В своей основе Hanabi — игра о подсказках. Разные группы по-разному договариваются о том, что подсказки должны означать.</li>
+<li>В H-Group подсказка <strong>всегда</strong> имеет конкретный смысл.</li>
+<li>Игрокам разрешено давать <strong>только два типа подсказок</strong>:<ul>
+<li><strong>Play Clue</strong> — означает сыграть карту в фокусе;</li>
+<li><strong>Save Clue</strong> — означает сохранить карту в фокусе на потом.</li>
+</ul>
+</li>
+<li>Если игрок не может дать корректную Play Clue или Save Clue, он <strong>обязан сбросить карту</strong>.</li>
+<li>Дальше разберём Play Clues и Save Clues по отдельности.</li>
+</ul>
+</section>
+<section data-toc="Play Clues" id="bg-play-clues">
+<h2>Play Clues</h2>
+<ul>
+<li>Первый тип подсказки называется <strong>Play Clue</strong>.</li>
+<li>Цель Hanabi — сыграть на стол все необходимые карты. Поэтому Play Clues сообщают партнёрам, что конкретные карты играбельны.</li>
+<li>Здесь Алиса даёт Бобу красную подсказку, затрагивая карту в слоте 2.</li>
+<li>Это сообщение: «сыграй эту карту». Следовательно, карта должна быть красной 1, потому что на красной стопке ещё ничего нет.</li>
+<li>После подсказки все игроки записывают на карте, что это красная 1.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-play-clue-1"></div>
+</div>
+<ul>
+<li>Play Clue можно дать как по цвету, так и по числу.</li>
+<li>Здесь Алиса даёт Бобу подсказку числом 1, затрагивая карту в слоте 3.</li>
+<li>Как и раньше, сообщение означает: «сыграй эту карту». Следовательно, карта должна быть жёлтой 1 или синей 1 — это единственные две единицы, которые ещё не сыграны.</li>
+<li>После подсказки все игроки записывают на карте, что это жёлтая 1 или синяя 1.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-play-clue-2"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-play-clues-question-1">
+<div class="official-head">
+<h3>1. Play Clues</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу синюю подсказку, затрагивая одну карту в слоте 3.</li>
+<li>С точки зрения Боба это должна быть <strong>Play Clue</strong>. Боб записывает точное значение карты.</li>
+<li>Что именно Боб запишет в Card Notes?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-play-clues-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб записывает <code>b2</code>.<ul>
+<li>Синяя 1 уже сыграна, поэтому следующая синяя карта для розыгрыша — синяя 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-play-clues-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-play-clues-question-2">
+<div class="official-head">
+<h3>2. Play Clues</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу подсказку числом 4, затрагивая одну карту в слоте 4.</li>
+<li>С точки зрения Боба это должна быть <strong>Play Clue</strong>. Боб записывает возможные значения карты.</li>
+<li>Что именно Боб запишет? Укажите все варианты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-play-clues-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб записывает <code>r4, g4, b4</code>.<ul>
+<li>Именно у этих цветов 4 сейчас играбельна, поэтому карта может быть любой из этих трёх.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-play-clues-question-2-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-sub="1" data-toc="Delayed Play Clues" id="bg-delayed-play">
+<h2>Delayed Play Clues</h2>
+<ul>
+<li>Разрешено давать <strong>Play Clue</strong> карте, которая сможет сыграться на стол <strong>только после того, как другие игроки сыграют карты того же цвета</strong>. Такая подсказка называется <strong>Delayed Play Clue</strong>.</li>
+<li>Мы договариваемся считать <strong>каждую Play Clue потенциальной Delayed Play Clue</strong>.</li>
+<li>Например, в игре на троих:<ul>
+<li>Алиса даёт Бобу подсказку числом 2; это Play Clue на двойку;</li>
+<li>теперь ход Боба. Если его двойка — красная 2, он может сыграть её прямо сейчас;</li>
+<li>однако Боб знает, что это также может быть Delayed Play Clue через жёлтую 1, зелёную 1 или синюю 1. Поэтому прежде чем пытаться играть двойку, Боб обязан дождаться, пока Кэти сыграет все свои единицы;</li>
+<li>Боб записывает все эти варианты в заметку на карте, а затем сбрасывает.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-delayed-play"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-delayed-play-clues-question-1">
+<div class="official-head">
+<h3>1. Delayed Play Clues</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Дональду красную подсказку, затрагивая одну карту в слоте 2. Это <strong>Play Clue</strong>.</li>
+<li>Боб даёт Кэти красную подсказку, затрагивая одну карту в слоте 3. Это <strong>Play Clue</strong>.</li>
+<li>Кэти записывает возможное значение своей карты.</li>
+</ul>
+<ol>
+<li>Что Кэти запишет?</li>
+<li>Является ли эта подсказка <strong>Delayed Play Clue</strong>?</li>
+<li>Какое действие должна сделать Кэти?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-delayed-play-clues-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>Кэти записывает <code>r3</code>.</li>
+<li>Да. Это <strong>Delayed Play Clue</strong> через красную 2.</li>
+<li>Красную 3 пока нельзя сыграть, поэтому Кэти должна дать постороннюю подсказку или сбросить.</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-delayed-play-clues-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-delayed-play-clues-question-2">
+<div class="official-head">
+<h3>2. Delayed Play Clues</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Ранее Кэти получила подсказку на несколько 1 и в будущем сыграет обе эти карты.</li>
+<li>Алиса даёт Бобу подсказку числом 3, затрагивая одну карту в слоте 1. Это <strong>Play Clue</strong>.</li>
+<li>Боб записывает возможные значения карты.</li>
+</ul>
+<ol>
+<li>Что Боб запишет? Укажите все варианты.</li>
+<li>Является ли это <strong>Delayed Play Clue</strong>?</li>
+<li>Какое действие должен сделать Боб?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-delayed-play-clues-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>Боб записывает <code>b3, p3</code>.</li>
+<li>Нет, это не Delayed Play Clue. Его 3 не может соединяться с красной 1 или зелёной 1 Кэти, потому что ни у кого больше нет подходящих связующих 2.</li>
+<li>Боб, скорее всего, должен сразу сыграть 3 — если только у него нет хорошей подсказки, которую важнее дать.</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-delayed-play-clues-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-delayed-play-clues-question-3">
+<div class="official-head">
+<h3>3. Delayed Play Clues</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу подсказку числом 4, затрагивая одну карту в слоте 1. Это <strong>Play Clue</strong>.</li>
+<li>Боб записывает возможные значения карты.</li>
+</ul>
+<ol>
+<li>Что Боб запишет? Укажите все варианты.</li>
+<li>Является ли это <strong>Delayed Play Clue</strong>?</li>
+<li>Какое действие должен сделать Боб?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-delayed-play-clues-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>Боб записывает <code>r4, y4, b4, p4</code>.<ul>
+<li>Во-первых, это может быть прямая Play Clue на красную 4 или фиолетовую 4.</li>
+<li>Во-вторых, это может быть Delayed Play Clue на жёлтую 4 через жёлтые 2 и 3 Кэти.</li>
+<li>В-третьих, это может быть Delayed Play Clue на синюю 4 через синюю 3 Дональда.</li>
+</ul>
+</li>
+<li>Боб не знает, обычная это Play Clue или Delayed Play Clue. Но поскольку <strong>каждую Play Clue нужно рассматривать как потенциальную Delayed Play Clue</strong>, Боб не может играть 4 на этом ходу.</li>
+<li>Раз карту пока нельзя играть, Боб должен дать постороннюю подсказку или сбросить.</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-delayed-play-clues-question-3-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Save Clues" id="bg-save-clues">
+<h2>Save Clues</h2>
+<ul>
+<li>Второй тип подсказки называется <strong>Save Clue</strong>.</li>
+<li>В Hanabi количество копий каждой конкретной карты ограничено. Если сбросить все копии некоторой карты, максимальный счёт станет недостижим. Поэтому Save Clues сообщают, что определённую карту нужно сохранить на потом.</li>
+</ul>
+<h3>Только карты на chop</h3>
+<ul>
+<li><strong>Save Clue можно давать только карте на chop.</strong><ul>
+<li>Поэтому если подсказка фокусируется на карте <strong>не на chop</strong>, она обязана быть Play Clue.</li>
+</ul>
+</li>
+</ul>
+<h3>Какие карты можно спасать</h3>
+<ul>
+<li>Команда <strong>обязана спасать</strong> следующие карты — и <strong>только их</strong> разрешено спасать Save Clue:<ul>
+<li>все 5;</li>
+<li>уникальные 2, то есть двойки, чья вторая копия сейчас не видна;</li>
+<li>критические карты, то есть карты, все остальные копии которых уже сброшены.</li>
+</ul>
+</li>
+<li>Почему нужно спасать 5 и критические карты, очевидно: их сброс уменьшает максимально возможный счёт.</li>
+<li>Причина спасать 2 менее очевидна. H-Group договаривается относиться к двойкам почти как к критическим картам, потому что они очень важны для стабильного получения максимального счёта.</li>
+</ul>
+<h3>Иногда нельзя знать наверняка — тогда держите карту</h3>
+<ul>
+<li>Иногда подсказка, сфокусированная на chop, может оказаться как Play Clue, так и Save Clue.</li>
+<li>В таком случае получатель обязан <strong>рассматривать обе возможности</strong> и держать карту, пока не станет ясно, что именно имелось в виду.</li>
+<li>В частности, в Card Notes нужно записать <strong>все возможные значения играбельной карты</strong>, если это может быть Play Clue, <strong>и все возможные значения спасаемой карты</strong>, если это может быть Save Clue.</li>
+</ul>
+<h3>Три типа Save Clues</h3>
+<ul>
+<li>Соответственно списку выше существует три типа Save Clues:<ul>
+<li><strong>5 Save</strong>;</li>
+<li><strong>2 Save</strong>;</li>
+<li><strong>Critical Save</strong>.</li>
+</ul>
+</li>
+<li>Дальше разберём каждый отдельно.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="5 Save" id="bg-5-save">
+<h2>5 Save</h2>
+<ul>
+<li>В Hanabi есть только одна копия каждой 5, поэтому нельзя позволять игрокам их сбрасывать.</li>
+<li>Мы договариваемся, что 5 нужно спасать <strong>подсказкой числом 5</strong>. Такая подсказка называется <strong>5 Save</strong>.</li>
+<li>В примере ниже:<ul>
+<li>Алиса даёт Бобу подсказку числом 5, затрагивая единственную 5 в слоте 5;</li>
+<li>до этой подсказки в руке Боба не было ни одной карты с подсказкой;</li>
+<li>поскольку подсказка сфокусировалась на его chop, Боб понимает, что это должна быть 5 Save. Карта может быть любой 5 в игре.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-5-save"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-5-save-question-1">
+<div class="official-head">
+<h3>1. 5 Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-5-save-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>У Боба в руке есть одна 5, но она не на chop.</li>
+<li>У Дональда в руке две 5, но ни одна из них не на chop.</li>
+<li>Алиса знает, что <strong>Save Clues разрешено давать только картам на chop</strong>.</li>
+<li>Поэтому Алисе нечего делать: она должна сбросить.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-5-save-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-5-save-question-2">
+<div class="official-head">
+<h3>2. 5 Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Перечислите все разрешённые действия Алисы.</li>
+<li>Какое действие должна выбрать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-5-save-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>У Боба на chop лежит жёлтая 2, которую обычно нужно было бы спасать. Но в руке Кэти уже есть другая копия этой жёлтой 2 с подсказкой, поэтому жёлтая 2 Боба — мусор, её нужно игнорировать.</li>
+<li>У Боба также две 5, но ни одна не на chop, поэтому пока спасать их нельзя.</li>
+<li>У Кэти две 5. Одна уже спасена, то есть имеет подсказку, а вторая ещё не спасена и находится на chop.<ul>
+<li>Chop Кэти — слот 2, потому что карты в слотах 3 и 4 уже с подсказками.</li>
+</ul>
+</li>
+<li>Следовательно, разрешённые действия Алисы:<ul>
+<li>спасти 5 Кэти;</li>
+<li>сбросить.</li>
+</ul>
+</li>
+<li>Что лучше? В этой ситуации пятёрку Кэти может спасти либо Алиса, либо Боб:<ul>
+<li>если Алиса спасает 5 Кэти, Боб затем сбросит жёлтую 2, которая является мусором;</li>
+<li>если Алиса сбрасывает, она сбросит неизвестную карту, а затем Боб спасёт 5 Кэти.</li>
+</ul>
+</li>
+<li>Сбрасывать известный мусор лучше, чем неизвестную карту. Поэтому Алиса должна <strong>дать подсказку и позволить Бобу сбросить мусор</strong>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-5-save-question-2-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-sub="1" data-toc="2 Save" id="bg-2-save">
+<h2>2 Save</h2>
+<ul>
+<li>Хотя каждой 2 в колоде по две копии, H-Group считает двойки настолько важными, что их нужно спасать почти так же, как 5.</li>
+<li>Мы договариваемся спасать 2 <strong>подсказкой числом 2</strong>. Такая подсказка называется <strong>2 Save</strong>.</li>
+<li>В примере ниже:<ul>
+<li>Алиса даёт Бобу подсказку числом 2, затрагивая двойку в слоте 5;</li>
+<li>до этой подсказки в руке Боба не было карт с подсказками;</li>
+<li>поскольку подсказка сфокусировалась на chop, Боб понимает, что это 2 Save. Карта может быть любой 2 в игре.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-2-save"></div>
+</div>
+<h3>Когда видны несколько копий</h3>
+<ul>
+<li>Можно считать 2 Save <strong>крайней мерой</strong> для спасения двойки. Поэтому нельзя делать 2 Save, если такая же 2 видна в руке другого игрока.</li>
+<li>Команде пока не нужно спасать именно эту копию: позже можно спасти вторую.</li>
+<li>Например, в игре на троих:<ul>
+<li>у Боба красная 2 в слоте 5 — на chop;</li>
+<li>у Кэти другая красная 2 в слоте 3;</li>
+<li>поэтому Алиса <strong>не имеет права</strong> делать 2 Save красной 2 Боба.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-2-save-illegal"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-2-save-question-1">
+<div class="official-head">
+<h3>1. 2 Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу подсказку числом 2, затрагивая слот 4.</li>
+<li>С точки зрения Боба это Play Clue или Save Clue?</li>
+<li>Что Боб запишет в Card Notes?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-2-save-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Это не может быть Save Clue, потому что подсказка не затронула карту Боба на chop. Следовательно, это должна быть <strong>Play Clue</strong>.</li>
+<li>Боб записывает следующие возможные значения:<ul>
+<li>жёлтая 2 — как Delayed Play Clue через жёлтую 1 Кэти;</li>
+<li>синяя 2 — как непосредственно играбельная карта.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-2-save-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-2-save-question-2">
+<div class="official-head">
+<h3>2. 2 Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Ранее Боб получил Play Clue на 1 и собирался сыграть её на следующем ходу.</li>
+<li>Теперь Алиса даёт Бобу подсказку числом 2, затрагивая слот 5.</li>
+<li>С точки зрения Боба это Play Clue или Save Clue?</li>
+<li>Что Боб запишет? Укажите все варианты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-2-save-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>На своей 1 Боба уже записал <code>r1, b1, p1</code>, потому что именно эти единицы ещё нужно сыграть на стол.</li>
+<li>Если новая подсказка — <strong>Play Clue</strong>, тогда его 2 может быть:<ul>
+<li>жёлтой 2 — непосредственно играбельной;</li>
+<li>либо Delayed Play Clue на 2 того же цвета, что и его неизвестная 1: например красной 2, синей 2 или фиолетовой 2.</li>
+</ul>
+</li>
+<li>Но подсказка затронула chop Боба, поэтому она также может быть <strong>Save Clue</strong>. В таком случае это может быть 2 Save на пока неиграбельную 2.</li>
+<li>Боб не знает, Play Clue это или Save Clue. Пока дополнительной информации нет, он обязан учитывать вариант Save Clue и держать карту.</li>
+<li>Поэтому Боб записывает <code>r2, y2, b2, p2</code>.<ul>
+<li>Зелёной 2 быть не может: она уже сыграна и бесполезна команде, а Алиса не стала бы тратить на такую карту подсказку.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-2-save-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-2-save-question-3">
+<div class="official-head">
+<h3>3. 2 Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-2-save-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса не имеет права делать 2 Save зелёной 2 Боба, потому что другая зелёная 2 находится в руке Кэти и не на chop.</li>
+<li>Алиса не имеет права делать 2 Save жёлтой 2 Кэти, потому что другая жёлтая 2 находится в руке Боба и не на chop.</li>
+<li>Следовательно, Алиса должна сбросить.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-2-save-question-3-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-sub="1" data-toc="Critical Save" id="bg-critical-save">
+<h2>Critical Save</h2>
+<ul>
+<li><strong>Критическая карта</strong> — последняя ещё не сброшенная копия конкретного сочетания цвета и числа. Например:<ul>
+<li>если у Алисы красная 2, а другая красная 2 всё ещё в колоде, карта Алисы <strong>не критическая</strong>;</li>
+<li>если у Алисы красная 2, а другая красная 2 уже сброшена, карта Алисы <strong>критическая</strong>;</li>
+<li>если у Алисы красная 5, она <strong>всегда критическая</strong>, потому что каждой 5 в колоде только одна копия.</li>
+</ul>
+</li>
+<li>Очевидно, критические карты нужно защищать Save Clues: если сбросить критическую карту, максимально возможный счёт уменьшится.</li>
+<li>Если критическая карта не является 5, мы разрешаем спасать её <strong>подсказкой по цвету или по числу</strong>.</li>
+<li>В примере ниже:<ul>
+<li>Алиса даёт Бобу синюю подсказку, затрагивая карту в слоте 4;</li>
+<li>до этой подсказки единственной картой Боба с подсказкой была 5 в слоте 5;</li>
+<li>первая мысль Боба: это может быть Play Clue на синюю 2. Но поскольку подсказка сфокусировалась на chop, она также может быть Save Clue;</li>
+<li>Боб смотрит на сброс и видит там синюю 4. Значит, подсказка может быть Critical Save на синюю 4, поэтому карту пока нужно держать;</li>
+<li>Боб записывает на карте <code>b2, b4</code>: либо синяя 2, либо синяя 4. Затем он сбрасывает другую карту.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-critical-save"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-critical-save-question-1">
+<div class="official-head">
+<h3>1. Critical Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу подсказку числом 3, затрагивая карту в слоте 3.</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Боб запишет в Card Notes?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб понимает, что это может быть Play Clue на:<ul>
+<li>жёлтую 3 — непосредственно играбельную;</li>
+<li>красную 3 — как Delayed Play Clue через красную 2 Кэти.</li>
+</ul>
+</li>
+<li>Но подсказка затронула chop, поэтому она также может быть Save Clue. В сбросе есть зелёная 3, и подсказка числом 3 ей соответствует, значит карта может быть второй зелёной 3 — Critical Save.</li>
+<li>Боб не знает, Play Clue это или Save Clue, поэтому пока не появится дополнительная информация, он обязан учитывать Save Clue и держать карту.</li>
+<li>Боб записывает <code>r3, y3, g3</code>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-critical-save-question-2">
+<div class="official-head">
+<h3>2. Critical Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У команды осталось 2 жетона подсказок.</li>
+<li>У Кэти подряд находятся две критические карты.</li>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может захотеть дать Кэти фиолетовую подсказку, которая за один ход даст сразу две фиолетовые карты.</li>
+<li>Но такой ход <strong>не разрешён</strong>, потому что 5 обязана спасаться через 5 Save.</li>
+<li>Поэтому Алиса должна дать Кэти подсказку числом 5 как <strong>5 Save</strong>.</li>
+<li>Затем Боб даст Кэти фиолетовую подсказку как <strong>Critical Save</strong> фиолетовой 3.</li>
+<li>На карте в слоте 4 Кэти запишет следующие возможные значения:<ul>
+<li>фиолетовая 1 — как Play Clue;</li>
+<li>фиолетовая 3 — как Critical Save;</li>
+<li>фиолетовая 4 — как Critical Save.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-critical-save-question-3">
+<div class="official-head">
+<h3>3. Critical Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу жёлтую подсказку, затрагивая карту в слоте 4.</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Боб запишет? Укажите все варианты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб знает, что это может быть <strong>Play Clue</strong> на жёлтую 1.</li>
+<li>Но подсказка затронула chop, поэтому она также может быть <strong>Save Clue</strong>:<ul>
+<li>жёлтой 2 карта быть не может, потому что жёлтую 2 пришлось бы спасать через 2 Save;</li>
+<li>жёлтой 3 быть не может: в колоде только две жёлтые 3, одну Боб видит в сбросе, а вторую — в руке Кэти;</li>
+<li>жёлтой 4 быть может, потому что одна копия жёлтой 4 уже в сбросе;</li>
+<li>жёлтой 5 быть не может, потому что жёлтую 5 нужно спасать через 5 Save.</li>
+</ul>
+</li>
+<li>Боб не знает, Play Clue это или Save Clue, поэтому до получения дополнительной информации обязан учитывать Save Clue и держать карту.</li>
+<li>Боб записывает:<ul>
+<li>жёлтая 1 — как Play Clue;</li>
+<li>жёлтая 4 — как Critical Save.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-critical-save-question-4">
+<div class="official-head">
+<h3>4. Critical Save</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу красную подсказку, затрагивая карту в слоте 5.</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Боб запишет? Укажите все варианты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб знает, что это может быть <strong>Play Clue</strong> на красную 1.</li>
+<li>Но подсказка затронула chop, поэтому она также может быть Save Clue. В сбросе лежит красная 2, и красная подсказка соответствует этой карте, значит сфокусированная карта может быть второй красной 2 — теперь уже критической.</li>
+<li>Боб не знает, Play Clue это или Save Clue, поэтому до получения дополнительной информации обязан учитывать Save Clue и держать карту.</li>
+<li>Боб записывает:<ul>
+<li>красная 1 — как Play Clue;</li>
+<li>красная 2 — как Critical Save.</li>
+</ul>
+</li>
+<li>Обычно 2 спасают через 2 Save. Но если первая копия двойки уже сброшена, вторую копию можно спасти через <strong>Critical Save</strong> точно так же, как 3 или 4.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-critical-save-question-4-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Single-Card Focus" id="bg-focus">
+<h2>Single-Card Focus</h2>
+<ul>
+<li>Мы уже знаем два типа подсказок: Play Clues и Save Clues.</li>
+<li>До сих пор все примеры Play Clues и Save Clues затрагивали только одну карту.</li>
+<li>Но подсказка, конечно, может затронуть <strong>две карты и больше</strong>.</li>
+<li>Мы договариваемся, что даже если подсказка затрагивает несколько карт, конкретное сообщение относится только к <strong>одной определённой карте</strong>. Она называется <strong>фокусом подсказки</strong>.</li>
+<li>У каждой подсказки <strong>ровно одна карта в фокусе</strong>. О картах вне фокуса не сообщается ничего конкретного — кроме того, что в будущем они будут полезны.</li>
+<li>Например, если Алиса даёт Бобу Play Clue, которая затрагивает две карты, Боб может <strong>сыграть только карту в фокусе</strong>. Вторую карту он должен оставить на потом.</li>
+</ul>
+<h3>Впервые затронутые карты</h3>
+<ul>
+<li>Чтобы определить фокус, нужно понять, какие карты для этой подсказки являются <strong>новыми</strong>.</li>
+<li>В оригинале <code>new cards</code> строго означает <strong>карты, которые эта подсказка затронула впервые и на которых до этого не было никаких подсказок</strong>.</li>
+</ul>
+<h3>Как определить фокус: 4 шага</h3>
+<p>Если подсказка затрагивает две карты или больше, фокус определяется так:</p>
+<ol>
+<li>Если ни одна карта не затронута впервые, <strong>фокус — на крайней слева повторно затронутой карте</strong>.</li>
+<li>Если впервые затронута ровно одна карта, <strong>фокус — на ней</strong>.</li>
+<li>Если впервые затронуты две карты или больше и одна из них находилась на chop, <strong>фокус — на chop</strong>.</li>
+<li>Если впервые затронуты две карты или больше и ни одна не была на chop, <strong>фокус — на крайней слева впервые затронутой карте</strong>.</li>
+</ol>
+<h3>Пример 1: фокус на крайней слева карте</h3>
+<ul>
+<li>В примере ниже Алиса даёт Бобу красную подсказку. Она обязана быть Play Clue.</li>
+<li>До подсказки в руке Боба вообще не было подсказок. Поэтому она впервые затрагивает <strong>две новые карты</strong> — красные карты в слотах 2 и 4.</li>
+<li>Боб знает, что в такой ситуации фокус находится на крайней слева из новых карт. Следовательно, это Play Clue на следующую красную карту.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-leftmost-focus"></div>
+</div>
+<h3>Пример 2: Chop-Focus</h3>
+<ul>
+<li>В примере ниже ещё ничего не сброшено, и Алиса даёт Бобу красную подсказку. Она обязана быть Play Clue.</li>
+<li>До неё рука Боба была полностью без подсказок. Подсказка впервые затрагивает <strong>три новые карты</strong> — слоты 1, 2 и 5.</li>
+<li>До подсказки chop Боба был в слоте 5. Поскольку подсказка затрагивает chop и <strong>Chop-Focus имеет приоритет</strong>, это должна быть <strong>Chop-Focus Play Clue</strong> на следующую красную карту.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-chop-focus"></div>
+</div>
+<ul>
+<li>Хотя подсказка затрагивает chop Боба, он знает, что это не Save Clue. В частности:<ul>
+<li>это не 5 Save на красную 5, потому что тогда Алиса дала бы подсказку числом 5;</li>
+<li>это не 2 Save на красную 2, потому что тогда Алиса дала бы подсказку числом 2;</li>
+<li>это не Critical Save, потому что в сбросе ещё нет красных карт.</li>
+</ul>
+</li>
+</ul>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-single-card-focus-question-1">
+<div class="official-head">
+<h3>1. Single-Card Focus</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В руке Боба вообще нет подсказок.</li>
+<li>Алиса даёт Бобу фиолетовую подсказку, затрагивая четыре карты.</li>
+<li>Какой слот находится в фокусе?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 1, потому что это крайняя слева карта.<ul>
+<li>Все затронутые карты для этой подсказки новые, и ни одна из них не находится на chop.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-single-card-focus-question-2">
+<div class="official-head">
+<h3>2. Single-Card Focus</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В руке Боба вообще нет подсказок.</li>
+<li>Алиса даёт Бобу зелёную подсказку, затрагивая пять карт.</li>
+<li>Какой слот находится в фокусе?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 5, потому что это карта на chop.<ul>
+<li>Все затронутые карты новые.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-single-card-focus-question-3">
+<div class="official-head">
+<h3>3. Single-Card Focus</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Боба две 2 с подсказками.</li>
+<li>Алиса даёт Бобу синюю подсказку, затрагивая две карты.</li>
+<li>Какой слот находится в фокусе?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 3, потому что это единственная впервые затронутая карта.<ul>
+<li>Слот 2 уже был затронут раньше, поэтому синяя подсказка только «заполняет» на нём дополнительную информацию.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-single-card-focus-question-4">
+<div class="official-head">
+<h3>4. Single-Card Focus</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Боба есть 5 и 2 с подсказками.</li>
+<li>Алиса даёт Бобу красную подсказку, затрагивая три карты.</li>
+<li>Какой слот находится в фокусе?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Слот 3, потому что впервые затронуты две карты, а слот 3 находился на chop.<ul>
+<li>Слот 5 уже был затронут раньше, поэтому красная подсказка лишь «заполняет» его дополнительной информацией.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-single-card-focus-question-4-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-sub="1" data-toc="Интерпретация подсказки" id="bg-interpretation">
+<h2>Интерпретация подсказки</h2>
+<h3>Кратко о подсказках</h3>
+<p>Итак, существуют:</p>
+<ol>
+<li><strong>Play Clues</strong>:<ul>
+<li>обычные Play Clues;</li>
+<li>Delayed Play Clues.</li>
+</ul>
+</li>
+<li><strong>Save Clues</strong>:<ul>
+<li>5 Save;</li>
+<li>2 Save;</li>
+<li>Critical Save.</li>
+</ul>
+</li>
+</ol>
+<p>И у каждой подсказки только <strong>одна карта в фокусе</strong>.</p>
+<h3>Алгоритм интерпретации подсказки</h3>
+<p>Когда приходит подсказка и нужно понять её смысл, <strong>всегда задавайте себе следующие вопросы</strong>:</p>
+<ol>
+<li><strong>Какой слот находится в фокусе?</strong><ul>
+<li>Используйте четырёхшаговый алгоритм из предыдущего раздела.</li>
+</ul>
+</li>
+<li><strong>Это Play Clue, Save Clue или пока возможны оба варианта?</strong><ul>
+<li>Подсказка не на chop всегда является Play Clue.</li>
+<li>Подсказка на chop может оказаться как Play Clue, так и Save Clue.</li>
+</ul>
+</li>
+<li><strong>Какое точное значение может иметь карта?</strong><ul>
+<li>Запишите в Card Notes все возможные значения играбельной карты, если это может быть Play Clue, <strong>и</strong> все возможные значения спасаемой карты, если это может быть Save Clue.</li>
+</ul>
+</li>
+</ol>
+<p>Если проходить эти шаги после каждой подсказки, это помогает избегать ошибок.</p>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-clue-interpretation-question-1">
+<div class="official-head">
+<h3>1. Интерпретация подсказки</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В руке Кэти вообще нет подсказок.</li>
+<li>Алиса даёт Кэти зелёную подсказку, затрагивая слоты 3 и 4.</li>
+</ul>
+<ol>
+<li>Какой слот находится в фокусе?</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Кэти запишет на сфокусированной карте?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>В фокусе слот 4 — карта на chop.</li>
+<li>Зелёная 2 уже сыграна, поэтому карта в слоте 4 может быть зелёной 3, зелёной 4 или зелёной 5.<ul>
+<li>Если это зелёная 3, подсказка является <strong>Chop-Focus Play Clue</strong>. Это допустимо.</li>
+<li>Если это зелёная 4, подсказка не имела бы смысла: зелёная 4 сейчас не играбельна и не критическая. Каждая подсказка обязана быть либо Play Clue, либо Save Clue.</li>
+<li>Если это зелёная 5, подсказка тоже не имела бы смысла. Зелёная 5 критическая, но 5 обязана спасаться подсказкой числом 5 через 5 Save.</li>
+<li>Следовательно, это должна быть <strong>Chop-Focus Play Clue</strong> на зелёную 3.</li>
+</ul>
+</li>
+<li>Кэти записывает <code>g3</code> на карту в слоте 4.</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-clue-interpretation-question-2">
+<div class="official-head">
+<h3>2. Интерпретация подсказки</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В руке Боба вообще нет подсказок.</li>
+<li>Алиса даёт Бобу подсказку числом 2, затрагивая слот 5.</li>
+</ul>
+<ol>
+<li>Какой слот находится в фокусе?</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Боб запишет на карту в слоте 5?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>В фокусе слот 5.</li>
+<li>Это <strong>Play Clue</strong>.<ul>
+<li>Обычно такая подсказка выглядела бы как 2 Save, но сейчас <strong>все 2 играбельны</strong>. Значит, это не может быть 2 Save и является обычной Play Clue.</li>
+</ul>
+</li>
+<li>Боб записывает <code>y2, g2</code>.</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-clue-interpretation-question-3">
+<div class="official-head">
+<h3>3. Интерпретация подсказки</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Боба в руке уже есть 2 с подсказкой и 5 с подсказкой.</li>
+<li>Алиса даёт Бобу красную подсказку, затрагивая слоты 2, 3, 4 и 5.</li>
+</ul>
+<ol>
+<li>Какой слот находится в фокусе?</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Боб запишет на сфокусированной карте?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>В фокусе слот 3 — впервые затронутая карта, которая до подсказки находилась на chop.</li>
+<li>Красная 1 уже сыграна, а у Боба уже есть красная 2 и красная 5. Поэтому сфокусированная красная карта может быть красной 3 или красной 4.<ul>
+<li>Если это красная 3, подсказка является <strong>Chop-Focus Delayed Play Clue</strong> через собственную красную 2 Боба. Это допустимо.</li>
+<li>Если это красная 4, подсказка не имела бы смысла: красная 4 сейчас не играбельна и не критическая. Все подсказки должны быть либо Play Clues, либо Save Clues.</li>
+<li>Следовательно, это должна быть <strong>Chop-Focus Delayed Play Clue</strong> на красную 3.</li>
+</ul>
+</li>
+<li>Боб записывает <code>r3</code> на карту в слоте 3.</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-clue-interpretation-question-4">
+<div class="official-head">
+<h3>4. Интерпретация подсказки</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Боба в руке есть 2 с подсказкой.</li>
+<li>Алиса даёт Бобу синюю подсказку, затрагивая слоты 3, 4 и 5.</li>
+</ul>
+<ol>
+<li>Какой слот находится в фокусе?</li>
+<li>Это Play Clue или Save Clue?</li>
+<li>Что Боб запишет на сфокусированной карте?</li>
+</ol>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>В фокусе слот 4 — впервые затронутая карта, которая до подсказки находилась на chop.</li>
+<li>Синяя 1 уже сыграна, а у Боба уже есть синяя 2. Поэтому сфокусированная синяя карта может быть синей 3, синей 4 или синей 5.<ul>
+<li>Если это синяя 3, подсказка является <strong>Chop-Focus Delayed Play Clue</strong> через собственную синюю 2 Боба. Это допустимо.</li>
+<li>Если это синяя 4, подсказка является <strong>Critical Save</strong> на синюю 4.</li>
+<li>Если это синяя 5, подсказка не имела бы смысла: синяя 5 сейчас не играбельна. Она критическая, но обязана спасаться подсказкой числом 5 через 5 Save.</li>
+<li>Следовательно, это либо Chop-Focus Delayed Play Clue на синюю 3, либо Critical Save на синюю 4.</li>
+</ul>
+</li>
+<li>Боб записывает <code>b3, b4</code> на карту в слоте 4.</li>
+</ol>
+<ul>
+<li>До этой подсказки Боб не мог играть свою 2, потому что она могла быть жёлтой 2, которая сейчас неиграбельна.</li>
+<li>Синяя подсказка «заполнила» его 2 до синей 2, поэтому теперь Боб может её сыграть.</li>
+<li>Но это <strong>не делает синюю подсказку Play Clue на двойку</strong>. Фокус был на слоте 4, поэтому по своему основному смыслу подсказка остаётся потенциальной Save Clue. Играбельность синей 2 возникла лишь как побочный эффект; синяя 2 не была в фокусе.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-clue-interpretation-question-4-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Три основных принципа" id="bg-principles">
+<h2>Три основных принципа</h2>
+<ul>
+<li>До этого мы разобрали:<ul>
+<li>как сбрасывать — через chop;</li>
+<li>как понимать тип подсказки — Play Clue или Save Clue;</li>
+<li>как определять фокус подсказки — через Chop-Focus или крайнюю слева карту.</li>
+</ul>
+</li>
+<li>Но этого ещё недостаточно, чтобы понять <strong>стратегию</strong> Hanabi. Как игроку найти лучший ход в конкретной ситуации?</li>
+<li>Hanabi слишком сложна, чтобы написать универсальное руководство по поиску лучшего хода. И это хорошо: благодаря этому игра остаётся интересной даже после тысяч партий.</li>
+<li>К счастью, начинающему достаточно сначала глубоко усвоить <strong>три основных принципа</strong>:<ol>
+<li><strong>Good Touch Principle</strong>;</li>
+<li><strong>Save Principle</strong>;</li>
+<li><strong>Minimum Clue Value Principle</strong>.</li>
+</ol>
+</li>
+<li>Дальше разберём каждый отдельно.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Good Touch Principle (GTP)" id="bg-gtp">
+<h2>Good Touch Principle (GTP)</h2>
+<ul>
+<li>Давая подсказки, мы следуем <strong>Good Touch Principle</strong>: <strong>затрагиваем только те карты, которые в итоге будут сыграны</strong>.<ul>
+<li>Затронуть карту, которая уже сыграна на стол или чья другая копия уже получила подсказку в чужой руке, было бы <strong>Bad Touch</strong>.</li>
+</ul>
+</li>
+<li>Good Touch Principle — мощная основа логики и дедукции. Если все затрагивают только полезные карты, игроки могут значительно сузить варианты своих карт с подсказками.</li>
+<li>В примере ниже:<ul>
+<li>Алиса хочет дать Play Clue красной 2;</li>
+<li>она выбирает между красной подсказкой и подсказкой числом 2;</li>
+<li>подсказка числом 2 затронет только красную 2 в слоте 1;</li>
+<li>красная подсказка затронет слоты 1, 2 и 3. Она нарушит Good Touch Principle, потому что обе красные 4 в руке Боба окажутся продублированы;</li>
+<li>поэтому правильный ход Алисы — дать подсказку числом 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-gtp-1-correct"></div>
+</div>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-gtp-1-illegal"></div>
+</div>
+<ul>
+<li>В следующем примере:<ul>
+<li>у Алисы в руке есть неизвестная фиолетовая карта;</li>
+<li>Алиса видит, что фиолетовая стопка уже дошла до фиолетовой 4. Единственная другая полезная фиолетовая карта — фиолетовая 5;</li>
+<li>Алиса также знает, что по Good Touch Principle каждая карта с подсказкой в итоге должна быть сыграна;</li>
+<li>значит, методом исключения она понимает, что её неизвестная фиолетовая карта обязана быть фиолетовой 5, и может сразу её сыграть.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-gtp-2"></div>
+</div>
+<ul>
+<li>В следующем примере:<ul>
+<li>в середине партии Алиса даёт Бобу жёлтую подсказку, затрагивая слоты 2 и 3;</li>
+<li>фокус — на слоте 2. Это должна быть Play Clue, поэтому Боб записывает для слота 2 жёлтую 3;</li>
+<li>слот 3 тоже был затронут, но не находился в фокусе. По Good Touch Principle Боб знает, что эта карта должна быть играбельной в будущем;</li>
+<li>поэтому для слота 3 Боб записывает жёлтую 4 или жёлтую 5.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-gtp-3"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-good-touch-principle-question-1">
+<div class="official-head">
+<h3>1. Good Touch Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса должна дать Play Clue синей 3 Боба до того, как она будет сброшена.</li>
+<li>Если Алиса даст синюю подсказку, в фокусе будет синяя 3, но синяя 2 окажется продублирована, потому что она уже сыграна на стол.</li>
+<li>Если Алиса даст подсказку числом 3, в фокусе будет синяя 3, а подсказка также затронет красную 3. Красная 3 пригодится команде в будущем, поэтому затронуть её этой подсказкой — хорошо и не нарушает Good Touch Principle.</li>
+<li>Следовательно, Алиса должна дать Бобу подсказку числом 3.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-good-touch-principle-question-2">
+<div class="official-head">
+<h3>2. Good Touch Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какое действие должна сделать Алиса?</li>
+<li>Если нужно дать подсказку, что будет записано на сфокусированной карте? Укажите все варианты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса должна дать Play Clue красной 2 Боба до того, как она будет сброшена.</li>
+<li>Если Алиса даст красную подсказку, в фокусе будет красная 2, но красная 4 окажется продублирована, потому что другая красная 4 уже с подсказкой в руке Кэти.</li>
+<li>Если Алиса даст подсказку числом 2, она затронет только красную 2.</li>
+<li>Поэтому Алиса должна дать Бобу подсказку числом 2.</li>
+<li>Боб запишет следующие варианты:<ul>
+<li>красная 2 — как Play Clue;</li>
+<li>жёлтая 2 — как 2 Save.</li>
+</ul>
+</li>
+<li>Боб знает, что это не может быть 2 Save на зелёную 2, потому что другая зелёная 2 видна в руке Кэти и пока не находится на chop.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-good-touch-principle-question-3">
+<div class="official-head">
+<h3>3. Good Touch Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Алисы есть 2 с подсказкой неизвестного цвета. Ранее эту карту спасли через 2 Save.</li>
+<li>Какое действие должна сделать Алиса?</li>
+<li>Если нужно дать подсказку, что будет записано на сфокусированной карте?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса могла бы дать Бобу жёлтую подсказку или подсказку числом 2. Любой из этих ходов был бы Play Clue на жёлтую 2.</li>
+<li>Но возможно, что собственная 2 Алисы — тоже жёлтая 2. Тогда Алиса нарушила бы Good Touch Principle и зря потратила бы подсказку.</li>
+<li>Поэтому давать подсказку жёлтой 2 — <strong>не ответственность Алисы</strong>. Этим займётся кто-то другой в команде. Поскольку других подсказок Алиса дать не может, она должна сбросить.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-good-touch-principle-question-4">
+<div class="official-head">
+<h3>4. Good Touch Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>На стол нужно сыграть зелёную 3.</li>
+<li>Какое действие должна сделать Алиса?</li>
+<li>Если нужно дать подсказку, что будет записано на сфокусированной карте?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>И подсказка по цвету, и подсказка по числу продублируют зелёную 3 и нарушат Good Touch Principle.</li>
+<li>Поэтому Алиса должна терпеливо дождаться, пока Боб сбросит одну зелёную 3. После того как первая копия будет сброшена, команда сможет дать подсказку оставшейся зелёной 3.</li>
+<li>Поскольку сейчас нет ни одной допустимой подсказки, Алиса обязана сбросить.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-good-touch-principle-question-4-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-sub="1" data-toc="Save Principle" id="bg-save-principle">
+<h2>Save Principle</h2>
+<ul>
+<li>Ранее мы договорились, что определённые типы карт команда обязана спасать через Save Clues.</li>
+<li>Но кроме этого мы также обязуемся обеспечивать розыгрыш всех играбельных карт. Иными словами, <strong>мы не позволяем друг другу сбрасывать играбельные карты</strong>.</li>
+<li>Поэтому <strong>полный список</strong> карт, которые команда <strong>не должна сбрасывать</strong>, таков:<ul>
+<li>все 5;</li>
+<li>уникальные 2 — двойки, чья вторая копия сейчас не видна;</li>
+<li>критические карты — карты, все остальные копии которых уже сброшены;</li>
+<li>уникальные играбельные карты — играбельные карты, чья вторая копия сейчас не видна.</li>
+</ul>
+</li>
+<li>Правило не позволять команде сбрасывать важные карты называется <strong>Save Principle</strong>, и <strong>это самый важный принцип из всех</strong>. Ради спасения карты из этого списка разрешено <strong>нарушить любой другой принцип или правило</strong>.</li>
+</ul>
+<h3>Нарушение Good Touch Principle</h3>
+<ul>
+<li>Иногда ради спасения конкретной карты придётся нарушить Good Touch Principle, и это допустимо.</li>
+<li>В таком случае получатель подсказки запишет неверные варианты на некоторых своих картах.</li>
+<li>В примере ниже:<ul>
+<li>Алиса должна спасти последнюю синюю 3 на chop Боба;</li>
+<li>Алиса знает, что Critical Save можно дать как по цвету, так и по числу;</li>
+<li>синяя подсказка нарушит Good Touch Principle, потому что одновременно затронет обе копии синей 4;</li>
+<li>подсказка числом 3 тоже нарушит Good Touch Principle, потому что затронет красную 3, которая уже сыграна на стол;</li>
+<li>Алиса понимает, что нарушить Good Touch Principle лучше, чем потерять возможность набрать максимум. Поэтому ей приходится выбирать меньшее из двух зол — синюю подсказку или подсказку числом 3;</li>
+<li>Алиса выбирает синюю подсказку, потому что хотя бы одна из синих 4 пригодится позже;</li>
+<li>Боб запишет на спасённой карте в слоте 5 <code>b2, b3</code>: с его точки зрения это либо Play Clue на синюю 2, либо Save Clue на синюю 3;</li>
+<li>по Good Touch Principle на двух других синих картах Боб запишет <code>b2, b3, b4, b5</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-save-principle"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-save-principle-question-1">
+<div class="official-head">
+<h3>1. Save Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Бобу синюю подсказку, затрагивая карту в слоте 1. Это должна быть Play Clue на синюю 1.</li>
+<li>Должен ли Боб сыграть синюю 1?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-save-principle-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Нет. Если Боб сыграет синюю 1, а затем Кэти сбросит зелёную 4, максимальный счёт уменьшится.</li>
+<li>Пока существует вероятность, что Кэти сбросит зелёную 4, Боб <strong>обязан спасти её прямо сейчас</strong>, прежде чем играть собственные играбельные карты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-save-principle-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-save-principle-question-2">
+<div class="official-head">
+<h3>2. Save Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Какое действие должна сделать Алиса?</li>
+<li>Если нужно дать подсказку, что будет записано на сфокусированной карте? Укажите все варианты.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-save-principle-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса обязана дать Save Clue жёлтой 2 Боба до того, как она будет сброшена: команда договорилась, что все уникальные 2 <strong>обязательно спасаются</strong>.</li>
+<li>Алиса не имеет права давать жёлтую подсказку, потому что 2 нужно спасать через 2 Save.<ul>
+<li>Если бы Алиса дала жёлтую подсказку, она выглядела бы как Play Clue на жёлтую карту, и Боб попытался бы сыграть её как жёлтую 1.</li>
+</ul>
+</li>
+<li>Подсказка числом 2 будет 2 Save на жёлтую 2, но одновременно продублирует красную 2, которая уже сыграна на стол.</li>
+<li>Тем не менее Алиса должна дать Бобу подсказку числом 2 как <strong>2 Save</strong>, потому что спасение карты важнее соблюдения Good Touch Principle.</li>
+<li>Фокус этой подсказки — слот 5. Боб запишет:<ul>
+<li>зелёная 2, синяя 2 — как Play Clue;</li>
+<li>жёлтая 2, фиолетовая 2 — как 2 Save.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-save-principle-question-2-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Minimum Clue Value Principle (MCVP)" id="bg-mcvp">
+<h2>Minimum Clue Value Principle (MCVP)</h2>
+<h3>Никаких бессмысленных подсказок</h3>
+<ul>
+<li>Обычно игрок сбрасывает только тогда, когда ему больше нечего делать. Но это <strong>не означает</strong>, что можно дать любую подсказку вместо сброса.</li>
+<li>Игрокам <strong>не разрешено</strong> просто давать подсказки произвольным картам:<ul>
+<li>Play Clue можно давать <strong>только действительно играбельной карте</strong>;</li>
+<li>Save Clue можно давать <strong>только конкретным картам</strong>, перечисленным в разделе Save Principle.</li>
+</ul>
+</li>
+<li>Если у игрока нет карты для розыгрыша и он не может дать корректную Play Clue или Save Clue, он <strong>обязан сбросить</strong>.</li>
+</ul>
+<h3>Tempo Clues</h3>
+<ul>
+<li>Кроме того, иногда хочется <strong>ещё раз дать подсказку карте, на которой уже есть подсказка</strong>, чтобы заставить её сыграться прямо сейчас. Такая подсказка называется <strong>Tempo Clue</strong>.</li>
+<li>Tempo Clue определяется как Play Clue, которая не даёт ни одной совершенно новой карты.</li>
+<li>Tempo Clues очень неэффективны: команда тратит две подсказки, чтобы получить одну карту. Поэтому Tempo Clue <strong>разрешено делать только в специальных ситуациях</strong>, например когда игрок вынужден дать подсказку и не может сбросить.</li>
+<li>Например, в игре на троих:<ul>
+<li>Алиса находится в специальной ситуации и не может сбрасывать;</li>
+<li>у Боба есть 2, которую раньше спасли через 2 Save. Боб не знает её цвет и считает, что это либо красная 2 — играбельная, либо синяя 2 — пока неиграбельная;</li>
+<li>Алиса даёт Бобу красную подсказку и тем самым «заполняет» его карту до красной 2. Это Tempo Clue, потому что подсказка не затрагивает ни одной новой карты. Из-за такой неэффективности Алиса никогда не стала бы делать это вне специальной <strong>Stalling Situation</strong>;</li>
+<li>теперь Боб может сыграть красную 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-tempo"></div>
+</div>
+<h3>Minimum Clue Value Principle (MCVP)</h3>
+<ul>
+<li>Следовательно, если игрок может только дать Tempo Clue или сбросить, он <strong>обязан сбросить</strong>.</li>
+<li>Формально это называется <strong>Minimum Clue Value Principle</strong>: <strong>каждая подсказка должна давать как минимум одну ранее не подсказанную карту — для розыгрыша или сохранения</strong>.</li>
+<li>Иными словами, команда держит высокий стандарт и не даёт неэффективные подсказки без специальной причины.</li>
+</ul>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-minimum-clue-value-principle-question-1">
+<div class="official-head">
+<h3>1. Minimum Clue Value Principle</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса находится в специальной ситуации, где не может сбрасывать.</li>
+<li>Синяя 4 Боба уже раньше была затронута синей подсказкой.</li>
+<li>Красная 2 и жёлтая 2 Кэти уже раньше были затронуты подсказкой числом 2.</li>
+<li>Перечислите все допустимые <strong>Tempo Clues</strong>, которые Алиса может дать.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-minimum-clue-value-principle-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может дать Tempo Clue синей 4 в руке Боба:<ul>
+<li>подсказка числом 4 допустима, потому что затронет только слот 4. Она «заполнит» карту до синей 4;</li>
+<li>синяя подсказка тоже допустима, потому что затронет только слот 4. Она не добавит точного значения, но всё равно будет означать «сыграй карту», поэтому сработает правильно.</li>
+</ul>
+</li>
+<li>Алиса может дать Tempo Clue красной 2 в руке Кэти:<ul>
+<li>подсказка числом 2 <strong>не допустима</strong>, потому что сфокусируется на слоте 1 вместо слота 4;</li>
+<li>красная подсказка допустима, потому что затронет только слот 4.</li>
+</ul>
+</li>
+<li>Алиса <strong>не может</strong> дать Tempo Clue жёлтой 2 в руке Кэти:<ul>
+<li>подсказка числом 2 не допустима, потому что сфокусируется на слоте 1 вместо слота 5;</li>
+<li>жёлтая подсказка не допустима, потому что сфокусируется на слоте 3 вместо слота 5.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-minimum-clue-value-principle-question-1-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Early Game" id="bg-early-game">
+<h2>Early Game</h2>
+<ul>
+<li>Начало партии Hanabi может быть напряжённым: на chop сразу может лежать много важных карт. Поэтому полезно знать наверняка, что партнёры дадут нужную подсказку, а не начнут сбрасывать.</li>
+<li>Это формализовано понятием <strong>Early Game</strong>. Early Game — период до того момента, когда кто-либо впервые сбрасывает свою карту на chop. Такой сброс начинает <strong>Mid-Game</strong>.</li>
+<li>Все договариваются, что до начала Mid-Game <strong>обязаны «погасить» все доступные Play Clues и Save Clues</strong>. В сбросе ещё нет карт, но Save Clues всё равно нужно дать всем 5 на chop и всем 2 на chop, если их вторая копия не видна в другой руке.</li>
+</ul>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-early-game-question-1">
+<div class="official-head">
+<h3>1. Early Game</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>На первом ходу Алиса даёт Кэти подсказку числом 1, затрагивая три карты.</li>
+<li>Боб сбрасывает красную 1.</li>
+<li>Сейчас всё ещё Early Game или уже Mid-Game?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Уже <strong>Mid-Game</strong>, потому что Боб сделал сброс.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-early-game-question-2">
+<div class="official-head">
+<h3>2. Early Game</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Сейчас Early Game. Остался 1 жетон подсказки.</li>
+<li>Ранее Боб получил подсказки на несколько 1. В будущем он сыграет фиолетовую 1 и зелёную 1.</li>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li><strong>Единственный</strong> допустимый ход Алисы — дать Бобу зелёную подсказку как <strong>Delayed Play Clue</strong> на зелёную 2.<ul>
+<li>Кроме этой зелёной подсказки, других допустимых подсказок нет.</li>
+<li>Алиса не имеет права сбрасывать, потому что всё ещё идёт Early Game и не все доступные Play Clues ещё «погашены».</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-early-game-question-3">
+<div class="official-head">
+<h3>3. Early Game</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Сейчас Early Game. Остался 1 жетон подсказки.</li>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li><strong>Единственный</strong> допустимый ход Алисы — дать Кэти фиолетовую подсказку как Play Clue на фиолетовую 2.<ul>
+<li>Алиса не может дать Кэти подсказку числом 2, потому что она также затронет красную 2 и нарушит Good Touch Principle.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-early-game-question-4">
+<div class="official-head">
+<h3>4. Early Game</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Сейчас Early Game. Остался 1 жетон подсказки.</li>
+<li>Какое действие должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>На Level 1 допустимых действий здесь нет. Поэтому Алиса обязана сбросить.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-early-game-question-4-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Дополнительная общая стратегия" id="bg-general">
+<h2>Дополнительная общая стратегия</h2>
+<ul>
+<li>В целом игроки могут опираться на три главных принципа:<ul>
+<li>Good Touch Principle;</li>
+<li>Save Principle;</li>
+<li>Minimum Clue Value Principle.</li>
+</ul>
+</li>
+<li>Помимо них полезно выработать ещё несколько привычек.</li>
+</ul>
+<h3>Проверяйте chop всей команды</h3>
+<ul>
+<li>Первое, что нужно делать в начале своего хода, — <strong>посмотреть на chop-карты всех игроков</strong>.</li>
+<li>Есть ли на chop карта, которую нужно спасти или сыграть? Если да, должны ли это сделать именно вы или это может сделать кто-то другой?<ul>
+<li>Если никто другой не может это сделать, вы обязаны дать Save Clue или Play Clue, даже если у вас есть собственная карта для розыгрыша.</li>
+<li>Если другой игрок тоже может спасти карту, подумайте, кому выгоднее это сделать. Если у него есть карта для розыгрыша, а у вас нет, для команды лучше, чтобы карту спасли вы.</li>
+</ul>
+</li>
+</ul>
+<h3>Предпочитайте Play Clue вместо Save Clue</h3>
+<ul>
+<li>Если игроку можно дать немедленную Play Clue <strong>или</strong> Save Clue, просто дайте Play Clue.</li>
+<li>Нет необходимости спасать карту прямо сейчас, если можно занять игрока розыгрышем другой карты.</li>
+</ul>
+<h3>Предпочитайте подсказки по цвету</h3>
+<ul>
+<li>Обычно, если есть выбор, <strong>подсказка по цвету предпочтительнее подсказки по числу</strong>. Цвет чаще даёт более точную информацию и сообщает игроку точное значение карты.</li>
+<li>Но не бойтесь отступать от этого совета и давать подсказку по числу, если она даёт дополнительные карты или помогает «заполнить» информацию на других картах в руке.</li>
+</ul>
+<h3>Не бойтесь сбрасывать</h3>
+<ul>
+<li><strong>Не бойтесь сбросов</strong>. Если вы сбросили что-то важное, ответственность за это лежит на команде: партнёры должны были вовремя спасти важную карту.</li>
+</ul>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-other-general-strategy-question-1">
+<div class="official-head">
+<h3>1. Общая стратегия</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Ход Алисы, и у неё есть жёлтая 2 для розыгрыша.</li>
+<li>У Кэти на chop критическая синяя 5.</li>
+<li>Должна ли Алиса сыграть жёлтую 2 или спасти синюю 5 Кэти?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>У Алисы есть играбельная карта, а Боб сейчас нечего делать.</li>
+<li>Поэтому если Алиса сама станет спасать синюю 5 Кэти, это будет плохим распределением обязанностей в команде.</li>
+<li>Алиса должна сыграть жёлтую 2, а спасение синей 5 Кэти оставить Бобу.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-other-general-strategy-question-2">
+<div class="official-head">
+<h3>2. Общая стратегия</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Сейчас Early Game.</li>
+<li>Перечислите все допустимые подсказки Алисы.</li>
+<li>Какую из них Алиса должна выбрать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может дать Кэти зелёную подсказку как <strong>Play Clue</strong> на зелёную 3.</li>
+<li>Алиса может дать Кэти подсказку числом 5 как <strong>5 Save</strong> на красную 5.</li>
+<li>Логичнее дать Play Clue, а не Save Clue: если Кэти будет занята розыгрышем карты, на своём ходу она всё равно ничего не сбросит.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-other-general-strategy-question-3">
+<div class="official-head">
+<h3>3. Общая стратегия</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Перечислите все допустимые подсказки Алисы.</li>
+<li>Какую из них Алиса должна выбрать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может дать Бобу жёлтую подсказку как Play Clue на жёлтую 3 через жёлтую 2 Кэти.</li>
+<li>Алиса может дать Бобу подсказку числом 3 как Play Clue на жёлтую 3 через жёлтую 2 Кэти.</li>
+<li>Алиса может дать Бобу подсказку числом 5 как 5 Save на синюю 5.</li>
+<li>Обычно Play Clue предпочтительнее Save Clue. Но здесь Play Clue окажется <strong>Delayed Play Clue</strong>: Боб ещё не сможет сыграть карту и должен будет ждать, пока Кэти сыграет жёлтую 2.</li>
+<li>Если Алиса даст Play Clue на жёлтую 3, на своём ходу Боб может остаться без действий и сбросить критическую синюю 5. Значит, Алиса обязана выбрать другой ход.</li>
+<li>Поэтому Алиса должна дать Бобу подсказку числом 5 как <strong>5 Save</strong>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-3-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-other-general-strategy-question-4">
+<div class="official-head">
+<h3>4. Общая стратегия</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Перечислите все допустимые подсказки Алисы.</li>
+<li>Какую из них Алиса должна выбрать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может дать Бобу синюю подсказку как Play Clue на синюю 2.<ul>
+<li>Тогда Боб запишет <code>b2</code>.</li>
+</ul>
+</li>
+<li>Алиса может дать Бобу подсказку числом 2 как Play Clue на синюю 2.<ul>
+<li>Тогда Боб запишет <code>y2, b2, p2</code>.</li>
+</ul>
+</li>
+<li>По умолчанию Алиса знает, что подсказка по цвету предпочтительнее подсказки по числу. В этой ситуации синяя подсказка сообщает точное значение карты, тогда как числовая оставляет три разных варианта.</li>
+<li>Поэтому Алиса должна дать Бобу <strong>синюю подсказку</strong>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-4-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-other-general-strategy-question-5">
+<div class="official-head">
+<h3>5. Общая стратегия</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Перечислите все допустимые подсказки Алисы.</li>
+<li>Какую из них Алиса должна выбрать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-5-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может дать Бобу зелёную подсказку как Play Clue на зелёную 3.<ul>
+<li>Такая подсказка даст одну карту.</li>
+</ul>
+</li>
+<li>Алиса может дать Бобу подсказку числом 3 как Play Clue на зелёную 3.<ul>
+<li>Такая подсказка даст две карты: Боб сыграет зелёную 3 и сохранит жёлтую 3 на потом.</li>
+</ul>
+</li>
+<li>Обычно подсказка по цвету предпочтительнее подсказки по числу, но это правило относится к случаям, когда обе подсказки более-менее равноценны. Здесь получить две карты явно лучше, чем одну, поэтому Алиса должна дать <strong>подсказку числом 3</strong>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-other-general-strategy-question-5-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Особые приёмы" id="bg-special">
+<h2>Особые приёмы</h2>
+<ul>
+<li>Hanabi — игра на эффективность, потому что количество жетонов подсказок ограничено.</li>
+<li>Поэтому идеальный результат — получить <strong>два и более розыгрыша</strong> из <strong>одной подсказки</strong>.</li>
+<li>Для этого используются два специальных приёма: <strong>Prompts</strong> и <strong>Finesses</strong>.</li>
+<li>Дальше разберём их по отдельности.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Prompt" id="bg-prompt">
+<h2>Prompt</h2>
+<ul>
+<li>В примере ниже:<ul>
+<li>у Боба есть красная карта с подсказкой, но её точное значение всё ещё неизвестно. В такой ситуации Боб знает, что должен просто держать её и продолжать сбрасывать карты без подсказок;</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную 4. Это должна быть Play Clue на красную 4;</li>
+<li>Боб видит, что красная 4 сейчас неиграбельна, потому что красная 3 ещё не сыграна. Значит, подсказка подразумевает, что у кого-то есть красная 3;</li>
+<li>Боб не видит красную 3 с подсказкой ни в одной другой руке. Следовательно, Алиса <strong>обещает Бобу</strong>, что его неизвестная красная карта — красная 3 и её можно безопасно сыграть.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-prompt-1"></div>
+</div>
+<ul>
+<li>Этот приём называется <strong>Prompt</strong>, потому что он «подталкивает» игрока сыграть карту, которую иначе тот ещё долго держал бы в руке.</li>
+<li>Таким образом, подсказка может передавать сообщение <strong>не тому игроку, который непосредственно получил подсказку</strong>.</li>
+<li>Если игрок Prompted и Prompt подходит сразу к нескольким его картам, нужно играть <strong>крайнюю слева</strong> подходящую карту.</li>
+<li>В следующем примере:<ul>
+<li>Боб Prompted на красную 3 точно так же, как в предыдущем примере;</li>
+<li>у Боба две неизвестные красные карты в слотах 4 и 5;</li>
+<li>поскольку обе подходят, Боб играет карту в слоте 4 — она крайняя слева.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-prompt-2"></div>
+</div>
+<ul>
+<li>В следующем примере:<ul>
+<li>у Боба есть неизвестная 3;</li>
+<li>Алиса даёт Бобу подсказку числом 4, затрагивая 4. Она обязана быть Play Clue на эту 4;</li>
+<li>ни одна 4 сейчас не может быть играбельной. Значит, это <strong>Self-Prompt</strong>: 3 Боба должна быть зелёной 3 или синей 3;</li>
+<li>Боб играет свою 3, и оказывается, что это синяя 3. Следовательно, 4 обязана быть связующей синей 4.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-prompt-3"></div>
+</div>
+<ul>
+<li>Prompt — это <strong>обещание</strong>, что у игрока есть связующая карта. Поэтому если крайняя слева подходящая карта оказывается не той, игрок должен продолжать играть свои карты с подсказками <strong>слева направо</strong>, пока обещанная карта не найдётся. Ответственность игрока, давшего подсказку, — убедиться, что все предыдущие карты успешно сыграются.</li>
+<li>В следующем примере:<ul>
+<li>у Боба три отдельные неизвестные 3;</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную 4. Это Play Clue на красную 4;</li>
+<li>Боб понимает, что у него должна быть красная 3 и что это Prompt. Он играет крайнюю слева 3 из слота 2;</li>
+<li>карта оказывается не красной 3, а синей 3, и её удаётся успешно разыграть. Теперь Боб знает, что следующая слева 3 должна быть красной 3 — в слоте 3;</li>
+<li>Кэти видит красную 3 с подсказкой в руке Боба. По Good Touch Principle она понимает, что её красная карта должна быть красной 4;</li>
+<li>Кэти делает постороннее действие;</li>
+<li>на следующем ходу Боб пытается сыграть слот 3 как красную 3, но там оказывается зелёная 3, и её тоже удаётся успешно разыграть. Теперь Боб знает, что последняя его 3 — красная 3 в слоте 4;</li>
+<li>на следующем ходу Боб играет слот 4, и это действительно красная 3;</li>
+<li>теперь Кэти наконец может сыграть красную 4.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-prompt-4"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-prompt-question-1">
+<div class="official-head">
+<h3>1. Prompt</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Боба в руке две неизвестные 2, которые раньше получили подсказки.</li>
+<li>У Кэти в руке неизвестные 5 и 4, которые тоже раньше получили подсказки.</li>
+<li>Алиса даёт Кэти красную подсказку.</li>
+<li>Как Боб интерпретирует эту подсказку?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-prompt-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Поскольку красная 3 уже в сбросе, это <strong>Critical Save</strong> красной 3, то есть Save Clue.</li>
+<li>Поэтому Боб никак не должен реагировать.</li>
+<li>Если бы красной 3 не было в сбросе, подсказка была бы <strong>Prompt</strong> на крайнюю слева 2 Боба.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-prompt-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-prompt-question-2">
+<div class="official-head">
+<h3>2. Prompt</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Кэти в руке две неизвестные 3.</li>
+<li>Какие две разные подсказки может дать Алиса?</li>
+<li>Какая из них лучше и почему?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-prompt-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Первый вариант: Алиса даёт Бобу жёлтую подсказку.<ul>
+<li>Это Play Clue на жёлтую 4, которая даёт Кэти Prompt.</li>
+<li>Кэти сыграет крайнюю слева 3 и затем остановится.</li>
+</ul>
+</li>
+<li>Второй вариант: Алиса даёт Бобу синюю подсказку.<ul>
+<li>Это Play Clue на синюю 4, которая даёт Кэти Prompt.</li>
+<li>Кэти попытается сыграть синюю 3 из слота 3. Но там окажется жёлтая 3, и она успешно сыграется.</li>
+<li>Кэти знает, что ей <strong>обещана</strong> синяя 3, поэтому продолжит и сыграет вторую 3 как синюю 3.</li>
+</ul>
+</li>
+<li>Второй вариант лучше первого, потому что он заставляет Кэти сыграть <strong>две карты вместо одной</strong>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-prompt-question-2-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-prompt-question-3">
+<div class="official-head">
+<h3>3. Prompt</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>У Кэти в руке две неизвестные фиолетовые карты.</li>
+<li>Алиса хочет дать Play Clue фиолетовой 4.</li>
+<li>Какую подсказку должна дать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-prompt-question-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса может дать Play Clue фиолетовой 4 и фиолетовой подсказкой, и подсказкой числом 4. В обоих случаях фокус будет на фиолетовой 4.</li>
+<li>Но такая подсказка передаст Кэти <strong>Prompt</strong>, и она начнёт играть свои фиолетовые карты слева направо. Тогда фиолетовая 3 из слота 4 даст <strong>мисплей</strong>.</li>
+<li>Поэтому Алиса <strong>не имеет права</strong> сейчас давать Play Clue фиолетовой 4.</li>
+<li>Вместо этого Алиса может дать Кэти подсказку числом 3. Она сфокусируется на фиолетовой 3 как <strong>Self-Prompt</strong>.</li>
+<li>После этого Алиса уже сможет без проблем дать Play Clue фиолетовой 4.</li>
+<li>Обычно игроки не должны давать Tempo Clues, потому что они не удовлетворяют Minimum Clue Value Principle. Но здесь у Алисы есть очень веская причина сделать Tempo Clue: карты Кэти расположены «не в том порядке». Поэтому в этой ситуации правило можно нарушить.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-prompt-question-3-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-sub="1" data-toc="Finesse" id="bg-finesse">
+<h2>Finesse</h2>
+<ul>
+<li>Обычно игроки играют карты, которым кто-то из команды уже дал подсказку.</li>
+<li>Но можно также сообщить игроку, что он должен сделать <strong>blind-play</strong> карты, на которой вообще нет подсказок.</li>
+<li>В примере ниже:<ul>
+<li>в руке Боба нет карт с подсказками;</li>
+<li>Алиса даёт Кэти красную подсказку, затрагивая красную 4. Это должна быть Play Clue на красную 4;</li>
+<li>Боб видит, что красная 4 сейчас неиграбельна. Если Алиса не ошибается, подсказка означает, что у кого-то должна быть красная 3;</li>
+<li>Боб не видит красную 3 с подсказкой ни в одной другой руке. Значит, Алиса обещает ему, что красная 3 находится у него;</li>
+<li>обычно это указывало бы на Prompt. Но у Боба нет ни красных карт с подсказками, ни 3 с подсказками. Где же красная 3?</li>
+<li>Боб понимает, что это <strong>Finesse</strong>: ему обещано, что крайняя слева карта без подсказки — красная 3;</li>
+<li>Боб делает blind-play карты в слоте 1, и это красная 3;</li>
+<li>Кэти видит blind-play сразу после красной подсказки и понимает, что у неё должна быть связующая красная карта — красная 4;</li>
+<li>Кэти играет красную 4.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-finesse-1"></div>
+</div>
+<h3>Prompts &gt; Finesses</h3>
+<ul>
+<li><strong>Prompts всегда имеют приоритет над Finesses</strong>.</li>
+<li>Поэтому если Алиса выбирает между:<ol>
+<li>розыгрышем карты в своей руке, на которой уже есть красная подсказка;</li>
+<li>blind-play потенциальной красной карты из Finesse Position;</li>
+</ol>
+</li>
+<li>Алиса всегда должна выбрать вариант №1.</li>
+</ul>
+<h3>Срочность Finesse</h3>
+<ul>
+<li>Finesse временно рассинхронизирует информацию внутри команды.</li>
+<li>Например, в предыдущей ситуации, если бы Боб сбросил вместо blind-play, Кэти продолжила бы считать, что у неё красная 3. Но красной 3 у неё нет — значит, представления игроков о ситуации разошлись бы.</li>
+<li>Поэтому blind-play карты под Finesse очень важен: он снова синхронизирует информацию. <strong>Если игрок Finessed, обычно он должен немедленно сделать blind-play</strong>, даже если у него есть другие важные карты для розыгрыша или хорошая подсказка.</li>
+</ul>
+<h3>Finesse Position</h3>
+<ul>
+<li><strong>Finesse Position</strong> — слот, в котором находится крайняя слева карта игрока без подсказки.</li>
+<li>Finesse Position может сдвигаться по руке, и игрока всё равно можно Finesse.</li>
+<li>В примере ниже:<ul>
+<li>Алиса даёт Кэти красную подсказку, затрагивая две красные карты в слотах 1 и 2;</li>
+<li>Кэти предполагает, что карта в слоте 1 — красная 1;</li>
+<li>затем Боб даёт Дональду синюю подсказку, затрагивая синюю 2;</li>
+<li>теперь ход Кэти. Она понимает, что у неё должна быть синяя 1 и Боб пытается сделать Finesse;</li>
+<li>blind-play синей 1 важнее, чем розыгрыш красной 1;</li>
+<li>обычно Finesse Position Кэти была бы её крайняя слева карта. Но слоты 1 и 2 уже с подсказками, поэтому Finesse Position сдвинулась в слот 3. Кэти должна сделать blind-play синей 1 именно из слота 3.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgex-finesse-2"></div>
+</div>
+<div class="beginner-challenges">
+<h3 class="subhead">Challenge Questions</h3>
+<article class="official-q beginner-challenge" id="bg-finesse-question-1">
+<div class="official-head">
+<h3>1. Finesse</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Перечислите все <strong>5 допустимых подсказок</strong>, которые Алиса может дать прямо сейчас, и назовите их тип.</li>
+<li>Какая подсказка лучшая?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-finesse-question-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ol>
+<li>Алиса может дать Бобу синюю подсказку, затрагивая синюю 1 как Play Clue.</li>
+<li>Алиса может дать Бобу подсказку числом 1, затрагивая синюю 1 как Play Clue.</li>
+<li>Алиса может дать Кэти жёлтую подсказку, затрагивая жёлтую 2 как Play Clue.</li>
+<li>Алиса может дать Кэти синюю подсказку, затрагивая синюю 2 как <strong>Finesse</strong> на синюю 1.</li>
+<li>Алиса может дать Кэти подсказку числом 2, затрагивая жёлтую 2 и синюю 2 как <strong>2 Save</strong>.</li>
+</ol>
+<p>Лучшая подсказка — <strong>Finesse</strong>, потому что она позволяет прямо сейчас сыграть две карты. Play Clue жёлтой 2 команда сможет дать позже.</p>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-finesse-question-1-a"></div>
+</div>
+</div>
+</article>
+<article class="official-q beginner-challenge" id="bg-finesse-question-2">
+<div class="official-head">
+<h3>2. Finesse</h3><span class="official-source">OFFICIAL BEGINNER</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Алиса даёт Кэти жёлтую подсказку, затрагивая жёлтую 4 как Play Clue.</li>
+<li>С точки зрения Боба это Finesse? Почему да или почему нет?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-finesse-question-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Нет, это <strong>не Finesse</strong>.</li>
+<li>У Боба есть 3 с подсказкой, и она может быть жёлтой 3. Поэтому подсказка может быть <strong>Prompt</strong> на Боба.</li>
+<li>Боб знает, что <strong>Prompts имеют приоритет над Finesses</strong>. Пока Prompt возможен, эту ситуацию нельзя интерпретировать как Finesse.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="bgq-finesse-question-2-a"></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section data-toc="Что дальше" id="bg-next-steps">
+<h2>Что дальше</h2>
+<ul>
+<li>Поздравляем: Beginner’s Guide пройден. Теперь вы знаете базовый способ игры H-Group:<ol>
+<li>как сбрасывать — <strong>Chop</strong>;</li>
+<li>два типа подсказок — <strong>Play Clues</strong> и <strong>Save Clues</strong>;</li>
+<li>как интерпретировать подсказку — <strong>Single-Card Focus</strong>;</li>
+<li>не дублировать карты — <strong>Good Touch Principle</strong>;</li>
+<li>спасать все важные карты — <strong>Save Principle</strong>;</li>
+<li>играть эффективно — <strong>Minimum Clue Value Principle</strong>;</li>
+<li>«погасить» все доступные подсказки в <strong>Early Game</strong>;</li>
+<li>по возможности использовать <strong>Prompts</strong> и <strong>Finesses</strong>.</li>
+</ol>
+</li>
+<li>После этого вы готовы сыграть несколько партий с другими участниками H-Group.</li>
+<li>Официальный Beginner’s Guide отдельно рекомендует <strong>не читать остальные продвинутые материалы сайта, пока вы не сыграли достаточно партий с группой</strong>. Сначала базовые договорённости должны стать привычными на практике.</li>
+<li>Следующий практический шаг в оригинале — узнать, <a href="https://hanabi.github.io/how-to-join">как присоединиться к игре H-Group</a>.</li>
+</ul>
+<p>После нескольких игр можно вернуться в эту русскую сборку и перейти к <strong>Learning Path</strong> и <strong>Reference</strong>.</p>
+</section>
+<div class="source-box beginner-source">Перевод сверён с официальным H-Group Beginner’s Guide: 23 основных раздела и 47 Challenge Questions с отдельными решениями. Содержание не сокращается; локальные интеграционные пояснения отделены от исходного материала.</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../assets/embedded-assets.js"></script><script src="../assets/renderer-and-diagrams.js"></script><script src="../assets/search-index.js"></script><script src="../assets/web-app.js"></script>
+</body></html>

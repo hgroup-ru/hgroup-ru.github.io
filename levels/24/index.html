@@ -1,0 +1,298 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-24" data-root="../../" data-route="levels/24">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="24" data-page-key="level-24" id="level-24-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-24">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 24 — Unnecessary Moves</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 24</span><span class="badge">Unnecessary Moves</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 24 — Unnecessary Moves</h1>
+<section data-toc="Unnecessary Moves" id="l24-unnecessary-moves">
+<h2>Unnecessary Moves</h2>
+<ul>
+<li>Опытные игроки знают много хитрых способов добиться розыгрыша нужной карты: <em>Trash Push</em>, <em>Unknown Trash Discharge</em> и так далее.</li>
+<li>В большинстве случаев такие сложные ходы в итоге дают 1-for-1, а это не слишком эффективно. Например, делать сложный <em>Trash Push</em> ради 1-for-1 почти бессмысленно, если дающий подсказку вместо этого может просто дать прямую <em>Play Clue</em> по нужной карте и получить тот же 1-for-1. Обычные <em>Play Clues</em> куда реже заканчиваются ошибкой.</li>
+<li>Поэтому продвинутые ходы обычно используют там, где нужную карту трудно подсказать напрямую. Например:<ul>
+<li>она может быть «заблокирована» другими картами — например, в руке находятся две одинаковые карты;</li>
+<li>она может находиться на chop и быть «заблокирована» в том смысле, что любая подсказка будет выглядеть как <em>Save Clue</em>, а не <em>Play Clue</em>;</li>
+<li>и так далее.</li>
+</ul>
+</li>
+<li><strong><em>Unnecessary move</em> определяется как «сложный» ход, сделанный в ситуации, где дающий подсказку мог вместо него дать прямую <em>Play Clue</em>.</strong></li>
+<li><em>Unnecessary move</em> добавляет «ещё одно действие» поверх обычного смысла исходного хода. В зависимости от ситуации этим дополнительным действием будет:<ul>
+<li><em>Ignition</em> — если используется известный мусор;</li>
+<li><em>Chop Move</em> — если используется неизвестный мусор вне chop;</li>
+<li><em>Trash Push</em> — если используется неизвестный мусор на chop.</li>
+</ul>
+</li>
+<li>Помните: ход является <em>unnecessary</em> только тогда, когда у него нет никаких дополнительных полезных эффектов. В частности:<ul>
+<li>ход <strong>не</strong> является <em>unnecessary</em>, если он дополнительно «подхватил» ещё одну полезную карту — <em>Unknown Trash Discharge</em> часто именно так и работает;</li>
+<li>ход <strong>не</strong> является <em>unnecessary</em>, если одновременно исправил надвигающийся мисплей или нарушение <em>Good Touch Principle</em>;</li>
+<li>ход <strong>не</strong> является <em>unnecessary</em>, если одновременно «дополнил» информацией ранее подсказанные карты в руке получателя;<ul>
+<li>для простоты <em>Necessary</em> в этом смысле считаются только положительные подсказки. «Дополнение» карты негативной подсказкой не считается.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Trash Finesses и Trash Bluffs всегда считаются Unnecessary" id="l24-trash-finesses-and-trash-bluffs-are-always-unnecessary">
+<h3>Trash Finesses и Trash Bluffs всегда считаются Unnecessary</h3>
+<ul>
+<li>Как объяснялось выше, хитрый ход может быть как <em>necessary</em>, так и <em>unnecessary</em>.</li>
+<li>Однако мы отдельно договариваемся всегда считать <em>Trash Finesses</em> и <em>Trash Bluffs</em> <em>unnecessary</em>, независимо от того, можно ли было на самом деле добиться розыгрыша этой карты обычной подсказкой.</li>
+<li>Это специальное правило немного упрощает игру: <em>Trash Finesses</em> и <em>Trash Bluffs</em> встречаются очень часто, а постоянно выяснять, действительно ли каждый из них был <em>necessary</em>, довольно мучительно.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Unnecessary Moves с известным мусором → Ignition" id="l24-unnecessary-moves-with-known-trash-ignition">
+<h3>Unnecessary Moves с известным мусором → Ignition</h3>
+<ul>
+<li>Если целью подсказки служит <strong>известный мусор</strong>, дополнительным действием становится <em>Ignition</em>. Обычно <em>Ignition</em> приходится на Боба, но есть два исключения:<ul>
+<li>если Боб уже может сыграть карту на своём ходу и видит играбельную карту на <em>Finesse Position</em> другого игрока, <em>Ignition</em> приходится на последнего игрока с видимой играбельной картой;</li>
+<li>если Боб сам получил подсказку и делает blind-play из-за неё, <em>Ignition</em> приходится на последнего игрока с играбельной картой на <em>Finesse Position</em>.</li>
+</ul>
+</li>
+<li><em>Unnecessary Trash Chop Move</em> отдельно объявлен недопустимым, потому что такой ход невозможно было бы отличить от <em>Chop Move Ignition</em>.</li>
+</ul>
+<h4 id="l24-example-1-an-unnecessary-trash-push-with-ignition">Пример 1 — Unnecessary Trash Push с Ignition</h4>
+<ul>
+<li>Например, в игре на троих это будет <em>Unnecessary Trash Push</em>:<ul>
+<li>все 3 уже сыграны на стол;</li>
+<li>рука Боба полностью без подсказок и состоит из <code>зелёной 2, жёлтой 2, синей 5, красной 4, синей 1</code>;</li>
+<li>Алиса даёт Бобу подсказку числом 1, затрагивая единственную 1 в слоте 5 — на chop;</li>
+<li>Боб понимает, что это <em>Trash Push</em>, и вслепую играет слот 4. Там красная 4, и розыгрыш проходит успешно;</li>
+<li>Кэти видит, что других красных карт у Боба нет. Значит, Алиса могла просто дать Бобу красную подсказку как прямую Play Clue по красной 4. Следовательно, Алиса сделала <em>Unnecessary Trash Push</em>;</li>
+<li>Кэти вслепую играет свою <em>Finesse Position</em>. Там красная 5, и розыгрыш проходит успешно.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l24-diagram-unnecessary-trash-push-ignition"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Unnecessary Moves с неизвестным мусором вне chop → Chop Move" id="l24-unnecessary-moves-with-unknown-trash-off-chop-chop-move">
+<h3>Unnecessary Moves с неизвестным мусором вне chop → Chop Move</h3>
+<ul>
+<li>Если целью подсказки является <strong>неизвестный мусор вне chop</strong>, команда реагирует так, как если бы был дан <em>Trash Chop Move</em>.</li>
+<li><em>Unnecessary Chop Moves</em> сложны тем, что могут создавать <strong>асимметрию информации</strong>: игрок, который делает blind-play, <strong>не будет знать</strong>, что карта считается <em>Chop Moved</em>, тогда как все остальные это знают. Команда должна помнить об этой асимметрии, пока <em>Chop Move</em> не будет продемонстрирован.<ul>
+<li>Как отмечалось выше, <em>Trash Finesses</em> и <em>Trash Bluffs</em> всегда считаются unnecessary, поэтому к ним это замечание не относится. Но оно относится к другим сложным ходам через мусор.</li>
+</ul>
+</li>
+</ul>
+<h4 id="l24-example-1-a-trash-finesse-with-a-chop-move">Пример 1 — Trash Finesse с Chop Move</h4>
+<ul>
+<li>Например, в игре на троих это будет <em>Trash Finesse</em>:<ul>
+<li>все 2, кроме красной 2, уже сыграны на стол;</li>
+<li>у Боба красная 2 лежит на <em>Finesse Position</em>, а других красных карт в руке нет. Значит, Алиса могла просто дать Бобу красную подсказку как прямую Play Clue по красной 2;</li>
+<li>рука Кэти полностью без подсказок;</li>
+<li>Алиса даёт Кэти подсказку числом 2, затрагивая синюю 2 в слоте 4. Синяя 2 уже сыграна и поэтому является мусором;</li>
+<li>Боб понимает, что с точки зрения Кэти подсказка выглядит как <em>Play Clue</em> по последней оставшейся 2 — красной 2. Кэти затем сделала бы мисплей синей 2 как красной 2;</li>
+<li>поэтому Боб понимает, что это <em>Trash Finesse</em> или <em>Trash Bluff</em>. Он вслепую играет свою <em>Finesse Position</em>; там красная 2, и розыгрыш проходит успешно;</li>
+<li>теперь Кэти знает, что её 2 — мусор, поскольку Боб сделал blind-play в ответ на подсказку;</li>
+<li>кроме того, Кэти знает, что все <em>Trash Finesses</em> считаются unnecessary, поэтому помечает карту в слоте 5 как <em>Chop Moved</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l24-diagram-unnecessary-trash-finesse-chop-move"></div>
+</div>
+<h4 id="l24-example-2-an-unnecessary-unknown-trash-discharge-with-a-chop-move">Пример 2 — Unnecessary Unknown Trash Discharge с Chop Move</h4>
+<ul>
+<li>Если <em>Unknown Trash Discharge</em> используется для Discharge карты, которой можно было дать прямую <em>Play Clue</em>, получатель подсказки должен пометить как <em>Chop Moved</em> карты справа от цели подсказки.</li>
+</ul>
+<h4 id="l24-example-3-an-unnecessary-unknown-trash-discharge-with-a-bad-chop-move-ejection">Пример 3 — Unnecessary Unknown Trash Discharge с Bad Chop Move Ejection</h4>
+<ul>
+<li>Например, в игре на четверых:<ul>
+<li>все 2, кроме синей 2, уже сыграны на стол;</li>
+<li>рука Дональда от самой новой карты к самой старой: <code>синяя 4, синяя 4, красная 1, синяя 1</code>;</li>
+<li>Алиса даёт Дональду красную подсказку, затрагивая красную 1 в слоте 3;</li>
+<li>Боб видит, что это <em>Unknown Trash Discharge</em>. Он играет свою <em>Third Finesse Position</em>; там синяя 2, и розыгрыш проходит успешно;</li>
+<li>Кэти видит, что Алиса могла дать прямую <em>Play Clue</em> по синей 2 Боба. Значит, подсказка была <em>Unnecessary</em>, и Дональд затем пометит синюю 1 в слоте 4 как <em>Chop Moved</em>;</li>
+<li>поэтому Кэти понимает, что это <em>Bad Chop Move Ejection</em>. Она вслепую играет свою <em>Second Finesse Position</em>; там синяя 3, и розыгрыш проходит успешно.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block local-illustration">
+<div class="diagram-shell" id="local-l24-unnecessary-utd-bcme"></div>
+<p class="local-illustration-note">Локальная иллюстрация по тексту примера; не официальный YML H-Group.</p>
+</div>
+</section>
+<section data-sub="1" data-toc="Unnecessary Moves с неизвестным мусором на chop → Trash Push" id="l24-unnecessary-moves-with-unknown-trash-on-chop-trash-push">
+<h3>Unnecessary Moves с неизвестным мусором на chop → Trash Push</h3>
+<ul>
+<li>Если целью подсказки является <strong>неизвестный мусор на chop</strong>, команда реагирует так, как если бы был дан <em>Trash Push</em>.</li>
+</ul>
+<h4 id="l24-example-1-an-unnecessary-trash-finesse-with-a-trash-push">Пример 1 — Unnecessary Trash Finesse с Trash Push</h4>
+<ul>
+<li>Например, в игре на троих это будет <em>Unnecessary Trash Finesse</em>:<ul>
+<li>все 2, кроме красной 2, уже сыграны на стол;</li>
+<li>у Боба красная 2 лежит на <em>Finesse Position</em>, а других красных карт в руке нет. Значит, Алиса может просто дать Бобу красную подсказку как прямую Play Clue по красной 2;</li>
+<li>рука Кэти полностью без подсказок;</li>
+<li>Алиса даёт Кэти подсказку числом 2, затрагивая синюю 2 в слоте 5. Синяя 2 уже сыграна и поэтому является мусором;</li>
+<li>Боб понимает, что с точки зрения Кэти подсказка выглядит как <em>Play Clue</em> по последней оставшейся 2 — красной 2. Кэти затем сделала бы мисплей синей 2 как красной 2;</li>
+<li>поэтому Боб понимает, что это <em>Trash Finesse</em>. Он вслепую играет свою <em>Finesse Position</em>; там красная 2, и розыгрыш проходит успешно;</li>
+<li>теперь Кэти знает, что её 2 — мусор, потому что Боб сделал blind-play в ответ на подсказку. Но она также знает, что этот <em>Trash Finesse</em> был <em>unnecessary</em>: Алиса могла просто дать Бобу красную подсказку;</li>
+<li>значит, это <em>Unnecessary Trash Finesse</em>. Кэти должна отреагировать так, будто известный мусор подсказали на её chop, и вслепую сыграть карту из слота 4 как <em>Trash Push</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l24-diagram-unnecessary-trash-finesse-trash-push"></div>
+</div>
+<h4 id="l24-example-2-an-unnecessary-trash-push-discharge-with-a-trash-push">Пример 2 — Unnecessary Trash Push Discharge с Trash Push</h4>
+<ul>
+<li>Если <em>Trash Push Discharge</em> выполняется подсказкой по карте в руке Кэти, Боб должен вслепую сыграть свою <em>Third Finesse Position</em>, доказывая, что <em>Trash Pushed</em>-карта является мусором. Затем Кэти должна вслепую сыграть карту рядом с той, про которую она только что узнала, что это мусор.</li>
+</ul>
+<h4 id="l24-example-3-an-unnecessary-bad-chop-move-ejection-with-a-trash-push-discharge">Пример 3 — Unnecessary Bad Chop Move Ejection с Trash Push Discharge</h4>
+<ul>
+<li>Переход к интерпретации через известный мусор работает и тогда, когда команде нужно не дать получателю подсказки сделать <em>Trash Push</em> неиграбельной картой.</li>
+<li>Например, в игре на четверых:<ul>
+<li>все 2 уже сыграны на стол;</li>
+<li>у Боба красная 3 лежит на <em>Second Finesse Position</em>, а других красных карт в руке нет. Значит, Алиса может просто дать Бобу красную подсказку как прямую Play Clue по красной 3;</li>
+<li>рука Дональда от самой новой карты к самой старой: <code>красная 1, зелёная 1, синяя 2, синяя 1</code>;</li>
+<li>Алиса даёт Дональду подсказку числом 2, затрагивая синюю 2 в слоте 3;</li>
+<li>Боб понимает, что с точки зрения Дональда подсказка выглядит как <em>Trash Chop Move</em>. Поскольку Дональд собирается пометить мусорную карту как <em>Chop Moved</em>, Боб вслепую разыгрывает красную 3 как <em>Bad Chop Move Ejection</em>;</li>
+<li>blind-play Боба сообщил Дональду о мусорной карте: синяя 1, которую тот собирался пометить как <em>Chop Moved</em>, является мусором. Поэтому Дональд дополнительно трактует подсказку как <em>Trash Push</em>;</li>
+<li>Кэти видит, что Дональд собирается сыграть зелёную 1 как <em>Trash Push</em>, но зелёная 1 уже сыграна;</li>
+<li>поэтому Кэти вслепую играет свою <em>Third Finesse Position</em> как <em>Trash Push Discharge</em>;</li>
+<li>Дональд распознаёт ход как <em>Unnecessary Bad Chop Move Ejection</em> и в итоге не играет зелёную 1 и не делает никакого <em>Chop Move</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l24-diagram-unnecessary-bad-chop-move-ejection"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Другие примеры" id="l24-other-examples">
+<h3>Другие примеры</h3>
+<ul>
+<li>Больше примеров <em>unnecessary</em> ходов можно найти в официальном <a href="https://hanabi.github.io/examples/unnecessary">разделе примеров</a>.</li>
+</ul>
+</section>
+<section data-toc="Тренировочные вопросы" id="l24-training">
+<h2>Тренировочные вопросы</h2>
+<p class="source-mini">В официальном источнике отдельного набора Official Challenge Questions для Level 24 нет; ниже — наши Training Questions по материалу этого уровня.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. Когда сложный ход считается Unnecessary?</summary>
+<div class="answer">
+<p>Когда дающий подсказку мог вместо него дать прямую Play Clue по нужной карте и у сложного хода нет дополнительной полезной функции — например, он не подхватывает ещё одну карту, не исправляет мисплей/GTP и не дополняет положительной информацией ранее подсказанные карты.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Какие ходы всегда считаются Unnecessary независимо от доступности прямой подсказки?</summary>
+<div class="answer">
+<p><em>Trash Finesses</em> и <em>Trash Bluffs</em>. Это специальное упрощение, чтобы команда не анализировала каждый такой частый ход на фактическую необходимость.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Что добавляет Unnecessary move, если целью служит известный мусор?</summary>
+<div class="answer">
+<p><em>Ignition</em>. Обычно он приходится на Боба, но есть исключения, когда у Боба уже есть известный розыгрыш или когда Боб сам получил подсказку и blind-play уже исходит от него.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Как команда реагирует на Unnecessary move через неизвестный мусор вне chop?</summary>
+<div class="answer">
+<p>Как на <em>Trash Chop Move</em>: соответствующие карты становятся Chop Moved. При этом может возникнуть асимметрия — игрок, сделавший blind-play, сам ещё не знает о Chop Move, хотя остальные знают.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Как команда реагирует на Unnecessary move через неизвестный мусор на chop?</summary>
+<div class="answer">
+<p>Как на <em>Trash Push</em>: после того как мусорность цели становится известна, разыгрывается соседняя карта согласно Trash Push-интерпретации.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Почему Unnecessary Trash Chop Move запрещён?</summary>
+<div class="answer">
+<p>Потому что его невозможно отличить от <em>Chop Move Ignition</em>; конвенции специально исключают эту неоднозначность.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Полный перевод официального <a href="https://hanabi.github.io/level-24" rel="noopener" target="_blank">Level 24 — Unnecessary Moves</a>. Официальный source не содержит отдельного набора Challenge Questions для этого уровня.</div>
+</article>
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

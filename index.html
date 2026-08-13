@@ -1,0 +1,113 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="home" data-root="" data-route="">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="beginner/#bg-chop">Chop</a><a class="guide-link" href="beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top"><article class="content-page home-page" data-page-key="home" data-page-label="Начало" id="home">
+<div class="home-hero">
+<div><span class="guide-eyebrow">H-GROUP · РУССКАЯ АДАПТАЦИЯ</span><h1>H-Group Conventions</h1><p>Beginner’s Guide, Learning Path и Reference в одном автономном русском справочнике.</p></div>
+<div class="home-status"><strong>1–25</strong><span>переведены полностью</span></div>
+</div>
+<section data-toc="С чего начать" id="home-start">
+<h2>С чего начать</h2>
+<p class="lead">Выбери маршрут по тому, зачем ты открыл документ. Если сомневаешься — начинай с Beginner’s Guide.</p>
+<div class="home-route-grid">
+<article class="home-route-card recommended"><span class="home-route-kicker">ВПЕРВЫЕ В H-GROUP</span><h3>Beginner’s Guide</h3><p>Если ты ещё не знаешь Chop, Play Clue, Save Clue, Prompt и Finesse. Это последовательное введение в базовый язык H-Group.</p><a class="guide-btn primary home-route-action" data-home-target="beginner" href="beginner/#beginner-top">Начать с нуля</a></article>
+<article class="home-route-card"><span class="home-route-kicker">УЖЕ ЗНАЮ ОСНОВЫ</span><h3>Learning Path</h3><p>Если Beginner уже понятен и хочется двигаться дальше по уровням. Здесь показано, что изучать следующим и когда переходить дальше.</p><a class="guide-btn home-route-action" data-home-target="learning-path" href="learning-path/#learning-path-top">Открыть Learning Path</a></article>
+<article class="home-route-card"><span class="home-route-kicker">НУЖНО НАЙТИ ПРАВИЛО</span><h3>Reference</h3><p>Если нужно быстро проверить конкретную конвенцию или правило. Выбери уровень или найди нужный термин через локальный фильтр.</p><a class="guide-btn home-route-action" data-home-target="reference-index" href="reference/#reference-start">Открыть Reference</a></article>
+</div>
+<div class="home-guidance"><strong>Рекомендуемый путь:</strong> Beginner’s Guide → несколько игр на практике → Learning Path. <strong>Reference</strong> и <a data-home-target="glossary" href="glossary/#glossary-top">Glossary</a> лучше использовать как справочники по мере необходимости.</div>
+</section>
+<section data-toc="Что есть в этой сборке" id="home-contents">
+<h2>Что есть в этой сборке</h2>
+<div class="home-feature-grid">
+<div><strong>Beginner’s Guide</strong><span>Beginner’s Guide: 23 главы и 47 официальных Challenge Questions.</span></div>
+<div><strong>Reference Levels 1–25</strong><span>Полные русские переводы официального Reference Levels 1–25 со всеми схемами; Official Challenge Questions встроены только там, где они существуют в официальном источнике.</span></div>
+<div><strong>Learning Path 1–25</strong><span>Полная карта уровней с кликабельными названиями конвенций.</span></div>
+<div><strong>Glossary</strong><span>Быстрый словарь терминов с переходами к основным определениям.</span></div>
+</div>
+</section>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="assets/embedded-assets.js"></script><script src="assets/renderer-and-diagrams.js"></script><script src="assets/search-index.js"></script><script src="assets/web-app.js"></script>
+</body></html>

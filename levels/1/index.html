@@ -1,0 +1,381 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-1" data-root="../../" data-route="levels/1">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+<article class="level-page content-page" data-level="1" data-page-key="level-1" id="level-1-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-1">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 1 — Основы (Fundamentals)</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 1</span><span class="badge">Fundamentals</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 1 — Основы (Fundamentals)</h1>
+<div class="preview-note"><strong>Формат:</strong> Обычный текст переведён на русский; составные названия конвенций H-Group / Hanabi, буквенная нотация заметок и подписи внутри схем сохраняются в исходном виде; имена игроков в русском тексте передаются как Алиса, Боб, Кэти, Дональд и Эмили.</div>
+<ul>
+<li>Материал Level 1 можно изучать даже без опыта в Hanabi: либо до первой партии, либо после нескольких игр, когда уже понятна базовая механика.</li>
+<li>Большая часть материала повторяет Beginner’s Guide, но здесь те же правила сформулированы немного подробнее.</li>
+<li>Если Beginner’s Guide ещё не прочитан, <strong>ОСТАНОВИТЕСЬ СЕЙЧАС</strong> и сначала прочитайте его. Возвращайтесь сюда только после 5–10 партий: эта страница предназначена как справочник для игроков, которые уже прочитали Beginner’s Guide.</li>
+</ul>
+<section data-toc="Конвенции" id="l1-conventions">
+<h2>Конвенции</h2>
+</section>
+<section data-sub="1" data-toc="Chop" id="l1-chop">
+<h3>Chop</h3>
+<ul>
+<li>Когда игроку нужно сбросить карту, обычно он сбрасывает крайнюю справа карту без подсказки.</li>
+<li>Формально <em>chop</em> игрока — <strong>следующая карта без подсказки, которую он сбросил бы, если бы ему больше нечего было делать</strong>.</li>
+<li>Если у игрока есть карта с подсказкой, о которой уже известно, что она бесполезна, обычно сначала сбрасывают именно эту бесполезную карту, а не chop. При этом бесполезная карта <strong>не становится chop</strong>: chop по-прежнему остаётся крайней справа картой без подсказки.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Играбельность (Playable)" id="l1-playable">
+<h3>Играбельность (Playable)</h3>
+<ul>
+<li><em>Играбельность (Playable)</em> — свойство карты. Для начала полезно помнить раздел <em>Delayed Play Clues</em> из Beginner’s Guide.</li>
+<li>Когда мы говорим, что карта без подсказки сейчас <strong>играбельна</strong>, это не обязательно означает, что её можно положить на стол прямо в эту секунду. На практике это означает, что на эту карту было бы допустимо дать либо <em>Play Clue</em>, либо <em>Delayed Play Clue</em>.</li>
+<li>Иными словами, если такой карте дать <em>Delayed Play Clue</em>, она в итоге будет сыграна <strong>без каких-либо дополнительных подсказок</strong>: все необходимые промежуточные карты уже находятся в нужных руках и учтены в момент, когда даётся исходная <em>Play Clue</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Мусор (Trash)" id="l1-trash">
+<h3>Мусор (Trash)</h3>
+<ul>
+<li><strong>Мусор (Trash)</strong> — свойство карты. Карта считается мусором, если она уже никогда не сможет быть сыграна на стол или если две либо больше копий этой карты уже имеют подсказки.</li>
+<li>Поскольку мы следуем <em>Good Touch Principle</em>, команда намеренно старается не затрагивать мусорные карты подсказками. На более высоких уровнях появятся специальные ситуации, где намеренно затронуть мусор всё же бывает выгодно.</li>
+<li>В редких случаях одна и та же карта может одновременно быть и <strong>играбельной</strong>, и <strong>мусорной</strong>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Save Clues" id="l1-save-clues">
+<h3>Save Clues</h3>
+<ul>
+<li><em>Save Clue</em> разрешено давать <strong>только карте на chop</strong>.<ul>
+<li>Поэтому если подсказка фокусируется на карте <strong>не на chop</strong>, она обязана быть <em>Play Clue</em>.</li>
+</ul>
+</li>
+<li>Нельзя давать <em>Save Clue</em> любой карте, которую просто хочется сохранить. На Level 1 это допустимо только для следующих категорий:<ol>
+<li>5 — подсказкой числом 5, то есть через <em>5 Save</em>;</li>
+<li>2 — подсказкой числом 2, то есть через <em>2 Save</em>;</li>
+<li>критических карт — подсказкой по цвету или по числу.</li>
+</ol>
+</li>
+<li>Кроме того, вся группа договаривается никогда не позволять сбросить <strong>уникальную играбельную карту</strong>. Однако подсказка такой карте по определению является <em>Play Clue</em>, а не <em>Save Clue</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Фокус подсказки (Clue Focus)" id="l1-focus">
+<h3>Фокус подсказки (Clue Focus)</h3>
+<p>Фокус подсказки (Clue Focus) определяется четырьмя правилами по порядку:</p>
+<ol>
+<li>Если подсказка не затрагивает впервые ни одной карты — фокус находится на <strong>крайней слева повторно затронутой карте</strong>.</li>
+<li>Если подсказка впервые затрагивает ровно одну карту — фокус находится на ней.</li>
+<li>Если подсказка впервые затрагивает две или больше карт и среди них есть chop — фокус находится на chop.</li>
+<li>Если подсказка впервые затрагивает две или больше карт и chop не затронут — фокус находится на <strong>крайней слева впервые затронутой карте</strong>.</li>
+</ol>
+<div class="hanabi-block flowchart-panel" data-flowchart-panel="">
+<div class="visual-toolbar"><button aria-label="Развернуть блок-схему фокуса подсказки" class="visual-expand-btn" data-expand-flowchart="" type="button">⛶ Развернуть схему</button></div>
+<div class="flowchart-inline"><svg aria-label="Блок-схема фокуса подсказки" class="flowchart-l1" role="img" viewbox="0 0 760 420">
+<defs><marker id="l1arr" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5"><polygon fill="currentColor" points="0 0,10 3.5,0 7"></polygon></marker></defs>
+<g fill="none" marker-end="url(#l1arr)" stroke="currentColor" stroke-width="2"><path d="M380 70 V112"></path><path d="M380 170 L190 215"></path><path d="M380 170 L560 215"></path><path d="M560 276 L455 325"></path><path d="M560 276 L655 325"></path></g>
+<g class="site-theme-text" font-family="system-ui,sans-serif" text-anchor="middle"><rect fill="var(--surface)" height="55" rx="9" stroke="currentColor" width="280" x="240" y="15"></rect><text font-size="16" x="380" y="38"><tspan x="380">Дана подсказка.</tspan><tspan dy="19" x="380">На какой карте фокус?</tspan></text>
+<rect fill="var(--surface)" height="58" rx="9" stroke="currentColor" width="330" x="215" y="112"></rect><text font-size="15" x="380" y="137"><tspan x="380">Подсказка впервые затронула</tspan><tspan dy="18" x="380">хотя бы одну карту?</tspan></text>
+<g class="flow-edge-label"><rect height="24" rx="12" width="48" x="252" y="176"></rect><text x="276" y="193">Нет</text></g><g class="flow-edge-label"><rect height="24" rx="12" width="44" x="480" y="176"></rect><text x="502" y="193">Да</text></g>
+<rect fill="var(--surface)" height="66" rx="9" stroke="currentColor" width="310" x="35" y="218"></rect><text font-size="15" x="190" y="244"><tspan x="190">Фокус: крайняя слева</tspan><tspan dy="18" x="190">повторно затронутая карта</tspan></text>
+<rect fill="var(--surface)" height="58" rx="9" stroke="currentColor" width="270" x="425" y="218"></rect><text font-size="15" x="560" y="252">Подсказка затронула chop?</text>
+<g class="flow-edge-label"><rect height="24" rx="12" width="44" x="478" y="286"></rect><text x="500" y="303">Да</text></g><g class="flow-edge-label"><rect height="24" rx="12" width="48" x="608" y="286"></rect><text x="632" y="303">Нет</text></g>
+<rect fill="var(--surface)" height="60" rx="9" stroke="currentColor" width="210" x="350" y="330"></rect><text font-size="15" x="455" y="365">Фокус: chop</text>
+<rect fill="var(--surface)" height="70" rx="9" stroke="currentColor" width="180" x="570" y="325"></rect><text font-size="14" x="660" y="351"><tspan x="660">Фокус: крайняя слева</tspan><tspan dy="17" x="660">впервые затронутая</tspan><tspan dy="17" x="660">карта</tspan></text></g>
+</svg></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Good Touch Principle" id="l1-gtp">
+<h3>Good Touch Principle</h3>
+<ul>
+<li>См. раздел <a href="../../beginner/#bg-gtp"><em>Good Touch Principle</em></a> в Beginner’s Guide.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Save Principle" id="l1-save-principle">
+<h3>Save Principle</h3>
+<ul>
+<li>См. раздел <a href="../../beginner/#bg-save-principle"><em>Save Principle</em></a> в Beginner’s Guide.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Minimum Clue Value Principle" id="l1-mcvp">
+<h3>Minimum Clue Value Principle</h3>
+<ul>
+<li>См. раздел <a href="../../beginner/#bg-mcvp"><em>Minimum Clue Value Principle</em></a> в Beginner’s Guide.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Early Game" id="l1-early-game">
+<h3>Early Game</h3>
+<ul>
+<li><em>Early Game</em> — период партии до того момента, когда кто-либо впервые сбросит свою chop-карту.</li>
+<li>До окончания <em>Early Game</em> игроки <strong>обязаны «исчерпать» все доступные Play Clues и Save Clues</strong> на столе: если такую подсказку ещё допустимо дать, нельзя просто инициировать <em>Mid-Game</em> сбросом chop.<ul>
+<li>Как объясняется в Beginner’s Guide, «исчерпать все Play Clues» <strong>не означает</strong> дать все возможные <em>Tempo Clues</em>. Обычная <em>Tempo Clue</em> не удовлетворяет <em>Minimum Clue Value Principle</em>, поэтому без специальной причины её давать не следует.</li>
+</ul>
+</li>
+<li>На Level 9 появляются дополнительные правила для <em>Early Game</em>. Если вы пока играете только Level 1, о них можно не беспокоиться.</li>
+</ul>
+</section>
+<section data-toc="Специальные приёмы" id="l1-special">
+<h2>Специальные приёмы</h2>
+</section>
+<section data-sub="1" data-toc="5 Save" id="l1-5-save">
+<h3>5 Save</h3>
+<ul>
+<li><em>5 Save</em> — это подсказка числом 5, которая впервые затрагивает 5 без подсказки на chop другого игрока. Команда заранее договаривается читать такой ход как <em>Save Clue</em>, а не как <em>Play Clue</em>.</li>
+<li>По определению <em>5 Save</em> делается <strong>только подсказкой по числу 5</strong>. Если 5 без подсказки впервые затронута подсказкой по цвету, такая подсказка рассматривается как <em>Play Clue</em>, а не как <em>5 Save</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="2 Save" id="l1-2-save">
+<h3>2 Save</h3>
+<ul>
+<li><em>2 Save</em> — это подсказка числом 2, которая впервые затрагивает 2 без подсказки на chop другого игрока. Команда заранее договаривается читать такой ход как <em>Save Clue</em>, а не как <em>Play Clue</em>.</li>
+<li>По определению <em>2 Save</em> делается <strong>только подсказкой по числу 2</strong>. Если 2 без подсказки впервые затронута подсказкой по цвету, это будет <em>Play Clue</em>.<ul>
+<li>Исключение — если другая копия этой 2 уже лежит в стопке сброса. Тогда подсказка по цвету оставшейся копии будет <em>Critical Save</em>. Но такой ход всё равно <strong>не классифицируется как 2 Save</strong>.</li>
+</ul>
+</li>
+</ul>
+<h4>Visible Rule</h4>
+<ul>
+<li>Игрокам <strong>запрещено</strong> делать <em>2 Save</em> для 2, если другая копия той же 2 видна в руке другого игрока.</li>
+</ul>
+<h4>Double Chop 2's</h4>
+<ul>
+<li>Исключение из <em>Visible Rule</em> возникает, когда одинаковые 2 одновременно лежат на chop у двух игроков. В этом случае разрешено сделать <em>2 Save</em> любой из них. Если это происходит в <em>Early Game</em>, команда <strong>обязана</strong> сохранить одну из них до того, как даст <em>5 Stall</em> или сбросит карту, чтобы начать <em>Mid-Game</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Prompt" id="l1-prompt">
+<h3>Prompt</h3>
+<ul>
+<li><em>Prompt</em> — это ситуация, когда подсказка заставляет игрока сыграть карту с уже имеющейся подсказкой, точное значение которой до этого оставалось неизвестным.</li>
+<li>Если игрок <strong>и без новой подсказки уже собирался сыграть эту карту</strong>, это не <em>Prompt</em>. <em>Prompt</em> применяется только к карте, которую без этой подсказки сейчас не собирались разыгрывать.</li>
+<li>Если игрока <em>Prompted</em> и в его руке подходит несколько карт с подсказками, он играет <strong>крайнюю слева</strong> подходящую карту.</li>
+<li>Подробный пример <em>Prompt</em> есть в Beginner’s Guide.</li>
+<li>На Level 5 к этому правилу добавляется раздел <em>Prompts in Multi-Color Variants</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Finesse" id="l1-finesse">
+<h3>Finesse</h3>
+<ul>
+<li><em>Finesse</em> — это ход, который заставляет игрока вслепую сыграть карту, чтобы выполнить обещание, что определённая другая карта уже является играбельной.</li>
+<li>Подробная механика <em>Finesse</em> разобрана в Beginner’s Guide.</li>
+<li><em>Finesse</em> должен проходить через <strong>связующую (connecting)</strong> карту. Например, красная 1 непосредственно ведёт к красной 2, поэтому эти две карты образуют связующую пару.</li>
+<li>Когда игрок получает <em>Finesse</em>, он должен выполнить ожидаемый blind-play <strong>сразу</strong>, тем самым показывая команде, что понял связь.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Finesse Position" id="l1-finesse-position">
+<h3>Finesse Position</h3>
+<ul>
+<li><em>Finesse Position</em> игрока — слот, в котором находится его <strong>крайняя слева карта без подсказки</strong>.</li>
+<li>На Level 5 это определение усложняется из-за <em>Queued Finesse</em>.<ul>
+<li>При <em>Queued Finesse</em> в некоторых ситуациях карта без обычной подсказки уже считается фактически «полученной», поэтому простого правила «крайняя слева карта без подсказки» становится недостаточно.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Finessed-карты" id="l1-finessed-cards">
+<h3>Finessed-карты</h3>
+<ul>
+<li>Хотя <em>Finessed-карта</em> формально остаётся без подсказки, её полезно мысленно считать картой с <strong>невидимой подсказкой</strong>, потому что команда уже «получила» её через <em>Finesse</em>.</li>
+<li>Поэтому если новая подсказка затрагивает одновременно <em>Finessed-карту</em> и другую карту, которая до этого вообще не имела подсказки, фокус уходит на <strong>другую, действительно новую карту</strong>: по правилам фокуса новая информация имеет приоритет над картой, которая уже была получена через Finesse.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Prompts &gt; Finesses" id="l1-prompts-finesses">
+<h3>Prompts &gt; Finesses</h3>
+<ul>
+<li><strong>Prompts всегда имеют приоритет над Finesses.</strong></li>
+<li>Например, если Алиса должна выбрать между:<ol>
+<li>розыгрышем карты в своей руке, на которой уже есть красная подсказка;</li>
+<li>blind-play потенциальной красной карты из своей <em>Finesse Position</em>;</li>
+</ol>
+</li>
+<li>Алиса всегда сначала играет <strong>карту с подсказкой</strong>. Только если подходящей Prompted-карты нет, она рассматривает blind-play через <em>Finesse</em>.</li>
+</ul>
+</section>
+<section data-toc="Возможности сайта" id="l1-website">
+<h2>Возможности сайта</h2>
+<ul>
+<li>Если вы уже сыграли несколько партий на Hanab Live, то наверняка заметили, что сайт предоставляет много дополнительных функций помимо самой игровой доски.</li>
+<li>У Hanab Live есть подробная документация возможностей; из лобби к ней также можно перейти через кнопку <strong>Help</strong> в правом верхнем углу.</li>
+<li>Ниже перечислены несколько функций, которые особенно важно знать начинающему игроку H-Group.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Заметки на картах (Card Notes)" id="l1-card-notes">
+<h3>Заметки на картах (Card Notes)</h3>
+<ul>
+<li>Заметки на картах нужно вести <strong>в каждой партии</strong>. Это не «костыль» и не послабление: сильнейшие игроки постоянно записывают информацию, потому что Hanabi требует помнить больше контекста, чем удобно держать в голове.</li>
+<li>Некоторые специальные заметки на Hanab Live меняют внешний вид карты:<ul>
+<li>Если написать точное название карты, например <code>red 2</code> или <code>r2</code>, изображение карты визуально «прилипнет» к указанному точному значению.</li>
+<li>Заметка <code>f</code> означает, что карта <em>Finessed</em> и должна быть сыграна вслепую позже. Сайт рисует вокруг такой карты специальную рамку.<ul>
+<li>Быстрый способ добавить такую заметку — <code>Shift + правый клик</code>.</li>
+</ul>
+</li>
+<li>Заметка <code>cm</code> означает, что карта <em>Chop Moved</em>. Сайт также показывает специальную рамку. Сами <em>Chop Moves</em> вводятся на Level 4, поэтому игроку Level 1 пока достаточно просто знать, что такая заметка существует.<ul>
+<li>Быстрый способ добавить её — <code>Alt + правый клик</code>.</li>
+</ul>
+</li>
+<li>Несколько заметок можно складывать с помощью квадратных скобок, например <code>[f] [red 2]</code>.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Rewind" id="l1-rewind">
+<h3>Rewind</h3>
+<ul>
+<li>Во время партии кнопка со стрелкой в левом нижнем углу открывает встроенный повтор партии.<ul>
+<li>Клавиши со стрелками можно использовать как быстрый способ перемещаться назад и вперёд по истории партии.</li>
+</ul>
+</li>
+<li>Это особенно полезно, когда нужно восстановить, что именно произошло несколько ходов назад и в каком контексте была дана подсказка.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Empathy" id="l1-empathy">
+<h3>Empathy</h3>
+<ul>
+<li>Если нажать пробел или щёлкнуть левой кнопкой по руке другого игрока, можно увидеть карты <strong>так, как их видит этот игрок</strong>.</li>
+<li>По смыслу это эквивалент вопроса за физическим столом: «что ты знаешь о своих картах?»</li>
+<li>На Hanab Live эта функция называется <strong>Empathy</strong>.</li>
+</ul>
+</section>
+<section data-toc="Тренировочные вопросы" id="l1-training">
+<h2>Тренировочные вопросы</h2>
+<p>Короткая проверка базовых конвенций. Ответы не участвуют во встроенном поиске.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. У Боба есть бесполезная карта с подсказкой и обычный chop. Что он сбрасывает первым? <span class="qtag">Chop</span></summary>
+<div class="answer">
+<p>Сначала известную мусорную карту. Определение Chop при этом не меняется: это по-прежнему самая правая карта без подсказки.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Карта ещё не может быть сыграна прямо сейчас, но корректная Delayed Play Clue гарантирует её последующий розыгрыш без новых подсказок. Считается ли она играбельной? <span class="qtag">Playable</span></summary>
+<div class="answer">
+<p>Да. В H-Group карта считается <em>играбельной</em>, если ей можно корректно дать Delayed Play Clue.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Подсказка фокусируется на критической карте не на chop. Может ли это быть Save Clue? Save Clue</summary>
+<div class="answer">
+<p>Нет. Save Clue разрешён только на chop; фокус не на chop должен иметь интерпретацию розыгрыша.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Подсказка не затрагивает ни одной новой карты. Где фокус? <span class="qtag">Clue Focus</span></summary>
+<div class="answer">
+<p>На крайней слева повторно затронутой карте.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Подсказка впервые затрагивает три карты, одна из них chop. Где фокус? <span class="qtag">Clue Focus</span></summary>
+<div class="answer">
+<p>На chop.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Можно ли 2 Save, если в чужой руке уже видна вторая копия той же 2? <span class="qtag">Правило видимой копии</span></summary>
+<div class="answer">
+<p>Обычно нет. Исключение — одинаковые 2 одновременно лежат на chop двух игроков.</p>
+</div>
+</details>
+<details class="qa">
+<summary>7. Одно и то же обещание можно объяснить и Prompt, и Finesse. Что выполняется первым? <span class="qtag">Prompts &gt; Finesses</span></summary>
+<div class="answer">
+<p>Prompt. Кандидат с подсказкой разыгрывается раньше потенциального blind-play из Finesse Position.</p>
+</div>
+</details>
+<details class="qa">
+<summary>8. Где находится Finesse Position? <span class="qtag">Finesse Position</span></summary>
+<div class="answer">
+<p>На крайней слева карте без подсказки.</p>
+</div>
+</details>
+<details class="qa">
+<summary>9. Можно ли закончить Early Game сбросом, пока на столе остаётся очевидная Save Clue? <span class="qtag">Early Game</span></summary>
+<div class="answer">
+<p>Нет. Доступные Play Clues и Save Clues должны быть исчерпаны до первого сброса chop-карты.</p>
+</div>
+</details>
+</div>
+</section>
+<section data-toc="Challenge Questions" id="l1-challenges">
+<h2>Challenge Questions</h2>
+<p>Challenge Questions для Level 1 находятся в <a href="../../beginner/#beginner-top">Beginner’s Guide</a>.</p>
+</section>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

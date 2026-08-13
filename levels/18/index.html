@@ -1,0 +1,428 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-18" data-root="../../" data-route="levels/18">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="18" data-page-key="level-18" id="level-18-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-18">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 18 — Elimination</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 18</span><span class="badge">Elimination</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 18 — Elimination</h1>
+<section data-toc="Конвенции" id="l18-conventions">
+<h2>Конвенции</h2>
+</section>
+<section data-sub="1" data-toc="Elimination («исключение вариантов») &amp; Elimination Notes" id="l18-elimination--elimination-notes">
+<h3>Elimination («исключение вариантов») &amp; Elimination Notes</h3>
+<ul>
+<li>Обычно партнёры никогда не позволят вам сбросить что-то важное. Поэтому, когда вы сбрасываете играбельную карту (или нужную 2) <strong>и</strong> этой карты нет в руке ни у кого другого, можно подумать, что команда ошиблась.</li>
+<li>Одна веская причина, по которой команда могла позволить сбросить важную карту, — другая её копия находится у вас в руке. (Чтобы соблюдать <em>Good Touch Principle</em>, партнёрам пришлось ждать вашего сброса, иначе они дублировали бы карту.)</li>
+<li>Поэтому после последующей подсказки вы будете точно знать, какая это карта.</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 3 уже сыграна на стол.</li>
+<li>Рука Алисы полностью без подсказок.</li>
+<li>Алиса сбрасывает chop — слот 5. Это играбельная красная 4.</li>
+<li>Алиса удивлённо ахает: она знает, что команда договорилась не позволять друг другу сбрасывать играбельные карты (<em>Save Principle</em>).</li>
+<li>Алиса знает, что команда не находилась в какой-то критической ситуации, поэтому единственное объяснение — у неё должна быть другая копия красной 4.</li>
+<li>Алиса записывает заметку <code>r4?</code> на слотах 2, 3, 4 и 5. (На слоте 1 её быть не может, потому что это карта, которую Алиса только что добрала.)</li>
+<li>Боб даёт Алисе красную подсказку, затрагивая карты в слотах 1 и 2.</li>
+<li>Обычно Алиса сыграла бы крайнюю слева карту — слот 1 — как красную 4. Но из-за своих заметок она знает, что красная 4 на самом деле должна находиться в слоте 2.</li>
+<li>Алиса успешно разыгрывает красную 4 из слота 2. Поскольку красная 5 — единственная оставшаяся хорошая красная карта, Алиса может предположить по <em>Good Touch Principle</em>, что другая её красная карта — красная 5, и сыграть её на следующем ходу.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-elimination-notes"></div>
+</div>
+<ul>
+<li>В этом примере заметки <code>r4?</code>, которые пишет Алиса, называются <em>Elimination Notes</em>. <em>Elimination Notes</em> обозначают возможные слоты конкретной карты.</li>
+<li>В этом примере «событием», вызвавшим запись <em>Elimination Notes</em>, был сброс карты, поэтому это называется <em>Discard Elimination</em>.</li>
+<li>Обратите внимание: игроки не должны автоматически создавать <em>Elimination Notes</em> каждый раз, когда сбрасывают играбельную карту. Иногда партия бывает настолько напряжённой, что разумного способа «получить» эту играбельную карту действительно не находится. Нужно применять здравое суждение и учитывать контекст.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Double Discard Elimination" id="l18-double-discard-elimination">
+<h3>Double Discard Elimination</h3>
+<ul>
+<li>Если игрок в ситуации <em>Double Discard</em> всё равно сбрасывает при очевидной доступной подсказке (например, <em>5 Stall</em>), это означает, что он <strong>видит</strong> другую копию карты и на самом деле вовсе не делал <em>Double Discard</em>.</li>
+<li>Поэтому, когда такое происходит, нужно записать <em>Elimination Notes</em> на всей своей руке для этой карты.</li>
+<li>Это почти то же самое, что <em>Discard Elimination</em>, только триггером служит сброс другого игрока.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="2 Elimination" id="l18-2-elimination">
+<h3>2 Elimination</h3>
+<ul>
+<li>По <em>Save Principle</em> все знают, что все 2 должны быть спасены. Поэтому если кто-то в команде позволяет сбросить 2, это очень странно.</li>
+<li>Если ничего особенного не происходит, это должно сигнализировать, что у кого-то другого есть вторая копия этой 2, и вызвать запись <em>Elimination Notes</em> на его руке.</li>
+</ul>
+</section>
+<section data-toc="Специальные ходы" id="l18-special-moves">
+<h2>Специальные ходы</h2>
+</section>
+<section data-sub="1" data-toc="Elimination Blind-Play" id="l18-the-elimination-blind-play">
+<h3>Elimination Blind-Play</h3>
+<ul>
+<li>Сначала см. раздел <a href="#l18-elimination--elimination-notes">Elimination</a>.</li>
+<li>В примере для <em>Discard Elimination</em> команда напрямую подсказала вторую копию красной 4. Но в других ситуациях команде <strong>не потребуется</strong> давать подсказку. Игрок с <em>Elimination Notes</em> может по одному исключать варианты. Когда остаётся только один вариант, карту можно сыграть вслепую как <em>Elimination Blind-Play</em>.</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 3 уже сыграна на стол.</li>
+<li>Рука Алисы полностью без подсказок.</li>
+<li>Алиса сбрасывает chop — слот 5. Это играбельная красная 4.</li>
+<li>Алиса знает, что у команды не было ничего более срочного, поэтому единственное объяснение — у неё должна быть другая копия красной 4.</li>
+<li>Алиса записывает <em>Elimination Notes</em> <code>r4?</code> на слотах 2, 3, 4 и 5. (На слоте 1 её быть не может, потому что это карта, которую Алиса только что добрала.)</li>
+<li>Боб даёт Алисе синюю подсказку, затрагивая слоты 1, 2, 3 и 4. (Это <em>Play Clue</em> на слот 1.)</li>
+<li>Алиса записывает <code>b1</code> на слоте 1.</li>
+<li>Алиса стирает <em>Elimination Notes</em> для красной 4 со слотов 2, 3 и 4.</li>
+<li>Единственная карта, на которой остаётся <em>Elimination Note</em>, — слот 5.</li>
+<li>Теперь, когда ход снова дойдёт до Алисы, она может вслепую сыграть красную 4 как <em>Elimination Blind-Play</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-elimination-blind-play"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Elimination Play Clue" id="l18-the-elimination-play-clue">
+<h3>Elimination Play Clue</h3>
+<ul>
+<li>У подсказки, затрагивающей несколько карт, всё равно только один фокус. Как вы уже знаете, если chop не затронута, фокусом является крайняя слева карта.</li>
+<li>Однако это правило не применяется, если подсказка однозначно выделяет немедленно играбельную карту через <em>Elimination</em>. В таком случае подсказка фокусируется только на <em>Elimination</em>-карте, а остальные затронутые карты не обязаны быть играбельными прямо сейчас.</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 1 и синяя 1 уже сыграны на стол.</li>
+<li>Алиса сбрасывает chop; оказывается, это красная 2.</li>
+<li>Алиса удивлена и записывает <em>Discard Elimination Notes</em> для красной 2 на слотах 2, 3, 4 и 5.</li>
+<li>Боб даёт Алисе подсказку числом 2, затрагивая карты в слотах 1, 3 и 4.</li>
+<li>Обычно Алиса трактовала бы это как <em>Play Clue</em> на 2 в слоте 1. Но из <em>Elimination Notes</em> она знает, что это не красная 2, поэтому фокус подсказки сдвигается вправо. Значит, слот 3 — точно красная 2, и Алиса может сыграть её прямо сейчас.</li>
+<li>Алиса знает, что смысл подсказки был только в том, чтобы обеспечить розыгрыш красной 2. Карты в слотах 1 и 4 могут быть любыми 2 в игре и не обязаны быть играбельными прямо сейчас.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-elimination-play-clue"></div>
+</div>
+<ul>
+<li><em>Elimination Play Clue</em> не может быть <em>Delayed Play Clue</em>, <em>Prompt</em> или <em>Finesse</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Взаимодействие Elimination и Chop-Focus" id="l18-interaction-between-elimination--chop-focus">
+<h3>Взаимодействие Elimination и Chop-Focus</h3>
+<ul>
+<li>Иногда у игрока будут <em>Elimination Notes</em> на двух или более картах в руке. Такому игроку можно дать последующую подсказку, которая однозначно выделит точное значение <em>Elimination</em>-карты.</li>
+<li>Подсказка может выделить <em>Elimination</em>-карту с помощью <em>положительной информации</em> или <em>негативной информации</em>.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Пример Elimination Single-Out с подсказкой, дающей положительную информацию" id="l18-example-of-an-elimination-single-out-using-a-clue-with-positive-information">
+<h4>Пример Elimination Single-Out с подсказкой, дающей положительную информацию</h4>
+<ul>
+<li>См. раздел <a href="#l18-the-elimination-play-clue"><em>Elimination Play Clue</em></a>:<ul>
+<li>В примере для <em>Elimination Play Clue</em> Алиса получает подсказку числом 2.</li>
+<li>После подсказки Алисы удаляет <em>Elimination Notes</em> со слотов 2, 4 и 5.</li>
+<li>Таким образом, Алиса точно определяет, что красная 2 находится в слоте 3.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Пример Elimination Single-Out с подсказкой, дающей негативную информацию" id="l18-example-of-an-elimination-single-out-using-a-clue-with-negative-information">
+<h4>Пример Elimination Single-Out с подсказкой, дающей негативную информацию</h4>
+<ul>
+<li>Например, в игре на троих:<ul>
+<li>Красная 1 уже сыграна на стол.</li>
+<li>Алиса сбрасывает красную 2. Она записывает <em>Elimination Notes</em> для красной 2 на слотах 2, 3, 4 и 5.</li>
+<li>Боб даёт Алисе подсказку числом 3, затрагивая три 3 в слотах 2, 3 и 4.</li>
+<li>После подсказки числом 3 Алиса удаляет <em>Elimination Notes</em> со слотов 2, 3 и 4.</li>
+<li>Таким образом, Алиса точно определяет, что красная 2 находится в слоте 5.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Chop-Focus определяется до получения подсказки" id="l18-chop-focus-happens-before-clues-are-given">
+<h4>Chop-Focus определяется <strong>до</strong> получения подсказки</h4>
+<ul>
+<li>Когда подсказка выделяет <em>Elimination</em>-карту через <em>негативную информацию</em>, фокус самой подсказки нужно определять обычным способом.</li>
+<li>Иными словами, фокусный слот нужно оценивать <strong>до того, как подсказка была дана</strong>, как и для любой другой подсказки.</li>
+<li>Например, продолжая предыдущий пример:<ul>
+<li>Алиса также знает, что подсказка Боба числом 3 должна быть <em>Play Clue</em> на красную 3 (поскольку красная 1 — единственная 1, уже сыгранная сейчас, а в сбросе нет 3).</li>
+<li>Но на каком слоте фокусируется подсказка Боба? Иными словами, какой слот обещан как красная 3?</li>
+<li>Подсказка фокусируется либо на слоте 2 — самой новой из подсказанных карт, — либо на слоте 4 — «новой» chop после учёта красной 2.</li>
+<li>Алиса знает, что положение chop оценивается <strong>до</strong> получения подсказки, поэтому фокусом обязательно должен быть слот 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-elimination-single-out-negative"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Elimination Riding Deduction" id="l18-the-elimination-riding-deduction">
+<h3>Elimination Riding Deduction</h3>
+<ul>
+<li>Сначала см. раздел <a href="../7/#l7-riding">с определением riding</a>.</li>
+<li>Если:<ul>
+<li>в руке игрока остаются только две карты с <em>Elimination Notes</em> <strong>и</strong></li>
+<li>предыдущие игроки позволили chop-карте <em>Ride</em> <strong>и</strong></li>
+<li>предыдущим игрокам не нужно было делать ничего более срочного, <strong>то</strong></li>
+</ul>
+</li>
+<li>Карта с <em>Elimination Note</em> не может находиться на chop! (Иначе кто-то из предыдущих игроков дал бы по ней <em>Play Clue</em> или <em>Save Clue</em>, чтобы не позволить её сбросить.)</li>
+<li>В такой ситуации игрок с <em>Elimination Notes</em> может «перескочить вперёд» и немедленно вслепую сыграть более новую из двух карт.</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 1 уже лежит на красной стопке.</li>
+<li>Рука Алисы полностью без подсказок.</li>
+<li>Алиса сбрасывает chop — слот 5. Это играбельная красная 2.</li>
+<li>Алиса знает, что у команды не было ничего более срочного, поэтому у неё должна быть другая копия красной 2.</li>
+<li>Алиса записывает <em>Elimination Notes</em> на слотах 2, 3, 4 и 5.</li>
+<li>На следующем круге Алиса не получает никаких подсказок. Она сбрасывает, и теперь <em>Elimination Notes</em> остаются на слотах 3, 4 и 5.</li>
+<li>На следующем круге Алиса снова не получает подсказок. Она сбрасывает, и теперь <em>Elimination Notes</em> остаются на слотах 4 и 5.</li>
+<li>На следующем круге Алиса снова не получает подсказок. Партнёры не позволили бы сбросить вторую копию красной 2, значит, она должна находиться в слоте 4. Алиса вслепую играет красную 2 из слота 4.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block local-illustration">
+<div class="diagram-shell" id="local-l18-riding-deduction"></div>
+<p class="local-illustration-note">Локальная иллюстрация по тексту примера; не официальный YML H-Group.</p>
+</div>
+</section>
+<section data-sub="1" data-toc="Riding Deduction Bluff" id="l18-the-riding-deduction-bluff">
+<h3>Riding Deduction Bluff</h3>
+<ul>
+<li>Обычно, когда у игрока есть две карты с <em>Elimination Notes</em>, а «настоящая» копия находится на chop, её нужно подсказать, чтобы игрок это понял.</li>
+<li>Однако если другая карта тоже играбельная, можно вообще ничего не подсказывать.</li>
+<li>Тогда игрок должен выполнить <em>Elimination Riding Deduction</em> и сыграть несвязанную карту.</li>
+<li>После этого останется только одна карта с <em>Elimination Note</em>, поэтому на следующем ходу игрок сыграет «настоящую» карту.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Elimination Self-Chop Move" id="l18-the-elimination-self-chop-move">
+<h3>Elimination Self-Chop Move</h3>
+<ul>
+<li>Иногда игрок сужает свои <em>Elimination Notes</em> до одной конкретной карты. Поэтому, даже если на карте вообще нет положительных подсказок, игрок всё равно знает её точное значение.</li>
+<li>В такой ситуации игрок должен сам пометить эту карту как <em>Chop Moved</em>. Иными словами, поскольку <em>Elimination Notes</em> были известны всей команде, команде не нужно тратить подсказку, чтобы предотвратить её сброс.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Elimination Finesse" id="l18-the-elimination-finesse">
+<h3>Elimination Finesse</h3>
+<ul>
+<li>Обычно, если игрок <em>Finessed</em>, он должен сыграть карту из своей <em>Finesse Position</em>. Но что, если на его руке есть <em>Elimination Notes</em> именно для карты, которую вызывает <em>Finesse</em>?</li>
+<li>В большинстве случаев на слоте 1 (то есть в <em>Finesse Position</em>) <em>Elimination Note</em> не будет. Значит, играть слот 1 в такой <em>Finesse</em> бессмысленно.<ul>
+<li>Однако даже в редком случае, когда <em>Elimination Note</em> находится на <em>Finesse Position</em>, игрок <strong>всё равно</strong> не должен играть обычную <em>Finesse Position</em>; читайте дальше.</li>
+</ul>
+</li>
+<li>Здесь игрок должен сыграть <strong>самую старую</strong> из карт с <em>Elimination Notes</em> (не считая <em>Chop Moved</em>-карт, если они есть).</li>
+<li>Например, в игре на троих:<ul>
+<li>Синяя 2 уже сыграна на стол.</li>
+<li>Рука Алисы полностью без подсказок.</li>
+<li>Алиса сбрасывает синюю 3. Синяя 3 была играбельной, и ничего срочного сейчас не происходит, поэтому Алиса записывает <em>Elimination Notes</em> на руке для другой синей 3 — на слотах 2, 3, 4 и 5.</li>
+<li>Боб даёт Кэти синюю подсказку, затрагивая синюю 4 как <em>Play Clue</em>.</li>
+<li>Кэти сбрасывает.</li>
+<li>Алиса знает, что это какой-то <em>Reverse Finesse</em>, потому что он вызывает синюю 3. Но синяя 3 не может быть в её <em>Finesse Position</em> (слоте 1) — из <em>Elimination Notes</em> Алиса знает, что она должна быть в слоте 2, 3, 4 или 5. Значит, это <em>Reverse Elimination Finesse</em>.</li>
+<li><em>Elimination Finesse</em> обещает, что это самая старая карта Алисы, поэтому она играет слот 5 как синюю 3.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-elimination-finesse1"></div>
+</div>
+<ul>
+<li>Как сказано выше, при поиске цели <em>Elimination Finesse</em> нужно пропускать <em>Chop Moved</em>-карты. Если <em>Elimination Notes</em> стоят на двух или более картах и все они <em>Chop Moved</em>, следует сыграть самую старую <em>Chop Moved</em>-карту.</li>
+<li><em>Elimination Finesses</em> применяются к <strong>любым</strong> ситуациям с <em>Elimination Notes</em>, включая <em>Double Discard Elimination Notes</em>. Поэтому при необходимости можно уточнять вид хода как <em>Discard Elimination Finesse</em> или <em>Double Discard Elimination Finesse</em>.</li>
+<li>Обратите внимание: обычные <em>Finesses</em> имеют приоритет над <em>Self-Elimination Finesses</em>. Например, в игре на троих:<ul>
+<li>Красная 2 и синяя 2 уже сыграны на стол.</li>
+<li>Рука Боба полностью без подсказок. На слотах 3, 4 и 5 Боба стоят <em>Elimination Notes</em> для синей 3.</li>
+<li>Алиса даёт Бобу подсказку числом 4 по слоту 1 как <em>Self-Finesse</em>.</li>
+<li>Если 4 Боба — красная 4, это обычный <em>Self-Finesse</em>, и Боб должен вслепую сыграть красную 3 из слота 2.</li>
+<li>Если 4 Боба — синяя 4, это <em>Elimination Self-Finesse</em>, и Боб должен вслепую сыграть синюю 3 из слота 5.</li>
+<li>Боб знает, что в этой ситуации всегда следует предполагать обычный <em>Finesse</em>, поэтому вслепую играет красную 3 из слота 2.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-elimination-finesse2"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Trash Touch Elimination (TTE)" id="l18-trash-touch-elimination-tte">
+<h3>Trash Touch Elimination (TTE)</h3>
+<ul>
+<li>Игроки тщательно выбирают между цветовой подсказкой и подсказкой числом, чтобы не нарушать <em>Good Touch Principle</em>. Иногда и цветовая подсказка, <strong>и</strong> подсказка числом нарушили бы <em>Good Touch Principle</em>, поэтому приходится выбирать меньшее из двух зол.</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 3 и синяя 1 уже сыграны на стол.</li>
+<li>Рука Боба от новой карты к старой: <code>красная 4, красная 3, синяя 4, синяя 4, синяя 1</code>.</li>
+<li>Если Алиса по какой-то причине нужно подсказать красную 4 <strong>прямо сейчас</strong>, Алиса попала бы в неприятную ситуацию. Красная подсказка дублирует красную 3. Подсказка числом 4 дублирует синюю 4. Оба варианта плохи.</li>
+<li>Поэтому Алиса вынуждена выбрать меньшее из двух зол и даёт подсказку числом 4 как <em>Play Clue</em> на красную 4.</li>
+<li>Боб играет красную 4.</li>
+<li>Теперь Кэти должна понять, что произошло. Обычно дублирование синей 4 со стороны Алиса означало бы ошибку или какой-то специальный ход. Но здесь Кэти видит, что Алиса была вынуждена выбирать между двумя плохими вариантами, поэтому подсказка числом 4 считается обычной.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-trash-touch-elimination1"></div>
+</div>
+<ul>
+<li>В некоторых ситуациях игроки видят, что <strong>можно</strong> использовать цветовую подсказку или подсказку числом так, чтобы уникально затронуть цель и не затронуть лишние неподходящие карты. Поэтому если всё же выбирается вариант, который затрагивает плохую карту, подсказка передаёт особое дополнительное сообщение.</li>
+<li>Когда это происходит и существует ровно одна «недостающая» карта, игроки должны записать <em>Elimination Note</em> на своей руке для этой недостающей карты. Это называется <em>Trash Touch Elimination</em>.</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 3 и все остальные 1 уже сыграны на стол.</li>
+<li>Рука Боба от новой карты к старой: <code>красная 4, красная 1, синяя 1, зелёная 1, жёлтая 1</code>.</li>
+<li>В руке Кэти находится красная 5, о чём сама Кэти не знает.</li>
+<li>Алиса хочет дать <em>Play Clue</em> на красную 4. Все в команде, кроме Боба, видят, что она может дать либо подсказку числом 4, либо красную подсказку.<ul>
+<li>Если Алиса даёт подсказку числом 4, она уникально затронет красную 4 и удовлетворит <em>Good Touch Principle</em>.</li>
+<li>Если Алиса даёт красную подсказку, она затронет красную 4 и красную 1, то есть <strong>нарушит</strong> <em>Good Touch Principle</em>.</li>
+</ul>
+</li>
+<li>Алиса даёт Бобу красную подсказку. Ничто не мешало ей дать подсказку числом 4, поэтому это очень странно.</li>
+<li>Боб играет красную 4.</li>
+<li>Существует только одна «недостающая» красная карта — красная 5. Кэти знает, что обычно Боб решил бы по <em>Good Touch Principle</em>, что его красная 1 — это красная 5. Значит, красная 5 должна быть у Кэти. Кэти записывает на своей руке <em>Trash Touch Elimination Notes</em> для красной 5.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l18-diagram-trash-touch-elimination2"></div>
+</div>
+</section>
+<section data-sub="1" data-toc="Взаимодействие Trash Touch Elimination и мусора, который известен не всей команде" id="l18-interaction-between-trash-touch-elimination--potentially-unknown-trash"><h4>Взаимодействие Trash Touch Elimination и мусора, который известен не всей команде</h4><ul>
+<li>Сначала см. раздел <a href="../4/#l4-tcm"><em>Trash Chop Move</em></a>.</li>
+<li>Обычно, когда мусорную карту подсказывают для запуска <em>Trash Chop Move</em>, в момент подсказки вся команда знает вся команда:  эта карта — мусор.</li>
+<li>Однако возможно, что один игрок ещё не знает, что подсказанная карта мусорная.</li>
+<li>Когда подсказанная карта сбрасывается, этот игрок понимает, что произошёл <em>Trash Chop Move</em>; дополнительным доказательством служит наличие в его руке последней оставшейся немусорной карты (или карт).</li>
+<li>Например, в игре на троих:<ul>
+<li>Красная 4, зелёная 1 и синяя 1 уже сыграны на стол.</li>
+<li>Рука Боба полностью без подсказок; от новой карты к старой: <code>синяя 1, синяя 1, красная 4, синяя 3, зелёная 3</code>.</li>
+<li>В руке Кэти находится красная 5, о чём сама Кэти не знает.</li>
+<li>Алиса даёт Бобу красную подсказку, затрагивая его красную 4 в слоте 3.</li>
+<li>По <em>Good Touch Principle</em> Боб знает, что единственная хорошая красная карта — красная 5. Боб видит красную 5 в руке Кэти, поэтому его красная карта должна быть мусором. Значит, Алиса намеревается сделать <em>Trash Chop Move</em>.</li>
+<li>Боб сбрасывает красную карту и помечает карты в слотах 4 и 5 как <em>Chop Moved</em>.</li>
+<li>Кэти удивлена, что Боб не сделал мисплей красной 4 как красной 5.</li>
+<li>Единственное объяснение — красная 5 находится в руке Кэти. Поскольку осталась только одна копия полезной красной карты, Кэти знает, что применяется правило одной оставшейся копии <em>Trash Touch Elimination</em>. Поэтому Кэти записывает <em>Elimination Notes</em> на всей руке для красной 5.</li>
+<li>Если бы существовали две или более «хорошие» копии красных карт, от Кэти вместо этого ожидался бы blind-play как <em>Trash Finesse</em>.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block"><div class="diagram-shell" id="l18-diagram-trash-touch-elimination-interaction"></div></div>
+</section>
+<section data-toc="Тренировочные вопросы" id="l18-training">
+<h2>Тренировочные вопросы</h2>
+<p class="source-mini">В официальном источнике отдельного набора Official Challenge Questions для Level 18 нет; ниже — наши Training Questions по материалу этого уровня.</p>
+<div class="qa-list">
+<details class="qa">
+<summary>1. Когда после сброса важной карты появляются Elimination Notes?</summary>
+<div class="answer">
+<p>Если карта была важной, другой копии не видно и у команды не было ничего более срочного, из-за чего Save разумно было бы пропустить; игрок предполагает, что другая копия у него в руке.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Нужно ли всегда писать Elimination Notes после сброса играбельной карты?</summary>
+<div class="answer">
+<p>Нет. Иногда партия бывает настолько напряжённой, что разумного способа спасти карту действительно не находится; контекст обязателен.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Когда разрешён Elimination Blind-Play?</summary>
+<div class="answer">
+<p>Когда исключением вариантов Elimination Notes сужаются до единственного возможного слота.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Как Elimination Play Clue меняет обычный focus?</summary>
+<div class="answer">
+<p>Если подсказка однозначно выделяет немедленно играбельную Elimination-карту, фокус переносится на неё; другие затронутые карты не обязаны быть играбельными.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Что позволяет Elimination Riding Deduction?</summary>
+<div class="answer">
+<p>Если остались ровно две карты с Elimination Notes, предыдущие игроки позволили chop-карте Ride и им не нужно было делать ничего более срочного, истинная карта не может быть на chop; можно сразу сыграть более новую из двух.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Как выбирается цель Elimination Finesse?</summary>
+<div class="answer">
+<p>Играется самая старая карта с Elimination Notes, пропуская Chop Moved-карты. Если две или более такие карты существуют и все они Chop Moved, играется самая старая Chop Moved-карта. Обычный Finesse имеет приоритет над Self-Elimination Finesse.</p>
+</div>
+</details>
+<details class="qa">
+<summary>7. Что сообщает Trash Touch Elimination?</summary>
+<div class="answer">
+<p>Если можно было дать прямую подсказку цель, но выбран вариант, нарушающий Good Touch, и существует ровно одна «недостающая» карта, игроки записывают для неё Elimination Notes на своих руках.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Полный перевод официального <a href="https://hanabi.github.io/level-18" rel="noopener" target="_blank">Level 18 — Elimination</a>.</div>
+</article>
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

@@ -1,0 +1,510 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-7" data-root="../../" data-route="levels/7">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="7" data-page-key="level-7" id="level-7-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-7">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 7 — Экстренные сбросы (Emergency Discards)</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 7</span><span class="badge">Emergency Discards</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 7 — Экстренные сбросы (Emergency Discards)</h1>
+<div class="preview-note"><strong>Название:</strong> В этом документе используем название текущей страницы Reference — <em>Emergency Discards</em>.</div>
+<section data-toc="Специальные приёмы" id="l7-special">
+<h2>Специальные приёмы</h2>
+</section>
+<section data-sub="1" data-toc="Scream Discard Chop Move (SDCM)" id="l7-scream">
+<h3>Scream Discard Chop Move (SDCM)</h3>
+<ul>
+<li><em>Chop Move</em> позволяет одной подсказкой спасти несколько карт. Но иногда жетонов подсказок <strong>вообще нет</strong>, и обычного способа сохранить опасную chop-карту не остаётся. Тогда можно использовать специальный сброс.</li>
+<li>Обычно сброс — крайняя мера. Поэтому если в руке игрока есть <strong>известная играбельная карта</strong>, но он вместо её розыгрыша сознательно сбрасывает, это очень сильный сигнал следующему игроку. Такой ход называется <em>Scream Discard</em>: игрок как будто «кричит», что ситуация крайне опасна.</li>
+<li><em>Scream Discard</em> делает две вещи одновременно:<ol>
+<li>игрок, которому адресован «крик», навсегда сдвигает chop на одну позицию, то есть делает <em>Chop Move</em> одной карты;</li>
+<li>на этом ходу он <strong>не имеет права сбрасывать</strong>. Он должен дать подсказку. Если обычных <em>Play Clues</em> и <em>Save Clues</em> нет, разрешены <em>Stall Clues</em>, например <em>5 Stall</em>. Если и 5 Stall нет, можно даже просто «заполнить» дополнительную информацию на уже подсказанной карте; такое вынужденное заполнение <strong>не должно запускать Finesse</strong>.</li>
+</ol>
+</li>
+<li><em>Scream Discard</em> разрешён <strong>только ради играбельной или критической карты</strong>, либо ради нужной 2, другой видимой копии которой нет. Это напрямую следует из <em>Save Principle</em>.</li>
+<li>Scream Discard разрешён только как последняя возможность. Поэтому почти всегда команда в этот момент находится на 0 жетонов. Реже <em>Scream Discard</em> может выполняться при 1 жетоне, если следующий игрок <em>Locked</em>.</li>
+<li>Нельзя делать <em>Scream Discard</em> ради карты <em>one-away-from-playable</em>.</li>
+<li>Нельзя делать <em>Scream Discard</em>, если существует другой, менее опасный способ спасти карту. Это именно <strong>крайняя мера</strong>.</li>
+<li>Иногда игрок сбрасывает при наличии известной играбельной карты, но <strong>не</strong> делает Scream Discard. Два важных исключения:<ol>
+<li>следующему игроку необходимо получить жетон, чтобы дать подсказку игроку после него. Это <em>Generation Discard</em>;</li>
+<li>несыгранная карта была картой под <em>Finesse</em>, <strong>и</strong> такая же связующая карта могла одновременно находиться в <em>Finesse Position</em> следующего игрока. Тогда отказ от blind-play сам по себе не является Scream.</li>
+</ol>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Scream Discard с известным мусором" id="l7-scream-trash">
+<h3>Scream Discard Chop Move (с известным мусором)</h3>
+<ul>
+<li>Сначала нужно понимать обычный <em>Scream Discard</em>.</li>
+<li>Иногда в руке игрока есть одна или несколько карт с подсказками, которые уже точно известны как <strong>мусор</strong>. По обычной стратегии такой известный мусор нужно сбрасывать <strong>раньше</strong>, чем неизвестную chop-карту.</li>
+<li>Поэтому если игрок вместо известного мусора сознательно сбрасывает свою chop, это тоже сигнал, что произошло что-то чрезвычайное. Следующий игрок должен прочитать ход <strong>точно как Scream Discard</strong>.</li>
+<li>Хотя технический триггер здесь другой, название сохраняется то же, потому что смысл хода полностью совпадает.</li>
+<li>Если у игрока одновременно есть <strong>известная играбельная карта и известный мусор</strong>, сбрасывать chop недопустимо: нормальный выбор — либо сыграть играбельную, либо при необходимости сбросить известный мусор. Если игрок всё-таки сбрасывает chop, команда должна считать это <strong>явной ошибкой</strong>, а не специальной конвенцией.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Shout Discard Chop Move" id="l7-shout">
+<h3>Shout Discard Chop Move</h3>
+<ul>
+<li>Сначала нужно понимать <em>Scream Discard</em>.</li>
+<li>В обычном Scream игрок с известной играбельной картой сбрасывает <strong>неизвестную chop-карту</strong>.</li>
+<li>Но если у него одновременно есть известная играбельная карта и <strong>известный мусор</strong>, он может отправить похожий аварийный сигнал, сбросив именно мусор вместо ожидаемого розыгрыша. Это называется <em>Shout Discard</em>.</li>
+<li>Иными словами:<ul>
+<li><em>Scream Discard</em> — аварийный сигнал через сброс <strong>неизвестной карты</strong>, когда в руке есть известная играбельная;</li>
+<li><em>Shout Discard</em> — аварийный сигнал через сброс <strong>известного мусора</strong>, когда в руке есть известная играбельная.</li>
+</ul>
+</li>
+<li><em>Shout Discard</em> делает <em>Chop Move</em> <strong>следующему игроку</strong> точно так же, как Scream Discard.</li>
+<li>И точно так же следующий игрок после Shout <strong>не имеет права сбрасывать</strong> на своём ходу и должен дать подсказку.</li>
+<li>Но Shout менее ограничен по цели: им разрешено Chop Move <strong>любую желательную карту</strong>, даже если она прямо сейчас не критическая и не играбельная.</li>
+<li>Кроме того, Shout не требует 0 жетонов. В отличие от Scream, <em>Shout Discard</em> можно использовать <strong>при любом количестве подсказок</strong>, если сам сигнал стратегически оправдан.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Generation Discard" id="l7-generation">
+<h3>Generation Discard</h3>
+<ul>
+<li>Обычно сброс вместо розыгрыша известной играбельной карты выглядел бы как <em>Scream Discard</em>.</li>
+<li>Но бывает следующая структура:<ul>
+<li>если игрок 1 сыграет свою карту, игрок 2 на своём ходу будет вынужден сбросить;</li>
+<li>после этого у игрока 3 на chop окажется <strong>критическая или играбельная карта без подсказки</strong>, которую уже некому будет спасти вовремя.</li>
+</ul>
+</li>
+<li>Тогда игрок 1 сбрасывает <strong>только ради получения жетона подсказки</strong>, чтобы игрок 2 получил возможность дать подсказку игроку 3. Это называется <em>Generation Discard</em> и <strong>не является Scream</strong>.</li>
+<li><em>Generation Discard</em> используется исключительно как последняя возможность.</li>
+<li>Если у игрока 3 есть другое очевидное действие — например, собственный розыгрыш или очевидная полезная подсказка — игрок 1 должен просто сыграть свою карту. В таком случае нет необходимости преждевременно получать жетон подсказки: chop игрока 3 можно временно оставить без подсказки.</li>
+</ul>
+</section>
+<section data-toc="Общие принципы" id="l7-principles">
+<h2>Общие принципы</h2>
+</section>
+<section data-sub="1" data-toc="Варианты" id="l7-lines">
+<h3>Варианты</h3>
+<ul>
+<li>При выборе хода важно смотреть не только на текущую позицию, но и на <strong>следующие действия</strong>. Что сделает игрок после вас? Если он сбросит — безопасно ли это? Есть ли очевидная подсказка, которую он почти наверняка даст?</li>
+<li>С ростом уровня нужно прогнозировать уже не одного следующего игрока, а <strong>полный круг</strong>.</li>
+<li>На действительно сильной игре полезно просчитывать настолько далеко, насколько позиция позволяет надёжно предсказывать ход событий. Иногда это означает 15 и более последовательных ходов.</li>
+<li>По аналогии с шахматами такую просчитываемую последовательность называют <strong>вариантом (line)</strong>.</li>
+<li>На разборе после партии часто сравнивают два разных варианта: мысленно «проигрывают» каждый до конца видимого горизонта и смотрят, какой приводит к более безопасной или эффективной позиции.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="All 4's Test" id="l7-all-fours">
+<h3>All 4's Test</h3>
+<ul>
+<li>По <em>Save Principle</em> команда не должна позволять сброс критической и/или играбельной карты. Поэтому при построении варианта нужно проверять, не приводит ли ваша последовательность именно к такому сбросу.</li>
+<li>Нельзя рассчитывать на то, что кто-то обязательно даст подсказку <strong>вам</strong>: вы не видите свои карты и не знаете, какие новые карты доберёте.</li>
+<li>Используйте <strong>All 4's Test</strong>: представьте, что вся ваша рука состоит из бесполезных 4. Что тогда будут делать остальные игроки по вашему варианту?</li>
+<li>Если при таком предположении критическая или играбельная карта всё равно оказывается сброшенной, вариант <strong>не проходит тест</strong> и, скорее всего, плох.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Riding on chop" id="l7-riding">
+<h3>Riding on chop</h3>
+<ul>
+<li>Сначала нужно понимать идею построения вариантов.</li>
+<li>Обычно если у игрока важная карта на chop, кто-то из команды успевает получить её подсказкой <strong>задолго до реального риска сброса</strong>.</li>
+<li>Но иногда жетонов почти нет и разумной возможности дать такую подсказку вовремя не существует. Тогда остаётся только надеяться, что когда ход дойдёт до владельца опасной карты, он сам выберет <strong>подсказку или розыгрыш</strong>, а не сброс.</li>
+<li>В таком случае говорят, что карта <strong>Riding on chop</strong>: она остаётся на chop под непосредственным риском сброса, как будто балансирует на краю плахи.</li>
+<li>Если важная карта <em>Riding on chop</em>, это потенциально проигрывающая ситуация. Поэтому вариант, где карта остаётся на chop под риском сброса, допустим только как <strong>последняя мера</strong>.</li>
+<li>Даже если кажется, что владелец обязательно даст «очевидную» подсказку, нельзя быть уверенным: невидимые вам карты в собственной руке и новые доборы до его хода могут изменить его лучший ход.</li>
+<li><em>Generation Discard</em> — базовый пример техники, которая специально используется, чтобы <strong>избежать</strong> варианта с Riding on chop.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Blind-Playing Chop Moved Cards" id="l7-blind-cm">
+<h3>Blind-Playing Chop Moved Cards</h3>
+<ul>
+<li>Часто <em>Chop Moved-карты</em> появляются довольно рано. Позже команда даёт им прямую подсказку и разыгрывает их обычным способом.</li>
+<li>Но иногда Chop Moved-карта остаётся без прямой подсказки очень долго. По мере приближения к концовке её владелец накапливает всё больше информации:<ul>
+<li>на карте могут появляться многочисленные негативные подсказки;</li>
+<li>игрок может исключать карты, которые уже сыграны или иначе полностью учтены;</li>
+<li>ближе к концу колоды многие точные значения карт просто перестают быть возможными.</li>
+</ul>
+</li>
+<li>Если после такого исключения <strong>все оставшиеся варианты карты играбельны</strong>, сильный игрок может не ждать прямой подсказки, а сыграть Chop Moved-карту вслепую. Независимо от точного значения эту карту можно безопасно разыграть.</li>
+<li>Но это рискованный приём. Команда часто <strong>намеренно не подсказывает</strong> Chop Moved-карту, потому что использует другую копию той же карты в чужой руке — например, если там можно получить 2-for-1 вместо 1-for-1.</li>
+<li>Кроме того, сам исходный Chop Move мог быть ошибочным. Поэтому blind-play такой карты всегда имеет реальный шанс принести страйк.</li>
+<li>Из-за этого опытный игрок может делать такой blind-play при высокой уверенности, <strong>только если у команды есть хотя бы один страйк в запасе</strong>.</li>
+<li>Отсюда ещё одно практическое правило: не нужно специально давать подсказку Chop Moved-карте, которая теперь уже известна команде как бесполезная, только ради того, чтобы предотвратить потенциальный будущий страйк. Обычно её просто оставляют Chop Moved до конца партии.<ul>
+<li>В лучшем случае владелец сам накопит достаточно информации, поймёт, что карта мусорная, и безопасно сбросит её. Либо продолжит держать её Chop Moved, сбрасывая другие бесполезные chop-карты до конца игры.</li>
+<li>В худшем случае он решит сыграть её вслепую и получит страйк. Но это не гарантировано; кроме того, по правилам сильной игры он станет рисковать только тогда, когда у команды действительно есть страйк в запасе.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-toc="Official Challenge Questions" id="l7-official">
+<h2>Official Challenge Questions</h2>
+<div class="official-questions">
+<article class="official-q" id="l7-official-q-1">
+<div class="official-head">
+<h3>1. Алиса забывает</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Все 2 сыграны.</li>
+<li>Доступно 0 подсказок.</li>
+<li>У Алисы в руке известная всей команде красная 3.</li>
+<li>Алиса «забывает» её сыграть и вместо этого сбрасывает chop.</li>
+<li>Какие заметки должен сделать Боб? Что он должен сделать на своём ходу?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса не забыла розыгрыш: она намеренно сбросила при известной играбельной карте.</li>
+<li>Это <em>Scream Discard Chop Move</em>.</li>
+<li>Этим сбросом Алиса «кричит» Бобу, что его chop — критическая или играбельная карта.</li>
+<li>Боб навсегда сдвигает chop на одну позицию и пишет <code>cm</code> на слоте 4.</li>
+<li>На этом ходу Боб <strong>не имеет права сбрасывать</strong>. Он обязан дать подсказку.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-1-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-alice-is-forgetful" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-2">
+<div class="official-head">
+<h3>2. Боб забывает</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Все 2 сыграны.</li>
+<li>Алиса использует последнюю подсказку, дав Кэти подсказку числом 4. Она выглядит как <em>Finesse</em> на красную 3 Боба.</li>
+<li>У Боба теперь 0 подсказок, но он «забывает» сыграть красную 3 и вместо этого сбрасывает chop.</li>
+<li>Какие заметки должна сделать Кэти и что ей делать на своём ходу?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Боб намеренно сбросил вместо blind-play своей Finessed-карты.</li>
+<li>По <em>Urgency Principle</em> blind-play должен происходить как можно быстрее; если бы Боб действительно был Finessed на красную 3, Кэти после этого легко сыграла бы красную 4.</li>
+<li>Поэтому это <strong>не Scream Discard</strong>: несыгранная известная карта Боба была картой под <em>Finesse</em>, а у Кэти также может быть красная 3 в собственной <em>Finesse Position</em> как часть <em>Ambiguous Finesse</em>.</li>
+<li>Кэти <strong>не делает Chop Move ни одной карты</strong>. Она должна сыграть вслепую свою <em>Finesse Position</em> как другую красную 3.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-2-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-bob-is-forgetful" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-3">
+<div class="official-head">
+<h3>3. Screaming into the Void</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Все 2 сыграны.</li>
+<li>0 подсказок.</li>
+<li>У Алисы известная играбельная зелёная 3.</li>
+<li>Рука Боба от новой к старой: <code>жёлтая 3 (известна всей команде), красная 2, синяя 4, фиолетовая 5</code>.</li>
+<li>Что Алиса должна сделать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса должна <strong>сыграть зелёную 3</strong>.</li>
+<li>Боб сам может сыграть свою известную жёлтую 3, поэтому фиолетовая 5 на его chop не находится под непосредственной угрозой сброса.</li>
+<li><em>Scream Discard</em> был бы недопустим: это приём последнего средства, а здесь следующий игрок и так ожидаемо играет карту и не сбрасывает chop.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-3-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-screaming-into-the-void" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-4">
+<div class="official-head">
+<h3>4. The Silent Scream</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Доступно 2 подсказки.</li>
+<li>На столе жёлтая 1, зелёная 2 и синяя 2.</li>
+<li>У Алисы известные всей команде играбельная зелёная 3 и мусорная жёлтая 1.</li>
+<li>У Боба синяя 4 на chop.</li>
+<li>Алиса сбрасывает известную мусорную жёлтую 1 вместо розыгрыша зелёной 3.</li>
+<li>Допустим ли этот ход? Если да, как он называется?</li>
+<li>Как должен реагировать Боб?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-4-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса сбросила <strong>известный мусор</strong> вместо известной играбельной карты.</li>
+<li>Это допустимый ход даже если карта Боба не критическая/играбельная и даже если у команды есть жетоны.</li>
+<li>Это <em>Shout Discard Chop Move</em>.</li>
+<li>Боб навсегда сдвигает chop на одну позицию и пишет <code>cm</code> на слоте 4.</li>
+<li>Боб <strong>не может сбрасывать</strong> на этом ходу и обязан дать подсказку.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-4-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-the-silent-scream" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-5">
+<div class="official-head">
+<h3>5. Алиса любит мусор</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Все 2 сыграны.</li>
+<li>0 подсказок.</li>
+<li>У Алисы известная всей команде жёлтая 2 — то есть мусор.</li>
+<li>Алиса решает не сбрасывать известный мусор и вместо этого сбрасывает свой chop.</li>
+<li>Какой сигнал она посылает? Что должен сделать Боб?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-5-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Это <em>Scream Discard Chop Move (With Known-Trash)</em>.</li>
+<li>Обычно известный мусор сбрасывается <strong>до</strong> chop. Поэтому сброс chop вместо мусора означает, что происходит аварийная ситуация: chop Боба критическая или играбельная карта.</li>
+<li>Боб навсегда сдвигает chop на одну позицию и пишет <code>cm</code> на слоте 4.</li>
+<li>На этом ходу Боб <strong>не имеет права сбрасывать</strong> и обязан дать подсказку.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-5-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-alice-loves-garbage" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-6">
+<div class="official-head">
+<h3>6. Too Few Clues</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Все 2 сыграны.</li>
+<li>0 подсказок.</li>
+<li>У Алисы известная всей команде играбельная синяя 3.</li>
+<li>У Кэти критическая фиолетовая 5 на chop.</li>
+<li>Алиса сбрасывает chop вместо розыгрыша синей 3.</li>
+<li>Почему Алиса сбросила?</li>
+<li>Какие заметки должен сделать Боб?</li>
+<li>Что Боб должен сделать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-6-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса делает <em>Generation Discard</em>.</li>
+<li>Если бы она сыграла синюю 3, Боб остался бы без подсказки и был бы вынужден сбросить; затем Кэти могла бы на своём ходу сбросить критическую фиолетовую 5.</li>
+<li>Сброс Алисы возвращает Бобу жетон подсказки.</li>
+<li>Боб должен использовать его, чтобы сделать <em>5 Save</em> фиолетовой 5 Кэти.</li>
+<li>Боб <strong>не пишет никаких <code>cm</code> заметок</strong>: <em>Generation Discard</em> сам по себе не делает <em>Chop Move</em>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-6-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-too-few-clues" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-7">
+<div class="official-head">
+<h3>7. Another Scream Discard</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>Все 2 сыграны.</li>
+<li>0 подсказок.</li>
+<li>У Алисы известная играбельная красная 3.</li>
+<li>У Боба зелёная 4 на chop; зелёная 3 ещё не сыграна.</li>
+<li>Алиса хочет сохранить полезную зелёную 4 и сбрасывает вместо розыгрыша красной 3.</li>
+<li>Допустимый ли это <em>Scream Discard</em>? Почему?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-7-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li><strong>Нет.</strong> Зелёная 4 лишь <em>one-away-from-playable</em>.</li>
+<li><em>Scream Discard</em> разрешён только ради <strong>играбельной или критической</strong> карты, но не ради <em>one-away-from-playable</em>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-7-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-another-scream-discard" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l7-official-q-8">
+<div class="official-head">
+<h3>8. Should this Blind-Play?</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>На столе: красная 3, жёлтая 5, зелёная 3, синяя 3 и фиолетовая 5.</li>
+<li>У Алисы с нескольких ходов назад есть <em>Chop Moved-карта</em> с негативной подсказкой 5.</li>
+<li>Стоит ли Алисе сыграть эту карту вслепую? Какие факторы нужно учитывать?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-8-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<p>Ответ — <strong>зависит от ситуации</strong>.</p>
+<p>Сначала Алиса должна понять, насколько безопасен blind-play:</p>
+<ul>
+<li>карта не может быть 5 из-за негативной подсказки, значит она не критическая;</li>
+<li>она может быть красной 4, зелёной 4 или синей 4 — тогда успешно сыграет;</li>
+<li>она также может быть множеством других карт и тогда даст страйк;</li>
+<li>поскольку карта <em>Chop Moved</em>, априори она вероятнее полезная, чем случайная.</li>
+</ul>
+<p>Значит, возможные исходы — успешный розыгрыш или страйк. Если бы среди вариантов оставалась критическая карта, рисковать точно не стоило бы.</p>
+<p>По правилу <em>Blind-Playing Chop Moved Cards</em> такой риск допустим, если у команды есть страйк в запасе:</p>
+<ul>
+<li>при <strong>0 страйках</strong> Алиса, вероятно, стоит попробовать сыграть карту вслепую;</li>
+<li>при <strong>1 страйке</strong> попробовать можно, но уже осторожнее;</li>
+<li>при <strong>2 страйках</strong> blind-play категорически не нужен.</li>
+</ul>
+<p>При 0–1 страйках остаётся оценить состояние партии: текущие темп и <em>Efficiency</em>, то есть сколько осталось времени и будущих подсказок.</p>
+<ul>
+<li>Если партия идёт хорошо, риск не нужен: Алиса может продолжить обычные сбросы и дождаться прямой подсказки.</li>
+<li>Если уже наступил <em>End-Game</em> и подсказок мало, blind-play может быть правильным способом сэкономить команде жетон.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l7-official-8-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-7-should-this-blind-play" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+</div>
+</section>
+<section data-toc="Тренировочные вопросы" id="l7-training">
+<h2>Тренировочные вопросы</h2>
+<div class="qa-list">
+<details class="qa">
+<summary>1. У тебя известная играбельная карта, подсказок 0, а chop следующего игрока критический. Обычной Save Clue дать нельзя. Какой класс хода рассматривается?</summary>
+<div class="answer">
+<p>Scream Discard как последний выход: сброс вместо известного розыгрыша, чтобы следующий игрок сдвинул свой chop на одну позицию и не сбрасывал на этом ходу.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Можно ли делать Scream Discard ради one-away-from-playable карты?</summary>
+<div class="answer">
+<p>Нет. Это слишком слабая причина для аварийного сигнала.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Чем Shout Discard отличается от Scream Discard по самому сбросу?</summary>
+<div class="answer">
+<p>При Shout Discard сбрасывается известный мусор вместо известной играбельной карты; при обычном Scream Discard — неизвестный chop.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Что именно передаёт Generation Discard следующему игроку?</summary>
+<div class="answer">
+<p>Прежде всего ресурс — жетон подсказки, чтобы он мог спасти карту у игрока после него. Это не Chop Move-сигнал.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Что значит проверить линию через All 4's Test?</summary>
+<div class="answer">
+<p>Представить, что все невидимые карты в твоей руке — бесполезные 4, и проверить, не приведёт ли предполагаемая линия к сбросу критической/играбельной карты.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Когда можно играть Chop Moved-карту вслепую по накопленной информации?</summary>
+<div class="answer">
+<p>Когда все или почти все разумные варианты играбельны и команда может позволить себе риск страйка; при критическом варианте рисковать нельзя.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Адаптировано по текущему официальному <a href="https://hanabi.github.io/level-7" rel="noopener" target="_blank">Level 7 — Emergency Discards</a>. Все восемь текущих Official Challenge Questions встроены локально вместе с точными схемами «Вопрос»/«Решение» из официальных YML.</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>

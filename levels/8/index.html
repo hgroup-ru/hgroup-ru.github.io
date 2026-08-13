@@ -1,0 +1,371 @@
+html
+<html data-theme="dark" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>H-Group Conventions RU — Beginner’s Guide + Reference, уровни 1–25</title>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page-key="level-8" data-root="../../" data-route="levels/8">
+<header class="navbar">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Навигация" class="iconbtn mobile-menu" id="mobileBtn" title="Навигация">☰</button>
+<a aria-label="На главную" class="brand" data-home-link="" href="../../#home">H-Group <span>Conventions</span></a>
+<a class="navlink" data-nav="beginner" href="../../beginner/#beginner-top">Beginner</a><a class="navlink" data-nav="learning" href="../../learning-path/#learning-path-top">Learning Path</a><a class="navlink" data-nav="reference" href="../../reference/#reference-start">Reference</a><a class="navlink" data-nav="glossary" href="../../glossary/#glossary-top">Glossary</a>
+<div class="spacer"></div>
+<label class="player-level-control" title="Текущий уровень H-Group"><span class="player-level-label">Мой уровень</span><span class="player-level-value" id="playerLevelValue">—</span><select aria-label="Мой уровень H-Group" id="playerLevelSelect"><option value="">—</option><option value="beginner">Beginner</option></select></label>
+<label class="searchbox"><span style="margin-right:7px">⌕</span><input autocomplete="off" data-search-excludes-answers="true" id="search" placeholder="Поиск по сайту…"/></label>
+<button aria-controls="tocPanel" aria-expanded="false" aria-label="Оглавление страницы" class="iconbtn toc-menu" id="tocBtn" title="Оглавление страницы">☷</button>
+<button aria-label="Переключить тему" class="iconbtn" id="themeBtn" title="Светлая / тёмная тема">☾</button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button aria-label="Вернуться назад" class="context-back" hidden="" id="contextBack" type="button">← Назад</button>
+<div aria-live="polite" class="level-promotion-prompt" hidden="" id="levelPromotionPrompt" role="status">
+<strong id="levelPromotionTitle">Обновить мой уровень?</strong>
+<p id="levelPromotionText"></p>
+<div class="level-promotion-actions"><button class="primary" id="levelPromotionAccept" type="button">Обновить уровень</button><button id="levelPromotionLater" type="button">Не сейчас</button></div>
+</div>
+<div aria-labelledby="visualModalTitle" aria-modal="true" class="visual-modal" hidden="" id="visualModal" role="dialog">
+<div class="visual-modal-dialog">
+<div class="visual-modal-head"><strong id="visualModalTitle">Схема</strong><div class="visual-modal-actions"><button aria-label="Уменьшить схему" class="visual-zoom-btn" id="visualZoomOut" type="button">−</button><button aria-label="Сбросить масштаб схемы" class="visual-zoom-btn" id="visualZoomReset" type="button">100%</button><button aria-label="Увеличить схему" class="visual-zoom-btn" id="visualZoomIn" type="button">+</button><button aria-label="Закрыть увеличенную схему" class="visual-modal-close" id="visualModalClose" type="button">✕</button></div></div>
+<div class="visual-modal-viewport"><div class="visual-modal-canvas" id="visualModalCanvas"></div></div>
+</div>
+</div>
+<div class="search-results" id="searchResults"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-sidebar-section="beginner"><button aria-expanded="false" class="sidebar-section-toggle" type="button"><span>Beginner’s Guide</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button><div class="sidebar-section-body">
+<div class="sidebar-group">Начало</div>
+<a class="guide-link" href="../../beginner/#bg-intro">Beginner’s Guide — Введение</a><a class="guide-link" href="../../beginner/#bg-card-layout">Расположение карт</a><a class="guide-link" href="../../beginner/#bg-chop">Chop</a><a class="guide-link" href="../../beginner/#bg-card-notes">Заметки на картах (Card Notes)</a><a class="guide-link" href="../../beginner/#bg-two-types">Два типа подсказок</a>
+<div class="sidebar-group">Play Clues</div><a class="guide-link sub" href="../../beginner/#bg-play-clues">Play Clues</a><a class="guide-link sub" href="../../beginner/#bg-delayed-play">Delayed Play Clues</a>
+<div class="sidebar-group">Save Clues</div><a class="guide-link sub" href="../../beginner/#bg-save-clues">Save Clues</a><a class="guide-link sub" href="../../beginner/#bg-5-save">5 Save</a><a class="guide-link sub" href="../../beginner/#bg-2-save">2 Save</a><a class="guide-link sub" href="../../beginner/#bg-critical-save">Critical Save</a>
+<div class="sidebar-group">Интерпретация</div><a class="guide-link sub" href="../../beginner/#bg-focus">Single-Card Focus</a><a class="guide-link sub" href="../../beginner/#bg-interpretation">Интерпретация подсказки</a>
+<div class="sidebar-group">Принципы</div><a class="guide-link sub" href="../../beginner/#bg-principles">Три основных принципа</a><a class="guide-link sub" href="../../beginner/#bg-gtp">Good Touch Principle (GTP)</a><a class="guide-link sub" href="../../beginner/#bg-save-principle">Save Principle</a><a class="guide-link sub" href="../../beginner/#bg-mcvp">Minimum Clue Value Principle (MCVP)</a>
+<div class="sidebar-group">Стратегия</div><a class="guide-link sub" href="../../beginner/#bg-early-game">Early Game</a><a class="guide-link sub" href="../../beginner/#bg-general">Дополнительная общая стратегия</a><a class="guide-link sub" href="../../beginner/#bg-special">Особые приёмы</a><a class="guide-link sub" href="../../beginner/#bg-prompt">Prompt</a><a class="guide-link sub" href="../../beginner/#bg-finesse">Finesse</a><a class="guide-link sub" href="../../beginner/#bg-next-steps">Что дальше</a>
+</div></div><div class="sidebar-pages">
+<a class="level sidebar-page-link" data-sidebar-page="home" href="../../#home">Начало</a>
+<a class="level sidebar-page-link" data-sidebar-page="learning-path" href="../../learning-path/#learning-path-top">Learning Path</a>
+<a class="level sidebar-page-link" data-sidebar-page="reference-index" href="../../reference/#reference-start">Reference</a>
+</div><div class="sidebar-section open" data-sidebar-section="basic-strategies">
+<button aria-expanded="true" class="sidebar-section-toggle" type="button"><span>Basic Strategies</span><span aria-hidden="true" class="sidebar-chevron">▾</span></button>
+<div class="sidebar-section-body"><div id="levels"></div></div>
+</div>
+<h4>Справочник</h4><a class="level sidebar-page-link" data-sidebar-page="glossary" href="../../glossary/#glossary-top">Glossary</a><a class="level" href="#source">Источник / лицензия</a>
+</aside>
+<main class="main"><div class="main-inner" id="top">
+
+
+
+
+
+
+
+
+
+
+<article class="level-page content-page" data-level="8" data-page-key="level-8" id="level-8-top">
+<nav aria-label="Навигация Reference" class="level-breadcrumb"><a class="level-breadcrumb-back" href="../../reference/#reference-level-8">← Reference</a><span aria-hidden="true">/</span><span class="level-breadcrumb-current">Уровень 8 — Эндшпиль (End-Game)</span></nav>
+<div class="level-meta"><span class="badge">REFERENCE</span><span class="badge">Уровень 8</span><span class="badge">End-Game</span><span class="badge">ПЕРЕВЕДЁН</span></div>
+<h1>Уровень 8 — Эндшпиль (End-Game)</h1>
+<section data-toc="Конвенции" id="l8-conventions">
+<h2>Конвенции</h2>
+</section>
+<section data-sub="1" data-toc="End-Game" id="l8-end-game">
+<h3>End-Game</h3>
+<ul>
+<li>Ближе к концу партии приоритеты команды меняются. В большинстве игр эффективность отходит на второй план, а главным становится темп: <strong>каждая нужная карта должна сыграть прямо сейчас</strong>, пока партия не закончилась.</li>
+<li>Поэтому одна и та же подсказка может иметь разный смысл в <em>Mid-Game</em> и <em>End-Game</em>. Игрокам нужно точно понимать, когда концовка уже началась.</li>
+<li>Для этого используется <strong>Pace</strong>. Если Pace становится <strong>меньше числа игроков</strong>, считается, что начался <em>End-Game</em>.<ul>
+<li>На Hanab Live в этот момент показатель Pace становится жёлтым.</li>
+</ul>
+</li>
+<li>Если Pace становится <strong>меньше половины числа игроков</strong>, со сбросами нужно быть особенно осторожными. Сброс всё ещё может быть лучшим ходом, но при достаточном запасе жетонов часто безопаснее дать <em>Burn Clue</em> — сознательно потратить подсказку впустую и не добирать новую карту.</li>
+<li>Если Pace равен <strong>0</strong>, команда больше не может позволить себе ни одного сброса, если хочет сохранить шанс на максимальный счёт.</li>
+<li>Если Pace уже <strong>ниже 0</strong>, максимальный счёт математически недостижим.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="No Chop Moves in End-Game" id="l8-no-cm">
+<h3>No Chop Moves in End-Game</h3>
+<ul>
+<li>В <em>Early Game</em> и <em>Mid-Game</em> часто полезно сделать <em>Chop Move</em> и сохранить потенциально важную карту <strong>на потом</strong>.</li>
+<li>В <em>End-Game</em> стратегический смысл Chop Move исчезает: никакого «потом» уже нет, команда ограничена последними ходами.</li>
+<li>Поэтому в <em>End-Game</em> все обычные <em>Chop Moves</em> считаются <strong>недоступными</strong>.</li>
+<li>Если подсказка формально выглядела бы как Chop Move, игроки должны выбрать <strong>следующую по простоте разумную интерпретацию</strong>. На практике чаще всего такая подсказка превращается в Stall Clue.</li>
+</ul>
+</section>
+<section data-toc="Специальные приёмы" id="l8-special">
+<h2>Специальные приёмы</h2>
+</section>
+<section data-sub="1" data-toc="Positional Discard" id="l8-positional-discard">
+<h3>Positional Discard (указание розыгрыша сбросом)</h3>
+<ul>
+<li>Обычно при сбросе игрок обязан сбрасывать chop: выбор другой неизвестной карты может случайно уничтожить важную карту.</li>
+<li>Но в самом конце партии это ограничение иногда исчезает. Если игрок видит <strong>все карты, которые ещё нужны команде</strong>, он может логически понять, что все неизвестные карты в его собственной руке — мусор.</li>
+<li>Тогда любой его слот одинаково безопасен для сброса. Значит, выбор <strong>конкретного слота</strong> можно использовать как канал информации.</li>
+<li>Мы договариваемся: если в такой позиции игрок сбрасывает необычный слот, номер этого слота указывает на <strong>такой же слот в чужой руке</strong>, который нужно сыграть вслепую. Это называется <em>Positional Discard</em>.</li>
+<li>Например, в игре на троих:<ul>
+<li>Все карты, кроме красной 5 и жёлтой 5, уже сыграны.</li>
+<li>В колоде 0 карт, у Алисы 0 жетонов подсказки.</li>
+<li>У Боба жёлтая 5 уже с подсказкой.</li>
+<li>У Кэти красная 5 без подсказки в слоте 2.</li>
+<li>Алиса сбрасывает свой <strong>слот 2</strong> как <em>Positional Discard</em>.</li>
+<li>Кэти понимает соответствие по позиции и помечает свой слот 2 как красную 5 — последнюю нужную карту.</li>
+</ul>
+</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-diagram-positional-discard"></div>
+</div>
+<ul>
+<li>Один <em>Positional Discard</em> обещает <strong>один blind-play</strong> от другого игрока.</li>
+<li>Если после Positional Discard у двух или больше игроков есть играбельная карта в указанном слоте, blind-play адресуется <strong>последнему по порядку хода</strong> игроку с такой картой.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Positional Misplay" id="l8-positional-misplay">
+<h3>Positional Misplay (указание розыгрыша через мисплей)</h3>
+<ul>
+<li>Иногда игрок хочет сделать <em>Positional Discard</em>, но выбранный слот совпадает с его <strong>обычным chop</strong>. Тогда остальные не увидят специального сообщения: они решат, что это просто нормальный сброс.</li>
+<li>Например, в игре на четверых:<ul>
+<li>Все 4 уже сыграны.</li>
+<li>В колоде осталось 3 карты.</li>
+<li>У Алисы 0 жетонов.</li>
+<li>Алиса видит, что все необходимые команде карты уже находятся в чужих руках.</li>
+<li>У Алисы нет карт с подсказками, поэтому её chop — слот 4.</li>
+<li>У Дональда красная 5 без подсказки тоже находится в слоте 4.</li>
+</ul>
+</li>
+<li>Если Алиса просто сбросит слот 4, Дональд ничего специального не прочитает: именно этот слот Алиса и должна была сбросить по обычным правилам.</li>
+<li>Чтобы сделать сообщение «сыграй этот слот» однозначно необычным, Алиса может <strong>намеренно сделать мисплей своей chop-картой</strong>. Остальные видят, что карта дала мисплей буквально «без причины», и понимают, что это <em>Positional Misplay</em>.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-diagram-positional-misplay"></div>
+</div>
+<ul>
+<li>Один <em>Positional Misplay</em> обещает <strong>один blind-play</strong> от другого игрока — при условии, что мисплей действительно был нужен, потому что обычный Positional Discard не отличался бы от нормального сброса.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Double Positional Misplay" id="l8-double-positional">
+<h3>Double Positional Misplay (два розыгрыша через мисплей)</h3>
+<ul>
+<li>Обычно <em>Positional Misplay</em> — последняя мера, применяемая только когда Positional Discard не смог бы передать сигнал.</li>
+<li>Но если игрок делает Positional Misplay <strong>даже тогда, когда обычный Positional Discard прекрасно сработал бы</strong>, значит он сознательно выбрал более дорогой сигнал ради дополнительного сообщения.</li>
+<li>Мы договариваемся, что это дополнительное сообщение обещает <strong>две играбельные карты вместо одной</strong>.</li>
+<li>Поэтому ненужный Positional Misplay даёт <strong>два blind-play</strong> от команды.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Distribution Clue" id="l8-distribution">
+<h3>Distribution Clue</h3>
+<ul>
+<li>В <em>End-Game</em> один игрок иногда оказывается перегружен большим количеством играбельных карт. Возникает риск, что партия закончится раньше, чем он физически успеет разыграть их все.</li>
+<li>Тогда бывает разумно потратить подсказку, чтобы <strong>намеренно продублировать</strong> одну из его играбельных карт в руке другого игрока.</li>
+<li>Формально это нарушает <em>Good Touch Principle</em>, потому что команда получает вторую копию уже полученной карты. Но в концовке такое дублирование может уменьшить нагрузку на перегруженную руку и ускорить общий розыгрыш.</li>
+<li>Поскольку ход распределяет необходимые розыгрыши более равномерно между игроками, он называется <em>Distribution Clue</em>.</li>
+<li><em>Distribution Clues</em> — практическое применение <em>Team Distribution Principle</em>.</li>
+</ul>
+</section>
+<section data-toc="Общие принципы" id="l8-principles">
+<h2>Общие принципы</h2>
+</section>
+<section data-sub="1" data-toc="Team Distribution Principle" id="l8-team-distribution">
+<h3>Team Distribution Principle</h3>
+<ul>
+<li>В общем случае полезные карты лучше распределять между игроками <strong>равномерно</strong>. Особенно важно это в игре на пятерых.</li>
+<li>Поэтому, если у одного из ваших товарищей 3 из 4 карт уже с подсказками, может быть лучше, чтобы <strong>именно он</strong> давал подсказки, а вы сбрасывали — даже если его chop известна как мусор.</li>
+<li>Причин несколько. Во-первых, вы не хотите, чтобы его рука стала <em>Locked Hand</em>, потому что это обычно плохо. Во-вторых, если он продолжит добирать играбельные карты, партия может закончиться раньше, чем он успеет сыграть их все.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Pace +1 Rule" id="l8-pace-plus-one">
+<h3>Pace +1 Rule</h3>
+<ul>
+<li>Игроки могут использовать <em>Pace</em>, чтобы определить, безопасно ли сбрасывать. В общем случае команда может сбрасывать вплоть до Pace 0 и всё ещё получить максимальный счёт.</li>
+<li>Однако действует дополнительное правило: если Pace равен +1 и у одного из игроков команды <strong>нет</strong> ни одной играбельной карты, вы не можете сбрасывать — <strong>последний сброс нужно оставить ему</strong>.</li>
+<li>Если ни у вас, ни у другого игрока нет играбельных карт, тогда финальный сброс можете сделать вы — команда всё равно уже не сможет получить максимальный счёт. Но если у вас <strong>может</strong> быть неизвестная играбельная карта, сбрасывать нужно очень осторожно, потому что это может лишить команду максимального счёта.</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="Burning (End-Game Stalling)" id="l8-burning">
+<h3>Burning (End-Game Stalling)</h3>
+<ul>
+<li>В <em>End-Game</em> часто остаётся много карт, которые ещё нужно сыграть. Поэтому при сбросе нужно быть очень осторожным: добрав карту, можно закончить партию раньше, чем все успеют сыграть свои карты.</li>
+<li>Если жетонов подсказок достаточно, можно вместо сброса Stall — дать малоценную или даже полностью бесполезную подсказку. Это называется <strong>Burning</strong> подсказки.</li>
+<li>Лучший способ дать бесполезную подсказку — повторно подсказать карты, которые уже известны как играбельные.</li>
+<li>Давайте <em>Burn Clue</em>, если:<ul>
+<li>есть возможность закончить партию без дальнейших сбросов;</li>
+<li>у вас в руке две или больше полезных карт и вы хотите следовать <em>Team Distribution Principle</em>.</li>
+</ul>
+</li>
+<li>Не давайте <em>Burn Clue</em>, если:<ul>
+<li><em>End-Game</em> ещё не начался (см. <em>End-Game Threshold</em>);</li>
+<li>вы знаете, что кому-то в будущем всё равно придётся сбрасывать.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-sub="1" data-toc="End-Game Strategy" id="l8-strategy">
+<h3>End-Game Strategy</h3>
+<ul>
+<li>Предыдущие три раздела дают общее введение в <em>End-Game</em>. Когда начинается концовка, вам, вероятно, следует менять свой стиль игры.</li>
+<li>Однако давать конкретные советы для <em>End-Game</em> очень трудно: всё сильно зависит от расклада, и учитывать приходится множество факторов.</li>
+<li>Поэтому каждую концовку нужно продумывать самостоятельно, шаг за шагом. Задавайте себе вопросы:<ul>
+<li>Какие нужные команде карты ещё остались в колоде?</li>
+<li>Какова вероятность добрать эти карты?</li>
+<li>Кто должен добирать эти карты?</li>
+<li>Даёт ли Stall вариант лучше, чем розыгрыш?</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-toc="Official Challenge Questions" id="l8-official">
+<h2>Official Challenge Questions</h2>
+<div class="official-questions">
+<article class="official-q" id="l8-official-q-1">
+<div class="official-head">
+<h3>1. 5 Cards Left</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В колоде осталось 5 карт, доступна 1 подсказка.</li>
+<li>Единственные карты с подсказками — 5 в руке Алисы.</li>
+<li>Что должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-official-1-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Красная подсказка Кэти выглядит заманчиво: она дала бы <em>Finesse</em> на красную 4. Но такой ход может проиграть по времени.</li>
+<li>Алиса ещё может добрать синюю 5 и фиолетовую 5. Тогда ей самой потребуется сыграть <strong>четыре карты</strong>. Если сейчас потратить ход на подсказку, времени на все четыре уже не останется.</li>
+<li>Правильно сыграть <strong>жёлтую 5 или зелёную 5</strong>. Тогда Боб сможет сохранить красную 5, а Кэти получит красную 4.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-official-1-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-8-5-cards-left" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l8-official-q-2">
+<div class="official-head">
+<h3>2. 3 Cards Left</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В колоде осталось 3 карты, доступно 0 подсказок.</li>
+<li>Все оставшиеся полезные карты уже «получены».</li>
+<li>Боб знает точное значение всех своих карт с подсказками.</li>
+<li>Что должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-official-2-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Может показаться естественным сыграть красную 4, чтобы Боб затем сыграл красную 5. Но это <strong>проигрывает по времени</strong>.</li>
+<li>Ограничение здесь — способность Боба успеть сыграть все свои 5 до конца партии. Команде нужны подсказки для Stall.</li>
+<li>Сброс возвращает жетон подсказки, а розыгрыш красной 4 — нет.</li>
+<li>Поэтому Алиса должна <strong>сбросить сейчас</strong> и сохранить красную 4 на более поздний ход.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-official-2-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-8-3-cards-left" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+<article class="official-q" id="l8-official-q-3">
+<div class="official-head">
+<h3>3. 2 Cards Left</h3><span class="official-source">OFFICIAL H-GROUP</span></div>
+<div class="official-tabs"><button class="official-tab active" data-panel="q">Вопрос</button><button class="official-tab" data-panel="a">Решение</button></div>
+<div class="official-panel active" data-kind="q">
+<ul>
+<li>В колоде осталось 2 карты и доступно 2 подсказки. Ни у кого нет карт с подсказками.</li>
+<li>Что должна сделать Алиса?</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-official-3-q"></div>
+</div>
+</div>
+<div class="official-panel" data-kind="a">
+<ul>
+<li>Алиса видит красную 3 у Кэти и красную 5 у Боба.</li>
+<li>Если красная 4 уже в руке Алисы, всё просто: команда подскажет красные карты и сыграет цепочку.</li>
+<li>Но обе красные 4 могут всё ещё находиться в колоде. Тогда после розыгрыша 4 времени на 5 уже не хватит.</li>
+<li>Поэтому Алиса должна <strong>сбросить</strong>. После добора она гарантированно либо уже имела красную 4, либо доберёт одну из двух копий.<ul>
+<li>В рамках примера предполагается, что крайне маловероятно, что карта, сброшенная Алисой, сама была красной 4: команда почти наверняка ранее сделала бы ей <em>Chop Move</em>.</li>
+</ul>
+</li>
+<li>После сброса Боб сможет сделать <em>Finesse</em> на красную 3, подсказав красную 4 Алисы, а красная 5 сыграет на следующем круге.</li>
+</ul>
+<div class="hanabi-block">
+<div class="diagram-shell" id="l8-official-3-a"></div>
+</div>
+</div>
+<p class="source-mini">Источник: <a href="https://hanabi.github.io/challenge-questions/level-8-2-cards-left" rel="noopener" target="_blank">официальный Challenge Question ↗</a></p>
+</article>
+</div>
+</section>
+<section data-toc="Тренировочные вопросы" id="l8-training">
+<h2>Тренировочные вопросы</h2>
+<div class="qa-list">
+<details class="qa">
+<summary>1. В игре 4 игрока, Pace стал 3. Началась ли End-Game?</summary>
+<div class="answer">
+<p>Да. End-Game начинается, когда Pace меньше числа игроков.</p>
+</div>
+</details>
+<details class="qa">
+<summary>2. Pace = 0. Можно ли сделать ещё один обычный сброс и всё равно гарантировать максимум?</summary>
+<div class="answer">
+<p>Нет. Для максимального результата при Pace 0 больше нельзя сбрасывать.</p>
+</div>
+</details>
+<details class="qa">
+<summary>3. Подсказка в End-Game выглядит как Chop Move. Как её читать?</summary>
+<div class="answer">
+<p>Chop Moves в End-Game отключены. Нужно искать следующую простую интерпретацию, обычно Stall Clue.</p>
+</div>
+</details>
+<details class="qa">
+<summary>4. Алиса в End-Game сбрасывает необычный слот 2. Что это может означать?</summary>
+<div class="answer">
+<p>Positional Discard: слот 2 у другого игрока должен быть сыгран вслепую.</p>
+</div>
+</details>
+<details class="qa">
+<summary>5. Зачем нужен Distribution Clue, если он нарушает Good Touch Principle?</summary>
+<div class="answer">
+<p>Чтобы перераспределить нагрузку на розыгрыши между игроками и не оставить слишком много нужных карт в одной руке перед концом игры.</p>
+</div>
+</details>
+<details class="qa">
+<summary>6. Pace = +1, у одного партнёра нет никаких играбельных карт. Кто должен сделать последний сброс?</summary>
+<div class="answer">
+<p>Именно этот партнёр; остальные должны сохранить ему возможность сделать финальный сброс по Pace +1 Rule.</p>
+</div>
+</details>
+</div>
+</section>
+<div class="source-box">Адаптировано по текущему официальному <a href="https://hanabi.github.io/level-8" rel="noopener" target="_blank">Level 8 — End-Game</a>. Все три текущих Official Challenge Questions встроены локально вместе с точными схемами «Вопрос»/«Решение» из официальных YML.</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="global-source" id="source"><div class="source-box"><strong>Источник / лицензия.</strong> Это русская адаптация материалов H-Group Conventions. <a href="https://hanabi.github.io/beginner">Оригинальный Beginner’s Guide</a> · <a href="https://hanabi.github.io/reference/">Оригинальный Reference</a> · <a href="https://github.com/hanabi/hanabi.github.io">Репозиторий источника</a> · <a href="https://github.com/hanabi/hanabi.github.io/commit/605c5c3fd5db6cb4456876906c6cb7b5e57deb3d">историческая ревизия, использованная при сборке Beginner 605c5c3</a>. Состав Beginner’s Guide сверялся с официальной структурой этой ревизии: 23 основные страницы и 47 официальных Beginner Challenge Questions. Материалы распространяются по <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; эта адаптация сохраняет атрибуцию и условие ShareAlike. Все ресурсы, CSS и JS, необходимые для отображения документа, встроены в HTML; ссылки на источники нужны только для атрибуции и проверки происхождения.<p class="source-mini"><strong>Принцип перевода:</strong> полнота и точность важнее краткости. Повторения, примеры, оговорки и причинные объяснения оригинала не сокращаются ради компактности русского текста.</p></div><div class="footer">H-Group Conventions · русская адаптация · Beginner’s Guide + Reference, уровни 1–25 · Составные названия конвенций, буквенная нотация заметок и подписи схем сохраняются на английском.</div></section></div></main>
+<aside class="toc" id="tocPanel"><h4>На этой странице</h4><nav id="toc"></nav></aside>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../../assets/embedded-assets.js"></script><script src="../../assets/renderer-and-diagrams.js"></script><script src="../../assets/search-index.js"></script><script src="../../assets/web-app.js"></script>
+</body></html>
