@@ -1,101 +1,41 @@
-# Архитектура H-Group RU
+# Как устроен проект
 
-## Основной принцип
+H-Group RU основан на официальном [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io) и старается оставаться как можно ближе к его структуре. Это упрощает обновление перевода и не позволяет русской версии незаметно превратиться в отдельную редакцию правил.
 
-H-Group RU — upstream-first локализация `hanabi/hanabi.github.io`, а не независимая реализация H-Group conventions.
+## Исходный проект и перевод
 
-Закреплённый upstream определяет:
+Точная версия исходного проекта записана в [`upstream.json`](upstream.json).
 
-- официальный английский MDX;
-- структуру материала;
-- official YML;
-- Hanabi Docusaurus renderer;
-- основу сайта.
-
-Русский проект добавляет локализацию и минимальные RU-specific расширения поверх этой основы.
-
-## Единственный source repository
-
-`hgroup-ru/hgroup-ru.github.io` — единственный живой source tree сайта.
-
-Generated `build/` не коммитится в Git: опубликованный сайт разворачивается из GitHub Pages artifact.
-
-## Русский locale
-
-Основной путь:
+Официальные английские страницы и YML-файлы остаются основой сайта. Русский перевод хранится в стандартной структуре Docusaurus:
 
 `i18n/ru/docusaurus-plugin-content-docs/current/`
 
-Production публикует только RU locale в корне `https://hgroup-ru.github.io/`.
-
-Production build:
+Сборка русской версии:
 
 ```bash
 npm run build:ru
 ```
 
-`npm run build` собирает все настроенные locale и используется только как редкая compatibility-проверка для shared/upstream изменений.
+Сгенерированный каталог `build/` в Git не хранится.
 
-## Локальные расширения
+## Что добавляет H-Group RU
 
-Проект сохраняет:
+Помимо перевода проект содержит несколько материалов, относящихся только к русской версии:
 
-- русскую терминологию и редакционную политику;
-- локальные Training Questions для Levels 1–25;
-- семь явно локальных учебных YML-диаграмм, рендеримых штатным Hanabi plugin;
-- локализованные Mermaid flowcharts там, где они уже являются частью RU-контента;
-- RU-owned Algolia search/index policy.
+- принятую русскую терминологию;
+- Training Questions для Levels 1–25;
+- семь локальных учебных YML-диаграмм;
+- локализованные Mermaid-схемы там, где они входят в русские материалы;
+- отдельный поиск по русской версии.
 
-Старые custom Python builders, custom SPA/runtime, autonomous single-file profile, custom official-diagram renderer и parity/oracle QA не являются текущей архитектурой.
+Локальные материалы должны быть явно отличимы от официального контента H-Group. Подробности приведены в [`localization/README.md`](localization/README.md).
 
-## Поиск
+## Диаграммы
 
-Frontend использует стандартную Docusaurus Algolia/DocSearch integration и RU-owned index `hgroup-ru-docs`.
+Официальные диаграммы используют YML из закреплённой версии исходного проекта и штатный Docusaurus plugin H-Group. Локальные учебные диаграммы рендерятся тем же плагином, но помечаются как материал H-Group RU.
 
-Training answers помечены `data-ru-search-exclude="true"`; crawler удаляет эти узлы до DocSearch extraction, сохраняя Training question `<summary>` индексируемым.
+## Проверки Pull Request
 
-Exact crawler behavior хранится в `localization/ALGOLIA_RU_SEARCH.md`.
+CI проверяет форматирование, типы, линтеры и другие автоматические требования проекта. Для Pull Request из внешнего fork дополнительно выполняется `npm run build:ru`.
 
-## CI
-
-### PR из ветки основного репозитория
-
-CI выполняет `npm run lint`.
-
-### PR из внешнего fork
-
-CI выполняет:
-
-1. `npm run lint`;
-2. `npm run build:ru` даже если lint уже нашёл ошибку, чтобы автор сразу получил полный технический feedback.
-
-PR CI не получает release secrets и ничего не деплоит.
-
-## Build Check
-
-`Build Check` — ручной maintainer workflow только для `npm run build:ru`. `npm run build` (все locale) намеренно не вынесен в GitHub Actions и остаётся редкой локальной compatibility-командой для upstream/shared изменений.
-
-## Release
-
-Merge в `main` не означает публикацию.
-
-Ручной `Release` из `main` выполняет:
-
-1. lint;
-2. `npm run build:ru`;
-3. загрузку Pages artifact;
-4. deployment в GitHub Pages;
-5. создание production tag `prod-*` на опубликованном source SHA;
-6. запуск Algolia crawler.
-
-Release build обязателен даже если отдельный PR уже успешно собирался: публикуется совокупное текущее состояние `main`, и именно Release создаёт production artifact.
-
-## Production tags
-
-Каждый успешный Pages deployment получает новый `prod-*` Git tag. Tag не двигается и не переиспользуется.
-
-GitHub Release objects пока не являются частью release lifecycle; при необходимости их можно добавить позже как публичный changelog.
-
-## Upstream sync
-
-Текущая закреплённая upstream revision хранится в `upstream.json`. В одном update нельзя молча смешивать файлы из разных upstream revisions.
+Публикация сайта выполняется отдельно через GitHub Actions; слияние Pull Request само по себе не является релизом.
