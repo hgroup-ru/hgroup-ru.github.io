@@ -1,0 +1,69 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+bigText:
+  text: "Clues: 1"
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Red 2
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: b5
+        border: false
+  - cards:
+      - type: x
+      - type: x
+      - type: r3
+        clue: r
+        middleNote: r2, r3
+        below: Play
+      - type: x
+  - text: Next
+  - offset: -3
+    clueGiver: true
+    cards:
+      - type: x
+        above: Red 2
+        middleNote: r2
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: b5
+        clue: 5
+        below: Save
+  - cards:
+      - type: x
+      - type: x
+      - type: r3
+        middleNote: r2, r3
+        below:
+          text:
+            - Must
+            - wait
+      - type: x

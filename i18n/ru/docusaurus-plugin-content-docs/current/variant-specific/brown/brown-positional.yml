@@ -1,0 +1,26 @@
+suits:
+  n: brown
+stacks:
+  - r: 2
+  - y: 2
+  - g: 2
+  - b: 2
+  - n: 2
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+    clueGiver: true
+  - cards:
+      - type: 2
+        clue: 2
+        trash: true
+      - type: n
+        middleNote: n3
+        below: Play
+      - type: n
+      - type: n
+      - type: n

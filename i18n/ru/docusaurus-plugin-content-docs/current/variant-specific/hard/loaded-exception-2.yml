@@ -1,0 +1,31 @@
+stacks:
+  - r: 3
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Low score
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: r4
+        below: Loaded
+      - type: 5
+        clue: 5
+        below: Save
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

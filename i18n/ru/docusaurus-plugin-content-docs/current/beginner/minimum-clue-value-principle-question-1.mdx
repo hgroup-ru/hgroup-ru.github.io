@@ -1,0 +1,47 @@
+---
+title: "Minimum Clue Value Principle (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqMinimumClueValuePrincipleQuestion1Q from "./minimum-clue-value-principle-question-1/minimum-clue-value-principle-question-1.yml";
+import RuBgqMinimumClueValuePrincipleQuestion1A from "./minimum-clue-value-principle-question-1/minimum-clue-value-principle-answer-1.yml";
+
+<BeginnersGuideProgress id="minimum-clue-value-principle-question-1" />
+
+<span id="bg-minimum-clue-value-principle-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса находится в специальной ситуации, где не может сбрасывать.
+- Синяя 4 Боба уже раньше была затронута синей подсказкой.
+- Красная 2 и жёлтая 2 Кэти уже раньше были затронуты подсказкой числом 2.
+- Перечислите все допустимые **Tempo Clues**, которые Алиса может дать.
+
+<RuBgqMinimumClueValuePrincipleQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может дать Tempo Clue синей 4 в руке Боба:
+  - подсказка числом 4 допустима, потому что затронет только слот 4. Она «заполнит» карту до синей 4;
+  - синяя подсказка тоже допустима, потому что затронет только слот 4. Она не добавит точного значения, но всё равно будет означать «сыграй карту», поэтому сработает правильно.
+- Алиса может дать Tempo Clue красной 2 в руке Кэти:
+  - подсказка числом 2 **не допустима**, потому что сфокусируется на слоте 1 вместо слота 4;
+  - красная подсказка допустима, потому что затронет только слот 4.
+- Алиса **не может** дать Tempo Clue жёлтой 2 в руке Кэти:
+  - подсказка числом 2 не допустима, потому что сфокусируется на слоте 1 вместо слота 5;
+  - жёлтая подсказка не допустима, потому что сфокусируется на слоте 3 вместо слота 5.
+
+<RuBgqMinimumClueValuePrincipleQuestion1A />
+
+</TabItem>
+</Tabs>

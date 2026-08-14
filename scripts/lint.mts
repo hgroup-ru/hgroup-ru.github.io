@@ -33,15 +33,11 @@ await lintCommands(import.meta.dirname, [
   // since there is no Docusaurus plugin and whitelisting everything does not get us much value.)
   /// $`knip --no-progress`,
 
-  // Use CSpell to spell check every file.
+  // Spell check published RU MDX with Russian and English dictionaries.
   // - "--no-progress" and "--no-summary" make it only output errors.
-  "cspell --no-progress --no-summary",
-
-  // Check for unused words in the CSpell configuration file.
-  "cspell-check-unused-words",
-
+  "cspell --config ./cspell.ru.jsonc --locale ru,en --no-progress --no-summary i18n/ru/docusaurus-plugin-content-docs/current",
   // Check for template updates.
-  "complete-cli check --ignore action.yml,build.ts,knip.config.js,LICENSE,lint.ts",
+  "complete-cli check --ignore action.yml,build-check.yml,build.ts,ci.yml,knip.config.js,LICENSE,lint.ts,release.yml",
 
   // Lint YAML files.
   "yamllint .",

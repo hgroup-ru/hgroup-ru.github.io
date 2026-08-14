@@ -1,0 +1,45 @@
+---
+title: "Два варианта, I"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial2Q from "./level-2-two-possibilities-i/question.yml";
+import RuOfficial2A from "./level-2-two-possibilities-i/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-two-possibilities-i" />
+
+<span id="ru-level-2-two-possibilities-i"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу синюю подсказку, которая затрагивает одну карту в слоте 2.
+- Боб записывает заметку с возможным точным значением этой карты.
+
+1. Что должен записать Боб?
+1. Что Боб должен сделать?
+
+<RuOfficial2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Боб пишет `b2, b3 if blue 2 f`.
+   - Боб знает, что это должна быть _Play Clue_ на его синюю карту, поскольку она не находится на chop. Синяя 2 ещё не сыграна и не была затронута подсказкой в другой руке, поэтому эта карта может быть синей 2.
+   - Однако Боб также видит синюю 2 в _Finesse Position_ Кэти, поэтому Алиса могла сделать [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse). В таком случае карта Боба может быть синей 3.
+1. Боб обязан учитывать возможность _Reverse Finesse_, поэтому не может немедленно сыграть синюю карту. Если в руке Алисы нет ничего полезного для подсказки, Бобу следует просто сбросить карту и не давать подсказку синей 2.
+   - Если Кэти на своём ходу вслепую сыграет синюю 2, Боб может обновить заметку до `b2, b3 if blue 2 f | b3`.
+   - Если у Кэти нет более срочного действия и на своём ходу она всё равно не играет синюю 2, Боб может обновить заметку до `b2, b3 if blue 2 f | b2`.
+
+<RuOfficial2A />
+
+</TabItem>
+</Tabs>

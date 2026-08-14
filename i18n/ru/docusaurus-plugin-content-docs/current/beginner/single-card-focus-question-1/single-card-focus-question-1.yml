@@ -1,0 +1,24 @@
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: p
+        clue: p
+      - type: p
+        clue: p
+      - type: p
+        clue: p
+      - type: p
+        clue: p
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

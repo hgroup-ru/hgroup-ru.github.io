@@ -1,0 +1,44 @@
+---
+title: "Critical Save (вопрос 4)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqCriticalSaveQuestion4Q from "./critical-save-question-4/critical-save-question-4.yml";
+import RuBgqCriticalSaveQuestion4A from "./critical-save-question-4/critical-save-answer-4.yml";
+
+<BeginnersGuideProgress id="critical-save-question-4" />
+
+<span id="bg-critical-save-question-4"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу красную подсказку, затрагивая карту в слоте 5.
+- Это Play Clue или Save Clue?
+- Что Боб запишет? Укажите все варианты.
+
+<RuBgqCriticalSaveQuestion4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб знает, что это может быть **Play Clue** на красную 1.
+- Но подсказка затронула chop, поэтому она также может быть Save Clue. В сбросе лежит красная 2, и красная подсказка соответствует этой карте, значит сфокусированная карта может быть второй красной 2 — теперь уже критической.
+- Боб не знает, Play Clue это или Save Clue, поэтому до получения дополнительной информации обязан учитывать Save Clue и держать карту.
+- Боб записывает:
+  - красная 1 — как Play Clue;
+  - красная 2 — как Critical Save.
+- Обычно 2 спасают через 2 Save. Но если первая копия двойки уже сброшена, вторую копию можно спасти через **Critical Save** точно так же, как 3 или 4.
+
+<RuBgqCriticalSaveQuestion4A />
+
+</TabItem>
+</Tabs>

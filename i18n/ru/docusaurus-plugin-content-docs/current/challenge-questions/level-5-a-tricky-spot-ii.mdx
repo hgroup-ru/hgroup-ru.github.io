@@ -1,0 +1,55 @@
+---
+title: "A Tricky Spot, II"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL5Official5Q from "./level-5-a-tricky-spot-ii/question.yml";
+import RuL5Official5A from "./level-5-a-tricky-spot-ii/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-a-tricky-spot-ii" />
+
+<span id="ru-level-5-a-tricky-spot-ii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Фиолетовая 1 сыграна на стол.
+- Алиса видит:
+  - у Боба красная 1 в _Finesse Position_;
+  - рука Кэти от новой к старой: `красная 2, жёлтая 4, зелёная 1, синяя 3`;
+  - зелёная 1 Кэти ранее получила зелёную подсказку и известна всей команде как зелёная 1;
+  - рука Дональда от новой к старой: `красная 2, фиолетовая 4, зелёная 4, синяя 2`.
+- Какие подсказки доступны Алисе?
+- Какую подсказку лучше всего дать?
+- С точки зрения игрока, получающего лучшую подсказку, какую заметку он запишет? Укажите точно и покажите полную эволюцию заметки.
+
+<RuL5Official5Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алисе доступны следующие подсказки:
+  - Можно сделать _2 Save_ синей 2. Это будет 2-for-1, но не даёт ни одной новой карты для розыгрыша.
+  - Можно дать _Play Clue_ красной 1 Боба — красным или числом 1. Это будет 1-for-1.
+  - Можно дать _Play Clue_ красной 2 Кэти — красным или числом 2. Это вызовет _Finesse_ и будет 2-for-1.
+  - Можно дать красную _Play Clue_ красной 2 Дональда. Это вызовет _Finesse_ и будет 2-for-1.
+- Однако обе красные 2 находятся в _Finesse Position_. Если Алиса запустит _Finesse_ красной подсказкой, и Кэти, и Дональд отметят свои красные карты как возможные красные 3, что приведёт к [_Ambiguous Finesse_](../level-5.mdx#the-ambiguous-finesse).
+- Поскольку у Кэти уже есть карта для розыгрыша, а у Дональда на chop важная карта, лучший ход Алисы — сделать _Finesse_ на красную 2 Дональда. Это безопасно благодаря [_Urgency Principle_](../level-5.mdx#urgency-principle-playing-into-finesses-as-soon-as-possible):
+  - Сразу после подсказки Алисы Дональд записывает на своей красной карте `r1, r2 if r1 f, r3 if r2 f`.
+  - Боб знает, что ему обещана красная 1, поэтому успешно разыгрывает красную 1 вслепую из _Finesse Position_.
+  - Дональд обновляет заметку с `r1, r2 if r1 f, r3 if r2 f` до `r2, r3 if r2 f`.
+  - Кэти играет свою зелёную 1.
+  - Дональд обновляет заметку с `r2, r3 if r2 f` до `r2`.
+
+<RuL5Official5A />
+
+</TabItem>
+</Tabs>

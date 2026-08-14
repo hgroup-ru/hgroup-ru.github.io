@@ -1,0 +1,38 @@
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Illegal!
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 2
+        above: Blue 2
+        middleNote: r2
+        below:
+          text:
+            - Prompt,
+            - misplays
+          color: red
+      - type: 2
+        above: Red 2
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: r3
+        clue: r
+        below: Play

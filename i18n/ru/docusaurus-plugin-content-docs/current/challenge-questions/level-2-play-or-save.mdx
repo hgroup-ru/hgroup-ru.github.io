@@ -1,0 +1,47 @@
+---
+title: "Разыграть или сохранить?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial7Q from "./level-2-play-or-save/question.yml";
+import RuOfficial7A from "./level-2-play-or-save/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-play-or-save" />
+
+<span id="ru-level-2-play-or-save"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 3, которая затрагивает карты в слотах 3 и 5.
+- Это _Chop-Focus_ подсказка, поэтому подсказка фокусируется на карте в слоте 5.
+- Боб записывает заметки на обе карты.
+
+1. Что нужно записать?
+2. Что Боб должен сделать?
+
+<RuOfficial7Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. На карте в слоте 5 Боб пишет `r3`, а на карте в слоте 3 — `y3, g3, b3, p3`.
+   - Поскольку Боб получил _Chop-Focus_ подсказку, он должен трактовать её как _Play Clue_ или _Save Clue_.
+   - Однако ни одна 3 сейчас не играбельна напрямую, поэтому прямым _Play Clue_ эта подсказка быть не может.
+   - Единственная 3 в стопке сброса — красная 3, поэтому это должен быть _Save Clue_ на красную 3.
+   - Это не может быть [_Self-Finesse_](../level-2.mdx#the-self-finesse): Алиса ожидает, что Боб прочитает подсказку как _Save Clue_ на красную 3.
+   - Это не может быть [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse). Хотя в _Finesse Position_ Кэти лежит красная 2, Кэти увидит критическую красную 3 на chop Боба и трактует подсказку как _Save Clue_; поэтому она не станет ничего играть вслепую из-за подсказки Алисы.
+2. Если в руке Алисы нет других интересных карт, Боб должен дать Кэти подсказку числом 2 как _Play Clue_ на красную 2. Подсказка числом 2 лучше красной подсказки, потому что заодно «бесплатно» получает фиолетовую 2.
+
+<RuOfficial7A />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: r
+        clue: r
+      - type: r
+        clue: r
+      - type: 5
+      - type: r2
+        clue: r
+        retouched: true
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

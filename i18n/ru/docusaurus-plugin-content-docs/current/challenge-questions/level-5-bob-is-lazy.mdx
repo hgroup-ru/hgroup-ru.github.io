@@ -1,0 +1,43 @@
+---
+title: "Боб ленится"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL5Official6Q from "./level-5-bob-is-lazy/question.yml";
+import RuL5Official6A from "./level-5-bob-is-lazy/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-bob-is-lazy" />
+
+<span id="ru-level-5-bob-is-lazy"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Первый ход, стол пуст.
+- Алиса даёт Кэти подсказку числом 2 по слотам 1 и 4; это _Play Clue_ на слот 1 Кэти.
+- У Боба красная 1 в _Finesse Position_, поэтому Кэти допускает, что Боб сыграет её вслепую и подсказка Алисы окажется _Finesse_ красная 1 → красная 2.
+- Но Боб вместо blind-play даёт Алисе подсказку числом 1 по зелёной 1 в слоте 1.
+- Что должна сделать Кэти?
+
+<RuL5Official6Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб, по-видимому, откладывает blind-play и вместо этого даёт 1-for-1 подсказку карте, которую с тем же успехом могла получить Кэти.
+- [_Urgency Principle_](../level-5.mdx#urgency-principle-playing-into-finesses-as-soon-as-possible) говорит, что blind-play должен происходить **как можно скорее**. Следовательно, Боб изначально вообще не был _Finessed_.
+- Однако подсказка Алисы должна быть каким-то _Finesse_, потому что карта Кэти в слоте 1 была обозначена как играбельная. Поэтому ход классифицируется как [_Ambiguous_](../level-5.mdx#the-ambiguous-finesse) [_Self-Finesse_](../level-2.mdx#the-self-finesse) на Кэти: Кэти должна вслепую сыграть свою _Finesse Position_ как любую играбельную 1.
+- Когда Кэти успешно разыгрывает вслепую жёлтую 1 из _Finesse Position_, она понимает, что её ранее неизвестная 2 — цель _Finesse_ — должна совпадать по цвету и быть ровно жёлтой 2.
+
+<RuL5Official6A />
+
+</TabItem>
+</Tabs>

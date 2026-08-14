@@ -1,0 +1,44 @@
+---
+title: "Clue Interpretation (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqClueInterpretationQuestion2Q from "./clue-interpretation-question-2/clue-interpretation-question-2.yml";
+import RuBgqClueInterpretationQuestion2A from "./clue-interpretation-question-2/clue-interpretation-answer-2.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-2" />
+
+<span id="bg-clue-interpretation-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В руке Боба вообще нет подсказок.
+- Алиса даёт Бобу подсказку числом 2, затрагивая слот 5.
+
+1. Какой слот находится в фокусе?
+2. Это Play Clue или Save Clue?
+3. Что Боб запишет на карту в слоте 5?
+
+<RuBgqClueInterpretationQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. В фокусе слот 5.
+2. Это **Play Clue**.
+   - Обычно такая подсказка выглядела бы как 2 Save, но сейчас **все 2 играбельны**. Значит, это не может быть 2 Save и является обычной Play Clue.
+3. Боб записывает `y2, g2`.
+
+<RuBgqClueInterpretationQuestion2A />
+
+</TabItem>
+</Tabs>

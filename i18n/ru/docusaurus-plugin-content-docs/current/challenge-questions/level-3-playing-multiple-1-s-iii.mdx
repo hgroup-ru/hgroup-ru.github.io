@@ -1,0 +1,41 @@
+---
+title: "Игра нескольких 1, III"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL3Official3Q from "./level-3-playing-multiple-1-s-iii/question.yml";
+import RuL3Official3A from "./level-3-playing-multiple-1-s-iii/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-playing-multiple-1-s-iii" />
+
+<span id="ru-level-3-playing-multiple-1-s-iii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Идёт первый ход игры.
+- Алиса даёт Кэти подсказку числом 1, затрагивая две карты в слотах 3 и 4.
+- Сразу после этого Боб даёт Кэти подсказку числом 1, затрагивая те же две карты.
+- Какие заметки Кэти должна записать на своих картах? Что ей следует сделать дальше?
+
+<RuL3Official3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Подсказка Алисы говорит Кэти играть 1 справа налево.
+- Подсказка Боба — _Fix Clue (That Gives No Additional Information)_.
+- Это означает, что Кэти **не должна** играть ожидаемую карту в слоте 4: вместо этого она пропускает её, переходит к слоту 3 и играет эту карту.
+
+<RuL3Official3A />
+
+</TabItem>
+</Tabs>

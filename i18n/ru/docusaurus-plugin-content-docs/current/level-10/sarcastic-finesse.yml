@@ -1,0 +1,38 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: 2
+        above: Red 2
+        middleNote: any
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Red 1
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: r
+        clue: r
+        middleNote: r2
+        below:
+          text:
+            - Play,
+            - Should
+            - discard
+          color: gold
+      - type: x
+      - type: x
+      - type: x

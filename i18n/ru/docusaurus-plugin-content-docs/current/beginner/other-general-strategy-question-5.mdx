@@ -1,0 +1,41 @@
+---
+title: "Other General Strategy (вопрос 5)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqOtherGeneralStrategyQuestion5Q from "./other-general-strategy-question-5/other-general-strategy-question-5.yml";
+import RuBgqOtherGeneralStrategyQuestion5A from "./other-general-strategy-question-5/other-general-strategy-answer-5.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-5" />
+
+<span id="bg-other-general-strategy-question-5"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Перечислите все допустимые подсказки Алисы.
+- Какую из них Алиса должна выбрать?
+
+<RuBgqOtherGeneralStrategyQuestion5Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может дать Бобу зелёную подсказку как Play Clue на зелёную 3.
+  - Такая подсказка даст одну карту.
+- Алиса может дать Бобу подсказку числом 3 как Play Clue на зелёную 3.
+  - Такая подсказка даст две карты: Боб сыграет зелёную 3 и сохранит жёлтую 3 на потом.
+- Обычно подсказка по цвету предпочтительнее подсказки по числу, но это правило относится к случаям, когда обе подсказки более-менее равноценны. Здесь получить две карты явно лучше, чем одну, поэтому Алиса должна дать **подсказку числом 3**.
+
+<RuBgqOtherGeneralStrategyQuestion5A />
+
+</TabItem>
+</Tabs>

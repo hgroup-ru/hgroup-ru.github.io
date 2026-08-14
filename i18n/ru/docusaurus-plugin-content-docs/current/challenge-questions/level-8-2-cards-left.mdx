@@ -1,0 +1,44 @@
+---
+title: "2 Cards Left"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL8Official3Q from "./level-8-2-cards-left/question.yml";
+import RuL8Official3A from "./level-8-2-cards-left/answer.yml";
+
+<ChallengeQuestionProgress level={8} id="level-8-2-cards-left" />
+
+<span id="ru-level-8-2-cards-left"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В колоде осталось 2 карты и доступно 2 подсказки. Ни у кого нет карт с подсказками.
+- Что должна сделать Алиса?
+
+<RuL8Official3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса видит красную 3 у Кэти и красную 5 у Боба.
+- Если красная 4 уже в руке Алисы, всё просто: команда подскажет красные карты и сыграет цепочку.
+- Но обе красные 4 могут всё ещё находиться в колоде. Тогда после розыгрыша 4 времени на 5 уже не хватит.
+- Поэтому Алиса должна **сбросить**. После добора она гарантированно либо уже имела красную 4, либо доберёт одну из двух копий.
+  - В рамках примера предполагается, что крайне маловероятно, что карта, сброшенная Алисой, сама была красной 4: команда почти наверняка ранее сделала бы ей _Chop Move_.
+- После сброса Боб сможет сделать _Finesse_ на красную 3, подсказав красную 4 Алисы, а красная 5 сыграет на следующем круге.
+
+<RuL8Official3A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-8-2-cards-left)
+
+</TabItem>
+</Tabs>

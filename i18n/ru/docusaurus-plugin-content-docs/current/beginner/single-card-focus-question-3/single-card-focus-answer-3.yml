@@ -1,0 +1,24 @@
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: b2
+        clue: b
+        retouched: true
+      - type: b
+        clue: b
+        below: Focus
+      - type: x
+      - type: 2
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

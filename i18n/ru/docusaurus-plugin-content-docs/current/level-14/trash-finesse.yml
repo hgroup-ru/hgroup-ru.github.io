@@ -1,0 +1,45 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Red 1
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: b1
+        clue: 1
+        middleNote: r1, y1
+        below: Play
+      - type: x
+      - type: x
+  - text: After Cathy blind-plays red 1...
+  - offset: -1
+    cards:
+      - type: x
+      - type: 1
+        trash: true
+      - type: x
+        cm: true
+        middleNote: cm
+      - type: x
+        cm: true
+        middleNote: cm

@@ -1,0 +1,46 @@
+suits:
+  i: pink
+stacks:
+  - r: 3
+  - y: 3
+  - g: 3
+  - b: 3
+  - i: 3
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: i12345
+      - type: i12345
+  - text: Later...
+  - offset: -2
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: i12345
+        above: Pink 3
+        clue: 3
+        orange: 3
+        middleNote: i3
+        trash: true
+        retouched: true
+        below: Fix
+      - type: i12345
+        clue: 3
+        orange: 3
+        retouched: true

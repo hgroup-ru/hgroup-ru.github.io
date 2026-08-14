@@ -1,0 +1,49 @@
+---
+title: "Two Finesses in a Row"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL5Official3Q from "./level-5-two-finesses-in-a-row/question.yml";
+import RuL5Official3A from "./level-5-two-finesses-in-a-row/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-two-finesses-in-a-row" />
+
+<span id="ru-level-5-two-finesses-in-a-row"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Первый ход партии.
+- Алиса даёт Дональду синюю подсказку по синей 3 в слоте 2.
+- Это _Double Finesse_ на Боба, поэтому Боб играет слот 1 вслепую как синюю 1.
+- Затем Кэти даёт Дональду красную подсказку по красной 2 в слоте 3.
+- В руке Алисы нет красных карт.
+- Какие заметки должен сделать Боб после второй подсказки?
+- Что Боб должен сделать на следующем ходу?
+
+<RuL5Official3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб не видит отсутствующую красную 1, значит она должна быть у него.
+- Следовательно, Боб снова _Finessed_ — теперь через [_Queued Finesse_](../level-5.mdx#the-queued-finesse).
+- При этом Боб ещё не знает, был ли исходный синий _Finesse_ обычным или [_Layered Finesse_](../level-5.mdx#the-layered-finesse).
+- Поэтому свой слот 2 он должен пометить как **красную 1 или синюю 2**.
+  - Если слот 2 — красная 1, подсказка Алисы была _Layered Finesse_, а подсказка Кэти — обычная _Play Clue_; тогда синяя 2 должна быть у Боба в слоте 3.
+  - Если слот 2 — синяя 2, исходный ход был обычным _Double Finesse_, а подсказка Кэти — _Queued Finesse_; тогда у Боба красная 1 находится в слоте 1.
+- В любом случае Боб сначала играет вслепую **слот 2**, а увидев карту, обновляет заметки.
+- Теоретически слот 2 может оказаться посторонней играбельной картой вроде жёлтой 1. Это маловероятный вариант; по умолчанию Боб не обязан заранее расписывать такие случайные играбельные слои и добавит их ретроактивно, если они реально возникнут.
+
+<RuL5Official3A />
+
+</TabItem>
+</Tabs>

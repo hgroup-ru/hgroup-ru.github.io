@@ -1,0 +1,72 @@
+suits:
+  i: pink
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - i: 0
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+    clueGiver: true
+  - cards:
+      - type: rygbi12345
+        orange: 1
+        clue: 1
+        above: Pink 3
+        middleNote: 3rd
+      - type: rygbi12345
+        orange: 1
+        clue: 1
+        above: Blue 1
+        middleNote: 2nd
+      - type: rygbi12345
+        orange: 1
+        clue: 1
+        above: Red 1
+        middleNote: 1st
+        below: Play
+      - type: xrygb2345
+      - type: xrygb2345
+  - text: Bob plays Red 1
+  - offset: -1
+    cards:
+      - type: x
+      - type: rygbi12345
+        orange: 1
+        above: Pink 3
+      - type: rygbi12345
+        orange: 1
+        above: Blue 1
+      - type: xrygb2345
+      - type: xrygb2345
+  - text: Bob plays Blue 1
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: rygbi12345
+        orange: 1
+        above: Pink 3
+      - type: xrygb2345
+      - type: xrygb2345
+  - text: Alice clues 3
+  - offset: -1
+    cards:
+      - type: xrygb1245
+      - type: xrygb1245
+      - type: i12345
+        orange: 13
+        clue: 3
+        retouched: true
+        middleNote: i3
+        above: Pink 3
+        below: Fix
+      - type: xrygb245
+      - type: rygb3
+        clue: 3

@@ -1,0 +1,38 @@
+stacks:
+  - r: 0
+  - b: 5
+  - m: 3
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+  - text: Aliens replaced Bob with Zoe.
+  - name: Zoe
+    cards:
+      - type: x
+      - type: x
+      - type: x
+  - name: "Space:"
+    cards:
+      - type: x
+      - type: x
+      - type: x
+  - space: 5
+  - name: Small
+    cards:
+      - type: x
+      - type: x
+      - type: x
+  - space
+  - name: Default
+    cards:
+      - type: x
+      - type: x
+      - type: x
+  - space: 100
+  - name: Large
+    cards:
+      - type: x
+      - type: x
+      - type: x

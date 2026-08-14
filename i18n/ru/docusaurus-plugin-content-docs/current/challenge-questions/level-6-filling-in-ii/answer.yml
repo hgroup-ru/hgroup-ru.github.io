@@ -1,0 +1,29 @@
+stacks:
+  - r: 4
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 5
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+        cm: true
+        middleNote: cm
+        below: cm
+      - type: g3
+        clue: 3
+        retouched: true
+        below: Tempo
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x

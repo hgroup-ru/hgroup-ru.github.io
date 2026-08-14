@@ -1,0 +1,39 @@
+---
+title: "Single Card Focus (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqSingleCardFocusQuestion3Q from "./single-card-focus-question-3/single-card-focus-question-3.yml";
+import RuBgqSingleCardFocusQuestion3A from "./single-card-focus-question-3/single-card-focus-answer-3.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-3" />
+
+<span id="bg-single-card-focus-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба две 2 с подсказками.
+- Алиса даёт Бобу синюю подсказку, затрагивая две карты.
+- Какой слот находится в фокусе?
+
+<RuBgqSingleCardFocusQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Слот 3, потому что это единственная впервые затронутая карта.
+  - Слот 2 уже был затронут раньше, поэтому синяя подсказка только «заполняет» на нём дополнительную информацию.
+
+<RuBgqSingleCardFocusQuestion3A />
+
+</TabItem>
+</Tabs>

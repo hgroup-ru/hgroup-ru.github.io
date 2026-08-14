@@ -1,0 +1,40 @@
+---
+id: 5-save-question-1
+title: "5 Save (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgq5SaveQuestion1Q from "./5-save-question-1/5-save-question-1.yml";
+import RuBgq5SaveQuestion1A from "./5-save-question-1/5-save-answer-1.yml";
+
+<BeginnersGuideProgress id="5-save-question-1" />
+
+<span id="bg-5-save-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какое действие должна сделать Алиса?
+
+<RuBgq5SaveQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- У Боба в руке есть одна 5, но она не на chop.
+- У Дональда в руке две 5, но ни одна из них не на chop.
+- Алиса знает, что **Save Clues разрешено давать только картам на chop**.
+- Поэтому Алисе нечего делать: она должна сбросить.
+
+<RuBgq5SaveQuestion1A />
+
+</TabItem>
+</Tabs>

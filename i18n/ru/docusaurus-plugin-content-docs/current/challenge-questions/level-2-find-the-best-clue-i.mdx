@@ -1,0 +1,40 @@
+---
+title: "Найди лучшую подсказку, I"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial8Q from "./level-2-find-the-best-clue-i/question.yml";
+import RuOfficial8A from "./level-2-find-the-best-clue-i/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-find-the-best-clue-i" />
+
+<span id="ru-level-2-find-the-best-clue-i"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба есть неизвестная синяя карта.
+- У Кэти есть неизвестная карта с отметкой 2.
+- Какую лучшую подсказку может дать Алиса?
+
+<RuOfficial8Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- У Алисы есть только одна допустимая подсказка: подсказка числом 2 для Кэти.
+- Алиса не может дать подсказку на красную 3 — ни по цвету, ни по числу — чтобы начать [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse), потому что Кэти затем сыграла бы неизвестную карту с отметкой 2 как красную 2, предполагая _Prompt_, а не _Finesse_.
+- Алисе также следует избегать красной подсказки для Кэти: она нарушила бы [_Good Touch Principle_](../beginner/good-touch-principle.mdx), затронув мусорную красную 1.
+
+<RuOfficial8A />
+
+</TabItem>
+</Tabs>

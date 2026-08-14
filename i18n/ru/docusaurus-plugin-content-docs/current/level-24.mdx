@@ -1,0 +1,248 @@
+---
+title: "Уровень 24 — Unnecessary Moves"
+---
+
+import RuL24DiagramUnnecessaryTrashPushIgnition from "./level-24/unnecessary-trash-push-ignition.yml";
+import RuL24DiagramUnnecessaryTrashFinesseChopMove from "./level-24/unnecessary-trash-finesse-chop-move.yml";
+import RuL24DiagramUnnecessaryTrashFinesseTrashPush from "./level-24/unnecessary-trash-finesse-trash-push.yml";
+import RuL24DiagramUnnecessaryBadChopMoveEjection from "./level-24/unnecessary-bad-chop-move-ejection.yml";
+import RuL24LocalUnnecessaryUtdBcme from "./level-24/local-unnecessary-utd-bcme.yml";
+
+<span id="level-24-top"></span>
+
+<span id="l24-unnecessary-moves"></span>
+
+## Unnecessary Moves {/* #unnecessary-moves */}
+
+- Опытные игроки знают много хитрых способов добиться розыгрыша нужной карты: _Trash Push_, _Unknown Trash Discharge_ и так далее.
+- В большинстве случаев такие сложные ходы в итоге дают 1-for-1, а это не слишком эффективно. Например, делать сложный _Trash Push_ ради 1-for-1 почти бессмысленно, если дающий подсказку вместо этого может просто дать прямую _Play Clue_ по нужной карте и получить тот же 1-for-1. Обычные _Play Clues_ куда реже заканчиваются ошибкой.
+- Поэтому продвинутые ходы обычно используют там, где нужную карту трудно подсказать напрямую. Например:
+  - она может быть «заблокирована» другими картами — например, в руке находятся две одинаковые карты;
+  - она может находиться на chop и быть «заблокирована» в том смысле, что любая подсказка будет выглядеть как _Save Clue_, а не _Play Clue_;
+  - и так далее.
+- **_Unnecessary move_ определяется как «сложный» ход, сделанный в ситуации, где дающий подсказку мог вместо него дать прямую _Play Clue_.**
+- _Unnecessary move_ добавляет «ещё одно действие» поверх обычного смысла исходного хода. В зависимости от ситуации этим дополнительным действием будет:
+  - _Ignition_ — если используется известный мусор;
+  - _Chop Move_ — если используется неизвестный мусор вне chop;
+  - _Trash Push_ — если используется неизвестный мусор на chop.
+- Помните: ход является _unnecessary_ только тогда, когда у него нет никаких дополнительных полезных эффектов. В частности:
+  - ход **не** является _unnecessary_, если он дополнительно «подхватил» ещё одну полезную карту — _Unknown Trash Discharge_ часто именно так и работает;
+  - ход **не** является _unnecessary_, если одновременно исправил надвигающийся мисплей или нарушение _Good Touch Principle_;
+  - ход **не** является _unnecessary_, если одновременно «дополнил» информацией ранее подсказанные карты в руке получателя;
+    - для простоты _Necessary_ в этом смысле считаются только положительные подсказки. «Дополнение» карты негативной подсказкой не считается.
+
+<span id="l24-trash-finesses-and-trash-bluffs-are-always-unnecessary"></span>
+
+### Trash Finesses и Trash Bluffs всегда считаются Unnecessary {/* #trash-finesses-and-trash-bluffs-are-always-unnecessary */}
+
+- Как объяснялось выше, хитрый ход может быть как _necessary_, так и _unnecessary_.
+- Однако мы отдельно договариваемся всегда считать _Trash Finesses_ и _Trash Bluffs_ _unnecessary_, независимо от того, можно ли было на самом деле добиться розыгрыша этой карты обычной подсказкой.
+- Это специальное правило немного упрощает игру: _Trash Finesses_ и _Trash Bluffs_ встречаются очень часто, а постоянно выяснять, действительно ли каждый из них был _necessary_, довольно мучительно.
+
+<span id="l24-unnecessary-moves-with-known-trash-ignition"></span>
+
+### Unnecessary Moves с известным мусором → Ignition {/* #unnecessary-moves-with-known-trash----ignition */}
+
+- Если целью подсказки служит **известный мусор**, дополнительным действием становится _Ignition_. _Ignition_ всегда приходится на Боба, кроме двух исключений:
+  - если Боб уже может сыграть карту на своём ходу и видит играбельную карту на _Finesse Position_ другого игрока, _Ignition_ приходится на последнего игрока с видимой играбельной картой;
+  - если Боб сам получил подсказку и делает blind-play из-за неё, _Ignition_ приходится на последнего игрока с играбельной картой на _Finesse Position_.
+- _Unnecessary Trash Chop Move_ отдельно объявлен недопустимым, потому что такой ход невозможно было бы отличить от _Chop Move Ignition_.
+
+<span id="l24-example-1-an-unnecessary-trash-push-with-ignition"></span>
+
+#### Пример 1 — Unnecessary Trash Push с Ignition {/* #example-1---an-unnecessary-trash-push-with-ignition */}
+
+- Например, в игре на троих это будет _Unnecessary Trash Push_:
+  - все 3 уже сыграны на стол;
+  - рука Боба полностью без подсказок и состоит из `зелёной 2, жёлтой 2, синей 5, красной 4, синей 1`;
+  - Алиса даёт Бобу подсказку числом 1, затрагивая единственную 1 в слоте 5 — на chop;
+  - Боб понимает, что это _Trash Push_, и вслепую играет слот 4. Там красная 4, и розыгрыш проходит успешно;
+  - Кэти видит, что других красных карт у Боба нет. Значит, Алиса могла просто дать Бобу красную подсказку как прямую Play Clue по красной 4. Следовательно, Алиса сделала _Unnecessary Trash Push_;
+  - Кэти вслепую играет свою _Finesse Position_. Там красная 5, и розыгрыш проходит успешно.
+
+<RuL24DiagramUnnecessaryTrashPushIgnition />
+
+<span id="l24-unnecessary-moves-with-unknown-trash-off-chop-chop-move"></span>
+
+### Unnecessary Moves с неизвестным мусором вне chop → Chop Move {/* #unnecessary-moves-with-unknown-trash-off-chop----chop-move */}
+
+- Если целью подсказки является **неизвестный мусор вне chop**, команда реагирует так, как если бы был дан _Trash Chop Move_.
+- _Unnecessary Chop Moves_ сложны тем, что могут создавать **асимметрию информации**: игрок, который делает blind-play, **не будет знать**, что карта считается _Chop Moved_, тогда как все остальные это знают. Команда должна помнить об этой асимметрии, пока _Chop Move_ не будет продемонстрирован.
+  - Как отмечалось выше, _Trash Finesses_ и _Trash Bluffs_ всегда считаются unnecessary, поэтому к ним это замечание не относится. Но оно относится к другим сложным ходам через мусор.
+
+<span id="l24-example-1-a-trash-finesse-with-a-chop-move"></span>
+
+#### Пример 1 — Trash Finesse с Chop Move {/* #example-1---a-trash-finesse-with-a-chop-move */}
+
+- Например, в игре на троих это будет _Trash Finesse_:
+  - все 2, кроме красной 2, уже сыграны на стол;
+  - у Боба красная 2 лежит на _Finesse Position_, а других красных карт в руке нет. Значит, Алиса могла просто дать Бобу красную подсказку как прямую Play Clue по красной 2;
+  - рука Кэти полностью без подсказок;
+  - Алиса даёт Кэти подсказку числом 2, затрагивая синюю 2 в слоте 4. Синяя 2 уже сыграна и поэтому является мусором;
+  - Боб понимает, что с точки зрения Кэти подсказка выглядит как _Play Clue_ по последней оставшейся 2 — красной 2. Кэти затем сделала бы мисплей синей 2 как красной 2;
+  - поэтому Боб понимает, что это _Trash Finesse_ или _Trash Bluff_. Он вслепую играет свою _Finesse Position_; там красная 2, и розыгрыш проходит успешно;
+  - теперь Кэти знает, что её 2 — мусор, поскольку Боб сделал blind-play в ответ на подсказку;
+  - кроме того, Кэти знает, что все _Trash Finesses_ считаются unnecessary, поэтому помечает карту в слоте 5 как _Chop Moved_.
+
+<RuL24DiagramUnnecessaryTrashFinesseChopMove />
+
+<span id="l24-example-2-an-unnecessary-unknown-trash-discharge-with-a-chop-move"></span>
+
+#### Пример 2 — Unnecessary Unknown Trash Discharge с Chop Move {/* #example-2---an-unnecessary-unknown-trash-discharge-with-a-chop-move */}
+
+- Если _Unknown Trash Discharge_ используется для Discharge карты, которой можно было дать прямую _Play Clue_, получатель подсказки должен пометить как _Chop Moved_ карты справа от цели подсказки.
+
+<span id="l24-example-3-an-unnecessary-unknown-trash-discharge-with-a-bad-chop-move-ejection"></span>
+
+#### Пример 3 — Unnecessary Unknown Trash Discharge с Bad Chop Move Ejection {/* #example-3---an-unnecessary-unknown-trash-discharge-with-a-bad-chop-move-ejection */}
+
+- Например, в игре на четверых:
+  - все 2, кроме синей 2, уже сыграны на стол;
+  - рука Дональда от самой новой карты к самой старой: `синяя 4, синяя 4, красная 1, синяя 1`;
+  - Алиса даёт Дональду красную подсказку, затрагивая красную 1 в слоте 3;
+  - Боб видит, что это _Unknown Trash Discharge_. Он играет свою _Third Finesse Position_; там синяя 2, и розыгрыш проходит успешно;
+  - Кэти видит, что Алиса могла дать прямую _Play Clue_ по синей 2 Боба. Значит, подсказка была _Unnecessary_, и Дональд затем пометит синюю 1 в слоте 4 как _Chop Moved_;
+  - поэтому Кэти понимает, что это _Bad Chop Move Ejection_. Она вслепую играет свою _Second Finesse Position_; там синяя 3, и розыгрыш проходит успешно.
+
+<RuL24LocalUnnecessaryUtdBcme />
+
+_Локальная иллюстрация по тексту примера; не официальный YML H-Group._
+
+<span id="l24-unnecessary-moves-with-unknown-trash-on-chop-trash-push"></span>
+
+### Unnecessary Moves с неизвестным мусором на chop → Trash Push {/* #unnecessary-moves-with-unknown-trash-on-chop----trash-push */}
+
+- Если целью подсказки является **неизвестный мусор на chop**, команда реагирует так, как если бы был дан _Trash Push_.
+
+<span id="l24-example-1-an-unnecessary-trash-finesse-with-a-trash-push"></span>
+
+#### Пример 1 — Unnecessary Trash Finesse с Trash Push {/* #example-1---an-unnecessary-trash-finesse-with-a-trash-push */}
+
+- Например, в игре на троих это будет _Unnecessary Trash Finesse_:
+  - все 2, кроме красной 2, уже сыграны на стол;
+  - у Боба красная 2 лежит на _Finesse Position_, а других красных карт в руке нет. Значит, Алиса может просто дать Бобу красную подсказку как прямую Play Clue по красной 2;
+  - рука Кэти полностью без подсказок;
+  - Алиса даёт Кэти подсказку числом 2, затрагивая синюю 2 в слоте 5. Синяя 2 уже сыграна и поэтому является мусором;
+  - Боб понимает, что с точки зрения Кэти подсказка выглядит как _Play Clue_ по последней оставшейся 2 — красной 2. Кэти затем сделала бы мисплей синей 2 как красной 2;
+  - поэтому Боб понимает, что это _Trash Finesse_. Он вслепую играет свою _Finesse Position_; там красная 2, и розыгрыш проходит успешно;
+  - теперь Кэти знает, что её 2 — мусор, потому что Боб сделал blind-play в ответ на подсказку. Но она также знает, что этот _Trash Finesse_ был _unnecessary_: Алиса могла просто дать Бобу красную подсказку;
+  - значит, это _Unnecessary Trash Finesse_. Кэти должна отреагировать так, будто известный мусор подсказали на её chop, и вслепую сыграть карту из слота 4 как _Trash Push_.
+
+<RuL24DiagramUnnecessaryTrashFinesseTrashPush />
+
+<span id="l24-example-2-an-unnecessary-trash-push-discharge-with-a-trash-push"></span>
+
+#### Пример 2 — Unnecessary Trash Push Discharge с Trash Push {/* #example-2---an-unnecessary-trash-push-discharge-with-a-trash-push */}
+
+- Если _Trash Push Discharge_ выполняется подсказкой по карте в руке Кэти, Боб должен вслепую сыграть свою _Third Finesse Position_, доказывая, что _Trash Pushed_-карта является мусором. Затем Кэти должна вслепую сыграть карту рядом с той, про которую она только что узнала, что это мусор.
+
+<span id="l24-example-3-an-unnecessary-bad-chop-move-ejection-with-a-trash-push-discharge"></span>
+
+#### Пример 3 — Unnecessary Bad Chop Move Ejection с Trash Push Discharge {/* #example-3---an-unnecessary-bad-chop-move-ejection-with-a-trash-push-discharge */}
+
+- Переход к интерпретации через известный мусор работает и тогда, когда команде нужно не дать получателю подсказки сделать _Trash Push_ неиграбельной картой.
+- Например, в игре на четверых:
+  - все 2 уже сыграны на стол;
+  - у Боба красная 3 лежит на _Second Finesse Position_, а других красных карт в руке нет. Значит, Алиса может просто дать Бобу красную подсказку как прямую Play Clue по красной 3;
+  - рука Дональда от самой новой карты к самой старой: `красная 1, зелёная 1, синяя 2, синяя 1`;
+  - Алиса даёт Дональду подсказку числом 2, затрагивая синюю 2 в слоте 3;
+  - Боб понимает, что с точки зрения Дональда подсказка выглядит как _Trash Chop Move_. Поскольку Дональд собирается пометить мусорную карту как _Chop Moved_, Боб вслепую разыгрывает красную 3 как _Bad Chop Move Ejection_;
+  - blind-play Боба сообщил Дональду о мусорной карте: синяя 1, которую тот собирался пометить как _Chop Moved_, является мусором. Поэтому Дональд дополнительно трактует подсказку как _Trash Push_;
+  - Кэти видит, что Дональд собирается сыграть зелёную 1 как _Trash Push_, но зелёная 1 уже сыграна;
+  - поэтому Кэти вслепую играет свою _Third Finesse Position_ как _Trash Push Discharge_;
+  - Дональд распознаёт ход как _Unnecessary Bad Chop Move Ejection_ и в итоге не играет зелёную 1 и не делает никакого _Chop Move_.
+
+<RuL24DiagramUnnecessaryBadChopMoveEjection />
+
+<span id="l24-other-examples"></span>
+
+### Другие примеры {/* #other-examples */}
+
+- Больше примеров _unnecessary_ ходов можно найти в официальном [разделе примеров](/examples/unnecessary).
+
+---
+
+## Тренировочные вопросы {/* #l24-training */}
+
+В официальном источнике отдельного набора Official Challenge Questions для Level 24 нет; ниже — наши Training Questions по материалу этого уровня.
+
+<details className="ru-training">
+
+<summary>1. Когда сложный ход считается Unnecessary?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Когда дающий подсказку мог вместо него дать прямую Play Clue по нужной карте и у сложного хода нет дополнительной полезной функции — например, он не подхватывает ещё одну карту, не исправляет мисплей/GTP и не дополняет положительной информацией ранее подсказанные карты.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  2. Какие ходы всегда считаются Unnecessary независимо от доступности прямой
+  подсказки?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+_Trash Finesses_ и _Trash Bluffs_. Это специальное упрощение, чтобы команда не анализировала каждый такой частый ход на фактическую необходимость.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  3. Что добавляет Unnecessary move, если целью служит известный мусор?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+_Ignition_. Обычно он приходится на Боба, но есть исключения, когда у Боба уже есть известный розыгрыш или когда Боб сам получил подсказку и blind-play уже исходит от него.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  4. Как команда реагирует на Unnecessary move через неизвестный мусор вне chop?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Как на _Trash Chop Move_: соответствующие карты становятся Chop Moved. При этом может возникнуть асимметрия — игрок, сделавший blind-play, сам ещё не знает о Chop Move, хотя остальные знают.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  5. Как команда реагирует на Unnecessary move через неизвестный мусор на chop?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Как на _Trash Push_: после того как мусорность цели становится известна, разыгрывается соседняя карта согласно Trash Push-интерпретации.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>6. Почему Unnecessary Trash Chop Move запрещён?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Потому что его невозможно отличить от _Chop Move Ignition_; конвенции специально исключают эту неоднозначность.
+
+</div>
+
+</details>

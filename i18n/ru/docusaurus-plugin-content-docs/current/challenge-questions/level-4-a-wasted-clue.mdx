@@ -1,0 +1,41 @@
+---
+title: "Потраченная впустую подсказка?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL4Official1Q from "./level-4-a-wasted-clue/question.yml";
+import RuL4Official1A from "./level-4-a-wasted-clue/answer.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-a-wasted-clue" />
+
+<span id="ru-level-4-a-wasted-clue"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 3 уже сыграны на стол.
+- Алиса даёт Бобу подсказку числом 3, затрагивая одну карту в слоте 3.
+- Что это за подсказка?
+- Какие заметки нужно записать?
+
+<RuL4Official1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Больше ни одна 3 не должна играть на стол, поэтому затронутая карта является известным мусором.
+- Это _Trash Chop Move_, который помечает как _Chop Moved_ все карты справа от мусорной карты.
+- Все игроки должны записать `kt` на слоте 3 Боба и `cm` на слотах 4 и 5 Боба.
+
+<RuL4Official1A />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,39 @@
+---
+title: "Play Clues (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqPlayCluesQuestion2Q from "./play-clues-question-2/play-clues-question-2.yml";
+import RuBgqPlayCluesQuestion2A from "./play-clues-question-2/play-clues-answer-2.yml";
+
+<BeginnersGuideProgress id="play-clues-question-2" />
+
+<span id="bg-play-clues-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 4, затрагивая одну карту в слоте 4.
+- С точки зрения Боба это должна быть **Play Clue**. Боб записывает возможные значения карты.
+- Что именно Боб запишет? Укажите все варианты.
+
+<RuBgqPlayCluesQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб записывает `r4, g4, b4`.
+  - Именно у этих цветов 4 сейчас играбельна, поэтому карта может быть любой из этих трёх.
+
+<RuBgqPlayCluesQuestion2A />
+
+</TabItem>
+</Tabs>

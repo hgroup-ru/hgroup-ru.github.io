@@ -1,0 +1,23 @@
+stacks:
+  - r: 3
+  - y: 4
+  - g: 3
+  - b: 3
+  - p: 2
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 4
+        clue: 4
+        middleNote: rgb4
+        below: Play
+      - type: x

@@ -1,0 +1,42 @@
+---
+title: "5 Cards Left"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL8Official1Q from "./level-8-5-cards-left/question.yml";
+import RuL8Official1A from "./level-8-5-cards-left/answer.yml";
+
+<ChallengeQuestionProgress level={8} id="level-8-5-cards-left" />
+
+<span id="ru-level-8-5-cards-left"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В колоде осталось 5 карт, доступна 1 подсказка.
+- Единственные карты с подсказками — 5 в руке Алисы.
+- Что должна сделать Алиса?
+
+<RuL8Official1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Красная подсказка Кэти выглядит заманчиво: она дала бы _Finesse_ на красную 4. Но такой ход может проиграть по времени.
+- Алиса ещё может добрать синюю 5 и фиолетовую 5. Тогда ей самой потребуется сыграть **четыре карты**. Если сейчас потратить ход на подсказку, времени на все четыре уже не останется.
+- Правильно сыграть **жёлтую 5 или зелёную 5**. Тогда Боб сможет сохранить красную 5, а Кэти получит красную 4.
+
+<RuL8Official1A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-8-5-cards-left)
+
+</TabItem>
+</Tabs>

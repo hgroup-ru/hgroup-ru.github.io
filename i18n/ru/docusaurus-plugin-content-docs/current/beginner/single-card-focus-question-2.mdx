@@ -1,0 +1,39 @@
+---
+title: "Single Card Focus (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqSingleCardFocusQuestion2Q from "./single-card-focus-question-2/single-card-focus-question-2.yml";
+import RuBgqSingleCardFocusQuestion2A from "./single-card-focus-question-2/single-card-focus-answer-2.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-2" />
+
+<span id="bg-single-card-focus-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В руке Боба вообще нет подсказок.
+- Алиса даёт Бобу зелёную подсказку, затрагивая пять карт.
+- Какой слот находится в фокусе?
+
+<RuBgqSingleCardFocusQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Слот 5, потому что это карта на chop.
+  - Все затронутые карты новые.
+
+<RuBgqSingleCardFocusQuestion2A />
+
+</TabItem>
+</Tabs>

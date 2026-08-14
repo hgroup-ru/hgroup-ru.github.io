@@ -1,0 +1,36 @@
+---
+title: "Chop (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqChopQuestion2Q from "./chop-question-2/chop-question-2.yml";
+import RuBgqChopQuestion2A from "./chop-question-2/chop-answer-2.yml";
+
+<BeginnersGuideProgress id="chop-question-2" />
+
+<span id="bg-chop-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какой слот является chop Алисы?
+
+<RuBgqChopQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Слот 2, синяя 3, потому что слоты 3, 4 и 5 уже с подсказками.
+
+<RuBgqChopQuestion2A />
+
+</TabItem>
+</Tabs>

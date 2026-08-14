@@ -1,0 +1,20 @@
+---
+title: "Delayed Play Clues"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import RuBgexDelayedPlay from "./delayed-play-clues/delayed-play-clues.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues" />
+
+<span id="bg-delayed-play"></span>
+
+- Разрешено давать **Play Clue** карте, которая сможет сыграться на стол **только после того, как другие игроки сыграют карты того же цвета**. Такая подсказка называется **Delayed Play Clue**.
+- Мы договариваемся считать **каждую Play Clue потенциальной Delayed Play Clue**.
+- Например, в игре на троих:
+  - Алиса даёт Бобу подсказку числом 2; это Play Clue на двойку;
+  - теперь ход Боба. Если его двойка — красная 2, он может сыграть её прямо сейчас;
+  - однако Боб знает, что это также может быть Delayed Play Clue через жёлтую 1, зелёную 1 или синюю 1. Поэтому прежде чем пытаться играть двойку, Боб обязан дождаться, пока Кэти сыграет все свои единицы;
+  - Боб записывает все эти варианты в заметку на карте, а затем сбрасывает.
+
+<RuBgexDelayedPlay />

@@ -1,0 +1,44 @@
+---
+title: "Good Touch Principle (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqGoodTouchPrincipleQuestion2Q from "./good-touch-principle-question-2/good-touch-principle-question-2.yml";
+import RuBgqGoodTouchPrincipleQuestion2A from "./good-touch-principle-question-2/good-touch-principle-answer-2.yml";
+
+<BeginnersGuideProgress id="good-touch-principle-question-2" />
+
+<span id="bg-good-touch-principle-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какое действие должна сделать Алиса?
+- Если нужно дать подсказку, что будет записано на сфокусированной карте? Укажите все варианты.
+
+<RuBgqGoodTouchPrincipleQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса должна дать Play Clue красной 2 Боба до того, как она будет сброшена.
+- Если Алиса даст красную подсказку, в фокусе будет красная 2, но красная 4 окажется продублирована, потому что другая красная 4 уже с подсказкой в руке Кэти.
+- Если Алиса даст подсказку числом 2, она затронет только красную 2.
+- Поэтому Алиса должна дать Бобу подсказку числом 2.
+- Боб запишет следующие варианты:
+  - красная 2 — как Play Clue;
+  - жёлтая 2 — как 2 Save.
+- Боб знает, что это не может быть 2 Save на зелёную 2, потому что другая зелёная 2 видна в руке Кэти и пока не находится на chop.
+
+<RuBgqGoodTouchPrincipleQuestion2A />
+
+</TabItem>
+</Tabs>

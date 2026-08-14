@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "import": ["./cspell.config.jsonc", "@cspell/dict-ru_ru/cspell-ext.json"],
+  "language": "ru,en",
+  "files": ["i18n/ru/docusaurus-plugin-content-docs/current/**/*.mdx"],
+  "ignoreRegExpList": [
+    "CStyleComment",
+    "/\\]\\([^\\n)]*\\)/g",
+    "/\\bid=(?:\"[^\"]*\"|'[^']*')/g",
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "hgroup-ru",
+      "path": "./cspell-ru-project-words.txt",
+      "addWords": true,
+    },
+  ],
+  "dictionaries": ["hgroup-ru"],
+}

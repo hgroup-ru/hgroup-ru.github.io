@@ -1,0 +1,40 @@
+---
+title: "Найди лучшую подсказку, II"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial9Q from "./level-2-find-the-best-clue-ii/question.yml";
+import RuOfficial9A from "./level-2-find-the-best-clue-ii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-find-the-best-clue-ii" />
+
+<span id="ru-level-2-find-the-best-clue-ii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба есть неизвестная карта с отметкой 5.
+- У Кэти есть неизвестная жёлтая карта.
+- Какую лучшую подсказку может дать Алиса?
+
+<RuOfficial9Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Самая ценная подсказка Алисы — зелёная подсказка для Боба. Это _Play Clue_ на зелёную 4, которая запускает [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse).
+- В отличие от предыдущего вопроса, _Reverse Finesse_ сработает, потому что Кэти знает: её жёлтая карта не может быть связующей картой для зелёной 4.
+- Алиса также могла бы дать Кэти подсказку числом 3 как _Play Clue_ на зелёную 3. Заодно эта подсказка «уточнит» жёлтую 3. Но она «получит» только одну совершенно новую карту вместо двух.
+
+<RuOfficial9A />
+
+</TabItem>
+</Tabs>

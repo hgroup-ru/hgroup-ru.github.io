@@ -1,0 +1,15 @@
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r
+        clue: r
+        middleNote: r1
+      - type: x
+      - type: x
+      - type: x
+      - type: x

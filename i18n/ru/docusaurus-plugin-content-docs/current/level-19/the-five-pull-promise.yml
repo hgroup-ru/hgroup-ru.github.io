@@ -1,0 +1,61 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Low score
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: 5
+        clue: 5
+        below: Pull
+      - type: r2
+        middleNote: r2, b2
+        below: Pulled
+      - type: x
+  - cards:
+      - type: r1
+        middleNote: r1?
+      - type: x
+      - type: b1
+        middleNote: r1?
+      - type: x
+  - text: Next...
+  - offset: -3
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: 5
+      - type: r2
+        middleNote: r2
+        below: Pulled
+      - type: x
+  - cards:
+      - type: r1
+        middleNote: r1?
+      - type: x
+      - type: b1
+        middleNote: r1?
+      - type: r3
+        clue: 3
+        middleNote: r3
+        below: Play

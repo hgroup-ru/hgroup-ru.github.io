@@ -1,0 +1,36 @@
+---
+title: "Chop (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqChopQuestion1Q from "./chop-question-1/chop-question-1.yml";
+import RuBgqChopQuestion1A from "./chop-question-1/chop-answer-1.yml";
+
+<BeginnersGuideProgress id="chop-question-1" />
+
+<span id="bg-chop-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какой слот является chop Алисы?
+
+<RuBgqChopQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Слот 5, зелёная 1, потому что ни на одной карте нет подсказки.
+
+<RuBgqChopQuestion1A />
+
+</TabItem>
+</Tabs>

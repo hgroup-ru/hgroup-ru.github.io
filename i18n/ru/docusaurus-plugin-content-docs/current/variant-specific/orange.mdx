@@ -1,0 +1,243 @@
+---
+title: Orange
+---
+
+import OrangeFinesse from "./orange/orange-finesse.yml";
+import OrangeDoubleFinesse from "./orange/orange-double-finesse.yml";
+import OrangeLayeredFinesse from "./orange/orange-layered-finesse.yml";
+import NonOrangeRank1 from "./orange/non-orange-rank-1.yml";
+import NonOrangeRank2 from "./orange/non-orange-rank-2.yml";
+import NonOrangeRank3 from "./orange/non-orange-rank-3.yml";
+import OrangeColorAssumption from "./orange/orange-color-assumption.yml";
+import HollowBluff1 from "./orange/hollow-bluff-1.yml";
+import HollowBluff2 from "./orange/hollow-bluff-2.yml";
+import CitrusBluff1 from "./orange/citrus-bluff-1.yml";
+import CitrusBluff2 from "./orange/citrus-bluff-2.yml";
+import InsolentBluff from "./orange/insolent-bluff.yml";
+import EjectionOrange from "./orange/ejection-orange.yml";
+import OrangeTrashDischarge from "./orange/orange-trash-discharge.yml";
+import OrangeFixClueBluff from "./orange/orange-fix-clue-bluff.yml";
+
+Эти конвенции применяются к любому варианту с orange-цветом (инвертированным).
+
+### Orange Finesse / Orange Double Finesse {/* #the-orange-finesse--the-orange-double-finesse */}
+
+- _Finesse_ на orange-картах вызывает blind-discard вместо blind-play — именно так, как естественно ожидать.
+- Например, в игре на троих:
+  - Идёт первый ход, на столе ещё ничего не сыграно.
+  - Алиса даёт Кэти подсказку orange-цветом, затрагивая orange 2 в слоте 2 как _Play Clue_.
+  - Боб видит, что ему обещана orange 1 в _Finesse Position_. Обычно при _Finesse_ он вслепую сыграл бы _Finesse Position_, но раз обещана orange-карта, вместо этого он перетаскивает карту из _Finesse Position_ в сброс. Это orange 1, и она успешно разыгрывается на стол.
+  - Кэти знает, что у неё соответствующая orange 2.
+
+<OrangeFinesse />
+
+- Для _Double Finesse_ этот принцип работает точно так же.
+- Например, в игре на четверых:
+  - Идёт первый ход, на столе ещё ничего не сыграно.
+  - Алиса даёт Дональду подсказку orange-цветом, затрагивая orange 3 в слоте 2 как _Play Clue_.
+  - Боб перетаскивает свою _Finesse Position_ в сброс. Это orange 1, и она успешно разыгрывается на стол.
+  - Кэти перетаскивает свою _Finesse Position_ в сброс. Это orange 2, и она успешно разыгрывается на стол.
+  - Дональд знает, что у него соответствующая orange 3.
+
+<OrangeDoubleFinesse />
+
+### Orange Layered Finesse {/* #the-orange-layered-finesse */}
+
+- _Orange Finesse_ также может быть _Layered_, если перед обещанной картой находятся не-orange мусорные карты.
+- Например, в игре на четверых:
+  - Все 2 сыграны на стол.
+  - У Кэти красная 1 в слоте 1 и orange 3 в слоте 2.
+  - Алиса даёт Дональду подсказку orange-цветом, затрагивая orange 4 в слоте 3 как _Play Clue_.
+  - Боб видит, что Кэти может выполнить _Finesse_, и делает несвязанное действие.
+  - Кэти перетаскивает слот 1 в сброс, думая, что там orange 3. Вместо этого карта оказывается красной 1 и успешно сбрасывается.
+  - Теперь Кэти знает, что orange 3 находится внутри _Orange Layered Finesse_. Она помечает слот 2 как orange 3.
+  - На следующем ходу Кэти перетаскивает слот 2 в сброс. Там действительно orange 3, и она успешно разыгрывается на стол.
+
+<OrangeLayeredFinesse />
+
+### Non-Orange Rank Play Clue Assumption {/* #the-non-orange-rank-play-clue-assumption */}
+
+- По умолчанию предполагается, что _Play Clues_ рангом относятся к не-orange картам.
+- Например, в игре на троих:
+  - Идёт первый ход, на столе ещё ничего не сыграно.
+  - Алиса даёт Бобу подсказку числом 1, затрагивая три 1 как _Play Clue_.
+  - Боб знает, что если просто сыграть все 1, существует риск сбросить orange 1, что может быть плохо: команда потеряет единственную видимую копию. Однако Боб также знает, что rank Play Clues по умолчанию относятся к не-orange картам, поэтому беспокоиться об этом не нужно.
+  - Боб перетаскивает все свои 1 на стопки в обычном порядке.
+
+<NonOrangeRank1 />
+
+- Эта конвенция отключается, когда единственная оставшаяся играбельная 1 — orange 1.
+- Например, в игре на троих:
+  - Все 1, кроме orange 1, сыграны на стол.
+  - Алиса даёт Бобу подсказку числом 1, затрагивая 1 в слоте 1 как _Play Clue_.
+  - Боб предполагает, что это orange 1, и перетаскивает её в сброс. Это действительно orange 1, и она успешно разыгрывается на стол.
+
+<NonOrangeRank2 />
+
+- Кроме того, rank _Play Clues_ на orange-карты следует предпочитать _Self-Finesses_, что следует из _Occam's Razor_.
+- Например, в игре на троих:
+  - Orange 1 сыграна на стол.
+  - Алиса даёт Бобу подсказку числом 2, затрагивая 2 в слоте 1 как _Play Clue_.
+  - Боб знает, что это либо прямая _Play Clue_ на orange 2, либо _Self-Finesse_, например на красную 1 → красную 2. Однако Боб знает, что _Non-Orange Rank Play Clue Assumption_ отключена, когда orange — единственная возможность.
+  - Боб перетаскивает свою 2 в сброс. Это orange 2, и она успешно разыгрывается на стол.
+
+<NonOrangeRank3 />
+
+### Orange Color Play Clue Assumption {/* #the-orange-color-play-clue-assumption */}
+
+- По умолчанию предполагается, что _Play Clues_ orange-цветом относятся именно к orange-картам.
+- Например, в игре на троих «Rainbow & Orange (5 Suits)»:
+  - Идёт первый ход, на столе ещё ничего не сыграно.
+  - Алиса даёт Бобу подсказку orange-цветом, затрагивая карту в слоте 1 как _Play Clue_.
+  - Боб знает, что двумя играбельными orange-цветом картами могут быть rainbow 1 и orange 1. Это создаёт потенциальную дилемму: если угадать неправильно, он сбросит карту, которую хотел сыграть.
+  - Но Боб также знает, что orange color Play Clues по умолчанию считаются orange-картами. Поэтому он может быть уверен, что у него именно orange 1.
+  - Боб перетаскивает orange-карту в сброс. Это orange 1, и она успешно разыгрывается на стол.
+
+<OrangeColorAssumption />
+
+### Orange Fix Clue {/* #the-orange-fix-clue */}
+
+- Если orange-карта находится на chop, её нужно обозначить подсказкой, чтобы предотвратить страйк.
+  - Исключение — когда карта «случайно» сыграется при сбросе, что описано в следующем разделе. Но такое бывает редко.
+- Orange 2 на chop нужно исправить/спасти обычным _2 Save_.
+- Orange 5 нужно исправить/спасти обычным _5 Save_.
+- Orange 3 и orange 4 нужно исправлять/спасать подсказкой orange-цветом.
+- Мусорные orange-карты также нужно исправлять подсказкой orange-цветом.
+- Поэтому заметка на chop-карте после _Orange Fix Clue_ будет:
+  - `o3, o4`, если ни одна orange-карта ещё не сыграна;
+  - `o3, o4, trash`, если одна или больше orange-карт уже сыграны.
+
+### Orange Fix Clues в Early Game {/* #orange-fix-clues-in-the-early-game */}
+
+- Для целей _Early Game_ _Orange Fix Clues_ считаются «обязательными» так же, как обязательно было бы спасти 5 на chop.
+
+### Orange Accidental Blind-Play {/* #the-orange-accidental-blind-play */}
+
+- Если играбельная orange-карта находится на chop, не следует обозначать её подсказкой. Игрок естественным образом сбросит её, из-за чего она «случайно» сыграется.
+
+### Orange Gentleman's Discard {/* #the-orange-gentlemans-discard */}
+
+- Когда orange-карту сбрасывают через _Gentleman's Discard_, вместо обещания, что соответствующая карта находится в _Finesse Position_, обещается, что она находится на chop.
+- Подобно _Orange Layered Finesse_, _Orange Gentleman's Discard_ также может быть _Layered_, если обещанная карта находится за не-orange мусорными картами. (В отличие от обычной _Layered Finesse_, слои идут в противоположном направлении, как в _Layered Elimination Finesse_.)
+
+### Orange Baton Discard {/* #the-orange-baton-discard */}
+
+- Когда orange-карту сбрасывают через _Baton Discard_, вместо обещания, что соответствующая карта находится в _Finesse Position_, обещается, что она находится на chop.
+- После этого обещанной карте следует сделать _Chop Move_.
+
+### Orange Blaze Discard (без изменений) {/* #the-orange-blaze-discard-unchanged */}
+
+- Когда orange-карту сбрасывают через _Blaze Discard_, специальных правил, подобных _Gentleman's Discard_ и _Baton Discard_, нет. Иными словами, если Боб видит соответствующую orange-карту в _Second Finesse Position_, он должен вслепую сыграть свою _Second Finesse Position_.
+
+### Hollow Bluff {/* #the-hollow-bluff */}
+
+- Поскольку все orange-карты приходится подсказкой обезвреживать, когда они доходят до chop, их можно представить как «мины». Поэтому обычно полезно убрать такую мину заранее.
+- Один из способов — заставить orange-карту сыграть вслепую с помощью _Bluff_ (что приведёт к её сбросу). Но поскольку фактически никакая карта не разыгрывается обычным blind-play, _Bluff_ получается «пустым».
+- Например, в игре на троих:
+  - Все 1 сыграны на стол.
+  - Алиса даёт Кэти подсказку красным, затрагивая красную 3 как _Play Clue_.
+  - Боб знает, что это обязана быть _Finesse_, поэтому перетаскивает свою _Finesse Position_ на стопки, пытаясь сыграть красную 2. Вместо этого он сбрасывает orange 1.
+  - Кэти знает: раз Боб попытался сыграть _Finesse Position_, у неё должна быть one-away-from-playable красная карта — красная 3.
+
+<HollowBluff1 />
+
+- Если карта, сброшенная из _Hollow Bluff_, не является мусором, все игроки должны сделать _Elimination Notes_ для второй копии.
+- Например, в игре на троих:
+  - Ситуация полностью совпадает с предыдущим примером, но вместо orange 1 Боб перетаскивает на стопки orange 3.
+  - Как и в предыдущем примере, Кэти знает, что её красная карта — красная 3. Кроме того, Кэти знает, что у кого-то обязана быть вторая копия orange 3. Она не видит orange 3 ни в чьей другой руке, поэтому помечает свои не-красные карты как возможные orange 3.
+
+<HollowBluff2 />
+
+- Поскольку _Hollow Bluffs_ полезны для удаления «мин», они никогда не должны вызывать _Chop Move_.
+
+### Hollow [что угодно] {/* #the-hollow-whatever */}
+
+- Подобно тому как orange-карту можно заставить сделать blind-discard через _Hollow Bluff_, её также можно заставить blind-discard через _Hollow Unknown Trash Discharge_, _Hollow Chop Move Ignition_ и другие аналогичные ходы.
+
+### Citrus Bluff {/* #the-citrus-bluff */}
+
+- Сначала прочитайте раздел о [_Hollow Bluff_](#the-hollow-bluff).
+- Из-за _Bob's Truth Principle_ обычно нельзя использовать orange-карту как цель _Bluff_: реагирующий игрок сделал бы blind-discard вместо blind-play.
+- Однако orange-карту можно использовать как цель _Bluff_, если карта в _Finesse Position_ — мусор. Это похоже на _Hollow Bluff_, только наоборот.
+- Например, в игре на троих:
+  - Все 1 сыграны на стол.
+  - Алиса даёт Кэти подсказку orange-цветом, затрагивая orange 3 как _Play Clue_.
+  - Боб знает, что это обязана быть _Finesse_, поэтому перетаскивает _Finesse Position_ в сброс, пытаясь сыграть orange 2. Вместо этого он сбрасывает красную 1.
+  - Кэти знает: раз Боб попытался сбросить _Finesse Position_, у неё должна быть one-away-from-playable orange-карта — orange 3.
+
+<CitrusBluff1 />
+
+- _Citrus Bluff_ также можно сделать на не-мусорной карте. Как и при _Hollow Bluff_, после этого все игроки должны сделать _Elimination Notes_ для второй копии.
+- Например, в игре на троих:
+  - Ситуация полностью совпадает с предыдущим примером, но вместо красной 1 Боб перетаскивает в сброс красную 3.
+  - Как и в предыдущем примере, Кэти знает, что её orange-карта — orange 3. Кроме того, Кэти знает, что у кого-то обязана быть вторая копия красной 3. Она не видит красную 3 ни в чьей другой руке, поэтому помечает свои не-orange карты как возможные красные 3.
+
+<CitrusBluff2 />
+
+### Insolent Bluff {/* #the-insolent-bluff */}
+
+- Обычно, если Алиса даёт orange 3 _Play Clue_ числом 3, Боб решил бы, что у него orange 1 и orange 2 как _Double Finesse_ (из-за _Bob's Truth Principle_).
+- Однако мы договариваемся, что подсказка числом 3 на two-away-from-playable orange 3 вызывает _Known Bluff_ на не-orange карте. (Иными словами, для этого конкретного типа подсказки мы отключаем _Bob's Truth Principle_.)
+- Например, в игре на троих «Orange (5 Suits)»:
+  - На столе сыграна только красная 1.
+  - Алиса даёт Кэти подсказку числом 3, затрагивая orange 3 в слоте 2 как _Play Clue_.
+  - Обычно Боб решил бы, что это orange _Double Finesse_. Но он знает о существовании конвенции _Insolent Bluff_, поэтому должен вместо этого трактовать подсказку как _Known Bluff_.
+  - Боб перетаскивает _Finesse Position_ на стопки. Это жёлтая 1, и она успешно разыгрывается.
+  - Кэти знает:
+    - если подсказка Алисы была обычным _Bluff_, у Кэти была бы красная 3;
+    - если это был _Insolent Bluff_, у неё была бы orange 3;
+    - если это был _3 Bluff_, у неё была бы любая другая 3.
+  - Поэтому Кэти знает, что её 3 может быть любого цвета.
+
+<InsolentBluff />
+
+### Ejections, Discharges и Charms на Orange-картах {/* #ejections--discharges--charms-on-orange-cards */}
+
+- Orange-карты можно использовать как цели _Ejections_, _Discharges_ и _Charms_. Однако игрок, который играет вслепую, всегда должен предполагать, что его карта не-orange.
+- Например, в игре на троих:
+  - Идёт первый ход, на столе ещё ничего не сыграно.
+  - Алиса даёт Кэти подсказку orange-цветом, затрагивая orange 5 как _Play Clue_.
+  - Боб знает, что это _5 Color Ejection_. Но куда ему перетаскивать _Second Finesse Position_ — на стопки или в сброс?
+  - Боб знает, что _Ejections_, _Discharges_ и _Charms_ на orange-картах требуют blind-play, поэтому перетаскивает _Second Finesse Position_ на стопки. Это красная 1, и она успешно разыгрывается.
+  - Кэти помечает свою orange-карту как точно orange 5.
+
+<EjectionOrange />
+
+### Сложные ходы на Orange-картах считаются необходимыми {/* #complicated-moves-on-orange-cards-are-necessary */}
+
+- Если сложный ход заставляет orange-карту сделать blind-discard / blind-play или получить подсказку, такой ход считается необходимым.
+  - Причина в том, что если orange-карта дойдёт до chop, придётся «потратить» подсказку, чтобы она не взорвалась.
+
+### Elimination с Orange-картами {/* #elimination-with-orange-cards */}
+
+- _Elimination Blind Play Riding Deduction_ не применяется, когда _Elimination Notes_ стоят на немедленно играбельной orange-карте. Причина в том, что план команды может состоять в том, чтобы вызвать _Orange Accidental Blind-Play_.
+
+### Orange Trash Discharge {/* #the-orange-trash-discharge */}
+
+- В редких случаях можно представить мусорную orange-карту как мусорную не-orange карту. Поскольку розыгрыш из _Finesse Position_ и _Second Finesse Position_ не разрешит эту ложную интерпретацию, мы договариваемся вместо этого играть _Third Finesse Position_.
+- Например, в игре на троих:
+  - Все 1 сыграны на стол.
+  - Алиса даёт Кэти подсказку числом 1, затрагивая orange 1 в слоте 4.
+  - Боб видит, что с точки зрения Кэти это будет выглядеть как _Trash Chop Move_:
+    - если Боб ничего не сделает, Кэти затем сбросит orange 1 и получит страйк;
+    - если Боб вслепую сыграет _Finesse Position_, Кэти решит, что происходит _Chop Move Ignition_, и сделает мисплей картой из слота 5;
+    - если Боб вслепую сыграет _Second Finesse Position_, Кэти решит, что происходит _Bad Chop Move Ejection_, но всё равно потом сбросит orange 1 и получит страйк;
+    - поэтому Боб вслепую играет _Third Finesse Position_. Это красная 2, и она успешно разыгрывается;
+    - Кэти помечает свою карту как orange 1, потому что только такая карта могла бы заставить подсказку этого типа вызвать _Discharge_.
+
+<OrangeTrashDischarge />
+
+- Если _Orange Trash Discharge_ затрагивает две или больше мусорных карт, только фокус обещается как orange-карта. Фокусом считается крайняя левая мусорная карта, потому что именно её сбросили бы первой.
+
+### Orange Fix Clue Bluff {/* #the-orange-fix-clue-bluff */}
+
+- Обычно _Orange Accidental Blind-Play_ происходит, когда играбельная orange-карта находится у кого-то на chop. Иными словами, обозначать играбельную orange-карту на chop подсказкой было бы бессмысленно.
+- Но что, если игрок намеренно делает _Orange Fix Clue_ играбельной orange-карте на chop? Это ложно представит значение карты и потребует от следующего игрока отреагировать, чтобы доказать, что происходит на самом деле. Мы договариваемся трактовать это как _Known Bluff_.
+- Например, в игре на троих:
+  - Идёт первый ход, на столе ещё ничего не сыграно.
+  - Алиса даёт Кэти подсказку orange-цветом, затрагивая orange 1 в слоте 5 (chop).
+  - Боб видит, что с точки зрения Кэти это будет выглядеть как _Orange Fix Clue_, и Кэти пометит карту как `o3, o4`. Поэтому Боб должен как-то отреагировать, чтобы доказать, что на самом деле это orange 1.
+  - Боб перетаскивает _Finesse Position_ на стопки как _Known Bluff_. Это красная 1, и она успешно разыгрывается.
+  - Кэти меняет заметку `o3, o4` на `o1`, потому что это единственная причина, по которой Боб мог вслепую сыграть _Finesse Position_ в такой ситуации.
+
+<OrangeFixClueBluff />

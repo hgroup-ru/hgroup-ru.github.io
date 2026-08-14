@@ -1,0 +1,48 @@
+stacks:
+  - r: 1
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Blue 3
+        below: Bluff
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: b2
+        clue: 2
+        middleNote: r2
+        below: Play
+      - type: x
+      - type: g2
+        clue: 2
+        middleNote: kt
+        trash: true
+      - type: x
+  - text: After Bob blind-plays blue 3...
+  - offset: -1
+    cards:
+      - type: x
+      - type: b2
+        middleNote: kt
+        trash: true
+      - type: x
+      - type: g2
+        middleNote: kt
+        trash: true
+      - type: x
+        cm: true
+        middleNote: cm

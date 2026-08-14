@@ -1,0 +1,46 @@
+---
+title: "Delayed Play Clues (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqDelayedPlayCluesQuestion3Q from "./delayed-play-clues-question-3/delayed-play-clues-question-3.yml";
+import RuBgqDelayedPlayCluesQuestion3A from "./delayed-play-clues-question-3/delayed-play-clues-answer-3.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues-question-3" />
+
+<span id="bg-delayed-play-clues-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 4, затрагивая одну карту в слоте 1. Это **Play Clue**.
+- Боб записывает возможные значения карты.
+
+1. Что Боб запишет? Укажите все варианты.
+2. Является ли это **Delayed Play Clue**?
+3. Какое действие должен сделать Боб?
+
+<RuBgqDelayedPlayCluesQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Боб записывает `r4, y4, b4, p4`.
+   - Во-первых, это может быть прямая Play Clue на красную 4 или фиолетовую 4.
+   - Во-вторых, это может быть Delayed Play Clue на жёлтую 4 через жёлтые 2 и 3 Кэти.
+   - В-третьих, это может быть Delayed Play Clue на синюю 4 через синюю 3 Дональда.
+2. Боб не знает, обычная это Play Clue или Delayed Play Clue. Но поскольку **каждую Play Clue нужно рассматривать как потенциальную Delayed Play Clue**, Боб не может играть 4 на этом ходу.
+3. Раз карту пока нельзя играть, Боб должен дать постороннюю подсказку или сбросить.
+
+<RuBgqDelayedPlayCluesQuestion3A />
+
+</TabItem>
+</Tabs>

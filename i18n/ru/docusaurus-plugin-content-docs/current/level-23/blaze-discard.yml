@@ -1,0 +1,45 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: r2
+        below:
+          text:
+            - Blaze
+            - Discard
+          color: cyan
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+        above: Blue 2
+        below:
+          text:
+            - Blaze
+            - Play
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r1
+        border: false
+      - type: r2
+        border: false
+        below:
+          text:
+            - Blaze
+            - Play
+      - type: g1
+        border: false
+      - type: g1
+        border: false
+      - type: b1
+        border: false

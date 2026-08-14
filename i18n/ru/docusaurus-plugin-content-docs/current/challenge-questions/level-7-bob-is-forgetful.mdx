@@ -1,0 +1,44 @@
+---
+title: "Боб забывает"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official2Q from "./level-7-bob-is-forgetful/question.yml";
+import RuL7Official2A from "./level-7-bob-is-forgetful/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-bob-is-forgetful" />
+
+<span id="ru-level-7-bob-is-forgetful"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 2 сыграны.
+- Алиса использует последнюю подсказку, дав Кэти подсказку числом 4. Она выглядит как _Finesse_ на красную 3 Боба.
+- У Боба теперь 0 подсказок, но он «забывает» сыграть красную 3 и вместо этого сбрасывает chop.
+- Какие заметки должна сделать Кэти и что ей делать на своём ходу?
+
+<RuL7Official2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб намеренно сбросил вместо blind-play своей Finessed-карты.
+- По [_Urgency Principle_](../level-5.mdx#urgency-principle-playing-into-finesses-as-soon-as-possible) blind-play должен происходить как можно быстрее; если бы Боб действительно был Finessed на красную 3, Кэти после этого легко сыграла бы красную 4.
+- Поэтому это **не [Scream Discard](../level-7.mdx#the-scream-discard-chop-move-sdcm)**: несыгранная известная карта Боба была картой под _Finesse_, а у Кэти также может быть красная 3 в собственной _Finesse Position_ как часть _Ambiguous Finesse_.
+- Кэти **не делает Chop Move ни одной карты**. Она должна сыграть вслепую свою _Finesse Position_ как другую красную 3.
+
+<RuL7Official2A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-bob-is-forgetful)
+
+</TabItem>
+</Tabs>

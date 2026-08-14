@@ -1,12 +1,11 @@
 {
-  "name": "hanabi.github.io",
+  "name": "hgroup-ru.github.io",
   "private": true,
   "scripts": {
     "build": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/build.mts",
-    "check-valid": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkValidYAMLFiles.mts",
+    "build:ru": "npm run compile-plugin && docusaurus clear && docusaurus build --locale ru",
     "clear": "docusaurus clear",
     "compile-plugin": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/compilePlugin.mts",
-    "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "format": "eslint --fix . && prettier --write .",
     "lint": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts",
@@ -46,6 +45,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
+    "@cspell/dict-ru_ru": "2.3.2",
     "complete-cli": "1.5.31",
     "complete-lint": "5.20.0",
     "complete-node": "17.0.2",

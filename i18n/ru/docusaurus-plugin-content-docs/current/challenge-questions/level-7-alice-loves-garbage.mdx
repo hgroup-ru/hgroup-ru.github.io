@@ -1,0 +1,46 @@
+---
+title: "Алиса любит мусор"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official5Q from "./level-7-alice-loves-garbage/question.yml";
+import RuL7Official5A from "./level-7-alice-loves-garbage/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-alice-loves-garbage" />
+
+<span id="ru-level-7-alice-loves-garbage"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 2 сыграны на стол.
+- Доступно 0 жетонов подсказки.
+- У Алисы в руке есть известная всей команде жёлтая 2.
+- Алиса решает сохранить свой мусор и вместо него сбрасывает карту с chop.
+- Какой сигнал посылает Алиса? Что должен сделать Боб?
+
+<RuL7Official5Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса делает [_Scream Discard Chop Move (With Known-Trash)_](../level-7.mdx#the-scream-discard-chop-move-with-known-trash).
+- Обычно игроки должны сбрасывать известные мусорные карты до того, как сбрасывать chop.
+- Сбрасывая chop вместо известного мусора, Алиса сигнализирует, что что-то очень не так — а именно, что chop Боба критическая или играбельная карта.
+- Боб должен навсегда сдвинуть свой chop на одну позицию и записать `cm` на слоте 4, пометив его как _Chop Moved_.
+- На этом ходу Бобу запрещено сбрасывать. Вместо этого он **обязан** дать подсказку.
+
+<RuL7Official5A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-alice-loves-garbage)
+
+</TabItem>
+</Tabs>

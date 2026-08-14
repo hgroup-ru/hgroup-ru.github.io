@@ -1,0 +1,36 @@
+stacks:
+  - r: 0
+  - y: 1
+  - g: 2
+  - b: 0
+  - p: 0
+bigText:
+  text: Mid-Game
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: 1
+        clue: 1
+        below: Good
+      - type: 1
+        clue: 1
+        middleNote: kt
+        trash: true
+        below: Bad
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x

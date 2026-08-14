@@ -1,0 +1,33 @@
+stacks:
+  - r: 2
+  - y: 0
+  - g: 0
+  - b: 2
+  - p: 0
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: r3
+      - type: x
+  - cards:
+      - type: x
+      - type: 3
+        clue: 3
+        above: Red 3
+        middleNote: b3
+        below: Play
+      - type: 3
+        clue: 3
+      - type: x
+      - type: x
+  - text: After Bob plays red 3...
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: 3
+      - type: x
+      - type: x

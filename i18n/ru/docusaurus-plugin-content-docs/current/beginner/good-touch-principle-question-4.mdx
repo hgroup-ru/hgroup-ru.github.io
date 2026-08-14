@@ -1,0 +1,40 @@
+---
+title: "Good Touch Principle (вопрос 4)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqGoodTouchPrincipleQuestion4Q from "./good-touch-principle-question-4/good-touch-principle-question-4.yml";
+import RuBgqGoodTouchPrincipleQuestion4A from "./good-touch-principle-question-4/good-touch-principle-answer-4.yml";
+
+<BeginnersGuideProgress id="good-touch-principle-question-4" />
+
+<span id="bg-good-touch-principle-question-4"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- На стол нужно сыграть зелёную 3.
+- Какое действие должна сделать Алиса?
+- Если нужно дать подсказку, что будет записано на сфокусированной карте?
+
+<RuBgqGoodTouchPrincipleQuestion4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- И подсказка по цвету, и подсказка по числу продублируют зелёную 3 и нарушат Good Touch Principle.
+- Поэтому Алиса должна терпеливо дождаться, пока Боб сбросит одну зелёную 3. После того как первая копия будет сброшена, команда сможет дать подсказку оставшейся зелёной 3.
+- Поскольку сейчас нет ни одной допустимой подсказки, Алиса обязана сбросить.
+
+<RuBgqGoodTouchPrincipleQuestion4A />
+
+</TabItem>
+</Tabs>

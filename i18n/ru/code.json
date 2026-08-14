@@ -1,0 +1,38 @@
+{
+  "homepage.hero.prefix": {
+    "message": "Стратегии для",
+    "description": "Homepage hero text before the Hanabi link"
+  },
+  "homepage.hero.suffix": {
+    "message": ", кооперативной карточной игры на логику и рассуждение.",
+    "description": "Homepage hero text after the Hanabi link"
+  },
+  "homepage.learnMore": {
+    "message": "Подробнее",
+    "description": "Homepage call-to-action button"
+  },
+  "homepage.feature.beginner.title": {
+    "message": "Руководство для начинающих",
+    "description": "Homepage Beginner feature title"
+  },
+  "homepage.feature.beginner.description": {
+    "message": "Начните здесь, чтобы освоить основы.",
+    "description": "Homepage Beginner feature description"
+  },
+  "homepage.feature.learning.title": {
+    "message": "Путь обучения",
+    "description": "Homepage Learning Path feature title"
+  },
+  "homepage.feature.learning.description": {
+    "message": "Изучайте стратегии постепенно, уровень за уровнем.",
+    "description": "Homepage Learning Path feature description"
+  },
+  "homepage.feature.reference.title": {
+    "message": "Справочник",
+    "description": "Homepage Reference feature title"
+  },
+  "homepage.feature.reference.description": {
+    "message": "Быстро найдите нужное правило или конвенцию.",
+    "description": "Homepage Reference feature description"
+  }
+}

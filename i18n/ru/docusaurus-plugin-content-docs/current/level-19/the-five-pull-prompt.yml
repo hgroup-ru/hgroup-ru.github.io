@@ -1,0 +1,42 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: First turn
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Red 1
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: b4
+        border: false
+      - type: b5
+        clue: 5
+        below: Pull
+      - type: r2
+        border: false
+        below: Pulled
+      - type: r2
+        border: false
+  - cards:
+      - type: y4
+        border: false
+      - type: g1
+        border: false
+      - type: y3
+        border: false
+      - type: y3
+        border: false

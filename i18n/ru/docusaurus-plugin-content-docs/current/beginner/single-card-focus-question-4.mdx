@@ -1,0 +1,39 @@
+---
+title: "Single Card Focus (вопрос 4)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqSingleCardFocusQuestion4Q from "./single-card-focus-question-4/single-card-focus-question-4.yml";
+import RuBgqSingleCardFocusQuestion4A from "./single-card-focus-question-4/single-card-focus-answer-4.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-4" />
+
+<span id="bg-single-card-focus-question-4"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба есть 5 и 2 с подсказками.
+- Алиса даёт Бобу красную подсказку, затрагивая три карты.
+- Какой слот находится в фокусе?
+
+<RuBgqSingleCardFocusQuestion4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Слот 3, потому что впервые затронуты две карты, а слот 3 находился на chop.
+  - Слот 5 уже был затронут раньше, поэтому красная подсказка лишь «заполняет» его дополнительной информацией.
+
+<RuBgqSingleCardFocusQuestion4A />
+
+</TabItem>
+</Tabs>

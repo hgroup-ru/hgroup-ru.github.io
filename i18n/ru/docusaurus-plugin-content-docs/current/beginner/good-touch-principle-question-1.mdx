@@ -1,0 +1,39 @@
+---
+title: "Good Touch Principle (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqGoodTouchPrincipleQuestion1Q from "./good-touch-principle-question-1/good-touch-principle-question-1.yml";
+import RuBgqGoodTouchPrincipleQuestion1A from "./good-touch-principle-question-1/good-touch-principle-answer-1.yml";
+
+<BeginnersGuideProgress id="good-touch-principle-question-1" />
+
+<span id="bg-good-touch-principle-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какое действие должна сделать Алиса?
+
+<RuBgqGoodTouchPrincipleQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса должна дать Play Clue синей 3 Боба до того, как она будет сброшена.
+- Если Алиса даст синюю подсказку, в фокусе будет синяя 3, но синяя 2 окажется продублирована, потому что она уже сыграна на стол.
+- Если Алиса даст подсказку числом 3, в фокусе будет синяя 3, а подсказка также затронет красную 3. Красная 3 пригодится команде в будущем, поэтому затронуть её этой подсказкой — хорошо и не нарушает Good Touch Principle.
+- Следовательно, Алиса должна дать Бобу подсказку числом 3.
+
+<RuBgqGoodTouchPrincipleQuestion1A />
+
+</TabItem>
+</Tabs>

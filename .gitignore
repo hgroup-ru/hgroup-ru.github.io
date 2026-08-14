@@ -1,5 +1,5 @@
 # ----------------
-# hanabi.github.io
+# H-Group RU
 # ----------------
 
 # Docusaurus artifacts
@@ -10,9 +10,6 @@ build
 # OS-specific artifacts
 .DS_Store
 thumbs.db
-
-# Agents
-.claude
 
 # ------------------------------
 # GitHub Node.gitignore template

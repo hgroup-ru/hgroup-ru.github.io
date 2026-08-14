@@ -1,106 +1,27 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: ./.github/workflows/setup
-      - run: npm run build
 
-      # @template-customization-start
+      - name: Setup
+        id: setup
+        uses: ./.github/workflows/setup
 
-      - uses: actions/upload-artifact@v7
-        with:
-          name: build
-          path: ./build
+      - name: Lint
+        run: npm run lint
 
-      # @template-customization-end
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: ./.github/workflows/setup
-      - run: npm run lint
-
-  # @template-customization-start
-
-  deploy_website:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: [build, lint]
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: ./.github/workflows/setup
-      - uses: actions/download-artifact@v8
-        with:
-          name: build
-          path: ./build
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./build
-      - uses: actions/deploy-pages@v5
-
-      - name: Check if the "ALGOLIA_CRAWLER_USER_ID" GitHub secret is set
-        env:
-          SECRET_CHECK: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
-        if: ${{ env.SECRET_CHECK == '' }}
-        run: |
-          echo "Error: The GitHub secret of \"ALGOLIA_CRAWLER_USER_ID\" is not set."
-          exit 1
-
-      - name: Check if the "ALGOLIA_CRAWLER_API_KEY" GitHub secret is set
-        env:
-          SECRET_CHECK: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
-        if: ${{ env.SECRET_CHECK == '' }}
-        run: |
-          echo "Error: The GitHub secret of \"ALGOLIA_CRAWLER_API_KEY\" is not set."
-          exit 1
-
-      - name: Check if the "ALGOLIA_CRAWLER_ID" GitHub secret is set
-        env:
-          SECRET_CHECK: ${{ secrets.ALGOLIA_CRAWLER_ID }}
-        if: ${{ env.SECRET_CHECK == '' }}
-        run: |
-          echo "Error: The GitHub secret of \"ALGOLIA_CRAWLER_ID\" is not set."
-          exit 1
-
-      - name: Run Algolia Crawler
-        env:
-          # From: https://crawler.algolia.com/admin/user/settings/
-          ALGOLIA_CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
-          ALGOLIA_CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
-
-          # From: https://crawler.algolia.com/admin/crawlers/[crawler-id]/settings
-          ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
-        run: |
-          curl \
-            --silent \
-            --fail \
-            --show-error \
-            --location \
-            --request POST \
-            --header "Content-Type: application/json" \
-            --user $ALGOLIA_CRAWLER_USER_ID:$ALGOLIA_CRAWLER_API_KEY \
-            "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex"
-
-  # @template-customization-end
-
-  discord:
-    name: Discord Failure Notification
-    # @template-ignore-next-line
-    needs: [build, lint, deploy_website]
-    if: failure() && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: sarisia/actions-status-discord@v1
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          status: failure
-          title: ""
+      - name: Build RU site for fork pull requests
+        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.repo.full_name != github.repository }}
+        run: npm run build:ru

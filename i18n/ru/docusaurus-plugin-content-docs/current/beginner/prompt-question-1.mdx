@@ -1,0 +1,41 @@
+---
+title: "Prompt (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqPromptQuestion1Q from "./prompt-question-1/prompt-question-1.yml";
+import RuBgqPromptQuestion1A from "./prompt-question-1/prompt-answer-1.yml";
+
+<BeginnersGuideProgress id="prompt-question-1" />
+
+<span id="bg-prompt-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба в руке две неизвестные 2, которые раньше получили подсказки.
+- У Кэти в руке неизвестные 5 и 4, которые тоже раньше получили подсказки.
+- Алиса даёт Кэти красную подсказку.
+- Как Боб интерпретирует эту подсказку?
+
+<RuBgqPromptQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Поскольку красная 3 уже в сбросе, это **Critical Save** красной 3, то есть Save Clue.
+- Поэтому Боб никак не должен реагировать.
+- Если бы красной 3 не было в сбросе, подсказка была бы **Prompt** на крайнюю слева 2 Боба.
+
+<RuBgqPromptQuestion1A />
+
+</TabItem>
+</Tabs>

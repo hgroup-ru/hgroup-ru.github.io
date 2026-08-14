@@ -1,0 +1,48 @@
+---
+id: 5-save-question-2
+title: "5 Save (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgq5SaveQuestion2Q from "./5-save-question-2/5-save-question-2.yml";
+import RuBgq5SaveQuestion2A from "./5-save-question-2/5-save-answer-2.yml";
+
+<BeginnersGuideProgress id="5-save-question-2" />
+
+<span id="bg-5-save-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Перечислите все разрешённые действия Алисы.
+- Какое действие должна выбрать Алиса?
+
+<RuBgq5SaveQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- У Боба на chop лежит жёлтая 2, которую обычно нужно было бы спасать. Но в руке Кэти уже есть другая копия этой жёлтой 2 с подсказкой, поэтому жёлтая 2 Боба — мусор, её нужно игнорировать.
+- У Боба также две 5, но ни одна не на chop, поэтому пока спасать их нельзя.
+- У Кэти две 5. Одна уже спасена, то есть имеет подсказку, а вторая ещё не спасена и находится на chop.
+  - Chop Кэти — слот 2, потому что карты в слотах 3 и 4 уже с подсказками.
+- Следовательно, разрешённые действия Алисы:
+  - спасти 5 Кэти;
+  - сбросить.
+- Что лучше? В этой ситуации пятёрку Кэти может спасти либо Алиса, либо Боб:
+  - если Алиса спасает 5 Кэти, Боб затем сбросит жёлтую 2, которая является мусором;
+  - если Алиса сбрасывает, она сбросит неизвестную карту, а затем Боб спасёт 5 Кэти.
+- Сбрасывать известный мусор лучше, чем неизвестную карту. Поэтому Алиса должна **дать подсказку и позволить Бобу сбросить мусор**.
+
+<RuBgq5SaveQuestion2A />
+
+</TabItem>
+</Tabs>

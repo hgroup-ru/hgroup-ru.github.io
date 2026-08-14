@@ -1,0 +1,45 @@
+---
+title: "Неожиданный сброс"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL3Official4Q from "./level-3-an-unexpected-discard/question.yml";
+import RuL3Official4A from "./level-3-an-unexpected-discard/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-an-unexpected-discard" />
+
+<span id="ru-level-3-an-unexpected-discard"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Красная 2 и синяя 2 сыграны.
+- У Алисы есть синяя 3, точное значение которой известно всем.
+- У Боба и Кэти по две 3 с подсказкой.
+- На своём ходу Алиса сбрасывает синюю 3.
+- Почему Алиса сбросила эту карту вместо того, чтобы сыграть её?
+- Какие заметки должны записать Боб, Кэти и Дональд? Укажите точно.
+
+<RuL3Official4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса поняла, что её синяя 3 имеет дубликат. Поэтому её обязанность — сделать _Sarcastic Discard_.
+- Это означает, что такая же карта с подсказкой есть в руке кого-то другого.
+- В колоде есть только одна другая копия синей 3, поэтому все игроки точно знают, у какого игрока находится эта карта.
+- Кэти нигде не видит синюю 3, поэтому пишет `b3?` на обеих своих картах. Конкретный слот не обещан.
+- Боб и Дональд видят синюю 3 в руке Кэти и тоже пишут `b3?` на обеих 3 Кэти.
+
+<RuL3Official4A />
+
+</TabItem>
+</Tabs>

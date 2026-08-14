@@ -1,0 +1,44 @@
+---
+title: "Save Principle (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqSavePrincipleQuestion2Q from "./save-principle-question-2/save-principle-question-2.yml";
+import RuBgqSavePrincipleQuestion2A from "./save-principle-question-2/save-principle-answer-2.yml";
+
+<BeginnersGuideProgress id="save-principle-question-2" />
+
+<span id="bg-save-principle-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какое действие должна сделать Алиса?
+- Если нужно дать подсказку, что будет записано на сфокусированной карте? Укажите все варианты.
+
+<RuBgqSavePrincipleQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса обязана дать Save Clue жёлтой 2 Боба до того, как она будет сброшена: команда договорилась, что все уникальные 2 **обязательно спасаются**.
+- Алиса не имеет права давать жёлтую подсказку, потому что 2 нужно спасать через 2 Save.
+  - Если бы Алиса дала жёлтую подсказку, она выглядела бы как Play Clue на жёлтую карту, и Боб попытался бы сыграть её как жёлтую 1.
+- Подсказка числом 2 будет 2 Save на жёлтую 2, но одновременно продублирует красную 2, которая уже сыграна на стол.
+- Тем не менее Алиса должна дать Бобу подсказку числом 2 как **2 Save**, потому что спасение карты важнее соблюдения Good Touch Principle.
+- Фокус этой подсказки — слот 5. Боб запишет:
+  - зелёная 2, синяя 2 — как Play Clue;
+  - жёлтая 2, фиолетовая 2 — как 2 Save.
+
+<RuBgqSavePrincipleQuestion2A />
+
+</TabItem>
+</Tabs>

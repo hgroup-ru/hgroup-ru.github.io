@@ -1,0 +1,259 @@
+---
+title: Техническая документация по изображениям-примерам
+---
+
+import { Highlight } from "prism-react-renderer";
+
+import SimpleSource from "!raw-loader!./example-images/simple.yml";
+import SimpleResult from "./example-images/simple.yml";
+
+import TextNameSource from "!raw-loader!./example-images/text-name.yml";
+import TextNameResult from "./example-images/text-name.yml";
+import OffsetNameSource from "!raw-loader!./example-images/offset-name.yml";
+import OffsetNameResult from "./example-images/offset-name.yml";
+
+import TypesSource from "!raw-loader!./example-images/types.yml";
+import TypesResult from "./example-images/types.yml";
+
+import ClueSource from "!raw-loader!./example-images/clue.yml";
+import ClueResult from "./example-images/clue.yml";
+
+import CardTextSource from "!raw-loader!./example-images/card-text.yml";
+import CardTextResult from "./example-images/card-text.yml";
+
+import CardTextExpandSource from "!raw-loader!./example-images/card-text-expand.yml";
+import CardTextExpandResult from "./example-images/card-text-expand.yml";
+
+import TrashSource from "!raw-loader!./example-images/trash.yml";
+import TrashResult from "./example-images/trash.yml";
+
+import BigTextSource from "!raw-loader!./example-images/big-text.yml";
+import BigTextResult from "./example-images/big-text.yml";
+
+import Suits1Source from "!raw-loader!./example-images/suits-1.yml";
+import Suits1Result from "./example-images/suits-1.yml";
+
+import Suits2Source from "!raw-loader!./example-images/suits-2.yml";
+import Suits2Result from "./example-images/suits-2.yml";
+
+export const Code = ({ code }) => (
+  <Highlight code={code} language="yaml">
+    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      <pre>
+        <code>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </code>
+      </pre>
+    )}
+  </Highlight>
+);
+
+export const Example = ({ code, Image }) => (
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <Code code={code} />
+      </div>
+      <div class="col">
+        <Image />
+      </div>
+    </div>
+  </div>
+);
+
+## Введение {/* #intro */}
+
+По всему сайту используются изображения-примеры, показывающие игровые состояния. На этой странице описано, как редактировать такие изображения и как создавать новые.
+
+Каждое изображение-пример создаётся из файла [YAML](https://yaml.org/) — простого текстового описания, которое легко редактировать.
+
+## Добавление нового изображения {/* #adding-a-new-image */}
+
+1. Создайте новый YAML-файл в подкаталоге с тем же именем, что и Markdown-страница, на которой он будет использоваться. (При желании можно взять за основу существующий YAML-файл.)
+
+2. В начале Markdown-страницы импортируйте его как React-компонент, например:
+
+```jsx
+import NewChopMove from "./page-name/new-chop-move.yml";
+```
+
+3. Вставьте React-компонент в нужное место Markdown-файла:
+
+```jsx
+<NewChopMove />
+```
+
+В качестве простого примера того, как должен выглядеть документ с текстом и изображениями, см. [Markdown-файл Level 2](https://raw.githubusercontent.com/hanabi/hanabi.github.io/refs/heads/main/docs/level-2.mdx).
+
+## Разработка {/* #development */}
+
+При локальном просмотре сайта через `npm run start` любые изменения автоматически появляются на странице без ручного обновления. Это относится и к YAML-файлам: они на лету заново преобразуются в SVG и обновляются в браузере.
+
+## Рекомендации {/* #guidelines */}
+
+Ниже приведены общие рекомендации, которых следует придерживаться при создании и изменении изображений. Проще всего начать с копии существующего примера и изменить её.
+
+- Обычно в примерах следует использовать 5 стопок и 3 игроков. Добавляйте больше только при необходимости.
+- Стопки можно не показывать, если они совсем не важны для сценария.
+- Указывайте только те точные значения карт, которые важны для сценария. Чем меньше лишних деталей, тем яснее и универсальнее пример.
+  - Точное значение карты задаётся атрибутом `type:`.
+    - Если карта не была затронута подсказкой, обязательно используйте `border: false`.
+    - Карты, которые _были_ затронуты подсказкой, частично определены. (Например, `type: 2`.)
+    - Если на карте уже записана заметка, поместите её в атрибут `middleNote`.
+    - Используйте несколько вариантов `type` экономно и только когда это важно для варианта (например, rainbow/pink).
+  - Обычно не указывайте точные значения карт в руке дающего подсказку или реагирующего игрока.
+    - Для карт, которые видит только _часть_ игроков, точное значение следует показывать _над_ картой. (Например: `above: Red 2`.)
+- Если даётся подсказка, всегда указывайте, кто её даёт, с помощью атрибута `clueGiver: true`.
+  - Обычно подсказку даёт Алиса.
+  - Обязательно укажите все затронутые карты с помощью атрибута `clue: X`.
+  - Изменяйте вид затронутых карт так же, как это делает игровой интерфейс, с помощью атрибута `type: X`.
+  - Обозначайте фокус подсказки золотой подписью _под_ картой. (Например, `below: Play` или `below: Stall`.)
+  - Для повторно затронутых карт обязательно задавайте `retouched: true`, чтобы стрелка стала серой.
+  - Почти всегда показывайте через `middleNote`, что получатель подсказки записал бы на карте.
+    - Используйте краткую запись и включайте все варианты:
+      - Точное значение известно полностью: `b2`
+      - Точное значение известно частично: `b23`, `ryg2`
+      - _Chop Moved_: `cm`. Кроме того, для _Chop Moved_-карт следует задавать `cm: true`, чтобы нарисовать белую рамку.
+      - Известный мусор: `kt`. Кроме того, для известного мусора следует задавать `trash: true`, чтобы нарисовать значок корзины.
+  - Другие карты, точное значение которых выводится из данной подсказки, должны иметь чёрную подпись _под_ картой. (Например, `below: Finesse`.)
+    - Записывать заметки на таких картах необязательно: обычно их сразу играют вслепую.
+    - Но их фактическое значение _нужно_ указывать через `above:`, поскольку дающий подсказку его знает.
+- Недопустимые подсказки и/или мисплеи должны быть явно отмечены цветом `red`.
+- Ошибки или неоптимальные подсказки должны быть отмечены цветом `orange`.
+- Альтернативные действия (сбросы, розыгрыши) следует отмечать через `below:` цветом cyan.
+  - Игрок, чей сейчас ход, должен быть отмечен через `clueGiver: true` или `zeroClues: true`.
+- Другую информацию о картах следует отмечать через `below:`.
+
+Каждый пример устроен по-своему; это рекомендации, поэтому руководствуйтесь здравым смыслом.
+
+## Подробный формат YML-файла {/* #detailed-yml-file-format */}
+
+Есть два основных раздела: `stacks` и `players`.
+
+- `stacks` — массив карт, уже сыгранных на стопки. По умолчанию поддерживаются следующие цвета:
+  - `r`: красный,
+  - `g`: зелёный,
+  - `b`: синий,
+  - `y`: жёлтый,
+  - `p`: фиолетовый,
+  - `m`: rainbow (многоцветный).
+- `players` содержит по одной записи для каждого игрока. В каждой записи есть `cards` — карты в его руке.
+
+<Example code={SimpleSource} Image={SimpleResult} />
+
+Игрокам автоматически назначаются следующие имена: `Alice`, `Bob`, `Cathy`, `Donald` и `Emily`. Их можно переопределить атрибутом `name`. Например, это полезно, если нужно дважды показать руку Боба — до и после какого-либо события.
+
+В `players` вместо `cards` также можно использовать `text` или `space`. Первое описывает происходящее в игре, второе добавляет вертикальный отступ.
+
+<Example code={TextNameSource} Image={TextNameResult} />
+
+Кроме того, `players` может содержать `offset`, чтобы изменить назначение имён игроков.
+
+<Example code={OffsetNameSource} Image={OffsetNameResult} />
+
+### Карты {/* #cards */}
+
+Карты в руке могут быть разных типов:
+
+- с подсказкой и известным точным значением, например `g2`;
+- с подсказкой и известным цветом, например `b`;
+- с подсказкой и известным рангом, например `4`;
+- с подсказкой и несколькими возможными значениями, например `b234`, `rm4`, `ym45`;
+- карта без подсказки и без отображаемых пипов, например `x`;
+- карта без подсказки с отображаемыми пипами, например `xrg23`.
+
+Атрибут `crossedOut` позволяет пометить некоторые пипы крестиком X (когда все остальные копии этой карты видны в других местах).
+
+Атрибут `orange` позволяет рисовать некоторые пипы ранга оранжевым. Это полезно для pink-карт.
+
+По умолчанию карты с подсказкой имеют оранжевую рамку, но это можно переопределить атрибутом `border`.
+
+Атрибут `cm` рисует вокруг карты белую рамку.
+
+Атрибут `trash` рисует поверх карты значок корзины.
+
+Атрибут `fix` рисует поверх карты значок гаечного ключа.
+
+<Example code={TypesSource} Image={TypesResult} />
+
+### Подсказки {/* #clues */}
+
+Атрибут `clue` показывает, что карта в данный момент получает подсказку.
+
+По умолчанию дающий подсказку не задан, но его можно указать атрибутом `clueGiver`.
+
+Атрибут `retouched` позволяет отметить, что подсказка повторно затрагивает карту; стрелка при этом становится темнее обычной. (Это соответствует поведению Hanab Live.)
+
+<Example code={ClueSource} Image={ClueResult} />
+
+### Текст на картах {/* #text-on-cards */}
+
+На карту можно помещать текст:
+
+- `middleNote` — текстовая подпись в центре карты;
+  - строка автоматически окрашивается, если это буква одного из 5 цветов;
+- `above` — заметка над картой;
+- `below` — заметка под картой.
+
+У `above` и `below` одинаковый синтаксис:
+
+- `above: Green 3` или `above: Rainbow 5` рисует блок с соответствующими цветом и текстом.
+- Для нескольких дополнительных ключевых слов также заранее задан цвет: `Focus`, `Chop`, `Bad`, `Play`.
+- Цвет можно переопределить атрибутом `color`. Поддерживаются CSS-цвета, а также `rainbow`.
+
+<Example code={CardTextSource} Image={CardTextResult} />
+
+Некоторые сокращения разворачиваются в более длинный текст:
+
+<Example code={CardTextExpandSource} Image={CardTextExpandResult} />
+
+### Сброс {/* #discard-pile */}
+
+В некоторых примерах нужно показать часть карт в сбросе. Для этого используется массив верхнего уровня `discarded`.
+
+<Example code={TrashSource} Image={TrashResult} />
+
+### Крупный текст {/* #big-text */}
+
+Для ключевых слов `Bluff`, `Finesse` и `Illegal!` настройка цвета игнорируется.
+
+<Example code={BigTextSource} Image={BigTextResult} />
+
+### Варианты {/* #variants */}
+
+Некоторые variant-specific цвета можно добавить через `suits`: это отображение буквы, обозначающей цвет, на часть имени файлов карт и пипов.
+Сейчас поддерживаются следующие variant-цвета:
+
+Альтернативные цвета:
+
+- black
+- brown
+- gray
+- muddy
+- null (нужно заключать в кавычки, поскольку обычно `null` — ключевое слово YAML)
+- omni
+- orange
+- pink
+- prism-rygbp
+- teal
+- white
+
+Это нужно, чтобы различать цвета, для которых часто используется одна и та же буква, например `i` одновременно для prism и pink.
+
+Стандартные цвета, которые не нужно повторять в `suits`:
+
+- red
+- yellow
+- green
+- blue
+- purple
+- multi
+
+<Example code={Suits1Source} Image={Suits1Result} />
+<Example code={Suits2Source} Image={Suits2Result} />

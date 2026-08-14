@@ -1,0 +1,91 @@
+---
+title: Charms
+---
+
+import FourCharmInteractionDoubleBluff from "./charms/4-charm-interaction-double-bluff.yml";
+import FourCharmInteractionHardDoubleBluff from "./charms/4-charm-interaction-hard-double-bluff.yml";
+import FourCharmInteractionOOO from "./charms/4-charm-interaction-ooo.yml";
+import UnknownTrashCharm from "./charms/unknown-trash-charm.yml";
+import JunkCharm from "./charms/junk-charm.yml";
+
+- _Charm_ — это blind-play, при котором игрок разыгрывает несвязанную карту из своей _Fourth Finesse Position_. Например, если на руке игрока вообще нет подсказок, его _Fourth Finesse Position_ — слот 4.
+- Как и _Bluff_, _Charm_ можно выполнить только на непосредственно следующего по ходу игрока.
+
+### 4 Charm {/* #the-4-charm */}
+
+- _4 Charm_ вводится на [Level 23](/level-23#the-4-charm).
+- При игре на максимальном уровне действуют несколько специальных взаимодействий _4 Charm_, описанных ниже.
+
+#### Взаимодействие 4 Charm и Double Bluffs, когда у Кэти есть one-away-from-playable карта {/* #interaction-between-the-4-charm-and-double-bluffs-where-cathy-has-a-one-away-from-playable-card */}
+
+- Как сказано в разделе [Level 23](/level-23#the-4-charm), _Double Bluffs_ имеют приоритет над _4 Charms_. Однако есть одно небольшое исключение.
+- _Double Bluffs_ не имеют приоритета, когда Боб видит у Кэти _one-away-from-playable_ карту на _Finesse Position_.
+- Технически возможно, что Боб вслепую сыграет именно ту карту, которая сделает _Finesse Position_ Кэти играбельной. Но это настолько маловероятно, что мы договариваемся: в такой ситуации игроки должны вернуться к интерпретации _4 Charm_, если у Боба есть _Fourth Finesse Position_ и выполнены требования _4 Charm_.
+- Например, в игре на четверых:
+  - Красная 1 сыграна на стол.
+  - Алиса даёт Дональду синюю подсказку, затрагивая синюю 4 как _Play Clue_. Сейчас синяя 4 находится _three-away-from-playable_.
+  - Боб видит у Кэти красную 3 на _Finesse Position_.
+  - Если у Боба на _Finesse Position_ находится именно красная 2, он знает, что подсказка Алисы могла бы работать как _4's Double Bluff_.
+  - Однако красная 3 на _Finesse Position_ Кэти находится _one-away-from-playable_, поэтому Боб знает, что приоритет должен иметь _4 Charm_.
+  - Боб вслепую играет карту из своей _Fourth Finesse Position_. Это зелёная 1.
+
+<FourCharmInteractionDoubleBluff />
+
+- Даже когда карта Кэти находится _one-away-from-playable_, остаются ситуации, где _4 Charm_ недопустим и поэтому _Double Bluff_ всё ещё можно выполнить. Два таких случая описаны ниже.
+  - Если у Боба нет _Fourth Finesse Position_, интерпретация _4 Charm_ не имеет смысла. Поэтому в таком случае всё ещё может сработать _Double Bluff_.
+  - Например, в игре на четверых:
+    - Первый ход, на столе ничего не сыграно.
+    - У Боба и Кэти на _Finesse Position_ находятся соответственно красная 1 и красная 2.
+    - Алиса даёт Дональду подсказку числом 4, фокусируя зелёную 4.
+    - Боб видит у Дональда зелёную 2 на _Finesse Position_. Значит, зелёная 4 находится лишь в двух картах от розыгрыша, и _4 Charm_ недопустим.
+    - Поэтому Боб вслепую играет свою _Finesse Position_.
+    - Кэти видит, что зелёная 4 находилась дальше, чем _one-away-from-playable_, а значит, не была допустимой целью одиночного _Bluff_. Поэтому Кэти тоже вслепую играет свою _Finesse Position_.
+    - Дональд помечает свою 4 как любую 4.
+
+<FourCharmInteractionHardDoubleBluff />
+
+#### Взаимодействие 4 Charm и Out-of-Order Finesse {/* #interaction-between-the-4-charm-and-the-out-of-order-finesse */}
+
+- Сначала см. раздел об [_Out-of-Order Finesse_](/level-20#the-out-of-order-finesse).
+- _Out-of-Order Finesse_ всегда имеет приоритет над _4 Charm_ и _4's Double Bluff_ из-за _Bob's Truth Principle_.
+- Например, в игре на четверых:
+  - Первый ход, на столе ничего не сыграно.
+  - Рука Дональда от самой новой карты к самой старой: `синяя 3, красная 4, красная 1, синяя 3`.
+  - Алиса даёт Дональду красную подсказку, затрагивая красную 4 в слоте 1 и красную 1 в слоте 2. Это _Play Clue_.
+  - Боб знает, что подсказка может быть правдивой как _Out-of-Order Finesse_. В таком случае ему следует дать Дональду подсказку числом 4, позволив тому сыграть красную 1. Затем Боб сможет вслепую сыграть красную 2 и красную 3, соединяя их с играбельной красной 4.
+  - Боб знает, что это также мог бы быть _4 Charm_: красная 4 находится _three-away-from-playable_, а других красных карт на _Finesse Position_ он не видит.
+  - Однако Боб знает, что всегда следует предпочитать правду лжи, поэтому предполагает, что Алиса имеет в виду _Out-of-Order Finesse_.
+
+<FourCharmInteractionOOO />
+
+### Unknown Trash Charm (UTC) {/* #the-unknown-trash-charm-utc */}
+
+- Сначала см. раздел об [_Unknown Trash Discharge_](/level-16#the-unknown-trash-discharge-1-for-1-form-utd).
+- Обычно после _Unknown Trash Discharge_ нефокусные карты считаются «хорошими».
+- Но что, если игрок делает _Unknown Trash Discharge_, в котором **все** нефокусные карты — мусор? _Discharge_ ошибочно сообщил бы, что нефокусные карты полезны.
+- Вместо этого такая ситуация должна сигнализировать _Charm_ на непосредственно следующего игрока.
+- Например, в игре на троих:
+  - Все 2 сыграны на стол.
+  - Алиса даёт Кэти красную подсказку, затрагивая красную 1 в слоте 1 и красную 2 в слоте 2.
+  - Обычно Боб трактовал бы эту подсказку как _Unknown Trash Discharge_. Но если он сделает _Discharge_, Кэти сбросит красную 1 и пометит красную 2 как красную 3, красную 4 или красную 5, что было бы _Lie_.
+  - Вместо этого Боб знает, что это сигнал _Unknown Trash Charm_, поэтому вслепую играет свою _Fourth Finesse Position_. Это синяя 3, и её удаётся успешно разыграть.
+
+<UnknownTrashCharm />
+
+### Junk Charm (для 1) {/* #the-junk-charm-for-1s */}
+
+- Иногда при _Play Clue_ числом 1 на 1 невозможно избежать _Bad Touch_. Но что, если игрок даёт такую подсказку, хотя цветовая подсказка позволила бы избежать _Bad Touch_?
+- Если все нефокусные 1 — мусор, подсказка обязательно вызывает что-то дополнительное: _Charm_ на непосредственно следующего игрока.
+- После _Charm_ получивший подсказку игрок будет знать, что играбелен **только** фокус подсказки по 1.
+- Например, в игре на троих:
+  - Зелёная 1 сыграна на стол.
+  - Алиса даёт Кэти подсказку числом 1, затрагивая красную 1 в слоте 5 и зелёную 1 в слоте 2.
+  - Рука Кэти от самой новой карты к самой старой: `жёлтая 2, зелёная 1, синяя 3, фиолетовая 5, красная 1`.
+  - Боб видит, что Алиса могла дать красную подсказку, затронув только красную 1 и избежав _Bad Touch_.
+  - Боб знает, что это сигнал blind-play:
+    - blind-play из _Finesse Position_ выглядел бы как _Trash Finesse_, что было бы _Lie_;
+    - blind-play из _Second Finesse Position_ выглядел бы как _Trash Push Ejection_, что было бы _Lie_;
+    - blind-play из _Third Finesse Position_ выглядел бы как _Unknown Trash Discharge_, что было бы _Lie_.
+  - Значит, Боб знает, что это должен быть _Junk Charm_, и вслепую играет свою _Fourth Finesse Position_. Это синяя 1, и её удаётся успешно разыграть.
+
+<JunkCharm />

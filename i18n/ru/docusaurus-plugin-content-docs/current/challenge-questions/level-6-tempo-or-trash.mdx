@@ -1,0 +1,48 @@
+---
+title: "Tempo or Trash?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL6Official3Q from "./level-6-tempo-or-trash/question.yml";
+import RuL6Official3A from "./level-6-tempo-or-trash/answer.yml";
+
+<ChallengeQuestionProgress level={6} id="level-6-tempo-or-trash" />
+
+<span id="ru-level-6-tempo-or-trash"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Красная 2 сыграна на стол.
+- У Алисы в слоте 3 красная карта, обещанная как играбельная красная 4.
+- У Боба неизвестная 5, сохранённая на chop.
+- У Кэти в слоте 2 красная карта, обещанная как играбельная красная 3.
+- Затем Алиса даёт Бобу красную подсказку, которая затрагивает красную карту в слоте 1 и «уточняет» ранее неизвестную красную 5 в слоте 5.
+- Какие действия Боб выполнит на своём ходу?
+
+<RuL6Official3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- В этой ситуации фокус красной подсказки неоднозначен:
+  - Если красная подсказка сфокусирована на «новой» карте в слоте 1, то фокус — мусор, а получившийся ход является [_Trash Chop Move_](../level-4.mdx#the-trash-chop-move-tcm) по слотам 2, 3 и 4.
+  - Если красная подсказка сфокусирована на уже подсказанном слоте 5, то фокус — красная 5, которая ранее не была известна как играбельная; тогда получившийся ход является [_Tempo Clue Chop Move_](../level-6.mdx#the-tempo-clue-chop-move-tccm) по слоту 4.
+  - Боб также знает, что _Tempo Clue Chop Move_ имеет приоритет над _Trash Chop Move_.
+  - Поэтому в этой ситуации Боб должен пометить как _Chop Moved_ только карту в слоте 4.
+  - Боб пишет `cm` на карте в слоте 4, а затем даёт несвязанную подсказку или сбрасывает карту из слота 1.
+
+<RuL6Official3A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-6-tempo-or-trash)
+
+</TabItem>
+</Tabs>

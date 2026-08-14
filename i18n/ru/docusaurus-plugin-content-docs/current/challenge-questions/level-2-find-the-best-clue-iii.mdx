@@ -1,0 +1,43 @@
+---
+title: "Найди лучшую подсказку, III"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial10Q from "./level-2-find-the-best-clue-iii/question.yml";
+import RuOfficial10A from "./level-2-find-the-best-clue-iii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-find-the-best-clue-iii" />
+
+<span id="ru-level-2-find-the-best-clue-iii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба есть неизвестная карта с отметкой 5.
+- У Кэти есть неизвестная фиолетовая карта.
+- Какую лучшую подсказку может дать Алиса?
+
+<RuOfficial10Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Самая ценная подсказка Алисы — подсказка числом 4 для Боба. Это _Play Clue_ на красную 4, которая запускает [_Self-Finesse_](../level-2.mdx#the-self-finesse).
+- Алиса может ожидать, что Боб войдёт в _Self-Finesse_, потому что:
+  - Боб знает, что подсказка числом 4 не может быть _Save Clue_: сейчас ни одна 4 не является критической.
+  - Боб знает, что подсказка числом 4 не может быть прямой _Play Clue_, поскольку сейчас нет ни одной немедленно играбельной 4.
+  - Боб знает, что подсказка числом 4 не может быть [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse), потому что в _Finesse Position_ Кэти нет играбельной карты, которая могла бы связаться с 4.
+- Алиса также могла бы дать Бобу подсказку числом 3 как _Play Clue_ на красную 3, но такая подсказка «получит» только одну совершенно новую карту вместо двух.
+
+<RuOfficial10A />
+
+</TabItem>
+</Tabs>

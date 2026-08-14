@@ -1,0 +1,34 @@
+stacks:
+  - r: 3
+  - y: 0
+  - g: 0
+  - b: 1
+  - p: 2
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 2
+        clue: 2
+        middleNote: y2, b2
+        below: Play
+      - type: x
+        below: Chop
+  - cards:
+      - type: y5
+        border: false
+      - type: y1
+      - type: r3
+        border: false
+      - type: r2
+        border: false
+      - type: b2
+        border: false

@@ -1,0 +1,42 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Illegal!
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Red 1
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Blue 5
+        middleNote: r2
+        below:
+          text:
+            - Finesse,
+            - Misplays
+          color: red
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: r1345
+        clue: r
+        middleNote: r3
+        below: Play
+      - type: x
+      - type: x

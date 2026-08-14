@@ -1,0 +1,46 @@
+---
+title: "Filling in, II"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL6Official2Q from "./level-6-filling-in-ii/question.yml";
+import RuL6Official2A from "./level-6-filling-in-ii/answer.yml";
+
+<ChallengeQuestionProgress level={6} id="level-6-filling-in-ii" />
+
+<span id="ru-level-6-filling-in-ii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба в руке одна карта с подсказкой, но в остальном неизвестная: зелёная карта в слоте 4.
+- Алиса даёт Бобу подсказку числом 3, которая затрагивает его карту в слоте 4 и «уточняет» её.
+- Какие действия Боб выполнит на следующем ходу?
+
+<RuL6Official2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Поскольку карта Боба уже была «получена» до подсказки Алисы, это должна быть [_Tempo Clue_](../level-6.mdx#the-tempo-clue).
+- Эта подсказка делает играбельной только одну новую карту в пределах следующего хода.
+- Значит, такая подсказка недостаточно «ценная» сама по себе и должна иметь более глубокий смысл.
+- Боб знает, что неценная _Tempo Clue_ на самом деле помечает как [_Chop Moved_](../level-4.mdx#chop-moves) карту, которая сейчас находится на chop.
+- Боб выполняет следующие действия:
+  - Помечает свою карту в слоте 3 как _Chop Moved_, записав на ней `cm`.
+  - На следующем ходу играет зелёную 3 из слота 4.
+
+<RuL6Official2A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-6-filling-in-ii)
+
+</TabItem>
+</Tabs>

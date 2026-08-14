@@ -1,0 +1,39 @@
+---
+title: "Finesse (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqFinesseQuestion2Q from "./finesse-question-2/finesse-question-2.yml";
+import RuBgqFinesseQuestion2A from "./finesse-question-2/finesse-answer-2.yml";
+
+<BeginnersGuideProgress id="finesse-question-2" />
+
+<span id="bg-finesse-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Кэти жёлтую подсказку, затрагивая жёлтую 4 как Play Clue.
+- С точки зрения Боба это Finesse? Почему да или почему нет?
+
+<RuBgqFinesseQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Нет, это **не Finesse**.
+- У Боба есть 3 с подсказкой, и она может быть жёлтой 3. Поэтому подсказка может быть **Prompt** на Боба.
+- Боб знает, что **Prompts имеют приоритет над Finesses**. Пока Prompt возможен, эту ситуацию нельзя интерпретировать как Finesse.
+
+<RuBgqFinesseQuestion2A />
+
+</TabItem>
+</Tabs>

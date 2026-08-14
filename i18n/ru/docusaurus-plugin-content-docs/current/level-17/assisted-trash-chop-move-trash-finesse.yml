@@ -1,0 +1,44 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 1
+  - p: 0
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: y1
+      - type: x
+  - cards:
+      - type: x
+        above: Yellow 1
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: b1
+        clue: 1
+        below: Play
+      - type: x
+      - type: x
+  - text: After Bob plays yellow 1...
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: b1
+        middleNote: kt
+        trash: true
+      - type: x
+        cm: true
+        middleNote: cm
+      - type: x
+        cm: true
+        middleNote: cm

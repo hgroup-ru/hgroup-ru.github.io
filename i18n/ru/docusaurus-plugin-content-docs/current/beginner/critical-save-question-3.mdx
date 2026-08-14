@@ -1,0 +1,47 @@
+---
+title: "Critical Save (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqCriticalSaveQuestion3Q from "./critical-save-question-3/critical-save-question-3.yml";
+import RuBgqCriticalSaveQuestion3A from "./critical-save-question-3/critical-save-answer-3.yml";
+
+<BeginnersGuideProgress id="critical-save-question-3" />
+
+<span id="bg-critical-save-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу жёлтую подсказку, затрагивая карту в слоте 4.
+- Это Play Clue или Save Clue?
+- Что Боб запишет? Укажите все варианты.
+
+<RuBgqCriticalSaveQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб знает, что это может быть **Play Clue** на жёлтую 1.
+- Но подсказка затронула chop, поэтому она также может быть **Save Clue**:
+  - жёлтой 2 карта быть не может, потому что жёлтую 2 пришлось бы спасать через 2 Save;
+  - жёлтой 3 быть не может: в колоде только две жёлтые 3, одну Боб видит в сбросе, а вторую — в руке Кэти;
+  - жёлтой 4 быть может, потому что одна копия жёлтой 4 уже в сбросе;
+  - жёлтой 5 быть не может, потому что жёлтую 5 нужно спасать через 5 Save.
+- Боб не знает, Play Clue это или Save Clue, поэтому до получения дополнительной информации обязан учитывать Save Clue и держать карту.
+- Боб записывает:
+  - жёлтая 1 — как Play Clue;
+  - жёлтая 4 — как Critical Save.
+
+<RuBgqCriticalSaveQuestion3A />
+
+</TabItem>
+</Tabs>

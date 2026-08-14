@@ -1,0 +1,44 @@
+---
+title: "Screaming into the Void"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official3Q from "./level-7-screaming-into-the-void/question.yml";
+import RuL7Official3A from "./level-7-screaming-into-the-void/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-screaming-into-the-void" />
+
+<span id="ru-level-7-screaming-into-the-void"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 2 сыграны.
+- 0 подсказок.
+- У Алисы известная играбельная зелёная 3.
+- Рука Боба от новой к старой: `жёлтая 3 (известна всей команде), красная 2, синяя 4, фиолетовая 5`.
+- Что Алиса должна сделать?
+
+<RuL7Official3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса должна **сыграть зелёную 3**.
+- Боб сам может сыграть свою известную жёлтую 3, поэтому фиолетовая 5 на его chop не находится под непосредственной угрозой сброса.
+- [_Scream Discard_](../level-7.mdx#the-scream-discard-chop-move-sdcm) был бы недопустим: это приём последнего средства, а здесь следующий игрок и так ожидаемо играет карту и не сбрасывает chop.
+
+<RuL7Official3A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-screaming-into-the-void)
+
+</TabItem>
+</Tabs>

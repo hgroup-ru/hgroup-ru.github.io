@@ -1,0 +1,46 @@
+---
+title: "Алиса забывает"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official1Q from "./level-7-alice-is-forgetful/question.yml";
+import RuL7Official1A from "./level-7-alice-is-forgetful/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-alice-is-forgetful" />
+
+<span id="ru-level-7-alice-is-forgetful"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 2 сыграны.
+- Доступно 0 подсказок.
+- У Алисы в руке известная всей команде красная 3.
+- Алиса «забывает» её сыграть и вместо этого сбрасывает chop.
+- Какие заметки должен сделать Боб? Что он должен сделать на своём ходу?
+
+<RuL7Official1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса не забыла розыгрыш: она намеренно сбросила при известной играбельной карте.
+- Это [_Scream Discard Chop Move_](../level-7.mdx#the-scream-discard-chop-move-sdcm).
+- Этим сбросом Алиса «кричит» Бобу, что его chop — критическая или играбельная карта.
+- Боб навсегда сдвигает chop на одну позицию и пишет `cm` на слоте 4.
+- На этом ходу Боб **не имеет права сбрасывать**. Он обязан дать подсказку.
+
+<RuL7Official1A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-alice-is-forgetful)
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,44 @@
+---
+title: "Another Scream Discard"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official7Q from "./level-7-another-scream-discard/question.yml";
+import RuL7Official7A from "./level-7-another-scream-discard/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-another-scream-discard" />
+
+<span id="ru-level-7-another-scream-discard"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 2 сыграны.
+- 0 подсказок.
+- У Алисы известная играбельная красная 3.
+- У Боба зелёная 4 на chop; зелёная 3 ещё не сыграна.
+- Алиса хочет сохранить полезную зелёную 4 и сбрасывает вместо розыгрыша красной 3.
+- Допустимый ли это [_Scream Discard_](../level-7.mdx#the-scream-discard-chop-move-sdcm)? Почему?
+
+<RuL7Official7Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- **Нет.** Зелёная 4 лишь _one-away-from-playable_.
+- _Scream Discard_ разрешён только ради **играбельной или критической** карты, но не ради _one-away-from-playable_.
+
+<RuL7Official7A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-another-scream-discard)
+
+</TabItem>
+</Tabs>

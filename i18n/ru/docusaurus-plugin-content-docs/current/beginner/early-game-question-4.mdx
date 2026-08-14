@@ -1,0 +1,37 @@
+---
+title: "Early Game (вопрос 4)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqEarlyGameQuestion4Q from "./early-game-question-4/early-game-question-4.yml";
+import RuBgqEarlyGameQuestion4A from "./early-game-question-4/early-game-answer-4.yml";
+
+<BeginnersGuideProgress id="early-game-question-4" />
+
+<span id="bg-early-game-question-4"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Сейчас Early Game. Остался 1 жетон подсказки.
+- Какое действие должна сделать Алиса?
+
+<RuBgqEarlyGameQuestion4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- На Level 1 допустимых действий здесь нет. Поэтому Алиса обязана сбросить.
+
+<RuBgqEarlyGameQuestion4A />
+
+</TabItem>
+</Tabs>

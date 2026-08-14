@@ -1,0 +1,48 @@
+---
+title: "The Silent Scream"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official4Q from "./level-7-the-silent-scream/question.yml";
+import RuL7Official4A from "./level-7-the-silent-scream/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-the-silent-scream" />
+
+<span id="ru-level-7-the-silent-scream"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Доступно 2 подсказки.
+- На столе жёлтая 1, зелёная 2 и синяя 2.
+- У Алисы известные всей команде играбельная зелёная 3 и мусорная жёлтая 1.
+- У Боба синяя 4 на chop.
+- Алиса сбрасывает известную мусорную жёлтую 1 вместо розыгрыша зелёной 3.
+- Допустим ли этот ход? Если да, как он называется?
+- Как должен реагировать Боб?
+
+<RuL7Official4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса сбросила **известный мусор** вместо известной играбельной карты.
+- Это допустимый ход даже если карта Боба не критическая/играбельная и даже если у команды есть жетоны.
+- Это [_Shout Discard Chop Move_](../level-7.mdx#the-shout-discard-chop-move).
+- Боб навсегда сдвигает chop на одну позицию и пишет `cm` на слоте 4.
+- Боб **не может сбрасывать** на этом ходу и обязан дать подсказку.
+
+<RuL7Official4A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-the-silent-scream)
+
+</TabItem>
+</Tabs>

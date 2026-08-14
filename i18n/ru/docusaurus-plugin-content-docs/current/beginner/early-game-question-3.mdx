@@ -1,0 +1,38 @@
+---
+title: "Early Game (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqEarlyGameQuestion3Q from "./early-game-question-3/early-game-question-3.yml";
+import RuBgqEarlyGameQuestion3A from "./early-game-question-3/early-game-answer-3.yml";
+
+<BeginnersGuideProgress id="early-game-question-3" />
+
+<span id="bg-early-game-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Сейчас Early Game. Остался 1 жетон подсказки.
+- Какое действие должна сделать Алиса?
+
+<RuBgqEarlyGameQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- **Единственный** допустимый ход Алисы — дать Кэти фиолетовую подсказку как Play Clue на фиолетовую 2.
+  - Алиса не может дать Кэти подсказку числом 2, потому что она также затронет красную 2 и нарушит Good Touch Principle.
+
+<RuBgqEarlyGameQuestion3A />
+
+</TabItem>
+</Tabs>

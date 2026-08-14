@@ -1,0 +1,38 @@
+suits:
+  i: pink
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - i: 0
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+    clueGiver: true
+  - cards:
+      - type: rygbi12345
+        orange: 5
+        clue: 5
+      - type: rygbi12345
+        orange: 5
+        clue: 5
+        middleNote: 5
+        below: Pull
+      - type: x
+        above: Red 1
+        below: Pulled
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: y1
+        border: false
+      - type: x
+      - type: g1
+        border: false

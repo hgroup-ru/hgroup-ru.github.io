@@ -1,0 +1,43 @@
+---
+title: "Finesse (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqFinesseQuestion1Q from "./finesse-question-1/finesse-question-1.yml";
+import RuBgqFinesseQuestion1A from "./finesse-question-1/finesse-answer-1.yml";
+
+<BeginnersGuideProgress id="finesse-question-1" />
+
+<span id="bg-finesse-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Перечислите все **5 допустимых подсказок**, которые Алиса может дать прямо сейчас, и назовите их тип.
+- Какая подсказка лучшая?
+
+<RuBgqFinesseQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Алиса может дать Бобу синюю подсказку, затрагивая синюю 1 как Play Clue.
+2. Алиса может дать Бобу подсказку числом 1, затрагивая синюю 1 как Play Clue.
+3. Алиса может дать Кэти жёлтую подсказку, затрагивая жёлтую 2 как Play Clue.
+4. Алиса может дать Кэти синюю подсказку, затрагивая синюю 2 как **Finesse** на синюю 1.
+5. Алиса может дать Кэти подсказку числом 2, затрагивая жёлтую 2 и синюю 2 как **2 Save**.
+
+Лучшая подсказка — **Finesse**, потому что она позволяет прямо сейчас сыграть две карты. Play Clue жёлтой 2 команда сможет дать позже.
+
+<RuBgqFinesseQuestion1A />
+
+</TabItem>
+</Tabs>

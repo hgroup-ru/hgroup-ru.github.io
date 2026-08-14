@@ -1,4 +1,5 @@
 import Link from "@docusaurus/Link";
+import Translate from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
@@ -14,7 +15,7 @@ function HomepageHeader() {
         <img src={useBaseUrl("img/logo.png")} width="200em" />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">
-          Strategies for{" "}
+          <Translate id="homepage.hero.prefix">Strategies for</Translate>{" "}
           <a
             href="https://boardgamegeek.com/boardgame/98778/hanabi"
             id="landing-page-hanabi-link"
@@ -23,14 +24,16 @@ function HomepageHeader() {
           >
             Hanabi
           </a>
-          , a cooperative card game of logic and reasoning.
+          <Translate id="homepage.hero.suffix">
+            {", a cooperative card game of logic and reasoning."}
+          </Translate>
         </p>
         <div className={styles["buttons"]}>
           <Link
             className={`button button--outline button--secondary button--lg ${styles["getStarted"]}`}
             to={useBaseUrl("about")}
           >
-            Learn More
+            <Translate id="homepage.learnMore">Learn More</Translate>
           </Link>
         </div>
       </div>

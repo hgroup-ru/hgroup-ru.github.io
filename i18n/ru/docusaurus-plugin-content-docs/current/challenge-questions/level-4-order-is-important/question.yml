@@ -1,0 +1,31 @@
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 5
+  - p: 0
+bigText:
+  text: Early Game
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: 1
+        clue: 1
+      - type: 1
+        clue: 1
+        below: Plays
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 2
+      - type: 2

@@ -1,9 +1,10 @@
+import Translate from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
 
 interface FeatureItem {
   num: number;
-  title: string;
+  title: React.JSX.Element;
   iconName: string;
   description: React.JSX.Element;
   link: string;
@@ -13,23 +14,45 @@ interface FeatureItem {
 const FeatureList: FeatureItem[] = [
   {
     num: 1,
-    title: "Beginner's Guide",
+    title: (
+      <Translate id="homepage.feature.beginner.title">
+        Beginner&apos;s Guide
+      </Translate>
+    ),
     iconName: "baby",
-    description: <>Start here to learn the fundamentals.</>,
+    description: (
+      <Translate id="homepage.feature.beginner.description">
+        Start here to learn the fundamentals.
+      </Translate>
+    ),
     link: "beginner",
   },
   {
     num: 2,
-    title: "Learning Path",
+    title: (
+      <Translate id="homepage.feature.learning.title">Learning Path</Translate>
+    ),
     iconName: "school",
-    description: <>Learn our strategies gradually, level by level.</>,
+    description: (
+      <Translate id="homepage.feature.learning.description">
+        Learn our strategies gradually, level by level.
+      </Translate>
+    ),
     link: "learning-path",
   },
   {
     num: 3,
-    title: "Reference Document",
+    title: (
+      <Translate id="homepage.feature.reference.title">
+        Reference Document
+      </Translate>
+    ),
     iconName: "list-ul",
-    description: <>Look up something specific.</>,
+    description: (
+      <Translate id="homepage.feature.reference.description">
+        Look up something specific.
+      </Translate>
+    ),
     link: "reference",
   },
 ];

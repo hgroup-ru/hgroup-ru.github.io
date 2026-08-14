@@ -1,0 +1,25 @@
+stacks:
+  - r: 3
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 4
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: p
+      - type: x
+  - text: "From Good Touch Principle:"
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: p
+        middleNote: p5
+        below:
+          text: Play
+          color: cyan
+      - type: x

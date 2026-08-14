@@ -1,0 +1,274 @@
+---
+title: "Уровень 15 — Double Bluffs"
+---
+
+import RuL15DiagramDoubleBluff from "./level-15/double-bluff.yml";
+import RuL15DiagramHardDoubleBluff from "./level-15/hard-double-bluff.yml";
+import RuL15DiagramPestilentDoubleBluff from "./level-15/pestilent-double-bluff.yml";
+import RuL15LocalTruthVsOccam from "./level-15/local-truth-vs-occam.yml";
+
+<span id="level-15-top"></span>
+
+<span id="l15-special-moves"></span>
+
+## Специальные ходы {/* #special-moves */}
+
+<span id="l15-the-double-bluff"></span>
+
+### Double Bluff {/* #the-double-bluff */}
+
+- Иногда и у Боба, и у Кэти есть играбельные карты в _Finesse Position_. В такой ситуации иногда можно сделать _Double Finesse_ и заставить обоих немедленно сделать blind-play. Но это возможно только если обе карты связаны друг с другом и доступна связующая карта, которой можно дать _Play Clue_.
+- Как иногда можно сделать _Bluff_, когда обычный _Finesse_ недоступен, так иногда можно сделать и _Double Bluff_, когда недоступен _Double Finesse_. Для этого дают _Play Clue_ по немусорной карте, которая **не является допустимой целью обычного _Bluff_**.
+- Например, в игре на четверых:
+  - На столе сыграна красная 1.
+  - Алиса даёт Дональду красную подсказку, затрагивая красную 4 как _Play Clue_.
+  - Поскольку красная 4 должна быть играбельна прямо сейчас, Боб решает, что у него красная 2 и красная 3. Боб вслепую играет карту из _Finesse Position_, но там на самом деле синяя 1.
+  - Кэти видит, что Боб сделал blind-play из-за красной подсказки. Но красная 4 — немусорная карта и не является допустимой целью обычного _Bluff_. Значит, Алиса должна была задумать _Double Bluff_, а не одиночный _Bluff_. Кэти вслепую играет свою _Finesse Position_; там жёлтая 1.
+  - Сначала Дональд считал красную карту в своей руке красной 2 как обычную _Play Clue_.
+  - После blind-play Боба Дональд решил, что его карта — красная 3 как цель _Bluff_.
+  - После blind-play Кэти Дональд понимает: его карта не была допустимой целью _Bluff_ для синей 1 Боба, значит, у него красная 4 как результат _Double Bluff_.
+    - Игроки ниже Level 16 дополнительно пометили бы эту карту как возможную красную 5 наряду с красной 4.
+
+<RuL15DiagramDoubleBluff />
+
+- Как и другие _Bluffs_, _Double Bluff_ можно делать только из _Bluff Seat_, и он должен быть продемонстрирован немедленно. Иными словами, оба blind-play обязаны произойти на **двух ходах сразу после подсказки**.
+- _Double Bluff_ допустим даже если карта, которую Боб сыграл вслепую, соединяется с картой, которую подсказала Алиса.
+  - Например, предыдущая ситуация работает точно так же, если заменить синюю 1 Боба на красную 2.
+  - В таком случае Кэти до собственного blind-play не будет знать, является ли подсказка _Double Bluff_ или _Double Finesse_.
+- Ниже перечислены несколько более специальных видов _Double Bluff_.
+- Для игроков максимального уровня: между _Double Bluffs_ и _4 Charms_ существует [специальное взаимодействие](/extras/charms#interaction-between-the-4-charm-and-double-bluffs-where-cathy-has-a-one-away-from-playable-card).
+
+<span id="l15-the-triple-bluff-illegal"></span>
+
+### Triple Bluff (запрещён) {/* #the-triple-bluff-illegal */}
+
+- Мы договариваемся, что все подсказки в стиле _Bluff_ должны полностью разрешаться после **двух blind-play**.
+- Поэтому в используемых конвенциях **_Triple Bluff_ не существует**.
+
+<span id="l15-the-hard-double-bluff"></span>
+
+### Hard Double Bluff {/* #the-hard-double-bluff */}
+
+- По аналогии с [_Hard 3 Bluff_](./level-13.mdx#the-hard-3-bluff) можно сделать и _Hard Double Bluff_.
+- Например, в игре на четверых:
+  - На столе ничего не сыграно.
+  - Алиса даёт Дональду подсказку числом 4, затрагивая красную 4 как _Play Clue_.
+  - Боб вслепую играет красную 1 из _Finesse Position_.
+  - Кэти вслепую играет красную 2 из _Finesse Position_.
+  - Хотя красная 1 и красная 2 того же цвета, что красная 4, команда понимает, что **никому не обещана красная 3**: сразу после подсказки произошло два blind-play.
+  - Дональд знает, что его подсказанная карта может быть любой 4.
+
+<RuL15DiagramHardDoubleBluff />
+
+<span id="l15-the-pestilent-double-bluff-pdb"></span>
+
+### Pestilent Double Bluff (PDB) {/* #the-pestilent-double-bluff-pdb */}
+
+- Обычно _Double Bluff_ можно начать только по карте, которая не является допустимой целью обычного _Bluff_. Но это правило имеет исключение.
+- Иногда Алиса может дать подсказку на карту, которая сама по себе является **допустимой целью для _Bluff_**. Боб сделает blind-play, а затем Кэти тоже будет вынуждена сыграть вслепую. Второй blind-play нужен, чтобы снова синхронизировать представление команды о точном значении подсказанной карты.
+- Такой ход называется _Pestilent Double Bluff_, чтобы отличать его от обычного _Double Bluff_ по недопустимой для одиночного _Bluff_ карте.
+- Например, в игре на четверых:
+  - Первый ход партии, на столе ничего не сыграно.
+  - Алиса даёт Дональду подсказку числом 2, затрагивая красную 2 как _Play Clue_.
+  - Боб вслепую играет зелёную 1 из _Finesse Position_.
+  - Кэти видит, что сейчас Дональд решит, будто у него зелёная 2, потому что она напрямую соединяется с зелёной 1, которую Боб сыграл вслепую. Это плохо: настоящая карта Дональда — красная 2.
+  - Кэти понимает, что информация внутри команды всё ещё рассинхронизирована. Значит, Алиса должна ожидать ещё один blind-play Кэти как часть _Pestilent Double Bluff_.
+  - Кэти вслепую играет свою _Finesse Position_. Там синяя 1, и её удаётся успешно разыграть.
+  - Изначально Дональд считал свою 2 либо зелёной 2 — как _Finesse_ на Боба, — либо синей 2 — как _Finesse_ на Кэти.
+  - После blind-play Боба Дональд решил, что его 2 — зелёная 2 как _Finesse_ на Боба.
+  - После blind-play Кэти Дональд понимает, что произошло что-то необычное. Если бы его 2 действительно была зелёной 2, Кэти не стала бы ничего играть вслепую; значит, зелёная 2 исключена.
+  - Синей 2 она тоже быть не может: иначе Боб не должен был ничего играть вслепую и ожидал бы blind-play Кэти.
+  - Поэтому Дональд помечает свою 2 как **не зелёную и не синюю 2**.
+
+<RuL15DiagramPestilentDoubleBluff />
+
+- Дополнительные примеры _Pestilent Double Bluff_ приведены [здесь](/examples/pestilent-double-bluff).
+
+<span id="l15-general-principles"></span>
+
+## Общие принципы {/* #general-principles */}
+
+<span id="l15-deferring-a-bluff"></span>
+
+### Откладывание Bluff {/* #deferring-a-bluff */}
+
+- По _Urgency Principle_ игроку разрешено отложить _Finesse_ или _Bluff_, чтобы сначала сделать собственный _Finesse_ или _Bluff_. И действительно, если игрок видит очень хорошую подсказку, иногда лучше сначала дать её, а blind-play выполнить позже. Но у этого есть пределы.
+- Если игрок **точно знает**, что он _Finessed_, а не _Bluffed_, отложить _Finesse_ ради другого _Finesse_ или _Bluff_ — отличная идея. Почти единственный минус — очевидная потеря темпа. Вся команда понимает, что происходит.
+- Если игрок **может быть _Bluffed_**, откладывать _Bluff_ крайне опасно: это вызывает рассинхронизацию информации по всей команде.
+- Отложить _Bluff_, чтобы сделать _Finesse_, иногда бывает достаточно понятно из контекста. Но делать это нужно редко.
+  - Учтите, что такое откладывание может проиграть партию, если исходный дающий подсказку на самом деле выполняет _Double Bluff_. Поэтому риск существует.
+- Отложить _Bluff_, чтобы сделать **другой _Bluff_**, намного хуже. Поскольку первый _Bluff_ не разрешился немедленно, состояние партии как бы «расщепляется» на две допустимые версии для получателей двух подсказок — например, для игрока, которому дали подсказку первого _Bluff_, и игрока, которому дали подсказку отложенного _Bluff_. Теперь оба игрока вынуждены держать в голове две целые гипотетические версии партии и обновлять каждую новой информацией. Из-за этого становится чрезвычайно трудно планировать наперёд и принимать правильные решения на своих ходах.
+- Поэтому откладывать _Bluff_ ради другого _Bluff_ **почти никогда не следует**.
+- См. также следующий раздел про _Deferring a Double Bluff_.
+
+<span id="l15-deferring-a-double-bluff"></span>
+
+### Откладывание Double Bluff {/* #deferring-a-double-bluff */}
+
+- Сначала см. [_Откладывание Bluff_](#deferring-a-bluff).
+- Если Боб подозревает, что Алиса делает _Double Bluff_, Боб **никогда не должен откладывать blind-play**. Для _Double Bluff_ критически важно разрешиться немедленно.
+- Аналогично: если Боб уже сделал blind-play, а Кэти не может исключить _Double Bluff_, Кэти **никогда не должна откладывать**. Иначе возникнет невосстановимая рассинхронизация информации: её будущий blind-play уже не будет воспринят как часть исходного _Double Bluff_.
+
+<span id="l15-a-table-for-deferring-bluffs"></span>
+
+### Таблица откладывания Bluffs {/* #a-table-for-deferring-bluffs */}
+
+<table className="l15-deferring-table">
+  <thead>
+    <tr>
+      <th>Алиса откладывает</th>
+      <th>чтобы сделать</th>
+      <th>Можно?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Finesse</td>
+      <td>Finesse</td>
+      <td>Да!</td>
+    </tr>
+    <tr>
+      <td>Finesse</td>
+      <td>Bluff</td>
+      <td>Да!</td>
+    </tr>
+    <tr>
+      <td>Bluff</td>
+      <td>Finesse</td>
+      <td>Иногда; использовать редко</td>
+    </tr>
+    <tr>
+      <td>Bluff</td>
+      <td>Bluff</td>
+      <td>Почти никогда</td>
+    </tr>
+    <tr>
+      <td>Double Bluff, первый blind-player</td>
+      <td>Finesse</td>
+      <td>
+        Нет, <strong>никогда</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Double Bluff, первый blind-player</td>
+      <td>Bluff</td>
+      <td>
+        Нет, <strong>никогда</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Double Bluff, второй blind-player</td>
+      <td>Finesse</td>
+      <td>
+        Нет, <strong>никогда</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Double Bluff, второй blind-player</td>
+      <td>Bluff</td>
+      <td>
+        Нет, <strong>никогда</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<span id="l15-interaction-between-bobs-truth-principle-and-occams-razor"></span>
+
+### Взаимодействие Bob's Truth Principle и бритвы Оккама {/* #interaction-between-bobs-truth-principle-and-occams-razor */}
+
+- Сначала см. [_Bob's Truth Principle_](./level-11.mdx#bobs-truth-principle-part-1) и [_Occam's Razor_](./level-11.mdx#clue-interpretation--occams-razor).
+- Обычно Боб следует _Occam's Razor_: предполагает интерпретацию с наименьшим количеством blind-play и _Prompts_.
+- Но иногда Боб видит, что подсказка может быть либо _Double Bluff_, либо _Finesse_, причём _Finesse_ требует **больше** blind-play, чем _Bluff_.
+- В этой ситуации, несмотря на большее число blind-play, Боб всё равно должен выбрать интерпретацию _Finesse_ из-за _Bob's Truth Principle_.
+- Например, в игре на троих:
+  - На первом ходу Алиса даёт подсказку числом 4, затрагивая карту Боба в слоте 1 как _Play Clue_.
+  - Боб видит, что в _Finesse Position_ Кэти находится играбельная красная 1.
+  - Значит, Боб понимает, что подсказка Алисы может быть:
+    - _Reverse Finesse_ на красную 4: Кэти вслепую играет красную 1, затем Боб вслепую играет красную 2 и красную 3;
+    - _Double Bluff_: Боб вслепую играет какую-то играбельную карту, а затем Кэти вслепую играет красную 1.
+  - Боб знает, что здесь применяется _Bob's Truth Principle_, поэтому обязан выбрать _Reverse Finesse_, а не _Double Bluff_.
+
+<RuL15LocalTruthVsOccam />
+
+_Локальная иллюстрация по тексту примера; не официальный YML H-Group._
+
+---
+
+## Тренировочные вопросы {/* #l15-training */}
+
+В официальном источнике отдельного набора Official Challenge Questions для Level 15 нет; ниже — наши Training Questions по материалу этого уровня.
+
+<details className="ru-training">
+
+<summary>1. Чем Double Bluff отличается от обычного Bluff?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+После одной подсказки должны немедленно произойти два blind-play на двух следующих ходах; обычно исходная карта не является допустимой целью одиночного Bluff.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>2. Существует ли Triple Bluff?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Нет. По конвенциям все подсказки в стиле Bluff должны полностью разрешаться максимум после двух blind-play.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>3. Что делает Pestilent Double Bluff необычным?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Он может начинаться по допустимой цели обычного Bluff, а второй blind-play нужен, чтобы устранить оставшуюся рассинхронизацию информации о подсказанной карте.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>4. Можно ли отложить Finesse ради собственного Bluff?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Да, если игрок точно Finessed: основной минус — потеря темпа, а команда остаётся синхронизирована.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>5. Можно ли отложить возможный Bluff ради другого Bluff?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Почти никогда. Это раскалывает восприятие партии на несколько гипотетических состояний и создаёт тяжёлую рассинхронизацию информации.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  6. Можно ли откладывать blind-play при возможном Double Bluff?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Нет. И первый, и второй blind-player не должны откладывать, если Double Bluff нельзя исключить; иначе связь будущего blind-play с исходной подсказкой будет потеряна.
+
+</div>
+
+</details>

@@ -1,9 +1,10 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 
+// cspell:ignore BSOZO
 const config: Config = {
   title: "H-Group Conventions",
-  url: "https://hanabi.github.io",
+  url: "https://hgroup-ru.github.io",
   baseUrl: "/",
   favicon: "img/favicon.ico",
 
@@ -18,7 +19,14 @@ const config: Config = {
 
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "ru"],
+    localeConfigs: {
+      en: { label: "English", htmlLang: "en" },
+      ru: {
+        label: "\u{420}\u{443}\u{441}\u{441}\u{43A}\u{438}\u{439}",
+        htmlLang: "ru-RU",
+      },
+    },
   },
 
   future: {
@@ -29,8 +37,8 @@ const config: Config = {
   onBrokenAnchors: "throw",
   onDuplicateRoutes: "throw",
   tagline: undefined,
-  organizationName: "hanabi",
-  projectName: "hanabi.github.io",
+  organizationName: "hgroup-ru",
+  projectName: "hgroup-ru.github.io",
 
   themeConfig: {
     docs: {
@@ -71,7 +79,7 @@ const config: Config = {
           position: "left",
         },
         {
-          href: "https://github.com/hanabi/hanabi.github.io/",
+          href: "https://github.com/hgroup-ru/hgroup-ru.github.io/",
           className: "header-github-link",
           position: "right",
         },
@@ -88,10 +96,11 @@ const config: Config = {
     },
 
     algolia: {
-      appId: "24AGYEOQ7J", // cspell:disable-line
-      apiKey: "7e647fd7de142915da9f459b345dfca4",
-      indexName: "hanabi-conventions",
-      contextualSearch: false, // Enabled by default; only useful for versioned sites.
+      appId: "Z7BSOZO4QZ",
+      apiKey: "099b3d3832ac64be8ec4c2bf12cfcb62",
+      indexName: "hgroup-ru-docs",
+      contextualSearch: false,
+      searchPagePath: "search",
     },
   } satisfies Preset.ThemeConfig,
 
@@ -105,7 +114,8 @@ const config: Config = {
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root.
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/hanabi/hanabi.github.io/edit/main/",
+          editUrl:
+            "https://github.com/hgroup-ru/hgroup-ru.github.io/edit/main/",
         },
         theme: {
           customCss: "./src/css/custom.css",

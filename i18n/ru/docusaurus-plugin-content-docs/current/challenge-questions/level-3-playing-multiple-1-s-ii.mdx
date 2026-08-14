@@ -1,0 +1,65 @@
+---
+title: "Игра нескольких 1, II"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL3Official2Q1 from "./level-3-playing-multiple-1-s-ii/question-part-1.yml";
+import RuL3Official2Q2 from "./level-3-playing-multiple-1-s-ii/question-part-2.yml";
+import RuL3Official2Q3 from "./level-3-playing-multiple-1-s-ii/question-part-3.yml";
+import RuL3Official2A from "./level-3-playing-multiple-1-s-ii/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-playing-multiple-1-s-ii" />
+
+<span id="ru-level-3-playing-multiple-1-s-ii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Идёт первый ход партии.
+- Алиса даёт Бобу подсказку числом 1.
+- Эти 1 нужно разыгрывать справа налево.
+
+<RuL3Official2Q1 />
+
+- Боб играет крайнюю правую 1. Она оказывается красной 1 и успешно разыгрывается; Боб добирает новую карту.
+- Кэти делает не связанное с этим действие.
+- Алиса даёт Бобу красную подсказку, затрагивая его chop. Это должен быть _Play Clue_ на красную 2.
+
+<RuL3Official2Q2 />
+
+- Боб играет 1 в слоте 5. Она оказывается синей 1 и успешно разыгрывается; Боб добирает новую карту.
+- Кэти снова делает не связанное с этим действие.
+- Алиса снова даёт Бобу подсказку числом 1, затрагивая две новые карты и повторно затрагивая 1 из его стартовой руки.
+- Какую карту Боб должен сыграть следующей?
+
+<RuL3Official2Q3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Иногда fresh 1 получают подсказку в той же руке, где ещё остались несыгранные 1 из стартовой руки.
+- Когда это происходит, старые заметки о порядке розыгрыша 1 стираются, а порядок всех 1 рассчитывается заново.
+- При пересчёте приоритет остаётся тем же:
+  - Chop;
+  - Fresh 1 — слева направо;
+  - 1 из стартовой руки — справа налево.
+- Следовательно:
+  - Боб стирает прежние заметки порядка на своих 1.
+  - Слот 2 находится на chop, поэтому Боб пишет на нём `1st`.
+  - Карта в слоте 1 — fresh 1, поэтому Боб пишет `2nd`.
+  - Карты в слотах 4 и 5 — 1 из стартовой руки. Боб пишет `3rd` на слоте 5 и `4th` на слоте 4.
+  - Кроме того, Боб знает, что у него в руке четыре 1, а сыграть нужно только три. Следовательно, по _Good Touch Principle_ 1 в слоте 4 никогда не будет сыграна, и Боб помечает её как известный мусор.
+  - Боб должен сыграть карту в слоте 2. Она оказывается жёлтой 1 и её удаётся успешно разыграть.
+
+<RuL3Official2A />
+
+</TabItem>
+</Tabs>

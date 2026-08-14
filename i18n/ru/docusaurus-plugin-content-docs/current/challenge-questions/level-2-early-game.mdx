@@ -1,0 +1,43 @@
+---
+title: "Early Game"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial1Q from "./level-2-early-game/question.yml";
+import RuOfficial1A from "./level-2-early-game/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-early-game" />
+
+<span id="ru-level-2-early-game"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Сейчас идёт [_Early Game_](../beginner/early-game.mdx). Остался 1 жетон подсказки.
+- Перечислите все допустимые действия Алисы. Какое из допустимых действий является лучшим?
+
+<RuOfficial1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- У Алисы есть два допустимых действия:
+  - Во-первых, Алиса может сделать [_5 Stall_](../level-2.mdx#the-5-stall-cluing-off-chop-5s) Дональду, дав подсказку числом 5 и затронув фиолетовую 5.
+  - Во-вторых, Алиса может сбросить карту.
+- Если Алиса сделает _5 Stall_, Бобу придётся сбросить карту, поскольку жетонов подсказок больше не останется.
+- Если Боб сбросит карту, он сбросит зелёную 1, а это считается отличным сбросом: зелёная 1 уже сыграна и потому является мусором.
+- На chop Алисы может находиться более ценная карта, чем зелёная 1, например жёлтая 3 или синяя 3.
+- Поэтому, хотя Алисе разрешено и сделать _5 Stall_, и сбросить карту, лучший ход — _5 Stall_, поскольку её chop ценнее chop Боба.
+
+<RuOfficial1A />
+
+</TabItem>
+</Tabs>

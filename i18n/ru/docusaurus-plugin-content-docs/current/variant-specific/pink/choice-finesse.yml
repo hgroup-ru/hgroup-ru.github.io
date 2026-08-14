@@ -1,0 +1,39 @@
+suits:
+  i: pink
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - i: 0
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+    clueGiver: true
+  - cards:
+      - type: x
+        above: Pink 1
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: i12345
+        clue: 4
+        orange: 4
+        retouched: true
+      - type: i12345
+        clue: 4
+        orange: 4
+        retouched: true
+        middleNote: i2
+        above: Pink 2
+        below: Play
+      - type: x

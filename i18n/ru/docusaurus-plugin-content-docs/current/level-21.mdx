@@ -1,0 +1,278 @@
+---
+title: "Уровень 21 — Ignition"
+---
+
+import RuL21DiagramChopMoveIgnitionOneCard from "./level-21/chop-move-ignition-one-card.yml";
+import RuL21DiagramChopMoveIgnitionInteraction from "./level-21/chop-move-ignition-interaction.yml";
+import RuL21DiagramChopMoveIgnitionTwoCards from "./level-21/chop-move-ignition-two-cards.yml";
+
+<span id="level-21-top"></span>
+
+<span id="l21-conventions"></span>
+
+## Конвенции {/* #conventions */}
+
+<span id="l21-ignition"></span>
+
+### Ignition {/* #ignition */}
+
+- _Ignition_ — это тип хода, который заставляет игрока сыграть вслепую карту из своей _Finesse Position_.
+- _Ignition_ отличается от _Finesse_ и _Bluff_, потому что blind-play при _Ignition_:
+  - не связан с данной подсказкой;
+    - то есть он не «соединяется» с подсказкой: в этом _Ignition_ не похож на _Finesse_, но похож на _Bluff_;
+  - не связан с _играбельностью_ подсказанной карты;
+    - то есть получателю подсказки ничего не нужно «доказывать»: в этом _Ignition_ не похож ни на _Finesse_, ни на _Bluff_.
+
+<span id="l21-double-ignition-di"></span>
+
+### Double Ignition (DI) {/* #double-ignition-di */}
+
+- Несколько видов «бесполезных» подсказок запускают _Double Ignition_. Эти виды перечислены ниже.
+- Когда запускается _Double Ignition_, два игрока команды должны сыграть вслепую свою _Finesse Position_ как любую играбельную карту.
+- Как и в случае _Ambiguous Finesse_, возможен _Ambiguous Double Ignition_: у трёх или более игроков на _Finesse Position_ находится играбельная карта. В такой ситуации строго определено, кто должен делать blind-play:
+  - первый _Ignition_ **всегда должен приходиться на Боба**, если только у Боба уже нет известной играбельной карты. Если есть, первый _Ignition_ приходится на первого по порядку игрока, у которого ещё нет известной играбельной карты;
+  - второй _Ignition_ **всегда должен приходиться на последнего игрока с играбельной картой**.
+
+<span id="l21-special-moves"></span>
+
+## Специальные ходы {/* #special-moves */}
+
+<span id="l21-the-replay-double-ignition-rdi"></span>
+
+### Replay Double Ignition (RDI) {/* #the-replay-double-ignition-rdi */}
+
+- Если игрок повторно даёт подсказку по играбельной карте, точное значение которой уже известно всей команде, такая подсказка «бесполезна».
+- Обычно это происходит потому, что игрок находится в [Stalling Situation](./level-9.mdx#allowable-stall-clues-stall-table) и не может сбросить карту. Чаще всего такое бывает в [_End-Game_](./level-8.mdx#burning-end-game-stalling).
+- Если игрок не находится в Stalling Situation, он должен пытаться передать более глубокое сообщение — _Double Ignition_. Этот ход называется _Replay Double Ignition_, потому что игрок повторно даёт _Play Clue_.
+- _Replay Double Ignition_ не должен затрагивать ни одной новой карты.
+- _Replay Double Ignition_ можно делать на протяжении всей партии. В отличие от него _Trash Double Ignition_ допустим только ближе к концу партии.
+- См. также официальный раздел [Replay Ejection](/extras/ejections#the-replay-ejection).
+
+<span id="l21-the-trash-double-ignition-tdi"></span>
+
+### Trash Double Ignition (TDI) {/* #the-trash-double-ignition-tdi */}
+
+- Если игрок даёт подсказку по одной или нескольким новым мусорным картам, **и эти карты уже известны как мусор**, обычно есть две возможные интерпретации.
+
+<span id="l21-1-a-trash-chop-move"></span>
+
+#### 1) _Trash Chop Move_ {/* #1-a-trash-chop-move */}
+
+- Иногда игроки делают _Trash Chop Move_, давая подсказку по известному мусору в руке другого игрока вне chop.
+- Однако игроки могут понять, что _Trash Chop Move_ невозможен, если:
+  - они не являются получателем подсказки и видят, что карта, которая должна стать _Chop Moved_, плохая;
+  - они являются получателем подсказки и могут определить, что больше нет карт, которые можно пометить как _Chop Moved_. То есть все карты уже учтены либо всем оставшимся картам можно дать прямую _Play Clue_ или прямую _Save Clue_.
+
+<span id="l21-2-a-trash-push-or-a-trash-push-finesse"></span>
+
+#### 2) _Trash Push_ (или _Trash Push Finesse_) {/* #2-a-trash-push-or-a-trash-push-finesse */}
+
+- Иногда игроки делают _Trash Push_ (или _Trash Push Finesse_), давая подсказку по известному мусору в руке другого игрока на chop.
+- Однако игроки могут понять, что _Trash Push_ невозможен, если:
+  - они не являются получателем подсказки и видят, что «выталкиваемая» карта плохая;
+  - они являются получателем подсказки и могут определить, что больше нет карт, для которых можно сделать _Trash Push_.
+
+<span id="l21-otherwise-a-trash-double-ignition"></span>
+
+#### В остальных случаях — Trash Double Ignition {/* #otherwise-a-trash-double-ignition */}
+
+- Если подсказку по известному мусору нельзя объяснить ни одним из этих двух способов, она означает _Trash Double Ignition_.
+- Игроки всегда должны предпочитать интерпретацию _Trash Double Ignition_ интерпретации _Bad Trash Chop Move Ejection_, потому что последняя встречается очень редко. _Bad Trash Chop Move Ejection_ — продвинутый ход, который рассматривается позже.
+- См. также официальный раздел [Trash Ejection](/extras/ejections#the-trash-ejection).
+
+<span id="l21-the-poke-double-ignition-pdi"></span>
+
+### Poke Double Ignition (PDI) {/* #the-poke-double-ignition-pdi */}
+
+- Если игрок повторно даёт подсказку по карте, которая уже известна всей команде как мусор, такая подсказка «бесполезна».
+- Обычно это происходит потому, что игрок находится в [Stalling Situation](./level-9.mdx#allowable-stall-clues-stall-table) и не может сбросить карту.
+- Если игрок не находится в Stalling Situation, он должен пытаться передать более глубокое сообщение — _Double Ignition_. Такой ход называется _Poke Double Ignition_: повторно затрагивая мусорную карту, вы как будто «тыкаете» игрока.
+- _Poke Double Ignition_ не должен затрагивать ни одной новой карты.
+- _Poke Double Ignition_ можно делать на протяжении всей партии. В отличие от него _Trash Double Ignition_ допустим только ближе к концу партии.
+- См. также официальный раздел [Poke Ejection](/extras/ejections#the-poke-ejection).
+
+<span id="l21-the-chop-move-ignition-cmi-with-1-card-chop-moved"></span>
+
+### Chop Move Ignition (CMI) — одна Chop Moved-карта {/* #the-chop-move-ignition-cmi-with-1-card-chop-moved */}
+
+- Если на chop находится играбельная карта, естественный ход — дать по ней _Chop-Focus Play Clue_. Поэтому, если вместо этого игрок делает по этой играбельной карте _Chop Move_, это выглядит очень странно. Если для такого решения нет веской причины, дающий подсказку пытается сообщить что-то дополнительное.
+- В этой ситуации он намеревается вызвать _Ignition_ у следующего игрока. Поскольку _Chop Move_ приводит к blind-play, игрок с _Chop Moved_-картой поймёт, что эта карта играбельна.
+- Например, в игре на четверых:
+  - идёт первый ход, на столе ещё ничего не сыграно;
+  - рука Кэти от самой новой карты к самой старой: `синяя 4, синяя 4, синяя 5, красная 1`;
+  - Алиса даёт Кэти подсказку числом 5, затрагивая синюю 5 в слоте 3;
+  - теперь ход Боба. Боб видит, что у Алисы были другие доступные _Play Clues_, поэтому Кэти должна трактовать эту подсказку как _Early 5's Chop Move_;
+  - Боб также понимает, что помечать играбельную красную 1 как _Chop Moved_ бессмысленно: Алиса могла просто дать красную _Chop-Focus Play Clue_ по красной 1;
+  - значит, это должен быть _Chop Move Ignition_. Боб вслепую разыгрывает карту из своей _Finesse Position_; это синяя 1, и розыгрыш проходит успешно;
+  - сначала Кэти считала подсказку Алисы _Early 5's Chop Move_. Но тогда Боб не должен был ничего играть вслепую. Раз он разыграл свою _Finesse Position_, это _Chop Move Ignition_. Кэти вслепую разыгрывает карту из слота 4 — карту справа от подсказанной 5.
+
+<RuL21DiagramChopMoveIgnitionOneCard />
+
+- Иногда действительно полезно сделать _Chop Move_ по играбельной карте. Ход считается _Chop Move Ignition_ только тогда, когда для самого _Chop Move_ нет другой хорошей причины. В частности, игрок может хотеть:
+  - не нарушить _Good Touch Principle_;
+  - спасти _Delayed Playable_, за которой находится критическая карта;
+  - получить blind-play через _Elimination_, когда виден дубликат.
+- В целом подсказки, связанные с _Chop Move_, перестают применяться, как только больше нет карт, которые имеет смысл помечать как _Chop Moved_. Здесь имеются в виду _one-away-from-playable_-карты, которым нельзя дать прямую _Play Clue_ или _Save Clue_. Поэтому, если таких карт нет, предполагаемый _Chop Move Ignition_ превращается во что-то другое — например, в _Play Clue_ или один из вариантов _Double Ignition_.
+
+<span id="l21-interaction-between-the-chop-move-ignition-and-5-rank-clues"></span>
+
+#### Взаимодействие Chop Move Ignition с подсказками числом 5 {/* #interaction-between-the-chop-move-ignition-and-5-rank-clues */}
+
+- Обычно подсказка числом 5 по 5, которая находится в одной карте от chop, может означать одно из трёх:
+  - _5 Stall_;
+  - _5's Chop Move_;
+  - _Play Clue_ по самой 5.
+- Если _5 Stall_ невозможен, то есть это не Stalling Situation, _5's Chop Move_ по играбельной карте обычно трактовался бы как _Play Clue_ по 5.
+- Однако на Level 21 такие _Play Clue_-интерпретации **не применяются**. Иными словами, любая подсказка числом 5, фокусирующая 5 ровно в одной карте от chop, всегда считается _5's Chop Move_. Это называется _Chop Move Ignition Interaction_.
+- _Chop Move Ignition Interaction_ может сбивать с толку, потому что _Chop Move Ignition_ внешне похож на обычный _Finesse_. Нужно помнить: blind-play относится к карте, которую пометили как _Chop Moved_, а не непосредственно к 5.
+- Например, в игре на троих:
+  - идёт _Mid-Game_;
+  - на столе сыграна красная 3;
+  - рука Кэти от самой новой карты к самой старой: `синяя 4, зелёная 3, синяя 4, синяя 5, синяя 1`;
+  - Алиса даёт Кэти подсказку числом 5, затрагивая синюю 5 в слоте 4;
+  - Боб ожидал, что Алиса даст Кэти подсказку числом 1. Значит, это _Chop Move Ignition_. Боб вслепую разыгрывает свою _Finesse Position_; это красная 4, и розыгрыш проходит успешно;
+  - Кэти сначала считала подсказку Алисы _5's Chop Move_. Но тогда Боб не должен был ничего играть вслепую;
+  - кроме того, Кэти знает, что _Play Clues_ по 5 в одной карте от chop с помощью подсказки по числу здесь не применяются. Поэтому blind-play Боба указывает на _Chop Move Ignition_;
+  - следовательно, 5 Кэти может быть любого цвета, включая красный. Кэти вслепую разыгрывает карту из слота 5.
+
+<RuL21DiagramChopMoveIgnitionInteraction />
+
+- Важно: в _End-Game_ это взаимодействие **не применяется**.
+- Иногда игроки всё же дают подсказку числом 5 по реально играбельной 5, которая находится ровно в одной карте от chop. Независимо от того, играбельна эта 5 или нет, следующий игрок должен реагировать так, будто она неиграбельна, потому что все _Play Clue_-интерпретации здесь заранее исключены.
+
+<span id="l21-the-chop-move-ignition-cmi-with-2-cards-chop-moved"></span>
+
+### Chop Move Ignition (CMI) — две или более Chop Moved-карты {/* #the-chop-move-ignition-cmi-with-2-cards-chop-moved */}
+
+- Сначала см. предыдущий раздел о [_Chop Move Ignition_ с одной _Chop Moved_-картой](#the-chop-move-ignition-cmi-with-1-card-chop-moved).
+- Можно сделать _Chop Move Ignition_, при котором _Chop Moved_ становятся две или более карты, но такая версия сложнее.
+- Такой _Chop Move Ignition_ допустим только при одновременном выполнении двух условий:
+  1. самая левая _Chop Moved_-карта играбельна;
+  2. самая правая _Chop Moved_-карта является мусором либо дубликатом карты без подсказки в той же руке.
+- Например, в игре на четверых:
+  - все 1 уже сыграны на стол;
+  - рука Кэти от самой новой карты к самой старой: `синяя 4, синяя 1, красная 2, синяя 4`;
+  - Алиса даёт Кэти подсказку числом 1, затрагивая синюю 1 в слоте 2;
+  - теперь ход Боба. Боб видит, что Кэти должна трактовать подсказку как _Trash Chop Move_ по слотам 3 и 4;
+  - Боб также понимает, что помечать играбельную красную 2 как _Chop Moved_ бессмысленно: Алиса могла просто дать прямую красную _Play Clue_ по красной 2;
+  - значит, это _Chop Move Ignition_. Боб вслепую разыгрывает свою _Finesse Position_; это синяя 2, и розыгрыш проходит успешно;
+  - сначала Кэти считала подсказку Алисы _Trash Chop Move_. Но тогда Боб не должен был ничего играть вслепую. Раз он сыграл свою _Finesse Position_, это _Chop Move Ignition_. Кэти вслепую разыгрывает слот 3 — карту справа от подсказанной 1. Это красная 2, и она успешно разыгрывается;
+  - одновременно с тем, как Кэти помечает слот 3 как играбельный, она помечает слот 4 как известный мусор;
+  - позже Кэти сбрасывает карту из слота 4 и обнаруживает синюю 4. Поскольку в момент _Chop Move Ignition_ синяя 4 ещё не была мусором, Кэти ставит _Elimination Notes_ на возможную вторую копию синей 4 в своей руке. Остальная команда делает такие же _Elimination Notes_.
+
+<RuL21DiagramChopMoveIgnitionTwoCards />
+
+- Если _Chop Moved_ становятся три или более карты, про промежуточные карты ничего не обещается. Промежуточные карты, если они есть, сами не считаются _Chop Moved_ и могут иметь любое точное значение.
+
+<span id="l21-bomb-double-ignition"></span>
+
+### Bomb Double Ignition {/* #bomb-double-ignition */}
+
+- Обычно, если в руке игрока есть карта, уже известная всей команде как мусор, её можно безопасно сбросить.
+- В редких случаях игрок может намеренно взорвать эту карту, чтобы сообщить номер определённого слота через _Positional Misplay_. Почти всегда такое происходит в последнем или предпоследнем раунде партии.
+- Но что, если игрок намеренно взрывает мусорную карту раньше? Беспричинно тратить страйк столь же «бесполезно», как и давать подсказки, запускающие _Double Ignition_. Поэтому мы договариваемся, что такой взрыв карты вызывает два blind-play как _Bomb Double Ignition_.
+
+<span id="l21-bomb-triple-ignition"></span>
+
+### Bomb Triple Ignition {/* #bomb-triple-ignition */}
+
+- Почти всегда лучше потратить подсказку, чем страйк. Поэтому игроки должны предпочитать обычные формы _Double Ignition_ — например, _Replay Double Ignition_ — прежде чем прибегать к _Bomb Double Ignition_.
+- Если команда видит, что игрок, начавший _Bomb Double Ignition_, очевидно мог использовать форму _Double Ignition_ через подсказку, это означает дополнительный смысл: _Triple Ignition_.
+
+---
+
+## Тренировочные вопросы {/* #l21-training */}
+
+В официальном источнике отдельного набора Official Challenge Questions для Level 21 нет; ниже — наши Training Questions по материалу этого уровня.
+
+<details className="ru-training">
+
+<summary>1. Чем Ignition принципиально отличается от Finesse и Bluff?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Blind-play при _Ignition_ не обязан соединяться с данной подсказкой и не служит доказательством играбельности подсказанной карты. Он передаёт отдельное сообщение через необходимость сыграть _Finesse Position_ вслепую.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>2. Кто делает два blind-play при Ambiguous Double Ignition?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Первый _Ignition_ приходится на Боба, если только у него уже нет известной играбельной карты; тогда выбирается первый игрок без такой карты. Второй всегда приходится на последнего игрока с играбельной картой.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  3. Когда повторная Play Clue становится Replay Double Ignition?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Когда повторно подсказана уже известная всей команде играбельная карта, новых карт не затронуто и дающий подсказку не находится в Stalling Situation. Тогда «бесполезная» повторная подсказка означает _Double Ignition_.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  4. Как отличить Trash Double Ignition от Trash Chop Move или Trash Push?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Сначала нужно проверить обычные интерпретации известного мусора: _Trash Chop Move_ вне chop и _Trash Push_ на chop. Только если обе невозможны, подсказка означает _Trash Double Ignition_.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  5. Когда странный Chop Move по играбельной карте означает Chop Move Ignition?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Только если для самого _Chop Move_ нет другой хорошей причины. Тогда следующий игрок делает blind-play из _Finesse Position_, а получатель подсказки понимает, что его _Chop Moved_-карта играбельна.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  6. Что меняет Chop Move Ignition Interaction для подсказки числом 5?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Вне End-Game подсказка числом 5, фокусирующая 5 ровно в одной карте от chop, не трактуется как обычная _Play Clue_: она считается _5's Chop Move_, и следующий игрок должен проверить линию _Chop Move Ignition_.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>7. Когда Bomb Double Ignition превращается в Triple Ignition?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Если игрок намеренно тратит страйк на _Bomb Double Ignition_, хотя команда видит очевидную возможность передать тот же Double Ignition обычной подсказкой, лишняя дороговизна действия означает третий blind-play — _Triple Ignition_.
+
+</div>
+
+</details>

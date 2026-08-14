@@ -1,0 +1,43 @@
+---
+title: "Prompt (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqPromptQuestion3Q from "./prompt-question-3/prompt-question-3.yml";
+import RuBgqPromptQuestion3A from "./prompt-question-3/prompt-answer-3.yml";
+
+<BeginnersGuideProgress id="prompt-question-3" />
+
+<span id="bg-prompt-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Кэти в руке две неизвестные фиолетовые карты.
+- Алиса хочет дать Play Clue фиолетовой 4.
+- Какую подсказку должна дать Алиса?
+
+<RuBgqPromptQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может дать Play Clue фиолетовой 4 и фиолетовой подсказкой, и подсказкой числом 4. В обоих случаях фокус будет на фиолетовой 4.
+- Но такая подсказка передаст Кэти **Prompt**, и она начнёт играть свои фиолетовые карты слева направо. Тогда фиолетовая 3 из слота 4 даст **мисплей**.
+- Поэтому Алиса **не имеет права** сейчас давать Play Clue фиолетовой 4.
+- Вместо этого Алиса может дать Кэти подсказку числом 3. Она сфокусируется на фиолетовой 3 как **Self-Prompt**.
+- После этого Алиса уже сможет без проблем дать Play Clue фиолетовой 4.
+- Обычно игроки не должны давать Tempo Clues, потому что они не удовлетворяют Minimum Clue Value Principle. Но здесь у Алисы есть очень веская причина сделать Tempo Clue: карты Кэти расположены «не в том порядке». Поэтому в этой ситуации правило можно нарушить.
+
+<RuBgqPromptQuestion3A />
+
+</TabItem>
+</Tabs>

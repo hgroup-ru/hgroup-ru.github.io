@@ -1,0 +1,103 @@
+name: Release
+
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: github-pages-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require main branch
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "Release must run from main."
+          exit 1
+
+      - uses: actions/checkout@v7
+      - uses: ./.github/workflows/setup
+
+      - name: Lint release candidate
+        run: npm run lint
+
+      - name: Build RU release
+        run: npm run build:ru
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+      - name: Check out released source for tagging
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Tag production source
+        shell: bash
+        run: |
+          tag="prod-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            tagged_sha="$(git rev-list -n 1 "$tag")"
+            if [ "$tagged_sha" != "$GITHUB_SHA" ]; then
+              echo "Production tag $tag already exists on $tagged_sha, expected $GITHUB_SHA."
+              exit 1
+            fi
+            echo "Production tag $tag already exists on this source SHA; keeping it."
+          else
+            git tag -a "$tag" "$GITHUB_SHA" -m "Production deployment from $GITHUB_SHA"
+            git push origin "$tag"
+          fi
+
+          echo "### Production tag: $tag" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Run Algolia Crawler
+        env:
+          ALGOLIA_CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
+          ALGOLIA_CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
+          ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
+        run: |
+          if [ -z "$ALGOLIA_CRAWLER_USER_ID" ] ||
+             [ -z "$ALGOLIA_CRAWLER_API_KEY" ] ||
+             [ -z "$ALGOLIA_CRAWLER_ID" ]; then
+            echo "Required Algolia crawler secrets are not configured."
+            exit 1
+          fi
+
+          curl \
+            --silent \
+            --fail \
+            --show-error \
+            --location \
+            --request POST \
+            --header "Content-Type: application/json" \
+            --user "$ALGOLIA_CRAWLER_USER_ID:$ALGOLIA_CRAWLER_API_KEY" \
+            "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex"

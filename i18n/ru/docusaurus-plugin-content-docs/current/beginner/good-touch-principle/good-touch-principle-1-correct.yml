@@ -1,0 +1,27 @@
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Correct
+  color: Green
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r2
+        clue: 2
+        below: Play
+      - type: r4
+        border: false
+      - type: r4
+        border: false
+      - type: x
+      - type: x

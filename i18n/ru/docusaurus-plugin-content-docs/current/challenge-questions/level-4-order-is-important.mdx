@@ -1,0 +1,51 @@
+---
+title: "Порядок важен"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL4Official3Q from "./level-4-order-is-important/question.yml";
+import RuL4Official3A1 from "./level-4-order-is-important/answer-part-1.yml";
+import RuL4Official3A2 from "./level-4-order-is-important/answer-part-2.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-order-is-important" />
+
+<span id="ru-level-4-order-is-important"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Идёт _Early Game_.
+- На столе сыграны красная 1 и синяя 5.
+- Ранее Боб сыграл синюю 3 из слота 2 и синюю 4 из слота 4.
+- У Кэти две неизвестные 2, сохранённые на chop.
+- Алиса даёт Бобу подсказку числом 1, затрагивая карты в слотах 2 и 3.
+- Боб играет карту из слота 3. Это зелёная 1, и она успешно разыгрывается.
+- Какой слот Кэти сбросит следующим?
+
+<RuL4Official3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Поскольку Боб ранее сыграл карты из слотов 2 и 4, он дважды добирал новые карты.
+- Следовательно, карта в его слоте 3 должна была находиться в стартовой руке, а карта в слоте 2 была добрана после розыгрыша синей 3.
+- Значит, слот 2 — fresh 1, а слот 3 — обычная 1 из стартовой руки.
+
+<RuL4Official3A1 />
+
+- Как установлено на Level 3, [неизвестные 1 нужно играть в определённом порядке](../level-3.mdx#playing-multiple-1s); в частности, [fresh 1 имеют приоритет](../level-3.mdx#part-2---the-fresh-1s-rule).
+- Поэтому Боб должен был сыграть карту из слота 2, а не из слота 3.
+- Следовательно, Кэти понимает, что Боб намеренно передал _Order Chop Move_. Кэти помечает карту в слоте 3 как Chop Moved. Её новый chop — слот 2, поэтому именно слот 2 она сбросит следующим.
+
+<RuL4Official3A2 />
+
+</TabItem>
+</Tabs>

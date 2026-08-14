@@ -1,0 +1,46 @@
+---
+title: "Filling in, I"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL6Official1Q from "./level-6-filling-in-i/question.yml";
+import RuL6Official1A from "./level-6-filling-in-i/answer.yml";
+
+<ChallengeQuestionProgress level={6} id="level-6-filling-in-i" />
+
+<span id="ru-level-6-filling-in-i"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба две карты с подсказками, но без точно известного значения: синяя карта в слоте 3 и зелёная карта в слоте 4.
+- Алиса даёт Бобу подсказку числом 3, затрагивая обе уже подсказанные карты и «дозаполняя» их до синей 3 и зелёной 3.
+- Одна синяя 4 уже в сбросе, вторая синяя 4 ещё не вышла из колоды.
+- Что означает подсказка?
+- Где находится фокус?
+
+<RuL6Official1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Обе карты Боба были уже «получены» раньше, поэтому новая подсказка — [_Tempo Clue_](../level-6.mdx#the-tempo-clue).
+- Она делает **две** новые карты играбельными в пределах следующего хода.
+- Последняя синяя 4 ещё не учтена, поэтому синюю карту сейчас нельзя заставить сыграть через _Prompt_.
+- Следовательно, хотя подсказка формально не выполняет [_Minimum Clue Value Principle_](../beginner/minimum-clue-value-principle), она считается **Valuable Tempo Clue**.
+- Для _Tempo Clue_ фокус — крайняя слева затронутая карта, то есть синяя 3.
+
+<RuL6Official1A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-6-filling-in-i)
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,39 @@
+---
+title: "Play Clues (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqPlayCluesQuestion1Q from "./play-clues-question-1/play-clues-question-1.yml";
+import RuBgqPlayCluesQuestion1A from "./play-clues-question-1/play-clues-answer-1.yml";
+
+<BeginnersGuideProgress id="play-clues-question-1" />
+
+<span id="bg-play-clues-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу синюю подсказку, затрагивая одну карту в слоте 3.
+- С точки зрения Боба это должна быть **Play Clue**. Боб записывает точное значение карты.
+- Что именно Боб запишет в Card Notes?
+
+<RuBgqPlayCluesQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб записывает `b2`.
+  - Синяя 1 уже сыграна, поэтому следующая синяя карта для розыгрыша — синяя 2.
+
+<RuBgqPlayCluesQuestion1A />
+
+</TabItem>
+</Tabs>

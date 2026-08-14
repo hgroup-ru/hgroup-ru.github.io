@@ -1,0 +1,36 @@
+# Local project illustration reconstructed from official prose; NOT official H-Group YML.
+# Preserves the previously accepted local teaching state.
+
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: r2
+        border: false
+        middleNote: r2
+        below: Play
+      - type: x
+        middleNote: r2?
+        below: Ride
+
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

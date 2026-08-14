@@ -1,0 +1,18 @@
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r
+        clue: r
+      - type: r
+        clue: r
+      - type: x
+      - type: x
+      - type: r
+        clue: r
+        below: Focus

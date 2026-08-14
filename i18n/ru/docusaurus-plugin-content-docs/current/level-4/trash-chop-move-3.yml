@@ -1,0 +1,37 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: 1
+        clue: 1
+        trash: true
+        below:
+          text:
+            - Also
+            - Trash
+      - type: x
+        below: Chop
+      - type: 1
+        clue: 1
+        trash: true
+        below:
+          text:
+            - Focus,
+            - Trash
+          color: gold
+      - type: x
+        cm: true
+        middleNote: cm
+        below: cm

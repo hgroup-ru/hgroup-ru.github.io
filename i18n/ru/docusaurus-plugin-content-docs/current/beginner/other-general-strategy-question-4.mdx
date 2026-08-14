@@ -1,0 +1,42 @@
+---
+title: "Other General Strategy (вопрос 4)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqOtherGeneralStrategyQuestion4Q from "./other-general-strategy-question-4/other-general-strategy-question-4.yml";
+import RuBgqOtherGeneralStrategyQuestion4A from "./other-general-strategy-question-4/other-general-strategy-answer-4.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-4" />
+
+<span id="bg-other-general-strategy-question-4"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Перечислите все допустимые подсказки Алисы.
+- Какую из них Алиса должна выбрать?
+
+<RuBgqOtherGeneralStrategyQuestion4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может дать Бобу синюю подсказку как Play Clue на синюю 2.
+  - Тогда Боб запишет `b2`.
+- Алиса может дать Бобу подсказку числом 2 как Play Clue на синюю 2.
+  - Тогда Боб запишет `y2, b2, p2`.
+- По умолчанию Алиса знает, что подсказка по цвету предпочтительнее подсказки по числу. В этой ситуации синяя подсказка сообщает точное значение карты, тогда как числовая оставляет три разных варианта.
+- Поэтому Алиса должна дать Бобу **синюю подсказку**.
+
+<RuBgqOtherGeneralStrategyQuestion4A />
+
+</TabItem>
+</Tabs>

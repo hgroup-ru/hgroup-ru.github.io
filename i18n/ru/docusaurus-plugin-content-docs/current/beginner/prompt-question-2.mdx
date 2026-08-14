@@ -1,0 +1,45 @@
+---
+title: "Prompt (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqPromptQuestion2Q from "./prompt-question-2/prompt-question-2.yml";
+import RuBgqPromptQuestion2A from "./prompt-question-2/prompt-answer-2.yml";
+
+<BeginnersGuideProgress id="prompt-question-2" />
+
+<span id="bg-prompt-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Кэти в руке две неизвестные 3.
+- Какие две разные подсказки может дать Алиса?
+- Какая из них лучше и почему?
+
+<RuBgqPromptQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Первый вариант: Алиса даёт Бобу жёлтую подсказку.
+  - Это Play Clue на жёлтую 4, которая даёт Кэти Prompt.
+  - Кэти сыграет крайнюю слева 3 и затем остановится.
+- Второй вариант: Алиса даёт Бобу синюю подсказку.
+  - Это Play Clue на синюю 4, которая даёт Кэти Prompt.
+  - Кэти попытается сыграть синюю 3 из слота 3. Но там окажется жёлтая 3, и она успешно сыграется.
+  - Кэти знает, что ей **обещана** синяя 3, поэтому продолжит и сыграет вторую 3 как синюю 3.
+- Второй вариант лучше первого, потому что он заставляет Кэти сыграть **две карты вместо одной**.
+
+<RuBgqPromptQuestion2A />
+
+</TabItem>
+</Tabs>

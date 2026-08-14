@@ -1,0 +1,51 @@
+---
+title: "Clue Interpretation (вопрос 4)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqClueInterpretationQuestion4Q from "./clue-interpretation-question-4/clue-interpretation-question-4.yml";
+import RuBgqClueInterpretationQuestion4A from "./clue-interpretation-question-4/clue-interpretation-answer-4.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-4" />
+
+<span id="bg-clue-interpretation-question-4"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба в руке есть 2 с подсказкой.
+- Алиса даёт Бобу синюю подсказку, затрагивая слоты 3, 4 и 5.
+
+1. Какой слот находится в фокусе?
+2. Это Play Clue или Save Clue?
+3. Что Боб запишет на сфокусированной карте?
+
+<RuBgqClueInterpretationQuestion4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. В фокусе слот 4 — впервые затронутая карта, которая до подсказки находилась на chop.
+2. Синяя 1 уже сыграна, а у Боба уже есть синяя 2. Поэтому сфокусированная синяя карта может быть синей 3, синей 4 или синей 5.
+   - Если это синяя 3, подсказка является **Chop-Focus Delayed Play Clue** через собственную синюю 2 Боба. Это допустимо.
+   - Если это синяя 4, подсказка является **Critical Save** на синюю 4.
+   - Если это синяя 5, подсказка не имела бы смысла: синяя 5 сейчас не играбельна. Она критическая, но обязана спасаться подсказкой числом 5 через 5 Save.
+   - Следовательно, это либо Chop-Focus Delayed Play Clue на синюю 3, либо Critical Save на синюю 4.
+3. Боб записывает `b3, b4` на карту в слоте 4.
+
+- До этой подсказки Боб не мог играть свою 2, потому что она могла быть жёлтой 2, которая сейчас неиграбельна.
+- Синяя подсказка «заполнила» его 2 до синей 2, поэтому теперь Боб может её сыграть.
+- Но это **не делает синюю подсказку Play Clue на двойку**. Фокус был на слоте 4, поэтому по своему основному смыслу подсказка остаётся потенциальной Save Clue. Играбельность синей 2 возникла лишь как побочный эффект; синяя 2 не была в фокусе.
+
+<RuBgqClueInterpretationQuestion4A />
+
+</TabItem>
+</Tabs>

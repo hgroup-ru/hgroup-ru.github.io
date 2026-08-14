@@ -1,0 +1,49 @@
+---
+title: "Too Few Clues"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL7Official6Q from "./level-7-too-few-clues/question.yml";
+import RuL7Official6A from "./level-7-too-few-clues/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-too-few-clues" />
+
+<span id="ru-level-7-too-few-clues"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 2 сыграны.
+- 0 подсказок.
+- У Алисы известная всей команде играбельная синяя 3.
+- У Кэти критическая фиолетовая 5 на chop.
+- Алиса сбрасывает chop вместо розыгрыша синей 3.
+- Почему Алиса сбросила?
+- Какие заметки должен сделать Боб?
+- Что Боб должен сделать?
+
+<RuL7Official6Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса делает [_Generation Discard_](../level-7.mdx#the-generation-discard).
+- Если бы она сыграла синюю 3, Боб остался бы без подсказки и был бы вынужден сбросить; затем Кэти могла бы на своём ходу сбросить критическую фиолетовую 5.
+- Сброс Алисы возвращает Бобу жетон подсказки.
+- Боб должен использовать его, чтобы сделать _5 Save_ фиолетовой 5 Кэти.
+- Боб **не пишет никаких `cm` заметок**: _Generation Discard_ сам по себе не делает _Chop Move_.
+
+<RuL7Official6A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-7-too-few-clues)
+
+</TabItem>
+</Tabs>

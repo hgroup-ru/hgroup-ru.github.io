@@ -1,0 +1,47 @@
+---
+title: "Clue Interpretation (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqClueInterpretationQuestion1Q from "./clue-interpretation-question-1/clue-interpretation-question-1.yml";
+import RuBgqClueInterpretationQuestion1A from "./clue-interpretation-question-1/clue-interpretation-answer-1.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-1" />
+
+<span id="bg-clue-interpretation-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В руке Кэти вообще нет подсказок.
+- Алиса даёт Кэти зелёную подсказку, затрагивая слоты 3 и 4.
+
+1. Какой слот находится в фокусе?
+2. Это Play Clue или Save Clue?
+3. Что Кэти запишет на сфокусированной карте?
+
+<RuBgqClueInterpretationQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. В фокусе слот 4 — карта на chop.
+2. Зелёная 2 уже сыграна, поэтому карта в слоте 4 может быть зелёной 3, зелёной 4 или зелёной 5.
+   - Если это зелёная 3, подсказка является **Chop-Focus Play Clue**. Это допустимо.
+   - Если это зелёная 4, подсказка не имела бы смысла: зелёная 4 сейчас не играбельна и не критическая. Каждая подсказка обязана быть либо Play Clue, либо Save Clue.
+   - Если это зелёная 5, подсказка тоже не имела бы смысла. Зелёная 5 критическая, но 5 обязана спасаться подсказкой числом 5 через 5 Save.
+   - Следовательно, это должна быть **Chop-Focus Play Clue** на зелёную 3.
+3. Кэти записывает `g3` на карту в слоте 4.
+
+<RuBgqClueInterpretationQuestion1A />
+
+</TabItem>
+</Tabs>

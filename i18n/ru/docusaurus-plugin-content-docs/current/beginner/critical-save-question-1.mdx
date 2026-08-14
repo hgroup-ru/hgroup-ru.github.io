@@ -1,0 +1,43 @@
+---
+title: "Critical Save (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqCriticalSaveQuestion1Q from "./critical-save-question-1/critical-save-question-1.yml";
+import RuBgqCriticalSaveQuestion1A from "./critical-save-question-1/critical-save-answer-1.yml";
+
+<BeginnersGuideProgress id="critical-save-question-1" />
+
+<span id="bg-critical-save-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 3, затрагивая карту в слоте 3.
+- Это Play Clue или Save Clue?
+- Что Боб запишет в Card Notes?
+
+<RuBgqCriticalSaveQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб понимает, что это может быть Play Clue на:
+  - жёлтую 3 — непосредственно играбельную;
+  - красную 3 — как Delayed Play Clue через красную 2 Кэти.
+- Но подсказка затронула chop, поэтому она также может быть Save Clue. В сбросе есть зелёная 3, и подсказка числом 3 ей соответствует, значит карта может быть второй зелёной 3 — Critical Save.
+- Боб не знает, Play Clue это или Save Clue, поэтому пока не появится дополнительная информация, он обязан учитывать Save Clue и держать карту.
+- Боб записывает `r3, y3, g3`.
+
+<RuBgqCriticalSaveQuestion1A />
+
+</TabItem>
+</Tabs>

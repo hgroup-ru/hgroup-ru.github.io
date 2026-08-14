@@ -1,0 +1,34 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: r2
+      - type: x
+      - type: yb2
+        crossedOut: y
+        below:
+          text: Play
+          color: cyan
+      - type: x
+  - cards:
+      - type: b3
+        border: false
+        below: Priority
+      - type: x
+      - type: r3
+      - type: y2
+        border: false
+      - type: y2
+        border: false
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

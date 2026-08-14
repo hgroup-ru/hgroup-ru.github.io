@@ -1,0 +1,45 @@
+---
+title: "Reverse Finesse, III?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial6Q from "./level-2-reverse-iii/question.yml";
+import RuOfficial6A from "./level-2-reverse-iii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-reverse-iii" />
+
+<span id="ru-level-2-reverse-iii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 3, которая затрагивает одну карту в слоте 2.
+- Боб записывает заметку с возможным точным значением этой карты.
+
+1. Что должен записать Боб?
+1. Что Боб должен сделать?
+
+<RuOfficial6Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Боб пишет `r3, b3, p3 if purple 2 f`.
+   - Боб знает, что это должна быть _Play Clue_ на его 3, поскольку карта не находится на chop. Это может быть немедленно играбельная красная 3 или синяя 3, но подсказка также может быть [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse) на фиолетовую 3.
+1. Боб обязан учитывать возможность _Reverse Finesse_. Пока что Бобу нужно дать Кэти зелёную подсказку — это [_Critical Save_](../beginner/critical-save.mdx) на критическую зелёную 3.
+   - Если Кэти вслепую сыграет фиолетовую 2, Боб обновит заметку до `r3, b3, p3 if purple 2 f | purple 3`.
+   - Если Кэти не сыграет фиолетовую 2 вслепую, Боб обновит заметку до `r3, b3, p3 if purple 2 f | red 3, blue 3`.
+   - (Это не может быть [_Self-Finesse_](../level-2.mdx#the-self-finesse) на Боба, поскольку он знает: _Self-Finesse_ нельзя давать, если возможна интерпретация _Play Clue_. В данном случае карта с подсказкой может быть немедленно играбельной красной 3 или синей 3.)
+
+<RuOfficial6A />
+
+</TabItem>
+</Tabs>

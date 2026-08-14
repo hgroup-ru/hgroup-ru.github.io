@@ -1,0 +1,45 @@
+---
+title: "Critical Save (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqCriticalSaveQuestion2Q from "./critical-save-question-2/critical-save-question-2.yml";
+import RuBgqCriticalSaveQuestion2A from "./critical-save-question-2/critical-save-answer-2.yml";
+
+<BeginnersGuideProgress id="critical-save-question-2" />
+
+<span id="bg-critical-save-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У команды осталось 2 жетона подсказок.
+- У Кэти подряд находятся две критические карты.
+- Какое действие должна сделать Алиса?
+
+<RuBgqCriticalSaveQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может захотеть дать Кэти фиолетовую подсказку, которая за один ход даст сразу две фиолетовые карты.
+- Но такой ход **не разрешён**, потому что 5 обязана спасаться через 5 Save.
+- Поэтому Алиса должна дать Кэти подсказку числом 5 как **5 Save**.
+- Затем Боб даст Кэти фиолетовую подсказку как **Critical Save** фиолетовой 3.
+- На карте в слоте 4 Кэти запишет следующие возможные значения:
+  - фиолетовая 1 — как Play Clue;
+  - фиолетовая 3 — как Critical Save;
+  - фиолетовая 4 — как Critical Save.
+
+<RuBgqCriticalSaveQuestion2A />
+
+</TabItem>
+</Tabs>

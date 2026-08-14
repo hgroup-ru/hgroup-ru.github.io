@@ -1,0 +1,39 @@
+---
+title: "Игра нескольких 1, I"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL3Official1Q from "./level-3-playing-multiple-1-s-i/question.yml";
+import RuL3Official1A from "./level-3-playing-multiple-1-s-i/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-playing-multiple-1-s-i" />
+
+<span id="ru-level-3-playing-multiple-1-s-i"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Идёт первый ход игры.
+- Алиса даёт Бобу подсказку числом 1, затрагивая две карты в слотах 2 и 5.
+- В каком порядке Боб должен сыграть эти карты?
+
+<RuL3Official1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Боб знает про _Play Order Inversion in the Starting Hand_.
+- Поэтому он играет затронутые карты **от самой старой к самой новой**.
+
+<RuL3Official1A />
+
+</TabItem>
+</Tabs>

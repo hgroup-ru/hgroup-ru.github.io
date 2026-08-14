@@ -1,0 +1,38 @@
+---
+title: "Save Principle (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqSavePrincipleQuestion1Q from "./save-principle-question-1/save-principle-question-1.yml";
+import RuBgqSavePrincipleQuestion1A from "./save-principle-question-1/save-principle-answer-1.yml";
+
+<BeginnersGuideProgress id="save-principle-question-1" />
+
+<span id="bg-save-principle-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу синюю подсказку, затрагивая карту в слоте 1. Это должна быть Play Clue на синюю 1.
+- Должен ли Боб сыграть синюю 1?
+
+<RuBgqSavePrincipleQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Нет. Если Боб сыграет синюю 1, а затем Кэти сбросит зелёную 4, максимальный счёт уменьшится.
+- Пока существует вероятность, что Кэти сбросит зелёную 4, Боб **обязан спасти её прямо сейчас**, прежде чем играть собственные играбельные карты.
+
+<RuBgqSavePrincipleQuestion1A />
+
+</TabItem>
+</Tabs>

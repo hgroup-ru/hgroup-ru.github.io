@@ -1,0 +1,220 @@
+---
+title: "Уровень 17 — Dupe Tech"
+---
+
+import RuL17DiagramDuplicitousValueClue from "./level-17/duplicitous-value-clue.yml";
+import RuL17DiagramDuplicitousBlindPlay from "./level-17/duplicitous-blind-play.yml";
+import RuL17DiagramDuplicitousTempoClue from "./level-17/duplicitous-tempo-clue.yml";
+import RuL17DiagramAssistedTrashChopMoveTrashFinesse from "./level-17/assisted-trash-chop-move-trash-finesse.yml";
+import RuL17DiagramAssistedTrashChopMoveUTD from "./level-17/assisted-trash-chop-move-utd.yml";
+import RuL17DiagramTimeTravelChopMoveDirect from "./level-17/time-travel-chop-move-direct-form.yml";
+import RuL17DiagramTimeTravelChopMoveBlind from "./level-17/time-travel-chop-move-blind-play-form.yml";
+
+<span id="level-17-top"></span>
+
+<span id="l17-special-moves"></span>
+
+## Специальные ходы {/* #special-moves */}
+
+<span id="l17-the-duplicitous-value-clue"></span>
+
+### Duplicitous Value Clue {/* #the-duplicitous-value-clue */}
+
+- Обычно мы не даём _Play Clues_ по дублированным картам, потому что это нарушало бы _Good Touch Principle_.
+- Однако в некоторых ситуациях можно дать Бобу _Play Clue_ и подвести его к розыгрышу дублированной карты. Если при этом подсказка также затронула одну или несколько других ценных карт, это _Duplicitous Value Clue_.
+- Мы договариваемся: если такая подсказка удовлетворяет _Minimum Clue Value Principle_ (не считая саму дублированную карту), никаких дополнительных _Prompts_ или blind-play она не вызывает — смысл подсказки был просто в том, чтобы заранее обеспечить Save на ценных картах.
+- Например, в игре на троих:
+  - Красная 2 и синяя 2 уже сыграны на стол.
+  - У Алисы находится известная всей команде красная 3.
+  - Алиса даёт Бобу подсказку числом 3 как _Play Clue_, затрагивая 2 карты.
+  - Боб играет 3 в фокусе, предполагая, что это синяя 3. Но на самом деле это красная 3, и её удаётся успешно разыграть.
+  - Хотя это было неожиданно, команда видит, что это _Duplicitous Value Clue_: дополнительная 3 Боба достаточно ценна, чтобы заранее обеспечить её Save.
+  - Боб помечает другую 3 как **любую** полезную 3. Она не обещана как играбельная. (Поэтому никто не будет считать её _Prompt_ или _Finesse_.)
+
+<RuL17DiagramDuplicitousValueClue />
+
+- Для _Duplicitous Value Clues_, которые **не** удовлетворяют _Minimum Clue Value Principle_, см. раздел [_Duplicitous Tempo Clue_](#the-duplicitous-tempo-clue) ниже.
+
+<span id="l17-the-duplicitous-blind-play"></span>
+
+### Duplicitous Blind-Play {/* #the-duplicitous-blind-play */}
+
+- Сначала см. раздел [_Duplicitous Value Clue_](#the-duplicitous-value-clue).
+- В _Duplicitous Value Clue_ дублированную карту подсказывают напрямую, чтобы «получить» другие карты. Аналогично можно добиться blind-play дублированной карты, чтобы «получить» другие карты. Это называется _Duplicitous Blind-Play_.
+- _Duplicitous Blind-Plays_ работают так же, как _Duplicitous Value Clues_: если подсказка удовлетворяет _Minimum Clue Value Principle_, никаких дополнительных _Prompts_ или blind-play она не вызывает.
+- Например, в игре на троих:
+  - Красная 2 и синяя 2 уже сыграны на стол.
+  - У Алисы находится известная всей команде красная 3.
+  - Алиса даёт Кэти синюю подсказку, затрагивая синюю 4 как _Play Clue_.
+  - Боб вслепую играет свою _Finesse Position_, ожидая синюю 3 как _Finesse_. Вместо этого там красная 3, и её удаётся успешно разыграть.
+  - Хотя это было неожиданно, команда видит, что это _Duplicitous Blind-Play_: синяя 4 Кэти достаточно ценна, чтобы заранее обеспечить её Save.
+  - Команда знает, что синяя 4 не обещана как играбельная. (Поэтому никто не будет считать её _Prompt_ или _Finesse_.)
+
+<RuL17DiagramDuplicitousBlindPlay />
+
+- Обратите внимание: _Duplicitous Blind-Plays_ также можно выполнять через некоторые _Ejections_, _Discharges_ и другие подобные ходы.
+
+<span id="l17-the-duplicitous-tempo-clue"></span>
+
+### Duplicitous Tempo Clue {/* #the-duplicitous-tempo-clue */}
+
+- Сначала см. разделы [_Duplicitous Value Clue_](#the-duplicitous-value-clue) и [_Duplicitous Blind-Play_](#the-duplicitous-blind-play).
+- В _Duplicitous Value Clue_ и _Duplicitous Blind-Play_ одна или несколько «дополнительных» ценных карт затрагиваются на будущее. Но что, если такой ход выполнен, а никаких дополнительных ценных карт подсказка не затронула?
+- Если карта, информацию о которой дополнили, оказывается играбельной, такую подсказку нужно задним числом считать _Tempo Clue_. Поэтому такой тип подсказки называется _Duplicitous Tempo Clue_.
+- _Duplicitous Tempo Clues_ могут как вызывать, так и не вызывать _Tempo Clue Chop Move_. (Условия здесь те же, что у обычной _Tempo Clue_.)
+- Например, в игре на троих:
+  - Красная 1, зелёная 1 и синяя 1 уже сыграны на стол.
+  - У Кэти находится известная всей команде красная 2.
+  - У Боба есть ранее затронутая зелёная 2, но её ранг пока неизвестен.
+  - Алиса даёт Бобу подсказку числом 2, затрагивая одну новую карту и одновременно «дополняя» информацию о зелёной 2.
+  - Боб знает, что это _Play Clue_ на синюю 2. Он играет карту, но она оказывается красной 2 и её удаётся успешно разыграть.
+  - Первая мысль Боба — что это _Duplicitous Value Clue_, однако подсказка не затронула никаких других новых карт. Значит, Боб понимает, что это _Duplicitous Tempo Clue_.
+  - Алиса не находилась в допустимой Stalling Situation, а темп на зелёной 2 Боба не было _Valuable_, поэтому Боб трактует подсказку как _Tempo Clue Chop Move_. (_Tempo Clue_ на зелёной 2 не _Valuable_, потому что зелёная 2 была _Promptable_ и подсказка даёт только одну единицу _Tempo_.)
+
+<RuL17DiagramDuplicitousTempoClue />
+
+<span id="l17-the-assisted-trash-chop-move"></span>
+
+### Assisted Trash Chop Move {/* #the-assisted-trash-chop-move */}
+
+- Сначала см. раздел [_Trash Chop Move_](./level-4.mdx#the-trash-chop-move-tcm).
+- _Trash Chop Moves_ могут быть очень полезными, но иногда они «заблокированы»: известный мусор невозможно дать прямую подсказку.
+- В такой ситуации проблему можно решить через _Trash Bluff_ или _Unknown Trash Discharge_, заставив дублированную карту сыграть вслепую. Это называется _Assisted Trash Chop Move_.
+- Поскольку в ходе не затрагиваются никакие «дополнительные» карты (как, например, в _Duplicitous Value Clue_), смысл подсказки должен быть очевиден всей команде: _Trash Chop Move_ на всех картах справа от подсказанной карты или карт.
+- Например, вот _Assisted Chop Move_ через _Trash Finesse_ в игре на троих:
+  - Синяя 1 уже сыграна на стол.
+  - У Алисы находится известная всей команде жёлтая 1.
+  - Алиса даёт Кэти подсказку числом 1, затрагивая синюю 1 в слоте 3 как _Play Clue_.
+  - Боб знает: поскольку синяя 1 была представлена как полезная 1, это должен быть _Trash Finesse_, и в _Finesse Position_ Боба должна находиться красная 1, зелёная 1 или фиолетовая 1.
+  - Боб вслепую играет свою _Finesse Position_. К его удивлению, там жёлтая 1, и её удаётся успешно разыграть.
+  - Поскольку жёлтая 1 была дублирована, остальная команда понимает, что произошло что-то необычное. Но никаких дополнительных карт подсказка не затронула, поэтому все знают, что это был _Assisted Chop Move_ на Кэти. (В этом случае Кэти должна пометить слоты 4 и 5 как _Chop Moved_.)
+
+<RuL17DiagramAssistedTrashChopMoveTrashFinesse />
+
+- Например, вот _Assisted Chop Move_ через _Unknown Trash Discharge_ в игре на троих:
+  - Синяя 1 уже сыграна на стол.
+  - У Алисы находится известная всей команде жёлтая 1.
+  - Алиса даёт Кэти синюю подсказку, затрагивая синюю 1 в слоте 2 как _Play Clue_.
+  - Боб знает: поскольку синяя 1 была представлена как синяя 2, это должен быть _Unknown Trash Discharge_.
+  - Боб вслепую играет свою _Third Finesse Position_. К его удивлению, там жёлтая 1, и её удаётся успешно разыграть.
+  - Поскольку жёлтая 1 была дублирована, остальная команда понимает, что произошло что-то необычное. Но никаких дополнительных карт подсказка не затронула, поэтому все знают, что это был _Assisted Chop Move_ на Кэти. (В этом случае Кэти должна пометить слоты 3, 4 и 5 как _Chop Moved_.)
+
+<RuL17DiagramAssistedTrashChopMoveUTD />
+
+<span id="l17-the-time-travel-chop-move-direct-form"></span>
+
+### Time Travel Chop Move (Direct Form) {/* #the-time-travel-chop-move-direct-form */}
+
+- Сначала см. разделы [_Duplicitous Value Clue_](#the-duplicitous-value-clue) и [_Duplicitous Blind-Play_](#the-duplicitous-blind-play).
+- Обычно _Duplicitous Clue_ даёт дополнительную карту или «дополняет» информацию о другой карте как _Tempo Clue_. Но если _Duplicitous Clue_ не делает ни того, ни другого, значит, она была дана по другой причине.
+- В этой ситуации, когда дублирование раскрывается, получатель подсказки должен трактовать её как _Trash Chop Move_ на собственной руке. (Иными словами, нужно представить, будто дублированную карту напрямую подсказали как _Trash Chop Move_.)
+- Например, в игре на троих:
+  - Все 2 уже сыграны.
+  - У Кэти находится известная всей команде красная 3.
+  - Алиса даёт Бобу подсказку числом 3, впервые затрагивая одну 3 как _Play Clue_.
+  - Боб играет свою 3, ожидая любую 3, кроме красной. Но это оказывается красная 3, и её удаётся успешно разыграть.
+  - Поскольку ход был 0-for-1 и не дал Tempo ни на одной карте, все знают, что это _Time Travel Chop Move_. Боб помечает как _Chop Moved_ все карты, которые находились позади его красной 3.
+
+<RuL17DiagramTimeTravelChopMoveDirect />
+
+<span id="l17-the-time-travel-chop-move-blind-play-form"></span>
+
+### Time Travel Chop Move (Blind-Play Form) {/* #the-time-travel-chop-move-blind-play-form */}
+
+- Сначала см. раздел [_Time Travel Chop Move (Direct Form)_](#the-time-travel-chop-move-direct-form).
+- Обычно _Time Travel Chop Move_ напрямую подсказывает дублированную карту. Но что, если дублированная карта «заблокирована» и её невозможно дать прямую подсказку?
+- В такой ситуации можно не подсказывать дублированную карту напрямую, а заставить её сыграть вслепую; результат должен быть тем же — карты справа от дублированной карты становятся _Chop Moved_. Однако нужно убедиться, что конечный результат действительно достаточно «плох», чтобы его нельзя было принять за другой тип подсказки.
+- В частности:
+  - Подсказка не должна удовлетворять _Minimum Clue Value Principle_ (аналогично _Duplicitous Clue_).
+  - Подсказка не должна выглядеть как [_Assisted Trash Chop Move_](#the-assisted-trash-chop-move) на получателя подсказки.
+- Например, в игре на троих:
+  - Все 1 уже сыграны на стол. У Кэти известная синяя 2.
+  - В руке Боба есть ранее подсказанная красная карта, но Боб не знает её ранг.
+  - Алиса даёт Бобу подсказку числом 3, «дополняя» красную карту как красную 3. (Других карт подсказка не затрагивает.)
+  - Боб знает, что это _Finesse_ на красную 2 в красную 3. Боб вслепую играет свою _Finesse Position_, но вместо красной 2 там синяя 2, которую удаётся успешно разыграть.
+  - Поскольку ход был 0-for-1, Боб понимает, что должен пометить как _Chop Moved_ всё, что находилось позади синей 2: это _Time Travel Chop Move_.
+
+<RuL17DiagramTimeTravelChopMoveBlind />
+
+---
+
+## Тренировочные вопросы {/* #l17-training */}
+
+В официальном источнике отдельного набора Official Challenge Questions для Level 17 нет; ниже — наши Training Questions по материалу этого уровня.
+
+<details className="ru-training">
+
+<summary>
+  1. Когда Duplicitous Value Clue не вызывает дополнительных Prompts или
+  blind-play?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Когда подсказка удовлетворяет Minimum Clue Value Principle без учёта самой дублированной карты.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>2. Что такое Duplicitous Blind-Play?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Дублированную карту заставляют сыграть вслепую ради получения других ценных карт; при достаточной MCVP-ценности дальнейших Prompts/blind-play не ожидается.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>3. Когда ход становится Duplicitous Tempo Clue?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Когда дублирование раскрывается, но подсказка не дала дополнительных новых ценных карт; карта, информацию о которой дополнили, задним числом считается Tempo Clue.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>4. Для чего нужен Assisted Trash Chop Move?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Он позволяет выполнить Trash Chop Move, когда известный мусор нельзя дать прямую подсказку: дублированную карту заставляют сыграть вслепую через Trash Bluff или UTD.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>5. Когда возникает Time Travel Chop Move в прямой форме?</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Когда Duplicitous Clue оказывается 0-for-1 и не даёт Tempo: после раскрытия дубликата получатель трактует ход как Trash Chop Move на картах позади дублированной.
+
+</div>
+
+</details>
+
+<details className="ru-training">
+
+<summary>
+  6. Какие два ограничения есть у blind-play формы Time Travel Chop Move?
+</summary>
+
+<div className="ru-training-answer" data-ru-search-exclude="true">
+
+Подсказка не должна удовлетворять Minimum Clue Value Principle и не должна выглядеть как Assisted Trash Chop Move на получателя подсказки.
+
+</div>
+
+</details>

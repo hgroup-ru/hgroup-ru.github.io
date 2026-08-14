@@ -1,0 +1,38 @@
+---
+title: "Early Game (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqEarlyGameQuestion1Q from "./early-game-question-1/early-game-question-1.yml";
+import RuBgqEarlyGameQuestion1A from "./early-game-question-1/early-game-answer-1.yml";
+
+<BeginnersGuideProgress id="early-game-question-1" />
+
+<span id="bg-early-game-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- На первом ходу Алиса даёт Кэти подсказку числом 1, затрагивая три карты.
+- Боб сбрасывает красную 1.
+- Сейчас всё ещё Early Game или уже Mid-Game?
+
+<RuBgqEarlyGameQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Уже **Mid-Game**, потому что Боб сбросил свою карту на chop.
+
+<RuBgqEarlyGameQuestion1A />
+
+</TabItem>
+</Tabs>

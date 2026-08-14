@@ -1,0 +1,37 @@
+stacks:
+  - r: 2
+  - y: 1
+  - g: 1
+  - b: 1
+  - m: 2
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: r3
+        below:
+          text: Play
+          color: cyan
+      - type: x
+      - type: bm23
+      - type: x
+  - cards:
+      - type: x
+        below:
+          text:
+            - "No"
+            - priority
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        below:
+          text:
+            - "No"
+            - priority
+      - type: x
+      - type: x
+      - type: x
+      - type: x

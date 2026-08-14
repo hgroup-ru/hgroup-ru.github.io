@@ -1,0 +1,45 @@
+---
+title: "Multiple Possibilities"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL5Official2Q from "./level-5-multiple-possibilities/question.yml";
+import RuL5Official2A from "./level-5-multiple-possibilities/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-multiple-possibilities" />
+
+<span id="ru-level-5-multiple-possibilities"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- На столе сыграны красная 2, жёлтая 1 и зелёная 1.
+- Рука Боба от новой к старой: `синяя 1, синяя 2, зелёная 1, жёлтая 4`.
+- Рука Кэти от новой к старой: `зелёная 2, фиолетовая 1, фиолетовая 2, жёлтая 2 (с подсказкой числом 2)`.
+- Алиса даёт Дональду подсказку числом 3, затрагивая 3 в слоте 2.
+- Какие **точные** заметки должен записать Дональд?
+
+<RuL5Official2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Это может быть красная 3 как обычная _Play Clue_.
+- Это может быть жёлтая 3 как [_Prompt_](../level-1.mdx#the-prompt) на жёлтую 2 Кэти.
+- Это может быть зелёная 3 как [_Hidden Finesse_](../level-5.mdx#the-hidden-finesse) на зелёную 2 Кэти: сначала жёлтая 2 должна быть сыграна как зелёная 2.
+- Это может быть синяя 3 как [_Double Finesse_](../level-2.mdx#the-double-finesse--triple-finesse--quadruple-finesse) через синюю 1 и синюю 2 Боба.
+- Это может быть фиолетовая 3 как [_Clandestine Finesse_](../level-5.mdx#the-clandestine-finesse) через карты Кэти. Технически этот частный вариант называется [_Surreptitious Finesse_](../extras/special-finesses.mdx#the-surreptitious-finesse), но на Level 5 различие знать не требуется.
+- Поэтому полная заметка Дональда: `r3, y3 if y2 p, g3 if g2 f, b3 if b1 f, p3 if p1 f`.
+
+<RuL5Official2A />
+
+</TabItem>
+</Tabs>

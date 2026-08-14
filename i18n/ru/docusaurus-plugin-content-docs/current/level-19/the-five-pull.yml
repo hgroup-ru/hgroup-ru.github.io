@@ -1,0 +1,33 @@
+stacks:
+  - r: 3
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Low score
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: g1
+        border: false
+      - type: x
+      - type: x
+  - cards:
+      - type: 5
+        clue: 5
+        below: Pull
+      - type: x
+        above: Blue 1
+        below: Pulled
+      - type: x
+      - type: x
+      - type: x

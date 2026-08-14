@@ -1,0 +1,35 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 1
+  - p: 0
+bigText:
+  text: "Clues: 0"
+discarded:
+  - r4
+players:
+  - zeroClues: true
+    cards:
+      - type: x
+      - type: b2
+      - type: x
+      - type: x
+      - type: x
+        below: Discard
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        below: Discards
+      - type: r4
+        cm: true
+        middleNote: cm
+  - text: Bob must perform a Rebellious Discard, discarding slot 4
+  - cards:
+      - type: 5
+      - type: 5
+      - type: 5
+      - type: 5
+      - type: 5

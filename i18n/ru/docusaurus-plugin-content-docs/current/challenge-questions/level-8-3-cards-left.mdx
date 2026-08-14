@@ -1,0 +1,44 @@
+---
+title: "3 Cards Left"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL8Official2Q from "./level-8-3-cards-left/question.yml";
+import RuL8Official2A from "./level-8-3-cards-left/answer.yml";
+
+<ChallengeQuestionProgress level={8} id="level-8-3-cards-left" />
+
+<span id="ru-level-8-3-cards-left"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В колоде осталось 3 карты, доступно 0 подсказок.
+- Все оставшиеся полезные карты уже «получены».
+- Боб знает точное значение всех своих карт с подсказками.
+- Что должна сделать Алиса?
+
+<RuL8Official2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Может показаться естественным сыграть красную 4, чтобы Боб затем сыграл красную 5. Но это **проигрывает по времени**.
+- Ограничение здесь — способность Боба успеть сыграть все свои 5 до конца партии. Команде нужны подсказки для Stall.
+- Сброс возвращает жетон подсказки, а розыгрыш красной 4 — нет.
+- Поэтому Алиса должна **сбросить сейчас** и сохранить красную 4 на более поздний ход.
+
+<RuL8Official2A />
+
+Источник: [официальный Challenge Question ↗](https://hanabi.github.io/challenge-questions/level-8-3-cards-left)
+
+</TabItem>
+</Tabs>

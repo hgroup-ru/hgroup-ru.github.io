@@ -1,0 +1,95 @@
+---
+title: Ejections
+---
+
+import RankChoice from "./ejections/rank-choice.yml";
+import BadTrashFinesseEjection from "./ejections/bad-trash-finesse-ejection.yml";
+
+- _Ejection_ — это blind-play, при котором игрок разыгрывает карту из своей _Second Finesse Position_.
+  - Например, если на руке игрока вообще нет подсказок, его _Second Finesse Position_ — слот 2.
+- Как и _Bluff_, _Ejection_ можно выполнить только на непосредственно следующего по ходу игрока.
+
+### 5 Color Ejection (5CE) {/* #the-5-color-ejection-5ce */}
+
+- _5 Color Ejection_ описан на [Level 16](/level-16#the-5-color-ejection-5ce).
+
+### 5 Number Ejection (5NE) {/* #the-5-number-ejection-5ne */}
+
+- _5 Number Ejection_ описан на [Level 19](/level-19#the-5-number-ejection-5ne).
+
+### Trash Push Ejection
+
+- Сначала см. раздел о [Trash Push](/level-14#the-trash-push).
+- Обычно, когда фокус подсказки затрагивает известный мусор и эта карта находится на chop, это сообщает _Trash Push_.
+- Но что, если _Trash Pushed_-карта находится _two-or-more-away-from-playable_? Обычно это выглядело бы как _Trash Push Double Finesse_ на Боба, но такая интерпретация маловероятна.
+- Вместо этого, поскольку ни один одиночный розыгрыш не может предотвратить немедленный мисплей _Pushed_-карты, Боб трактует подсказку как _Ejection_.
+- После _Trash Push Ejection_ получивший подсказку игрок должен пометить _two-or-more-away-from-playable_ карту как _Chop Moved_.
+
+### Bad Chop Move Ejection (BCME) {/* #the-bad-chop-move-ejection-bcme */}
+
+- Многие ходы приводят к тому, что одна или несколько карт становятся _Chop Moved_. Но что, если такой ход используется, когда все _Chop Moved_-карты — мусор? Остальные игроки видят, что ход обязательно был сделан по какой-то другой причине.
+- В такой ситуации это должно сигнализировать _Ejection_ на непосредственно следующего игрока.
+- **Любой** ход, приводящий к _Chop Move_, можно использовать для запуска такого _Ejection_.
+- _Bad Chop Move Ejections_ применяются не всегда:
+  - В общем случае подсказки, связанные с _Chop Move_, отключаются, как только больше не остаётся карт, которые нужно _Chop Move_. Конкретно речь о _one-away-from-playable_ картах, которым нельзя дать прямой _Play Clue_ или _Save Clue_. Поэтому, если таких карт больше нет, _Bad Chop Move Ejection_ превращается во что-то другое — например, в одну из форм _Double Ignition_.
+  - Иногда игроки делают _Chop Move_ другой копии уже подсказанной карты. Это может быть полезно для распределения карт, чтобы в последний круг партии у каждого была карта для розыгрыша. Поэтому _Bad Chop Move Ejection_ может сработать только когда _Chop Move_ применяется к картам, которые уже были сыграны.
+  - Помните, что в _End-Game_ игрок, дающий подсказку, похожую на _Bad Chop Move Ejection_, может просто делать Stall.
+
+### Bad Trash Finesse Ejection / Bad Trash Bluff Ejection {/* #the-bad-trash-finesse-ejection--the-bad-trash-bluff-ejection */}
+
+- Поскольку мы считаем, что [_Trash Finesses_ и _Trash Bluffs_ всегда unnecessary](/level-24#trash-finesses-and-trash-bluffs-are-always-unnecessary), было бы странно, если бы _Trash Finesse_ привёл к _Chop Move_, при котором все затронутые карты — мусор.
+- Мы договариваемся, что в такой ситуации реагирующий игрок не должен разыгрывать свою _First Finesse Position_, как при обычном _Trash Finesse_. Вместо этого он должен сделать _Ejection_ как специальную форму _Bad Chop Move Ejection_.
+- Например, в игре на троих:
+  - Красная 2 и жёлтая 1 сыграны на стол.
+  - На руке Кэти вообще нет подсказок; от самой новой карты к самой старой: `зелёная 2, красная 3, жёлтая 5, жёлтая 1, красная 2`.
+  - Алиса даёт Кэти подсказку числом 1, которая будет воспринята как _Play Clue_ на одну из ещё не сыгранных 1.
+  - Боб знает, что независимо от расположения своей руки blind-play из _First Finesse Position_ заставил бы Кэти пометить красную 2 как _Chop Moved_, хотя это мусор.
+  - Поскольку такой _Chop Move_ был бы плохим, Боб знает, что Алиса вместо этого имеет в виду _Bad Trash Finesse Ejection_. Боб вслепую играет карту из своей _Second Finesse Position_. Это синяя 1, и её удаётся успешно разыграть.
+  - Кэти знает, что её 1 с подсказкой должна быть мусором, а карта за ней теперь тоже глобально известна как мусор.
+
+<BadTrashFinesseEjection />
+
+### Trash Finesse Push Ejection / Trash Bluff Push Ejection {/* #the-trash-finesse-push-ejection--the-trash-bluff-push-ejection */}
+
+- Сначала см. разделы о [_Trash Push Ejection_](#trash-push-ejection) и [_Bad Trash Finesse Ejection_](#the-bad-trash-finesse-ejection--the-bad-trash-bluff-ejection).
+- Если игрок делает _Trash Finesse_, затрагивая карту на chop, это всегда приводит к _Trash Push_, поскольку [_Trash Finesses и Trash Bluffs всегда unnecessary_](/level-24#trash-finesses-and-trash-bluffs-are-always-unnecessary).
+- Что, если дан _Trash Finesse_, но реагирующий игрок видит, что вытолкнутая карта никак не сможет стать играбельной к моменту его хода? Иными словами, что, если _Pushed_-карта находится _two-or-more-away-from-playable_?
+- В такой ситуации мы договариваемся, что реагирующий игрок должен сделать _Ejection_, а не играть _First Finesse Position_ как при обычном _Trash Finesse_.
+- После _Trash Finesse Push Ejection_ игрок с подсказкой должен пометить вытолкнутую карту как _Chop Moved_. Это похоже на работу [5 Number Ejection](/level-19#the-5-number-ejection-5ne).
+
+### Rank Choice Ejection (с подсказкой числом 2 или 5) (RCE) {/* #the-rank-choice-ejection-with-a-number-2-or-a-number-5-rce */}
+
+- Обычно, когда подсказку числом 2 или 5 дают на карту на chop, она трактуется как _2 Save_ или _5 Save_, и карта не разыгрывается.
+- Если игрок делает _2 Save_ или _5 Save_ на играбельной карте, хотя мог легко использовать обычный цветовой _Play Clue_, это очень странно. Значит, он обязательно пытается сообщить что-то ещё.
+- В такой ситуации он имеет в виду _Ejection_ на непосредственно следующего игрока.
+- Например, в игре на троих:
+  - Красная 1 сыграна на стол.
+  - На руке Кэти вообще нет подсказок; от самой новой карты к самой старой: `синяя 3, синяя 3, синяя 4, синяя 4, красная 2`.
+  - Алиса даёт Кэти подсказку числом 2, затрагивая красную 2 как _2 Save_.
+  - Боб видит, что очевидной подсказкой Кэти была красная: она прямо сейчас позволила бы сыграть красную 2.
+  - Этот ход настолько плох, что обязан сообщать что-то дополнительное. Алиса должна иметь в виду _Rank Choice Ejection_. Боб вслепую играет карту из своей _Second Finesse Position_: это синяя 1, и её удаётся успешно разыграть.
+  - Кэти знает: раз подсказка числом 2 заставила Боба сыграть вслепую _Second Finesse Position_, это обязательно _Ejection_. Единственный вид _Ejection_, подходящий к такой подсказке, — _Rank Choice Ejection_. Значит, Кэти знает, что её 2 должна быть играбельной и конкретно красной 2. Кэти играет красную 2.
+
+<RankChoice />
+
+- Дополнительные примеры _Rank Choice Ejection_ находятся [здесь](/examples/rank-choice-ejection).
+
+### Trash Ejection {/* #the-trash-ejection */}
+
+- Сначала см. раздел о [_Trash Double Ignition_](/level-21#the-trash-double-ignition-tdi).
+- В определённых ситуациях, если игрок даёт подсказку ранее незатронутой карте, глобально известной как мусор, это запускает _Trash Double Ignition_.
+- Но что, если следующий игрок видит, что _Trash Double Ignition_ невозможен? В такой ситуации, если дающий подсказку не ошибается, вместо этого он имеет в виду _Ejection_ на непосредственно следующего игрока.
+
+### Replay Ejection {/* #the-replay-ejection */}
+
+- Сначала см. раздел о [_Replay Double Ignition_](/level-21#the-replay-double-ignition-rdi).
+- Обычно, если игрок повторно даёт подсказку карте, глобально известной как играбельная, это запускает _Replay Double Ignition_.
+- Но что, если следующий игрок видит, что _Replay Double Ignition_ невозможен? В такой ситуации, если дающий подсказку не ошибается, вместо этого он имеет в виду _Ejection_ на непосредственно следующего игрока.
+- В большинстве случаев _Replay Ejection_ нельзя выполнить, повторно давая подсказку карте в руке Боба. Боб истолкует это как _Fix Clue_: карта, которую он собирался сыграть, на самом деле плохая, и её следует сбросить, а не разыгрывать.
+- Обратите внимание: в _End-Game_ _Replay Ejection_ «отключён», потому что игроки часто повторно подсказывают играбельные карты как _Burn Clue_.
+
+### Poke Ejection {/* #the-poke-ejection */}
+
+- Сначала см. раздел о [_Poke Double Ignition_](/level-21#the-poke-double-ignition-pdi).
+- Обычно, если игрок повторно даёт подсказку глобально известному мусору, это запускает _Poke Double Ignition_.
+- Но что, если следующий игрок видит, что _Poke Double Ignition_ невозможен? В такой ситуации, если дающий подсказку не ошибается, вместо этого он имеет в виду _Ejection_ на непосредственно следующего игрока.

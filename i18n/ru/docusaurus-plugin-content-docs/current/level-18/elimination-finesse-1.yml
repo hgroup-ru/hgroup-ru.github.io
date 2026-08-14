@@ -1,0 +1,55 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 2
+  - p: 0
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: b3
+        border: false
+        below: Discard
+  - text: Alice writes Elimination Notes
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+        middleNote: b3?
+      - type: x
+        middleNote: b3?
+      - type: x
+        middleNote: b3?
+      - type: x
+        middleNote: b3?
+  - space: 50
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        above: Blue 3
+        middleNote: b3
+        below: Finesse
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: b12345
+        crossedOut: 3
+        clue: b
+        middleNote: b4
+        below: Play
+      - type: x

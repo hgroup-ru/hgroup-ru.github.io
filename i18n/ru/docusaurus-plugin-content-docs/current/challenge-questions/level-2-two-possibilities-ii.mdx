@@ -1,0 +1,47 @@
+---
+title: "Два варианта, II"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial3Q from "./level-2-two-possibilities-ii/question.yml";
+import RuOfficial3A from "./level-2-two-possibilities-ii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-two-possibilities-ii" />
+
+<span id="ru-level-2-two-possibilities-ii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 3, которая затрагивает одну карту в слоте 4.
+- На этой карте есть негативная информация о красном и зелёном цветах.
+- Боб записывает заметку на карте.
+
+1. Что он пишет?
+2. Что он должен сделать?
+
+<RuOfficial3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Боб пишет заметку `y3, p3`.
+   - Боб знает, что это должен быть _Play Clue_ на его 3, поскольку карта не на chop. Ни одна 2 ещё не сыграна, поэтому 3 не играбельна напрямую. Обычно это выглядело бы как _Reverse Finesse_ через зелёную 2 Кэти, но из-за негативной зелёной информации на 3 Боба это невозможно.
+   - Следовательно, это должен быть [_Self-Finesse_](../level-2.mdx#the-self-finesse), и у Боба должна находиться 2, которая сделает его 3 играбельной.
+   - Боб пока не знает, какая именно из его возможных 3 играбельна; это выяснится только после розыгрыша его _Finesse Position_.
+2. Боб должен немедленно сыграть вслепую свою _Finesse Position_, чтобы показать, что связующая 2 находится у него, а не у Кэти.
+   - Карта Кэти на chop — мусор, поэтому спасать её не требуется.
+   - После розыгрыша 2 Боб должен пометить свою 3 тем же цветом, что и сыгранная 2.
+
+<RuOfficial3A />
+
+</TabItem>
+</Tabs>

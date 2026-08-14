@@ -1,0 +1,48 @@
+# Local project illustration reconstructed from official prose; NOT official H-Group YML.
+# Preserves the previously accepted local teaching state.
+
+stacks:
+  - r: 2
+  - y: 2
+  - g: 2
+  - b: 1
+  - p: 2
+
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+
+  - cards:
+      - type: x
+      - type: x
+      - type: b2
+        border: false
+        below: 3rd FP
+      - type: x
+
+  - cards:
+      - type: x
+      - type: b3
+        border: false
+        below: 2nd FP
+      - type: x
+      - type: x
+
+  - cards:
+      - type: b4
+        border: false
+      - type: b4
+        border: false
+      - type: r1
+        clue: r
+        trash: true
+        below: Trash
+      - type: b1
+        border: false
+        cm: true
+        middleNote: cm
+        below: cm

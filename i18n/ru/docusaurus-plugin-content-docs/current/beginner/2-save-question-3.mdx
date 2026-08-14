@@ -1,0 +1,39 @@
+---
+id: 2-save-question-3
+title: "2 Save (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgq2SaveQuestion3Q from "./2-save-question-3/2-save-question-3.yml";
+import RuBgq2SaveQuestion3A from "./2-save-question-3/2-save-answer-3.yml";
+
+<BeginnersGuideProgress id="2-save-question-3" />
+
+<span id="bg-2-save-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Какое действие должна сделать Алиса?
+
+<RuBgq2SaveQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса не имеет права делать 2 Save зелёной 2 Боба, потому что другая зелёная 2 находится в руке Кэти и не на chop.
+- Алиса не имеет права делать 2 Save жёлтой 2 Кэти, потому что другая жёлтая 2 находится в руке Боба и не на chop.
+- Следовательно, Алиса должна сбросить.
+
+<RuBgq2SaveQuestion3A />
+
+</TabItem>
+</Tabs>

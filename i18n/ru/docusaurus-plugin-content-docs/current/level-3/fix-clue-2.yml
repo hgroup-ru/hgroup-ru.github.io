@@ -1,0 +1,45 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 0
+  - b: 1
+  - p: 1
+players:
+  - text: Bob assumes that his 1 is a green 1.
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 1
+        middleNote: g1
+      - type: x
+  - text: Alice gives a Fix Clue.
+  - offset: -2
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: b
+        clue: b
+        below:
+          text:
+            - Not
+            - focused
+      - type: x
+      - type: x
+      - type: b1
+        clue: b
+        retouched: true
+        trash: true
+        below: Fix
+      - type: x

@@ -1,0 +1,39 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+players:
+  - cards:
+      - type: b1
+        clue: 1
+      - type: g1
+        clue: 1
+      - type: y1
+        clue: 1
+      - type: r1
+        clue: 1
+        below: Play
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Red 1
+        below:
+          text:
+            - Finesse,
+            - Discards
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: r
+        middleNote: r2
+      - type: x

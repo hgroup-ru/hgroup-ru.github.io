@@ -1,0 +1,43 @@
+# Local project illustration reconstructed from official prose; NOT official H-Group YML.
+# Preserves the previously accepted local teaching state.
+# User-approved refinement: Bob knows the first card is rank 4 but only infers r4?; Red 2 and Red 3 are inferred notes above hidden cards.
+
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+
+  - cards:
+      - type: 4
+        clue: 4
+        middleNote: r4?
+        below: Play Clue
+      - type: x
+        above:
+          text: Red 2
+          color: red
+      - type: x
+        above:
+          text: Red 3
+          color: red
+      - type: x
+      - type: x
+
+  - cards:
+      - type: r1
+        border: false
+      - type: x
+      - type: x
+      - type: x
+      - type: x

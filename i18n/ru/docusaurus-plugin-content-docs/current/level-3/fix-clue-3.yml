@@ -1,0 +1,45 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: 1
+        clue: 1
+      - type: 1
+        clue: 1
+        below: Plays
+      - type: 1
+        clue: 1
+        below: Plays
+      - type: x
+  - text: After Bob has played two of the 1s...
+  - offset: -2
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 1
+        clue: 1
+        retouched: true
+        middleNote: kt
+        trash: true
+        below: Fix
+      - type: x

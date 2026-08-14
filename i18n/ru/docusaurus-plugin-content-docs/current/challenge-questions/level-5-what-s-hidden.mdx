@@ -1,0 +1,46 @@
+---
+title: "What's Hidden?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL5Official1Q from "./level-5-what-s-hidden/question.yml";
+import RuL5Official1A from "./level-5-what-s-hidden/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-what-s-hidden" />
+
+<span id="ru-level-5-what-s-hidden"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Красная 1 и синяя 1 сыграны на стол.
+- У Боба:
+  - неподсказанная синяя 2 в слоте 1;
+  - красная 2 в слоте 4 с подсказкой числом 2; Боб не знает её точного значения.
+- Алиса даёт Кэти подсказку числом 3, затрагивая 3 в слоте 3 как _Play Clue_.
+- Боб играет красную 2.
+- Какие заметки должна записать Кэти на своей 3?
+- Что Кэти должна сделать дальше?
+
+<RuL5Official1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- 3 Кэти может быть красной 3; тогда подсказка Алисы была [_Prompt_](../level-1.mdx#the-prompt) на красную 2 Боба.
+- 3 Кэти также может быть синей 3; тогда подсказка Алисы была [_Hidden Finesse_](../level-5.mdx#the-hidden-finesse) на синюю 2 Боба.
+- Поскольку обе подсказки допустимы, Кэти пишет на карте `r3, b3 if b2 f`.
+- Следовательно, Кэти сейчас не может играть свою 3 и должна сбросить или дать какую-то постороннюю подсказку. В частности, Кэти не должна подсказывать синюю 2, потому что это может _Stomp_ по _Hidden Finesse_.
+
+<RuL5Official1A />
+
+</TabItem>
+</Tabs>

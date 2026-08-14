@@ -1,0 +1,43 @@
+---
+title: "5's Chop Move"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL4Official2Q from "./level-4-5's-chop-move/question.yml";
+import RuL4Official2A from "./level-4-5's-chop-move/answer.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-5's-chop-move" />
+
+<span id="ru-level-4-5's-chop-move"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Идёт первый ход, и на столе ещё ничего не сыграно.
+- Алиса даёт Кэти подсказку числом 5, затрагивая 5 в слоте 4.
+- Что это за подсказка?
+- Какие заметки нужно записать?
+
+<RuL4Official2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Обычно любая подсказка, фокус которой находится не на chop, является _Play Clue_. Однако подсказки числом 5 устроены иначе.
+- На Level 4 вводится [_5's Chop Move_](../level-4#the-5s-chop-move-5cm): подсказка числом 5 по карте **в одной карте от chop** может иметь специальный смысл.
+- Однако _5 Stall_ имеет приоритет над _5's Chop Move_, поэтому игрокам нужно сначала проверить состояние партии.
+- Поскольку всё ещё идёт _Early Game_, _5 Stall_ разрешён, и эта подсказка не является _Chop Move_.
+- Никаких заметок писать не нужно. Алиса просто не увидела ничего другого, чему стоило бы дать подсказку.
+
+<RuL4Official2A />
+
+</TabItem>
+</Tabs>

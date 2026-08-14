@@ -1,0 +1,46 @@
+---
+title: "Фокус после Chop Move"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL4Official4Q from "./level-4-focus-when-chop-moved/question.yml";
+import RuL4Official4A from "./level-4-focus-when-chop-moved/answer.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-focus-when-chop-moved" />
+
+<span id="ru-level-4-focus-when-chop-moved"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Все 1 сыграны на столе.
+- Алиса даёт Кэти подсказку числом 1, затрагивая карту в слоте 3. Это _Trash Chop Move_.
+- Боб даёт Кэти синюю подсказку, затрагивая _все_ карты в руке Кэти.
+- Какие заметки нужно записать на картах Кэти?
+- Что Кэти должна сделать дальше?
+
+<RuL4Official4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- После _Trash Chop Move_ Алисы chop Кэти сдвинулась в слот 2.
+- В подсказке Боба действует обычный _Chop-Focus_ и фокусируется на слоте 2.
+- В стопке сброса нет синих карт, поэтому это _Play Clue_ на синюю 2.
+- Синяя 1 в слоте 3 по-прежнему является мусором.
+- По _Good Touch Principle_ остальные синие карты считаются синей 3, синей 4 и синей 5, но их порядок неизвестен.
+- Слоты 4 и 5 больше не считаются Chop Moved, потому что теперь их затронула подсказка.
+- Кэти должна сыграть синюю 2.
+
+<RuL4Official4A />
+
+</TabItem>
+</Tabs>

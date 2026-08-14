@@ -1,0 +1,69 @@
+suits:
+  i: pink
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - i: 0
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+    clueGiver: true
+  - cards:
+      - type: rygbi12345
+        orange: 1
+        clue: 1
+        middleNote: 3rd
+      - type: rygbi12345
+        orange: 1
+        clue: 1
+        above: Blue 1
+        middleNote: 2nd
+      - type: rygbi12345
+        orange: 1
+        clue: 1
+        above: Red 1
+        middleNote: 1st
+        below: Play
+      - type: xrygb2345
+      - type: xrygb2345
+  - text: Bob plays Red 1
+  - offset: -1
+    cards:
+      - type: x
+      - type: rygbi12345
+        orange: 1
+      - type: rygbi12345
+        orange: 1
+        above: Blue 1
+      - type: xrygb2345
+      - type: xrygb2345
+  - text: Bob plays Blue 1
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: rygbi12345
+        orange: 1
+      - type: xrygb2345
+      - type: xrygb2345
+  - text: Alice saves 5 on chop
+  - offset: -1
+    cards:
+      - type: xrygb1234
+      - type: xrygb1234
+      - type: i12345
+        orange: 15
+        clue: 5
+        retouched: true
+        middleNote: any
+      - type: xrygb234
+      - type: rygb5
+        clue: 5
+        below: Save
+  - text: Slot 3 could be any pink, maybe even 1 or 5

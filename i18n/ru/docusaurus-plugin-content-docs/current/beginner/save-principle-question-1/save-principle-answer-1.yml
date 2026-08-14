@@ -1,0 +1,36 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 0
+  - b: 0
+  - p: 3
+discarded:
+  - g4
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - clueGiver: true
+    cards:
+      - type: b
+        middleNote: b1
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r1
+        border: false
+      - type: p4
+        clue: 4
+      - type: p3
+        border: false
+      - type: r1
+        border: false
+      - type: g4
+        clue: 4
+        middleNote: g4, p4
+        below: sp

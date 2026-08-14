@@ -1,0 +1,39 @@
+---
+title: "Reverse Finesse, II?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial5Q from "./level-2-reverse-ii/question.yml";
+import RuOfficial5A from "./level-2-reverse-ii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-reverse-ii" />
+
+<span id="ru-level-2-reverse-ii"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 4, которая затрагивает зелёную 4 в слоте 5.
+- Боб сбрасывает мусор из слота 4.
+- С точки зрения Кэти, была ли подсказка Алисы [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse)? Почему или почему нет?
+
+<RuOfficial5Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Да, это _Reverse Finesse_.
+- Зелёная 4 не является критической, поэтому подсказка числом 4 не может быть _Save Clue_. Следовательно, это должна быть _Play Clue_. Кэти обещана зелёная 3, которая сделает зелёную 4 играбельной.
+
+<RuOfficial5A />
+
+</TabItem>
+</Tabs>

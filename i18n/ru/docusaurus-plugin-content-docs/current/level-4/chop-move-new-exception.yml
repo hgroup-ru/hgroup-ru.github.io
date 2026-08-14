@@ -1,0 +1,46 @@
+stacks:
+  - r: 2
+  - y: 2
+  - g: 2
+  - b: 2
+  - m: 2
+players:
+  - text: "Before the clue:"
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+        below: Chop
+      - type: rm
+      - type: rm
+      - type: x
+        cm: true
+        middleNote: cm
+  - text: "After the clue:"
+  - offset: -2
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+        below: Chop
+      - type: m
+        clue: b
+        retouched: true
+      - type: m
+        clue: b
+        retouched: true
+      - type: b
+        clue: b
+        middleNote: b3
+        below: Focus

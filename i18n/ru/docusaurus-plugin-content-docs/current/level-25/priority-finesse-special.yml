@@ -1,0 +1,31 @@
+stacks:
+  - r: 2
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: r3
+        below:
+          text: Play
+          color: cyan
+      - type: x
+      - type: ygbp2
+      - type: x
+  - cards:
+      - type: x
+        above: Red 4
+        below: Priority
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

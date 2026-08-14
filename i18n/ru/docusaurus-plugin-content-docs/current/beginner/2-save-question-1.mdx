@@ -1,0 +1,42 @@
+---
+id: 2-save-question-1
+title: "2 Save (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgq2SaveQuestion1Q from "./2-save-question-1/2-save-question-1.yml";
+import RuBgq2SaveQuestion1A from "./2-save-question-1/2-save-answer-1.yml";
+
+<BeginnersGuideProgress id="2-save-question-1" />
+
+<span id="bg-2-save-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 2, затрагивая слот 4.
+- С точки зрения Боба это Play Clue или Save Clue?
+- Что Боб запишет в Card Notes?
+
+<RuBgq2SaveQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Это не может быть Save Clue, потому что подсказка не затронула карту Боба на chop. Следовательно, это должна быть **Play Clue**.
+- Боб записывает следующие возможные значения:
+  - жёлтая 2 — как Delayed Play Clue через жёлтую 1 Кэти;
+  - синяя 2 — как непосредственно играбельная карта.
+
+<RuBgq2SaveQuestion1A />
+
+</TabItem>
+</Tabs>

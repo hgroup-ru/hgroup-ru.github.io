@@ -1,0 +1,38 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: First turn
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        above: Blue 1
+        below: Charm
+  - cards:
+      - type: 4
+        clue: 4
+        below: Play
+      - type: x
+        above:
+          text:
+            - Not
+            - playable
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x

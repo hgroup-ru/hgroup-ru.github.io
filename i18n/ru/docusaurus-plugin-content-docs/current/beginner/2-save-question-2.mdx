@@ -1,0 +1,47 @@
+---
+id: 2-save-question-2
+title: "2 Save (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgq2SaveQuestion2Q from "./2-save-question-2/2-save-question-2.yml";
+import RuBgq2SaveQuestion2A from "./2-save-question-2/2-save-answer-2.yml";
+
+<BeginnersGuideProgress id="2-save-question-2" />
+
+<span id="bg-2-save-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Ранее Боб получил Play Clue на 1 и собирался сыграть её на следующем ходу.
+- Теперь Алиса даёт Бобу подсказку числом 2, затрагивая слот 5.
+- С точки зрения Боба это Play Clue или Save Clue?
+- Что Боб запишет? Укажите все варианты.
+
+<RuBgq2SaveQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- На своей 1 Боба уже записал `r1, b1, p1`, потому что именно эти единицы ещё нужно сыграть на стол.
+- Если новая подсказка — **Play Clue**, тогда его 2 может быть:
+  - жёлтой 2 — непосредственно играбельной;
+  - либо Delayed Play Clue на 2 того же цвета, что и его неизвестная 1: например красной 2, синей 2 или фиолетовой 2.
+- Но подсказка затронула chop Боба, поэтому она также может быть **Save Clue**. В таком случае это может быть 2 Save на пока неиграбельную 2.
+- Боб не знает, Play Clue это или Save Clue. Пока дополнительной информации нет, он обязан учитывать вариант Save Clue и держать карту.
+- Поэтому Боб записывает `r2, y2, b2, p2`.
+  - Зелёной 2 быть не может: она уже сыграна и бесполезна команде, а Алиса не стала бы тратить на такую карту подсказку.
+
+<RuBgq2SaveQuestion2A />
+
+</TabItem>
+</Tabs>

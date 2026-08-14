@@ -1,0 +1,48 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: First turn
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+        above: Red 1
+        below: Ejection
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r5
+        clue: 5
+        below: Pull
+      - type: r3
+        border: false
+        below: Pulled
+      - type: g2
+        border: false
+      - type: g1
+        border: false
+      - type: g2
+        border: false
+  - text: "After Bob ejects:"
+  - offset: -1
+    cards:
+      - type: 5
+      - type: x
+        cm: true
+        below: cm
+        middleNote: cm, 34
+      - type: x
+      - type: x
+      - type: x

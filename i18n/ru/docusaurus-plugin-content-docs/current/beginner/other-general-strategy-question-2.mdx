@@ -1,0 +1,40 @@
+---
+title: "Other General Strategy (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqOtherGeneralStrategyQuestion2Q from "./other-general-strategy-question-2/other-general-strategy-question-2.yml";
+import RuBgqOtherGeneralStrategyQuestion2A from "./other-general-strategy-question-2/other-general-strategy-answer-2.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-2" />
+
+<span id="bg-other-general-strategy-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Сейчас Early Game.
+- Перечислите все допустимые подсказки Алисы.
+- Какую из них Алиса должна выбрать?
+
+<RuBgqOtherGeneralStrategyQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может дать Кэти зелёную подсказку как **Play Clue** на зелёную 3.
+- Алиса может дать Кэти подсказку числом 5 как **5 Save** на красную 5.
+- Логичнее дать Play Clue, а не Save Clue: если Кэти будет занята розыгрышем карты, на своём ходу она всё равно ничего не сбросит.
+
+<RuBgqOtherGeneralStrategyQuestion2A />
+
+</TabItem>
+</Tabs>

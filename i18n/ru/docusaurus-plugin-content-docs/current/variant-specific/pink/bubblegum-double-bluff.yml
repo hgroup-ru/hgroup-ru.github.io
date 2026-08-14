@@ -1,0 +1,39 @@
+suits:
+  i: pink
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - i: 0
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+        above: Red 1
+        below: Bubble
+      - type: x
+  - cards:
+      - type: x
+        above: Red 2
+        below: Bluff
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: rygbi12345
+        orange: 3
+        clue: 3
+        above: Pink 4
+        below: Play
+        middleNote: i4
+      - type: x
+      - type: x

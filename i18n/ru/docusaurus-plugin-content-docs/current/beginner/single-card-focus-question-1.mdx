@@ -1,0 +1,39 @@
+---
+title: "Single Card Focus (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqSingleCardFocusQuestion1Q from "./single-card-focus-question-1/single-card-focus-question-1.yml";
+import RuBgqSingleCardFocusQuestion1A from "./single-card-focus-question-1/single-card-focus-answer-1.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-1" />
+
+<span id="bg-single-card-focus-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- В руке Боба вообще нет подсказок.
+- Алиса даёт Бобу фиолетовую подсказку, затрагивая четыре карты.
+- Какой слот находится в фокусе?
+
+<RuBgqSingleCardFocusQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Слот 1, потому что это крайняя слева карта.
+  - Все затронутые карты для этой подсказки новые, и ни одна из них не находится на chop.
+
+<RuBgqSingleCardFocusQuestion1A />
+
+</TabItem>
+</Tabs>

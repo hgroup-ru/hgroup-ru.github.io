@@ -1,0 +1,42 @@
+---
+title: "Other General Strategy (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqOtherGeneralStrategyQuestion3Q from "./other-general-strategy-question-3/other-general-strategy-question-3.yml";
+import RuBgqOtherGeneralStrategyQuestion3A from "./other-general-strategy-question-3/other-general-strategy-answer-3.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-3" />
+
+<span id="bg-other-general-strategy-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Перечислите все допустимые подсказки Алисы.
+- Какую из них Алиса должна выбрать?
+
+<RuBgqOtherGeneralStrategyQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алиса может дать Бобу жёлтую подсказку как Play Clue на жёлтую 3 через жёлтую 2 Кэти.
+- Алиса может дать Бобу подсказку числом 3 как Play Clue на жёлтую 3 через жёлтую 2 Кэти.
+- Алиса может дать Бобу подсказку числом 5 как 5 Save на синюю 5.
+- Обычно Play Clue предпочтительнее Save Clue. Но здесь Play Clue окажется **Delayed Play Clue**: Боб ещё не сможет сыграть карту и должен будет ждать, пока Кэти сыграет жёлтую 2.
+- Если Алиса даст Play Clue на жёлтую 3, на своём ходу Боб может остаться без действий и сбросить критическую синюю 5. Значит, Алиса обязана выбрать другой ход.
+- Поэтому Алиса должна дать Бобу подсказку числом 5 как **5 Save**.
+
+<RuBgqOtherGeneralStrategyQuestion3A />
+
+</TabItem>
+</Tabs>

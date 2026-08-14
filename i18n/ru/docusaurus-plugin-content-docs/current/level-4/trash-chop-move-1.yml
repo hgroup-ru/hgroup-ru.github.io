@@ -1,0 +1,38 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+        below: Chop
+      - type: 1
+        clue: 1
+        trash: true
+        below: Trash
+      - type: x
+        cm: true
+        middleNote: cm
+        below: cm
+  - text: After discarding the 1...
+  - offset: -1
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        below: Chop
+      - type: x
+        cm: true
+        middleNote: cm

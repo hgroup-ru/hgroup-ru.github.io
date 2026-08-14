@@ -1,0 +1,44 @@
+---
+title: "Delayed Play Clues (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqDelayedPlayCluesQuestion1Q from "./delayed-play-clues-question-1/delayed-play-clues-question-1.yml";
+import RuBgqDelayedPlayCluesQuestion1A from "./delayed-play-clues-question-1/delayed-play-clues-answer-1.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues-question-1" />
+
+<span id="bg-delayed-play-clues-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Дональду красную подсказку, затрагивая одну карту в слоте 2. Это **Play Clue**.
+- Боб даёт Кэти красную подсказку, затрагивая одну карту в слоте 3. Это **Play Clue**.
+- Кэти записывает возможное значение своей карты.
+
+1. Что Кэти запишет?
+2. Является ли эта подсказка **Delayed Play Clue**?
+3. Какое действие должна сделать Кэти?
+
+<RuBgqDelayedPlayCluesQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Кэти записывает `r3`.
+2. Да. Это **Delayed Play Clue** через красную 2.
+3. Красную 3 пока нельзя сыграть, поэтому Кэти должна дать постороннюю подсказку или сбросить.
+
+<RuBgqDelayedPlayCluesQuestion1A />
+
+</TabItem>
+</Tabs>

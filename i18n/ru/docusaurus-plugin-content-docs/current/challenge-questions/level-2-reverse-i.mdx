@@ -1,0 +1,39 @@
+---
+title: "Reverse Finesse, I?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuOfficial4Q from "./level-2-reverse-i/question.yml";
+import RuOfficial4A from "./level-2-reverse-i/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-reverse-i" />
+
+<span id="ru-level-2-reverse-i"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Алиса даёт Бобу подсказку числом 2, которая затрагивает жёлтую 2 в слоте 5.
+- Боб сбрасывает мусор из слота 4.
+- С точки зрения Кэти, была ли подсказка Алисы [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse)? Почему или почему нет?
+
+<RuOfficial4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Нет, это не _Reverse Finesse_.
+- Поскольку жёлтая 2 находилась на chop, Алиса сделала обычный [_2 Save_](../level-1.mdx#the-2-save).
+
+<RuOfficial4A />
+
+</TabItem>
+</Tabs>

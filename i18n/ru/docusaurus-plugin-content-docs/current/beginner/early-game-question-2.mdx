@@ -1,0 +1,41 @@
+---
+title: "Early Game (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqEarlyGameQuestion2Q from "./early-game-question-2/early-game-question-2.yml";
+import RuBgqEarlyGameQuestion2A from "./early-game-question-2/early-game-answer-2.yml";
+
+<BeginnersGuideProgress id="early-game-question-2" />
+
+<span id="bg-early-game-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Сейчас идёт _Early Game_. Остался 1 жетон подсказки.
+- Ранее Боб получил подсказку на несколько 1. В будущем он сыграет фиолетовую 1 и зелёную 1.
+- Какое действие должна выполнить Алиса?
+
+<RuBgqEarlyGameQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- **Единственное** допустимое действие Алисы — дать Бобу зелёную подсказку как _Delayed Play Clue_ на зелёную 2.
+  - Кроме этой зелёной подсказки, других допустимых подсказок нет.
+  - Алиса не может дать Бобу подсказку числом 2, потому что она затронула бы жёлтую 2 и нарушила бы _Good Touch Principle_.
+  - Алиса не имеет права сбрасывать, потому что всё ещё идёт _Early Game_ и ещё не все _Play Clues_ были «погашены».
+
+<RuBgqEarlyGameQuestion2A />
+
+</TabItem>
+</Tabs>

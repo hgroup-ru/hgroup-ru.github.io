@@ -1,0 +1,50 @@
+---
+title: "A Tricky Spot, I"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuL5Official4Q from "./level-5-a-tricky-spot-i/question.yml";
+import RuL5Official4A from "./level-5-a-tricky-spot-i/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-a-tricky-spot-i" />
+
+<span id="ru-level-5-a-tricky-spot-i"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Фиолетовая 1 сыграна.
+- Алиса видит:
+  - у Боба красная 1 в _Finesse Position_;
+  - рука Кэти от новой к старой: `красная 2, жёлтая 4, зелёная 1, синяя 3`;
+  - зелёная 1 Кэти ранее получила зелёную подсказку и известна всей команде как зелёная 1;
+  - рука Дональда от новой к старой: `красная 2, фиолетовая 4, зелёная 4, синяя 5`.
+- Какие подсказки доступны Алисе?
+- Какая из них лучшая?
+
+<RuL5Official4Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- Алисе доступны следующие подсказки:
+  - Можно сделать _5 Save_ синей 5. Это безопасно, но не даёт ни одной новой карты для розыгрыша.
+  - Можно дать _Play Clue_ красной 1 Боба — красным или числом 1. Это будет 1-for-1.
+  - Можно дать _Play Clue_ красной 2 Кэти — красным или числом 2. Это вызовет _Finesse_ и будет 2-for-1.
+  - Можно дать _Play Clue_ красной 2 Дональда — красным или числом 2. Это вызовет _Finesse_ и будет 2-for-1.
+- Однако обе красные 2 находятся в _Finesse Position_. Если Алиса запустит _Finesse_ красной подсказкой, и Кэти, и Дональд отметят свои красные карты как возможные красные 3, что приведёт к [_Ambiguous Finesse_](../level-5.mdx#the-ambiguous-finesse).
+- Поэтому правильный способ запустить _Finesse_ — подсказка числом 2, которая не создаёт неоднозначности.
+- Что лучше — красная 2 Кэти или красная 2 Дональда? У Кэти уже есть зелёная 1 для розыгрыша, а у Дональда на chop важная карта. Поэтому лучшая подсказка Алисы — подсказка числом 2 Дональду, запускающая _Finesse_.
+
+<RuL5Official4A />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,46 @@
+---
+title: "Clue Interpretation (вопрос 3)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqClueInterpretationQuestion3Q from "./clue-interpretation-question-3/clue-interpretation-question-3.yml";
+import RuBgqClueInterpretationQuestion3A from "./clue-interpretation-question-3/clue-interpretation-answer-3.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-3" />
+
+<span id="bg-clue-interpretation-question-3"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- У Боба в руке уже есть 2 с подсказкой и 5 с подсказкой.
+- Алиса даёт Бобу красную подсказку, затрагивая слоты 2, 3, 4 и 5.
+
+1. Какой слот находится в фокусе?
+2. Это Play Clue или Save Clue?
+3. Что Боб запишет на сфокусированной карте?
+
+<RuBgqClueInterpretationQuestion3Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. В фокусе слот 3 — впервые затронутая карта, которая до подсказки находилась на chop.
+2. Красная 1 уже сыграна, а у Боба уже есть красная 2 и красная 5. Поэтому сфокусированная красная карта может быть красной 3 или красной 4.
+   - Если это красная 3, подсказка является **Chop-Focus Delayed Play Clue** через собственную красную 2 Боба. Это допустимо.
+   - Если это красная 4, подсказка не имела бы смысла: красная 4 сейчас не играбельна и не критическая. Все подсказки должны быть либо Play Clues, либо Save Clues.
+   - Следовательно, это должна быть **Chop-Focus Delayed Play Clue** на красную 3.
+3. Боб записывает `r3` на карту в слоте 3.
+
+<RuBgqClueInterpretationQuestion3A />
+
+</TabItem>
+</Tabs>

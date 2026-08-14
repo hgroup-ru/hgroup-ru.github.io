@@ -1,0 +1,40 @@
+---
+title: "Other General Strategy (вопрос 1)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqOtherGeneralStrategyQuestion1Q from "./other-general-strategy-question-1/other-general-strategy-question-1.yml";
+import RuBgqOtherGeneralStrategyQuestion1A from "./other-general-strategy-question-1/other-general-strategy-answer-1.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-1" />
+
+<span id="bg-other-general-strategy-question-1"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Ход Алисы, и у неё есть жёлтая 2 для розыгрыша.
+- У Кэти на chop критическая синяя 5.
+- Должна ли Алиса сыграть жёлтую 2 или спасти синюю 5 Кэти?
+
+<RuBgqOtherGeneralStrategyQuestion1Q />
+
+</TabItem>
+<TabItem value="solution">
+
+- У Алисы есть играбельная карта, а Боб сейчас нечего делать.
+- Поэтому если Алиса сама станет спасать синюю 5 Кэти, это будет плохим распределением обязанностей в команде.
+- Алиса должна сыграть жёлтую 2, а спасение синей 5 Кэти оставить Бобу.
+
+<RuBgqOtherGeneralStrategyQuestion1A />
+
+</TabItem>
+</Tabs>

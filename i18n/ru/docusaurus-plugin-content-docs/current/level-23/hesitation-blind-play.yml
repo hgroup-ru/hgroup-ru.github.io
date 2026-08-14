@@ -1,0 +1,34 @@
+stacks:
+  - r: 1
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+bigText:
+  text: "Clues: 5"
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: b3
+        clue: 3
+        middleNote: any 3
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        below: Discards
+  - cards:
+      - type: x
+        above: Red 2
+        middleNote: r2
+        below: Hesitation
+      - type: x
+      - type: x
+      - type: x
+      - type: x

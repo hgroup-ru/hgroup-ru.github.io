@@ -1,0 +1,44 @@
+---
+title: "Delayed Play Clues (вопрос 2)"
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import RuBgqDelayedPlayCluesQuestion2Q from "./delayed-play-clues-question-2/delayed-play-clues-question-2.yml";
+import RuBgqDelayedPlayCluesQuestion2A from "./delayed-play-clues-question-2/delayed-play-clues-answer-2.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues-question-2" />
+
+<span id="bg-delayed-play-clues-question-2"></span>
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Вопрос', value: 'question'},
+    {label: 'Решение', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Ранее Кэти получила подсказку на несколько 1 и в будущем сыграет обе эти карты.
+- Алиса даёт Бобу подсказку числом 3, затрагивая одну карту в слоте 1. Это **Play Clue**.
+- Боб записывает возможные значения карты.
+
+1. Что Боб запишет? Укажите все варианты.
+2. Является ли это **Delayed Play Clue**?
+3. Какое действие должен сделать Боб?
+
+<RuBgqDelayedPlayCluesQuestion2Q />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Боб записывает `b3, p3`.
+2. Нет, это не Delayed Play Clue. Его 3 не может соединяться с красной 1 или зелёной 1 Кэти, потому что ни у кого больше нет подходящих связующих 2.
+3. Боб, скорее всего, должен сразу сыграть 3 — если только у него нет хорошей подсказки, которую важнее дать.
+
+<RuBgqDelayedPlayCluesQuestion2A />
+
+</TabItem>
+</Tabs>

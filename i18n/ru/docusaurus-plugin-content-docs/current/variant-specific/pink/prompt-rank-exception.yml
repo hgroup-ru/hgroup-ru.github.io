@@ -1,0 +1,35 @@
+suits:
+  i: pink
+stacks:
+  - r: 2
+  - y: 2
+  - g: 2
+  - b: 2
+  - i: 2
+players:
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+    clueGiver: true
+  - cards:
+      - type: x
+        above: Pink 3
+        below: Finesse
+      - type: rygbi12345
+        orange: 4
+      - type: rygbi12345
+        orange: 4
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: i4
+        clue: i
+        middleNote: i4
+        below: Play
+      - type: x
+      - type: x
+      - type: x
