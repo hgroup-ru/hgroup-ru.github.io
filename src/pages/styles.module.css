@@ -16,3 +16,52 @@
   align-items: center;
   justify-content: center;
 }
+
+/* H-Group RU localization notice */
+.localizationSection {
+  padding: 2rem 0 0;
+}
+
+.localizationNotice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.localizationCopy {
+  min-width: 0;
+}
+
+.localizationEyebrow {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.localizationTitle {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.15rem;
+}
+
+.localizationText {
+  max-width: 60rem;
+  margin: 0;
+}
+
+.localizationAction {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .localizationNotice {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

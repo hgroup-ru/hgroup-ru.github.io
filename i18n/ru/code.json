@@ -34,5 +34,93 @@
   "homepage.feature.reference.description": {
     "message": "Быстро найдите нужное правило или конвенцию.",
     "description": "Homepage Reference feature description"
+  },
+  "homepage.localization.eyebrow": {
+    "message": "Русская версия",
+    "description": "Homepage localization notice eyebrow"
+  },
+  "homepage.localization.title": {
+    "message": "Русская версия H-Group Conventions",
+    "description": "Homepage localization notice title"
+  },
+  "homepage.localization.body": {
+    "message": "Этот сайт — русская версия материалов H-Group. Перевод и локализацию поддерживает H-Group RU; сами конвенции и их содержание определяются оригинальным проектом H-Group.",
+    "description": "Homepage localization notice text"
+  },
+  "homepage.localization.link": {
+    "message": "О русской версии",
+    "description": "Homepage localization notice link"
+  },
+  "hgroupRu.title": {
+    "message": "О русской версии",
+    "description": "H-Group RU page title"
+  },
+  "hgroupRu.lead": {
+    "message": "H-Group RU поддерживает перевод и локализацию H-Group Conventions на русский язык.",
+    "description": "H-Group RU page introduction"
+  },
+  "hgroupRu.what.title": {
+    "message": "Что это за сайт",
+    "description": "H-Group RU site explanation heading"
+  },
+  "hgroupRu.what.body1": {
+    "message": "Здесь публикуются русские переводы материалов H-Group Conventions: руководство для начинающих, уровни, справочные разделы и связанные страницы.",
+    "description": "H-Group RU site explanation"
+  },
+  "hgroupRu.what.body2": {
+    "message": "Содержание конвенций и структура исходных материалов определяются оригинальным проектом H-Group. Русская версия следует оригиналу и не создаёт отдельную систему конвенций.",
+    "description": "H-Group RU source authority explanation"
+  },
+  "hgroupRu.who.title": {
+    "message": "Кто такие H-Group RU",
+    "description": "H-Group RU maintainers heading"
+  },
+  "hgroupRu.who.body1": {
+    "message": "H-Group RU — проект локализации. Мы поддерживаем русский перевод, терминологию, синхронизацию с оригинальным проектом и публикацию этого сайта.",
+    "description": "H-Group RU maintainer role"
+  },
+  "hgroupRu.who.body2": {
+    "message": "Мы не являемся авторами оригинальной системы конвенций H-Group и не говорим от имени H-Group.",
+    "description": "H-Group RU relationship to original H-Group"
+  },
+  "hgroupRu.local.title": {
+    "message": "Локальные дополнения",
+    "description": "H-Group RU local additions heading"
+  },
+  "hgroupRu.local.body": {
+    "message": "Если в русской версии появляются собственные вспомогательные материалы, например Training, мы явно помечаем их как локальные. Они не являются частью оригинальных материалов H-Group.",
+    "description": "H-Group RU local additions explanation"
+  },
+  "hgroupRu.sources.title": {
+    "message": "Источники и участие",
+    "description": "H-Group RU sources heading"
+  },
+  "hgroupRu.sources.originalSite": {
+    "message": "Оригинальный сайт H-Group",
+    "description": "Original H-Group website link"
+  },
+  "hgroupRu.sources.originalRepo": {
+    "message": "Исходный репозиторий H-Group",
+    "description": "Original H-Group repository link"
+  },
+  "hgroupRu.sources.russianRepo": {
+    "message": "Репозиторий русской версии",
+    "description": "Russian localization repository link"
+  },
+  "hgroupRu.contribute": {
+    "message": "Правки перевода, терминологии и самой русской версии сайта отправляйте в H-Group RU. Изменения оригинального английского текста или содержания самих конвенций сначала следует предлагать оригинальному проекту H-Group.",
+    "description": "Contribution routing on H-Group RU page"
+  },
+  "hgroupRu.aboutOriginal.prefix": {
+    "message": "Страница",
+    "description": "Prefix before original About page link"
+  },
+  "hgroupRu.aboutOriginal.link": {
+    "message": "«О проекте»",
+    "description": "Original About page link text"
+  },
+  "hgroupRu.aboutOriginal.suffix": {
+    "message": "— это перевод оригинальной страницы H-Group; она рассказывает о самой H-Group, а не о проекте локализации H-Group RU.",
+    "description": "Explanation of original About page"
   }
 }
