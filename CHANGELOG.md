@@ -2,7 +2,7 @@
 
 Здесь фиксируются заметные пользовательские изменения русской версии сайта H-Group Conventions.
 
-## Следующий релиз
+## 2026-08-16 — Source-fidelity audit
 
 ### Исправлено
 
@@ -15,6 +15,12 @@
 - Выполнен corpus-wide source-fidelity audit основного русского MDX-корпуса относительно закреплённого upstream `f80d79d904a5df1d4ac561bec35d9414ed8daeeb`.
 - Проверено точное соответствие путей для 211 EN/RU MDX-пар, структура official content, сильные modal markers и подозрительные смысловые расхождения.
 - Training Questions quality audit и whole-site consistency audit остаются отдельными следующими этапами.
+
+### Трассировка
+
+- Production source: `1e64d33074a6bedeecfd5392d79343b0118c1d1d`.
+- Production tag: `prod-20260815-7`.
+- GitHub Release: `H-Group RU — prod-20260815-7`.
 
 ## 2026-08-15 — Product V1
 
