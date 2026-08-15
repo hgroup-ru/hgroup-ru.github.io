@@ -132,7 +132,13 @@ function canonicalKey(entry: ProductSearchEntry): string {
     }
   }
 
-  return key.startsWith("the ") ? key.slice(4) : key;
+  const withoutArticle = key.startsWith("the ") ? key.slice(4) : key;
+
+  if (withoutArticle === "tempo clue") {
+    return "tempo clues";
+  }
+
+  return withoutArticle;
 }
 
 function groupReferenceEntries(
