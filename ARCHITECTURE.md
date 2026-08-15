@@ -8,7 +8,7 @@ H-Group RU основан на официальном [`hanabi/hanabi.github.io`
 
 Официальные английские страницы и YML-файлы остаются основой сайта. Русский перевод хранится в стандартной структуре Docusaurus:
 
-`i18n/ru/docusaurus-plugin-content-docs/current/`
+[`i18n/ru/docusaurus-plugin-content-docs/current/`](i18n/ru/docusaurus-plugin-content-docs/current)
 
 Сборка русской версии:
 

@@ -1,31 +1,42 @@
-# Changelog
+# Журнал изменений
 
-All notable user-facing changes to the Russian H-Group Conventions site are recorded here.
+Здесь фиксируются заметные пользовательские изменения русской версии сайта H-Group Conventions.
 
 ## 2026-08-15 — Product V1
 
-### Added
+### Добавлено
 
-- Structured local Reference search with ranked convention/entity results, aliases, location links, URL query state, and alphabetical browsing.
-- Optional Reference scope filter for Beginner and Levels through the selected `Мой уровень`; disabling it restores the full Reference including Extras.
-- Optional integrated Variant-Specific search in a separate result section, shareable with `variants=1`.
-- Separate Variant-Specific browse/search experience.
-- Searchable compact glossary for common H-Group terminology.
-- Persistent “Мой уровень” selection for Beginner and Levels 1–25.
-- Learning Path guidance showing the current and next canonical Level with direct Level links.
-- Product data generation from the localized MDX corpus instead of maintaining a second manual content catalog.
-- Focus-safe and localized keyboard navigation behavior.
+- Структурированный локальный поиск по Справочнику с ранжированием conventions и сущностей, aliases, ссылками на конкретные места, состоянием запроса в URL и алфавитным просмотром.
+- Фильтр Справочника «Только до моего уровня» для Beginner и Levels 1–25; при выключенном фильтре снова доступен полный Справочник, включая Extras.
+- Опциональный поиск по Variant-Specific в отдельном блоке результатов с сохранением состояния через `variants=1`.
+- Отдельный просмотр и поиск по Variant-Specific.
+- Компактный поиск по Словарю основных терминов H-Group.
+- Постоянно сохраняемый «Мой уровень» для Beginner и Levels 1–25.
+- Навигация Learning Path с текущим и следующим canonical Level и прямыми ссылками на страницы уровней.
+- Генерация продуктовых данных из локализованного MDX-корпуса вместо второго вручную поддерживаемого каталога.
+- Более безопасное для полей ввода и локализованное поведение клавиатурной навигации.
 
-### Changed
+### Изменено
 
-- Simplified Home routing around beginner onboarding, continued learning, Reference lookup, and Glossary lookup.
-- Improved Reference information architecture while keeping the official explanatory material visible in the normal page flow.
-- Clarified Beginner → Level 1 → Level 2 progression in Learning Path.
-- Standardized Variant-Specific naming and Russian wording, including contextual color terminology.
-- Polished Brown and Color Blind wording while preserving official convention and variant names.
+- Главная страница упрощена вокруг основных сценариев: начать обучение, продолжить Learning Path, открыть Справочник и Словарь.
+- Полезные навигационные карточки на главной странице теперь идут перед уведомлением о локализации.
+- Улучшена информационная архитектура Справочника без удаления официальных объяснений из обычного потока страницы.
+- Уточнён переход Beginner → Level 1 → Level 2 в Learning Path.
+- Приведены к единой политике названия Variant-Specific и русские формулировки, включая контекстный перевод обычных цветов.
+- Отредактированы формулировки Brown и Color Blind без изменения официальных названий conventions и вариантов.
 
-### Traceability
+### Исправлено
 
-- RU repository baseline before Product V1: `e605470f`
-- Product implementation: `72ce10fe`
-- RU terminology and wording polish: `27dc53fd`
+- `Tempo Clue`, `Tempo Clues` и redirect из Extras больше не отображаются как отдельные дубли в Справочнике.
+- Названия Levels 1–25 в Learning Path синхронизированы с canonical titles самих страниц уровней.
+
+### Трассировка
+
+- Базовый коммит RU-репозитория перед Product V1: `e605470f`.
+- Основная реализация Product V1: `72ce10fe`.
+- Редактура терминологии и формулировок: `27dc53fd`.
+- Фильтры Справочника: `f9be8282`.
+- Дедупликация Tempo Clue: `a29a0f46`.
+- Порядок блоков на главной странице: `8153578b`.
+- Итоговый production baseline: `a0b7add8278f7d70e00fd5abbf652988a99f501f`.
+- Production tag: `prod-20260815-5`.
