@@ -7,6 +7,8 @@ All notable user-facing changes to the Russian H-Group Conventions site are reco
 ### Added
 
 - Structured local Reference search with ranked convention/entity results, aliases, location links, URL query state, and alphabetical browsing.
+- Optional Reference scope filter for Beginner and Levels through the selected `Мой уровень`; disabling it restores the full Reference including Extras.
+- Optional integrated Variant-Specific search in a separate result section, shareable with `variants=1`.
 - Separate Variant-Specific browse/search experience.
 - Searchable compact glossary for common H-Group terminology.
 - Persistent “Мой уровень” selection for Beginner and Levels 1–25.

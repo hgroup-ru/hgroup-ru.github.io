@@ -824,5 +824,26 @@
   "product.learningPath.jumpToNext": {
     "message": "Перейти к следующему",
     "description": "Learning Path jump-to-next-level button"
+  },
+  "product.reference.limitToPlayerLevel": {
+    "message": "Только до моего уровня ({level})"
+  },
+  "product.reference.includeVariants": {
+    "message": "Искать также в вариантах"
+  },
+  "product.reference.noMatchesInPlayerScope": {
+    "message": "До {level} совпадений в Справочнике нет."
+  },
+  "product.reference.outsidePlayerScopeMatches": {
+    "message": "За пределами выбранного уровня найдено: {count}."
+  },
+  "product.reference.showFullReference": {
+    "message": "Показать весь Справочник"
+  },
+  "product.reference.variantResultsCount": {
+    "message": "В вариантах найдено: {count}."
+  },
+  "product.reference.openVariantSearch": {
+    "message": "Открыть поиск по вариантам"
   }
 }

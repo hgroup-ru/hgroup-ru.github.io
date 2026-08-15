@@ -1,10 +1,12 @@
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import { useState } from "react";
 import type { ProductSearchEntry } from "../../generated/productData";
 import {
   referenceSearchEntries,
   variantSearchEntries,
 } from "../../generated/productData";
+import { formatPlayerLevel, usePlayerLevel } from "../../hooks/usePlayerLevel";
 import { useUrlQueryState } from "../../hooks/useUrlQueryState";
 import { normalizeSearchText, searchEntries } from "../../utils/productSearch";
 import { foldRussianSearchText } from "../../utils/russianSearch";
@@ -72,6 +74,24 @@ function redirectedLevel(entry: ProductSearchEntry): number | undefined {
   }
 
   return Number(levelText);
+}
+
+function entryWithinPlayerLevel(
+  entry: ProductSearchEntry,
+  playerLevel: "beginner" | number,
+): boolean {
+  if (entry.areaLabel === "Beginner") {
+    return true;
+  }
+  if (entry.areaLabel === "Extras") {
+    return false;
+  }
+  if (playerLevel === "beginner") {
+    return false;
+  }
+
+  const level = entry.level ?? redirectedLevel(entry);
+  return level !== undefined && level <= playerLevel;
 }
 
 function entryLocation(entry: ProductSearchEntry): ReferenceLocation {
@@ -193,8 +213,10 @@ function alphabetLetter(title: string): string {
   return first;
 }
 
-function buildAlphabetGroups(): readonly AlphabetGroup[] {
-  const browseEntries = referenceSearchEntries.filter(isBrowseEntry);
+function buildAlphabetGroups(
+  sourceEntries: readonly ProductSearchEntry[],
+): readonly AlphabetGroup[] {
+  const browseEntries = sourceEntries.filter(isBrowseEntry);
   const groups = groupReferenceEntries(browseEntries).toSorted((a, b) =>
     a.primary.sectionTitle.localeCompare(b.primary.sectionTitle, undefined, {
       sensitivity: "base",
@@ -248,8 +270,6 @@ function LocationLinks({
   );
 }
 
-const ALPHABET_GROUPS = buildAlphabetGroups();
-
 interface Props {
   readonly children?: React.ReactNode;
 }
@@ -258,14 +278,41 @@ export default function ReferenceExplorer({
   children,
 }: Props): React.JSX.Element {
   const [query, setQuery] = useUrlQueryState();
+  const [variantsParameter, setVariantsParameter] =
+    useUrlQueryState("variants");
+  const [playerLevel] = usePlayerLevel();
+  const [limitToPlayerLevel, setLimitToPlayerLevel] = useState(false);
+  const effectivePlayerLevel = playerLevel ?? "beginner";
+  const playerLevelLabel = formatPlayerLevel(effectivePlayerLevel);
+  const includeVariants = variantsParameter === "1";
   const trimmedQuery = query.trim();
-  const referenceMatches = searchEntries(
+  const scopedReferenceEntries = limitToPlayerLevel
+    ? referenceSearchEntries.filter((entry) =>
+        entryWithinPlayerLevel(entry, effectivePlayerLevel),
+      )
+    : referenceSearchEntries;
+  const allReferenceMatches = searchEntries(
     referenceSearchEntries,
     trimmedQuery,
     referenceSearchEntries.length,
     foldRussianSearchText,
   );
+  const referenceMatches = limitToPlayerLevel
+    ? searchEntries(
+        scopedReferenceEntries,
+        trimmedQuery,
+        scopedReferenceEntries.length,
+        foldRussianSearchText,
+      )
+    : allReferenceMatches;
   const referenceGroups = groupReferenceEntries(referenceMatches);
+  const allReferenceGroups = limitToPlayerLevel
+    ? groupReferenceEntries(allReferenceMatches)
+    : referenceGroups;
+  const hiddenReferenceGroupCount = Math.max(
+    0,
+    allReferenceGroups.length - referenceGroups.length,
+  );
   const visibleReferenceGroups = referenceGroups.slice(0, MAX_VISIBLE_RESULTS);
   const variantResults = searchEntries(
     variantSearchEntries,
@@ -273,7 +320,39 @@ export default function ReferenceExplorer({
     variantSearchEntries.length,
     foldRussianSearchText,
   );
+  const variantGroups = groupReferenceEntries(variantResults);
+  const visibleVariantGroups = variantGroups.slice(0, MAX_VISIBLE_RESULTS);
   const hasQuery = trimmedQuery !== "";
+  const alphabetGroups = hasQuery
+    ? []
+    : buildAlphabetGroups(scopedReferenceEntries);
+
+  let referenceSummary: React.JSX.Element;
+  if (referenceGroups.length > 0) {
+    referenceSummary = (
+      <Translate
+        id="product.reference.coreMatchCount"
+        values={{ count: referenceGroups.length }}
+      >
+        {"Found in the Reference: {count}."}
+      </Translate>
+    );
+  } else if (hiddenReferenceGroupCount > 0) {
+    referenceSummary = (
+      <Translate
+        id="product.reference.noMatchesInPlayerScope"
+        values={{ level: playerLevelLabel }}
+      >
+        {"No matches up to {level} in the Reference."}
+      </Translate>
+    );
+  } else {
+    referenceSummary = (
+      <Translate id="product.reference.noCoreMatches">
+        No matches in the Reference.
+      </Translate>
+    );
+  }
 
   return (
     <section aria-label={SEARCH_ARIA} className={styles["explorer"]}>
@@ -301,6 +380,40 @@ export default function ReferenceExplorer({
         )}
       </div>
 
+      <div className={styles["searchOptions"]}>
+        <label className={styles["searchOption"]}>
+          <input
+            checked={limitToPlayerLevel}
+            onChange={(event) => {
+              setLimitToPlayerLevel(event.currentTarget.checked);
+            }}
+            type="checkbox"
+          />
+          <span>
+            <Translate
+              id="product.reference.limitToPlayerLevel"
+              values={{ level: playerLevelLabel }}
+            >
+              {"Only up to my level ({level})"}
+            </Translate>
+          </span>
+        </label>
+        <label className={styles["searchOption"]}>
+          <input
+            checked={includeVariants}
+            onChange={(event) => {
+              setVariantsParameter(event.currentTarget.checked ? "1" : "");
+            }}
+            type="checkbox"
+          />
+          <span>
+            <Translate id="product.reference.includeVariants">
+              Search variants too
+            </Translate>
+          </span>
+        </label>
+      </div>
+
       {!hasQuery && children !== undefined && (
         <div className={styles["sourceContext"]}>{children}</div>
       )}
@@ -308,18 +421,7 @@ export default function ReferenceExplorer({
       {hasQuery ? (
         <div className={styles["searchMode"]}>
           <div className={styles["resultSummary"]}>
-            {referenceGroups.length === 0 ? (
-              <Translate id="product.reference.noCoreMatches">
-                No matches in the Reference.
-              </Translate>
-            ) : (
-              <Translate
-                id="product.reference.coreMatchCount"
-                values={{ count: referenceGroups.length }}
-              >
-                {"Found in the Reference: {count}."}
-              </Translate>
-            )}
+            {referenceSummary}
             {referenceGroups.length > MAX_VISIBLE_RESULTS && (
               <>
                 {" "}
@@ -332,6 +434,30 @@ export default function ReferenceExplorer({
               </>
             )}
           </div>
+
+          {hiddenReferenceGroupCount > 0 && (
+            <div className={styles["levelBridge"]}>
+              <span>
+                <Translate
+                  id="product.reference.outsidePlayerScopeMatches"
+                  values={{ count: hiddenReferenceGroupCount }}
+                >
+                  {"Matches outside your selected level: {count}."}
+                </Translate>
+              </span>
+              <button
+                className="button button--secondary button--sm"
+                onClick={() => {
+                  setLimitToPlayerLevel(false);
+                }}
+                type="button"
+              >
+                <Translate id="product.reference.showFullReference">
+                  Show full Reference
+                </Translate>
+              </button>
+            </div>
+          )}
 
           {visibleReferenceGroups.length > 0 && (
             <div className={styles["results"]}>
@@ -349,12 +475,61 @@ export default function ReferenceExplorer({
             </div>
           )}
 
-          {variantResults.length > 0 && (
+          {includeVariants && variantGroups.length > 0 && (
+            <div className={styles["variantResultsSection"]}>
+              <div className={styles["variantResultsHeading"]}>
+                <span>
+                  <Translate
+                    id="product.reference.variantResultsCount"
+                    values={{ count: variantGroups.length }}
+                  >
+                    {"Found in variants: {count}."}
+                  </Translate>
+                  {variantGroups.length > MAX_VISIBLE_RESULTS && (
+                    <>
+                      {" "}
+                      <Translate
+                        id="product.reference.firstResultsShown"
+                        values={{ count: MAX_VISIBLE_RESULTS }}
+                      >
+                        {"Showing the first {count}."}
+                      </Translate>
+                    </>
+                  )}
+                </span>
+                <Link
+                  to={`/variant-specific?q=${encodeURIComponent(trimmedQuery)}`}
+                >
+                  <Translate id="product.reference.openVariantSearch">
+                    Open separate variant search
+                  </Translate>
+                </Link>
+              </div>
+              <div className={styles["results"]}>
+                {visibleVariantGroups.map((group) => (
+                  <div
+                    className={styles["result"]}
+                    key={`variant:${group.key}`}
+                  >
+                    <Link
+                      className={styles["resultTitle"]}
+                      to={`/${entryLocation(group.primary).href}`}
+                    >
+                      {group.primary.sectionTitle}
+                    </Link>
+                    <LocationLinks entries={group.entries} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!includeVariants && variantGroups.length > 0 && (
             <div className={styles["variantBridge"]}>
               <span>
                 <Translate
                   id="product.reference.variantMatchCount"
-                  values={{ count: variantResults.length }}
+                  values={{ count: variantGroups.length }}
                 >
                   {"More matches in Variant-Specific: {count}."}
                 </Translate>
@@ -369,14 +544,16 @@ export default function ReferenceExplorer({
             </div>
           )}
 
-          {referenceGroups.length === 0 && variantResults.length === 0 && (
-            <div className={styles["emptyState"]}>
-              <Translate id="product.reference.emptyState">
-                Nothing found by section name or abbreviation. For arbitrary
-                text, use the site-wide search in the top navigation.
-              </Translate>
-            </div>
-          )}
+          {referenceGroups.length === 0
+            && variantResults.length === 0
+            && hiddenReferenceGroupCount === 0 && (
+              <div className={styles["emptyState"]}>
+                <Translate id="product.reference.emptyState">
+                  Nothing found by section name or abbreviation. For arbitrary
+                  text, use the site-wide search in the top navigation.
+                </Translate>
+              </div>
+            )}
 
           {children !== undefined && (
             <div className={styles["sourceContext"]}>{children}</div>
@@ -385,7 +562,7 @@ export default function ReferenceExplorer({
       ) : (
         <div className={styles["browseMode"]}>
           <div className={styles["alphabetGrid"]}>
-            {ALPHABET_GROUPS.map((alphabetGroup) => (
+            {alphabetGroups.map((alphabetGroup) => (
               <section
                 className={styles["alphabetGroup"]}
                 key={alphabetGroup.letter}
