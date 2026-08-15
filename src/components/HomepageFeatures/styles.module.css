@@ -16,3 +16,9 @@
 .circle-accent3 {
   color: #7fcdb8;
 }
+
+.glossaryLink {
+  margin: 0.25rem 0 0;
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+}

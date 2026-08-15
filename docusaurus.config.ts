@@ -69,7 +69,8 @@ const config: Config = {
         {
           to: "reference",
           activeBasePath: "docs",
-          label: "Reference",
+          label:
+            "\u{421}\u{43F}\u{440}\u{430}\u{432}\u{43E}\u{447}\u{43D}\u{438}\u{43A}",
           position: "left",
         },
         {
@@ -77,6 +78,16 @@ const config: Config = {
           activeBasePath: "docs",
           label: "Variant-Specific",
           position: "left",
+        },
+        {
+          to: "glossary",
+          activeBasePath: "docs",
+          label: "\u{421}\u{43B}\u{43E}\u{432}\u{430}\u{440}\u{44C}",
+          position: "left",
+        },
+        {
+          type: "custom-myLevel",
+          position: "right",
         },
         {
           href: "https://github.com/hgroup-ru/hgroup-ru.github.io/",

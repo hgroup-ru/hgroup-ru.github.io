@@ -39,7 +39,7 @@ export default defineConfig(
 
   // Do not lint the compiled output.
   {
-    ignores: ["**/.docusaurus/", "**/build/"],
+    ignores: ["**/.docusaurus/", "**/build/", "**/src/generated/"],
   },
 
   // @template-customization-end

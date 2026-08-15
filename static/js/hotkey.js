@@ -1,6 +1,3 @@
-const WEBPAGE_NAME = "H-Group Conventions";
-const FIRST_DOC_PAGE_TITLE = "About";
-const LAST_DOC_PAGE_TITLE = "Convention Attribution";
 const MAX_LEVEL = 25;
 
 const KEY_MAP = new Map([
@@ -14,6 +11,9 @@ const SHIFT_KEY_MAP = new Map([
   ["ArrowRight", navigateToNextSection],
 ]);
 
+const RU_LEVEL_PROMPT =
+  "\u{412}\u{432}\u{435}\u{434}\u{438}\u{442}\u{435} \u{443}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C} (1-25) \u{438}\u{43B}\u{438} p \u{434}\u{43B}\u{44F} \u{41F}\u{443}\u{442}\u{438} \u{43E}\u{431}\u{443}\u{447}\u{435}\u{43D}\u{438}\u{44F}:";
+
 main();
 
 function main() {
@@ -23,8 +23,8 @@ function main() {
       return;
     }
 
-    // Do not do anything if we are typing in an input field.
-    if (isInputFocused()) {
+    // Do not hijack navigation keys while the user is typing or choosing a form value.
+    if (isFormControlFocused()) {
       return;
     }
 
@@ -38,9 +38,18 @@ function main() {
 }
 
 /** @returns {boolean} */
-function isInputFocused() {
-  // Checking for input elements is more robust than specifically matching the standard search bar.
-  return document.activeElement instanceof HTMLInputElement;
+function isFormControlFocused() {
+  const { activeElement } = document;
+  if (!(activeElement instanceof HTMLElement)) {
+    return false;
+  }
+
+  return (
+    activeElement instanceof HTMLInputElement
+    || activeElement instanceof HTMLTextAreaElement
+    || activeElement instanceof HTMLSelectElement
+    || activeElement.isContentEditable
+  );
 }
 
 function navigateToPreviousPage() {
@@ -48,12 +57,13 @@ function navigateToPreviousPage() {
     return;
   }
 
-  if (isOnFirstDocPage()) {
-    clickOnNavBarTitle();
+  const previousLink = document.querySelector(".pagination-nav__link--prev");
+  if (previousLink instanceof HTMLElement) {
+    previousLink.click();
     return;
   }
 
-  clickFirstNavButton();
+  clickOnNavBarTitle();
 }
 
 function navigateToNextPage() {
@@ -62,16 +72,10 @@ function navigateToNextPage() {
     return;
   }
 
-  if (isOnFirstDocPage()) {
-    clickFirstNavButton();
-    return;
+  const nextLink = document.querySelector(".pagination-nav__link--next");
+  if (nextLink instanceof HTMLElement) {
+    nextLink.click();
   }
-
-  if (isOnLastDocPage()) {
-    return;
-  }
-
-  clickSecondNavButton();
 }
 
 function navigateToPreviousSection() {
@@ -113,13 +117,21 @@ function navigateToNextSection() {
 /** @param {Element} section */
 function scrollToSection(section) {
   section.scrollIntoView();
-  globalThis.history.pushState(undefined, "", `#${section.id}`);
+  if (section.id !== "") {
+    globalThis.history.pushState(undefined, "", `#${section.id}`);
+  }
 }
 
 function goToSpecificLevel() {
+  const isRussian = document.documentElement.lang
+    .toLowerCase()
+    .startsWith("ru");
+
   // eslint-disable-next-line no-alert
   const levelString = prompt(
-    "Enter the level that you want to go to (or p for the learning path):",
+    isRussian
+      ? RU_LEVEL_PROMPT
+      : "Enter the level that you want to go to (or p for the learning path):",
   );
   if (levelString === null || levelString === "") {
     return;
@@ -128,39 +140,44 @@ function goToSpecificLevel() {
   // The Learning Path is also a common destination, so we provide a dedicated hotkey for this.
   const levelLowerCase = levelString.toLowerCase();
   if (levelLowerCase === "p" || levelLowerCase === "path") {
-    globalThis.location.assign("/learning-path/");
+    globalThis.location.assign("/learning-path");
     return;
   }
 
   const level = parseIntSafe(levelString);
   if (level === undefined) {
+    const message = isRussian
+      ? [
+          "\u{AB}",
+          levelString,
+          "\u{BB} - \u{43D}\u{435} \u{43D}\u{43E}\u{43C}\u{435}\u{440} \u{443}\u{440}\u{43E}\u{432}\u{43D}\u{44F}.",
+        ].join("")
+      : `"${levelString}" is not a number.`;
     // eslint-disable-next-line no-alert
-    alert(`"${levelString}" is not a number.`);
+    alert(message);
     return;
   }
 
   if (level < 1 || level > MAX_LEVEL) {
+    const message = isRussian
+      ? [
+          `Level ${level}`,
+          " \u{43D}\u{435} \u{441}\u{443}\u{449}\u{435}\u{441}\u{442}\u{432}\u{443}\u{435}\u{442}; \u{432}\u{44B}\u{431}\u{435}\u{440}\u{438}\u{442}\u{435} \u{443}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C} \u{43E}\u{442} 1 \u{434}\u{43E} ",
+          String(MAX_LEVEL),
+          ".",
+        ].join("")
+      : `Level ${level} is not a valid level; levels must be between 1 and ${MAX_LEVEL}.`;
     // eslint-disable-next-line no-alert
-    alert(
-      `Level ${level} is not a valid level; levels must be between 1 and ${MAX_LEVEL}.`,
-    );
+    alert(message);
     return;
   }
 
-  globalThis.location.assign(`/level-${level}/`);
+  globalThis.location.assign(`/level-${level}`);
 }
 
 function isOnLandingPage() {
   const titles = document.querySelectorAll(".hero__title");
   return titles.length > 0;
-}
-
-function isOnFirstDocPage() {
-  return document.title === `${FIRST_DOC_PAGE_TITLE} | ${WEBPAGE_NAME}`;
-}
-
-function isOnLastDocPage() {
-  return document.title === `${LAST_DOC_PAGE_TITLE} | ${WEBPAGE_NAME}`;
 }
 
 function clickOnNavBarTitle() {
@@ -176,33 +193,6 @@ function clickOnFirstLandingPageButton() {
   const largeButton = largeButtons[0];
   if (largeButton !== undefined && largeButton instanceof HTMLElement) {
     largeButton.click();
-  }
-}
-
-function clickFirstNavButton() {
-  clickNavButton(0);
-}
-
-function clickSecondNavButton() {
-  clickNavButton(1);
-}
-
-/** @param {number} i */
-function clickNavButton(i) {
-  const navButtonsCollection = document.querySelectorAll(".pagination-nav");
-  const navButtons = navButtonsCollection[0];
-  if (navButtons === undefined) {
-    return;
-  }
-
-  const buttonDiv = navButtons.children[i];
-  if (buttonDiv === undefined) {
-    return;
-  }
-
-  const buttonLink = buttonDiv.firstElementChild;
-  if (buttonLink !== null && buttonLink instanceof HTMLElement) {
-    buttonLink.click();
   }
 }
 

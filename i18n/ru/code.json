@@ -680,5 +680,149 @@
   "theme.tags.tagsPageTitle": {
     "message": "Теги",
     "description": "The title of the tag list page"
+  },
+  "homepage.glossary.prefix": {
+    "message": "Не понимаете термин?",
+    "description": "Homepage secondary Glossary prompt"
+  },
+  "homepage.glossary.link": {
+    "message": "Открыть словарь →",
+    "description": "Homepage secondary Glossary link"
+  },
+  "product.myLevel.label": {
+    "message": "Мой уровень",
+    "description": "Navbar label for the persistent H-Group player level selector"
+  },
+  "product.learningPath.noLevel": {
+    "message": "Мой уровень не выбран. Если хотите, выберите его в верхнем меню — здесь будет отмечено ваше место в пути обучения.",
+    "description": "Learning Path message when player level is not selected"
+  },
+  "product.learningPath.beginnerExplanation": {
+    "message": "Сейчас: Beginner. Начните с руководства для начинающих и закрепите основы в нескольких партиях. Level 1 подробнее разбирает тот же фундамент; новые конвенции начинаются с Level 2.",
+    "description": "Learning Path explanation for Beginner player level"
+  },
+  "product.learningPath.openBeginner": {
+    "message": "Руководство",
+    "description": "Learning Path link to Beginner guide"
+  },
+  "product.learningPath.beginnerNext": {
+    "message": "Следующий: Level 2",
+    "description": "Learning Path next action shown for Beginner player level"
+  },
+  "product.learningPath.currentLevel": {
+    "message": "Мой уровень: {level}.",
+    "description": "Learning Path current player level label"
+  },
+  "product.learningPath.lastLevel": {
+    "message": "Это последний уровень текущего пути.",
+    "description": "Learning Path message at Level 25"
+  },
+  "product.learningPath.nextLevelPrefix": {
+    "message": "Следующий уровень:",
+    "description": "Learning Path next level prefix"
+  },
+  "product.learningPath.jumpToCurrent": {
+    "message": "Перейти к моему уровню",
+    "description": "Learning Path jump-to-current-level button"
+  },
+  "product.common.clear": {
+    "message": "Очистить",
+    "description": "Clear local product search query button"
+  },
+  "product.glossary.shownCount": {
+    "message": "Показано: {visible} из {total}",
+    "description": "Glossary filtered row count"
+  },
+  "product.glossary.totalCount": {
+    "message": "Терминов: {total}",
+    "description": "Glossary total row count"
+  },
+  "product.glossary.emptyPrefix": {
+    "message": "Ничего не найдено. Для названий конкретных конвенций попробуйте",
+    "description": "Glossary empty-search-result text before Reference link"
+  },
+  "product.reference.noCoreMatches": {
+    "message": "В Справочнике совпадений нет.",
+    "description": "Reference search empty core result summary"
+  },
+  "product.reference.coreMatchCount": {
+    "message": "Найдено в Справочнике: {count}.",
+    "description": "Reference search result count"
+  },
+  "product.reference.firstResultsShown": {
+    "message": "Показаны первые {count}.",
+    "description": "Reference truncated result count notice"
+  },
+  "product.reference.variantMatchCount": {
+    "message": "Ещё совпадений в Variant-Specific: {count}.",
+    "description": "Reference bridge to matching variant-specific results"
+  },
+  "product.reference.searchVariants": {
+    "message": "Искать в вариантах →",
+    "description": "Reference link to variant-specific search"
+  },
+  "product.reference.emptyState": {
+    "message": "Ничего не найдено по названию раздела или сокращению. Для поиска произвольного текста используйте общий поиск сайта в верхнем меню.",
+    "description": "Reference local search empty state"
+  },
+  "product.reference.browseIntro": {
+    "message": "Ищете конкретную конвенцию или принцип? Ниже — алфавитный индекс. Для порядка изучения используйте Learning Path.",
+    "description": "Reference browse-mode introduction"
+  },
+  "product.reference.beginnerDescription": {
+    "message": "базовые понятия и правила",
+    "description": "Reference Beginner browse description"
+  },
+  "product.reference.extrasDescription": {
+    "message": "дополнительные и редкие стратегии",
+    "description": "Reference Extras browse description"
+  },
+  "product.reference.variantFooterPrefix": {
+    "message": "Ищете правило для конкретного варианта?",
+    "description": "Reference footer prompt for variant-specific material"
+  },
+  "product.reference.openVariants": {
+    "message": "Открыть Variant-Specific →",
+    "description": "Reference footer link to Variant-Specific"
+  },
+  "product.variants.noMatches": {
+    "message": "Совпадений в Variant-Specific нет.",
+    "description": "Variant-Specific search empty result summary"
+  },
+  "product.variants.matchCount": {
+    "message": "Найдено в Variant-Specific: {count}.",
+    "description": "Variant-Specific search result count"
+  },
+  "product.variants.firstResultsShown": {
+    "message": "Показаны первые {count}.",
+    "description": "Variant-Specific truncated result count notice"
+  },
+  "product.variants.emptyPrefix": {
+    "message": "Попробуйте название варианта, конвенции или сокращение. Для общих конвенций H-Group используйте",
+    "description": "Variant-Specific empty state before Reference link"
+  },
+  "product.variants.browseIntro": {
+    "message": "Выберите вариант или начните печатать название convention. Поиск здесь ограничен материалами Variant-Specific.",
+    "description": "Variant-Specific browse-mode introduction"
+  },
+  "product.reference.shortLabel": {
+    "message": "Справочник",
+    "description": "Short localized label for the Reference section"
+  },
+  "product.reference.extrasFooterPrefix": {
+    "message": "Редкие и дополнительные конвенции также доступны в",
+    "description": "Reference browse footer before the Extras link"
+  },
+  "product.learningPath.currentLevelLabel": {
+    "message": "Ваш уровень",
+    "description": "Learning Path label above the selected player level"
+  },
+  "product.learningPath.nextLevelLabel": {
+    "message": "Следующий уровень",
+    "description": "Learning Path label above the next player level"
+  },
+  "product.learningPath.jumpToNext": {
+    "message": "Перейти к следующему",
+    "description": "Learning Path jump-to-next-level button"
   }
 }

@@ -1,0 +1,99 @@
+.guide {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.55rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.45rem;
+}
+
+.levelGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.levelCard {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.45rem;
+}
+
+.levelLabel {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.levelName {
+  font-weight: 700;
+}
+
+.lastLevel {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.jumpButton {
+  margin-top: auto;
+  white-space: nowrap;
+}
+
+.currentRow {
+  box-shadow: inset 3px 0 0 var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 9%, transparent);
+}
+
+.nextRow {
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-emphasis-200) 55%,
+    transparent
+  );
+}
+
+.currentRow td:first-child::after,
+.nextRow td:first-child::after {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.08rem 0.35rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.35;
+  vertical-align: 0.08rem;
+}
+
+.currentRow td:first-child::after {
+  content: "Мой уровень";
+  background: color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.nextRow td:first-child::after {
+  content: "Следующий";
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+[data-theme="dark"] .currentRow td:first-child::after {
+  color: var(--ifm-color-primary-lightest);
+}
+
+@media screen and (max-width: 768px) {
+  .levelGrid {
+    grid-template-columns: 1fr;
+  }
+}
