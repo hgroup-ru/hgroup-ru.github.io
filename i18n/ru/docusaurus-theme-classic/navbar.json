@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "H-Group Conventions",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Логотип H-Group",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Beginner": {
+    "message": "Для начинающих",
+    "description": "Navbar item with label Beginner"
+  },
+  "item.label.Learning Path": {
+    "message": "Путь обучения",
+    "description": "Navbar item with label Learning Path"
+  },
+  "item.label.Reference": {
+    "message": "Справочник",
+    "description": "Navbar item with label Reference"
+  },
+  "item.label.Variant-Specific": {
+    "message": "Варианты",
+    "description": "Navbar item with label Variant-Specific"
+  }
+}
