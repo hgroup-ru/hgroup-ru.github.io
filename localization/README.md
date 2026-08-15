@@ -4,7 +4,7 @@
 
 Игровой смысл, структура материала и официальные диаграммы сверяются с закреплённой версией [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io). Точная версия записана в [`../upstream.json`](../upstream.json).
 
-Русский перевод находится в `i18n/ru/docusaurus-plugin-content-docs/current/`.
+Русский перевод находится в [`i18n/ru/docusaurus-plugin-content-docs/current/`](../i18n/ru/docusaurus-plugin-content-docs/current).
 
 ## Основные правила
 
@@ -58,3 +58,4 @@ Levels 1–25 содержат локальные Training Questions. Они с�
 - [`TERMINOLOGY_RU.md`](TERMINOLOGY_RU.md) — принятая терминология;
 - [`SOURCE_EXCEPTIONS.md`](SOURCE_EXCEPTIONS.md) — осознанные отличия от закреплённой версии источника;
 - [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) — находки, которые могут быть полезны исходному проекту.
+- [`upstream-candidates/README.md`](upstream-candidates/README.md) — подробные рабочие карточки для подготовки upstream Pull Request.

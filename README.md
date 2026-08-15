@@ -43,12 +43,13 @@ npm run build:ru
 
 - [как внести изменение](CONTRIBUTING.md);
 - [как устроен проект](ARCHITECTURE.md);
+- [открытый бэклог](BACKLOG.md);
 - [правила перевода](localization/README.md);
 - [русская терминология](localization/TERMINOLOGY_RU.md);
 - [осознанные отличия от закреплённого источника](localization/SOURCE_EXCEPTIONS.md);
 - [кандидаты на исправления и улучшения исходного проекта](localization/UPSTREAM_CANDIDATES.md).
 
-Русский контент находится в `i18n/ru/docusaurus-plugin-content-docs/current/`. Точная версия исходного проекта записана в [`upstream.json`](upstream.json).
+Русский контент находится в [`i18n/ru/docusaurus-plugin-content-docs/current/`](i18n/ru/docusaurus-plugin-content-docs/current). Точная версия исходного проекта записана в [`upstream.json`](upstream.json).
 
 ## Лицензия и атрибуция
 
