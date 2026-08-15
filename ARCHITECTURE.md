@@ -39,3 +39,5 @@ npm run build:ru
 CI проверяет форматирование, типы, линтеры и другие автоматические требования проекта. Для Pull Request из внешнего fork дополнительно выполняется `npm run build:ru`.
 
 Публикация сайта выполняется отдельно через GitHub Actions; слияние Pull Request само по себе не является релизом.
+
+Ручной workflow Release собирает и публикует русскую версию, создаёт production tag `prod-*`, запускает переиндексацию Algolia и после успешного deploy создаёт или обновляет GitHub Release для этого production tag. Текст GitHub Release берётся из секции «Следующий релиз» в [`CHANGELOG.md`](CHANGELOG.md), поэтому перед запуском production release эта секция должна быть заполнена.
