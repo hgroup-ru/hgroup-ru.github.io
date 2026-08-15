@@ -167,3 +167,75 @@ svg.example text.site-theme-text {
 #__docusaurus g.node-con > :is(rect, circle, ellipse, polygon, path) {
   fill: var(--flowchart-con);
 }
+
+/* Product navigation: compact Glossary table */
+[data-hgroup-glossary="true"] table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+[data-hgroup-glossary="true"] th:nth-child(1),
+[data-hgroup-glossary="true"] td:nth-child(1) {
+  width: 20%;
+}
+
+[data-hgroup-glossary="true"] th:nth-child(2),
+[data-hgroup-glossary="true"] td:nth-child(2) {
+  width: 55%;
+}
+
+[data-hgroup-glossary="true"] th:nth-child(3),
+[data-hgroup-glossary="true"] td:nth-child(3) {
+  width: 25%;
+}
+
+[data-hgroup-glossary="true"] td {
+  vertical-align: top;
+}
+
+[data-hgroup-glossary="true"] tr[hidden] {
+  display: none !important;
+}
+
+@media screen and (max-width: 760px) {
+  [data-hgroup-glossary="true"] table,
+  [data-hgroup-glossary="true"] tbody,
+  [data-hgroup-glossary="true"] tr,
+  [data-hgroup-glossary="true"] td {
+    display: block;
+    width: 100% !important;
+  }
+
+  [data-hgroup-glossary="true"] thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  [data-hgroup-glossary="true"] tr {
+    margin-bottom: 0.8rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 0.45rem;
+    background: var(--ifm-background-surface-color);
+  }
+
+  [data-hgroup-glossary="true"] td {
+    padding: 0.25rem 0;
+    border: 0;
+  }
+
+  [data-hgroup-glossary="true"] td:first-child {
+    padding-bottom: 0.4rem;
+    font-weight: 650;
+  }
+
+  [data-hgroup-glossary="true"] td:nth-child(3) {
+    padding-top: 0.45rem;
+    color: var(--ifm-color-emphasis-700);
+    font-size: 0.9rem;
+  }
+}

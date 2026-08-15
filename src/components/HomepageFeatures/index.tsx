@@ -82,6 +82,8 @@ function Feature({ num, title, iconName, description, link }: FeatureItem) {
 }
 
 export default function HomepageFeatures(): React.JSX.Element {
+  const glossaryUrl = useBaseUrl("glossary");
+
   return (
     <section className={styles["features"]}>
       <div className="container">
@@ -90,6 +92,14 @@ export default function HomepageFeatures(): React.JSX.Element {
             <Feature key={idx} {...props} />
           ))}
         </div>
+        <p className={styles["glossaryLink"]}>
+          <Translate id="homepage.glossary.prefix">
+            Don&apos;t understand a term?
+          </Translate>{" "}
+          <a href={glossaryUrl}>
+            <Translate id="homepage.glossary.link">Open the Glossary</Translate>
+          </a>
+        </p>
       </div>
     </section>
   );

@@ -7,8 +7,11 @@ import LoadedException from "./variant-specific/hard/loaded-exception.yml";
 import LoadedException2 from "./variant-specific/hard/loaded-exception-2.yml";
 import AlwaysLoadedGray1 from "./variant-specific/hard/always-loaded-gray-1.yml";
 import AlwaysLoadedGray2 from "./variant-specific/hard/always-loaded-gray-2.yml";
+import VariantExplorer from "@site/src/components/VariantExplorer";
 
 [Hanab Live](https://hanab.live) создан энтузиастами, которые сыграли в эту игру тысячи раз. Чтобы игра не приедалась, сервер позволяет создавать партии с множеством разных вариантов. Реализованные варианты [описаны в отдельном документе](https://github.com/Hanabi-Live/hanabi-live/blob/main/docs/variants.md).
+
+<VariantExplorer />
 
 ### Hard Variants и Easy Variants {/* #hard-variants--easy-variants */}
 
@@ -93,7 +96,7 @@ import AlwaysLoadedGray2 from "./variant-specific/hard/always-loaded-gray-2.yml"
 - В некоторых вариантах определённый тип подсказки всегда выглядит как _Save Clue_, независимо от карт в сбросе.
 - Например:
   - В dark prism варианте подсказка числом 3 или 4 на chop всегда выглядит как _Save Clue_ prism 3 или prism 4.
-  - В brown варианте подсказка brown на chop всегда выглядит как _Save Clue_ brown 2, brown 5 или другой критической brown-карты.
+  - В варианте Brown подсказка коричневым цветом на chop всегда выглядит как _Save Clue_ коричневой 2, коричневой 5 или другой критической коричневой карты.
 - В таких случаях мы договариваемся, что этот конкретный тип подсказки, если он даётся игроку, который [_Loaded_](#the-early-save), всегда должен трактоваться как _Play Clue_. (Это действует в том числе в _Early Game_ и в ситуациях _Double Discard_.)
 - Например, в игре на троих с серым цветом:
   - Серая 1 и синяя 1 сыграны на стол.
@@ -122,7 +125,7 @@ import AlwaysLoadedGray2 from "./variant-specific/hard/always-loaded-gray-2.yml"
 ### Ambiguous Tempo Clue {/* #the-ambiguous-tempo-clue */}
 
 - В некоторых вариантах существуют разные карты, которые невозможно различить по подсказкам: они реагируют на одни и те же подсказки числом и цветом.
-- Для pink, light pink, omni, brown и muddy rainbow вариантов существуют собственные конвенции для таких случаев.
+- Для вариантов Pink, Light Pink, Omni, Brown и Muddy Rainbow существуют собственные конвенции для таких случаев.
 - Если у игрока две неразличимые карты с подсказками, трудно дать _Tempo Clue_ именно правой карте. Поэтому мы договариваемся:
   - цветовая _Tempo Clue_ должна фокусировать правую карту;
   - числовая _Tempo Clue_ должна фокусировать левую карту.

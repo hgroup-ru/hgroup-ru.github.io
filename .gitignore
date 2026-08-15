@@ -150,3 +150,6 @@ dist
 
 # built files
 build/
+
+# Product navigation generated data
+src/generated/productData.ts

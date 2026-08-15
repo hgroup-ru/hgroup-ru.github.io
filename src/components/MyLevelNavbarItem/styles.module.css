@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.55rem;
+  white-space: nowrap;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.select {
+  min-width: 4.8rem;
+  height: 2rem;
+  padding: 0 1.7rem 0 0.55rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.4rem;
+  background: var(--ifm-navbar-background-color);
+  color: var(--ifm-navbar-link-color);
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 996px) {
+  .wrapper {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.7rem 0.75rem;
+  }
+
+  .label,
+  .select {
+    font-size: 1rem;
+  }
+}
