@@ -87,8 +87,8 @@ function Home(): React.JSX.Element {
     <Layout>
       <HomepageHeader />
       <main>
-        <LocalizationNotice />
         <HomepageFeatures />
+        <LocalizationNotice />
       </main>
     </Layout>
   );
