@@ -2,7 +2,7 @@
 
 Здесь фиксируются заметные пользовательские изменения русской версии сайта H-Group Conventions.
 
-## Следующий релиз
+## 2026-08-16 — Training Questions audit
 
 ### Исправлено
 
@@ -17,6 +17,12 @@
 - Проведён отдельный semantic/editorial audit локальных Training Questions для Levels 1–25.
 - Проверены вопросы и ответы на соответствие окружающему official material, progression, отсутствие придуманных правил, достаточность контекста и полезность проверки.
 - Official Challenge Questions не изменялись и не смешивались с локальными Training Questions.
+
+### Трассировка
+
+- Production source: `2d1b5c53d52c7f665de378f06bee1e082f023f0f`.
+- Production tag: `prod-20260816-8`.
+- GitHub Release: `H-Group RU — prod-20260816-8`.
 
 ## 2026-08-16 — Source-fidelity audit
 
