@@ -1,10 +1,15 @@
 import Link from "@docusaurus/Link";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 
 export default function HGroupRuPage(): React.JSX.Element {
   return (
-    <Layout>
+    <Layout
+      title={translate({
+        id: "hgroupRu.title",
+        message: "About the Russian version",
+      })}
+    >
       <main className="container margin-vert--lg">
         <article className="theme-doc-markdown markdown">
           <h1>
