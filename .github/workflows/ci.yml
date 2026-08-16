@@ -22,13 +22,6 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Show audit Prettier diff
-        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
-        run: |
-          npx prettier --write i18n/ru/docusaurus-plugin-content-docs/current/level-2.mdx
-          git diff -- i18n/ru/docusaurus-plugin-content-docs/current/level-2.mdx
-          git checkout -- i18n/ru/docusaurus-plugin-content-docs/current/level-2.mdx
-
       - name: Build RU site for audit QA
         id: audit_build
         if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
@@ -39,6 +32,14 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./build
+
+      - name: Upload audit source snapshot
+        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-source
+          path: i18n/ru/docusaurus-plugin-content-docs/current
+          retention-days: 1
 
       - name: Build RU site for fork pull requests
         if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.repo.full_name != github.repository }}
