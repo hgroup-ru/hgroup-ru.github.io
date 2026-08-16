@@ -22,16 +22,6 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Build RU site for audit QA
-        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
-        run: npm run build:ru
-
-      - name: Upload audit build artifact
-        if: ${{ success() && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./build
-
       - name: Build RU site for fork pull requests
         if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.repo.full_name != github.repository }}
         run: npm run build:ru
