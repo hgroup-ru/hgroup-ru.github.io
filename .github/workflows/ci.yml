@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
@@ -22,58 +19,6 @@ jobs:
         id: setup
         uses: ./.github/workflows/setup
 
-      - name: Apply deterministic consistency edits
-        if: ${{ github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
-        env:
-          AUDIT_BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: |
-          git fetch origin "$AUDIT_BRANCH"
-          git checkout -B "$AUDIT_BRANCH" "origin/$AUDIT_BRANCH"
-          python - <<'PY'
-          from pathlib import Path
-
-          root = Path("i18n/ru/docusaurus-plugin-content-docs/current")
-          changed = []
-          for path in root.rglob("*.mdx"):
-              text = path.read_text(encoding="utf-8")
-              original = text
-              if path.name == "level-3.mdx":
-                  text = text.replace(
-                      "Из Beginner’s Guide мы знаем",
-                      "Из Руководства для начинающих мы знаем",
-                  )
-              replacements = (
-                  ("## Challenge Questions {/* #challenge-questions */}", "## Контрольные вопросы {/* #challenge-questions */}"),
-                  ("[официальные Challenge Questions]", "[официальные контрольные вопросы]"),
-                  ("отдельного набора Official Challenge Questions", "отдельного набора контрольных вопросов"),
-                  ("наши Training Questions", "наши тренировочные вопросы"),
-                  ("официальном challenge-разделе", "официальном разделе контрольных вопросов"),
-                  ("не официальный набор Challenge Questions H-Group", "не официальный набор контрольных вопросов H-Group"),
-                  ("[официальный Challenge Question ↗]", "[официальный контрольный вопрос ↗]"),
-                  ("локальные Training Questions", "локальные тренировочные вопросы"),
-              )
-              for old, new in replacements:
-                  text = text.replace(old, new)
-              if text != original:
-                  path.write_text(text, encoding="utf-8")
-                  changed.append(str(path))
-
-          Path("/tmp/audit_changed.txt").write_text("\n".join(changed), encoding="utf-8")
-          print(f"changed files: {len(changed)}")
-          for path in changed:
-              print(path)
-          PY
-          if [ ! -s /tmp/audit_changed.txt ]; then
-            echo "No deterministic edits left."
-            exit 0
-          fi
-          xargs -d '\n' npx prettier --write < /tmp/audit_changed.txt
-          git add --pathspec-from-file=/tmp/audit_changed.txt
-          git config user.name "H-Group RU audit"
-          git config user.email "76396126+BarsukovSergey@users.noreply.github.com"
-          git commit -m "content: унифицировать названия контрольных вопросов"
-          git push origin HEAD:"$AUDIT_BRANCH"
-
       - name: Lint
         run: npm run lint
 
@@ -87,14 +32,6 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./build
-
-      - name: Upload audit source snapshot
-        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: audit-source
-          path: i18n/ru/docusaurus-plugin-content-docs/current
-          retention-days: 1
 
       - name: Build RU site for fork pull requests
         if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.repo.full_name != github.repository }}
