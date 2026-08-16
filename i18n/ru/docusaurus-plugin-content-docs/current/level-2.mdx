@@ -214,7 +214,7 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 
 <summary>
   1. Когда подсказку числом 5 для 5 не на chop можно интерпретировать как{" "}
-  <em>5 Stall</em>? 5 Stall
+  <em>5 Stall</em>?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
@@ -232,7 +232,7 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 <summary>
   2. В ситуации <em>Double Prompt</em> красная 1 уже сыграна. Алиса даёт Кэти
   красную подсказку, которая затрагивает красную 4. У Боба две красные карты с
-  подсказками. Что Боб должен вывести и какие действия сделать? Double Prompt
+  подсказками. Что Боб должен вывести и какие действия сделать?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
@@ -250,7 +250,7 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 <summary>
   3. В ситуации <em>Double Finesse</em> красная 1 уже сыграна, а Алиса даёт
   Дональду красную подсказку, которая затрагивает красную 4. Что должны сделать
-  Боб, Кэти и Дональд? Double Finesse
+  Боб, Кэти и Дональд?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
@@ -266,15 +266,12 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 <details className="ru-training">
 
 <summary>
-  4. Чем отличается <em>Prompt + Finesse</em> от обычного{" "}
-  <em>Double Finesse</em>? Prompt + Finesse
+  4. Чем отличается <em>Prompt + Finesse</em> от <em>Double Finesse</em>?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-В _Prompt + Finesse_ одна из связей уже находится среди карт с подсказками и поэтому может быть _Prompt_, тогда как другая связь остаётся скрытой и поэтому требует _Finesse_. Иными словами, один промежуточный розыгрыш читается из уже подсказанной информации, а другой — как blind-play из _Finesse Position_.
-
-В обычном _Double Finesse_ обе промежуточные связи — это blind-play разных игроков.
+В _Prompt + Finesse_ одна из связующих карт уже имеет подсказку и поэтому разыгрывается через _Prompt_, а другая остаётся без подсказки и требует blind-play через _Finesse_. В _Double Finesse_ две связующие карты разыгрываются вслепую. Эти два blind-play могут принадлежать разным игрокам или одному игроку на последовательных ходах.
 
 </div>
 
@@ -283,15 +280,13 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 <details className="ru-training">
 
 <summary>
-  5. Что такое <em>Reverse Finesse</em> на интуитивном уровне и почему порядок
-  игроков там важен? Reverse Finesse
+  5. Чем <em>Reverse Finesse</em> отличается от обычного Finesse по порядку
+  ходов?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-**Идея:** Подсказка указывает на более позднюю карту, но фактическая скрытая связь находится у игрока раньше по порядку хода.
-
-Из-за этого команда должна отслеживать не только саму затронутую цель, но и то, кто должен «подготовить» её розыгрыш до того, как цель действительно станет играбельной. Если порядок игроков не подходит, считывание _Reverse Finesse_ ломается.
+В обычном _Finesse_ blind-play происходит до хода получателя исходной подсказки. В _Reverse Finesse_ получатель подсказки успевает сделать ход раньше игрока, который должен выполнить blind-play, поэтому он откладывает розыгрыш подсказанной карты и даёт скрытой связи время проявиться.
 
 </div>
 
@@ -300,15 +295,13 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 <details className="ru-training">
 
 <summary>
-  6. Когда <em>Self-Finesse</em> выглядит разумным, а когда — слишком
-  рискованным для уровня 2? Self-Finesse
+  6. В <em>Self-Finesse</em> предыдущие игроки не показали связующую карту. Где
+  получатель должен искать её?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-**Разумно:** Когда игрок, давший подсказку, может обоснованно ожидать, что игрок поймёт скрытую связь и что blind-play действительно безопасно продвигает известную цепочку.
-
-**Слишком рискованно:** Когда у принимающего игрока слишком много альтернативных интерпретаций, когда неочевидно, какая карта находится в _Finesse Position_, или когда blind-play легко приводит к страйку. На уровне 2 такие приёмы уже существуют, но использовать их нужно аккуратно.
+В собственной _Finesse Position_. Если подсказанная карта должна стать играбельной, а подходящей связи в руках предыдущих игроков не оказалось, получатель заключает, что связующая карта находится у него самого, и делает соответствующий blind-play.
 
 </div>
 
@@ -318,7 +311,7 @@ import RuDiagramWrongPrompt from "./level-2/wrong-prompt.yml";
 
 <summary>
   7. В ситуации <em>Wrong Prompt</em> игрок осознаёт, что полученная
-  интерпретация была ошибочной. Что он должен сделать дальше? Wrong Prompt
+  интерпретация была ошибочной. Что он должен сделать дальше?
 </summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
