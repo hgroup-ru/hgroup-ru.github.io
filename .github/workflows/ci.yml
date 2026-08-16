@@ -22,12 +22,20 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Show audit Prettier diff
+        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
+        run: |
+          npx prettier --write i18n/ru/docusaurus-plugin-content-docs/current/level-2.mdx
+          git diff -- i18n/ru/docusaurus-plugin-content-docs/current/level-2.mdx
+          git checkout -- i18n/ru/docusaurus-plugin-content-docs/current/level-2.mdx
+
       - name: Build RU site for audit QA
+        id: audit_build
         if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
         run: npm run build:ru
 
       - name: Upload audit build artifact
-        if: ${{ success() && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
+        if: ${{ always() && steps.audit_build.outcome == 'success' && github.event.pull_request.head.ref == 'audit/whole-site-consistency' }}
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./build
