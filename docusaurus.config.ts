@@ -127,6 +127,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           editUrl:
             "https://github.com/hgroup-ru/hgroup-ru.github.io/edit/main/",
+          editLocalizedFiles: true,
         },
         theme: {
           customCss: "./src/css/custom.css",
