@@ -21,6 +21,55 @@ jobs:
           exit 1
 
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Validate fresh release notes
+        shell: bash
+        run: |
+          notes_file="$(mktemp)"
+          previous_notes_file="$(mktemp)"
+
+          extract_notes() {
+            awk '
+              /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+              capture && /^## / { exit }
+              capture { print }
+            ' "$1"
+          }
+
+          normalize_notes() {
+            sed \
+              -e 's/[[:space:]]\+$//' \
+              -e '/^[[:space:]]*$/d'
+          }
+
+          extract_notes CHANGELOG.md > "$notes_file"
+
+          if ! grep -q '[^[:space:]]' "$notes_file"; then
+            echo "CHANGELOG.md has no non-empty 'Следующий релиз' section."
+            exit 1
+          fi
+
+          previous_tag="$(git tag --list 'prod-*' --sort=-creatordate | head -n 1)"
+          if [ -n "$previous_tag" ] &&
+            git cat-file -e "$previous_tag:CHANGELOG.md" 2>/dev/null; then
+            git show "$previous_tag:CHANGELOG.md" |
+              awk '
+                /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+                capture && /^## / { exit }
+                capture { print }
+              ' > "$previous_notes_file"
+
+            if diff -q \
+              <(normalize_notes < "$notes_file") \
+              <(normalize_notes < "$previous_notes_file") >/dev/null; then
+              echo "'Следующий релиз' is unchanged from $previous_tag."
+              echo "Update CHANGELOG.md before running Production Release."
+              exit 1
+            fi
+          fi
+
       - uses: ./.github/workflows/setup
 
       - name: Lint release candidate
@@ -122,7 +171,7 @@ jobs:
             capture { print }
           ' CHANGELOG.md > "$notes_file"
 
-          if [ ! -s "$notes_file" ]; then
+          if ! grep -q '[^[:space:]]' "$notes_file"; then
             echo "CHANGELOG.md has no non-empty 'Следующий релиз' section."
             exit 1
           fi
