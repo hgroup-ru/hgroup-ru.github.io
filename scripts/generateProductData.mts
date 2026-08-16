@@ -573,22 +573,18 @@ function parseLearningPathRow(line: string): LevelBrowseEntry | undefined {
   }
 
   const levelLink = parseMarkdownLinks(cells[0] ?? "")[0];
-  if (levelLink === undefined || !levelLink.label.startsWith("Level ")) {
+  if (levelLink === undefined) {
     return undefined;
   }
 
-  const levelText = levelLink.label.slice("Level ".length).trim();
-  if (levelText === "") {
-    return undefined;
-  }
-  for (const character of levelText) {
-    if (character < "0" || character > "9") {
-      return undefined;
-    }
-  }
-
-  const level = Number(levelText);
-  if (level < 1 || level > 25) {
+  const withoutPrefix = levelLink.target.startsWith("./")
+    ? levelLink.target.slice(2)
+    : levelLink.target;
+  const hashIndex = withoutPrefix.indexOf("#");
+  const relativePath =
+    hashIndex === -1 ? withoutPrefix : withoutPrefix.slice(0, hashIndex);
+  const level = parseLevelFileName(relativePath);
+  if (level === undefined || level < 1 || level > 25) {
     return undefined;
   }
 
