@@ -7,6 +7,12 @@ import styles from "./styles.module.css";
 
 const LEVEL_PATH_PATTERN = /\/level-(?<level>\d+)\/?$/v;
 
+type LearningPathLevelGuideProps = {
+  finalLevelLabel: string;
+  finalLevelMessage: string;
+  openAdvancedLabel: string;
+};
+
 function levelSummaryRows(): readonly HTMLTableRowElement[] {
   const heading = document.querySelector<HTMLElement>("#level-summary");
   if (heading === null) {
@@ -81,7 +87,11 @@ function levelHref(level: number): string {
   return `/level-${level}`;
 }
 
-export default function LearningPathLevelGuide(): React.JSX.Element {
+export default function LearningPathLevelGuide({
+  finalLevelLabel,
+  finalLevelMessage,
+  openAdvancedLabel,
+}: LearningPathLevelGuideProps): React.JSX.Element {
   const [level] = usePlayerLevel();
   const currentNumeric = typeof level === "number" ? level : undefined;
   useEffect(() => {
@@ -153,17 +163,13 @@ export default function LearningPathLevelGuide(): React.JSX.Element {
 
         {nextNumeric === undefined ? (
           <div className={styles["levelCard"]}>
-            <div className={styles["levelLabel"]}>Что дальше</div>
-            <div className={styles["lastLevel"]}>
-              Основной путь обучения завершён. Если вы уверенно чувствуете себя с
-              материалом уровней 1–25, можно перейти к продвинутым стратегиям —
-              более редким и ситуативным конвенциям.
-            </div>
+            <div className={styles["levelLabel"]}>{finalLevelLabel}</div>
+            <div className={styles["lastLevel"]}>{finalLevelMessage}</div>
             <Link
               className={`button button--secondary button--sm ${styles["jumpButton"]}`}
               to="/extras"
             >
-              Перейти к продвинутым стратегиям
+              {openAdvancedLabel}
             </Link>
           </div>
         ) : (
