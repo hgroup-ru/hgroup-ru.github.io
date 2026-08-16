@@ -7,12 +7,6 @@ import styles from "./styles.module.css";
 
 const LEVEL_PATH_PATTERN = /\/level-(?<level>\d+)\/?$/v;
 
-type LearningPathLevelGuideProps = {
-  finalLevelLabel: string;
-  finalLevelMessage: string;
-  openAdvancedLabel: string;
-};
-
 function levelSummaryRows(): readonly HTMLTableRowElement[] {
   const heading = document.querySelector<HTMLElement>("#level-summary");
   if (heading === null) {
@@ -87,11 +81,7 @@ function levelHref(level: number): string {
   return `/level-${level}`;
 }
 
-export default function LearningPathLevelGuide({
-  finalLevelLabel,
-  finalLevelMessage,
-  openAdvancedLabel,
-}: LearningPathLevelGuideProps): React.JSX.Element {
+export default function LearningPathLevelGuide(): React.JSX.Element {
   const [level] = usePlayerLevel();
   const currentNumeric = typeof level === "number" ? level : undefined;
   useEffect(() => {
@@ -163,13 +153,17 @@ export default function LearningPathLevelGuide({
 
         {nextNumeric === undefined ? (
           <div className={styles["levelCard"]}>
-            <div className={styles["levelLabel"]}>{finalLevelLabel}</div>
-            <div className={styles["lastLevel"]}>{finalLevelMessage}</div>
+            <div className={styles["levelLabel"]}>
+              &#1063;&#1090;&#1086; &#1076;&#1072;&#1083;&#1100;&#1096;&#1077;
+            </div>
+            <div className={styles["lastLevel"]}>
+              &#1054;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1081; &#1087;&#1091;&#1090;&#1100; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1103; &#1079;&#1072;&#1074;&#1077;&#1088;&#1096;&#1105;&#1085;. &#1045;&#1089;&#1083;&#1080; &#1074;&#1099; &#1091;&#1074;&#1077;&#1088;&#1077;&#1085;&#1085;&#1086; &#1095;&#1091;&#1074;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090;&#1077; &#1089;&#1077;&#1073;&#1103; &#1089; &#1084;&#1072;&#1090;&#1077;&#1088;&#1080;&#1072;&#1083;&#1086;&#1084; &#1091;&#1088;&#1086;&#1074;&#1085;&#1077;&#1081; 1&#8211;25, &#1084;&#1086;&#1078;&#1085;&#1086; &#1087;&#1077;&#1088;&#1077;&#1081;&#1090;&#1080; &#1082; &#1087;&#1088;&#1086;&#1076;&#1074;&#1080;&#1085;&#1091;&#1090;&#1099;&#1084; &#1089;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;&#1080;&#1103;&#1084; &#8212; &#1073;&#1086;&#1083;&#1077;&#1077; &#1088;&#1077;&#1076;&#1082;&#1080;&#1084; &#1080; &#1089;&#1080;&#1090;&#1091;&#1072;&#1090;&#1080;&#1074;&#1085;&#1099;&#1084; &#1082;&#1086;&#1085;&#1074;&#1077;&#1085;&#1094;&#1080;&#1103;&#1084;.
+            </div>
             <Link
               className={`button button--secondary button--sm ${styles["jumpButton"]}`}
               to="/extras"
             >
-              {openAdvancedLabel}
+              &#1055;&#1077;&#1088;&#1077;&#1081;&#1090;&#1080; &#1082; &#1087;&#1088;&#1086;&#1076;&#1074;&#1080;&#1085;&#1091;&#1090;&#1099;&#1084; &#1089;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;&#1080;&#1103;&#1084;
             </Link>
           </div>
         ) : (
