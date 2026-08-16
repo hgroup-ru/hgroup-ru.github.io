@@ -153,25 +153,17 @@ export default function LearningPathLevelGuide(): React.JSX.Element {
 
         {nextNumeric === undefined ? (
           <div className={styles["levelCard"]}>
-            <div className={styles["levelLabel"]}>
-              <Translate id="product.learningPath.afterFinalLevelLabel">
-                What's next
-              </Translate>
-            </div>
+            <div className={styles["levelLabel"]}>Что дальше</div>
             <div className={styles["lastLevel"]}>
-              <Translate id="product.learningPath.lastLevel">
-                The main Learning Path is complete. If you feel comfortable with
-                the material from Levels 1–25, you can move on to Advanced
-                Strategies—rarer, more situational conventions.
-              </Translate>
+              Основной путь обучения завершён. Если вы уверенно чувствуете себя с
+              материалом уровней 1–25, можно перейти к продвинутым стратегиям —
+              более редким и ситуативным конвенциям.
             </div>
             <Link
               className={`button button--secondary button--sm ${styles["jumpButton"]}`}
               to="/extras"
             >
-              <Translate id="product.learningPath.openAdvanced">
-                Explore Advanced Strategies
-              </Translate>
+              Перейти к продвинутым стратегиям
             </Link>
           </div>
         ) : (
