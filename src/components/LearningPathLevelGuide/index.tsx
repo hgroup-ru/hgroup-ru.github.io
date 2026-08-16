@@ -6,6 +6,12 @@ import { usePlayerLevel } from "../../hooks/usePlayerLevel";
 import styles from "./styles.module.css";
 
 const LEVEL_PATH_PATTERN = /\/level-(?<level>\d+)\/?$/v;
+const FINAL_LEVEL_LABEL =
+  "\u{427}\u{442}\u{43E} \u{434}\u{430}\u{43B}\u{44C}\u{448}\u{435}";
+const FINAL_LEVEL_MESSAGE =
+  "\u{41E}\u{441}\u{43D}\u{43E}\u{432}\u{43D}\u{43E}\u{439} \u{43F}\u{443}\u{442}\u{44C} \u{43E}\u{431}\u{443}\u{447}\u{435}\u{43D}\u{438}\u{44F} \u{437}\u{430}\u{432}\u{435}\u{440}\u{448}\u{451}\u{43D}. \u{415}\u{441}\u{43B}\u{438} \u{432}\u{44B} \u{443}\u{432}\u{435}\u{440}\u{435}\u{43D}\u{43D}\u{43E} \u{447}\u{443}\u{432}\u{441}\u{442}\u{432}\u{443}\u{435}\u{442}\u{435} \u{441}\u{435}\u{431}\u{44F} \u{441} \u{43C}\u{430}\u{442}\u{435}\u{440}\u{438}\u{430}\u{43B}\u{43E}\u{43C} \u{443}\u{440}\u{43E}\u{432}\u{43D}\u{435}\u{439} 1\u{2013}25, \u{43C}\u{43E}\u{436}\u{43D}\u{43E} \u{43F}\u{435}\u{440}\u{435}\u{439}\u{442}\u{438} \u{43A} \u{43F}\u{440}\u{43E}\u{434}\u{432}\u{438}\u{43D}\u{443}\u{442}\u{44B}\u{43C} \u{441}\u{442}\u{440}\u{430}\u{442}\u{435}\u{433}\u{438}\u{44F}\u{43C} \u{2014} \u{431}\u{43E}\u{43B}\u{435}\u{435} \u{440}\u{435}\u{434}\u{43A}\u{438}\u{43C} \u{438} \u{441}\u{438}\u{442}\u{443}\u{430}\u{442}\u{438}\u{432}\u{43D}\u{44B}\u{43C} \u{43A}\u{43E}\u{43D}\u{432}\u{435}\u{43D}\u{446}\u{438}\u{44F}\u{43C}.";
+const OPEN_ADVANCED_LABEL =
+  "\u{41F}\u{435}\u{440}\u{435}\u{439}\u{442}\u{438} \u{43A} \u{43F}\u{440}\u{43E}\u{434}\u{432}\u{438}\u{43D}\u{443}\u{442}\u{44B}\u{43C} \u{441}\u{442}\u{440}\u{430}\u{442}\u{435}\u{433}\u{438}\u{44F}\u{43C}";
 
 function levelSummaryRows(): readonly HTMLTableRowElement[] {
   const heading = document.querySelector<HTMLElement>("#level-summary");
@@ -153,16 +159,14 @@ export default function LearningPathLevelGuide(): React.JSX.Element {
 
         {nextNumeric === undefined ? (
           <div className={styles["levelCard"]}>
-            <div className={styles["levelLabel"]}>
-              <Translate id="product.learningPath.nextLevelLabel">
-                Next level
-              </Translate>
-            </div>
-            <div className={styles["lastLevel"]}>
-              <Translate id="product.learningPath.lastLevel">
-                This is the last level in the current path.
-              </Translate>
-            </div>
+            <div className={styles["levelLabel"]}>{FINAL_LEVEL_LABEL}</div>
+            <div className={styles["lastLevel"]}>{FINAL_LEVEL_MESSAGE}</div>
+            <Link
+              className={`button button--secondary button--sm ${styles["jumpButton"]}`}
+              to="/extras"
+            >
+              {OPEN_ADVANCED_LABEL}
+            </Link>
           </div>
         ) : (
           <div className={styles["levelCard"]}>
