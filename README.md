@@ -1,55 +1,50 @@
 # H-Group RU
 
-Русский перевод материалов H-Group по Hanabi.
+Русская локализация материалов H-Group по Hanabi.
 
 Сайт: <https://hgroup-ru.github.io/>
 
-За основу взят официальный проект [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io). Английские материалы и официальные YML-файлы берутся из закреплённой версии исходного проекта, а русский перевод хранится в стандартной структуре локализации Docusaurus.
+Проект основан на официальном [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io). Игровой смысл, структура официальных материалов и официальные YML-файлы сверяются с закреплённой версией исходного проекта; русский перевод и явно обозначенные локальные дополнения развиваются здесь.
 
-## О проекте
-
-Цель H-Group RU — сделать материалы H-Group доступными на русском языке, не создавая отдельную редакцию правил. Мы сохраняем смысл, структуру и официальные диаграммы исходных материалов, а собственные дополнения явно отмечаем как локальные.
-
-На страницах могут встречаться ссылки на Hanab Live, Discord, BoardGameGeek и другие внешние сайты и сервисы. Они приведены как ссылки на сторонние ресурсы и не означают принадлежность этих проектов H-Group RU.
-
-## Как помочь
+## Хотите помочь?
 
 Если вы нашли ошибку в русском переводе, терминологии, интерфейсе русской версии или локальных материалах, открывайте Pull Request в этом репозитории.
 
-Если исправление относится к оригинальному английскому тексту, игровой семантике, официальному YML-файлу или официальной диаграмме, лучше предложить его в [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io). После принятия изменения мы сможем обновить закреплённую версию источника и русский перевод.
+Если исправление относится к оригинальному английскому тексту, игровой семантике, официальному YML-файлу или официальной диаграмме, его лучше предложить в [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io).
 
-Подробности — в [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Для первого Pull Request достаточно сделать fork, создать ветку, внести изменение и открыть PR. Локальные проверки полезны, но не обязательны для открытия PR: GitHub Actions запустит CI автоматически.
 
-## Локальный запуск
+Подробный процесс — в [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## Быстрый локальный запуск
 
 ```bash
 npm ci
 npm run start
 ```
 
-Основная проверка перед Pull Request:
+Основная проверка:
 
 ```bash
 npm run lint
 ```
 
-Сборка русской версии:
+Если изменение затрагивает MDX, YML или рендеринг страниц, дополнительно полезно проверить русскую сборку:
 
 ```bash
 npm run build:ru
 ```
 
-## Полезные документы
+## Где что лежит
 
-- [как внести изменение](CONTRIBUTING.md);
-- [как устроен проект](ARCHITECTURE.md);
-- [открытый бэклог](BACKLOG.md);
-- [правила перевода](localization/README.md);
-- [русская терминология](localization/TERMINOLOGY_RU.md);
-- [осознанные отличия от закреплённого источника](localization/SOURCE_EXCEPTIONS.md);
-- [кандидаты на исправления и улучшения исходного проекта](localization/UPSTREAM_CANDIDATES.md).
+- русский контент: [`i18n/ru/docusaurus-plugin-content-docs/current/`](i18n/ru/docusaurus-plugin-content-docs/current/);
+- правила локализации: [`localization/README.md`](localization/README.md);
+- русская терминология: [`localization/TERMINOLOGY_RU.md`](localization/TERMINOLOGY_RU.md);
+- архитектура репозитория: [`ARCHITECTURE.md`](ARCHITECTURE.md);
+- открытые задачи: [`BACKLOG.md`](BACKLOG.md);
+- версия исходного проекта: [`upstream.json`](upstream.json).
 
-Русский контент находится в [`i18n/ru/docusaurus-plugin-content-docs/current/`](i18n/ru/docusaurus-plugin-content-docs/current). Точная версия исходного проекта записана в [`upstream.json`](upstream.json).
+Осознанные отличия от закреплённого источника перечислены в [`localization/SOURCE_EXCEPTIONS.md`](localization/SOURCE_EXCEPTIONS.md), а возможные исправления и улучшения для исходного проекта — в [`localization/UPSTREAM_CANDIDATES.md`](localization/UPSTREAM_CANDIDATES.md).
 
 ## Лицензия и атрибуция
 
