@@ -47,6 +47,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
+    outputs:
+      production_tag: ${{ steps.production_tag.outputs.tag }}
+      github_release: ${{ steps.github_release.outputs.name }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
@@ -59,6 +63,7 @@ jobs:
           fetch-depth: 0
 
       - name: Tag production source
+        id: production_tag
         shell: bash
         run: |
           tag="prod-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
@@ -78,6 +83,7 @@ jobs:
           fi
 
           echo "PRODUCTION_TAG=$tag" >> "$GITHUB_ENV"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "### Production tag: $tag" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Run Algolia Crawler
@@ -104,6 +110,7 @@ jobs:
             "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex"
 
       - name: Publish GitHub Release
+        id: github_release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -133,4 +140,131 @@ jobs:
           fi
 
           release_url="$(gh release view "$PRODUCTION_TAG" --json url --jq .url)"
+          echo "name=$title" >> "$GITHUB_OUTPUT"
           echo "### GitHub Release: $release_url" >> "$GITHUB_STEP_SUMMARY"
+
+  sync-maintainer-state:
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Validate state sync configuration
+        shell: bash
+        env:
+          APP_CLIENT_ID: ${{ vars.STATE_SYNC_APP_CLIENT_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.STATE_SYNC_APP_PRIVATE_KEY }}
+          TARGET_REPOSITORY: ${{ vars.STATE_SYNC_REPOSITORY }}
+          TARGET_ENTRYPOINT: ${{ vars.STATE_SYNC_ENTRYPOINT }}
+        run: |
+          if [ -z "$APP_CLIENT_ID" ] ||
+             [ -z "$APP_PRIVATE_KEY" ] ||
+             [ -z "$TARGET_REPOSITORY" ] ||
+             [ -z "$TARGET_ENTRYPOINT" ]; then
+            echo "Required post-release state sync configuration is incomplete."
+            exit 1
+          fi
+
+      - name: Create short-lived state sync token
+        id: state_sync_token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STATE_SYNC_APP_CLIENT_ID }}
+          private-key: ${{ secrets.STATE_SYNC_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ vars.STATE_SYNC_REPOSITORY }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      - name: Resolve current public main
+        id: public_main
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+      - name: Check out state sync target
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ github.repository_owner }}/${{ vars.STATE_SYNC_REPOSITORY }}
+          ref: main
+          token: ${{ steps.state_sync_token.outputs.token }}
+          path: maintainer-state-sync
+          fetch-depth: 0
+
+      - name: Apply private-owned state transformation
+        shell: bash
+        working-directory: maintainer-state-sync
+        env:
+          STATE_SYNC_RELEASED_SOURCE_SHA: ${{ github.sha }}
+          STATE_SYNC_PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+          STATE_SYNC_GITHUB_RELEASE: ${{ needs.deploy.outputs.github_release }}
+          STATE_SYNC_PUBLIC_MAIN_SHA: ${{ steps.public_main.outputs.sha }}
+          TARGET_ENTRYPOINT: ${{ vars.STATE_SYNC_ENTRYPOINT }}
+        run: python3 "$TARGET_ENTRYPOINT"
+
+      - name: Prepare state sync branch
+        id: state_change
+        shell: bash
+        working-directory: maintainer-state-sync
+        env:
+          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "State sync produced no changes."
+            exit 0
+          fi
+
+          base_sha="$(git rev-parse HEAD)"
+          branch="automation/release-state-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "state: sync $PRODUCTION_TAG"
+          git push origin "$branch"
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Create and merge mechanical state PR
+        if: steps.state_change.outputs.changed == 'true'
+        shell: bash
+        working-directory: maintainer-state-sync
+        env:
+          GH_TOKEN: ${{ steps.state_sync_token.outputs.token }}
+          TARGET_REPOSITORY: ${{ vars.STATE_SYNC_REPOSITORY }}
+          BRANCH: ${{ steps.state_change.outputs.branch }}
+          BASE_SHA: ${{ steps.state_change.outputs.base_sha }}
+          HEAD_SHA: ${{ steps.state_change.outputs.head_sha }}
+          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+        run: |
+          target="${GITHUB_REPOSITORY_OWNER}/${TARGET_REPOSITORY}"
+          pr_url="$(gh pr create \
+            --repo "$target" \
+            --base main \
+            --head "$BRANCH" \
+            --title "state: sync $PRODUCTION_TAG" \
+            --body "Mechanical post-release synchronization of objective production facts from the successful public Release workflow.")"
+
+          current_base="$(gh api "repos/$target/git/ref/heads/main" --jq .object.sha)"
+          if [ "$current_base" != "$BASE_SHA" ]; then
+            echo "Target main moved from $BASE_SHA to $current_base; leaving $pr_url open for review."
+            exit 1
+          fi
+
+          gh pr merge "$pr_url" \
+            --squash \
+            --delete-branch \
+            --match-head-commit "$HEAD_SHA"
+          echo "### State sync: $pr_url" >> "$GITHUB_STEP_SUMMARY"
