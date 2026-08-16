@@ -698,7 +698,7 @@
     "description": "Learning Path message when player level is not selected"
   },
   "product.learningPath.beginnerExplanation": {
-    "message": "Сейчас: Beginner. Начните с руководства для начинающих и закрепите основы в нескольких партиях. Level 1 подробнее разбирает тот же фундамент; новые конвенции начинаются с Level 2.",
+    "message": "Сейчас: Beginner. Начните с руководства для начинающих и закрепите основы в нескольких партиях. 1-й уровень подробнее разбирает тот же фундамент; новые конвенции начинаются со 2-го уровня.",
     "description": "Learning Path explanation for Beginner player level"
   },
   "product.learningPath.openBeginner": {
@@ -706,7 +706,7 @@
     "description": "Learning Path link to Beginner guide"
   },
   "product.learningPath.beginnerNext": {
-    "message": "Следующий: Level 2",
+    "message": "Следующий: Уровень 2",
     "description": "Learning Path next action shown for Beginner player level"
   },
   "product.learningPath.currentLevel": {
