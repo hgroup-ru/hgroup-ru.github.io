@@ -6,6 +6,12 @@ import { usePlayerLevel } from "../../hooks/usePlayerLevel";
 import styles from "./styles.module.css";
 
 const LEVEL_PATH_PATTERN = /\/level-(?<level>\d+)\/?$/v;
+const LEVEL_LABEL =
+  "\u{423}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C}";
+const BEGINNER_EXPLANATION =
+  "\u{421}\u{435}\u{439}\u{447}\u{430}\u{441}: Beginner. \u{41D}\u{430}\u{447}\u{43D}\u{438}\u{442}\u{435} \u{441} \u{440}\u{443}\u{43A}\u{43E}\u{432}\u{43E}\u{434}\u{441}\u{442}\u{432}\u{430} \u{434}\u{43B}\u{44F} \u{43D}\u{430}\u{447}\u{438}\u{43D}\u{430}\u{44E}\u{449}\u{438}\u{445} \u{438} \u{437}\u{430}\u{43A}\u{440}\u{435}\u{43F}\u{438}\u{442}\u{435} \u{43E}\u{441}\u{43D}\u{43E}\u{432}\u{44B} \u{432} \u{43D}\u{435}\u{441}\u{43A}\u{43E}\u{43B}\u{44C}\u{43A}\u{438}\u{445} \u{43F}\u{430}\u{440}\u{442}\u{438}\u{44F}\u{445}. 1-\u{439} \u{443}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C} \u{43F}\u{43E}\u{434}\u{440}\u{43E}\u{431}\u{43D}\u{435}\u{435} \u{440}\u{430}\u{437}\u{431}\u{438}\u{440}\u{430}\u{435}\u{442} \u{442}\u{43E}\u{442} \u{436}\u{435} \u{444}\u{443}\u{43D}\u{434}\u{430}\u{43C}\u{435}\u{43D}\u{442}; \u{43D}\u{43E}\u{432}\u{44B}\u{435} \u{43A}\u{43E}\u{43D}\u{432}\u{435}\u{43D}\u{446}\u{438}\u{438} \u{43D}\u{430}\u{447}\u{438}\u{43D}\u{430}\u{44E}\u{442}\u{441}\u{44F} \u{441}\u{43E} 2-\u{433}\u{43E} \u{443}\u{440}\u{43E}\u{432}\u{43D}\u{44F}.";
+const BEGINNER_NEXT_LABEL =
+  "\u{421}\u{43B}\u{435}\u{434}\u{443}\u{44E}\u{449}\u{438}\u{439}: \u{423}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C} 2";
 const FINAL_LEVEL_LABEL =
   "\u{427}\u{442}\u{43E} \u{434}\u{430}\u{43B}\u{44C}\u{448}\u{435}";
 const FINAL_LEVEL_MESSAGE =
@@ -78,9 +84,9 @@ function levelEntry(level: number) {
 function levelName(level: number): string {
   const entry = levelEntry(level);
   if (entry === undefined) {
-    return `Level ${level}`;
+    return `${LEVEL_LABEL} ${level}`;
   }
-  return `Level ${level}: ${entry.title}`;
+  return `${LEVEL_LABEL} ${level}: ${entry.title}`;
 }
 
 function levelHref(level: number): string {
@@ -111,25 +117,15 @@ export default function LearningPathLevelGuide(): React.JSX.Element {
   if (level === "beginner") {
     return (
       <div className={styles["guide"]}>
-        <div>
-          <Translate id="product.learningPath.beginnerExplanation">
-            My level: Beginner. Finish the Beginner's Guide and play a few games
-            first. Level 1 consolidates and formalizes the fundamentals; new
-            material starts at Level 2.
-          </Translate>
-        </div>
+        <div>{BEGINNER_EXPLANATION}</div>
         <div className={styles["actions"]}>
           <Link to="/beginner">
             <Translate id="product.learningPath.openBeginner">
               Beginner guide
             </Translate>
           </Link>
-          <Link to="/level-1">Level 1</Link>
-          <Link to="/level-2">
-            <Translate id="product.learningPath.beginnerNext">
-              Next: Level 2
-            </Translate>
-          </Link>
+          <Link to="/level-1">{`${LEVEL_LABEL} 1`}</Link>
+          <Link to="/level-2">{BEGINNER_NEXT_LABEL}</Link>
         </div>
       </div>
     );
