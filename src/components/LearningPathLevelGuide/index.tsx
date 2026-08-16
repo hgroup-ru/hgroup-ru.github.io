@@ -78,9 +78,9 @@ function levelEntry(level: number) {
 function levelName(level: number): string {
   const entry = levelEntry(level);
   if (entry === undefined) {
-    return `Level ${level}`;
+    return `Уровень ${level}`;
   }
-  return `Level ${level}: ${entry.title}`;
+  return `Уровень ${level}: ${entry.title}`;
 }
 
 function levelHref(level: number): string {
@@ -124,7 +124,7 @@ export default function LearningPathLevelGuide(): React.JSX.Element {
               Beginner guide
             </Translate>
           </Link>
-          <Link to="/level-1">Level 1</Link>
+          <Link to="/level-1">Уровень 1</Link>
           <Link to="/level-2">
             <Translate id="product.learningPath.beginnerNext">
               Next: Level 2
