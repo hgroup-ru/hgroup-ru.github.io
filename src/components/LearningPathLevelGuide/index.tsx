@@ -6,6 +6,8 @@ import { usePlayerLevel } from "../../hooks/usePlayerLevel";
 import styles from "./styles.module.css";
 
 const LEVEL_PATH_PATTERN = /\/level-(?<level>\d+)\/?$/v;
+const LEVEL_LABEL =
+  "\u{423}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C}";
 const FINAL_LEVEL_LABEL =
   "\u{427}\u{442}\u{43E} \u{434}\u{430}\u{43B}\u{44C}\u{448}\u{435}";
 const FINAL_LEVEL_MESSAGE =
@@ -78,9 +80,9 @@ function levelEntry(level: number) {
 function levelName(level: number): string {
   const entry = levelEntry(level);
   if (entry === undefined) {
-    return `Уровень ${level}`;
+    return `${LEVEL_LABEL} ${level}`;
   }
-  return `Уровень ${level}: ${entry.title}`;
+  return `${LEVEL_LABEL} ${level}: ${entry.title}`;
 }
 
 function levelHref(level: number): string {
@@ -124,7 +126,7 @@ export default function LearningPathLevelGuide(): React.JSX.Element {
               Beginner guide
             </Translate>
           </Link>
-          <Link to="/level-1">Уровень 1</Link>
+          <Link to="/level-1">{LEVEL_LABEL} 1</Link>
           <Link to="/level-2">
             <Translate id="product.learningPath.beginnerNext">
               Next: Level 2
