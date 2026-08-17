@@ -187,6 +187,40 @@ function parseFrontmatterTitle(source: string, fallback: string): string {
   return fallback;
 }
 
+function parseFrontmatterSlug(source: string): string | undefined {
+  const lines = source.split("\n");
+  if (lines[0]?.trim() !== "---") {
+    return undefined;
+  }
+
+  for (const line of lines.slice(1)) {
+    const trimmed = line.trim();
+    if (trimmed === "---") {
+      break;
+    }
+    if (!trimmed.startsWith("slug:")) {
+      continue;
+    }
+
+    let slug = trimmed.slice("slug:".length).trim();
+    const first = slug.at(0);
+    const last = slug.at(-1);
+    if (
+      slug.length >= 2
+      && (first === '"' || first === "'")
+      && last === first
+    ) {
+      slug = slug.slice(1, -1).trim();
+    }
+    if (slug === "") {
+      return undefined;
+    }
+    return slug.startsWith("/") ? slug.slice(1) : slug;
+  }
+
+  return undefined;
+}
+
 function baseSlug(value: string): string {
   const normalized =
     stripInlineMarkdown(value).toLocaleLowerCase(productLocale);
@@ -493,7 +527,7 @@ async function buildSearchEntries(): Promise<{
     const fallback = path.basename(relativePath, ".mdx");
     const pageTitle = parseFrontmatterTitle(source, fallback);
     const pageId = routeFromRelativeFile(relativePath);
-    const pageHref = pageId;
+    const pageHref = parseFrontmatterSlug(source) ?? pageId;
     const scope = variantDoc ? "variant" : "reference";
     let areaLabel: string;
     if (variantDoc) {
