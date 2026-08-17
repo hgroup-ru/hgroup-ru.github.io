@@ -25,3 +25,44 @@ jobs:
       - name: Build RU site
         if: ${{ always() && steps.setup.outcome == 'success' }}
         run: npm run build:ru
+
+  notify:
+    name: Telegram notification
+    needs: validate
+    if: ${{ always() && !startsWith(github.head_ref, 'automation/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Telegram
+        continue-on-error: true
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          CI_RESULT: ${{ needs.validate.result }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram notifications are not configured; skipping."
+            exit 0
+          fi
+
+          if [ "$CI_RESULT" = "success" ]; then
+            text="$(printf '🟢 PR #%s готов к merge\n%s\nCI: validate ✓\n%s' \
+              "$PR_NUMBER" "$PR_TITLE" "$PR_URL")"
+          else
+            text="$(printf '🔴 PR #%s: CI упал\n%s\nРезультат: %s\n%s' \
+              "$PR_NUMBER" "$PR_TITLE" "$CI_RESULT" "$RUN_URL")"
+          fi
+
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --request POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${text}" \
+            >/dev/null
