@@ -156,7 +156,7 @@ jobs:
               if run_url:
                   lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
 
-          if notes:
+          if notes and pages_result == "success":
               max_notes = 1800
               if len(notes) > max_notes:
                   notes = notes[:max_notes].rstrip() + "\n…"
