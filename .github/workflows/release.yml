@@ -208,6 +208,9 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages
+
     permissions:
       actions: read
       checks: read
