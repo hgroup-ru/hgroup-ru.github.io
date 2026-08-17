@@ -11,6 +11,9 @@ bun.lock
 *.min.js
 *.min.css
 
+# Pinned upstream source copies
+docs/misc/BGA.mdx
+
 # @template-customization-start
 
 # Images
