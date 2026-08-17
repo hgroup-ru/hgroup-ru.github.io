@@ -39,7 +39,6 @@ jobs:
           }
 
           echo "build=$(job_result build)" >> "$GITHUB_OUTPUT"
-          echo "deploy_job=$(job_result deploy)" >> "$GITHUB_OUTPUT"
           echo "pages_deploy=$(step_result deploy 'Deploy to GitHub Pages')" >> "$GITHUB_OUTPUT"
           echo "algolia=$(step_result deploy 'Run Algolia Crawler')" >> "$GITHUB_OUTPUT"
           echo "github_release=$(step_result deploy 'Publish GitHub Release')" >> "$GITHUB_OUTPUT"
@@ -68,17 +67,11 @@ jobs:
             capture { print }
           ' "$changelog_file" > "$notes_file"
 
-          release_title="$(sed -n 's/^<!-- release-title: \(.*\) -->$/\1/p' "$changelog_file" | head -n 1)"
-
           releases="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/releases?per_page=100")"
           suffix="-${RUN_NUMBER}"
-          tag="$(printf '%s' "$releases" | jq -r --arg suffix "$suffix" \
-            '[.[] | select(.tag_name | endswith($suffix))][0].tag_name // ""')"
           release_url="$(printf '%s' "$releases" | jq -r --arg suffix "$suffix" \
             '[.[] | select(.tag_name | endswith($suffix))][0].html_url // ""')"
 
-          echo "title=$release_title" >> "$GITHUB_OUTPUT"
-          echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "url=$release_url" >> "$GITHUB_OUTPUT"
 
           delimiter="RELEASE_NOTES_$(date +%s%N)"
@@ -94,17 +87,13 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
           RELEASE_RESULT: ${{ github.event.workflow_run.conclusion }}
           BUILD_RESULT: ${{ steps.release.outputs.build }}
-          DEPLOY_JOB_RESULT: ${{ steps.release.outputs.deploy_job }}
           PAGES_DEPLOY_RESULT: ${{ steps.release.outputs.pages_deploy }}
           ALGOLIA_RESULT: ${{ steps.release.outputs.algolia }}
           GITHUB_RELEASE_RESULT: ${{ steps.release.outputs.github_release }}
           ARCHIVE_RESULT: ${{ steps.release.outputs.archive }}
           STATE_RESULT: ${{ steps.release.outputs.state }}
           RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
-          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
           RUN_URL: ${{ github.event.workflow_run.html_url }}
-          RELEASE_TITLE: ${{ steps.metadata.outputs.title }}
-          PRODUCTION_TAG: ${{ steps.metadata.outputs.tag }}
           RELEASE_URL: ${{ steps.metadata.outputs.url }}
           RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
         run: |
@@ -121,61 +110,51 @@ jobs:
           release_result = os.environ.get("RELEASE_RESULT", "")
           pages_result = os.environ.get("PAGES_DEPLOY_RESULT", "not-run")
           run_number = os.environ.get("RUN_NUMBER", "?")
-          source_sha = os.environ.get("SOURCE_SHA", "")
-          short_sha = source_sha[:7]
-          title = os.environ.get("RELEASE_TITLE", "").strip()
-          tag = os.environ.get("PRODUCTION_TAG", "").strip()
           release_url = os.environ.get("RELEASE_URL", "").strip()
           run_url = os.environ.get("RUN_URL", "").strip()
           notes = os.environ.get("RELEASE_NOTES", "").strip()
 
           if release_result == "success":
-              hashtags = "#release #production #success"
-              headline = f"🟢 <b>Production Release #{run_number} завершён</b>"
+              lines = ["#release #production #success", "🟢 <b>Релиз опубликован</b>"]
+              if release_url:
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
           elif pages_result == "success":
-              hashtags = "#release #production #warning"
-              headline = f"🟡 <b>Production уже задеплоен, но Release #{run_number} завершился с ошибкой</b>"
+              lines = [
+                  "#release #production #warning",
+                  f"🟡 <b>Production уже задеплоен, но Release #{run_number} завершился с ошибкой</b>",
+                  "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
+                      build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
+                      pages=html.escape(pages_result),
+                      algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
+                      release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
+                  ),
+                  "archive: {archive} | state: {state}".format(
+                      archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
+                      state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
+                  ),
+                  "Не перезапускай релиз вслепую — сначала проверь упавший этап.",
+              ]
+              if release_url:
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+              if run_url:
+                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
           else:
-              hashtags = "#release #production #failed"
-              headline = f"🔴 <b>Production Release #{run_number} упал до успешного deploy</b>"
-
-          lines = [hashtags, headline]
-          if title:
-              lines.append(f"<b>{html.escape(title)}</b>")
-
-          identity = []
-          if tag:
-              identity.append(f"<code>{html.escape(tag)}</code>")
-          if short_sha:
-              identity.append(f"<code>{html.escape(short_sha)}</code>")
-          if identity:
-              lines.append(" · ".join(identity))
-
-          lines.append(
-              "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
-                  build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
-                  pages=html.escape(pages_result),
-                  algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
-                  release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
-              )
-          )
-          lines.append(
-              "archive: {archive} | state: {state}".format(
-                  archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
-                  state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
-              )
-          )
-
-          links = []
-          if release_url:
-              links.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
-          if run_url:
-              links.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
-          if links:
-              lines.append(" · ".join(links))
-
-          if release_result != "success" and pages_result == "success":
-              lines.append("Не перезапускай релиз вслепую — сначала проверь упавший этап.")
+              lines = [
+                  "#release #production #failed",
+                  f"🔴 <b>Production Release #{run_number} упал до успешного deploy</b>",
+                  "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
+                      build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
+                      pages=html.escape(pages_result),
+                      algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
+                      release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
+                  ),
+                  "archive: {archive} | state: {state}".format(
+                      archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
+                      state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
+                  ),
+              ]
+              if run_url:
+                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
 
           if notes:
               max_notes = 1800
