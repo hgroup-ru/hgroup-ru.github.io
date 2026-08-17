@@ -56,8 +56,8 @@ jobs:
             text="$(printf '#pr #ci #ready\n🟢 PR #%s готов к merge\n%s\nCI: validate ✓\n%s' \
               "$PR_NUMBER" "$PR_TITLE" "$PR_URL")"
           else
-            text="$(printf '#pr #ci #failed\n🔴 PR #%s: CI упал\n%s\nРезультат: %s\n%s' \
-              "$PR_NUMBER" "$PR_TITLE" "$CI_RESULT" "$RUN_URL")"
+            text="$(printf '#pr #ci #failed\n🔴 PR #%s — CI упал\nЛоги: %s\nDiff: %s/files' \
+              "$PR_NUMBER" "$RUN_URL" "$PR_URL")"
           fi
 
           curl \
