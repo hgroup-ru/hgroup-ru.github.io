@@ -66,6 +66,8 @@ const sidebars: SidebarsConfig = {
             "beginner/good-touch-principle",
             "beginner/good-touch-principle-question-1",
             "beginner/good-touch-principle-question-2",
+            "beginner/good-touch-principle-question-3",
+            "beginner/good-touch-principle-question-4",
           ],
         },
         {
