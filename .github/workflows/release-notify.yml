@@ -31,10 +31,53 @@ jobs:
               '[.jobs[] | select(.name == $name) | .conclusion][0] // "not-run"'
           }
 
+          step_result() {
+            job_name="$1"
+            step_name="$2"
+            printf '%s' "$jobs" | jq -r --arg job "$job_name" --arg step "$step_name" \
+              '[.jobs[] | select(.name == $job) | .steps[]? | select(.name == $step) | .conclusion][0] // "not-run"'
+          }
+
           echo "build=$(job_result build)" >> "$GITHUB_OUTPUT"
-          echo "deploy=$(job_result deploy)" >> "$GITHUB_OUTPUT"
+          echo "pages_deploy=$(step_result deploy 'Deploy to GitHub Pages')" >> "$GITHUB_OUTPUT"
+          echo "algolia=$(step_result deploy 'Run Algolia Crawler')" >> "$GITHUB_OUTPUT"
+          echo "github_release=$(step_result deploy 'Publish GitHub Release')" >> "$GITHUB_OUTPUT"
           echo "archive=$(job_result archive-release-notes)" >> "$GITHUB_OUTPUT"
           echo "state=$(job_result sync-maintainer-state)" >> "$GITHUB_OUTPUT"
+
+      - name: Collect release metadata
+        id: metadata
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+        run: |
+          changelog_file="$(mktemp)"
+          notes_file="$(mktemp)"
+
+          gh api "repos/${GITHUB_REPOSITORY}/contents/CHANGELOG.md?ref=${SOURCE_SHA}" \
+            --jq .content | base64 --decode > "$changelog_file"
+
+          awk '
+            /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+            capture && /^## / { exit }
+            capture && /^<!-- release-title: .* -->$/ { next }
+            capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
+            capture { print }
+          ' "$changelog_file" > "$notes_file"
+
+          releases="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/releases?per_page=100")"
+          suffix="-${RUN_NUMBER}"
+          release_url="$(printf '%s' "$releases" | jq -r --arg suffix "$suffix" \
+            '[.[] | select(.tag_name | endswith($suffix))][0].html_url // ""')"
+
+          echo "url=$release_url" >> "$GITHUB_OUTPUT"
+
+          delimiter="RELEASE_NOTES_$(date +%s%N)"
+          echo "notes<<$delimiter" >> "$GITHUB_OUTPUT"
+          cat "$notes_file" >> "$GITHUB_OUTPUT"
+          echo "$delimiter" >> "$GITHUB_OUTPUT"
 
       - name: Notify Telegram
         continue-on-error: true
@@ -44,30 +87,83 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
           RELEASE_RESULT: ${{ github.event.workflow_run.conclusion }}
           BUILD_RESULT: ${{ steps.release.outputs.build }}
-          DEPLOY_RESULT: ${{ steps.release.outputs.deploy }}
+          PAGES_DEPLOY_RESULT: ${{ steps.release.outputs.pages_deploy }}
+          ALGOLIA_RESULT: ${{ steps.release.outputs.algolia }}
+          GITHUB_RELEASE_RESULT: ${{ steps.release.outputs.github_release }}
           ARCHIVE_RESULT: ${{ steps.release.outputs.archive }}
           STATE_RESULT: ${{ steps.release.outputs.state }}
           RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
-          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
           RUN_URL: ${{ github.event.workflow_run.html_url }}
+          RELEASE_URL: ${{ steps.metadata.outputs.url }}
+          RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "Telegram notifications are not configured; skipping."
             exit 0
           fi
 
-          short_sha="${SOURCE_SHA:0:7}"
+          message_file="$(mktemp)"
+          python3 > "$message_file" <<'PY'
+          import html
+          import os
 
-          if [ "$RELEASE_RESULT" = "success" ]; then
-            text="$(printf '#release #production #success\n🟢 Production Release #%s завершён\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
-              "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
-          elif [ "$DEPLOY_RESULT" = "success" ]; then
-            text="$(printf '#release #production #warning\n🟡 Production уже задеплоен, но Release #%s завершился с ошибкой\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\nНе перезапускай релиз вслепую — сначала проверь упавший post-release этап.\n%s' \
-              "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
-          else
-            text="$(printf '#release #production #failed\n🔴 Production Release #%s упал до успешного deploy\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
-              "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
-          fi
+          release_result = os.environ.get("RELEASE_RESULT", "")
+          pages_result = os.environ.get("PAGES_DEPLOY_RESULT", "not-run")
+          run_number = os.environ.get("RUN_NUMBER", "?")
+          release_url = os.environ.get("RELEASE_URL", "").strip()
+          run_url = os.environ.get("RUN_URL", "").strip()
+          notes = os.environ.get("RELEASE_NOTES", "").strip()
+
+          if release_result == "success":
+              lines = ["#release #production #success", "🟢 <b>Релиз опубликован</b>"]
+              if release_url:
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+          elif pages_result == "success":
+              lines = [
+                  "#release #production #warning",
+                  f"🟡 <b>Production уже задеплоен, но Release #{run_number} завершился с ошибкой</b>",
+                  "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
+                      build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
+                      pages=html.escape(pages_result),
+                      algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
+                      release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
+                  ),
+                  "archive: {archive} | state: {state}".format(
+                      archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
+                      state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
+                  ),
+                  "Не перезапускай релиз вслепую — сначала проверь упавший этап.",
+              ]
+              if release_url:
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+              if run_url:
+                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
+          else:
+              lines = [
+                  "#release #production #failed",
+                  f"🔴 <b>Production Release #{run_number} упал до успешного deploy</b>",
+                  "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
+                      build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
+                      pages=html.escape(pages_result),
+                      algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
+                      release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
+                  ),
+                  "archive: {archive} | state: {state}".format(
+                      archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
+                      state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
+                  ),
+              ]
+              if run_url:
+                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
+
+          if notes:
+              max_notes = 1800
+              if len(notes) > max_notes:
+                  notes = notes[:max_notes].rstrip() + "\n…"
+              lines.extend(["", "<b>Что нового</b>", f"<blockquote expandable>{html.escape(notes)}</blockquote>"])
+
+          print("\n".join(lines))
+          PY
 
           curl \
             --silent \
@@ -76,5 +172,7 @@ jobs:
             --request POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=${text}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "disable_web_page_preview=true" \
+            --data-urlencode "text@${message_file}" \
             >/dev/null
