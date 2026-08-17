@@ -68,6 +68,13 @@ def archive_release(
     prefix, current_body, suffix = split_next_release(current_text)
     _, released_body, _ = split_next_release(released_text)
 
+    archived_tag_line = f"- Production tag: `{production_tag}`."
+    if (
+        normalize_section(current_body) == EMPTY_PLACEHOLDER
+        and archived_tag_line in current_text
+    ):
+        return current_text
+
     if normalize_section(current_body) != normalize_section(released_body):
         raise ValueError(
             "Current 'Следующий релиз' changed after the released source was built; "
