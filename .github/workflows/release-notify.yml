@@ -59,13 +59,13 @@ jobs:
           short_sha="${SOURCE_SHA:0:7}"
 
           if [ "$RELEASE_RESULT" = "success" ]; then
-            text="$(printf '🟢 Production Release #%s завершён\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
+            text="$(printf '#release #production #success\n🟢 Production Release #%s завершён\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
               "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
           elif [ "$DEPLOY_RESULT" = "success" ]; then
-            text="$(printf '🟡 Production уже задеплоен, но Release #%s завершился с ошибкой\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\nНе перезапускай релиз вслепую — сначала проверь упавший post-release этап.\n%s' \
+            text="$(printf '#release #production #warning\n🟡 Production уже задеплоен, но Release #%s завершился с ошибкой\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\nНе перезапускай релиз вслепую — сначала проверь упавший post-release этап.\n%s' \
               "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
           else
-            text="$(printf '🔴 Production Release #%s упал до успешного deploy\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
+            text="$(printf '#release #production #failed\n🔴 Production Release #%s упал до успешного deploy\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
               "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
           fi
 
