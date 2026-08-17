@@ -1,0 +1,48 @@
+name: PR Merge Telegram Notification
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Telegram notification
+    if: ${{ github.event.pull_request.merged == true && !startsWith(github.event.pull_request.head.ref, 'automation/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Telegram
+        continue-on-error: true
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+          MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram notifications are not configured; skipping."
+            exit 0
+          fi
+
+          short_sha="${MERGE_SHA:0:7}"
+          text="$(printf '#pr #merged\n🟣 PR #%s смёржен\n%s\n→ %s · %s\n%s' \
+            "$PR_NUMBER" "$PR_TITLE" "$BASE_BRANCH" "$short_sha" "$PR_URL")"
+
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --request POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${text}" \
+            >/dev/null
