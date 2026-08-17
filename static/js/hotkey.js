@@ -3,12 +3,12 @@ const MAX_LEVEL = 25;
 const KEY_MAP = new Map([
   ["ArrowLeft", navigateToPreviousPage],
   ["ArrowRight", navigateToNextPage],
-  ["f", focusLocalSearch],
-  ["g", goToGlossary],
-  ["l", goToSpecificLevel],
-  ["p", goToLearningPath],
-  ["r", goToReference],
-  ["s", goToSummary],
+  ["KeyF", focusLocalSearch],
+  ["KeyG", goToGlossary],
+  ["KeyL", goToSpecificLevel],
+  ["KeyP", goToLearningPath],
+  ["KeyR", goToReference],
+  ["KeyS", goToSummary],
 ]);
 
 const SHIFT_KEY_MAP = new Map([
@@ -34,9 +34,10 @@ function main() {
     }
 
     const keyFunction = (event.shiftKey ? SHIFT_KEY_MAP : KEY_MAP).get(
-      event.key,
+      event.code,
     );
     if (keyFunction !== undefined) {
+      event.preventDefault();
       keyFunction();
     }
   });
