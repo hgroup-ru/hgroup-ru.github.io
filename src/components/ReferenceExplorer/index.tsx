@@ -366,6 +366,7 @@ export default function ReferenceExplorer({
         <input
           aria-label={INPUT_ARIA}
           className={styles["searchInput"]}
+          data-hgroup-local-search="true"
           onChange={(event) => {
             setQuery(event.currentTarget.value);
           }}
