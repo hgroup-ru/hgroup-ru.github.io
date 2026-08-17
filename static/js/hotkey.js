@@ -3,7 +3,12 @@ const MAX_LEVEL = 25;
 const KEY_MAP = new Map([
   ["ArrowLeft", navigateToPreviousPage],
   ["ArrowRight", navigateToNextPage],
+  ["f", focusLocalSearch],
+  ["g", goToGlossary],
   ["l", goToSpecificLevel],
+  ["p", goToLearningPath],
+  ["r", goToReference],
+  ["s", goToSummary],
 ]);
 
 const SHIFT_KEY_MAP = new Map([
@@ -12,7 +17,7 @@ const SHIFT_KEY_MAP = new Map([
 ]);
 
 const RU_LEVEL_PROMPT =
-  "\u{412}\u{432}\u{435}\u{434}\u{438}\u{442}\u{435} \u{443}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C} (1-25) \u{438}\u{43B}\u{438} p \u{434}\u{43B}\u{44F} \u{41F}\u{443}\u{442}\u{438} \u{43E}\u{431}\u{443}\u{447}\u{435}\u{43D}\u{438}\u{44F}:";
+  "\u{412}\u{432}\u{435}\u{434}\u{438}\u{442}\u{435} \u{443}\u{440}\u{43E}\u{432}\u{435}\u{43D}\u{44C} (1-25):";
 
 main();
 
@@ -78,6 +83,31 @@ function navigateToNextPage() {
   }
 }
 
+function focusLocalSearch() {
+  const localSearch = document.querySelector(
+    'input[data-hgroup-local-search="true"]',
+  );
+  if (localSearch instanceof HTMLInputElement) {
+    localSearch.focus();
+  }
+}
+
+function goToGlossary() {
+  globalThis.location.assign("/glossary");
+}
+
+function goToLearningPath() {
+  globalThis.location.assign("/learning-path");
+}
+
+function goToReference() {
+  globalThis.location.assign("/reference");
+}
+
+function goToSummary() {
+  globalThis.location.assign("/summary");
+}
+
 function navigateToPreviousSection() {
   const sections = document.querySelectorAll("h2[id], h3[id]");
   for (const section of [...sections].toReversed()) {
@@ -131,16 +161,9 @@ function goToSpecificLevel() {
   const levelString = prompt(
     isRussian
       ? RU_LEVEL_PROMPT
-      : "Enter the level that you want to go to (or p for the learning path):",
+      : "Enter the level that you want to go to (1-25):",
   );
   if (levelString === null || levelString === "") {
-    return;
-  }
-
-  // The Learning Path is also a common destination, so we provide a dedicated hotkey for this.
-  const levelLowerCase = levelString.toLowerCase();
-  if (levelLowerCase === "p" || levelLowerCase === "path") {
-    globalThis.location.assign("/learning-path");
     return;
   }
 

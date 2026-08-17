@@ -60,6 +60,7 @@ export default function GlossarySearch(): React.JSX.Element {
         <input
           aria-label={SEARCH_ARIA}
           className={styles["searchInput"]}
+          data-hgroup-local-search="true"
           onChange={(event) => {
             setQuery(event.currentTarget.value);
           }}
