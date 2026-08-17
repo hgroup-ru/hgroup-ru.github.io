@@ -1,0 +1,80 @@
+name: Release Telegram Notification
+
+on:
+  workflow_run:
+    workflows:
+      - Release
+    types:
+      - completed
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  notify:
+    name: Telegram notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect release job results
+        id: release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+        run: |
+          jobs="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/jobs?per_page=100")"
+
+          job_result() {
+            name="$1"
+            printf '%s' "$jobs" | jq -r --arg name "$name" \
+              '[.jobs[] | select(.name == $name) | .conclusion][0] // "not-run"'
+          }
+
+          echo "build=$(job_result build)" >> "$GITHUB_OUTPUT"
+          echo "deploy=$(job_result deploy)" >> "$GITHUB_OUTPUT"
+          echo "archive=$(job_result archive-release-notes)" >> "$GITHUB_OUTPUT"
+          echo "state=$(job_result sync-maintainer-state)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Telegram
+        continue-on-error: true
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          RELEASE_RESULT: ${{ github.event.workflow_run.conclusion }}
+          BUILD_RESULT: ${{ steps.release.outputs.build }}
+          DEPLOY_RESULT: ${{ steps.release.outputs.deploy }}
+          ARCHIVE_RESULT: ${{ steps.release.outputs.archive }}
+          STATE_RESULT: ${{ steps.release.outputs.state }}
+          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram notifications are not configured; skipping."
+            exit 0
+          fi
+
+          short_sha="${SOURCE_SHA:0:7}"
+
+          if [ "$RELEASE_RESULT" = "success" ]; then
+            text="$(printf '#release #production #success\n🟢 Production Release #%s завершён\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
+              "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
+          elif [ "$DEPLOY_RESULT" = "success" ]; then
+            text="$(printf '#release #production #warning\n🟡 Production уже задеплоен, но Release #%s завершился с ошибкой\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\nНе перезапускай релиз вслепую — сначала проверь упавший post-release этап.\n%s' \
+              "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
+          else
+            text="$(printf '#release #production #failed\n🔴 Production Release #%s упал до успешного deploy\nsource: %s\nbuild: %s | deploy: %s | archive: %s | state: %s\n%s' \
+              "$RUN_NUMBER" "$short_sha" "$BUILD_RESULT" "$DEPLOY_RESULT" "$ARCHIVE_RESULT" "$STATE_RESULT" "$RUN_URL")"
+          fi
+
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --request POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${text}" \
+            >/dev/null
