@@ -39,15 +39,25 @@ jobs:
           }
 
           normalize_notes() {
-            sed \
-              -e 's/[[:space:]]\+$//' \
-              -e '/^[[:space:]]*$/d'
+            awk '
+              /^<!-- release-title: .* -->$/ { next }
+              /^_Изменений для следующего релиза пока нет\._$/ { next }
+              {
+                sub(/[[:space:]]+$/, "")
+                if ($0 != "") print
+              }
+            '
           }
 
           extract_notes CHANGELOG.md > "$notes_file"
 
-          if ! grep -q '[^[:space:]]' "$notes_file"; then
-            echo "CHANGELOG.md has no non-empty 'Следующий релиз' section."
+          if ! normalize_notes < "$notes_file" | grep -q .; then
+            echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
+            exit 1
+          fi
+
+          if ! grep -Eq '^<!-- release-title: .+ -->$' "$notes_file"; then
+            echo "CHANGELOG.md is missing '<!-- release-title: ... -->' metadata."
             exit 1
           fi
 
@@ -64,7 +74,7 @@ jobs:
             if diff -q \
               <(normalize_notes < "$notes_file") \
               <(normalize_notes < "$previous_notes_file") >/dev/null; then
-              echo "'Следующий релиз' is unchanged from $previous_tag."
+              echo "Release notes are unchanged from $previous_tag."
               echo "Update CHANGELOG.md before running Production Release."
               exit 1
             fi
@@ -168,11 +178,13 @@ jobs:
           awk '
             /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
             capture && /^## / { exit }
+            capture && /^<!-- release-title: .* -->$/ { next }
+            capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
             capture { print }
           ' CHANGELOG.md > "$notes_file"
 
           if ! grep -q '[^[:space:]]' "$notes_file"; then
-            echo "CHANGELOG.md has no non-empty 'Следующий релиз' section."
+            echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
             exit 1
           fi
 
@@ -192,8 +204,133 @@ jobs:
           echo "name=$title" >> "$GITHUB_OUTPUT"
           echo "### GitHub Release: $release_url" >> "$GITHUB_STEP_SUMMARY"
 
-  sync-maintainer-state:
+  archive-release-notes:
     needs: deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      checks: read
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Validate archive configuration
+        shell: bash
+        env:
+          APP_CLIENT_ID: ${{ vars.STATE_SYNC_APP_CLIENT_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.STATE_SYNC_APP_PRIVATE_KEY }}
+        run: |
+          if [ -z "$APP_CLIENT_ID" ] || [ -z "$APP_PRIVATE_KEY" ]; then
+            echo "Required GitHub App configuration for release-note archival is incomplete."
+            exit 1
+          fi
+
+      - name: Create short-lived archive token
+        id: archive_token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STATE_SYNC_APP_CLIENT_ID }}
+          private-key: ${{ secrets.STATE_SYNC_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      - name: Check out current main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ steps.archive_token.outputs.token }}
+          fetch-depth: 0
+
+      - name: Archive released changelog section
+        id: archive_change
+        shell: bash
+        env:
+          GH_TOKEN: ${{ steps.archive_token.outputs.token }}
+          RELEASED_SOURCE_SHA: ${{ github.sha }}
+          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+          GITHUB_RELEASE: ${{ needs.deploy.outputs.github_release }}
+        run: |
+          released_changelog="$(mktemp)"
+          git show "$RELEASED_SOURCE_SHA:CHANGELOG.md" > "$released_changelog"
+
+          published_at="$(gh release view "$PRODUCTION_TAG" --json publishedAt --jq .publishedAt)"
+          release_date="$(TZ=Europe/Moscow date -d "$published_at" +%F)"
+
+          python3 scripts/archive_release_notes.py \
+            --current CHANGELOG.md \
+            --released "$released_changelog" \
+            --release-date "$release_date" \
+            --released-source "$RELEASED_SOURCE_SHA" \
+            --production-tag "$PRODUCTION_TAG" \
+            --github-release "$GITHUB_RELEASE"
+
+          if git diff --quiet -- CHANGELOG.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Release notes are already archived."
+            exit 0
+          fi
+
+          base_sha="$(git rev-parse HEAD)"
+          branch="automation/archive-${PRODUCTION_TAG}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "docs: archive $PRODUCTION_TAG release notes"
+          git push origin "$branch"
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Create archival PR
+        id: archive_pr
+        if: steps.archive_change.outputs.changed == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ steps.archive_token.outputs.token }}
+          BRANCH: ${{ steps.archive_change.outputs.branch }}
+          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+        run: |
+          pr_url="$(gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "docs: archive $PRODUCTION_TAG release notes" \
+            --body "Mechanical post-release archival of the released \`Следующий релиз\` section in \`CHANGELOG.md\`.")"
+          echo "url=$pr_url" >> "$GITHUB_OUTPUT"
+          echo "### Changelog archive PR: $pr_url" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Wait for archival PR checks
+        if: steps.archive_change.outputs.changed == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ steps.archive_pr.outputs.url }}
+        run: |
+          sleep 5
+          gh pr checks "$PR_URL" --watch --fail-fast --interval 10
+
+      - name: Merge archival PR
+        if: steps.archive_change.outputs.changed == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ steps.archive_token.outputs.token }}
+          PR_URL: ${{ steps.archive_pr.outputs.url }}
+          HEAD_SHA: ${{ steps.archive_change.outputs.head_sha }}
+        run: |
+          gh pr merge "$PR_URL" \
+            --squash \
+            --delete-branch \
+            --match-head-commit "$HEAD_SHA"
+
+  sync-maintainer-state:
+    needs:
+      - deploy
+      - archive-release-notes
     runs-on: ubuntu-latest
 
     permissions:
