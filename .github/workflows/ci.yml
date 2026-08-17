@@ -22,8 +22,15 @@ jobs:
         id: setup
         uses: ./.github/workflows/setup
 
-      - name: Lint
-        run: npm run lint
+      - name: Format diagnostic
+        run: |
+          npm run format
+          git diff -- \
+            i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-reasons.mdx \
+            i18n/ru/docusaurus-plugin-content-docs/current/misc/efficiency.mdx \
+            i18n/ru/docusaurus-plugin-content-docs/current/misc/empty-clues.mdx \
+            i18n/ru/docusaurus-plugin-content-docs/current/misc/hat-guessing.mdx
+          test -z "$(git status --porcelain)"
 
       - name: Build RU site for fork pull requests
         if: ${{ always() && steps.setup.outcome == 'success' }}
