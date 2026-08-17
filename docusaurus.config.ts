@@ -93,6 +93,7 @@ const config: Config = {
           href: "https://github.com/hgroup-ru/hgroup-ru.github.io/",
           className: "header-github-link",
           position: "right",
+          title: "GitHub русской версии",
         },
         {
           href: "https://discord.gg/FADvkJp",
