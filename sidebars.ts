@@ -168,6 +168,7 @@ const sidebars: SidebarsConfig = {
         "extras/miscellaneous",
       ],
     },
+    "extras/two-player",
     {
       "Variant Specific": [
         "variant-specific",
