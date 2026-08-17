@@ -22,8 +22,11 @@ jobs:
         id: setup
         uses: ./.github/workflows/setup
 
-      - name: Lint
-        run: npm run lint
+      - name: Show Prettier diff
+        run: |
+          npx prettier --write CHANGELOG.md i18n/ru/docusaurus-plugin-content-docs/current/misc/FAQ.mdx
+          git diff -- CHANGELOG.md i18n/ru/docusaurus-plugin-content-docs/current/misc/FAQ.mdx
+          exit 1
 
       - name: Build RU site for fork pull requests
         if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.repo.full_name != github.repository }}
