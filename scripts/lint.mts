@@ -34,9 +34,8 @@ await lintCommands(import.meta.dirname, [
   // Use ESLint to lint the TypeScript code.
   "eslint",
 
-  // Use Prettier to check formatting.
-  // - "--log-level=warn" makes it only output errors.
-  "prettier --log-level=warn --check .",
+  // Temporarily print Prettier's exact output for this file in CI.
+  "prettier scripts/lint.mts",
 
   // Use Knip to check for unused files, exports, and dependencies. (We do not currently use Knip
   // since there is no Docusaurus plugin and whitelisting everything does not get us much value.)
