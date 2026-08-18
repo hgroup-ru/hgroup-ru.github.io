@@ -1,0 +1,35 @@
+---
+title: "Что осталось у Алисы?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-composition/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-composition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 2 уже были сыграны. В начале у Алисы была одна красная карта с подсказкой, которая по доступной ей информации могла быть `r3`, `r4` или `r5`.
+
+Алиса дала Кэти красную Play Clue по `r4`. Кэти подождала. Затем Боб **сыграл** свою карту из Finesse Position вслепую как `r3`, а не сделал Certain Discard. Позже Кэти **сыграла** свою `r4`, а не сделала Sarcastic Discard. Теперь ход снова вернулся к Алисе; красная стопка дошла до 4.
+
+Что Алиса может заключить о собственной скрытой красной карте и что ей следует сделать сейчас?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса может заключить, что её красная карта — ровно `r5`, поэтому должна сыграть её.
+
+- Решение Боба **сыграть** скрытую `r3` исключает `r3` из вариантов Алисы: если бы у Алисы действительно была дублирующая `r3`, Боб мог бы сделать Certain Discard.
+- Позднейшее решение Кэти **сыграть** `r4` исключает `r4`: если бы у Алисы действительно была дублирующая `r4`, Кэти сделала бы Sarcastic Discard и передала её обратно.
+- Остаётся только `r5`. Красная стопка уже дошла до 4, значит Алисе следует сыграть эту карту.
+
+Исходный ход одновременно использовал механизмы Sarcastic Finesse и Certain Finesse; это Composition Finesse.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,34 @@
+---
+title: "Можно ли положиться на ход Кэти?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-three-ones/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-three-ones" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На столе не сыграно ни одной 1. Боб только что сбросил **точно известную `r1`**, создав один жетон подсказки. У Алисы есть одна карта с подсказкой числом 1, но её цвет Алисе неизвестен. Алиса видит у Кэти `r1` в Finesse Position и `y5` на chop; известного немедленного действия у Кэти нет.
+
+Ход Алисы. Следует ли ей сыграть собственную известную играбельную 1, рассчитывая, что Кэти сыграет `r1`, или потратить жетон на 5 Save по `y5` Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует прямо сейчас сделать 5 Save по `y5` Кэти.
+
+Алиса обязана сохранять две живые возможности для собственной скрытой 1:
+
+- Если 1 Алисы сама является `r1`, то три физические копии — сброшенная `r1` Боба, скрытая `r1` Алисы и видимая `r1` Кэти. Сброс Боба трактуется как Sarcastic Discard Алисе, который имеет приоритет над Gentleman's Discard; у Кэти нет переданного действия.
+- Если 1 Алисы другого цвета, сброшенная Бобом `r1` может быть Gentleman's Discard в Finesse Position Кэти, и тогда Кэти сыграет.
+
+Правило приоритета не сообщает Алисе, в каком из двух скрытых миров она находится. Кроме того, Алиса не может рассчитывать, что Кэти даст подсказку в неизвестную руку самой Алисы. Спасение `y5` — действие, безопасное в обеих возможностях.
+
+</TabItem>
+</Tabs>

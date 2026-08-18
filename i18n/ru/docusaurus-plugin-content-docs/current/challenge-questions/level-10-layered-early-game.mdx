@@ -1,0 +1,31 @@
+---
+title: "Обещание пережило неожиданную карту?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-layered-early-game/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-early-game" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Ранее Боб сбросил известную `r1` как Gentleman's Discard Алисе. Алиса вслепую сыграла Finesse Position, ожидая `r1`, но успешно разыграла `g1`. Значит, обещанная `r1` сместилась в её следующий слот.
+
+До сих пор не было ни одного сброса полностью неизвестной карты, поэтому Early Game продолжается. Команда ещё не сделала обязательный 5 Stall, а у Кэти есть подходящая off-chop `y5`.
+
+Снова ход Алисы. Должна ли она сейчас дать 5 Stall или выполнить сохранившееся обещание GD?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует вслепую сыграть обещанный следующий слот как `r1`.
+
+Специальный сброс GD не завершил Early Game, а успешная `g1` не отменила обещание: это Layered Gentleman's Discard. Но 5 Stall — действие последней необходимости. Сейчас у Алисы есть немедленный обещанный розыгрыш, поэтому сначала нужно выполнить его. Если возможность сохранится, обязательный 5 Stall всё ещё можно сделать позже — до первого сброса полностью неизвестной карты.
+
+</TabItem>
+</Tabs>

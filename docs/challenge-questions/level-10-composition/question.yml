@@ -1,0 +1,31 @@
+stacks:
+  - r: 4
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+players:
+  - text: "Alice's note was r3,r4,r5 · Bob played r3 · Cathy played r4"
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: r
+        middleNote: r5
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

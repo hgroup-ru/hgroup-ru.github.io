@@ -1,0 +1,35 @@
+---
+title: The Same Discard, Four Different Prices
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-gentleman-discard-cases/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gentleman-discard-cases" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+In all four positions, all 1s are played. Alice has a clued red card that she has fully identified as `r2`, and Bob has the other `r2` in his Finesse Position. It is Alice's turn.
+
+- **A:** 3 clues are available. There is no extra danger or useful layer.
+- **B:** 0 clues are available. Bob has `g3` on chop, and Cathy has a known playable `g2`.
+- **C:** 4 clues are available. Bob already has several known playable 2s.
+- **D:** 2 clues are available. Bob has a playable `g2` in front of the matching `r2`.
+
+For each position, should Alice perform a Gentleman's Discard with her known `r2`? Distinguish "allowed" from "good".
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- **A — no.** The GD is allowed, but it only delays the same `r2` play and gains nothing in return.
+- **B — yes.** The discard creates a clue, Bob plays the transferred `r2` instead of discarding, Cathy can play `g2`, and Alice gets a turn to clue Bob's now-playable `g3` before he reaches chop again.
+- **C — no.** The GD is allowed, but it further concentrates useful actions in Bob's already-busy hand and works against Team Distribution Principle.
+- **D — yes.** This is a useful Layered Gentleman's Discard: Bob first blind-plays `g2`, keeps the promise of `r2`, and can continue the layer on a later turn.
+
+</TabItem>
+</Tabs>
