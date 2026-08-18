@@ -22,11 +22,10 @@ if (!yamllintExists) {
 
 const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
 
-// Keep these patterns in sync with Docusaurus 3.10.1's
-// DefaultNumberPrefixParser.
-const IGNORED_NUMBER_PREFIX_PATTERN = /^\d+[\-_.]\d+/v;
+// Keep these patterns in sync with Docusaurus 3.10.1's DefaultNumberPrefixParser.
+const IGNORED_NUMBER_PREFIX_PATTERN = /^\d+[\-._]\d+/v;
 const NUMBER_PREFIX_PATTERN =
-  /^(?<numberPrefix>\d+)\s*[\-_.]+\s*(?<suffix>[^\-_.\s].*)$/v;
+  /^\d+\s*[\-._]+\s*(?<suffix>[^\s\-._].*)$/v;
 
 await lintCommands(import.meta.dirname, [
   // Use TypeScript to type-check the code.
@@ -95,12 +94,13 @@ async function checkSidebarDocumentIds() {
       throw new Error(`Document id cannot include slash: ${baseId}`);
     }
 
-    const dirNameIdPrefix =
-      sourceDirName === "."
-        ? undefined
-        : parseNumberPrefixes
-          ? stripPathNumberPrefixes(sourceDirName)
-          : sourceDirName;
+    let dirNameIdPrefix: string | undefined;
+    if (sourceDirName !== ".") {
+      dirNameIdPrefix = parseNumberPrefixes
+        ? stripPathNumberPrefixes(sourceDirName)
+        : sourceDirName;
+    }
+
     const documentId = [dirNameIdPrefix, baseId].filter(Boolean).join("/");
     documentIds.add(documentId);
   }
@@ -124,8 +124,12 @@ function parseDocFrontMatter(fileContents: string): Record<string, unknown> {
     return {};
   }
 
-  const frontMatter = YAML.parse(frontMatterText) as unknown;
-  if (typeof frontMatter !== "object" || frontMatter === null || isArray(frontMatter)) {
+  const frontMatter: unknown = YAML.parse(frontMatterText);
+  if (
+    typeof frontMatter !== "object" ||
+    frontMatter === null ||
+    isArray(frontMatter)
+  ) {
     return {};
   }
 
