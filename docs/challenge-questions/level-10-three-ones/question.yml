@@ -5,7 +5,7 @@ stacks:
   - b: 0
   - p: 0
 players:
-  - text: "Bob just discarded known r1 · 1 clue available"
+  - text: Bob just discarded known r1 · 1 clue available
   - name: Alice
     clueGiver: true
     cards:

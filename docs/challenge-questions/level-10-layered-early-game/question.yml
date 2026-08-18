@@ -5,7 +5,7 @@ stacks:
   - b: 0
   - p: 0
 players:
-  - text: "Early Game · no unknown discard yet"
+  - text: Early Game · no unknown discard yet
   - name: Alice
     clueGiver: true
     cards:

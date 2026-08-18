@@ -5,7 +5,7 @@ stacks:
   - b: 2
   - p: 2
 players:
-  - text: "Alice's note was r3,r4,r5 · Bob played r3 · Cathy played r4"
+  - text: Alice's note was r3,r4,r5 · Bob played r3 · Cathy played r4
   - name: Alice
     clueGiver: true
     cards:

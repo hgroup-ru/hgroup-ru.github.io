@@ -5,7 +5,7 @@ stacks:
   - b: 1
   - p: 1
 players:
-  - text: "0 clues · Alice to act"
+  - text: 0 clues · Alice to act
   - name: Alice
     clueGiver: true
     cards:
