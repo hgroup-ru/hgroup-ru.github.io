@@ -9,6 +9,7 @@ const KEY_MAP = new Map([
   ["KeyP", goToLearningPath],
   ["KeyR", goToReference],
   ["KeyS", goToSummary],
+  ["Slash", openGlobalSearch],
 ]);
 
 const SHIFT_KEY_MAP = new Map([
@@ -90,6 +91,13 @@ function focusLocalSearch() {
   );
   if (localSearch instanceof HTMLInputElement) {
     localSearch.focus();
+  }
+}
+
+function openGlobalSearch() {
+  const searchButton = document.querySelector(".DocSearch-Button");
+  if (searchButton instanceof HTMLElement) {
+    searchButton.click();
   }
 }
 
