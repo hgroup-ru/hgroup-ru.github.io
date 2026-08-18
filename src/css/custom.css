@@ -239,3 +239,8 @@ svg.example text.site-theme-text {
     font-size: 0.9rem;
   }
 }
+
+/* Keep standalone docs attached to the main sidebar without visible menu clutter. */
+.sidebar-association-only {
+  display: none;
+}
