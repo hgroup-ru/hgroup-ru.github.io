@@ -1,7 +1,9 @@
-import { assertDefined } from "complete-common";
+import { assertDefined, isArray } from "complete-common";
 import { $o, commandExists, lintCommands, readFile } from "complete-node";
 import { glob } from "glob";
 import path from "node:path";
+
+import sidebars from "../sidebars.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 
@@ -16,6 +18,8 @@ if (!yamllintExists) {
     'Failed to find "yamllint". You can install it with: pip install --user yamllint',
   );
 }
+
+const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
 
 await lintCommands(import.meta.dirname, [
   // Use TypeScript to type-check the code.
@@ -46,17 +50,75 @@ await lintCommands(import.meta.dirname, [
   "bash scripts/shellcheck.sh",
 
   // eslint-disable-next-line unicorn/prefer-top-level-await
+  ["check sidebar document ids", checkSidebarDocumentIds()],
+
+  // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check unused YAML files", checkUnusedYAMLFiles()],
 
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check bad words", checkBadWords()],
 ]);
 
+async function checkSidebarDocumentIds() {
+  const documentIds = new Set<string>();
+  const mdxFilePathFragments = await glob("./docs/**/*.mdx");
+  for (const mdxFilePathFragment of mdxFilePathFragments) {
+    const relativePath = path.relative("./docs", mdxFilePathFragment);
+    const documentId = relativePath
+      .replace(/\.mdx$/v, "")
+      .split(path.sep)
+      .join("/");
+    documentIds.add(documentId);
+  }
+
+  const sidebarDocumentIds = collectSidebarDocumentIds(sidebars);
+  for (const documentId of sidebarDocumentIds) {
+    if (!documentIds.has(documentId)) {
+      throw new Error(
+        `The sidebar references a missing document id: ${documentId}`,
+      );
+    }
+  }
+}
+
+function collectSidebarDocumentIds(value: unknown): readonly string[] {
+  if (typeof value === "string") {
+    return [value];
+  }
+
+  if (isArray(value)) {
+    return value.flatMap((item) => collectSidebarDocumentIds(item));
+  }
+
+  if (typeof value !== "object" || value === null) {
+    return [];
+  }
+
+  const record = value as Record<string, unknown>;
+  const documentIds: string[] = [];
+  if (record["type"] === "doc" && typeof record["id"] === "string") {
+    documentIds.push(record["id"]);
+  }
+
+  for (const child of Object.values(record)) {
+    if (isArray(child)) {
+      documentIds.push(...collectSidebarDocumentIds(child));
+    }
+  }
+
+  return documentIds;
+}
+
 async function checkUnusedYAMLFiles() {
+  await checkYAMLFilesInDocsRoot("docs");
+  await checkYAMLFilesInDocsRoot(RU_DOCS_ROOT);
+}
+
+async function checkYAMLFilesInDocsRoot(docsRoot: string) {
   const importRegex = /import .+ from "(?<yamlPath>[^"]+\.yml)"/v;
 
   // Go through every ".mdx" file and compile a set of used YAML files.
-  const mdxFilePathFragments = await glob("./docs/**/*.mdx");
+  const mdxFilePathFragments = await glob(`./${docsRoot}/**/*.mdx`);
   const usedYAMLFilePaths = new Set<string>();
   for (const mdxFilePathFragment of mdxFilePathFragments) {
     const mdxFilePath = path.join(REPO_ROOT, mdxFilePathFragment);
@@ -84,15 +146,15 @@ async function checkUnusedYAMLFiles() {
 
       // Resolve the import path relative to the importing file.
       const absoluteYamlPath = path.resolve(mdxDir, yamlImportPath);
-      // Normalize to relative path from docs directory.
+      // Normalize to a path relative to the docs root being checked.
       const relativeYamlPath = path.relative(
-        path.join(REPO_ROOT, "docs"),
+        path.join(REPO_ROOT, docsRoot),
         absoluteYamlPath,
       );
 
       if (usedYAMLFilePaths.has(relativeYamlPath)) {
         throw new Error(
-          `The following YAML file is being used two or more times: ${relativeYamlPath}`,
+          `The following YAML file is being used two or more times in ${docsRoot}: ${relativeYamlPath}`,
         );
       }
 
@@ -101,17 +163,20 @@ async function checkUnusedYAMLFiles() {
   }
 
   // Go through every ".yml" file.
-  const yamlFilePathFragments = await glob("./docs/**/*.yml");
+  const yamlFilePathFragments = await glob(`./${docsRoot}/**/*.yml`);
   const yamlFilePaths = new Set<string>();
   for (const yamlFilePathFragment of yamlFilePathFragments) {
-    // Normalize the path relative to docs directory.
-    const relativeYamlPath = path.relative("./docs", yamlFilePathFragment);
+    // Normalize the path relative to the docs root being checked.
+    const relativeYamlPath = path.relative(
+      `./${docsRoot}`,
+      yamlFilePathFragment,
+    );
 
     yamlFilePaths.add(relativeYamlPath);
 
     if (!usedYAMLFilePaths.has(relativeYamlPath)) {
       throw new Error(
-        `The following YAML file is not being used: ${relativeYamlPath}`,
+        `The following YAML file is not being used in ${docsRoot}: ${relativeYamlPath}`,
       );
     }
   }
