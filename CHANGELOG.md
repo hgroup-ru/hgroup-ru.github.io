@@ -82,7 +82,7 @@
 
 ## 2026-08-17 — История 3 Bluffs и локальные переходы
 
-Небольшой контентный релиз: добавили русский перевод истории появления 3 Bluffs и сделали несколько переходов внутри сайта понятнее и удобнее.
+Небольшой контентный релиз: добавили русский перевод официальной истории появления 3 Bluffs и сделали несколько переходов внутри сайта понятнее и удобнее.
 
 ### Добавлено
 
@@ -186,6 +186,7 @@
 
 - Production source: `43507980bdd308ff28bb1b854c84107e139a3056`.
 - Production tag: `prod-20260816-9`.
+- GitHub Release: `H-Group RU — prod-20260816-9`.
 
 ## 2026-08-16 — Training Questions audit
 
@@ -207,6 +208,7 @@
 
 - Production source: `2d1b5c53d52c7f665de378f06bee1e082f023f0f`.
 - Production tag: `prod-20260816-8`.
+- GitHub Release: `H-Group RU — prod-20260816-8`.
 
 ## 2026-08-16 — Source-fidelity audit
 
@@ -226,6 +228,7 @@
 
 - Production source: `1e64d33074a6bedeecfd5392d79343b0118c1d1d`.
 - Production tag: `prod-20260815-7`.
+- GitHub Release: `H-Group RU — prod-20260815-7`.
 
 ## 2026-08-15 — Product V1
 
