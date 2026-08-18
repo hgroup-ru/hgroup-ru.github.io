@@ -24,8 +24,7 @@ const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
 
 // Keep these patterns in sync with Docusaurus 3.10.1's DefaultNumberPrefixParser.
 const IGNORED_NUMBER_PREFIX_PATTERN = /^\d+[\-._]\d+/v;
-const NUMBER_PREFIX_PATTERN =
-  /^\d+\s*[\-._]+\s*(?<suffix>[^\s\-._].*)$/v;
+const NUMBER_PREFIX_PATTERN = /^\d+\s*[\-._]+\s*(?<suffix>[^\s\-._].*)$/v;
 
 await lintCommands(import.meta.dirname, [
   // Use TypeScript to type-check the code.
