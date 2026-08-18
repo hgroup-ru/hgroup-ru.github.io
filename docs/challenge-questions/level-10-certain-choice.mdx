@@ -1,0 +1,28 @@
+---
+title: Play or Discard?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-certain-choice/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-choice" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red is stacked through 2. Cathy has a red-clued card with negative 4 information, so from her perspective it is `r3` or `r5`. Cathy gives Bob a red Play Clue on `r4` as a Reverse Finesse. Bob then takes an unrelated safe discard. It is now Alice's turn, and Alice knows that her Finesse Position is promised as `r3`.
+
+Compare the two visible positions shown below. In **A**, Cathy's ambiguous red card is actually `r3`; in **B**, it is actually `r5`. What should Alice do with her own Finesse Position?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- **A:** Alice should Certain Discard her Finesse Position. She can see the `r3` in Cathy's hand. A Layered Finesse through a card that could already be clued in the initiator's hand is forbidden, so Alice can be certain that her blind card is the duplicate `r3` and safely pass it back.
+- **B:** Alice should blind-play her Finesse Position as `r3`. The visible clued card in Cathy's hand is `r5`, so there is no duplicated `r3` that would justify a Certain Discard.
+
+</TabItem>
+</Tabs>

@@ -290,6 +290,19 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-8-2-cards-left",
           ],
         },
+        {
+          "Level 10": [
+            "challenge-questions/level-10",
+            "challenge-questions/level-10-gentleman-discard-cases",
+            "challenge-questions/level-10-baton-position",
+            "challenge-questions/level-10-scream-or-gd",
+            "challenge-questions/level-10-generation-or-gd",
+            "challenge-questions/level-10-layered-early-game",
+            "challenge-questions/level-10-certain-choice",
+            "challenge-questions/level-10-three-ones",
+            "challenge-questions/level-10-composition",
+          ],
+        },
       ],
     },
     {

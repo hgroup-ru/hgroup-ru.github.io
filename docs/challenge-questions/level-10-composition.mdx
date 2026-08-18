@@ -1,0 +1,35 @@
+---
+title: What Is Left in Alice's Hand?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-composition/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-composition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 2s were already played. Alice began with one red-clued card that, from her information, could be `r3`, `r4`, or `r5`.
+
+Alice gave Cathy a red Play Clue on `r4`. Cathy waited. Bob then played his blind Finesse Position as `r3` instead of Certain Discarding it. Later, Cathy played her `r4` instead of Sarcastic Discarding it. The turn has now returned to Alice; the red stack is on 4.
+
+What can Alice conclude about her own hidden red card, and what should she do now?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice can conclude that her red card is exactly `r5`, so she should play it.
+
+- Bob's choice to **play** the blind `r3` eliminates `r3` from Alice's possibilities: if Alice actually had the duplicated `r3`, Bob would have been able to Certain Discard.
+- Cathy's later choice to **play** `r4` eliminates `r4`: if Alice actually had the duplicated `r4`, Cathy would Sarcastic Discard it back.
+- The only remaining possibility is `r5`. Since red is now stacked through 4, Alice should play that card.
+
+The original move combined the Sarcastic Finesse and Certain Finesse mechanisms; this is a Composition Finesse.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,28 @@
+---
+title: "Играть или сбрасывать?"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-certain-choice/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-choice" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка дошла до 2. У Кэти есть красная карта с подсказкой и негативной информацией по числу 4, поэтому со своей точки зрения она считает её `r3` или `r5`. Кэти даёт Бобу красную Play Clue по `r4` как Reverse Finesse. Затем Боб делает посторонний безопасный сброс. Теперь ход Алисы, и она знает, что её Finesse Position обещана как `r3`.
+
+Сравните две видимые позиции ниже. В **A** неоднозначная красная карта Кэти фактически `r3`; в **B** — `r5`. Что Алиса должна сделать со своей Finesse Position?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- **A:** Алисе следует сделать Certain Discard своей Finesse Position. Она видит `r3` в руке Кэти. Layered Finesse через карту, которая потенциально уже находится с подсказкой у автора хода, запрещён; значит, Алиса может быть уверена, что её скрытая карта — дубликат `r3`, и безопасно передать её обратно.
+- **B:** Алисе следует вслепую сыграть Finesse Position как `r3`. Видимая красная карта Кэти — `r5`, поэтому дубликата `r3`, который оправдывал бы Certain Discard, нет.
+
+</TabItem>
+</Tabs>

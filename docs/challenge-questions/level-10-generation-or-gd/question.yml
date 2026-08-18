@@ -1,0 +1,37 @@
+stacks:
+  - r: 3
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - text: 0 clues · Alice to act
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: r
+        middleNote: r5
+      - type: r
+        middleNote: r4
+      - type: x
+      - type: x
+        below: Chop
+  - name: Bob
+    cards:
+      - type: r4
+        below: Finesse
+      - type: y4
+      - type: g4
+      - type: b2
+        below: Chop
+      - type: b
+        middleNote: b5
+  - name: Cathy
+    cards:
+      - type: g3
+      - type: p3
+      - type: y4
+      - type: b3
+      - type: y5
+        below: Chop

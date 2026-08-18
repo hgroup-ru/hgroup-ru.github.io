@@ -1,0 +1,121 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - text: A · 3 clues
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: r
+        middleNote: r2
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+        above: Red 2
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+        above: Blue 2
+      - type: x
+        above: Blue 3
+      - type: x
+      - type: x
+      - type: x
+  - space: 1
+  - text: B · 0 clues
+  - name: Alice
+    zeroClues: true
+    cards:
+      - type: x
+      - type: x
+      - type: r
+        middleNote: r2
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+        above: Red 2
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        above: Green 3
+        below: Chop
+  - name: Cathy
+    cards:
+      - type: g2
+        below: Play
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - space: 1
+  - text: C · 4 clues
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: r
+        middleNote: r2
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+        above: Red 2
+        below: Finesse
+      - type: b2
+      - type: g2
+      - type: p2
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - space: 1
+  - text: D · 2 clues
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: r
+        middleNote: r2
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+        above: Green 2
+        below: Finesse
+      - type: x
+        above: Red 2
+        below: GD
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
