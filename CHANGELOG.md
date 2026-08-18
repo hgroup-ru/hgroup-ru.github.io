@@ -19,7 +19,6 @@
 - В материалах для BGA-игроков и о причинах конвенций остаточные пользовательские упоминания `Reference` заменены на «Справочник»; ссылки `/reference` не менялись.
 - В материале для игроков Board Game Arena восстановлены точные условия и обязательность правил pinned source для 2 Saves, фокуса, Color Saves, Early Save, Chop-Focus, Early Game и Layered Finesses; позднее уточнение Level 9 больше не подменяет beginner-facing определение Early Game.
 - В дополнительных материалах восстановлены точные semantics pinned source для announcement backlog, стартовых 1, 3 Bluff и двух правил Hat Guessing; также удалены две добавленные русской версией интерпретации, которых нет в source.
-- На странице Empty Clues восстановлены provenance-ссылки на немецкие правила и материалы Antoine Bauza; самостоятельный пересказ нормы американского буклета зафиксирован в `SOURCE_EXCEPTIONS.md`.
 
 ### Улучшено
 
