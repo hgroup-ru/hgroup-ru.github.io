@@ -17,6 +17,7 @@
 - В Краткой памятке Low Score Phase теперь использует строгую границу из Level 19; там же интерфейс Hanab Live описан устойчивой формулировкой «функции H-Group».
 - В Словаре уточнены определения chop и Finesse Position с учётом Queued Finesse, а название `1 Color Ejection (1CE)` унифицировано с основной страницей конвенции.
 - В материалах для BGA-игроков и о причинах конвенций остаточные пользовательские упоминания `Reference` заменены на «Справочник»; ссылки `/reference` не менялись.
+- В материале для игроков Board Game Arena восстановлены точные условия и обязательность правил pinned source для 2 Saves, фокуса, Color Saves, Early Save, Chop-Focus, Early Game и Layered Finesses; позднее уточнение Level 9 больше не подменяет beginner-facing определение Early Game.
 
 ### Улучшено
 
