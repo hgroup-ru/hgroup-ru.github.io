@@ -4,19 +4,13 @@
 
 ## Продукт
 
-### Перевести и вынести Jeff's 2-player Score Hunting Guide
+### Jeff's 2-player Score Hunting Guide — BLOCKED
 
-Отдельно локализовать важный companion resource — Jeff's Score Hunting Guide для игры вдвоём, на который сейчас есть лишь глубоко спрятанная ссылка в конце H-Group `misc/2-player.md`.
+**BLOCKED pending Jeff permission.** Не переводить, не публиковать и не продолжать research по этому материалу до явного разрешения Jeff/IAMJEFF на локализацию и публикацию.
 
-Источник на текущем сайте ведёт в репозиторий IAMJEFF (`iamwhoiamhahaha/hanabi`, `2-player/Score_Hunting_Guide.md`). Это внешний по отношению к основному H-Group source материал, поэтому до публикации перевода обязательно:
+После получения разрешения вернуться к задаче отдельным решением: зафиксировать точную source revision, требования к attribution и допустимый scope перевода, а затем локализовать source-faithfully. До этого момента задача остаётся в бэклоге только как blocker record.
 
-- зафиксировать точный source revision;
-- проверить license/permission и требования к attribution;
-- явно указать авторство IAMJEFF/Jeff и не представлять материал как официальный H-Group text, если источник сам этого не утверждает;
-- перевести source-faithfully с отдельным semantic review сложных стратегических утверждений;
-- сохранить оригинальную ссылку рядом с переводом.
-
-После перевода сделать guide нормально discoverable: дать заметную ссылку рядом с основным 2-player guide и, при необходимости, отдельную карточку/related-resource block. Пользователь не должен находить этот важный материал только через `Optional Conventions → Score Hunting` в конце длинной страницы.
+Источник на текущем сайте ведёт в репозиторий IAMJEFF (`iamwhoiamhahaha/hanabi`, `2-player/Score_Hunting_Guide.md`). Не представлять этот внешний материал как официальный H-Group text, если источник сам этого не утверждает.
 
 Selfish Conventions и Number Mute links, которые находятся рядом в том же source-блоке, не включать автоматически в scope этой задачи; оценить их отдельно при инвентаризации 2-player ресурсов.
 
