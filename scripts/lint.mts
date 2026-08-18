@@ -34,8 +34,8 @@ await lintCommands(import.meta.dirname, [
   // Use ESLint to lint the TypeScript code.
   "eslint",
 
-  // Temporarily print Prettier's exact output for this file in CI.
-  "prettier scripts/lint.mts",
+  // Temporarily print the exact Prettier diff in CI, then fail this diagnostic step.
+  "bash -c 'prettier --write scripts/lint.mts && git diff -- scripts/lint.mts && exit 1'",
 
   // Use Knip to check for unused files, exports, and dependencies. (We do not currently use Knip
   // since there is no Docusaurus plugin and whitelisting everything does not get us much value.)
