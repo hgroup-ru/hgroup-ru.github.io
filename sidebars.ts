@@ -295,7 +295,7 @@ const sidebars: SidebarsConfig = {
     {
       "More Examples": [
         "examples/pestilent-double-bluff",
-        "examples/5-pull-double-finesse",
+        "examples/pull-double-finesse",
         "examples/unnecessary",
         "examples/purge-bluff",
         "examples/rank-choice-ejection",

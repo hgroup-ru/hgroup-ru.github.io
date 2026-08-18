@@ -2,6 +2,7 @@ import { assertDefined, isArray } from "complete-common";
 import { $o, commandExists, lintCommands, readFile } from "complete-node";
 import { glob } from "glob";
 import path from "node:path";
+import YAML from "yaml";
 
 import sidebars from "../sidebars.js";
 
@@ -20,6 +21,12 @@ if (!yamllintExists) {
 }
 
 const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
+
+// Keep these patterns in sync with Docusaurus 3.10.1's
+// DefaultNumberPrefixParser.
+const IGNORED_NUMBER_PREFIX_PATTERN = /^\d+[-_.]\d+/v;
+const NUMBER_PREFIX_PATTERN =
+  /^(?<numberPrefix>\d+)\s*[-_.]+\s*(?<suffix>[^-_.\s].*)$/v;
 
 await lintCommands(import.meta.dirname, [
   // Use TypeScript to type-check the code.
@@ -63,11 +70,38 @@ async function checkSidebarDocumentIds() {
   const documentIds = new Set<string>();
   const mdxFilePathFragments = await glob("./docs/**/*.mdx");
   for (const mdxFilePathFragment of mdxFilePathFragments) {
-    const relativePath = path.relative("./docs", mdxFilePathFragment);
-    const documentId = relativePath
-      .replace(/\.mdx$/v, "")
+    const mdxFilePath = path.join(REPO_ROOT, mdxFilePathFragment);
+    // eslint-disable-next-line no-await-in-loop
+    const fileContents = await readFile(mdxFilePath);
+    const frontMatter = parseDocFrontMatter(fileContents);
+    const parseNumberPrefixes = frontMatter["parse_number_prefixes"] !== false;
+
+    const relativePath = path
+      .relative("./docs", mdxFilePathFragment)
       .split(path.sep)
       .join("/");
+    const sourceFileNameWithoutExtension = path.posix.basename(
+      relativePath,
+      path.posix.extname(relativePath),
+    );
+    const sourceDirName = path.posix.dirname(relativePath);
+    const unprefixedFileName = parseNumberPrefixes
+      ? stripNumberPrefix(sourceFileNameWithoutExtension)
+      : sourceFileNameWithoutExtension;
+    const frontMatterId = frontMatter["id"];
+    const baseId =
+      typeof frontMatterId === "string" ? frontMatterId : unprefixedFileName;
+    if (baseId.includes("/")) {
+      throw new Error(`Document id cannot include slash: ${baseId}`);
+    }
+
+    const dirNameIdPrefix =
+      sourceDirName === "."
+        ? undefined
+        : parseNumberPrefixes
+          ? stripPathNumberPrefixes(sourceDirName)
+          : sourceDirName;
+    const documentId = [dirNameIdPrefix, baseId].filter(Boolean).join("/");
     documentIds.add(documentId);
   }
 
@@ -79,6 +113,39 @@ async function checkSidebarDocumentIds() {
       );
     }
   }
+}
+
+function parseDocFrontMatter(fileContents: string): Record<string, unknown> {
+  const match = /^---\r?\n(?<frontMatter>[\s\S]*?)\r?\n---(?:\r?\n|$)/v.exec(
+    fileContents,
+  );
+  const frontMatterText = match?.groups?.["frontMatter"];
+  if (frontMatterText === undefined) {
+    return {};
+  }
+
+  const frontMatter = YAML.parse(frontMatterText) as unknown;
+  if (typeof frontMatter !== "object" || frontMatter === null || isArray(frontMatter)) {
+    return {};
+  }
+
+  return frontMatter as Record<string, unknown>;
+}
+
+function stripNumberPrefix(value: string): string {
+  if (IGNORED_NUMBER_PREFIX_PATTERN.test(value)) {
+    return value;
+  }
+
+  const match = NUMBER_PREFIX_PATTERN.exec(value);
+  return match?.groups?.["suffix"] ?? value;
+}
+
+function stripPathNumberPrefixes(value: string): string {
+  return value
+    .split("/")
+    .map((segment) => stripNumberPrefix(segment))
+    .join("/");
 }
 
 function collectSidebarDocumentIds(value: unknown): readonly string[] {
