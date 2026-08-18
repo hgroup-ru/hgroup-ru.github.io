@@ -34,8 +34,9 @@ await lintCommands(import.meta.dirname, [
   // Use ESLint to lint the TypeScript code.
   "eslint",
 
-  // Temporarily print the exact Prettier diff in CI, then fail this diagnostic step.
-  "bash scripts/prettier-diff.sh",
+  // Use Prettier to check formatting.
+  // - "--log-level=warn" makes it only output errors.
+  "prettier --log-level=warn --check .",
 
   // Use Knip to check for unused files, exports, and dependencies. (We do not currently use Knip
   // since there is no Docusaurus plugin and whitelisting everything does not get us much value.)
@@ -124,9 +125,9 @@ function parseDocFrontMatter(fileContents: string): Record<string, unknown> {
 
   const frontMatter: unknown = YAML.parse(frontMatterText);
   if (
-    typeof frontMatter !== "object" ||
-    frontMatter === null ||
-    isArray(frontMatter)
+    typeof frontMatter !== "object"
+    || frontMatter === null
+    || isArray(frontMatter)
   ) {
     return {};
   }
