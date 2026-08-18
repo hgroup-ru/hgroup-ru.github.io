@@ -22,6 +22,12 @@ if (!yamllintExists) {
 
 const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
 
+const RU_TERMINOLOGY_PATTERNS = [
+  ["масть*", /(?<!\p{L})маст(?:ь|и|ью|ей|ям|ями|ях)(?!\p{L})/iv],
+  ["легальн*", /(?<!\p{L})(?:не)?легальн\p{L}*(?!\p{L})/iv],
+  ["Stall-подсказ*", /(?<!\p{L})stall-подсказ\p{L}*(?!\p{L})/iv],
+] as const;
+
 // Keep these patterns in sync with Docusaurus 3.10.1's DefaultNumberPrefixParser.
 const IGNORED_NUMBER_PREFIX_PATTERN = /^\d+[\-._]\d+/v;
 const NUMBER_PREFIX_PATTERN = /^\d+\s*[\-._]+\s*(?<suffix>[^\s\-._].*)$/v;
@@ -59,6 +65,9 @@ await lintCommands(import.meta.dirname, [
 
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check unused YAML files", checkUnusedYAMLFiles()],
+
+  // eslint-disable-next-line unicorn/prefer-top-level-await
+  ["check RU terminology", checkRUTerminology()],
 
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check bad words", checkBadWords()],
@@ -250,6 +259,24 @@ async function checkYAMLFilesInDocsRoot(docsRoot: string) {
       );
     }
   }
+}
+
+async function checkRUTerminology() {
+  const mdxFilePathFragments = await glob(`./${RU_DOCS_ROOT}/**/*.mdx`);
+  await Promise.all(
+    mdxFilePathFragments.map(async (mdxFilePathFragment) => {
+      const mdxFilePath = path.join(REPO_ROOT, mdxFilePathFragment);
+      const fileContents = await readFile(mdxFilePath);
+      for (const [label, pattern] of RU_TERMINOLOGY_PATTERNS) {
+        const match = pattern.exec(fileContents);
+        if (match !== null) {
+          throw new Error(
+            `The following RU MDX file contains forbidden terminology "${match[0]}" (${label}): ${mdxFilePathFragment}`,
+          );
+        }
+      }
+    }),
+  );
 }
 
 async function checkBadWords() {
