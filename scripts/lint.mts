@@ -23,9 +23,18 @@ if (!yamllintExists) {
 const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
 
 const RU_TERMINOLOGY_PATTERNS = [
-  ["масть*", /(?<!\p{L})маст(?:ь|и|ью|ей|ям|ями|ях)(?!\p{L})/iv],
-  ["легальн*", /(?<!\p{L})(?:не)?легальн\p{L}*(?!\p{L})/iv],
-  ["Stall-подсказ*", /(?<!\p{L})stall-подсказ\p{L}*(?!\p{L})/iv],
+  [
+    "suit calque",
+    /(?<!\p{L})\u{043c}\u{0430}\u{0441}\u{0442}(?:\u{044c}|\u{0438}|\u{044c}\u{044e}|\u{0435}\u{0439}|\u{044f}\u{043c}|\u{044f}\u{043c}\u{0438}|\u{044f}\u{0445})(?!\p{L})/iv,
+  ],
+  [
+    "legal calque",
+    /(?<!\p{L})(?:\u{043d}\u{0435})?\u{043b}\u{0435}\u{0433}\u{0430}\u{043b}\u{044c}\u{043d}\p{L}*(?!\p{L})/iv,
+  ],
+  [
+    "Stall clue hybrid",
+    /(?<!\p{L})stall-\u{043f}\u{043e}\u{0434}\u{0441}\u{043a}\u{0430}\u{0437}\p{L}*(?!\p{L})/iv,
+  ],
 ] as const;
 
 // Keep these patterns in sync with Docusaurus 3.10.1's DefaultNumberPrefixParser.
