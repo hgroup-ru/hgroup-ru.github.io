@@ -35,7 +35,7 @@ await lintCommands(import.meta.dirname, [
   "eslint",
 
   // Temporarily print the exact Prettier diff in CI, then fail this diagnostic step.
-  "bash -c 'prettier --write scripts/lint.mts && git diff -- scripts/lint.mts && exit 1'",
+  "bash scripts/prettier-diff.sh",
 
   // Use Knip to check for unused files, exports, and dependencies. (We do not currently use Knip
   // since there is no Docusaurus plugin and whitelisting everything does not get us much value.)
