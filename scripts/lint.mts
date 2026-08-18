@@ -22,6 +22,21 @@ if (!yamllintExists) {
 
 const RU_DOCS_ROOT = "i18n/ru/docusaurus-plugin-content-docs/current";
 
+const RU_TERMINOLOGY_PATTERNS = [
+  [
+    "suit calque",
+    /(?<!\p{L})\u{043C}\u{0430}\u{0441}\u{0442}(?:\u{044C}|\u{0438}|\u{044C}\u{044E}|\u{0435}\u{0439}|\u{044F}\u{043C}|\u{044F}\u{043C}\u{0438}|\u{044F}\u{0445})(?!\p{L})/iv,
+  ],
+  [
+    "legal calque",
+    /(?<!\p{L})(?:\u{043D}\u{0435})?\u{043B}\u{0435}\u{0433}\u{0430}\u{043B}\u{044C}\u{043D}\p{L}*(?!\p{L})/iv,
+  ],
+  [
+    "Stall clue hybrid",
+    /(?<!\p{L})stall-\u{043F}\u{043E}\u{0434}\u{0441}\u{043A}\u{0430}\u{0437}\p{L}*(?!\p{L})/iv,
+  ],
+] as const;
+
 // Keep these patterns in sync with Docusaurus 3.10.1's DefaultNumberPrefixParser.
 const IGNORED_NUMBER_PREFIX_PATTERN = /^\d+[\-._]\d+/v;
 const NUMBER_PREFIX_PATTERN = /^\d+\s*[\-._]+\s*(?<suffix>[^\s\-._].*)$/v;
@@ -59,6 +74,9 @@ await lintCommands(import.meta.dirname, [
 
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check unused YAML files", checkUnusedYAMLFiles()],
+
+  // eslint-disable-next-line unicorn/prefer-top-level-await
+  ["check RU terminology", checkRUTerminology()],
 
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check bad words", checkBadWords()],
@@ -250,6 +268,24 @@ async function checkYAMLFilesInDocsRoot(docsRoot: string) {
       );
     }
   }
+}
+
+async function checkRUTerminology() {
+  const mdxFilePathFragments = await glob(`./${RU_DOCS_ROOT}/**/*.mdx`);
+  await Promise.all(
+    mdxFilePathFragments.map(async (mdxFilePathFragment) => {
+      const mdxFilePath = path.join(REPO_ROOT, mdxFilePathFragment);
+      const fileContents = await readFile(mdxFilePath);
+      for (const [label, pattern] of RU_TERMINOLOGY_PATTERNS) {
+        const match = pattern.exec(fileContents);
+        if (match !== null) {
+          throw new Error(
+            `The following RU MDX file contains forbidden terminology "${match[0]}" (${label}): ${mdxFilePathFragment}`,
+          );
+        }
+      }
+    }),
+  );
 }
 
 async function checkBadWords() {
