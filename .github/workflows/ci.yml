@@ -18,6 +18,9 @@ jobs:
       - name: Validate release notes
         run: python3 scripts/validate_release_notes.py
 
+      - name: Validate production workflow invariants
+        run: python3 scripts/validate_production_workflows.py
+
       - name: Setup
         id: setup
         uses: ./.github/workflows/setup
