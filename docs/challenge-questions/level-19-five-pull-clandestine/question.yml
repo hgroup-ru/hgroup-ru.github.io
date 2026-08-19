@@ -1,0 +1,30 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: r1
+      - type: g1
+      - type: g4
+      - type: g4
+      - type: g5
+  - name: Cathy
+    cards:
+      - type: b4
+      - type: b1
+      - type: b5
+        clue: 5
+      - type: g2
+      - type: b2

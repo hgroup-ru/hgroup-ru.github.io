@@ -1,0 +1,25 @@
+---
+title: 5 Pull Finesse не может быть Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-no-bluff/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-no-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт 5 Pull Finesse для полученной красной 2 Кэти. Боб вслепую играет зелёную 1, не связанную с красной 2. Может ли Кэти интерпретировать это как специальный «5 Pull Bluff» и всё равно сыграть полученную красную 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** 5 Pull Bluff не существует. При 5 Pull Finesse полученная карта **всегда соединяется с blind-play**. Несвязанную зелёную 1 Боба нельзя использовать, чтобы представить красную 2 Кэти как продолжение Pull.
+
+</TabItem>
+</Tabs>

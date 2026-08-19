@@ -1,0 +1,25 @@
+---
+title: Finesse от получателя 5 Pull является Certain
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pulled-certain/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pulled-certain" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Кэти всё ещё ждёт розыгрыша карты, полученной через 5 Pull. На своём ходу она вместо разрешения собственного Pull даёт Finesse Дональду. Как команда классифицирует Finesse Кэти и к какой карте относится Certain Discard, сделанный в ответ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Ход Кэти — **Certain Finesse**. Любой Finesse, выполненный игроком, пока он остаётся 5 Pulled, считается certain. Поэтому Certain Discard в ответ относится к **карте Кэти, полученной через 5 Pull**, а не к несвязанной карте её руки.
+
+</TabItem>
+</Tabs>

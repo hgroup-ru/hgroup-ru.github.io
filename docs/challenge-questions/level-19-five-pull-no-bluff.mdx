@@ -1,0 +1,25 @@
+---
+title: A 5 Pull Finesse Cannot Be a Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-no-bluff/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-no-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a 5 Pull Finesse for Cathy's pulled red 2. Bob blind-plays green 1, unrelated to red 2. May Cathy interpret this as a special "5 Pull Bluff" and still play her pulled red 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** There is no 5 Pull Bluff. In a 5 Pull Finesse, the pulled card **always connects to the blind-play**. An unrelated green-1 blind-play cannot be used to sell Cathy's red 2 as the pulled continuation.
+
+</TabItem>
+</Tabs>

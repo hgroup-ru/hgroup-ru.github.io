@@ -1,0 +1,25 @@
+---
+title: A Later Finesse Can Skip the Ejected Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-ne-finesse-skip/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-ne-finesse-skip" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Earlier, a 5 Number Ejection marked Cathy's card now in Finesse Position as Chop Moved and two-or-more-away-from-playable. A later Finesse calls for a red 2 that was already only one-away-from-playable at the moment of that Ejection. Should Cathy play the Chop-Moved card as the red 2 merely because it is now in Finesse Position?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The Ejected card was known to be two-or-more-away at the earlier moment, so it cannot be the red 2 that was already only one-away then. Cathy **skips that Chop-Moved card** and plays the next Finesse Position card. Normally an Ejected Chop-Moved card is still played when it reaches Finesse Position; the skip applies when the called identity contradicts the recorded distance information.
+
+</TabItem>
+</Tabs>

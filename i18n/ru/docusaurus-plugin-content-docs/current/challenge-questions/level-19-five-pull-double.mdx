@@ -1,0 +1,25 @@
+---
+title: Double Finesse может содержать Reverse-компонент
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-double/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-double" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает 5 Pull на красную 3 Дональда. Боб вслепую играет красную 1, затем Кэти до хода Дональда вслепую играет красную 2. Становится ли ход незаконным только потому, что правило 5 Pull Finesse запрещает напрямую запускать Reverse Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Это корректный **5 Pull Double Finesse**. Базовая 5 Pull Finesse должна быть forward, но Double Finesse может содержать Reverse Finesse component на втором blind-play. Полученная красная 3 Дональда соединяется с последним blind-play красной 2.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Trash Next to the 5 Becomes a 5 Number Discharge
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-number-discharge/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-number-discharge" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice gives an otherwise-illegal 5 Stall to Cathy's slot-1 5, and Cathy has trash red 1 immediately to its right. What does Bob play, and how should the table treat Cathy's red 1 afterward?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob plays his **Third Finesse Position** as a **5 Number Discharge**. Cathy's adjacent red 1 is then marked as **globally known trash**. It is treated as positively clued for conventions such as Trash Chop Move, so Cathy's Finesse Position moves past it to the next unclued card.
+
+</TabItem>
+</Tabs>

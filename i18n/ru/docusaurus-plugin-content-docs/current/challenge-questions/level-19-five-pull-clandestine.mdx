@@ -1,0 +1,25 @@
+---
+title: Получатель Pull учитывает Clandestine Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-clandestine/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-clandestine" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает 5 Pull на зелёную 2 Кэти в слоте 4. Боб вслепую играет красную 1 из слота 1, но в момент подсказки Кэти видела, что сразу за ней у Боба была также играбельная зелёная 1. Обязана ли Кэти немедленно сыграть зелёную 2 на своём первом ходу после красной 1 Боба?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Кэти должна учитывать возможную **5 Pull Clandestine Finesse**. Она может сделать несвязанное действие и подождать, сыграет ли Боб позже вслепую скрытую зелёную 1. Если сыграет, это определит полученную карту Кэти как зелёную 2.
+
+</TabItem>
+</Tabs>

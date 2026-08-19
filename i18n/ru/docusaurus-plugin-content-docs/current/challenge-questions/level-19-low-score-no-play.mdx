@@ -1,0 +1,25 @@
+---
+title: Число 5 не является прямой Play Clue при низком счёте
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-low-score-no-play/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-low-score-no-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+В обычной игре с пятью цветами счёт равен 9. Красная 4 сыграна, а красная 5 Кэти находится в двух или более картах от chop. Алиса хочет прямо сообщить Кэти, что красная 5 играбельна. Может ли Алиса использовать подсказку числом 5 как обычную Play Clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Счёт 9 всё ещё относится к **Low Score Phase**, потому что порог для пяти цветов равен 10. В этой фазе числовая подсказка 5 никогда не является прямой Play Clue. Алиса должна дать подсказку цветом или дождаться Normal Score Phase; подсказка числом 5 интерпретируется через правила 5 Tech.
+
+</TabItem>
+</Tabs>

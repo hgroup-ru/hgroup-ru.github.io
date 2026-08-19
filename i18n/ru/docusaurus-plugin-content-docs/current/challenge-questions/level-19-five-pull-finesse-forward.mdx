@@ -1,0 +1,28 @@
+---
+title: 5 Pull Finesse нужно показать до хода получателя
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-finesse-forward/question.yml";
+
+<ChallengeQuestionProgress
+  level={19}
+  id="level-19-five-pull-finesse-forward"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса подсказывает числом 5 карту Кэти в слоте 2. Подсказка не может быть Stall, а полученный слот 3 Кэти — красная 2, one-away-from-playable. Между Алисой и Кэти ходит Боб. Что обязано произойти до хода Кэти, чтобы интерпретация 5 Pull Finesse была корректной?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Боб должен вслепую сыграть красную 1 до хода Кэти.** 5 Pull Finesse обязана быть показана blind-play между подсказкой 5 и следующим ходом получателя Pull. Поэтому базовая 5 Pull Finesse должна быть forward и не может напрямую запускать Reverse Finesse, оставляющий Кэти гадать на собственном ходу.
+
+</TabItem>
+</Tabs>

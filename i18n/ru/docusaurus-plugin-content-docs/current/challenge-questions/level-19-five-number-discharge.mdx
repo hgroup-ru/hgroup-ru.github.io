@@ -1,0 +1,25 @@
+---
+title: Мусор рядом с 5 превращается в 5 Number Discharge
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-number-discharge/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-number-discharge" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны. Алиса даёт иначе недопустимый 5 Stall на 5 Кэти в слоте 1, а непосредственно справа от неё у Кэти находится мусорная красная 1. Что играет Боб и как команда после этого трактует красную 1 Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб играет **Third Finesse Position** как **5 Number Discharge**. Соседняя красная 1 Кэти затем отмечается как **мусор, известный всей команде**. Она считается положительно подсказанной для конвенций вроде Trash Chop Move, поэтому Finesse Position Кэти сдвигается за неё к следующей карте без подсказки.
+
+</TabItem>
+</Tabs>

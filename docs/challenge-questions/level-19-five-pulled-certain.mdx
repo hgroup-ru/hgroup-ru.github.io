@@ -1,0 +1,25 @@
+---
+title: A Finesse by a 5-Pulled Player Is Certain
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pulled-certain/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pulled-certain" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Cathy is still waiting to play a 5-Pulled card. On her turn she gives a Finesse to Donald instead of resolving her own pulled card. How should the table classify Cathy's Finesse, and where would a Certain Discard made in response apply?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy's move is a **Certain Finesse**. Any Finesse performed while the player is still 5 Pulled is treated as certain. Consequently, a Certain Discard performed in response refers to **Cathy's 5-Pulled card**, not to some unrelated card in her hand.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: The Pulled Player Must Respect Clandestine Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-clandestine/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-clandestine" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice 5 Pulls Cathy's slot-4 green 2. Bob blind-plays red 1 from slot 1, but at clue time Cathy could see Bob also had a playable green 1 directly behind it. Must Cathy immediately play green 2 on her first turn after Bob's red 1?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Cathy must respect a possible **5 Pull Clandestine Finesse**. She can take an unrelated action and wait to see whether Bob later blind-plays the hidden green 1. If he does, that identifies Cathy's pulled card as green 2.
+
+</TabItem>
+</Tabs>
