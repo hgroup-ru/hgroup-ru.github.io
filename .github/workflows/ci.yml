@@ -9,6 +9,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -20,6 +24,9 @@ jobs:
 
       - name: Validate production workflow invariants
         run: python3 scripts/validate_production_workflows.py
+
+      - name: Validate notification workflow invariants
+        run: python3 scripts/validate_notification_workflows.py
 
       - name: Setup
         id: setup
@@ -42,12 +49,14 @@ jobs:
         continue-on-error: true
         shell: bash
         env:
+          GH_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
           CI_RESULT: ${{ needs.validate.result }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_URL: ${{ github.event.pull_request.html_url }}
+          RUN_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
@@ -55,12 +64,48 @@ jobs:
             exit 0
           fi
 
-          if [ "$CI_RESULT" = "success" ]; then
-            text="$(printf '#pr #ci #ready\n🟢 PR #%s готов к merge\n%s\nCI: validate ✓\n%s' \
-              "$PR_NUMBER" "$PR_TITLE" "$PR_URL")"
-          else
-            text="$(printf '#pr #ci #failed\n🔴 PR #%s — CI упал\nЛоги: %s\nDiff: %s/files' \
-              "$PR_NUMBER" "$RUN_URL" "$PR_URL")"
+          notification_is_current() {
+            pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}")"
+            current_state="$(printf '%s' "$pr_json" | jq -r .state)"
+            current_head="$(printf '%s' "$pr_json" | jq -r .head.sha)"
+
+            if [ "$current_state" != "open" ]; then
+              echo "PR #$PR_NUMBER is $current_state; skipping CI notification."
+              return 1
+            fi
+
+            if [ "$current_head" != "$RUN_HEAD_SHA" ]; then
+              echo "CI run is stale: run head $RUN_HEAD_SHA, current PR head $current_head; skipping notification."
+              return 1
+            fi
+          }
+
+          if ! notification_is_current; then
+            exit 0
+          fi
+
+          case "$CI_RESULT" in
+            success)
+              text="$(printf '#pr #ci #ready\n🟢 PR #%s готов к merge\n%s\nCI: validate ✓\n%s' \
+                "$PR_NUMBER" "$PR_TITLE" "$PR_URL")"
+              ;;
+            failure)
+              text="$(printf '#pr #ci #failed\n🔴 PR #%s — CI упал\nЛоги: %s\nDiff: %s/files' \
+                "$PR_NUMBER" "$RUN_URL" "$PR_URL")"
+              ;;
+            cancelled|skipped)
+              echo "CI result is $CI_RESULT; this is not a failure notification."
+              exit 0
+              ;;
+            *)
+              text="$(printf '#pr #ci #warning\n🟡 PR #%s — CI завершился со статусом %s\nЛоги: %s\n%s' \
+                "$PR_NUMBER" "$CI_RESULT" "$RUN_URL" "$PR_URL")"
+              ;;
+          esac
+
+          # Close the race where a new push lands while this notification is being prepared.
+          if ! notification_is_current; then
+            exit 0
           fi
 
           curl \
