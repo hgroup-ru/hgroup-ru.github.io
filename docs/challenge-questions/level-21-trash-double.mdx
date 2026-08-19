@@ -1,22 +1,27 @@
 ---
-title: When Does Known Trash Mean Double Ignition?
+title: The Off-Chop Trash Clue
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-trash-double/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-trash-double" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice clues one or more newly touched cards that everyone knows are trash. The team can rule out a Trash Chop Move, and it can also rule out both Trash Push and Trash Push Finesse. What interpretation remains? How can an observer or the clue-receiver know those ordinary interpretations are impossible, and if a Bad Trash Chop Move Ejection is technically imaginable, which interpretation has priority?
+All 1s are played. Before Alice's clue, Cathy's slot 2 was already globally known trash. Alice now gives Cathy a red clue that newly touches only that off-chop card. Bob can see that the cards a Trash Chop Move would protect behind it are also trash, and the clue is not on chop, so Trash Push does not explain it.
+
+What should Bob conclude?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-The clue communicates a **Trash Double Ignition**. For a Trash Chop Move, a player other than the clue-receiver can rule it out by seeing that the Chop Moved card is bad; the clue-receiver can rule it out when there are no cards left to Chop Move, meaning the remaining cards are accounted for or could receive direct Play or Save Clues. For Trash Push or Trash Push Finesse, an observer can similarly rule it out by seeing that the pushed card is bad, while the clue-receiver can rule it out when there are no cards left to Trash Push. When neither family can explain the clue, TDI is the interpretation. Players should prefer Trash Double Ignition over a **Bad Trash Chop Move Ejection**, which Level 21 explicitly treats as very rare and later material. Trash Double Ignition, unlike Replay and Poke Double Ignition, is restricted to toward the end of the game.
+The clue is a **Trash Double Ignition**. The ordinary known-trash interpretations have been eliminated in this position: a Trash Chop Move would only protect bad cards, while Trash Push requires the known-trash clue to be on chop. The otherwise unexplained new known-trash clue therefore carries the Double Ignition message. If a Bad Trash Chop Move Ejection can be imagined, Level 21 still gives Trash Double Ignition priority because the bad ejection is exceptionally rare and belongs to later material.
 
 </TabItem>
 </Tabs>

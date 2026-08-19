@@ -1,22 +1,27 @@
 ---
-title: Когда известный мусор означает Double Ignition?
+title: Подсказка известному мусору вне chop
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-trash-double/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-trash-double" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса даёт подсказку одной или нескольким впервые затронутым картам, которые все знают как мусор. Команда может исключить Trash Chop Move, а также Trash Push и Trash Push Finesse. Какая интерпретация остаётся? Как наблюдатель или получатель подсказки может понять, что обычные интерпретации невозможны, и если теоретически можно представить Bad Trash Chop Move Ejection, что имеет приоритет?
+Все 1 сыграны. Ещё до хода Алисы команда глобально знала, что карта Кэти в слоте 2 — мусор. Алиса даёт Кэти красную подсказку, впервые затрагивая только эту карту вне chop. Боб видит, что карты позади неё, которые спас бы Trash Chop Move, тоже являются мусором; сама подсказка не дана карте на chop, поэтому Trash Push её не объясняет.
+
+Какой вывод должен сделать Боб?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Подсказка передаёт **Trash Double Ignition**. Для Trash Chop Move игрок, который не получает подсказку, может исключить эту интерпретацию, если видит, что Chop Moved-карта плохая; получатель подсказки может исключить её, когда больше нет карт для Chop Move — то есть оставшиеся карты уже учтены либо им можно дать прямой Play Clue или Save Clue. Для Trash Push или Trash Push Finesse наблюдатель аналогично может исключить интерпретацию, если видит, что «вытолкнутая» карта плохая, а получатель — когда больше нет карт для Trash Push. Если ни одна из этих двух групп интерпретаций не подходит, остаётся TDI. Игроки должны предпочитать Trash Double Ignition перед **Bad Trash Chop Move Ejection**, который Level 21 прямо называет очень редким и относит к более позднему материалу. В отличие от Replay и Poke Double Ignition, Trash Double Ignition используется только ближе к концу игры.
+Это **Trash Double Ignition**. Обычные трактовки подсказки известному мусору в этой позиции исключены: Trash Chop Move спасал бы только плохие карты, а Trash Push требует подсказки известному мусору на chop. Значит необъяснимая обычными причинами новая подсказка известному мусору передаёт Double Ignition. Даже если можно придумать Bad Trash Chop Move Ejection, Level 21 отдаёт приоритет Trash Double Ignition: плохой Ejection чрезвычайно редок и относится к более позднему материалу.
 
 </TabItem>
 </Tabs>

@@ -1,22 +1,27 @@
 ---
-title: Чем Ignition отличается от Finesse и Bluff?
+title: После слепого розыгрыша
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-ignition-definition/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-ignition-definition" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса даёт Кэти подсказку. После этого Боб вслепую играет из Finesse Position, но его карта никак не связывается с подсказанной картой Кэти. Кроме того, играбельность карты Кэти не требуется доказывать ходом Боба. Может ли это всё равно быть Ignition и чем он отличается от Finesse и Bluff?
+Алиса только что повторно дала Кэти красную подсказку к глобально известной играбельной красной 2, не затронув новых карт. У Алисы есть известный безопасный сброс, поэтому это не Stall. Боб реагирует слепым розыгрышем карты из Finesse Position — зелёной 2. Все 1 уже сыграны.
+
+Должна ли зелёная 2 Боба соединяться с красной 2 Кэти или доказывать её играбельность, чтобы линия имела смысл?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Да. **Ignition** специально вызывает blind-play из Finesse Position, который не связан ни с самой подсказкой, ни с играбельностью подсказанной карты. Поэтому он не создаёт связь, в отличие от Finesse, и не должен ничего доказывать получателю подсказки, в отличие и от Finesse, и от Bluff.
+**Нет.** Бесполезная повторная подсказка Алисы запускает Replay Double Ignition. Слепой розыгрыш Боба — это **Ignition**: он намеренно не связан ни с самой подсказкой, ни с играбельностью уже известной красной 2 Кэти. Именно этим Ignition отличается от Finesse, где слепой розыгрыш соединяется с подсказкой, и от Bluff, где он нужен, чтобы подсказанная карта выглядела играбельной.
 
 </TabItem>
 </Tabs>

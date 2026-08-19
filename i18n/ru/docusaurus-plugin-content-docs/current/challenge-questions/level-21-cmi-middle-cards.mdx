@@ -1,22 +1,27 @@
 ---
-title: Что обещано про средние карты?
+title: Три карты за подсказкой
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-cmi-middle-cards/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-cmi-middle-cards" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Chop Move Ignition охватывает три или больше карты между затронутой подсказкой и chop. Что конвенция обещает про карты строго между левой и правой значимыми картами? Нужно ли получателю помечать эти средние карты как Chop Moved?
+Все 1 сыграны. Рука Кэти от новой карты к старой: зелёная 4, синяя 1, красная 2, жёлтая 4, зелёная 4. Алиса даёт подсказку числом 1 карте в слоте 2. Получившийся Chop Move Ignition охватывает слоты 3–5: в слоте 3 лежит играбельная красная 2, а слот 5 — копия другой неподсказанной зелёной 4 Кэти.
+
+Какие из слотов 3, 4 и 5 действительно получают Chop Move и что Кэти может заключить о слоте 4?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Про **средние карты ничего не обещано**. Если диапазон содержит три или больше карт, средние карты прямо считаются **не Chop Moved** и могут иметь любое значение. Обещание Level 21 относится только к граничным условиям для левой и правой Chop Moved-карт.
+Chop Move получают только **крайние карты**, слоты 3 и 5. Слот 4 — средняя карта, поэтому **вообще не получает Chop Move**. Из Chop Move Ignition Кэти ничего не узнаёт о её личности: там может быть любая карта. Условия много-карточного CMI ограничивают играбельную левую границу и мусорную либо дублирующую правую границу, но не карты между ними.
 
 </TabItem>
 </Tabs>

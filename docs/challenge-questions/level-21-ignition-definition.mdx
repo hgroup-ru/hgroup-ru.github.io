@@ -1,22 +1,27 @@
 ---
-title: What Makes an Ignition Different?
+title: After the Blind-Play
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-ignition-definition/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-ignition-definition" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice gives Cathy a clue. Bob then blind-plays from Finesse Position, but Bob's card does not connect to Cathy's clued card. Also, Cathy's clued card does not need Bob's play to prove that it is playable. Can this still be an Ignition, and what distinguishes it from a Finesse and a Bluff?
+Alice has just re-clued Cathy's globally known playable red 2 without touching any new cards. Alice has a known safe discard, so this is not a Stall. Bob reacts by blind-playing his Finesse Position card, which is green 2. All 1s are already played.
+
+Does Bob's green 2 need to connect to Cathy's red 2, or prove that Cathy's card is playable, for the line to make sense?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Yes. An **Ignition** deliberately causes a blind-play from Finesse Position that is unrelated both to the clue itself and to the playability of the clued card. It therefore does not connect, unlike a Finesse, and nothing has to be proved to the clue-receiver, unlike both a Finesse and a Bluff.
+**No.** Alice's otherwise useless re-clue is a Replay Double Ignition trigger. Bob's blind-play is an **Ignition**: it is deliberately unrelated to the clue and unrelated to the playability of Cathy's already-known red 2. That is the key distinction from a Finesse, where the blind-play connects, and from a Bluff, where the blind-play is needed to make the clued card look playable.
 
 </TabItem>
 </Tabs>

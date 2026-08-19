@@ -1,22 +1,27 @@
 ---
-title: When a Bomb Means Triple Ignition
+title: The More Expensive Line
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-bomb-triple/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-bomb-triple" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice intentionally bombs known trash, apparently starting a Bomb Double Ignition. Everyone can plainly see that Alice could instead have used an ordinary clue-based Double Ignition, such as Replay Double Ignition. What extra message does choosing the strike communicate?
+Alice can plainly trigger an ordinary clue-based Double Ignition by re-cluing Cathy's globally known playable yellow 2 without touching a new card. Instead, she deliberately misplays her globally known-trash card. Bob, Cathy, and Donald each have a playable card in Finesse Position.
+
+What extra information does the unnecessarily expensive choice communicate?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-It communicates a **Bomb Triple Ignition**. A clue is almost always preferable to spending a strike, so the team should normally choose a clue-based Double Ignition first. If Alice obviously had that option but deliberately used the Bomb form anyway, the unnecessary extra cost signals one additional Ignition: a Triple Ignition.
+It upgrades the message to a **Bomb Triple Ignition**. Spending a strike is worse than using the available clue-based Double Ignition, so choosing the bomb despite an obvious cheaper trigger is the extra signal. Bob, Cathy, and Donald should therefore each perform an Ignition rather than stopping after two blind-plays.
 
 </TabItem>
 </Tabs>

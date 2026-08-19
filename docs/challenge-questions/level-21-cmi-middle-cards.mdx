@@ -1,22 +1,27 @@
 ---
-title: What Is Promised About Middle Cards?
+title: Three Cards Behind the Clue
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-cmi-middle-cards/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-cmi-middle-cards" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-A Chop Move Ignition spans three or more cards between the touched clue and chop. What does the convention promise about the cards strictly between the leftmost and rightmost relevant cards? Should the clue-receiver mark those middle cards as Chop Moved too?
+All 1s are played. Cathy's hand from newest to oldest is green 4, blue 1, red 2, yellow 4, green 4. Alice clues number 1 to slot 2. The resulting Chop Move Ignition spans slots 3 through 5: slot 3 is playable red 2, and slot 5 is a copy of Cathy's other unclued green 4.
+
+Which of slots 3, 4, and 5 are actually Chop Moved, and what may Cathy infer about slot 4?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Nothing is promised about those **middle cards**. If three or more cards are in the span, the middle cards are explicitly **not Chop Moved** and may have any identity. Only the boundary conditions for the leftmost and rightmost Chop Moved cards carry the Level 21 promise.
+Only the **leftmost and rightmost boundary cards**, slots 3 and 5, are Chop Moved. Slot 4 is a middle card and is **not** Chop Moved at all. Cathy gets no identity promise about it from the Chop Move Ignition; it may be any card. The multi-card conditions constrain the playable left boundary and the trash-or-duplicate right boundary, not cards in between.
 
 </TabItem>
 </Tabs>

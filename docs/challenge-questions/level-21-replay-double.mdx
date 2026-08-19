@@ -1,22 +1,27 @@
 ---
-title: Replay Double Ignition or Stall?
+title: The Repeated Play Clue
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-replay-double/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-replay-double" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice re-clues a globally known playable card. The clue touches no new cards. In case A, Alice is in a valid stalling situation and cannot discard. In case B, she is not in a stalling situation. How should the team distinguish the two cases? Would the interpretation change merely because this happens early rather than late in the game?
+All 1s are played. Cathy already knows that her red-clued card is the playable red 2. Alice has a known safe discard, but instead of discarding she gives Cathy the same red clue again, touching no new cards.
+
+How should the team interpret Alice's clue?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-In case A, the ordinary explanation is a **Stall**. In case B, the otherwise useless re-given Play Clue communicates a **Replay Double Ignition**. RDI must not introduce new cards, but it can be performed throughout the game; unlike Trash Double Ignition, it is not restricted to near the end.
+It is a **Replay Double Ignition**. Re-cluing a globally known playable card is normally useful only as a Stall; here Alice can safely discard, so that explanation is absent. Because the clue also introduces no new cards, the useless re-given Play Clue carries the deeper Double Ignition message. Replay Double Ignition is not restricted to End-Game.
 
 </TabItem>
 </Tabs>
