@@ -1,0 +1,25 @@
+---
+title: Occupied Play Clue может стать Self-Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-occupied-self-finesse/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-occupied-self-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Синяя 1 уже сыграна. У Алисы есть глобально известная играбельная зелёная 1; у Боба нет полезного действия. Алиса даёт Кэти подсказку числом 2 на слот 2, а Боб сбрасывает. Обычно Кэти поняла бы это как Play Clue на синюю 2. Какую дополнительную интерпретацию она должна учитывать из-за того, что Алиса была Occupied?
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна понимать это как **Occupied Self-Finesse**. Она вслепую играет Finesse Position; когда там успешно оказывается красная 1, подсказанная 2 определяется как связующая красная 2. Обычная Play Clue получила один дополнительный шаг из-за Occupied.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Два blind-play означают 5 Color Ejection
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-ooo-5ce-two/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-5ce-two" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса даёт Кэти красную подсказку, затрагивая красную 5 в слоте 1, красную 1 в слоте 2 и красную 2 в слоте 3. Исправление через Out-of-Order Finesse с Fix Clue числом 5 потребовало бы от Боба вслепую сыграть и красную 3, и красную 4. Какая интерпретация имеет приоритет?
+
+</TabItem>
+<TabItem value="solution">
+
+**5 Color Ejection.** 5 Color Ejection имеет приоритет над Out-of-Order Finesse, если конкурирующая OOO-линия потребовала бы **двух или более blind-play от одного игрока**. Поэтому Боб использует интерпретацию Ejection вместо Fix Clue.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: A Blind-Play Rules Out the Next Playable Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-ooo-corollary/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-corollary" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 is played. Alice clues red to Cathy, touching slots 2 and 3, but Bob blind-plays an unrelated card instead of giving an Out-of-Order Fix Clue. What negative information can Cathy record about the touched red cards?
+
+</TabItem>
+<TabItem value="solution">
+
+By the **Out-of-Order Corollary**, Cathy can mark the touched cards as **not the next playable red card**. In the source example, slot 2 becomes red 4 from the Bluff interpretation and slot 3 becomes red 5: if slot 3 were red 3, Bob would have been forced to give a Fix Clue instead of blind-playing.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

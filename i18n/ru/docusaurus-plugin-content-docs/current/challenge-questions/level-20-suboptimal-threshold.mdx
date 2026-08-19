@@ -1,0 +1,22 @@
+---
+title: Немного хуже — ещё не достаточно Suboptimal
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-suboptimal-threshold" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть свободный выбор между двумя способами спасти критическую карту. Одна подсказка на бумаге немного менее эффективна, зато другая затронет возможный дубликат 3, уже подсказанный в руке Боба. Должен ли Боб автоматически считать выбор Алисы Suboptimal Prompt, Finesse или Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Подсказка должна быть **действительно очень плохой**, а не просто технически чуть хуже. Good Touch Principle, полезная негативная информация или другая разумная контекстная выгода могут объяснить потерю. Дополнительный смысл Play Clue выводится только тогда, когда выбранная подсказка явно хуже и для этого нет обычного объяснения.
+
+</TabItem>
+</Tabs>

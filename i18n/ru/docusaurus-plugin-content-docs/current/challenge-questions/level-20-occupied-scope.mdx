@@ -1,0 +1,22 @@
+---
+title: Для Occupied нужна «украденная» подсказка
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-occupied-scope" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть глобально известная играбельная карта, но вместо розыгрыша она даёт срочную подсказку. Только Алиса могла разумно дать эту подсказку. Следующим ходит Боб, и другого полезного действия у него нет. Должен ли Боб автоматически считать Алису Occupied и добавлять подсказке дополнительный Occupied-смысл?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Occupied применяется только тогда, когда ту же подсказку действительно могли дать **как минимум два игрока**, но игрок с играбельной картой «крадёт» её и оставляет следующего игрока без полезного действия, кроме сброса. Если только Алиса могла дать эту подсказку, отложить свой розыгрыш — обычная командная игра, и Occupied-смысл автоматически не возникает. Когда условие Occupied действительно выполнено, обычная **Save Clue превращается в Occupied Play Clue**, а обычная **Play Clue — в Occupied Finesse**; в общем случае Occupied-ход делает на один шаг больше обычного.
+
+</TabItem>
+</Tabs>

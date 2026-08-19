@@ -1,0 +1,25 @@
+---
+title: Два несвязанных blind-play раскрывают No-Information Double Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-no-info-double-bluff/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-info-double-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Настоящая повторная No-Information подсказка сначала заставляет Боба вслепую сыграть несвязанную зелёную 1. Затем Кэти видит, что у Боба нет ожидаемой зелёной 2, поэтому сама вслепую играет Finesse Position в ожидании связи, но там оказывается несвязанная жёлтая 1. Что команда узнаёт из этих двух несвязанных blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+Подсказка раскрывается как **No-Information Double Bluff (NIDB)**, а не Finesse. Два blind-play выполняют правило, по которому No-Information Bluff должен получать две карты. Поскольку ни одна карта на самом деле не соединяется с затронутой 3, суперпозиция 3 у Кэти остаётся той же, что и раньше.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

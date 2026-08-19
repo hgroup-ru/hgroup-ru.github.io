@@ -1,0 +1,22 @@
+---
+title: Occupied Requires a Stolen Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-occupied-scope" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has a globally known playable card but gives a time-sensitive clue instead. Alice is the only player who could reasonably give that clue. Bob comes next and otherwise has nothing useful to do. Should Bob automatically treat Alice as Occupied and add an extra Occupied meaning to the clue?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Occupied applies only when the clue really could have been given by **two or more players**, but a player with a playable card "steals" it and leaves the next player with nothing to do but discard. If Alice is uniquely able to give the clue, deferring her play is ordinary teamwork and does not create Occupied meaning. When the Occupied condition really does apply, a clue that would normally be a **Save Clue becomes an Occupied Play Clue**, while a normal **Play Clue becomes an Occupied Finesse**; in general, the Occupied move does one extra thing.
+
+</TabItem>
+</Tabs>

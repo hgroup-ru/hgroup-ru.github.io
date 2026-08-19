@@ -1,0 +1,25 @@
+---
+title: An Out-of-Order Finesse Still Needs a Fix
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-ooo-finesse-fix/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-finesse-fix" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn Alice clues Bob red. Bob's focused slot 1 is really red 3, slot 2 is red 2, and Cathy has red 1 in Finesse Position. Bob respects a possible Reverse Finesse and discards; Cathy blind-plays red 1. What must happen before Bob can safely continue?
+
+</TabItem>
+<TabItem value="solution">
+
+Alice must give Bob a **Fix Clue**, here number 2, before Bob would misplay red 3 as red 2. Bob plays the corrected red 2 and then knows the original focused red card must be red 3, because that focus was originally clued as playable and caused the Reverse Finesse. Unlike an ordinary post-Fix stop, the Out-of-Order line continues through the original focus.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

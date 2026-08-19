@@ -1,0 +1,25 @@
+---
+title: Out-of-Order Finesse всё равно требует Fix
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-ooo-finesse-fix/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-finesse-fix" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса даёт Бобу красную подсказку. В его слоте 1 на самом деле красная 3, в слоте 2 — красная 2, а у Кэти в Finesse Position красная 1. Боб учитывает возможный Reverse Finesse и сбрасывает; Кэти вслепую играет красную 1. Что обязательно должно произойти, прежде чем Боб сможет безопасно продолжить?
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса должна дать Бобу **Fix Clue**, здесь — числом 2, иначе Боб сыграет красную 3 как красную 2. Боб играет исправленную красную 2, после чего знает, что исходная красная карта в фокусе обязана быть красной 3: именно её изначально подсказали как играбельную и она вызвала Reverse Finesse. В отличие от обычной остановки после Fix, Out-of-Order-линия продолжается через исходный фокус.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>
