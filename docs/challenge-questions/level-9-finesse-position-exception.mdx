@@ -1,0 +1,24 @@
+---
+title: The Last Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-finesse-position-exception" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Early Game with 1 clue left. Alice can 5 Stall Bob's off-chop 5. The only normal Play Clue remaining would touch Cathy's Finesse Position. If Alice spends the last clue on the 5 Stall, Bob must discard at 0 clues and Cathy acts immediately afterward, before anyone can Finesse her card.
+
+Does the Finesse Position Exception allow Alice to 5 Stall?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The exception applies only when the playable card on Finesse Position can actually be Finessed or otherwise gotten by somebody else. In this timing, Cathy reaches her own turn before the team has a chance to Finesse that card, so the exception fails. Alice must clue Cathy's playable card directly.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Ещё одна off-chop 5
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-five-stall-collective" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Early Game. Все обязательные обычные Play Clue и Save Clue уже исчерпаны. Команда раньше уже сделала один допустимый 5 Stall, но всё ещё может подсказать другую off-chop 5. Никакое другое правило сейчас не заставляет давать подсказку.
+
+Обязана ли команда сделать второй 5 Stall перед первым сбросом неизвестной карты?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** В Early Game команда обязана совместно сделать **как минимум один** 5 Stall, если это возможно. После выполнения этой обязанности остальные доступные 5 Stall становятся необязательными. Команда может сделать ещё несколько до перехода в Mid-Game, но не обязана.
+
+</TabItem>
+</Tabs>

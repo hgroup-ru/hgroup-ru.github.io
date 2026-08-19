@@ -1,0 +1,24 @@
+---
+title: Играбельная карта в руке
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-five-stall-last-resort" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса находится в Stalling Situation и видит off-chop 5, которой можно дать 5 Stall. Однако Алиса также точно знает, что одна из её собственных карт сейчас играбельна. Finesse Position Exception здесь не применяется.
+
+Может ли Алиса дать 5 Stall вместо розыгрыша своей карты?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** 5 Stall — действие последней необходимости. У игрока, который его даёт, не должно быть немедленно играбельной карты, известного безопасного сброса или другой видимой обычной Play Clue или Save Clue. Это ограничение действует и в Early Game, и в Mid-Game Stalling Situations, кроме узкого Finesse Position Exception.
+
+</TabItem>
+</Tabs>

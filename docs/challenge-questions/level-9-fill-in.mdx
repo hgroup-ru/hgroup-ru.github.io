@@ -1,0 +1,24 @@
+---
+title: More Information
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-fill-in" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a clue that touches only cards that already have clues and adds new information to them. The team is in an allowed Double Discard Stalling Situation and no higher-precedence clue is available.
+
+How should the clue be classified, and would the same shape have the same meaning in a normal situation?
+
+</TabItem>
+<TabItem value="solution">
+
+Here it can be a **Fill-In Clue**: it touches only already-clued or Chop Moved cards and adds information that was not known before. But Fill-In Clues are special stalling tools. Outside an allowed Stalling Situation, a clue with this shape is not automatically a Fill-In Clue; it would normally be read as an ordinary Play Clue or according to the usual clue interpretation rules.
+
+</TabItem>
+</Tabs>

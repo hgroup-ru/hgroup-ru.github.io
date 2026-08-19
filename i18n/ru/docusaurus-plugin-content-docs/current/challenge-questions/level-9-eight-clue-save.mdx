@@ -1,0 +1,22 @@
+---
+title: Восемь подсказок в Mid-Game
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-save" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+В Mid-Game команда снова накопила 8 подсказок. У Алисы нет известной играбельной карты и нет подсказки с более высокой очередностью. У Кэти в слоте 3 лежит обычная некритическая карта, которую Алиса хочет сохранить. Может ли Алиса спасти её через 8 Clue Save? Работает ли та же конвенция на первом ходу партии или для карты в слоте 1?
+
+</TabItem>
+<TabItem value="solution">
+
+**Да в описанной Mid-Game позиции.** 8 Clue Save может спасать любую карту на chop или вне chop, если она не находится в слоте 1 и нет подсказки с более высокой очередностью. Можно использовать и цвет, и число. На первом ходу партии эта конвенция **не действует**, а подсказка карте в слоте 1 трактуется как обычная Play Clue или Save Clue.
+
+</TabItem>
+</Tabs>

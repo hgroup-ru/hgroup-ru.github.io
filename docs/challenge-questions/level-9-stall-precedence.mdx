@@ -1,0 +1,24 @@
+---
+title: Three Available Clues
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-stall-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Mid-Game and Alice starts her turn with 8 clues. Alice has no known playable card, no normal Play Clue or Save Clue, and no 5 Stall. She can either give a Tempo Clue that re-clues a card to make it play, give a Fill-In Clue, or make an 8 Clue Save.
+
+Which class of clue has priority?
+
+</TabItem>
+<TabItem value="solution">
+
+Alice must prefer the **Tempo Clue Stall**. At 8 clues, the Stall Table allows all three options, but their precedence is not tied: Tempo Clue Stall is precedence 3, while Fill-In Clue and 8 Clue Save are precedence 4. A lower-precedence stall is not available merely because it is also permitted by the current Stalling Situation.
+
+</TabItem>
+</Tabs>

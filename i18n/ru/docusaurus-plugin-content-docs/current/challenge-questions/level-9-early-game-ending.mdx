@@ -1,0 +1,22 @@
+---
+title: Закончилась ли фаза?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-early-game-ending" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Ни одной полностью неизвестной карты ещё не сбрасывали. Боб сбросил карту, про которую точно знал, что это мусор, а позже Кэти получила мисплей. Закончился ли Early Game?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** На уровне 9 Early Game заканчивается только после первого сброса **полностью неизвестной** карты. Сброс известного мусора его не заканчивает, как и мисплей. Специальные сбросы, которые передают карту другому игроку, также не заканчивают Early Game.
+
+</TabItem>
+</Tabs>

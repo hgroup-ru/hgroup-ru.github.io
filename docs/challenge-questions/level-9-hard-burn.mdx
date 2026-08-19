@@ -1,0 +1,24 @@
+---
+title: No New Information
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-hard-burn" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice is in the Early Game with no normal Play Clue or Save Clue and no 5 Stall. She could re-clue a card in a way that gives absolutely no new information: a Hard Burn.
+
+May she use the Hard Burn as an Early Game Stall?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Hard Burn is the lowest-precedence Stall-table option and is not allowed in the Early Game. It becomes available only in the more severe Double Discard / Scream Discard, Locked Hand, and 8-clue Stalling Situations, and only after every higher-precedence available clue has been exhausted.
+
+</TabItem>
+</Tabs>

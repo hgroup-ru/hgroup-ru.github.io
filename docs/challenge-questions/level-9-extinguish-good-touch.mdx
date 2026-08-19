@@ -1,0 +1,24 @@
+---
+title: Must This Clue Be Extinguished?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-extinguish-good-touch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Early Game. The only remaining apparent Play Clue would touch two copies of the same red 1 in one player's hand and would therefore violate Good Touch Principle. No other mandatory Early Game action remains.
+
+Must Alice give that Play Clue before the team may make its first completely unknown discard?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Extinguishing every clue in the Early Game does not include Play Clues that would violate Good Touch Principle. The team may wait for one duplicate to be discarded instead of spending a clue to duplicate the same identity. Once the genuinely required Early Game actions are exhausted, this clue does not prevent the first completely unknown discard.
+
+</TabItem>
+</Tabs>

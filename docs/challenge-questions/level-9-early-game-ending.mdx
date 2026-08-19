@@ -1,0 +1,22 @@
+---
+title: Has the Phase Ended?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-early-game-ending" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+No completely unknown card has been discarded yet. Bob discarded a card that he knew was trash, and later Cathy misplayed a card. Is the Early Game over?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** At level 9, the Early Game ends only when the first **completely unknown** card is discarded. A known-trash discard does not end it, and a misplay does not end it either. Special transfer discards likewise do not end the Early Game.
+
+</TabItem>
+</Tabs>

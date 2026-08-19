@@ -1,0 +1,24 @@
+---
+title: Zero Clues
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-anxiety-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob has a Locked Hand and begins his turn with 0 clues. The team deliberately left him at 0 rather than spending a clue to re-clue one of his cards. Bob has two cards that appear equally likely to be playable.
+
+What does the convention tell Bob to do?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should make an **Anxiety Play**. Being deliberately left at 0 clues while Locked tells him that one of his cards is actually playable. He should play the card most likely to be playable; if more than one option is equally plausible, Leftmost Playable Principle selects the leftmost one.
+
+</TabItem>
+</Tabs>

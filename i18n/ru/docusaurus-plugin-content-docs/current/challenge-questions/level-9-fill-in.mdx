@@ -1,0 +1,24 @@
+---
+title: Дополнительная информация
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-fill-in" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт подсказку, которая затрагивает только карты, уже имеющие подсказки, и добавляет им новую информацию. Команда находится в разрешённой Double Discard Stalling Situation, а подсказок с более высокой очередностью нет.
+
+Как классифицировать эту подсказку, и имела бы такая же форма то же значение в обычной ситуации?
+
+</TabItem>
+<TabItem value="solution">
+
+Здесь это может быть **Fill-In Clue**: она затрагивает только уже подсказанные или Chop Moved-карты и добавляет информацию, которой раньше не было. Но Fill-In Clue — специальный инструмент Stalling Situation. В обычной ситуации такая форма не становится Fill-In Clue автоматически: её будут трактовать как обычную Play Clue или по стандартным правилам интерпретации подсказок.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: A Clue That Will Be Moved Anyway
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-extinguish-order-cm" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Early Game. The only remaining visible clue would save a card that will almost certainly be Order Chop Moved by an upcoming player who already has two or more 1s clued in their hand. No other mandatory Early Game action remains.
+
+Must Alice give this clue before the first completely unknown discard?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Level 9 explicitly excludes this case from the requirement to extinguish every Early Game clue. If the card will almost certainly be protected by the upcoming Order Chop Move, the team is not required to spend a clue on it first. This is a narrow Early Game exception; it does not make unrelated Play Clues or Save Clues optional.
+
+</TabItem>
+</Tabs>

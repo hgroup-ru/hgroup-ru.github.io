@@ -1,0 +1,22 @@
+---
+title: Eight Clues in Mid-Game
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-save" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+The team climbed back to 8 clues in the Mid-Game. Alice has no known playable card and no higher-precedence clue. Cathy has an ordinary non-critical card in slot 3 that Alice would like to preserve. May Alice save it with an 8 Clue Save? Would the same convention apply on the first turn of the game or to a card in slot 1?
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes in the stated Mid-Game position.** An 8 Clue Save can save any card on or off chop as long as it is not in slot 1 and no higher-precedence clue is available. It can use either color or number. The convention does **not** apply on the first turn of the game, and a clue to slot 1 is interpreted as a normal Play Clue or Save Clue instead.
+
+</TabItem>
+</Tabs>

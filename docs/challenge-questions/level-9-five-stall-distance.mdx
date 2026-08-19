@@ -1,0 +1,24 @@
+---
+title: Two Fives
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-five-stall-distance" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice is in a valid Early Game Stalling Situation and the only remaining required action is a 5 Stall. Bob has an off-chop 5 one card away from chop. Cathy has an off-chop 5 two cards away from chop. Bob also has two known playable cards.
+
+Which 5 should Alice clue?
+
+</TabItem>
+<TabItem value="solution">
+
+Alice must clue **Bob's 5**. Level 9 requires a 5 Stall to target the 5 closest to chop. Bob having playable cards does not reverse this ordering; in the source example, the closer 5 is chosen even when its owner has two playable cards.
+
+</TabItem>
+</Tabs>

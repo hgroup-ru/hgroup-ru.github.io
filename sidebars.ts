@@ -291,6 +291,28 @@ const sidebars: SidebarsConfig = {
           ],
         },
         {
+          "Level 9": [
+            "challenge-questions/level-9",
+            "challenge-questions/level-9-stall-precedence",
+            "challenge-questions/level-9-early-game-ending",
+            "challenge-questions/level-9-early-game-tempo",
+            "challenge-questions/level-9-permission-to-discard",
+            "challenge-questions/level-9-extinguish-good-touch",
+            "challenge-questions/level-9-extinguish-order-cm",
+            "challenge-questions/level-9-double-discard",
+            "challenge-questions/level-9-locked-clue-resource",
+            "challenge-questions/level-9-five-stall-collective",
+            "challenge-questions/level-9-five-stall-distance",
+            "challenge-questions/level-9-five-stall-last-resort",
+            "challenge-questions/level-9-finesse-position-exception",
+            "challenge-questions/level-9-fill-in",
+            "challenge-questions/level-9-hard-burn",
+            "challenge-questions/level-9-locked-hand-save",
+            "challenge-questions/level-9-anxiety-play",
+            "challenge-questions/level-9-eight-clue-save",
+          ],
+        },
+        {
           "Level 10": [
             "challenge-questions/level-10",
             "challenge-questions/level-10-gd-no-upside",

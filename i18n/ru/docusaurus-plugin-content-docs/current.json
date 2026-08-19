@@ -91,6 +91,10 @@
     "message": "Уровень 8",
     "description": "The label for category 'Level 8' in sidebar 'mainSidebar'"
   },
+  "sidebar.mainSidebar.category.Level 9": {
+    "message": "Уровень 9",
+    "description": "The label for category 'Level 9' in sidebar 'mainSidebar'"
+  },
   "sidebar.mainSidebar.category.Level 10": {
     "message": "Уровень 10",
     "description": "The label for category 'Level 10' in sidebar 'mainSidebar'"
