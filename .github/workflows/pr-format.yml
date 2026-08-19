@@ -1,0 +1,90 @@
+name: PR Format
+
+on:
+  issue_comment:
+    types:
+      - created
+
+concurrency:
+  group: pr-format-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+jobs:
+  format:
+    if: >-
+      github.event.issue.pull_request
+      && github.event.comment.body == '/format'
+      && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Resolve pull request
+        id: pr
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}")"
+          state="$(printf '%s' "$pr_json" | jq -r .state)"
+          head_repo="$(printf '%s' "$pr_json" | jq -r .head.repo.full_name)"
+          head_ref="$(printf '%s' "$pr_json" | jq -r .head.ref)"
+          head_sha="$(printf '%s' "$pr_json" | jq -r .head.sha)"
+
+          if [ "$state" != "open" ]; then
+            echo "PR #$PR_NUMBER is not open; refusing to format."
+            exit 1
+          fi
+
+          if [ "$head_repo" != "$GITHUB_REPOSITORY" ]; then
+            echo "PR #$PR_NUMBER comes from $head_repo; formatting fork PRs is not allowed."
+            exit 1
+          fi
+
+          echo "head_ref=$head_ref" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$head_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Check out PR head
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.pr.outputs.head_ref }}
+          token: ${{ github.token }}
+          fetch-depth: 0
+
+      - name: Verify requested head
+        shell: bash
+        env:
+          EXPECTED_HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+        run: |
+          actual_head="$(git rev-parse HEAD)"
+          if [ "$actual_head" != "$EXPECTED_HEAD_SHA" ]; then
+            echo "PR head moved before checkout: expected $EXPECTED_HEAD_SHA, got $actual_head."
+            exit 1
+          fi
+
+      - name: Setup
+        uses: ./.github/workflows/setup
+
+      - name: Format
+        run: npm run format
+
+      - name: Commit formatting changes
+        shell: bash
+        env:
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          if git diff --quiet; then
+            echo "Formatting produced no changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git commit -m "style: автоформат PR #${PR_NUMBER}"
+          git push origin "HEAD:${{ steps.pr.outputs.head_ref }}"
