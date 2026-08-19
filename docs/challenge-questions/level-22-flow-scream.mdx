@@ -1,22 +1,27 @@
 ---
-title: "Flowchart Branch: Ordinary Scream"
+title: Bob Has the Important Chop
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-flow-scream/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-flow-scream" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice makes the flowchart's emergency discard. Bob has no known play or known safe discard. Cathy has a known play or known safe discard. How should Bob interpret Alice's action? What restriction applies to Bob after he reacts?
+Alice had a known play at 0 clues but made an emergency discard instead. Bob has no known play or known safe discard and has a critical yellow 5 on chop. Cathy, however, already has a known playable green 2.
+
+How should Bob interpret Alice's discard, and may he simply discard after reacting?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-The flowchart identifies an ordinary **Scream Discard Chop Move**. Bob has the important chop, so he permanently Chop Moves by one card. He is then **not allowed to discard on this turn**. Cathy's already safe action is why Alice's discard need not be interpreted as a Generation Discard for Cathy.
+This is an ordinary **Scream Discard Chop Move** aimed at Bob. Bob permanently Chop Moves his critical yellow 5. He is then **not allowed to discard on this turn**; if he has nothing productive to do, he must spend the generated clue rather than risk a second critical card immediately behind the moved one. Cathy's existing safe play is why Alice does not need the discard to generate an action for Cathy.
 
 </TabItem>
 </Tabs>

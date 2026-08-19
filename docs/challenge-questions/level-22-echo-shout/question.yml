@@ -1,0 +1,48 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+bigText:
+  text: Known-trash discard
+players:
+  - name: Alice
+    cards:
+      - type: x
+        middleNote: b2
+      - type: x
+      - type: x
+      - type: x
+        middleNote: kt
+  - name: Bob
+    cards:
+      - type: r2
+        clue: r
+        middleNote: r2
+      - type: g4
+        border: false
+      - type: p4
+        border: false
+      - type: b4
+        border: false
+  - name: Cathy
+    cards:
+      - type: y5
+        border: false
+      - type: g5
+        border: false
+      - type: p5
+        border: false
+      - type: r5
+        border: false
+  - name: Donald
+    cards:
+      - type: b5
+        border: false
+      - type: y4
+        border: false
+      - type: g3
+        border: false
+      - type: p3
+        border: false

@@ -1,22 +1,27 @@
 ---
-title: When a Scream Echoes
+title: Bob Already Has a Play
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-echo-scream/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-echo-scream" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice makes what would normally be a last-resort Scream Discard. Bob, the next player, already has either a known playable card or a known safe trash discard. What does Alice's discard mean at Level 22, and which players are prevented from discarding their chop on their next turn?
+At 0 clues, Alice has a known playable card but deliberately discards instead. Bob, the next player, already has his own known playable red 2. Cathy has a critical yellow 5 on chop.
+
+If Alice's discard is a genuine last-resort Scream, whose chop moves?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Because Bob already has a safe action, an ordinary Scream aimed only at Bob would not be a last resort. The discard therefore becomes an **Echo Scream Discard Chop Move**: it bounces off Bob and Chop Moves both Bob and the player after him. As with a normal Scream Discard, **every player who was Chop Moved may not discard that chop on their next turn**.
+**Bob and Cathy both Chop Move.** Bob already has a safe action, so a last-resort Scream aimed only at him would make no sense. The Scream therefore echoes through Bob and reaches Cathy, producing an **Echo Scream Discard Chop Move**. Both Chop Moved players are forbidden from discarding the moved chop on their next turn.
 
 </TabItem>
 </Tabs>

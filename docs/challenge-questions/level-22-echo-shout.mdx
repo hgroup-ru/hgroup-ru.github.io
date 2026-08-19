@@ -1,22 +1,27 @@
 ---
-title: Why There Is No Echo Shout
+title: A Known-Trash Discard
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-echo-shout/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-echo-shout" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice discards known trash instead of playing, and someone proposes that the resulting Shout Discard should bounce through multiple players as an Echo Shout. Is that interpretation allowed? What are the two possible interpretations instead?
+Alice has a known playable blue 2, but instead she discards a different card that is globally known trash. Bob, the next player, already has a known playable red 2. Someone proposes that the discard should therefore bounce through Bob as an Echo Shout.
+
+Can it?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-No. **Shout Discards cannot create Echo Chop Moves.** Discarding known trash is much less severe than intentionally discarding an unknown card, so it cannot carry the extra Echo meaning. The action is always either a **single Shout Discard Chop Move** or a **Generation Discard**.
+**No.** Shout Discards never create Echo Chop Moves. Discarding known trash is not severe enough to carry the extra bounce meaning of an unknown-card Scream Discard. Alice's action must be interpreted as either a **single Shout Discard Chop Move** or a **Generation Discard**, depending on the rest of the position; Bob's safe action does not turn it into an Echo Shout.
 
 </TabItem>
 </Tabs>

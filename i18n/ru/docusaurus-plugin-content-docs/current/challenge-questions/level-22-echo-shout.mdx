@@ -1,22 +1,27 @@
 ---
-title: Почему Echo Shout не существует
+title: Сброс известного мусора
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-22-echo-shout/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-echo-shout" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса сбрасывает известный мусор вместо игры, и кто-то предлагает трактовать получившийся Shout Discard как Echo Shout, который проходит через нескольких игроков. Допустима ли такая интерпретация? Какие два варианта остаются вместо неё?
+У Алисы есть известная играбельная синяя 2, но вместо неё Алиса сбрасывает другую карту, глобально известную как мусор. У следующего игрока, Боба, уже есть известная играбельная красная 2. Кто-то предлагает, чтобы из-за этого сброс отскочил через Боба как Echo Shout.
+
+Возможно ли это?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Нет. **Shout Discard не может создавать Echo Chop Move.** Сброс известного мусора намного менее серьёзен, чем намеренный сброс неизвестной карты с риском проиграть партию, поэтому он не несёт дополнительный Echo-смысл. Действие всегда является либо **одиночным Shout Discard Chop Move**, либо **Generation Discard**.
+**Нет.** Shout Discard никогда не создаёт Echo Chop Move. Сброс известного мусора недостаточно рискован, чтобы нести дополнительный смысл отскока, который возможен у Scream Discard неизвестной картой. Действие Алисы должно быть либо **одиночным Shout Discard Chop Move**, либо **Generation Discard** — в зависимости от остальной позиции; безопасное действие Боба не превращает его в Echo Shout.
 
 </TabItem>
 </Tabs>

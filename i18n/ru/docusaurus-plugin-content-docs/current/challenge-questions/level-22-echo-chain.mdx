@@ -1,22 +1,27 @@
 ---
-title: Насколько далеко проходит Echo Scream?
+title: Два безопасных игрока подряд
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-22-echo-chain/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-echo-chain" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-После Scream Discard Алисы у следующих двух игроков подряд есть известная игра или известный безопасный сброс. Сколько Chop Move создаёт Echo Scream? Перестаёт ли механизм работать, если исходный Scream Discard Алисы был сделан известным мусором?
+Алиса делает настоящий Scream Discard последней надежды. У следующих по порядку Боба и Кэти уже есть по известной играбельной карте. Дональд — первый игрок после них без безопасного действия.
+
+Сколько Chop Move создаёт этот Scream?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Получается **три Chop Move**: Echo отскакивает от двух игроков. В общем случае три таких игрока подряд дали бы четыре Chop Move и так далее. Правило Echo Scream работает точно так же, если запускающий Scream Discard был сделан **известным мусором**.
+Он создаёт **три Chop Move**: у Боба, Кэти и Дональда. Echo Scream отскакивает от каждого следующего игрока, у которого уже есть известная игра или известный безопасный сброс, и доходит до следующего игрока. То же правило отскока работает, если исходный Scream Discard делается известным мусором.
 
 </TabItem>
 </Tabs>

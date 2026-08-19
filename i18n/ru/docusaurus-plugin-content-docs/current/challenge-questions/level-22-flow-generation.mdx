@@ -1,22 +1,27 @@
 ---
-title: "Ветка flowchart: Generation Discard"
+title: Критический chop Кэти
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-22-flow-generation/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-flow-generation" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса делает экстренный сброс из flowchart Level 22. У Боба нет известной игры и известного безопасного сброса. У Кэти их тоже нет, но на chop у Кэти находится уникальная играбельная карта, критическая карта или уникальная 2. Как flowchart называет сброс Алисы и что должен сделать Боб?
+При 0 подсказок у Алисы была известная игра, но вместо неё Алиса сделала экстренный сброс и создала одну подсказку. У Боба нет известной игры или известного безопасного сброса. У Кэти тоже нет безопасного действия, а её жёлтая 5 на chop критическая: вторая жёлтая 5 уже сброшена.
+
+Что Боб должен сделать с появившейся подсказкой?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Это **Generation Discard**, а не Scream Discard Chop Move. Боб должен использовать созданную подсказку, чтобы дать **Play Clue или Save Clue важной карте Кэти на chop**, а не делать Chop Move собственной карте.
+Боб должен **спасти жёлтую 5 Кэти**. В этой ветке сброс Алисы является **Generation Discard**, а не Scream в Боба: важная карта лежит на chop Кэти, и у неё нет безопасного действия. Поэтому Боб использует созданную подсказку как Play Clue или Save Clue этой карте, а не делает Chop Move собственной карте.
 
 </TabItem>
 </Tabs>
