@@ -1,0 +1,22 @@
+---
+title: Когда определяется chop?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-preclue-focus" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы несколько Elimination Notes на красную 2. Боб даёт подсказку, чья **отрицательная информация** устраняет все варианты красной 2, кроме карты Алисы на chop. После этой дедукции chop фактически сдвинется. Должна ли Алиса задним числом использовать новую позицию chop, чтобы определить исходный focus подсказки Боба?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Focus и chop-focus определяются по состоянию руки **до получения подсказки**. Отрицательная информация затем может однозначно выделить Elimination-карту, но не переписывает то, какой слот был focus в момент подсказки. Так сохраняется обычная хронология интерпретации подсказок.
+
+</TabItem>
+</Tabs>

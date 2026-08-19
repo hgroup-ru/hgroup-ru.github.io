@@ -1,0 +1,22 @@
+---
+title: Which Elimination Slot Plays?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-elimination-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice is called for a blue 3 by a Reverse Finesse, but her blue-3 Elimination Notes are on slots 2, 3, and 5, not on ordinary Finesse Position. Which noted card is the Elimination Finesse target if none of them is Chop Moved?
+
+</TabItem>
+<TabItem value="solution">
+
+Alice plays the **oldest** card carrying the matching Elimination Note, so here slot 5. Elimination Finesse deliberately does not use ordinary Finesse Position. Chop Moved noted cards are skipped when choosing the target; if every noted card is Chop Moved, use the oldest Chop Moved one.
+
+</TabItem>
+</Tabs>

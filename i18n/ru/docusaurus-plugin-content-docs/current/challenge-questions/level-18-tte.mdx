@@ -1,0 +1,22 @@
+---
+title: Выбрана худшая подсказка
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-tte" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса может чисто дать Play Clue на красную 4 Боба подсказкой по 4. Вместо этого она даёт красный цвет, дополнительно затрагивая видимую trash-красную 1 и без необходимости нарушая Good Touch Principle. В видимой игре отсутствует ровно одна полезная красная identity. Что должен вывести игрок, у которого может находиться эта отсутствующая карта?
+
+</TabItem>
+<TabItem value="solution">
+
+Он должен поставить **Trash Touch Elimination Notes** на единственную отсутствующую полезную красную карту. Поскольку существовала чистая подсказка, намеренный выбор Алисы затронуть известный trash обязан передавать дополнительное сообщение. Когда отсутствует ровно одна хорошая identity, это сообщение означает, что невидящий свою руку игрок держит её где-то у себя.
+
+</TabItem>
+</Tabs>

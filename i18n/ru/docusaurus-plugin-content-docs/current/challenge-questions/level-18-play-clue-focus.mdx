@@ -1,0 +1,22 @@
+---
+title: Focus не на самой левой карте
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-play-clue-focus" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть Elimination Notes на красную 2 на нескольких слотах. Боб даёт подсказку по 2, затрагивая слоты 1, 3 и 4. Новая информация устраняет все варианты красной 2, кроме слота 3. Остаётся ли слот 1 focus Play Clue только потому, что это самая левая затронутая карта?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Elimination Play Clue может однозначно указать на немедленно играбельную Elimination-карту, поэтому слот 3 становится точно красной 2 и именно он является focus. Остальные затронутые 2 получили побочную положительную информацию и не обещаны играбельными. Такой специальный focus также нельзя растягивать в Delayed Play Clue, Prompt или Finesse.
+
+</TabItem>
+</Tabs>

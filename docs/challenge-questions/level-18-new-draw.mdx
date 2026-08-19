@@ -1,0 +1,22 @@
+---
+title: Where Can the Other Copy Be?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-new-draw" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice unexpectedly discards a playable red 4 from chop in a quiet position. No teammate holds the other red 4. Alice draws a new card into slot 1. Which slots should receive Discard Elimination Notes for the other red 4?
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should mark the cards that were already in her hand when the red 4 was discarded, **not the new draw**. In a five-card hand that means the surviving old cards in slots 2–5. The premise of Discard Elimination is that teammates allowed the playable copy to go because Alice already held the other copy; a card drawn afterward cannot explain their earlier decision.
+
+</TabItem>
+</Tabs>

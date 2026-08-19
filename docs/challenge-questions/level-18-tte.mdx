@@ -1,0 +1,22 @@
+---
+title: The Worse Clue Was Chosen
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-tte" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice can Play Clue Bob's red 4 cleanly with a number 4 clue. Instead she uses red, which also touches a visible trash red 1 and therefore needlessly violates Good Touch Principle. Exactly one useful red identity is missing from the visible game. What should the player who could hold that missing card infer?
+
+</TabItem>
+<TabItem value="solution">
+
+They should write **Trash Touch Elimination Notes** for the one missing useful red card. Because a clean clue existed, Alice's deliberate choice to pick up known trash must communicate something extra. With exactly one missing good identity, the extra message is that the unseen player holds that identity somewhere in their hand.
+
+</TabItem>
+</Tabs>

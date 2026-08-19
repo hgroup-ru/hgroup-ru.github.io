@@ -1,0 +1,22 @@
+---
+title: When Is Chop Evaluated?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-preclue-focus" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has several red-2 Elimination Notes. Bob gives a clue whose **negative information** eliminates all but Alice's chop card as red 2. After processing that elimination, the chop would effectively move. Should Alice retroactively use the new chop position to decide which card Bob's clue originally focused?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Focus and chop-focus are evaluated from the hand state **before the clue is given**. Negative information can single out an Elimination card afterward, but it does not rewrite which slot was focus at clue time. This preserves the normal chronological interpretation of clues.
+
+</TabItem>
+</Tabs>

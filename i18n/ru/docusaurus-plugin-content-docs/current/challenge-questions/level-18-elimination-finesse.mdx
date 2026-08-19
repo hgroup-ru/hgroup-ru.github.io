@@ -1,0 +1,22 @@
+---
+title: Какой Elimination-слот играет?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-elimination-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Reverse Finesse вызывает у Алисы синюю 3, но её Elimination Notes на синюю 3 стоят на слотах 2, 3 и 5, а не на обычной Finesse Position. Какая отмеченная карта является целью Elimination Finesse, если ни одна из них не Chop Moved?
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса играет **самую старую** карту с подходящей Elimination Note, здесь слот 5. Elimination Finesse намеренно не использует обычную Finesse Position. Chop Moved карты с заметками пропускаются при выборе цели; если все отмеченные карты Chop Moved, выбирается самая старая из них.
+
+</TabItem>
+</Tabs>

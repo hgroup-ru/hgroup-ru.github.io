@@ -1,0 +1,22 @@
+---
+title: Где может быть вторая копия?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-new-draw" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса неожиданно сбрасывает играбельную красную 4 с chop в спокойной позиции. Ни у кого из партнёров нет второй красной 4. Алиса добирает новую карту в слот 1. На каких слотах надо поставить Discard Elimination Notes для второй красной 4?
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса отмечает карты, которые уже были у неё в руке в момент сброса красной 4, **но не новый добор**. В руке из пяти карт это оставшиеся старые карты в слотах 2–5. Логика Discard Elimination состоит в том, что партнёры позволили сбросить играбельную копию, потому что Алиса уже держала вторую; карта, добранная после сброса, не может объяснять их прежнее решение.
+
+</TabItem>
+</Tabs>
