@@ -1,0 +1,25 @@
+---
+title: A Single-Card No-Information Bluff Is Forbidden
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-no-info-finesse-vs-bluff/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-info-finesse-vs-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A genuine No-Information re-clue causes Bob to blind-play red 1. If interpreting that blind-play as a Bluff would get only this single card and promise no red 2, may the team stop there and call it a one-card No-Information Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A No-Information clue **may** cause a Finesse that gets a single card, but a No-Information **Bluff can never get only one card**; it must get two. In the source line, that restriction forces the Finesse interpretation, and Bob can infer that he also has the connecting red 2 to blind-play on his next turn.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

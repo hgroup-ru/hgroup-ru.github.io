@@ -1,0 +1,25 @@
+---
+title: Однокарточный No-Information Bluff запрещён
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-no-info-finesse-vs-bluff/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-info-finesse-vs-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Настоящая No-Information re-clue заставляет Боба вслепую сыграть красную 1. Если интерпретация этого blind-play как Bluff получила бы только эту одну карту и никому не обещала красную 2, можно ли на этом остановиться и назвать ход однокарточным No-Information Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** No-Information clue **может** вызвать Finesse, который получает одну карту, но No-Information **Bluff никогда не может получать только одну карту** — он должен получить две. В исходной линии это ограничение заставляет выбрать интерпретацию Finesse, и Боб может вывести, что у него есть ещё и связующая красная 2, которую он сыграет вслепую на следующем ходу.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

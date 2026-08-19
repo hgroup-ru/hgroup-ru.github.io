@@ -1,0 +1,25 @@
+---
+title: Two Blind-Plays Make It a 5 Color Ejection
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-ooo-5ce-two/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-5ce-two" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn Alice clues red to Cathy, touching red 5 in slot 1, red 1 in slot 2, and red 2 in slot 3. An Out-of-Order Finesse repair with a number-5 Fix would require Bob to blind-play both red 3 and red 4. Which interpretation takes precedence?
+
+</TabItem>
+<TabItem value="solution">
+
+**5 Color Ejection.** The 5 Color Ejection takes precedence over Out-of-Order Finesse when the competing OOO line would require **two or more blind-plays from the same player**. Bob therefore uses the Ejection interpretation instead of giving the Fix Clue.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

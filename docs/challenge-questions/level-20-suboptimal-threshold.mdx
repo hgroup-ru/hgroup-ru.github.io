@@ -1,0 +1,22 @@
+---
+title: Slightly Worse Is Not Suboptimal Enough
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-suboptimal-threshold" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has a free choice between two ways to save a critical card. One clue is slightly less efficient on paper, but the other would touch a possible duplicate 3 already clued in Bob's hand. Should Bob automatically treat Alice's choice as a Suboptimal Prompt, Finesse, or Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The clue must be **really bad**, not merely technically worse. Good Touch concerns, useful negative information, or another reasonable contextual benefit can justify the apparent loss. The extra Play Clue meaning is inferred only when the chosen clue is clearly worse without an ordinary explanation.
+
+</TabItem>
+</Tabs>

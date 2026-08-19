@@ -1,0 +1,28 @@
+---
+title: Suboptimal Finesse или Suboptimal Bluff?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import FinesseDiagram from "@site/docs/challenge-questions/level-20-suboptimal-finesse-bluff/finesse.yml";
+import BluffDiagram from "@site/docs/challenge-questions/level-20-suboptimal-finesse-bluff/bluff.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-suboptimal-finesse-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Жёлтая 1 и синяя 1 уже сыграны; оставшаяся синяя 3 критическая. У Кэти есть полезные красная 3 и жёлтая 3, а синяя 3 лежит на chop. Алиса могла спасти её подсказкой числом 3, затронув все три полезные карты, но вместо этого даёт синюю подсказку только на синюю 3. Боб понимает явно худшую Save Clue как Play Clue, требующую синюю 2. Как он различает Suboptimal Finesse и Suboptimal Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+Если Боб вслепую играет **синюю 2**, связующую карту, это **Suboptimal Finesse**, после которого Кэти играет синюю 3. Если Finesse Position Боба вместо этого даёт **несвязанную карту**, например зелёную 1, Кэти понимает это как **Suboptimal Bluff** и знает, что её синяя 3 one-away-from-playable, а не синяя 4.
+
+<FinesseDiagram />
+
+<BluffDiagram />
+
+</TabItem>
+</Tabs>

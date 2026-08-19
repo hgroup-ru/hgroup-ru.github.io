@@ -1,0 +1,25 @@
+---
+title: Blind-play исключает следующую играбельную карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-ooo-corollary/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-corollary" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 2 уже сыграна. Алиса даёт Кэти красную подсказку, затрагивая слоты 2 и 3, но Боб вместо Out-of-Order Fix Clue вслепую играет несвязанную карту. Какую негативную информацию Кэти может записать о затронутых красных картах?
+
+</TabItem>
+<TabItem value="solution">
+
+По **Out-of-Order Corollary** Кэти может отметить затронутые карты как **не являющиеся следующей играбельной красной картой**. В исходном примере слот 2 становится красной 4 из интерпретации Bluff, а слот 3 — красной 5: если бы слот 3 был красной 3, Боб был бы обязан дать Fix Clue вместо blind-play.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Fix не отменяет исходный фокус
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-ooo-play-fix/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-play-fix" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу рука Кэти от новой карты к старой: красная 4, красная 1, красная 2, красная 3, синяя 4. Алиса даёт красную подсказку, поэтому первоначальный фокус попадает на красную 4, как будто это красная 1. Что должен сделать Боб и должна ли Кэти после исправления отказаться от исходного фокуса Алисы?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб даёт обязательную **Fix Clue**, здесь — числом 4. Затем Кэти играет более ранние красные карты по порядку и **всё равно доходит до исходной красной 4 в фокусе**. В Out-of-Order Play Clue Fix исправляет непосредственную ошибку в значении карты, но не отменяет исходное обещание, что фокус играбелен. Синяя 4, которую задела Fix Clue, — лишь побочный эффект и не обещана играбельной.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: An Occupied Play Clue Can Become a Self-Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-occupied-self-finesse/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-occupied-self-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Blue 1 is played. Alice has a globally known playable green 1; Bob has nothing useful to do. Alice clues number 2 to Cathy's slot 2, and Bob discards. Normally Cathy would read the clue as a Play Clue on blue 2. What extra interpretation must Cathy consider because Alice was Occupied?
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy must read it as an **Occupied Self-Finesse**. She blind-plays her Finesse Position; when it plays as red 1, the clued 2 is identified as the connecting red 2. The ordinary Play Clue has gained one extra step because the clue was Occupied.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

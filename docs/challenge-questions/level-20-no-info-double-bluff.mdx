@@ -1,0 +1,25 @@
+---
+title: Two Missed Connections Reveal a No-Information Double Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-no-info-double-bluff/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-info-double-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A genuine No-Information re-clue first causes Bob to blind-play an unrelated green 1. Cathy then sees Bob lacks the expected green 2, so she blind-plays her own Finesse Position expecting that connection, but her card is unrelated yellow 1. What does the table learn from these two non-connecting blind-plays?
+
+</TabItem>
+<TabItem value="solution">
+
+The clue is revealed as a **No-Information Double Bluff (NIDB)** rather than a Finesse. The two blind-plays satisfy the rule that a No-Information Bluff must get two cards. Because neither card actually connects to the touched 3, Cathy's 3 remains in the same superposition as before.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Для No-Information нужна ещё не играбельная затронутая карта
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-info-distance-layered" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Может ли настоящая No-Information re-clue вызвать No-Information Finesse или Bluff, если затронутая карта уже играбельна? И может ли тот же принцип вообще создать Layered Finesse на следующего игрока?
+
+</TabItem>
+<TabItem value="solution">
+
+Затронутая карта должна быть **one-or-more-away-from-playable**; уже играбельная затронутая карта не удовлетворяет этому условию 20-го уровня. При этом принцип **может** создать No-Information Layered Finesse на следующего игрока. Следующий игрок отличает его от Bluff потому, что Bluff можно было бы начать другой, более полезной подсказкой.
+
+</TabItem>
+</Tabs>

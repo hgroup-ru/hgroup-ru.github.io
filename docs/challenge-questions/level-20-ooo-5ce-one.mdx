@@ -1,0 +1,25 @@
+---
+title: One Blind-Play Keeps the Out-of-Order Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-ooo-5ce-one/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-5ce-one" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn Alice clues red to Cathy, touching red 5, red 1, red 2, and red 4. With a number-5 Fix, Cathy can play red 1 and red 2, Bob would need to blind-play only red 3, and Cathy can then continue through red 4 and red 5. Is this still a 5 Color Ejection?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** With only **one** required Bob blind-play, the two-or-more threshold for 5 Color Ejection is not met. Bob gives the number-5 **Fix Clue** and preserves the Out-of-Order Finesse interpretation.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

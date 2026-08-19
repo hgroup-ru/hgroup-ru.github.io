@@ -1,0 +1,25 @@
+---
+title: The Fix Does Not Erase the Original Focus
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-20-ooo-play-fix/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-play-fix" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn Cathy holds, newest to oldest, red 4, red 1, red 2, red 3, blue 4. Alice clues red, so the clue initially focuses the red 4 as though it were red 1. What should Bob do, and after that correction should Cathy abandon Alice's original focus?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob gives the required **Fix Clue**, here number 4. Cathy then uses the earlier red cards in order and **still goes on to play the original red-4 focus**. In an Out-of-Order Play Clue, the Fix corrects the immediate identity error; it does not cancel the original promise that the focus is playable. The blue 4 touched by the Fix is collateral damage and is not promised playable.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Один blind-play сохраняет Out-of-Order Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-20-ooo-5ce-one/solution.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-ooo-5ce-one" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса даёт Кэти красную подсказку, затрагивая красную 5, красную 1, красную 2 и красную 4. После Fix Clue числом 5 Кэти сможет сыграть красную 1 и красную 2, Бобу понадобится вслепую сыграть только красную 3, а затем Кэти продолжит через красную 4 и красную 5. Это всё ещё 5 Color Ejection?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** При всего **одном** обязательном blind-play Боба порог «два или более» для 5 Color Ejection не выполнен. Боб даёт **Fix Clue** числом 5 и сохраняет интерпретацию Out-of-Order Finesse.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

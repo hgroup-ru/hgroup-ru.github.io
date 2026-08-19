@@ -1,0 +1,28 @@
+---
+title: Suboptimal Finesse or Suboptimal Bluff?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import FinesseDiagram from "./level-20-suboptimal-finesse-bluff/finesse.yml";
+import BluffDiagram from "./level-20-suboptimal-finesse-bluff/bluff.yml";
+
+<ChallengeQuestionProgress level={20} id="level-20-suboptimal-finesse-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Yellow 1 and blue 1 are played; the remaining blue 3 is critical. Cathy has useful red 3 and yellow 3 plus blue 3 on chop. Alice could save it with a number-3 clue touching all three useful cards, but instead gives blue touching only blue 3. Bob reads the clearly worse Save Clue as a Play Clue requiring blue 2. How does Bob distinguish a Suboptimal Finesse from a Suboptimal Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+If Bob blind-plays **blue 2**, the connecting card, it is a **Suboptimal Finesse** and Cathy then plays blue 3. If Bob's Finesse Position instead blind-plays an **unrelated card**, such as green 1, Cathy reads a **Suboptimal Bluff** and knows her blue 3 is one-away-from-playable rather than blue 4.
+
+<FinesseDiagram />
+
+<BluffDiagram />
+
+</TabItem>
+</Tabs>
