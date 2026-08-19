@@ -1,0 +1,25 @@
+---
+title: Rank 5 Is Not a Direct Play Clue at Low Score
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-low-score-no-play/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-low-score-no-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+In a normal five-suit game the score is 9. Red 4 is played, and Cathy's red 5 is two-or-more-away from chop. Alice wants to tell Cathy that red 5 is directly playable. May Alice use a number-5 clue as an ordinary Play Clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A score of 9 is still in the **Low Score Phase** because the five-suit threshold is 10. During that phase, number-5 clues are never direct Play Clues. Alice must use a color clue or wait until the Normal Score Phase; a rank-5 clue must be interpreted through the Level 19 5-tech rules instead.
+
+</TabItem>
+</Tabs>

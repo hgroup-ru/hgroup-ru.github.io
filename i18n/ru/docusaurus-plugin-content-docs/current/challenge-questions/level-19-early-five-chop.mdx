@@ -1,0 +1,25 @@
+---
+title: Запрещённый ранний Stall рядом с chop становится Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-early-five-chop/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-early-five-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Early Game и Low Score Phase. У Кэти 5 находится в слоте 4, ровно в одной карте от chop, а у Алисы есть другая обычная Play Clue. Алиса всё равно даёт Кэти подсказку числом 5. Это просто ранний 5 Stall?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Поскольку у Алисы было другое полезное действие, обычный 5 Stall в Early Game здесь недопустим. Когда 5 находится ровно в одной карте от chop, дополнительное сообщение — **Early 5's Chop Move**: Кэти делает Chop Move карты справа от 5.
+
+</TabItem>
+</Tabs>

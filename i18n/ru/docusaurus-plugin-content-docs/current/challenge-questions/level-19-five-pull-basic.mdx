@@ -1,0 +1,25 @@
+---
+title: 5 Pull получает карту справа
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-basic/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-basic" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Early Game. У Алисы есть другая Play Clue, поэтому её подсказка числом 5 на красную 5 Кэти в слоте 1 не может быть 5 Stall. Карта сразу справа, слот 2, — играбельная синяя 1. Боб замечает, что красная 5 обычно могла бы требовать Finesse на красную 4. Кто должен сыграть вслепую и какую карту?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Кэти вслепую играет слот 2 — синюю 1.** В Low Score Phase числовая подсказка 5 не является Play Clue на красную 5, поэтому она не создаёт кажущийся Finesse на красную 4. Это **5 Pull**, который получает карту непосредственно справа от подсказанной 5 и имеет приоритет над такой Finesse-интерпретацией.
+
+</TabItem>
+</Tabs>

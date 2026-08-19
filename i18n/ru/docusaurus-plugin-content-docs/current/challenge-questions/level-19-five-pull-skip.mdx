@@ -1,0 +1,25 @@
+---
+title: 5 Pull пропускает уже полученную карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-skip/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-skip" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт корректный 5 Pull на 5 Кэти в слоте 1. Слот 2 Кэти уже имеет подсказку и ранее был «получен» другой Play Clue; в слоте 3 лежит нетронутая играбельная зелёная 1. Какую карту получает новый 5 Pull?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Слот 3.** 5 Pull пропускает карту непосредственно справа от 5, если она уже имеет подсказку или уже «получена», и получает следующую карту. Он не получает слот 2 повторно.
+
+</TabItem>
+</Tabs>

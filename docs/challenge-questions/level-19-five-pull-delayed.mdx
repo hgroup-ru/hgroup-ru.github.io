@@ -1,0 +1,25 @@
+---
+title: A 5 Pull Behaves Like a Delayed Play Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-delayed/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-delayed" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Cathy receives a valid 5 Pull. The pulled slot 2 could be red 2, but an already-clued red 1 elsewhere has not played yet. Must Cathy immediately blind-play slot 2 as though she were Finessed?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A 5 Pull is treated as a **Delayed Play Clue or potential Prompt**, not as a normal Finesse. The pulled card is allowed to connect through existing touched cards, so Cathy can wait for the known red 1 to play before playing the pulled red 2.
+
+</TabItem>
+</Tabs>

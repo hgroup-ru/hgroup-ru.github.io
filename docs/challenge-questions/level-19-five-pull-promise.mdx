@@ -1,0 +1,25 @@
+---
+title: A Follow-Up Play Clue Can Promise the Pulled Identity
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-promise/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-promise" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Donald has clued red 1 and blue 1. Cathy was 5 Pulled and her pulled card could therefore be red 2 or blue 2 as a Delayed Play Clue. Before either 1 plays, Bob gives Donald a Play Clue on the currently unplayable red 3. What does that tell Cathy?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy is now **promised red 2** as her pulled card. A follow-up Play Clue to a currently unplayable card lets the 5-Pulled player discard the broad Delayed Play interpretation: the pulled card is promised to be the connector that makes that new Play Clue work.
+
+</TabItem>
+</Tabs>

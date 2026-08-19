@@ -1,0 +1,25 @@
+---
+title: A 5 Pull Skips a Card Already Gotten
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-skip/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-skip" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a valid 5 Pull to Cathy's slot-1 5. Cathy's slot 2 is already clued and already "gotten" by an earlier play clue; slot 3 is an untouched playable green 1. Which card does this new 5 Pull get?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Slot 3.** A 5 Pull skips over a card immediately to the right of the 5 when that card is already clued or already gotten, and pulls the next card instead. It does not redundantly get slot 2 again.
+
+</TabItem>
+</Tabs>

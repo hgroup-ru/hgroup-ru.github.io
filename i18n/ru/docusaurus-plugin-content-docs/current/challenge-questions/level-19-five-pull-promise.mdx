@@ -1,0 +1,25 @@
+---
+title: Последующая Play Clue обещает значение Pull-карты
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-promise/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-promise" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Дональда подсказаны красная 1 и синяя 1. Кэти получила 5 Pull, поэтому её полученная карта в интерпретации Delayed Play Clue могла быть красной 2 или синей 2. До розыгрыша любой 1 Боб даёт Дональду Play Clue на пока неиграбельную красную 3. Что это сообщает Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Теперь Кэти **обещана красная 2** как её полученная карта. Последующая Play Clue на пока неиграбельную карту позволяет получателю 5 Pull отбросить широкую Delayed Play-интерпретацию: Pull-карта обещана как соединение, которое делает новую Play Clue рабочей.
+
+</TabItem>
+</Tabs>

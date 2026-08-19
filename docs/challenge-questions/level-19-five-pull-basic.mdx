@@ -1,0 +1,25 @@
+---
+title: A 5 Pull Gets the Card to the Right
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-basic/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-basic" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Early Game. Alice has another Play Clue available, so her number-5 clue to Cathy's slot-1 red 5 cannot be a 5 Stall. The card immediately to the right, slot 2, is a playable blue 1. Bob initially notices that red 5 would normally need a red-4 Finesse. Who should blind-play, and which card?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Cathy blind-plays slot 2, the blue 1.** In the Low Score Phase the number-5 clue is not a Play Clue on red 5, so it does not create the apparent red-4 Finesse. It is a **5 Pull**, which gets the card immediately to the right of the clued 5 and takes precedence over that Finesse interpretation.
+
+</TabItem>
+</Tabs>

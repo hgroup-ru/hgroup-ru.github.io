@@ -1,0 +1,25 @@
+---
+title: Two-or-More Away Becomes a 5 Number Ejection
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-number-ejection/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-number-ejection" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the first turn. Alice clues Cathy's slot-1 5 while a normal Play Clue is available, so this is not a Stall. Cathy's slot 2 is red 3: not playable and two-away-from-playable. What must Bob do, and what information is recorded about Cathy's red 3?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob plays his **Second Finesse Position** as a **5 Number Ejection**. The adjacent red 3 is too far away for a Pull Finesse but is not trash. After the Ejection, Cathy's slot 2 is marked **Chop Moved** and **two-or-more-away-from-playable** for the whole team.
+
+</TabItem>
+</Tabs>

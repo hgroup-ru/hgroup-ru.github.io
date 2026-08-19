@@ -1,0 +1,25 @@
+---
+title: 5 Pull работает как Delayed Play Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-19-five-pull-delayed/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-delayed" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Кэти получает корректный 5 Pull. Полученный слот 2 может быть красной 2, но ранее подсказанная красная 1 в другой руке ещё не сыграна. Обязана ли Кэти немедленно играть слот 2 вслепую, как при обычном Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** 5 Pull трактуется как **Delayed Play Clue или потенциальный Prompt**, а не как обычный Finesse. Полученная карта может соединяться через уже затронутые карты, поэтому Кэти может дождаться розыгрыша известной красной 1 и затем сыграть полученную красную 2.
+
+</TabItem>
+</Tabs>

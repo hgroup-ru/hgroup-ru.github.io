@@ -1,0 +1,25 @@
+---
+title: A 5 Pull Finesse Cannot Be a Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-19-five-pull-no-bluff/question.yml";
+
+<ChallengeQuestionProgress level={19} id="level-19-five-pull-no-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+In the Low Score Phase, Alice gives Cathy a number-5 clue on the 5 in slot 1 while another normal Play Clue is available, so the clue cannot be a Stall. The card immediately to the right is red 2, one-away-from-playable. Bob blind-plays green 1, unrelated to red 2. May Cathy reinterpret this as a special "5 Pull Bluff" and still play her pulled red 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** There is no 5 Pull Bluff. In a 5 Pull Finesse, the pulled card **always connects to the blind-play**. An unrelated green-1 blind-play cannot be used to sell Cathy's red 2 as the pulled continuation.
+
+</TabItem>
+</Tabs>
