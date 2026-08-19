@@ -1,0 +1,24 @@
+---
+title: Две заметки после Ride
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-riding" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы осталось ровно две карты с Elimination Notes для играбельной красной 2. Её партнёры не были заняты и на предыдущих ходах намеренно позволили более старой отмеченной карте оставаться на chop без спасения.
+
+Что говорит Алисе Elimination Riding Deduction?
+
+</TabItem>
+<TabItem value="solution">
+
+Красная 2 **не может лежать на chop-карте, которой позволили Ride**. Если бы это была она, свободный партнёр защитил бы её Play Clue или Save Clue. Поэтому Алиса может опередить обычное исключение вариантов и вслепую сыграть более новую из двух отмеченных карт как красную 2. Вывод зависит и от Ride, и от того, что партнёры не были заняты.
+
+</TabItem>
+</Tabs>

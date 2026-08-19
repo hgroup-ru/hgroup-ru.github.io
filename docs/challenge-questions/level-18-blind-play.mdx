@@ -1,0 +1,24 @@
+---
+title: One Possibility Remains
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-blind-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has Elimination Notes for red 4 on several cards. Later clues eliminate every noted slot except slot 5, but slot 5 still has no positive red or 4 clue.
+
+May Alice play slot 5 without waiting for a direct clue?
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** Once only one Elimination possibility remains, Alice knows the exact identity from the globally understood elimination history and may blind-play it as an **Elimination Blind-Play**. A positive clue is not required merely to repeat information the team already knows she can deduce.
+
+</TabItem>
+</Tabs>

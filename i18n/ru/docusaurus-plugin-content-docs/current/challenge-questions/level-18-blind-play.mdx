@@ -1,0 +1,24 @@
+---
+title: Остался один вариант
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={18} id="level-18-blind-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть Elimination Notes для красной 4 на нескольких картах. Последующие подсказки устранили все отмеченные слоты, кроме слота 5, но на слоте 5 всё ещё нет положительной красной подсказки или подсказки числом 4.
+
+Может ли Алиса сыграть слот 5, не дожидаясь прямой подсказки?
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Когда остаётся только один вариант Elimination, Алиса знает точное значение карты из глобально понятной истории исключений и может сыграть её вслепую как **Elimination Blind-Play**. Положительная подсказка не нужна только ради повторения информации, которую команда уже знает доступной Алисе.
+
+</TabItem>
+</Tabs>
