@@ -1,0 +1,22 @@
+---
+title: Can a Shout Echo?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-shout" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has a known play but instead discards known trash, creating Shout Discard conditions. Bob already has a known play, while Cathy's chop is important. Does the Shout bounce through Bob as an Echo Shout and Chop Move Cathy too?
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Echo Shout is illegal.** Known-trash discard is not severe enough to support the Echo convention. Alice's action is interpreted as either a single Shout Discard Chop Move or a Generation Discard; it never propagates extra Chop Moves merely because Bob already has a safe action.
+
+</TabItem>
+</Tabs>

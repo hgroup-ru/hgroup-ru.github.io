@@ -1,0 +1,22 @@
+---
+title: Карта с подсказкой покидает Locked руку
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-sacrifice" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Рука Боба Locked. Одна карта с подсказкой полезна позже, но не критическая, потому что существует другая копия. В тяжёлой позиции Боб сбрасывает эту карту с подсказкой, чтобы освободить руку. Обязаны ли партнёры интерпретировать сброс как Sarcastic Discard или Gentleman's Discard?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Игрок с Locked рукой может намеренно сбросить некритическую карту с подсказкой как **Sacrifice Discard**, и в этом контексте это не означает Sarcastic Discard или Gentleman's Discard. В зависимости от позиции сброс Locked-игрока может быть Generation Discard; команда различает варианты по общей аварийности и необходимости генерировать подсказку.
+
+</TabItem>
+</Tabs>

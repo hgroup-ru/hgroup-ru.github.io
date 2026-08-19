@@ -1,0 +1,22 @@
+---
+title: The Scream Bounces
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-scream" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice makes an unmistakable last-resort Scream Discard. Bob, the next player, already has a known playable card and therefore is not in danger of needing to discard. Cathy has the endangered important chop. Who is Chop Moved?
+
+</TabItem>
+<TabItem value="solution">
+
+**Bob and Cathy.** Because Bob already has a known play (a known safe discard works similarly), an ordinary Scream aimed only at Bob would be unnecessary. The emergency signal therefore **echoes** through Bob: both Bob and Cathy are Chop Moved, and each Chop Moved player is barred from discarding that chop on the next turn. If two consecutive players had known actions, the echo could bounce through both and move three chops.
+
+</TabItem>
+</Tabs>

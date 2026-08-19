@@ -1,0 +1,22 @@
+---
+title: Scream отскакивает дальше
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-scream" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает однозначный Scream Discard как last resort. У следующего игрока Боба уже есть известная играбельная карта, поэтому ему не грозит вынужденный сброс. На chop Кэти находится важная карта под угрозой. Кто получает Chop Move?
+
+</TabItem>
+<TabItem value="solution">
+
+**Боб и Кэти.** Поскольку у Боба уже есть известная игра (аналогично работает известный безопасный сброс), обычный Scream только Бобу был бы лишним. Поэтому аварийный сигнал **отскакивает** через Боба: Chop Moved становятся и Боб, и Кэти, и ни один из них не может сбросить этот chop на ближайшем ходу. Если два игрока подряд имели известные действия, Echo мог бы пройти через обоих и сдвинуть три chop.
+
+</TabItem>
+</Tabs>

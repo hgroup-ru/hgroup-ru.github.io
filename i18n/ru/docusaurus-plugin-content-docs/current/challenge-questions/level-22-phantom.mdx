@@ -1,0 +1,22 @@
+---
+title: Почти играбельная — ещё не Delayed Playable
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-phantom" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 4 стала бы играбельной после видимых красных 2 и 3 в руках партнёров, но эти связки ещё не подсказаны и не находятся на Finesse Position. Может ли Алиса уже дать красной 4 Play Clue как delayed playable карте?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Красная 4 пока лишь **Phantom Playable**: её связки видимы, но ещё не «получены» подсказками или Finesse Position. Play Clue можно давать на playable или delayed playable карты, но не на Phantom Playable. Команда часто старается защитить Phantom Playable, однако в тесной позиции её допустимо потерять вместо чрезмерных усилий, особенно если это 4.
+
+</TabItem>
+</Tabs>

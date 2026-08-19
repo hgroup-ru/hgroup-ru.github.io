@@ -1,0 +1,22 @@
+---
+title: Almost Playable Is Not Delayed Playable
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-phantom" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A red 4 would become playable after visible red 2 and red 3 in teammates' hands, but those connectors are neither clued nor on Finesse Position. May Alice already give the red 4 a Play Clue as a delayed playable card?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The red 4 is only **Phantom Playable**: its connectors are visible but not yet gotten by clues or Finesse Position. Play Clues may be given to playable or delayed playable cards, not to Phantom Playable cards. The team should often try to protect a Phantom Playable, but it is acceptable to lose one in a tight situation rather than bend over backwards, especially for a 4.
+
+</TabItem>
+</Tabs>

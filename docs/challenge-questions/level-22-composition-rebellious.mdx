@@ -1,0 +1,22 @@
+---
+title: One Discard, Two Emergencies
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-composition-rebellious" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+At 0 clues, Alice discards instead of playing because Bob's chop must be protected **and** Cathy needs the generated clue to save a later critical chop. How can one discard send different instructions to Bob and Cathy?
+
+</TabItem>
+<TabItem value="solution">
+
+It can be a **Composition Discard**: Scream Discard toward Bob, so Bob Chop Moves and must not discard that chop, while simultaneously Generation Discard toward Cathy, so Cathy is not Chop Moved and instead benefits from the generated clue. A related emergency later can produce a Rebellious Discard: a screamed-at player normally may not discard, but if spending the clue would strand the next Locked critical hand at 0 clues, they Chop Move normally and then discard the new chop to regenerate the clue.
+
+</TabItem>
+</Tabs>

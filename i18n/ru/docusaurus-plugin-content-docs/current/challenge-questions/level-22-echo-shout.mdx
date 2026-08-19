@@ -1,0 +1,22 @@
+---
+title: Может ли Shout отскочить?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-shout" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть известная игра, но вместо неё она сбрасывает известный trash, создавая условия Shout Discard. У Боба уже есть известная игра, а chop Кэти важен. Отскакивает ли Shout через Боба как Echo Shout и получает ли Кэти дополнительный Chop Move?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Echo Shout запрещён.** Сброс известного trash недостаточно серьёзен для Echo-конвенции. Действие Алисы интерпретируется либо как одиночный Shout Discard Chop Move, либо как Generation Discard; оно никогда не распространяет дополнительные Chop Move только из-за того, что у Боба уже есть безопасное действие.
+
+</TabItem>
+</Tabs>
