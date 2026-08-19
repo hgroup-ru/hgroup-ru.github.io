@@ -1,0 +1,25 @@
+---
+title: Когда Trash Finesse соврал бы
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-utd-protects-second-card/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-protects-second-card" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1, кроме красной, уже сыграны. Алиса подсказывает Кэти число 1, фокусируя мусорную зелёную 1 и одновременно впервые затрагивая играбельную красную 1. Обычный Trash Finesse сказал бы Кэти, что все затронутые карты — мусор. Что должен сделать Боб?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен использовать **Third Finesse Position** для Unknown Trash Discharge. Обычный Trash Finesse ошибочно отметил бы затронутую красную 1 как мусор и поэтому соврал бы. Discharge доказывает мусор только на focus, позволяя второй новой карте оставаться полезной.
+
+</TabItem>
+</Tabs>

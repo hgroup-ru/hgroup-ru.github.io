@@ -1,0 +1,25 @@
+---
+title: Trash Bluff или Unknown Trash Discharge?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-utd-vs-trash-bluff/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-vs-trash-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны. Алиса подсказывает красный цвет на красную 1 Кэти как будто это Play Clue. С точки зрения Кэти обычный слепой розыгрыш Bluff заставил бы карту выглядеть как полезная, но пока неиграбельная красная 3, а не доказал бы мусор. Как должен отреагировать Боб?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен вслепую сыграть из **Third Finesse Position**, обозначая **Unknown Trash Discharge**. Обычного Trash Bluff достаточно только когда возможные identities подсказанной карты — играбельные, delayed playable или мусор. Здесь обычный Bluff оставил бы полезную неиграбельную возможность и соврал бы Кэти.
+
+</TabItem>
+</Tabs>

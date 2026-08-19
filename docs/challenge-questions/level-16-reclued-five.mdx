@@ -1,0 +1,25 @@
+---
+title: A Re-Clued 5 Is Not a 5CE
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-reclued-five/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-reclued-five" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Cathy's red 5 already has a positive number-5 clue. Alice now re-clues it red. Bob sees that reaching red 5 would normally require multiple blind-plays. Does the 5 Color Ejection interpretation apply?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** 5 Color Ejection only applies to a 5 with **no previous positive clues**. Re-cluing an already positively clued 5 signals the Finesse on the cards leading up to it. A Chop Move's invisible information would not block a 5CE, but this real number clue does.
+
+</TabItem>
+</Tabs>

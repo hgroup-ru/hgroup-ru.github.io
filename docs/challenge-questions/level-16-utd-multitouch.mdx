@@ -1,0 +1,25 @@
+---
+title: Only the Focus Is Trash
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-utd-multitouch/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-multitouch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice clues red to Cathy, newly touching a focused red 1 on slot 2 and a red 5 on slot 3. Bob signals an Unknown Trash Discharge. Which touched cards may Cathy mark as trash?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Only the **focused slot 2** is trash. In a multi-touch Unknown Trash Discharge, Good Touch Principle still applies to the non-focused cards, so Cathy's red 5 remains useful. This is deliberately the opposite of a multi-touch Trash Bluff, where all touched cards are treated as trash.
+
+</TabItem>
+</Tabs>

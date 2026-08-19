@@ -1,0 +1,25 @@
+---
+title: Два слепых розыгрыша включают Ejection
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-five-color-two-blind/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-five-color-two-blind" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка на 2. Алиса даёт Кэти красную подсказку, впервые затрагивая неподсказанную красную 5. Боб видит красную 3 и красную 4 как две карты, которые пришлось бы вслепую сыграть для обычного Finesse. Из какой позиции он должен сыграть вместо этого?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен вслепую сыграть из **Second Finesse Position**. Поскольку обычный Finesse потребовал бы двух слепых розыгрышей, подсказка читается как **5 Color Ejection**. Prompt не учитываются в этом пороге — считаются только blind-plays.
+
+</TabItem>
+</Tabs>

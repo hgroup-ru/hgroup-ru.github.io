@@ -1,0 +1,25 @@
+---
+title: When a Trash Finesse Would Lie
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-utd-protects-second-card/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-protects-second-card" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s except red 1 are played. Alice clues number 1 to Cathy, focusing a trash green 1 while also newly touching the playable red 1. A normal Trash Finesse would tell Cathy that every touched card is trash. What should Bob do?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should use the **Third Finesse Position** for an Unknown Trash Discharge. A normal Trash Finesse would incorrectly mark the touched red 1 as trash, so it would lie. The Discharge proves only the focus is trash while allowing the other newly touched card to remain useful.
+
+</TabItem>
+</Tabs>

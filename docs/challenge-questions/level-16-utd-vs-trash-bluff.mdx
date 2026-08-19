@@ -1,0 +1,25 @@
+---
+title: Trash Bluff or Unknown Trash Discharge?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-utd-vs-trash-bluff/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-vs-trash-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice clues red to Cathy's red 1 as if it were a Play Clue. From Cathy's perspective, a normal Bluff blind-play would make the card look like useful, currently unplayable red 3 instead of proving trash. What reaction should Bob use?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should blind-play his **Third Finesse Position**, signaling an **Unknown Trash Discharge**. A normal Trash Bluff is only sufficient when the touched card's possibilities are playable, delayed playable, or trash. Here a normal Bluff would leave a useful unplayable possibility and would lie to Cathy.
+
+</TabItem>
+</Tabs>

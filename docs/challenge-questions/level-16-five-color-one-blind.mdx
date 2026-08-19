@@ -1,0 +1,25 @@
+---
+title: One Blind-Play Is Still a Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-five-color-one-blind/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-five-color-one-blind" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 3 is already played. Alice gives Cathy a red clue that newly touches an unclued red 5. Bob can see that fulfilling the normal Finesse interpretation would require him to blind-play only one card, red 4. Which position should Bob play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should blind-play his **Finesse Position**, not his Second Finesse Position. A 5 Color Ejection only takes over when the next player would need **two or more blind-plays** to fulfill the Finesse. One blind-play remains the ordinary Finesse interpretation.
+
+</TabItem>
+</Tabs>

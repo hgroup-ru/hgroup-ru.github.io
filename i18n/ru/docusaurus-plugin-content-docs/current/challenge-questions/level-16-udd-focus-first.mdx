@@ -1,0 +1,25 @@
+---
+title: В UDD сначала сбрасывается focus
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-udd-focus-first/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-focus-first" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+После Unknown Dupe Discharge Кэти знает, что новая подсказанная группа содержит дублированные красные 2. Focus находится в слоте 3, но в слоте 2 у неё уже есть глобально известный мусор. Какой сброс ожидается первым?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна сначала сбросить **UDD focus из слота 3**, даже раньше известного мусора слева. Focus-first — правило синхронизации UDD, в том числе когда само дублирование глобально видно. Оно не даёт команде разойтись в понимании, распознала ли Кэти UDD или только Unknown Trash Discharge.
+
+</TabItem>
+</Tabs>

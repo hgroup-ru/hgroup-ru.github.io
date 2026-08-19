@@ -1,0 +1,25 @@
+---
+title: Two Blind-Plays Trigger the Ejection
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-five-color-two-blind/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-five-color-two-blind" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 is played. Alice gives Cathy a red clue that newly touches an unclued red 5. Bob sees red 3 and red 4 as the two cards he would need to blind-play to complete the ordinary Finesse. Which position should Bob play instead?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should blind-play his **Second Finesse Position**. Because the normal Finesse would require two blind-plays, the clue is interpreted as a **5 Color Ejection**. Prompts do not count toward this threshold; only blind-plays do.
+
+</TabItem>
+</Tabs>

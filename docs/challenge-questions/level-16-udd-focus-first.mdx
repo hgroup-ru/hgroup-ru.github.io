@@ -1,0 +1,25 @@
+---
+title: UDD Discards the Focus First
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-udd-focus-first/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-focus-first" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+After an Unknown Dupe Discharge, Cathy knows the newly clued group contains duplicated red 2s. Her focused card is slot 3, but she also has globally known trash on slot 2. Which card is the expected discard first?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy should discard the **UDD focus on slot 3 first**, even before known trash to its left. Focus-first is the synchronization rule for UDD, including cases where the duplication itself is globally visible. It prevents teammates from disagreeing about whether Cathy recognized a UDD or merely an Unknown Trash Discharge.
+
+</TabItem>
+</Tabs>

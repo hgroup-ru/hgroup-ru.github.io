@@ -423,6 +423,20 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-15-bobs-truth",
           ],
         },
+        {
+          "Level 16": [
+            "challenge-questions/level-16",
+            "challenge-questions/level-16-five-color-one-blind",
+            "challenge-questions/level-16-five-color-two-blind",
+            "challenge-questions/level-16-reclued-five",
+            "challenge-questions/level-16-utd-vs-trash-bluff",
+            "challenge-questions/level-16-utd-multitouch",
+            "challenge-questions/level-16-utd-protects-second-card",
+            "challenge-questions/level-16-udd-same-hand",
+            "challenge-questions/level-16-udd-focus-first",
+            "challenge-questions/level-16-udd-two-card-order",
+          ],
+        },
       ],
     },
     {
