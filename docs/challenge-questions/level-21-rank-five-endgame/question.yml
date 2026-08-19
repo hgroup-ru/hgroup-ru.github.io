@@ -25,7 +25,7 @@ players:
         border: false
       - type: p4
         border: false
-      - type: b4
+      - type: p3
         border: false
   - name: Cathy
     cards:
