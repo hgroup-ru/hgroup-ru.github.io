@@ -1,0 +1,24 @@
+---
+title: Tempo Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-early-game-tempo" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Early Game. У Алисы нет обычной Play Clue или Save Clue и нет 5 Stall, но она могла бы повторно подсказать карту через Tempo Clue, которая обычно заставляет её сыграть. Алиса не хочет вызывать Chop Move.
+
+Может ли Алиса использовать эту подсказку просто как Tempo Clue Stall, чтобы не сбрасывать?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Tempo Clue Stall не разрешён как Stall в Early Game. В этой ситуации Tempo Clue сохраняет обычную интерпретацию, включая компонент Chop Move там, где он применяется. Если Алиса не хочет такой интерпретации и обязательных Early Game-подсказок больше нет, она должна сбросить карту, а не превращать Tempo Clue в свободный Stall.
+
+</TabItem>
+</Tabs>

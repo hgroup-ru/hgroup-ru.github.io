@@ -1,0 +1,24 @@
+---
+title: The Tempo Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-early-game-tempo" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Early Game. Alice has no normal Play Clue or Save Clue and no 5 Stall, but she could re-clue a card with a Tempo Clue that would normally make it play. Alice does not want to cause a Chop Move.
+
+Can Alice use that clue merely as a Tempo Clue Stall to avoid discarding?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Tempo Clue Stall is not allowed as an Early Game Stall. In this situation the Tempo Clue would instead retain its ordinary interpretation, including its Chop Move component where applicable. If Alice does not want that interpretation and has no remaining required Early Game clue, she must discard rather than treating the Tempo Clue as a free Stall.
+
+</TabItem>
+</Tabs>

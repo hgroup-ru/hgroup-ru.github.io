@@ -1,0 +1,24 @@
+---
+title: Без новой информации
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-hard-burn" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса находится в Early Game; у неё нет обычной Play Clue или Save Clue и нет 5 Stall. Она могла бы повторно подсказать карту так, чтобы не дать вообще никакой новой информации, — сделать Hard Burn.
+
+Разрешено ли использовать Hard Burn как Stall в Early Game?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Hard Burn — вариант с самой низкой очередностью в Stall Table, и в Early Game он не разрешён. Он становится доступен только в более серьёзных Stalling Situations: Double Discard / Scream Discard, Locked Hand и при 8 подсказках, причём лишь после исчерпания всех доступных подсказок с более высокой очередностью.
+
+</TabItem>
+</Tabs>
