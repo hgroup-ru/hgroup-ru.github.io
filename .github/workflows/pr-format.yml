@@ -18,6 +18,8 @@ jobs:
   format:
     if: github.event.issue.pull_request && github.event.comment.body == '/format'
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
 
     steps:
       - name: Validate formatter app configuration
