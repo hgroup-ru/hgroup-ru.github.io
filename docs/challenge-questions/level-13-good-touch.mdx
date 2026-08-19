@@ -1,0 +1,25 @@
+---
+title: The Other Blue 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-good-touch/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Alice clues Cathy number 4, and Bob blind-plays blue 3. Donald already has a clued blue card that the team can see is blue 4, although Donald does not yet know its exact identity. Should Cathy conclude that her newly clued 4 is blue 4?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** If Cathy were also blue 4, Alice would have duplicated Donald's already-touched blue 4 and violated Good Touch Principle. That visible duplicate lets Cathy reject the superficially connecting blue-4 Finesse interpretation. The clue can therefore be a Good Touch Bluff on another legal one-away 4; in this position the intended identity is red 4.
+
+</TabItem>
+</Tabs>

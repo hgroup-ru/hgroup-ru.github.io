@@ -1,0 +1,25 @@
+---
+title: The Critical Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-critical-color/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-critical-color" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played and one red 4 is already discarded. Alice gives Cathy a red Play Clue touching one previously untouched card. Bob blind-plays blue 1. Which two red identities must Cathy consider?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy must consider **red 3 and red 4**. Red 3 is the normal one-away Bluff target. Because the remaining red 4 is critical, Level 13 also permits a Critical Color Bluff on it: the clue is a color clue, the card was previously untouched, and it is not a 5. The blind-play does not distinguish those two possibilities yet.
+
+</TabItem>
+</Tabs>

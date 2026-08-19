@@ -1,0 +1,25 @@
+---
+title: Критическая карта
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-critical-color/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-critical-color" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 уже сыграна, а одна красная 4 сброшена. Алиса даёт Кэти красную Play Clue, затрагивая одну ранее не тронутую карту. Боб вслепую играет синюю 1. Какие две красные карты должна рассматривать Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна рассматривать **красную 3 и красную 4**. Красная 3 — обычная цель Bluff, которая one-away-from-playable. Оставшаяся красная 4 критическая, поэтому на уровне 13 разрешён и Critical Color Bluff: дана цветовая подсказка, карта до этого не была затронута и это не 5. Blind-play пока не различает эти два варианта.
+
+</TabItem>
+</Tabs>

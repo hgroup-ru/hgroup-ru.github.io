@@ -1,0 +1,25 @@
+---
+title: One or Two Connections
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-hard-bluff/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-hard-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 and blue 2 are played. Cathy already has an unknown-color clued 3. Alice gives Cathy a Play Clue to a new 4, and Bob blind-plays red 2. Must Cathy immediately play her clued 3 as red 3?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A simple Bluff is still possible because the new 4 could be blue 4, which is one-away-from-playable. A red Finesse + Prompt line is also possible if the cards are red 3 and red 4. Under Occam's Razor, Cathy does not promote the more complicated line to certainty. This is the Hard Bluff ambiguity: she keeps both possibilities and does not immediately play the 3.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Другая синяя 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-good-touch/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 2 и синяя 2 уже сыграны. Алиса даёт Кэти подсказку по 4, а Боб вслепую играет синюю 3. У Дональда уже есть синяя карта с подсказкой, которую команда видит как синюю 4, хотя сам Дональд ещё не знает её точное значение. Должна ли Кэти решить, что её новая 4 — синяя 4?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Если бы у Кэти тоже была синяя 4, Алиса продублировала бы уже затронутую синюю 4 Дональда и нарушила Good Touch Principle. Видимый дубликат позволяет Кэти отвергнуть внешне соединяющуюся интерпретацию Finesse на синюю 4. Поэтому подсказка может быть Good Touch Bluff на другую легальную 4, которая one-away-from-playable; в этой позиции это красная 4.
+
+</TabItem>
+</Tabs>

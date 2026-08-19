@@ -1,0 +1,25 @@
+---
+title: Одна или две связки
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-hard-bluff/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-hard-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 и синяя 2 уже сыграны. У Кэти есть 3 с подсказкой, но неизвестной масти. Алиса даёт Кэти Play Clue на новую 4, а Боб вслепую играет красную 2. Обязана ли Кэти сразу сыграть свою 3 как красную 3?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Простой Bluff всё ещё возможен: новая 4 может быть синей 4, которая one-away-from-playable. Одновременно возможна линия красного Finesse + Prompt, если карты — красная 3 и красная 4. По Occam's Razor Кэти не превращает более сложную линию в уверенность. Это неоднозначность Hard Bluff: она сохраняет оба варианта и не играет 3 немедленно.
+
+</TabItem>
+</Tabs>

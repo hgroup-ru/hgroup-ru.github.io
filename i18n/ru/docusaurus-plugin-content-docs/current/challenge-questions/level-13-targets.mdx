@@ -1,0 +1,22 @@
+---
+title: Какая цель Bluff легальна?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На уровне 13 Алиса хочет начать Bluff на совершенно не затронутой карте. Какие из этих целей могут быть легальны при **подсказке по числу**: (a) любая one-away-from-playable карта, (b) любая полезная 3, (c) любая критическая карта, кроме 5?
+
+</TabItem>
+<TabItem value="solution">
+
+**(a) и (b), но не (c).** Обычные цели Bluff, которые one-away-from-playable, работают с обоими типами подсказок. Искусственная конвенция 3 Bluff тоже работает и с цветом, и с числом. Произвольные критические карты, кроме 5, добавляет только Critical **Color** Bluff, поэтому подсказка по числу не делает такую карту легальной целью Bluff.
+
+</TabItem>
+</Tabs>
