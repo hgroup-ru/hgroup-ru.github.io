@@ -35,13 +35,18 @@ def main() -> None:
         'if [ "$current_head" != "$RUN_HEAD_SHA" ]',
         'case "$CI_RESULT" in',
         "cancelled|skipped)",
+        "fetch-depth: 2",
         "- name: Detect site build requirement",
+        "git diff --name-only HEAD^1 HEAD^2",
         "scripts/site_build_required.py",
         "steps.site-build.outputs.required == 'true'",
         "- name: Build RU site",
         "run: npm run build:ru",
     ):
         require(ci, marker, "ci.yml")
+
+    if "fetch-depth: 0" in ci:
+        fail("ci.yml must not fetch the full repository history for pull-request diff detection")
 
     if "Build RU site for fork pull requests" in ci:
         fail("ci.yml contains the retired fork-only build policy")
