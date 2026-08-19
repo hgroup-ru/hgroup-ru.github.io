@@ -12,14 +12,16 @@ import Question from "./level-15-bluff-on-bluff-deferral/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice's clue can be an ordinary Bluff, so Bob may be the reacting blind-player. Before resolving it, Bob notices another tempting Bluff he could initiate with his own clue. Is starting that second Bluff the normal expert line?
+Alice has given a clue that Bob may need to answer with an immediate blind-play as a Bluff. Before resolving it, Bob notices a different clue he could give that would itself Bluff Cathy. Bob can either resolve Alice's clue now or start the new Bluff first.
+
+Which action should Bob choose?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** Deferring a possible Bluff to perform **another Bluff should almost never be done**. It fractures the game into competing hypothetical states for different clue recipients. A possible Double Bluff makes the prohibition even stronger: then Bob must not defer at all.
+Bob should **resolve Alice's clue instead of starting another Bluff**. Deferring a possible Bluff to perform **another Bluff should almost never be done**: it fractures the game into competing hypothetical states for different clue recipients. If Alice's original clue could be a Double Bluff, the restriction is stronger still—Bob must not defer at all.
 
 </TabItem>
 </Tabs>
