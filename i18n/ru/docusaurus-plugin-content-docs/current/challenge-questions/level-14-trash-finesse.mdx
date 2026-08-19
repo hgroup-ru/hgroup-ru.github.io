@@ -1,0 +1,22 @@
+---
+title: Две новые затронутые карты
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка Trash Finesse впервые затрагивает **две** карты, которые получатель иначе прочитал бы как две обещанные играбельные карты. Кэти уже видит одну подходящую играбельную связку на Finesse Position другого игрока. Обещана ли вторая связка для второй затронутой карты?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Double Trash Finesse явно запрещён. Trash Finesse обещает только один подходящий blind-play, необходимый для демонстрации обмана. После него **все впервые затронутые карты** этой подсказки считаются trash. Вторая затронутая карта не требует второй связки.
+
+</TabItem>
+</Tabs>

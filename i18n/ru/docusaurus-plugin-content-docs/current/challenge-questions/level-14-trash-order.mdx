@@ -1,0 +1,22 @@
+---
+title: Какой trash сбрасывается первым?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На уровне 14 у Боба есть две глобально известные trash-карты с одинаково специфичной информацией. Какую он обычно должен сбросить и что означает пропуск этой карты?
+
+</TabItem>
+<TabItem value="solution">
+
+Обычно Боб сбрасывает **самую левую** известную trash-карту. Если вместо неё он сбрасывает вторую слева эквивалентную trash-карту, такой пропуск несёт смысл и делает Trash Order Chop Move следующему игроку. Исключение уровня 16 для focus-first после UTD/UDD не надо переносить назад в базовое правило уровня 14.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: The Card Left of Chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-trash-push/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-push" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are already played. Alice clues number 1 to Bob and the clue only touches Bob's chop card, which is a known-trash 1. What should Bob do with the card immediately to its left?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should **blind-play the card immediately to the left of chop**. Cluing known trash on chop cannot be a useful Trash Chop Move, because it would move nothing. The deliberate useless clue is therefore a Trash Push, which pushes Bob's new chop card onto the table. The pushed card must be immediately playable and is normally demonstrated immediately.
+
+</TabItem>
+</Tabs>

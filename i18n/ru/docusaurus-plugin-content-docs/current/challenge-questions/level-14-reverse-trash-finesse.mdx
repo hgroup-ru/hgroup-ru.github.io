@@ -1,0 +1,22 @@
+---
+title: Возможна ли обратная линия?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-trash-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Бобу Play Clue, которая может быть либо обычной подсказкой на последнюю играбельную красную 2, либо Reverse Trash Finesse через красную 2 Кэти. Одна копия красной 2 уже сброшена, поэтому видимая красная 2 Кэти критическая. Должен ли Боб всё ещё покрыть обе интерпретации, сбросив свою карту с подсказкой по 2?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Reverse Trash Finesse обязан содержать потенциальную линию Gentleman's Discard. Когда одна красная 2 уже сброшена, оставшаяся красная 2 Кэти критическая, поэтому Боб не может легально покрыть играбельную интерпретацию через Gentleman's Discard другой красной 2. Следовательно, интерпретация Reverse Trash Finesse недоступна; подсказку надо понимать иначе, а не заставлять критическую карту Кэти blind-play'иться.
+
+</TabItem>
+</Tabs>

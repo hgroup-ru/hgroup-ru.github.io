@@ -1,0 +1,25 @@
+---
+title: Skipping the First Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-shout-order/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-shout-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has a globally known playable card plus two equivalent globally known-trash cards. She discards the **second** trash card instead of the first expected trash card. Who is Chop Moved?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+This is a **Shout Discard Order Chop Move**. Discarding the first expected trash card would Shout Chop Move Bob. By skipping that trash and discarding the next one, Alice skips Bob as well, so the Chop Move lands on **Cathy**.
+
+</TabItem>
+</Tabs>

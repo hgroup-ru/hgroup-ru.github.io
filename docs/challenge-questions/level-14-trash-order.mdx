@@ -1,0 +1,22 @@
+---
+title: Which Trash Goes First?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+At Level 14, Bob has two globally known-trash cards with equivalent clue information. Which one is he normally expected to discard, and what does skipping it mean?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob normally discards the **leftmost** known-trash card. If he instead discards the second-leftmost equivalent trash card, the skip is meaningful and causes a Trash Order Chop Move on the next player. Do not import the Level 16 UTD/UDD focus-first exception backward into this Level 14 default.
+
+</TabItem>
+</Tabs>

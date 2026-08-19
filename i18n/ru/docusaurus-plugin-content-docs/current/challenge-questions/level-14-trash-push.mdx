@@ -1,0 +1,25 @@
+---
+title: Карта слева от chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-trash-push/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-push" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны. Алиса даёт Бобу подсказку по 1, и она затрагивает только его chop — известную trash-1. Что Боб должен сделать с картой непосредственно слева от неё?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен **сыграть вслепую карту непосредственно слева от chop**. Подсказка известного trash на самом chop не может быть полезным Trash Chop Move, потому что ничего не сдвигает. Поэтому намеренно бесполезная подсказка — это Trash Push: новый chop Боба «выталкивается» на стол. Вытолкнутая карта должна быть играбельной прямо сейчас и обычно демонстрируется сразу.
+
+</TabItem>
+</Tabs>

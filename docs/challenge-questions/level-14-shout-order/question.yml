@@ -1,0 +1,43 @@
+stacks:
+  - r: 2
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+bigText:
+  text: 3 clues
+players:
+  - name: Alice
+    cards:
+      - type: r3
+        clue: r
+      - type: b1
+        clue: 1
+      - type: g1
+        clue: 1
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: y4
+        border: false
+      - type: g3
+        border: false
+      - type: p4
+        border: false
+      - type: r5
+        border: false
+      - type: b5
+        border: false
+  - name: Cathy
+    cards:
+      - type: g4
+        border: false
+      - type: r4
+        border: false
+      - type: y5
+        border: false
+      - type: p3
+        border: false
+      - type: b4
+        border: false

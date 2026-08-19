@@ -1,0 +1,22 @@
+---
+title: Can the Reverse Line Exist?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-trash-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives Bob a Play Clue that could be either a normal clue on the final playable red 2 or a Reverse Trash Finesse through Cathy's red 2. One copy of red 2 is already discarded, so Cathy's visible red 2 is critical. Should Bob still cover both interpretations by discarding his clued 2?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Reverse Trash Finesse must contain a potential Gentleman's Discard line. With one red 2 already discarded, Cathy's remaining red 2 is critical, so Bob cannot legally cover the playable interpretation by performing a Gentleman's Discard of the other red 2. Therefore the Reverse Trash Finesse interpretation is unavailable; the team must interpret the clue some other way instead of forcing Cathy's critical card to blind-play.
+
+</TabItem>
+</Tabs>

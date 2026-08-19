@@ -1,0 +1,25 @@
+---
+title: Пропуск первого сброса
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-shout-order/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-shout-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть глобально известная играбельная карта и две эквивалентные глобально известные trash-карты. Она сбрасывает **вторую** trash-карту вместо первой ожидаемой. Кто получает Chop Move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Shout Discard Order Chop Move**. Сброс первой ожидаемой trash-карты сделал бы Shout Chop Move Бобу. Пропуская эту карту и сбрасывая следующую, Алиса также пропускает Боба, поэтому Chop Move получает **Кэти**.
+
+</TabItem>
+</Tabs>
