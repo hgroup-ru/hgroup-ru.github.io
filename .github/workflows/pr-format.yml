@@ -22,6 +22,19 @@ jobs:
       name: github-pages
 
     steps:
+      - name: Authorize formatter request
+        shell: bash
+        env:
+          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
+        run: |
+          case "$AUTHOR_ASSOCIATION" in
+            OWNER | MEMBER | COLLABORATOR) ;;
+            *)
+              echo "The /format command requires repository write access."
+              exit 1
+              ;;
+          esac
+
       - name: Validate formatter app configuration
         shell: bash
         env:
@@ -50,16 +63,7 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.formatter_token.outputs.token }}
           PR_NUMBER: ${{ github.event.issue.number }}
-          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
         run: |
-          case "$AUTHOR_ASSOCIATION" in
-            OWNER | MEMBER | COLLABORATOR) ;;
-            *)
-              echo "The /format command requires repository write access."
-              exit 1
-              ;;
-          esac
-
           pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}")"
           state="$(printf '%s' "$pr_json" | jq -r .state)"
           head_repo="$(printf '%s' "$pr_json" | jq -r .head.repo.full_name)"
