@@ -1,0 +1,22 @@
+---
+title: Before Blind-Playing
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-single-bluff-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob could be Bluffed by Alice's clue. Before blind-playing, Bob sees a very strong Finesse he could give to another player. Is deferring his possible Bluff categorically forbidden in the same way as deferring a suspected Double Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No, but it is risky and should be used sparingly.** A possible single Bluff may sometimes be deferred in order to perform a Finesse, although doing so can cause Information Desynchronization and can even break an unseen Double Bluff. Deferring a Bluff to perform another Bluff is much worse and should almost never be done. By contrast, once a Double Bluff is suspected, either reacting blind-player must never defer.
+
+</TabItem>
+</Tabs>

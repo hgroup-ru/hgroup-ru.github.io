@@ -1,0 +1,24 @@
+---
+title: Короче не всегда раньше
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-bobs-truth" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб видит ровно две правдоподобные интерпретации подсказки Алисы. Одна — Double Bluff с меньшим количеством розыгрышей вслепую; другая — правдивый Finesse, требующий больше розыгрышей. Боб реагирует первым.
+
+Должен ли Occam's Razor заставить Боба выбрать более короткую линию Double Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Когда выбор Боба именно между Double Bluff и правдивым Finesse, **Bob's Truth Principle имеет приоритет над Occam's Razor**. Боб принимает интерпретацию Finesse, даже если она требует больше розыгрышей вслепую. Более короткий Double Bluff не выигрывает только из-за своей простоты.
+
+</TabItem>
+</Tabs>

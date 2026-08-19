@@ -1,0 +1,24 @@
+---
+title: Simpler Is Not Always First
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-bobs-truth" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob can see that Alice's clue has exactly two plausible explanations. One is a Double Bluff with fewer blind-plays; the other is a truthful Finesse that requires more blind-plays. Bob is the first reacting player.
+
+Should Occam's Razor make Bob choose the shorter Double Bluff line?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** When Bob's choice is specifically between a Double Bluff and a truthful Finesse, **Bob's Truth Principle overrides Occam's Razor**. Bob assumes the Finesse even when it needs more blind-plays. The simpler-looking Double Bluff does not win merely by being shorter.
+
+</TabItem>
+</Tabs>

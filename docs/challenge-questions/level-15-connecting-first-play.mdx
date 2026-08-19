@@ -1,0 +1,24 @@
+---
+title: A Connecting First Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-connecting-first-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice initiates a Double Bluff. Bob's first blind-play happens to connect naturally to Alice's clued card, so after Bob plays the position could still look like an ordinary Finesse. Cathy is the second reacting player and her Finesse Position is playable.
+
+Does the connecting first blind-play by itself invalidate the Double Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Double Bluff remains valid even when Bob's first blind-play connects to the clued card. In that case Cathy may not know whether the line is a Double Finesse or Double Bluff until she also blind-plays, but the required immediate second blind-play still resolves the ambiguity.
+
+</TabItem>
+</Tabs>

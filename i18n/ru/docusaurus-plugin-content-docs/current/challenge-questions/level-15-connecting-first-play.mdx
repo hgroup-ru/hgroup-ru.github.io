@@ -1,0 +1,24 @@
+---
+title: Первый розыгрыш соединяется
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-connecting-first-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса начинает Double Bluff. Первый розыгрыш Боба вслепую случайно естественно соединяется с картой, которой Алиса дала подсказку, поэтому после хода Боба позиция всё ещё может выглядеть как обычный Finesse. Кэти — второй реагирующий игрок, и её Finesse Position играбельна.
+
+Делает ли сам по себе соединяющийся первый розыгрыш Double Bluff недопустимым?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Double Bluff остаётся допустимым, даже если первый розыгрыш Боба вслепую соединяется с картой с подсказкой. В таком случае Кэти может до собственного розыгрыша не знать, является ли линия Double Finesse или Double Bluff, но обязательный немедленный второй розыгрыш всё равно разрешает неоднозначность.
+
+</TabItem>
+</Tabs>

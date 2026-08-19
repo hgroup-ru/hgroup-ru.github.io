@@ -1,0 +1,22 @@
+---
+title: Перед розыгрышем вслепую
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-single-bluff-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка Алисы допускает, что Боб был Bluffed. До розыгрыша вслепую Боб видит очень сильный Finesse, который мог бы дать другому игроку. Запрещено ли откладывать возможный Bluff так же категорически, как предполагаемый Double Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет, но это рискованно и должно использоваться редко.** Возможный одиночный Bluff иногда можно отложить ради Finesse, хотя это способно вызвать Information Desynchronization и даже сломать нераспознанный Double Bluff. Откладывать Bluff ради другого Bluff гораздо хуже и почти никогда не следует. А вот если игрок не может исключить Double Bluff, ни первый, ни второй реагирующий игрок не должен откладывать свой розыгрыш.
+
+</TabItem>
+</Tabs>
