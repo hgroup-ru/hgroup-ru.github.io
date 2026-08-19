@@ -437,6 +437,22 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-16-udd-two-card-order",
           ],
         },
+        {
+          "Level 17": [
+            "challenge-questions/level-17",
+            "challenge-questions/level-17-value-clue",
+            "challenge-questions/level-17-blind-play",
+            "challenge-questions/level-17-tempo-clue",
+            "challenge-questions/level-17-tempo-chop-move",
+            "challenge-questions/level-17-tempo-stall",
+            "challenge-questions/level-17-assisted-trash-finesse",
+            "challenge-questions/level-17-assisted-utd",
+            "challenge-questions/level-17-time-travel-direct",
+            "challenge-questions/level-17-time-travel-blind",
+            "challenge-questions/level-17-time-travel-value-block",
+            "challenge-questions/level-17-time-travel-assisted-block",
+          ],
+        },
       ],
     },
     {
