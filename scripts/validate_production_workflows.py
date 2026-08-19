@@ -29,6 +29,12 @@ EXCLUSIVE_PRODUCTION_MARKERS = (
     "gh release edit",
 )
 
+RETIRED_RELEASE_MARKERS = (
+    "ALGOLIA_CRAWLER",
+    "crawler.algolia.com",
+    "Run Algolia Crawler",
+)
+
 
 def fail(message: str) -> None:
     print(f"production workflow invariant failed: {message}", file=sys.stderr)
@@ -48,6 +54,10 @@ def main() -> None:
     for marker in RELEASE_REQUIRED:
         if marker not in release:
             fail(f"release.yml is missing required marker: {marker!r}")
+
+    for marker in RETIRED_RELEASE_MARKERS:
+        if marker in release:
+            fail(f"release.yml contains retired release-time integration: {marker!r}")
 
     for path in sorted(WORKFLOWS_DIR.glob("*.yml")):
         if path == RELEASE_WORKFLOW:
