@@ -1,0 +1,22 @@
+---
+title: Which Known Play Has Priority?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-priority-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has several fully known playable cards. One is a required blind-play, one leads into a clued teammate card, one leads into her own hand, and another is a 5. Which category has the highest Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+The **blind-play**. Level 25 Priority starts with required blind-plays, then cards that lead into clued/Finessed cards in someone else's hand, then cards leading into the player's own hand, then 5s, then lower rank, then leftmost. Playing a lower-priority fully known card can deliberately signal a Priority move.
+
+</TabItem>
+</Tabs>

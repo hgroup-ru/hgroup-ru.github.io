@@ -1,0 +1,22 @@
+---
+title: Две подсказанные связки
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-priority-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса намеренно играет полностью известную карту с меньшим Priority, создавая Priority-сигнал. У Боба две карты с подсказками, каждая из которых может быть следующей связкой. Какую он играет первой и что делает, если она оказывается не той связкой?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб сначала играет **самую левую подходящую карту с подсказкой** как Priority Prompt. Как и при обычном Prompt, если карта оказывается не связкой, он продолжает по подсказанным кандидатам, пока не найдёт соединяющую карту. Если у Боба вообще нет подходящей подсказанной связки, сигнал может вместо этого быть Priority Finesse на подходящей Finesse Position.
+
+</TabItem>
+</Tabs>

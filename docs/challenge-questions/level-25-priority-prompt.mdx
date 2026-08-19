@@ -1,0 +1,22 @@
+---
+title: Two Clued Connecting Cards
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-priority-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice deliberately plays a lower-Priority fully known card, creating a Priority signal. Bob has two clued cards that could be the next connector. Which does he play first, and what if the first one is not the connecting card?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob plays the **leftmost applicable clued card** as a Priority Prompt. As with an ordinary Prompt, if that card reveals not to be the connector, he continues through the clued candidates until the connecting card is found. If Bob has no matching clued connector, the signal may instead be a Priority Finesse on an appropriate Finesse Position.
+
+</TabItem>
+</Tabs>

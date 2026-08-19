@@ -1,0 +1,22 @@
+---
+title: The Connector Is Off Finesse Position
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-load-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice plays a non-Priority known card that would normally suggest the next connector. Bob can see the actual connector in Cathy's hand, but it is **not** on Cathy's Finesse Position. Should Cathy still blind-play her Finesse Position to honor Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Priority Finesses are turned off.** When the promised connector is visible in someone else's non-Finesse Position, the team is committed to giving that card a direct **Load Clue**. The receiver interprets the Load Clue as a fresh normal Play Clue, not as a Fix Clue, and rewinds/deletes the Priority-related notes before reinterpreting it. A clue remains a Load Clue even if its surface shape would otherwise look like a Save Clue.
+
+</TabItem>
+</Tabs>

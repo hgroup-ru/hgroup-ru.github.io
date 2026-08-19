@@ -1,0 +1,22 @@
+---
+title: When Can an Unknown Play Signal?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-trust" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice can play a fully known red 2 that leads directly into Bob's clued red 3. Instead she plays a globally unknown playable 2. Under what condition should Bob nevertheless treat this as a Priority-style signal?
+
+</TabItem>
+<TabItem value="solution">
+
+Only when choosing the unknown card is **extremely suboptimal** in context, strong enough that ordinary information-gathering cannot explain it. Then the exceptional interpretation is a **Trust Finesse** (or analogous Trust Prompt/Bluff). The threshold is intentionally much stronger than ordinary Priority because unknown plays normally do not signal.
+
+</TabItem>
+</Tabs>

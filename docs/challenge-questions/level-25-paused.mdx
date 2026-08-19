@@ -1,0 +1,22 @@
+---
+title: When Can a Blind-Play Be Paused?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-paused" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob is unraveling a Layered Finesse and has just blind-played the **actual first connecting card** of the intended sequence. He still expects another blind-play in the same layer, but sees a chance to play a different clued card and create a Priority Finesse. May he pause the layer now?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Paused Priority Finesse is allowed only after Bob has already demonstrated that the current blind-play was an **unrelated layer card**, proving to everyone that more of the original Finesse remains hidden. If Bob has just played the actual connecting card, teammates do not know he is still Finessed for another one, so pausing would destroy the proof. Normally blind-play Priority is mandatory.
+
+</TabItem>
+</Tabs>

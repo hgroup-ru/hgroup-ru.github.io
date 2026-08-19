@@ -1,0 +1,22 @@
+---
+title: Когда можно приостановить blind-play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-paused" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб разворачивает Layered Finesse и только что вслепую сыграл **настоящую первую связку** задуманной последовательности. Он всё ещё ожидает ещё один blind-play в том же слое, но видит возможность сыграть другую карту с подсказкой и создать Priority Finesse. Может ли он сейчас приостановить слой?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Paused Priority Finesse разрешён только после того, как Боб уже продемонстрировал, что текущий blind-play был **несвязанной картой слоя**, и тем самым доказал всем, что часть исходного Finesse всё ещё скрыта. Если Боб только что сыграл настоящую связку, партнёры не знают, что он всё ещё Finessed ещё на одну карту, и пауза разрушит доказательство. Обычно Priority blind-play обязателен.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: У какой известной игры Priority выше?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-priority-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы несколько полностью известных играбельных карт. Одна — обязательный blind-play, другая ведёт в карту партнёра с подсказкой, третья ведёт в собственную руку Алисы, ещё одна — 5. У какой категории самый высокий Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+У **обязательного blind-play**. Priority уровня 25 начинается с blind-play, затем идут карты, ведущие в подсказанные/Finessed карты чужой руки, затем в собственную руку, затем 5, затем меньший ранг и затем более левая карта. Игра полностью известной карты с меньшим Priority может намеренно посылать Priority-сигнал.
+
+</TabItem>
+</Tabs>

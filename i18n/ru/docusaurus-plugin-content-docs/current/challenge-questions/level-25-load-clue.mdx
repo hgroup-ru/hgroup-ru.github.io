@@ -1,0 +1,22 @@
+---
+title: Связка вне Finesse Position
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-load-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса играет известную карту без Priority, что обычно указывает на следующую связку. Боб видит настоящую связку в руке Кэти, но она **не находится** на Finesse Position Кэти. Должна ли Кэти всё равно сыграть Finesse Position вслепую ради Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Priority Finesse отключён.** Когда обещанная связка видна в чужой руке вне Finesse Position, команда обязана дать этой карте прямую **Load Clue**. Получатель интерпретирует Load Clue как новую обычную Play Clue, а не Fix Clue, и сначала откатывает/удаляет Priority-related заметки, после чего заново читает подсказку. Подсказка остаётся Load Clue даже если внешне выглядела бы как Save Clue.
+
+</TabItem>
+</Tabs>

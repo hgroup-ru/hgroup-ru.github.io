@@ -1,0 +1,22 @@
+---
+title: Когда неизвестная игра может сигналить?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-trust" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса может сыграть полностью известную красную 2, которая прямо ведёт в красную 3 Боба с подсказкой. Вместо этого она играет глобально неизвестную играбельную 2. При каком условии Боб всё же должен читать это как Priority-подобный сигнал?
+
+</TabItem>
+<TabItem value="solution">
+
+Только когда выбор неизвестной карты **экстремально невыгоден** в контексте — настолько, что обычное получение информации его не объясняет. Тогда исключительная интерпретация — **Trust Finesse** (или аналогичный Trust Prompt/Bluff). Порог намеренно намного выше обычного Priority, потому что неизвестные игры обычно не сигналят.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Игра неизвестной играбельной карты
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-unknown-card" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса может сыграть полностью известную красную 2 или играбельную 2 с подсказкой по рангу, чей цвет всё ещё глобально неизвестен. Она выбирает неизвестную 2. Должен ли Боб автоматически вывести Priority Finesse из порядка игры?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Игра глобально неизвестной карты почти никогда сама по себе не запускает Priority: неизвестную карту можно выбрать ради получения информации. Обычно Priority является сигналом при осознанном выборе между **полностью известными** identity. Исключение — Trust Finesse, когда выбор неизвестной карты настолько экстремально плох без дополнительного смысла, что обычное получение информации его не объясняет.
+
+</TabItem>
+</Tabs>

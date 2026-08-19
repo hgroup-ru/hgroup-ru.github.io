@@ -1,0 +1,22 @@
+---
+title: Playing an Unknown Playable Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-unknown-card" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice can play a fully known red 2 or a rank-clued playable 2 whose color is still globally unknown. She chooses the unknown 2. Should Bob automatically infer a Priority Finesse from the order?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Playing a globally unknown card almost never triggers Priority by itself; unknown plays can be chosen to gain information. Priority is normally a signal when a player deliberately chooses among **fully known** identities. The exceptional case is a Trust Finesse, where choosing the unknown card is so extremely suboptimal that ordinary information-gathering cannot explain it.
+
+</TabItem>
+</Tabs>
