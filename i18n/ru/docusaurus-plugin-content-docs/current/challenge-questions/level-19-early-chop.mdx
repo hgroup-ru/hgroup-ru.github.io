@@ -1,0 +1,22 @@
+---
+title: Одна карта до chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-early-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идут Early Game и Low Score Phase. Алиса даёт подсказку по 5 на 5, которая находится ровно в одной карте от chop, хотя была доступна обычная Play Clue или Save Clue, поэтому легальным 5 Stall это быть не может. Что делает подсказка на уровне 19?
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Early 5's Chop Move**. Поскольку 5 Stall был недоступен, а затронутая 5 находится ровно в одной карте от chop, дополнительное сообщение — Chop Move карты справа от 5. В Low Score Phase подсказка по рангу 5 не читается как прямая Play Clue.
+
+</TabItem>
+</Tabs>

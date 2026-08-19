@@ -1,0 +1,22 @@
+---
+title: One Away from Chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-early-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is Early Game and Low Score Phase. Alice gives a number-5 clue to a 5 that is exactly one-away from chop, even though a normal Play Clue or Save Clue was available, so this cannot be a legal 5 Stall. What does the clue do at Level 19?
+
+</TabItem>
+<TabItem value="solution">
+
+It is an **Early 5's Chop Move**. Because a 5 Stall was not allowed and the touched 5 is exactly one-away from chop, the special message is to Chop Move the card to the right of the 5. Do not treat the rank-5 clue as a direct Play Clue in the Low Score Phase.
+
+</TabItem>
+</Tabs>

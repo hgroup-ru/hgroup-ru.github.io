@@ -1,0 +1,22 @@
+---
+title: Должна ли pulled-карта играть сразу?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-pull-delayed" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Легальный 5 Pull определил карту непосредственно справа от 5. Уже есть затронутые карты, которые могут понадобиться до того, как pulled-карта станет играбельной. Обязан ли получатель всё равно сыграть pulled-карту вслепую на самом ближайшем ходу?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** 5 Pull рассматривается как **Delayed Play Clue** (или потенциальный Prompt), а не как обычный Finesse с обязательным немедленным blind-play. Pulled-карте может понадобиться ждать, пока разрешатся уже существующие затронутые связки. Это одно из ключевых отличий 5 Pull от логики Finesse/Bluff.
+
+</TabItem>
+</Tabs>

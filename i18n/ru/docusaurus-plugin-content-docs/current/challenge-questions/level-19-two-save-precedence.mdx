@@ -1,0 +1,22 @@
+---
+title: Единственная другая подсказка — 2 Save
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-two-save-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Early Game, Low Score Phase. Алиса даёт Бобу подсказку по 5. С точки зрения Боба единственное другое действие, которое могло требоваться от Алисы, — 2 Save на chop Кэти, причём этот 2 Save был бы невозможен, если вторую копию 2 держит сам Боб. Должен ли Боб принудительно выбрать интерпретацию 5 Pull?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Приоритет у 5 Stall.** В этом специальном взаимодействии, когда единственное пропущенное действие — 2 Save на chop, простой 5 Stall имеет приоритет над 5 Pull. Боб должен учесть, что Visible Rule мог заблокировать Алисе 2 Save, и отметить свою руку как возможное место второй копии, а не играть pulled-карту вслепую.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Can Rank 5 Mean Play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-rank-five-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+The game is in the Low Score Phase. A 5 is currently playable and sits two-or-more-away from chop. Alice wants to give it a direct Play Clue. May she use a **number 5** clue for that purpose?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** In the Low Score Phase, number-5 clues are never interpreted as direct Play Clues. If the team needs to directly Play Clue a playable 5 at this score, Alice must use a color clue or wait. A rank-5 clue instead enters the Level 19 special-move logic such as 5 Stall, 5's Chop Move, or 5 Pull.
+
+</TabItem>
+</Tabs>

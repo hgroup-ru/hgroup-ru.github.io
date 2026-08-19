@@ -1,0 +1,22 @@
+---
+title: What Can a 5 Pull Finesse Be?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-no-pull-reverse-or-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice initiates a 5 Pull whose pulled card is one-away-from-playable. Could she intend either (a) a Reverse Finesse that is not demonstrated before the pulled player's next turn, or (b) a Bluff where the pulled card does not connect to the blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+**Neither.** A 5 Pull Finesse must be demonstrated by a blind-play **between the clue and the pulled player's next turn**, so a pure Reverse Finesse is not allowed. And the pulled card always connects to the blind-play, so there is no 5 Pull Bluff. A Double Finesse may contain a later Reverse Finesse component, but the initial proof is still forward.
+
+</TabItem>
+</Tabs>

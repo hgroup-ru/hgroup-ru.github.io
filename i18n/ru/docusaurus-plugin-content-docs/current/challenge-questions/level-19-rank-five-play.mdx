@@ -1,0 +1,22 @@
+---
+title: Может ли подсказка по 5 означать Play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-rank-five-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Игра находится в Low Score Phase. 5 уже играбельна и лежит в двух или более картах от chop. Алиса хочет дать на неё прямую Play Clue. Может ли она использовать для этого подсказку **по 5**?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** В Low Score Phase подсказки по 5 никогда не интерпретируются как прямые Play Clue. Если команде нужно напрямую подсказать играбельную 5 при таком счёте, Алиса должна дать цвет или подождать. Подсказка по рангу 5 вместо этого запускает логику специальных ходов уровня 19: 5 Stall, 5's Chop Move, 5 Pull и т. п.
+
+</TabItem>
+</Tabs>

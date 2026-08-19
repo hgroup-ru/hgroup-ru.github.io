@@ -1,0 +1,22 @@
+---
+title: The Only Other Clue Is a 2 Save
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-two-save-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Early Game, Low Score Phase. Alice gives Bob a rank-5 clue. From Bob's perspective the only other thing Alice might have needed to do was a 2 Save on Cathy's chop, and that 2 Save would be impossible if Bob himself holds the other copy of the 2. Should Bob force a 5 Pull interpretation?
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Prefer the 5 Stall.** In this specific interaction, if the only ignored action is a 2 Save on chop, the simple 5 Stall takes precedence over 5 Pull. Bob should account for the possibility that Alice was blocked from the 2 Save by the Visible Rule and mark his own hand for the other copy rather than blind-playing a pulled card.
+
+</TabItem>
+</Tabs>

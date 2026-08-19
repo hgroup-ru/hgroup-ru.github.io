@@ -1,0 +1,22 @@
+---
+title: Насколько плоха pulled-карта?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-ejection-or-discharge" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+В Low Score Phase подсказка по 5 вынужденно читается через логику 5 Pull. Карта рядом с 5 не играбельна. Если она (a) two-or-more-away-from-playable или (b) trash, какую Finesse Position использует следующий игрок?
+
+</TabItem>
+<TabItem value="solution">
+
+В случае **(a)** это **5 Number Ejection**, поэтому следующий игрок использует **Second Finesse Position**. В случае **(b)** это **5 Number Discharge**, поэтому используется **Third Finesse Position**. One-away-from-playable означало бы 5 Pull Finesse, а играбельная карта — обычный 5 Pull.
+
+</TabItem>
+</Tabs>

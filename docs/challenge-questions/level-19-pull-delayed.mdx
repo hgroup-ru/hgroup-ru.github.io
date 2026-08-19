@@ -1,0 +1,22 @@
+---
+title: Must the Pulled Card Play Immediately?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-pull-delayed" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A legal 5 Pull has identified the card immediately to the right of a 5. There are already touched cards that may need to play before the pulled card becomes playable. Must the receiver blind-play the pulled card on their very next turn anyway?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A 5 Pull is treated like a **Delayed Play Clue** (or potential Prompt), not like an ordinary Finesse requiring an immediate blind-play. The pulled card may have to wait for existing touched connections to resolve. This delayed behavior is one of the important differences between 5 Pull and Finesse/Bluff logic.
+
+</TabItem>
+</Tabs>

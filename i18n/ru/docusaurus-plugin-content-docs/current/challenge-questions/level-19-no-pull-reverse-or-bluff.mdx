@@ -1,0 +1,22 @@
+---
+title: Чем может быть 5 Pull Finesse?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={19} id="level-19-no-pull-reverse-or-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса начинает 5 Pull, чья pulled-карта one-away-from-playable. Может ли она задумать либо (a) Reverse Finesse, который не демонстрируется до следующего хода pulled-игрока, либо (b) Bluff, где pulled-карта не соединяется с blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+**Ни то ни другое.** 5 Pull Finesse обязан быть продемонстрирован blind-play **между подсказкой и следующим ходом pulled-игрока**, поэтому чистый Reverse Finesse недопустим. Кроме того, pulled-карта всегда соединяется с blind-play, поэтому 5 Pull Bluff не существует. Double Finesse может содержать более поздний компонент Reverse Finesse, но первоначальное доказательство всё равно forward.
+
+</TabItem>
+</Tabs>
