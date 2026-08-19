@@ -11,21 +11,25 @@ permissions:
 
 jobs:
   diagnose:
-    if: >-
-      github.event.issue.number == 102 &&
-      github.event.comment.body == '/algolia-debug' &&
-      github.event.comment.user.login == 'BarsukovSergey'
+    if: github.event.issue.number == 102
     runs-on: ubuntu-latest
 
     steps:
       - name: Query Algolia Crawler
+        if: github.event.comment.body == '/algolia-debug'
         env:
           GH_TOKEN: ${{ github.token }}
+          COMMENTER: ${{ github.event.comment.user.login }}
           ALGOLIA_CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
           ALGOLIA_CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
           ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
         shell: bash
         run: |
+          if [ "$COMMENTER" != "BarsukovSergey" ]; then
+            echo "Ignoring diagnostic request from $COMMENTER."
+            exit 0
+          fi
+
           if [ -z "$ALGOLIA_CRAWLER_USER_ID" ] ||
              [ -z "$ALGOLIA_CRAWLER_API_KEY" ] ||
              [ -z "$ALGOLIA_CRAWLER_ID" ]; then
@@ -34,18 +38,7 @@ jobs:
           fi
 
           response_file="$(mktemp)"
-          http_code="$(
-            curl \
-              --silent \
-              --show-error \
-              --location \
-              --output "$response_file" \
-              --write-out '%{http_code}' \
-              --request POST \
-              --header 'Content-Type: application/json' \
-              --user "$ALGOLIA_CRAWLER_USER_ID:$ALGOLIA_CRAWLER_API_KEY" \
-              "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex"
-          )"
+          http_code="$(curl --silent --show-error --location --output "$response_file" --write-out '%{http_code}' --request POST --header 'Content-Type: application/json' --user "$ALGOLIA_CRAWLER_USER_ID:$ALGOLIA_CRAWLER_API_KEY" "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex")"
 
           message="$(jq -r '.message // .error // .detail // empty' "$response_file" 2>/dev/null || true)"
           if [ -z "$message" ]; then
