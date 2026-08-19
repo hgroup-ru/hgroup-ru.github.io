@@ -1,7 +1,7 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 
-// cspell:ignore BSOZO
+// cspell:ignore ZEU
 const config: Config = {
   title: "H-Group Conventions",
   url: "https://hgroup-ru.github.io",
@@ -109,9 +109,9 @@ const config: Config = {
     },
 
     algolia: {
-      appId: "Z7BSOZO4QZ",
-      apiKey: "099b3d3832ac64be8ec4c2bf12cfcb62",
-      indexName: "hgroup-ru-docs",
+      appId: "U5ZEU3Z8TE",
+      apiKey: "b8166c330d4d315137f20cbb32dd71a4",
+      indexName: "hgroup-ru-docsearch",
       contextualSearch: false,
       searchPagePath: "search",
     },
