@@ -37,5 +37,5 @@ players:
         border: false
       - type: y3
         border: false
-      - type: g4
+      - type: b4
         border: false
