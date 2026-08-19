@@ -1,0 +1,25 @@
+---
+title: Какие карты получают Chop Move?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-trash-finesse-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-finesse-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка числа 1 от Алисы на слот 2 Donald выглядит как Play Clue на красную или жёлтую 1, но Кэти вслепую играет красную 1 с Finesse Position. Теперь Donald знает, что его затронутая 1 — мусор. Какие ещё карты Donald получают Chop Move из-за Trash Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Слоты 3 и 4.** Trash Finesse одновременно является Finesse и Trash Chop Move: получатель делает Chop Move **всем картам правее мусорной карты**. Сама затронутая мусорная карта в слоте 2 в эту область не входит.
+
+</TabItem>
+</Tabs>

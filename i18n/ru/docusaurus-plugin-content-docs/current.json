@@ -111,6 +111,10 @@
     "message": "Уровень 13",
     "description": "The label for category 'Level 13' in sidebar 'mainSidebar'"
   },
+  "sidebar.mainSidebar.category.Level 14": {
+    "message": "Уровень 14",
+    "description": "The label for category 'Level 14' in sidebar 'mainSidebar'"
+  },
   "sidebar.mainSidebar.category.More Examples": {
     "message": "Дополнительные примеры",
     "description": "The label for category 'More Examples' in sidebar 'mainSidebar'"

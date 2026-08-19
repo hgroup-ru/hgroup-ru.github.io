@@ -1,0 +1,25 @@
+---
+title: Skipping the Expected Trash
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-trash-order-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-order-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice's slot 2 and slot 4 are equally known trash with the same kind of clue. Instead of discarding the expected leftmost trash on slot 2, Alice deliberately discards slot 4. What should the team infer?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+This is a **Trash Order Chop Move**. Alice skipped the expected known-trash discard, so the **next player, Bob, should Chop Move**. The same-kind-clue condition matters: with differently clued trash, choosing a specific discard can communicate identity information instead of TOCM.
+
+</TabItem>
+</Tabs>

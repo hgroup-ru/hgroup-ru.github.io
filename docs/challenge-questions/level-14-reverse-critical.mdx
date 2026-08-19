@@ -1,0 +1,25 @@
+---
+title: No Potential Gentleman's Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-reverse-critical/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-critical" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+One red 2 is already discarded, and Cathy has the other red 2 on Finesse Position. Alice clues Bob's slot 1 with number 2; Bob can see that his touched 2 cannot be red 2, so he discards it as trash. Should Cathy now blind-play her red 2 as a Reverse Trash Finesse reaction?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Reverse Trash Finesses must contain a **potential Gentleman's Discard**. Here red 2 is critical, so the hypothetical case where Bob's touched card was red 2 could not be covered by discarding it. Therefore Cathy must not promote Bob's trash discard into a Reverse Trash Finesse.
+
+</TabItem>
+</Tabs>

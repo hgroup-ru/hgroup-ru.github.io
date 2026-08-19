@@ -1,0 +1,25 @@
+---
+title: The Connector Must Resolve First
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-trash-push-connector/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-push-connector" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives Donald a Trash Push by cluing the trash 1 on his chop. The pushed card on Donald's slot 3 is red 3, one-away-from-playable, and Bob has a known playable red 2. Can Bob defer the red 2 and allow Donald to reach his turn before the connection resolves?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Trash Push on a one-away-from-playable card promises a connecting **Prompt or Finesse**, and that connection cannot be reverse: it must fully resolve **before the clued player gets a turn**. Bob should play red 2 before Donald is expected to demonstrate the pushed red 3.
+
+</TabItem>
+</Tabs>

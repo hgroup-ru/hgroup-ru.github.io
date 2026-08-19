@@ -1,0 +1,25 @@
+---
+title: Можно ли начать этот Trash Bluff красной подсказкой?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-trash-bluff-red-four/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-bluff-red-four" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка дошла до 4. Алиса хочет дать красную подсказку на мусорную красную 1 Кэти и использовать слепой розыгрыш Боба из Bluff Seat, чтобы доказать, что затронутая красная карта Кэти — мусор. Допустима ли красная подсказка как начало Trash Bluff при таком состоянии стопки?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Когда красная стопка уже на 4, единственной полезной красной картой остаётся красная 5. Слепой розыгрыш из Bluff Seat в ответ доказывает, что карта Кэти **не была** обычным Play Clue на красную 5, поэтому затронутую красную карту можно доказать как мусор. Требование Trash Bluff выполнено.
+
+</TabItem>
+</Tabs>

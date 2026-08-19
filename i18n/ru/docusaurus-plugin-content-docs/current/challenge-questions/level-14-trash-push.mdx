@@ -1,0 +1,25 @@
+---
+title: Подсказка мусора на chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-trash-push/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-push" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны. Алиса даёт Бобу подсказку числа 1, которая касается только его неподсказанной chop-карты в слоте 5. Что Боб должен сделать с новой chop-картой в слоте 4?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен **сразу вслепую сыграть слот 4**. Подсказка известного мусора на chop не может быть обычным Trash Chop Move: затронутая карта и так уже была chop. Поэтому трата подсказки здесь означает **Trash Push** — новая chop-карта выталкивается на стол и обычно должна быть немедленно продемонстрирована.
+
+</TabItem>
+</Tabs>

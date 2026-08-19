@@ -1,0 +1,25 @@
+---
+title: When Red Does Not Prove Trash
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-trash-bluff-red-three/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-bluff-red-three" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Now the red stack is only on 3. Alice again wants to use a red clue on Cathy's trash red 1 to initiate a Trash Bluff. Is that red clue valid for the same purpose?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** At red 3, the blind-play can leave the touched red card looking like **red 5** rather than proving it to be trash. Trash Bluffs are only allowed when the blind-play proves the clued card is trash, and ordinary Bluff interpretations take precedence. Alice therefore cannot use this red clue as the Trash Bluff initiator here.
+
+</TabItem>
+</Tabs>

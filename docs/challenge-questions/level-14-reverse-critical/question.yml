@@ -1,0 +1,32 @@
+stacks:
+  - r: 1
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+discarded:
+  - r2
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: g2
+        clue: 2
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: r2
+      - type: x
+      - type: x
+      - type: x
+      - type: x
