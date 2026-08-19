@@ -1,0 +1,25 @@
+---
+title: Color Connect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-color-connect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On turn 1, Alice clues Cathy red on a physical red 3. Bob blind-plays red 1. Is this a legal 3 Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Red connects to red. Cathy therefore reads Bob's red 1 as a Finesse connection and expects her touched red card to be red 2. With no extra information to stop her, she would misplay the red 3 as red 2. A Bluff is illegal when it looks like this connecting Finesse.
+
+</TabItem>
+</Tabs>
