@@ -12,7 +12,7 @@ import Question from "./level-10-generation-discard/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-All 1s are played and there are 0 clues. Alice has a known playable `r2`. Bob has no clued cards. Cathy's `y5` is untouched on chop.
+All 1s are played and there are 0 clues. Alice has a known playable `r2`. Bob's Finesse Position is the other `r2`, and Bob has no clued cards. Cathy's `y5` is untouched on chop.
 
 How should Alice move?
 
@@ -21,7 +21,7 @@ How should Alice move?
 </TabItem>
 <TabItem value="solution">
 
-Alice should **discard her unknown chop card as a Generation Discard** instead of playing `r2`. That immediately creates a clue for Bob, who can 5 Save Cathy's `y5` before Cathy acts. If Alice simply plays, Bob has no clue to spend; relying on Cathy to choose a clue instead of discarding is exactly the kind of hidden-hand assumption the line should avoid.
+Alice should **discard her unknown chop card as a Generation Discard** rather than play or Gentleman's Discard the `r2`. The discard immediately creates a clue, so Bob can 5 Save Cathy's `y5` before Cathy acts. If Alice plays `r2`, Bob has no clue to spend. If Alice Gentleman's Discards `r2`, Bob must use his turn to play the transferred `r2`, so Cathy's `y5` still reaches her turn unclued. Generation Discard is the line that creates the clue without consuming Bob's rescue turn.
 
 </TabItem>
 </Tabs>
