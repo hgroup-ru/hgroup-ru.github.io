@@ -1,0 +1,25 @@
+---
+title: Hard Bluff Ambiguity
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-hard-bluff/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-hard-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 and blue 2 are played. Cathy has an unknown-color clued 3. Alice clues Cathy a new 4, then Bob blind-plays red 2. Must Cathy immediately play the 3 as red 3?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A simple Bluff remains possible because blue 4 is one-away-from-playable. A red Finesse + Prompt is also possible if Cathy's cards are red 3 and red 4. Occam's Razor keeps the simpler Bluff interpretation alive, so Cathy records both possibilities and does not immediately play the 3. This ambiguity is a **Hard Bluff**.
+
+</TabItem>
+</Tabs>
