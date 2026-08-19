@@ -1,0 +1,25 @@
+---
+title: Duplicitous Tempo всё ещё может сделать Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-tempo-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-tempo-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Используется показанная позиция Duplicitous Tempo. Алиса **не** находится в допустимой Stalling Situation, а дополнение информации о зелёной 2 Боба даёт только одну единицу Tempo на Promptable-карте, поэтому этот Tempo не Valuable. После того как Боб обнаруживает, что сыгранная карта в фокусе была дублированной красной 2, двигает ли подсказка также Chop Боба?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Для Duplicitous Tempo Clue действуют **те же условия Tempo Clue Chop Move, что и для обычной Tempo Clue**. Здесь подсказку нельзя объяснить допустимым stall, а одна единица Tempo не Valuable, поэтому Боб дополнительно трактует её как Tempo Clue Chop Move.
+
+</TabItem>
+</Tabs>

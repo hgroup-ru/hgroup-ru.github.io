@@ -1,0 +1,25 @@
+---
+title: Duplication Does Not Invent a Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-tempo-stall/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-tempo-stall" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+The same kind of duplicate play reveals a Duplicitous Tempo Clue, but this time Alice is in a stalling situation where an ordinary Tempo Clue Stall is legal at the relevant precedence. Does the fact that the played card was a duplicate automatically add a Tempo Clue Chop Move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Duplication does not create a new Chop Move rule. A Duplicitous Tempo Clue may or may not Chop Move under exactly the same conditions as an ordinary Tempo Clue. If the clue is legitimately explained as a Tempo Clue Stall, there is no extra Chop Move merely because a duplicate was involved.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Дубликат не создаёт Chop Move сам по себе
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-tempo-stall/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-tempo-stall" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Такой же розыгрыш дубликата раскрывает Duplicitous Tempo Clue, но на этот раз Алиса находится в Stalling Situation, где обычная Tempo Clue Stall допустима по соответствующему приоритету. Добавляет ли сам факт дублированной сыгранной карты автоматический Tempo Clue Chop Move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Дублирование не создаёт нового правила Chop Move. Duplicitous Tempo Clue может делать или не делать Chop Move ровно по тем же условиям, что и обычная Tempo Clue. Если подсказка нормально объясняется как Tempo Clue Stall, дополнительного Chop Move только из-за дубликата нет.
+
+</TabItem>
+</Tabs>

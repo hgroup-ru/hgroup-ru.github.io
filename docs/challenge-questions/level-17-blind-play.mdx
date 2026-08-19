@@ -1,0 +1,25 @@
+---
+title: A Duplicitous Blind-Play Stops the Chain
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-blind-play/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-blind-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Alice has a globally known red 3. Alice clues blue to Cathy, touching a valuable blue 4 as a Play Clue. Bob blind-plays his Finesse Position expecting blue 3, but it is red 3 and successfully plays. The blue 4 supplies enough clue value. Is blue 4 now promised to be playable through another hidden connection?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** This is a **Duplicitous Blind-Play**. As long as the clue already meets Minimum Clue Value Principle from the valuable card it secures, the surprising duplicate blind-play is the mechanism used to obtain that value. It does not call for another Prompt or blind-play, and Cathy's blue 4 is not thereby promised playable.
+
+</TabItem>
+</Tabs>

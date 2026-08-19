@@ -1,0 +1,25 @@
+---
+title: Дубликат не считается ценностью подсказки
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-value-clue/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-value-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 2 и синяя 2 уже сыграны. У Алисы находится известная всей команде красная 3. Она даёт Бобу подсказку числом 3, затрагивая две карты. Боб играет 3 в фокусе, ожидая синюю 3, но это красная 3, которая успешно дублирует известную карту Алисы. Другая затронутая 3 сама по себе достаточно ценна, чтобы удовлетворить Minimum Clue Value Principle. Должна ли команда вызвать ещё один Prompt или blind-play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Это **Duplicitous Value Clue**. Подсказка уже удовлетворяет Minimum Clue Value Principle за счёт другой ценной карты **без учёта дублированной красной 3**, поэтому дубликат не создаёт ещё одно соединение. Другая 3 сохраняется как полезная, но не обещается как играбельная прямо сейчас.
+
+</TabItem>
+</Tabs>

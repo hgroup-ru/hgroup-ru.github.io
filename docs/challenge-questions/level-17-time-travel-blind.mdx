@@ -1,0 +1,25 @@
+---
+title: Time Travel Through a Blind-Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-time-travel-blind/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-blind" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played and Cathy has a globally known blue 2. Bob has a previously clued red card on slot 3 with unknown rank. Alice clues number 3 to Bob, filling that card in as red 3 and touching nothing else. Bob therefore expects a Finesse on red 2 and blind-plays slot 1, but it is blue 2 and successfully duplicates Cathy's known card. The result is a 0-for-1 and does not look like an Assisted Trash Chop Move. What should Bob infer?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+This is a **Time Travel Chop Move (Blind-Play Form)** on Bob's own hand. The duplicated card was blocked from being cleanly clued directly, so Alice caused it to blind-play instead. Because the clue is truly bad enough—no Minimum Clue Value Principle value and no Assisted Trash Chop Move interpretation—the cards behind the duplicate receive the Time Travel Chop Move message.
+
+</TabItem>
+</Tabs>

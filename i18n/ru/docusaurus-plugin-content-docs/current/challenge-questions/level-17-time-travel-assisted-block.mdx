@@ -1,0 +1,28 @@
+---
+title: Assisted Trash имеет приоритет над Time Travel
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-time-travel-assisted-block/question.yml";
+
+<ChallengeQuestionProgress
+  level={17}
+  id="level-17-time-travel-assisted-block"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Синяя 1 уже сыграна. У Алисы находится известная всей команде жёлтая 1, и она даёт Кэти подсказку числом 1 на синюю 1 в слоте 3. Боб читает Trash Finesse и вслепую играет жёлтую 1, дублируя известную карту Алисы. Других ценных карт подсказка не затронула. Боб замечает, что его собственный blind-play дубликата был 0-for-1. Должен ли он поэтому сделать Time Travel Chop Move на своей руке?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Blind form Time Travel недоступна, когда подсказка выглядит как **Assisted Trash Chop Move** на получателя подсказки. Здесь есть именно это более простое объяснение: Кэти делает Chop Move карт справа от своей подсказанной синей 1. Боб не добавляет второй Chop Move на собственной руке.
+
+</TabItem>
+</Tabs>
