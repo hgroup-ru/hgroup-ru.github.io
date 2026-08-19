@@ -1,0 +1,27 @@
+---
+title: Когда Finesse всё ещё читается
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-eight-clue-finesse-readable/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-finesse-readable" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Снова Mid-Game с 8 подсказками. Алиса подсказывает красный цвет на красную 2 Кэти в slot 3, как будто просит Боба вслепую сыграть красную 1. Но теперь все видят, что уже подсказанная синим карта Дональда — играбельная синяя 2, поэтому у Алисы был допустимый Tempo Clue Stall с более высокой очередностью.
+
+Может ли 8 Clue Save всё ещё объяснять подсказку Алисы?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Видимый Tempo Clue Stall имеет очередь 3, а 8 Clue Save — очередь 4. Алиса не может пропустить доступный Stall с более высокой очередностью только ради 8 Clue Save. Поэтому команда исключает 8CS как объяснение этой подсказки и трактует её по обычным конвенциям; если Finesse в остальном корректен, Боб может на него реагировать.
+
+</TabItem>
+</Tabs>

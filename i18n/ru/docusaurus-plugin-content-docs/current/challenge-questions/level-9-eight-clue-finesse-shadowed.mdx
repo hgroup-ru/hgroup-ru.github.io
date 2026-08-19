@@ -1,0 +1,27 @@
+---
+title: Finesse при 8 подсказках
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-eight-clue-finesse-shadowed/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-finesse-shadowed" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Mid-Game с 8 подсказками. У Алисы нет Stall с более высокой очередностью. Она хочет подсказать красный цвет на красную 2 Кэти в slot 3 и ожидает, что Боб вслепую сыграет Finesse Position как красную 1.
+
+Может ли Алиса рассчитывать, что Боб прочитает это как Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** При 8 подсказках подсказка, сохраняющая произвольную карту вне slot 1, может быть **8 Clue Save**, если нет подсказки с более высокой очередностью. Поэтому Боб не может безопасно трактовать такую хитро выглядящую подсказку как Finesse: Stalling-интерпретация остаётся возможной. Алисе нужна линия, смысл которой не ломается контекстом 8 подсказок.
+
+</TabItem>
+</Tabs>

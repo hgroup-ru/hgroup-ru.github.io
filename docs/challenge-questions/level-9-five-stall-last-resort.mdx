@@ -5,15 +5,18 @@ title: A Playable Card in Hand
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-five-stall-last-resort/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-five-stall-last-resort" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice is in a Stalling Situation and sees an off-chop 5 that could receive a 5 Stall. However, Alice also knows that one of her own cards is immediately playable. There is no special Finesse Position Exception involved.
+Alice is in a Stalling Situation and sees Bob's off-chop green 5, which could otherwise receive a 5 Stall. However, Alice knows her own slot 1 card is the immediately playable red 2. There is no special Finesse Position Exception involved.
 
 May Alice give the 5 Stall instead of playing her card?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

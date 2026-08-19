@@ -1,0 +1,42 @@
+stacks:
+  - r: 2
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+bigText:
+  text: Bob has a Locked Hand
+players:
+  - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: r
+        middleNote: r4
+      - type: y
+        middleNote: y3
+      - type: g
+        middleNote: g5
+      - type: b
+        middleNote: b4
+      - type: p
+        middleNote: p3
+  - name: Cathy
+    cards:
+      - type: y3
+        clue: y
+      - type: g4
+        clue: 4
+      - type: p2
+        clue: p
+      - type: b5
+        clue: 5
+      - type: r3
+        border: false
+        below: Chop

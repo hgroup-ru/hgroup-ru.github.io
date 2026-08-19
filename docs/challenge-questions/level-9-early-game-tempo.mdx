@@ -5,15 +5,18 @@ title: The Tempo Clue
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-early-game-tempo/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-early-game-tempo" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is the Early Game. Alice has no normal Play Clue or Save Clue and no 5 Stall, but she could re-clue a card with a Tempo Clue that would normally make it play. Alice does not want to cause a Chop Move.
+It is the Early Game. Alice has no normal Play Clue or Save Clue and no 5 Stall. Bob's red 2 already has a red clue, and Alice could re-clue it with number 2 so that Bob would play it. Alice does not want the ordinary Tempo Clue interpretation to move Bob's chop.
 
 Can Alice use that clue merely as a Tempo Clue Stall to avoid discarding?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

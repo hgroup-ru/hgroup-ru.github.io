@@ -5,15 +5,18 @@ title: The Previous Hand
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-permission-to-discard/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-permission-to-discard" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is still the Early Game. On Bob's turn, every normal Play Clue and Save Clue has been extinguished except for a clue he could give to Alice, the player who acted directly before him. There are no other mandatory Early Game actions remaining.
+It is still the Early Game. Alice acted directly before Bob. On Bob's turn, every normal Play Clue and Save Clue has been extinguished except for the yellow 1 that Bob could clue in Alice's hand. There are no other mandatory Early Game actions remaining.
 
 Must Bob clue Alice before he may discard?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

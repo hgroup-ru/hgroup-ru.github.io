@@ -5,15 +5,18 @@ title: Играбельная карта в руке
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-five-stall-last-resort/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-five-stall-last-resort" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса находится в Stalling Situation и видит off-chop 5, которой можно дать 5 Stall. Однако Алиса также точно знает, что одна из её собственных карт сейчас играбельна. Finesse Position Exception здесь не применяется.
+Алиса находится в Stalling Situation и видит off-chop зелёную 5 Боба, которой в другой ситуации можно было бы дать 5 Stall. Однако Алиса знает, что её собственная карта в slot 1 — немедленно играбельная красная 2. Finesse Position Exception здесь не применяется.
 
 Может ли Алиса дать 5 Stall вместо розыгрыша своей карты?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

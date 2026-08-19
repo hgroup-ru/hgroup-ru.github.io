@@ -1,0 +1,40 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Early Game - Bob to act
+players:
+  - name: Alice
+    cards:
+      - type: y1
+        border: false
+      - type: r4
+        border: false
+      - type: g4
+        border: false
+      - type: b4
+        border: false
+      - type: p4
+        border: false
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: r3
+        border: false
+      - type: y3
+        border: false
+      - type: g3
+        border: false
+      - type: b3
+        border: false
+      - type: p3
+        border: false

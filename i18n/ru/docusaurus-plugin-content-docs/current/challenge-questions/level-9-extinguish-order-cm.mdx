@@ -5,15 +5,18 @@ title: Карта всё равно будет Chop Moved
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-extinguish-order-cm/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-extinguish-order-cm" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Идёт Early Game. Единственная оставшаяся видимая подсказка спасёт карту, которая почти наверняка будет Order Chop Moved одним из следующих игроков, уже имеющим две или больше подсказанных 1 в руке. Других обязательных действий Early Game не осталось.
+Идёт Early Game. У Боба уже подсказаны две 1, а полностью неподсказанная красная 4 на его chop почти наверняка будет защищена предстоящим Order Chop Move. Единственная оставшаяся видимая подсказка спасёт эту красную 4. Других обязательных действий Early Game не осталось.
 
 Обязана ли Алиса дать эту подсказку до первого сброса полностью неизвестной карты?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

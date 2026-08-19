@@ -1,0 +1,27 @@
+---
+title: A Finesse at 8 Clues
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-9-eight-clue-finesse-shadowed/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-finesse-shadowed" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Mid-Game with 8 clues. Alice has no higher-precedence stall available. She wants to clue red to Cathy's slot 3 red 2 and expects Bob to blind-play his Finesse Position as red 1.
+
+Can Alice rely on Bob reading this as a Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** At 8 clues, a clue that saves an arbitrary card outside slot 1 can be an **8 Clue Save** when no higher-precedence clue is available. Bob therefore cannot safely treat a tricky-looking clue like this as a Finesse; the stalling interpretation is live. Alice must choose a line whose intended interpretation survives the 8-clue context.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Slot 1 at 8 Clues
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-9-eight-clue-slot-one/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-slot-one" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Mid-Game with 8 clues. Alice clues Bob's slot 1 yellow 2. Could Bob dismiss the clue as an arbitrary 8 Clue Save simply because Alice was forced to clue at 8?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The 8 Clue Save special case may save any card on or off chop **except slot 1**. A clue that looks like an 8CS but lands on slot 1 is instead interpreted as a normal Play Clue or normal Save Clue. Here Bob must use the ordinary clue interpretation rather than treating the card as an arbitrary stall-save.
+
+</TabItem>
+</Tabs>

@@ -5,15 +5,18 @@ title: One Clue Left
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-locked-clue-resource/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-locked-clue-resource" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Cathy has a fully clued Locked Hand and will act after Alice. The team has exactly 1 clue. Alice has no urgent normal clue to give and is considering spending the last clue on a low-value clue elsewhere.
+Cathy has a fully clued Locked Hand and acts immediately after Alice. The team has exactly 1 clue. Alice has no urgent normal clue to give and is considering spending the last clue on an unrelated low-value clue.
 
 Is Alice free to spend it?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

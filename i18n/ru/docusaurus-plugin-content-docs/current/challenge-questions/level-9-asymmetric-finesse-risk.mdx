@@ -1,0 +1,27 @@
+---
+title: Лучший Stall видит только Алиса
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-asymmetric-finesse-risk/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-asymmetric-finesse-risk" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+При 8 подсказках Алиса видит, что карта Боба с синей подсказкой — играбельная синяя 2, поэтому знает, что у неё был Tempo Clue Stall с более высокой очередностью. Вместо этого она подсказывает красный цвет на красную 2 Кэти в slot 3, рассчитывая на Finesse красной 1 Боба в slot 1. Но Боб знает про свою карту только то, что она синяя; он не знает, что это играбельная синяя 2.
+
+Может ли Алиса рассчитывать, что Боб исключит 8 Clue Save из-за пропущенного Tempo Stall?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Аргумент по очередности помогает реагирующему игроку только тогда, когда он сам может знать, что подсказка с более высокой очередностью существовала. С точки зрения Боба у Алисы могло вообще не быть Tempo Clue Stall, поэтому 8 Clue Save остаётся возможным объяснением. Такой Finesse опасен и легко приводит к расхождению в интерпретациях, хотя Алиса и остальные игроки видят, почему она не считала подсказку Stall.
+
+</TabItem>
+</Tabs>
