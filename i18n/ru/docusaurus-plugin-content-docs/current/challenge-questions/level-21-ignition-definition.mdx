@@ -1,0 +1,22 @@
+---
+title: Что доказывает Ignition?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-ignition-definition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб делает blind-play из Finesse Position, потому что Алиса намеренно вызвала Ignition. Обязана ли карта Боба соединяться с целью подсказки или доказывать, что подсказанная карта играбельна?
+
+</TabItem>
+<TabItem value="solution">
+
+**Ни то ни другое.** Blind-play Ignition намеренно не связан ни с identity подсказки, ни с играбельностью затронутой карты. Это отличает его от Finesse, который соединяется, и от Bluff, где несвязанный ход всё равно сообщает что-то об играбельности цели подсказки.
+
+</TabItem>
+</Tabs>

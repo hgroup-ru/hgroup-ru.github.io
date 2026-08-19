@@ -1,0 +1,22 @@
+---
+title: Who Plays in an Ambiguous Double Ignition?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-double-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A Double Ignition is triggered and three teammates visibly have playable cards on Finesse Position. Bob does not already have a known-playable card. Which two players are designated to blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+The **first Ignition is Bob**, and the **second is the last player with a playable Finesse Position**. If Bob already had a known-playable card, the first Ignition would move to the first player who did not already have a known play. This fixed targeting prevents an Ambiguous Double Ignition from producing competing blind-plays.
+
+</TabItem>
+</Tabs>

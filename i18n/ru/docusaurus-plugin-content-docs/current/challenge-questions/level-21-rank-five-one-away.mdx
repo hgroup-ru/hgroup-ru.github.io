@@ -1,0 +1,22 @@
+---
+title: Играбельная 5 в одной карте от chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-rank-five-one-away" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Игра ещё не в End-Game, а 5 находится ровно в одной карте от chop. Алиса даёт подсказку **по 5**. Физически эта 5 уже играбельна, а 5 Stall невозможен. Может ли Боб прочитать подсказку как прямую Play Clue на играбельную 5 и проигнорировать интерпретацию Chop Move?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** На уровне 21 вне End-Game Play Clue-интерпретации подсказки по рангу 5 на 5 ровно в одной карте от chop отключены. Боб обязан рассматривать её как взаимодействие 5's Chop Move даже если физическая 5 уже играбельна; если такой Chop Move играбельной карты бессмысленен без другой причины, это может запустить Chop Move Ignition. В End-Game это специальное взаимодействие отключается.
+
+</TabItem>
+</Tabs>

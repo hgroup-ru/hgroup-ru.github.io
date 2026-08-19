@@ -1,0 +1,22 @@
+---
+title: Правда ли re-clue бесполезна?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-replay-stall" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса повторно подсказывает глобально известную играбельную карту, не затрагивая ни одной новой. Она находится в легальной stalling situation и не может безопасно сбросить. Обязана ли команда читать подсказку как Replay Double Ignition?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Обычная причина повторно затронуть известную играбельную карту — как раз легальный Stall. Replay Double Ignition появляется только тогда, когда re-clue иначе бесполезна **и Алиса не находится в stalling situation**. Кроме того, RDI не должна затрагивать новые карты.
+
+</TabItem>
+</Tabs>

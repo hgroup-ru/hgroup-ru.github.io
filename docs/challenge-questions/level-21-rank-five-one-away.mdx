@@ -1,0 +1,22 @@
+---
+title: The Playable 5 Is One Away from Chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-rank-five-one-away" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is not End-Game, and a 5 is exactly one-away from chop. Alice gives a **rank-5** clue. The 5 happens to be playable right now, and a 5 Stall is impossible. May Bob treat the clue as a direct Play Clue on the playable 5 and skip the Chop Move interpretation?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** At Level 21, rank-5 Play Clue interpretations on a 5 exactly one-away-from-chop are turned off outside End-Game. Bob must treat it as a 5's Chop Move interaction even if the physical 5 is already playable, and if Chop Moving that card is nonsensical without another reason, that may trigger Chop Move Ignition. This special interaction is turned off in End-Game.
+
+</TabItem>
+</Tabs>

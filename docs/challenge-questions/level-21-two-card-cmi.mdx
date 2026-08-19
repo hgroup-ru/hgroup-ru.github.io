@@ -1,0 +1,22 @@
+---
+title: Two Cards Are Chop Moved
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-two-card-cmi" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice makes a Chop Move that would move two cards and wants it to function as a Chop Move Ignition. What must be true about the two moved edge cards for this multi-card CMI to be legal?
+
+</TabItem>
+<TabItem value="solution">
+
+The **leftmost Chop Moved card must be playable**, and the **rightmost Chop Moved card must be trash or a copy of an unclued card in the same hand**. If three or more cards are crossed by the move, nothing is promised about the middle cards; they are not themselves the special edge commitments.
+
+</TabItem>
+</Tabs>

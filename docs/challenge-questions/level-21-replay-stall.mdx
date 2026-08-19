@@ -1,0 +1,22 @@
+---
+title: Is the Re-Clue Really Useless?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-replay-stall" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice re-clues a globally known playable card without introducing any new card. She is in a valid stalling situation and cannot safely discard. Must the team interpret the clue as Replay Double Ignition?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The ordinary reason for replaying a known playable card is precisely a legal stall. Replay Double Ignition only follows when the re-clue is otherwise useless **and Alice is not in a stalling situation**. The RDI also must not introduce new cards.
+
+</TabItem>
+</Tabs>

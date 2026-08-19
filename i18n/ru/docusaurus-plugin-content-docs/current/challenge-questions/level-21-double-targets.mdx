@@ -1,0 +1,22 @@
+---
+title: Кто играет при неоднозначном Double Ignition?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-double-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Запускается Double Ignition, и у трёх партнёров видны играбельные карты на Finesse Position. У Боба уже нет отдельной известной игры. Какие два игрока назначены на blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+**Первый Ignition — Боб**, а **второй — последний игрок с играбельной Finesse Position**. Если бы у Боба уже была известная играбельная карта, первый Ignition перешёл бы к первому игроку без уже известной игры. Такое жёсткое назначение не даёт Ambiguous Double Ignition породить конкурирующие blind-play.
+
+</TabItem>
+</Tabs>

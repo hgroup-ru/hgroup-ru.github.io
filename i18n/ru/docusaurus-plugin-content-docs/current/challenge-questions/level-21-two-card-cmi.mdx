@@ -1,0 +1,22 @@
+---
+title: Chop Move двух карт
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-two-card-cmi" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает Chop Move, который сдвигает две карты, и хочет, чтобы он работал как Chop Move Ignition. Что должно быть верно про две крайние Chop Moved карты, чтобы такой multi-card CMI был легален?
+
+</TabItem>
+<TabItem value="solution">
+
+**Самая левая Chop Moved карта должна быть играбельной**, а **самая правая — trash или копией нетронутой карты в той же руке**. Если движение пересекает три или больше карт, про средние карты ничего не обещается; специальными обязательствами остаются именно крайние карты.
+
+</TabItem>
+</Tabs>
