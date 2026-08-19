@@ -529,6 +529,23 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-21-bomb-triple",
           ],
         },
+        {
+          "Level 22": [
+            "challenge-questions/level-22",
+            "challenge-questions/level-22-phantom-definition",
+            "challenge-questions/level-22-phantom-protection",
+            "challenge-questions/level-22-phantom-scream",
+            "challenge-questions/level-22-sacrifice",
+            "challenge-questions/level-22-echo-scream",
+            "challenge-questions/level-22-echo-chain",
+            "challenge-questions/level-22-echo-shout",
+            "challenge-questions/level-22-composition",
+            "challenge-questions/level-22-rebellious",
+            "challenge-questions/level-22-flow-generation",
+            "challenge-questions/level-22-flow-scream",
+            "challenge-questions/level-22-flow-echo-boundary",
+          ],
+        },
       ],
     },
     {
