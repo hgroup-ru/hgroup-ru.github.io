@@ -18,6 +18,7 @@ players:
     cards:
       - type: r1
         border: false
+        middleNote: r1
       - type: b2
         border: false
       - type: y4
