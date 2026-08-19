@@ -1,5 +1,5 @@
 ---
-title: Купить ещё один круг
+title: Четыре игрока
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,7 +12,7 @@ import Question from "@site/docs/challenge-questions/level-10-gd-buys-time/quest
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Все 1 уже сыграны, жетонов подсказок нет. Алиса знает, что её красная карта — `r2`. В первом слоте Боба лежит вторая `r2`, а его `g3` находится на chop. У Кэти видна играбельная `g2`.
+Все 1 уже сыграны, жетонов подсказок нет. Алиса знает, что её красная карта — `r2`. В первом слоте Боба лежит вторая `r2`, а его `g3` находится на chop. У Дональда `g2` лежит в Finesse Position.
 
 Как должна сходить Алиса?
 
@@ -21,7 +21,7 @@ import Question from "@site/docs/challenge-questions/level-10-gd-buys-time/quest
 </TabItem>
 <TabItem value="solution">
 
-Алисе следует **сбросить известную `r2` как Gentleman's Discard**. Сброс создаёт жетон. Боб вслепую играет свой первый слот как `r2`, Кэти играет `g2`, а Алиса получает ещё один ход до следующего сброса Боба и успевает подсказать уже играбельную `g3`. Здесь побочная выгода действительно компенсирует потерю Tempo.
+Алисе следует **сбросить известную `r2` как Gentleman's Discard**. Сброс создаёт жетон, и Боб вслепую играет первый слот как перенесённую `r2`. Теперь Кэти может потратить появившийся жетон на Play Clue по `g3` на chop Боба. Поскольку `g3` не хватает только `g2`, Дональд вслепую играет свою Finesse Position как `g2`; после этого подсказанная `g3` Боба становится играбельной. Gentleman's Discard теряет Tempo, но здесь он создаёт подсказку, которая превращает опасный chop Боба в полезную Finesse-цепочку.
 
 </TabItem>
 </Tabs>

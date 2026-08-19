@@ -12,10 +12,10 @@ permissions:
 
 jobs:
   dispatch:
-    if: github.event.issue.number == 100
+    if: github.event.issue.number == 100 || github.event.issue.number == 102
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch Production Release
+      - name: Dispatch Production workflow
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -27,17 +27,28 @@ jobs:
             exit 1
           fi
 
-          source_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
-          echo "Dispatching Production Release from main at $source_sha."
+          case "$CONTROL_ISSUE" in
+            100) mode="release" ;;
+            102) mode="fix" ;;
+            *)
+              echo "Unsupported control issue: $CONTROL_ISSUE"
+              exit 1
+              ;;
+          esac
 
-          gh api \
-            --method POST \
-            "repos/${GITHUB_REPOSITORY}/actions/workflows/release.yml/dispatches" \
-            -f ref=main
+          source_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
+          echo "Dispatching Release mode=$mode from main at $source_sha."
+
+          jq -n --arg ref main --arg mode "$mode" \
+            '{ref: $ref, inputs: {mode: $mode}}' |
+            gh api \
+              --method POST \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/release.yml/dispatches" \
+              --input -
 
           gh issue comment "$CONTROL_ISSUE" \
             --repo "$GITHUB_REPOSITORY" \
-            --body "Production Release requested from \`main\` at \`$source_sha\`. Release workflow owns build, Pages deploy, production tag, GitHub Release, Algolia, changelog archival, and state sync."
+            --body "Production workflow requested in \`$mode\` mode from \`main\` at \`$source_sha\`."
 
       - name: Reopen control issue
         if: always()
