@@ -219,34 +219,6 @@ jobs:
           echo "name=$title" >> "$GITHUB_OUTPUT"
           echo "### GitHub Release marker: $release_url" >> "$GITHUB_STEP_SUMMARY"
 
-  algolia:
-    needs: deploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run Algolia Crawler
-        env:
-          ALGOLIA_CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
-          ALGOLIA_CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
-          ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
-        run: |
-          if [ -z "$ALGOLIA_CRAWLER_USER_ID" ] ||
-             [ -z "$ALGOLIA_CRAWLER_API_KEY" ] ||
-             [ -z "$ALGOLIA_CRAWLER_ID" ]; then
-            echo "Required Algolia crawler secrets are not configured."
-            exit 1
-          fi
-
-          curl \
-            --silent \
-            --fail-with-body \
-            --show-error \
-            --location \
-            --request POST \
-            --header "Content-Type: application/json" \
-            --user "$ALGOLIA_CRAWLER_USER_ID:$ALGOLIA_CRAWLER_API_KEY" \
-            "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex"
-
   archive-release-notes:
     needs: deploy
     if: inputs.mode != 'fix'
@@ -347,7 +319,7 @@ jobs:
             --base main \
             --head "$BRANCH" \
             --title "docs: archive $PRODUCTION_TAG release notes" \
-            --body "Mechanical post-release archival of the released \`Следующий релиз\` section in \`CHANGELOG.md`.")"
+            --body "Mechanical post-release archival of the released \`Следующий релиз\` section in \`CHANGELOG.md\`.")"
           echo "url=$pr_url" >> "$GITHUB_OUTPUT"
           echo "### Changelog archive PR: $pr_url" >> "$GITHUB_STEP_SUMMARY"
 
