@@ -1,0 +1,24 @@
+---
+title: Что доказывает розыгрыш
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-bluff-proof" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса находится в Bluff Seat и хочет начать Trash Bluff. Предлагаемая подсказка даже после розыгрыша вслепую всё ещё может оставить получателю правдоподобную обычную будущую играбельную карту среди вариантов затронутой карты.
+
+Достаточно ли этого для Trash Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Обычные Bluffs имеют приоритет над Trash Bluffs. Trash Bluff доступен только тогда, когда сам розыгрыш вслепую **докажет, что карта с подсказкой — мусор**. Например, если красная стопка поднята до 3, красная подсказка не подходит: после розыгрыша вслепую затронутая карта всё ещё может выглядеть как красная 5. Если красная стопка поднята до 4, такой розыгрыш уже может доказать, что затронутая красная карта не является играбельной красной 5. Кроме того, Trash Bluff требует Bluff Seat.
+
+</TabItem>
+</Tabs>

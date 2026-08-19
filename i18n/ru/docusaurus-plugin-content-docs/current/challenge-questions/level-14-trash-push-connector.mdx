@@ -1,0 +1,24 @@
+---
+title: До хода получателя
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-push-connector" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает Trash Push, в котором выталкиваемая карта one-away-from-playable. Нужная связующая карта находится в руке другого игрока, но тот сможет походить только **после** получателя Trash Push.
+
+Можно ли рассчитывать на обратный Trash Push Finesse или Prompt, который разрешится позднее?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Trash Push на one-away-from-playable обещает связующий Prompt или Finesse, но Trash Push Prompt и Trash Push Finesse не могут быть обратными. Связующая карта должна полностью разрешиться до хода игрока, получившего подсказку. Если порядок ходов этого не позволяет, такая линия Trash Push недопустима.
+
+</TabItem>
+</Tabs>

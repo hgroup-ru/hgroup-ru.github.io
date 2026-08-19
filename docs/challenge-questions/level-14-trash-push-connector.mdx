@@ -1,0 +1,24 @@
+---
+title: Before the Recipient Acts
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-push-connector" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice performs a Trash Push whose pushed card is one-away-from-playable. The intended connector is in another player's hand, but that player would not act until **after** the Trash Push recipient gets a turn.
+
+Can Alice rely on a reverse Trash Push Finesse or Prompt that resolves later?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A one-away Trash Push promises a connecting Prompt or Finesse, but Trash Push Prompts and Trash Push Finesses cannot be reverse. The connector must fully resolve before the clued player gets a turn. If the timing cannot do that, the proposed Trash Push line is not available.
+
+</TabItem>
+</Tabs>

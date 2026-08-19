@@ -1,0 +1,24 @@
+---
+title: What the Blind-Play Proves
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-bluff-proof" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice is in Bluff Seat and wants to initiate a Trash Bluff. The proposed clue could still leave the recipient believing that the touched card is a normal future playable card even after the blind-play occurs.
+
+Is that sufficient for a Trash Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Normal Bluffs take precedence over Trash Bluffs. A Trash Bluff is only available when the blind-play itself will **prove that the clued card is trash**. For example, with red played through 3, a red clue is not suitable because after a blind-play the touched card can still look like red 5; with red played through 4, the same kind of blind-play can prove that the touched red card is not the playable red 5. Trash Bluffs also require Bluff Seat.
+
+</TabItem>
+</Tabs>

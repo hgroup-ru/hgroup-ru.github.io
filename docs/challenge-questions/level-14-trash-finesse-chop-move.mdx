@@ -1,0 +1,24 @@
+---
+title: Cards to the Right
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-finesse-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A Trash Finesse has just been demonstrated: another player blind-played the card that the recipient originally expected their newly touched card to be. The trash card itself is in slot 2, with three cards to its right.
+
+What should the recipient conclude about the touched card and those cards to its right?
+
+</TabItem>
+<TabItem value="solution">
+
+The touched card is **trash**, and every card to its right is **Chop Moved**. At Level 14 a Trash Finesse combines the information of a Finesse with the movement of a Trash Chop Move. Later Level 24 rules add a special refinement when the trash card was already on chop, but that refinement is not imported backward here.
+
+</TabItem>
+</Tabs>

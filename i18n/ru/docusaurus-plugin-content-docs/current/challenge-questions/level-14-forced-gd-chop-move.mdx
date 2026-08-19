@@ -1,0 +1,24 @@
+---
+title: Играбельный вариант
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-forced-gd-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб вынужден сбросить карту с подсказкой, чтобы покрыть возможный Reverse Trash Finesse, но карта оказывается действительно играбельной подходящей картой. Поэтому сброс является Gentleman's Discard, а не настоящим мусором.
+
+Остаются ли карты справа от сброшенной карты Боба без изменений?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Это Forced Gentleman's Discard Chop Move. Хотя открывшаяся карта превращает действие Боба в Gentleman's Discard, сброс был вынужден формой, выглядевшей как Reverse Trash Finesse, поэтому карты справа становятся Chop Moved точно так же, как в варианте с мусором.
+
+</TabItem>
+</Tabs>

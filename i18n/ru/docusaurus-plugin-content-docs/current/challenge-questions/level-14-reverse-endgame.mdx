@@ -1,0 +1,24 @@
+---
+title: Ближе к концу
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-endgame" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка выглядит как возможный Reverse Trash Finesse, но партия близка к завершению, и команде срочно нужен Tempo, а не дополнительные сбросы.
+
+Должен ли получатель всё равно автоматически держать обратную интерпретацию?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Reverse Trash Finesses зависят от контекста и ближе к концу партии специально «выключаются». Они медленные и требуют дополнительных сбросов, поэтому команда не должна продолжать форсировать обратную интерпретацию, когда End-Game требует Tempo.
+
+</TabItem>
+</Tabs>

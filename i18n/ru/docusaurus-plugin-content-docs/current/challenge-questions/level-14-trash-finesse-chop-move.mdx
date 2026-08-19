@@ -1,0 +1,24 @@
+---
+title: Карты справа
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-finesse-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Trash Finesse только что был продемонстрирован: другой игрок вслепую сыграл карту, которой получатель изначально считал свою новую затронутую карту. Мусорная карта находится в слоте 2, а справа от неё лежат ещё три карты.
+
+Что получатель должен понять про затронутую карту и карты справа?
+
+</TabItem>
+<TabItem value="solution">
+
+Затронутая карта — **мусор**, а все карты справа от неё становятся **Chop Moved**. На уровне 14 Trash Finesse объединяет информацию Finesse с перемещением Trash Chop Move. Позднее на уровне 24 появляется особое уточнение для случая, когда мусор уже лежал на chop, но назад на уровень 14 это уточнение не переносится.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Discard to Cover Both Cases
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-cover" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played and all other 2s are already played. Alice clues Bob number 2 on a new card. Bob sees Cathy holding red 2 on Finesse Position, so Alice's clue could be either a normal Play Clue on Bob's red 2 or a Reverse Trash Finesse if Bob's 2 is trash.
+
+What action covers both interpretations?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should **discard the clued 2 immediately**. If it is trash, the discard demonstrates the Reverse Trash Finesse and tells Cathy to blind-play red 2. If Bob's card is actually red 2, the same discard is a Gentleman's Discard onto Cathy's Finesse Position. This potential Gentleman's Discard is exactly what makes the reverse line valid.
+
+</TabItem>
+</Tabs>

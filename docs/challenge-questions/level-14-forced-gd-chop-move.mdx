@@ -1,0 +1,24 @@
+---
+title: The Playable Case
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-forced-gd-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob is forced to discard his clued card to cover a possible Reverse Trash Finesse, but the card is revealed to be the genuinely playable matching card. The discard is therefore a Gentleman's Discard rather than actual trash.
+
+Do the cards to the right of Bob's discarded card remain untouched?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** This is the Forced Gentleman's Discard Chop Move. Even though the revealed card makes Bob's action a Gentleman's Discard, the discard was forced by a shape that looked like a Reverse Trash Finesse, so the cards to its right are Chop Moved exactly as they would have been in the trash case.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Сброс для двух вариантов
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-cover" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 сыграна, а все остальные 2 уже лежат на стопках. Алиса даёт Бобу подсказку числом 2 на новую карту. Боб видит красную 2 Кэти в Finesse Position, поэтому подсказка Алисы может быть либо обычной Play Clue на красную 2 Боба, либо Reverse Trash Finesse, если 2 Боба — мусор.
+
+Какое действие покрывает обе интерпретации?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен **немедленно сбросить карту с подсказкой по 2**. Если это мусор, сброс демонстрирует Reverse Trash Finesse и сообщает Кэти, что она должна вслепую сыграть красную 2. Если карта Боба действительно красная 2, тот же сброс становится Gentleman's Discard на Finesse Position Кэти. Именно потенциальный Gentleman's Discard делает обратную линию допустимой.
+
+</TabItem>
+</Tabs>
