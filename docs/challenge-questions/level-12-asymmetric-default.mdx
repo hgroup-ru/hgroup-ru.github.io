@@ -1,5 +1,5 @@
 ---
-title: An Unexpected Deduction
+title: Bob's Three Clued 2s
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -11,14 +11,16 @@ import TabItem from "@theme/TabItem";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Bob takes an action that would make sense if he had privately deduced the exact identity of one of his own cards. Cathy cannot reconstruct such a deduction from the information available to her, but there is also an ordinary conventional explanation for Bob's action that requires no asymmetric knowledge.
+It is the Early Game with 3 clues. Bob has three cards that were saved earlier with a 2 Save, and he has not discarded since. Cathy has a red 2 on chop. Alice now makes the first completely unknown discard, ending the Early Game.
 
-Should Cathy assume that Bob has asymmetric information?
+Which players should now mark Bob's three clued 2s as possible red 2s?
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** At level 12, players should not assume that another player has asymmetric information by default. Asymmetric knowledge is the exception. Cathy should use the ordinary conventional explanation while one remains available; she should infer that Bob has special private knowledge only when there is no other reasonable explanation for his action.
+**Alice, Bob, and Donald should; Cathy should not.** Alice's discard says there was no remaining required clue, so the visible red 2 on Cathy's chop cannot be the only red 2 outside Bob's hand. Because Bob has not discarded since his 2 Save, Alice, Bob, and Donald can infer that one of Bob's three clued 2s is the other red 2 and mark all three as possible red 2.
+
+Cathy cannot see her own chop card, so she cannot reconstruct that deduction. This is the asymmetric-information desync from the Level 12 source: the team must remember that Cathy does **not** share those notes.
 
 </TabItem>
 </Tabs>
