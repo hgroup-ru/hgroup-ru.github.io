@@ -1,0 +1,25 @@
+---
+title: Rank Disconnect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-rank-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-rank-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On turn 1, Alice clues Cathy number 3 on one card. Bob blind-plays blue 1. What does Cathy learn beyond the positive rank clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+This is a **3 Bluff**. Rank 1 does not connect to rank 3, so Cathy does not read the blind-play as a Finesse. She knows the touched card is a 3, but gains no suit information from the Bluff.
+
+</TabItem>
+</Tabs>
