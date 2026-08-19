@@ -1,0 +1,22 @@
+---
+title: Replay Double Ignition или Stall?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-replay-double" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса повторно даёт подсказку глобально известной играбельной карте и не затрагивает новых карт. В случае A Алиса находится в допустимой Stalling Situation и не может сбросить. В случае B Stalling Situation нет. Как команда должна различить эти случаи? Меняется ли интерпретация просто потому, что это происходит в начале, а не в конце игры?
+
+</TabItem>
+<TabItem value="solution">
+
+В случае A обычное объяснение — **Stall**. В случае B бесполезное повторение Play Clue передаёт **Replay Double Ignition**. RDI не должен затрагивать новые карты, но его можно выполнять на протяжении всей игры; в отличие от Trash Double Ignition, он не ограничен концом партии.
+
+</TabItem>
+</Tabs>

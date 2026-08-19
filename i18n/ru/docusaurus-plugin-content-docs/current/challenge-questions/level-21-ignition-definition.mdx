@@ -1,0 +1,22 @@
+---
+title: Чем Ignition отличается от Finesse и Bluff?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-ignition-definition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Кэти подсказку. После этого Боб вслепую играет из Finesse Position, но его карта никак не связывается с подсказанной картой Кэти. Кроме того, играбельность карты Кэти не требуется доказывать ходом Боба. Может ли это всё равно быть Ignition и чем он отличается от Finesse и Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+Да. **Ignition** специально вызывает blind-play из Finesse Position, который не связан ни с самой подсказкой, ни с играбельностью подсказанной карты. Поэтому он не создаёт связь, в отличие от Finesse, и не должен ничего доказывать получателю подсказки, в отличие и от Finesse, и от Bluff.
+
+</TabItem>
+</Tabs>

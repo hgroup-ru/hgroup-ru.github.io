@@ -1,0 +1,25 @@
+---
+title: Chop Move Ignition с одной картой
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-21-cmi-one-card/solution.yml";
+
+<ChallengeQuestionProgress level={21} id="level-21-cmi-one-card" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу рука Кэти от новой карты к старой: синяя 4, синяя 4, синяя 5, красная 1. Алиса даёт Кэти подсказку числом 5, затрагивая слот 3. Боб видит, что у Алисы были обычные Play Clues и что Chop Move играбельной красной 1 без дополнительной причины бессмысленен. Что обязан сделать Боб и что Кэти узнаёт из его действия?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб трактует странный Chop Move как **Chop Move Ignition** и вслепую играет Finesse Position; в исходной позиции это синяя 1. Blind-play Боба показывает Кэти, что подсказка была не просто Early 5's Chop Move. Поэтому Кэти понимает, что Chop Moved-карта играбельна, и вслепую играет слот 4 — карту непосредственно справа от подсказанной 5.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Rank 5 One-Away Interaction
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-21-rank-five-one-away/solution.yml";
+
+<ChallengeQuestionProgress level={21} id="level-21-rank-five-one-away" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is Mid-Game. Red 3 is played. Cathy's hand from newest to oldest is blue 4, green 3, blue 4, blue 5, blue 1. Alice clues number 5 to Cathy, focusing the blue 5 exactly one-away-from-chop. Bob expected Alice to clue Cathy's 1. At Level 21, may Bob interpret the rank-5 clue as a Play Clue on the 5? What should he do?
+
+</TabItem>
+<TabItem value="solution">
+
+No. In the **Chop Move Ignition Interaction**, Play Clue interpretations for a rank-5 clue focused on a 5 exactly one-away-from-chop are turned off. Bob therefore treats the 5 as Chop Moved and reacts to the Chop Move Ignition by blind-playing Finesse Position; in the source position this is red 4. Cathy then recognizes the CMI and blind-plays her slot 5. The blind-play is about the card being Chop Moved, not about connecting directly to the 5.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

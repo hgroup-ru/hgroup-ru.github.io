@@ -1,0 +1,22 @@
+---
+title: Two Boundaries of the Rank 5 Interaction
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-rank-five-endgame" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Consider a rank-5 clue that focuses a 5 exactly one-away-from-chop. First, suppose it is Mid-Game and the 5 is actually playable. Second, suppose the same shape occurs in End-Game. Does the next player react the same way in both cases?
+
+</TabItem>
+<TabItem value="solution">
+
+No. During the active Level 21 interaction, even an **actually playable 5** is treated as though the rank-5 clue were not a Play Clue: the next player must react as if the 5 were not playable, because all such Play Clue interpretations are turned off. But the entire **Chop Move Ignition Interaction is turned off in End-Game**, so that special Level 21 rule no longer applies there.
+
+</TabItem>
+</Tabs>

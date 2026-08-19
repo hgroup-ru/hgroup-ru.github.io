@@ -1,0 +1,22 @@
+---
+title: Когда известный мусор означает Double Ignition?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-trash-double" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт подсказку одной или нескольким впервые затронутым картам, которые все знают как мусор. Команда может исключить Trash Chop Move, а также Trash Push и Trash Push Finesse. Какая интерпретация остаётся? Если теоретически можно представить Bad Trash Chop Move Ejection, что имеет приоритет?
+
+</TabItem>
+<TabItem value="solution">
+
+Подсказка передаёт **Trash Double Ignition**. Подсказку известному мусору сначала нужно проверить на обычные Trash Chop Move и Trash Push; если ни одно из них не объясняет действие, остаётся TDI. Игроки должны предпочитать Trash Double Ignition перед **Bad Trash Chop Move Ejection**, который Level 21 прямо называет очень редким и относит к более позднему материалу.
+
+</TabItem>
+</Tabs>
