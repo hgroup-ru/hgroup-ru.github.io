@@ -1,9 +1,9 @@
 name: Algolia Diagnostic
 
 on:
-  issue_comment:
+  issues:
     types:
-      - created
+      - closed
 
 permissions:
   contents: read
@@ -16,20 +16,13 @@ jobs:
 
     steps:
       - name: Query Algolia Crawler
-        if: github.event.comment.body == '/algolia-debug'
         env:
           GH_TOKEN: ${{ github.token }}
-          COMMENTER: ${{ github.event.comment.user.login }}
           ALGOLIA_CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
           ALGOLIA_CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
           ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
         shell: bash
         run: |
-          if [ "$COMMENTER" != "BarsukovSergey" ]; then
-            echo "Ignoring diagnostic request from $COMMENTER."
-            exit 0
-          fi
-
           if [ -z "$ALGOLIA_CRAWLER_USER_ID" ] ||
              [ -z "$ALGOLIA_CRAWLER_API_KEY" ] ||
              [ -z "$ALGOLIA_CRAWLER_ID" ]; then
