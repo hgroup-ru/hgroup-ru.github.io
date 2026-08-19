@@ -1,0 +1,25 @@
+---
+title: Неоднозначность Hard Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-hard-bluff/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-hard-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Сыграны красная 1 и синяя 2. У Кэти есть 3 с подсказкой по числу и без информации о масти. Алиса подсказывает Кэти новую 4, затем Боб вслепую играет красную 2. Обязана ли Кэти сразу сыграть 3 как красную 3?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Простой Bluff всё ещё возможен, потому что синяя 4 находится в одном шаге от играбельности. Одновременно возможен красный Finesse + Prompt, если карты Кэти — красная 3 и красная 4. По Occam's Razor более простая трактовка Bluff остаётся живой: Кэти сохраняет оба варианта и не играет 3 сразу. Такая неоднозначность и называется **Hard Bluff**.
+
+</TabItem>
+</Tabs>
