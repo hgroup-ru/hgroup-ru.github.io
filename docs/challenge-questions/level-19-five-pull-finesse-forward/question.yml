@@ -22,7 +22,7 @@ players:
       - type: x
   - name: Cathy
     cards:
-      - type: b4
+      - type: y1
       - type: b5
         clue: 5
       - type: r2
