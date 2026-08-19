@@ -12,7 +12,7 @@ import Question from "./level-10-layered-baton/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Red 1 is played. Alice knows her clued red card is `r3`. Bob has a playable `g1` in slot 1 and the other `r3` in slot 2.
+Red 1 is played and the team is out of clues. Alice knows her clued red card is `r3`. Bob has a playable `g1` in slot 1 and the other `r3` in slot 2. Alice has no other known safe discard.
 
 How should Alice move?
 
@@ -21,7 +21,7 @@ How should Alice move?
 </TabItem>
 <TabItem value="solution">
 
-Alice should **not discard `r3` to transfer it to Bob**. That would be a Layered Baton Discard, which is explicitly forbidden. A Baton target must be exactly on the current Finesse Position; unlike a Gentleman's Discard, Baton cannot use a playable layer in front of the target.
+Alice should **make an ordinary chop discard**, not discard the known `r3`. Using `r3` as a transfer would be a Layered Baton Discard, which is explicitly forbidden: a Baton target must be exactly on the current Finesse Position. The playable `g1` in front of Bob's `r3` does not make a layered Baton legal.
 
 </TabItem>
 </Tabs>

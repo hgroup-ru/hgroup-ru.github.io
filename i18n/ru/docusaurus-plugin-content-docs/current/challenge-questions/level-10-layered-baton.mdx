@@ -12,7 +12,7 @@ import Question from "@site/docs/challenge-questions/level-10-layered-baton/ques
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Красная 1 сыграна. Алиса знает, что её подсказанная красная карта — `r3`. У Боба в первом слоте лежит играбельная `g1`, а во втором — вторая `r3`.
+Красная 1 сыграна, жетонов подсказок нет. Алиса знает, что её подсказанная красная карта — `r3`. У Боба в первом слоте лежит играбельная `g1`, а во втором — вторая `r3`. Другого известного безопасного сброса у Алисы нет.
 
 Как должна сходить Алиса?
 
@@ -21,7 +21,7 @@ import Question from "@site/docs/challenge-questions/level-10-layered-baton/ques
 </TabItem>
 <TabItem value="solution">
 
-Алисе **не следует сбрасывать `r3`, чтобы передать её Бобу**. Это был бы Layered Baton Discard, а он прямо запрещён. Цель Baton должна находиться ровно на текущей Finesse Position; в отличие от Gentleman's Discard, перед целью Baton нельзя иметь играбельный слой.
+Алисе следует **сделать обычный сброс с chop**, а не сбрасывать известную `r3`. Передача через `r3` была бы Layered Baton Discard, а он прямо запрещён: цель Baton должна находиться ровно в текущей Finesse Position. Играбельная `g1` перед `r3` Боба не делает Layered Baton Discard допустимым.
 
 </TabItem>
 </Tabs>

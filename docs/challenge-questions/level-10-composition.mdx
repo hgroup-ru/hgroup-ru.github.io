@@ -1,5 +1,5 @@
 ---
-title: Reading Two Decisions
+title: After Two Reactions
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -20,13 +20,13 @@ All 2s are played. Alice's red-clued card could initially be `r3`, `r4`, or `r5`
 
 <Start />
 
-Bob discards. Cathy then blind-plays `r3` instead of Certain Discarding.
+Bob makes a safe unrelated discard. Cathy then blind-plays her Finesse Position, which turns out to be `r3`.
 
 **After Cathy's play:**
 
 <AfterThree />
 
-Alice safely discards. Bob then plays his `r4` instead of Sarcastic Discarding it.
+Alice makes a safe discard. Bob then plays his clued `r4`.
 
 **When the turn returns to Alice:**
 
@@ -39,8 +39,8 @@ What is Alice's correct move now?
 
 Alice should **play her red-clued card as `r5`**.
 
-- Cathy played `r3` instead of Certain Discarding it. Therefore Alice cannot hold `r3`; otherwise Cathy would have passed the duplicated `r3` back.
-- Bob later played `r4` instead of Sarcastic Discarding it. Therefore Alice cannot hold `r4` either.
+- Cathy's blind-play was `r3`. If Alice herself held `r3`, the Certain Finesse structure would allow Cathy to Certain Discard that duplicated `r3` instead of playing it. Cathy's play therefore rules out `r3` for Alice.
+- Bob later played his clued `r4`. If Alice held `r4`, the Sarcastic Finesse structure would call for Bob to Sarcastic Discard that duplicate instead. Bob's play therefore rules out `r4` for Alice.
 - The only remaining identity is `r5`, and red is now stacked through 4.
 
 The original clue combined the Sarcastic Finesse and Certain Finesse mechanisms. That combination is a **Composition Finesse**.

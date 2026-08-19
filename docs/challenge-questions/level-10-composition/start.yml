@@ -5,7 +5,7 @@ stacks:
   - b: 2
   - p: 2
 bigText:
-  text: 3 clues
+  text: 2 clues
 players:
   - name: Alice
     clueGiver: true

@@ -14,14 +14,14 @@ import Question from "./level-10-layered-gd-delayed-unsafe/question.yml";
 
 Red is stacked through 2 and green is empty. Alice knows her red card is `r3`. Bob, who acts immediately after Alice, has `g2` in slot 1 and the other `r3` in slot 2. Cathy has a known `g1`, but she acts after Bob.
 
-How should Alice move?
+Alice considers discarding `r3` as a Layered Gentleman's Discard. Is that move valid?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Alice should not discard `r3` as a Layered Gentleman's Discard. Bob acts before Cathy can play `g1`. If Alice creates the layered promise, Bob will treat his first card as the playable layer and blind-play `g2` immediately, while green is still on 0. The `g2` misplays. The same cards are safe in the opposite player order, but unsafe here.
+No. As in the previous question, `g2` is not a legal playable layer when the discard is made, so the line would rely on a forbidden Patch Gentleman's Discard. Here the failure is immediate as well: Bob acts before Cathy can play `g1`, interprets slot 1 as the layer, and blind-plays `g2` while green is still on 0. It misplays.
 
 </TabItem>
 </Tabs>

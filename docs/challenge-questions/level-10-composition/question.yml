@@ -5,10 +5,9 @@ stacks:
   - b: 2
   - p: 2
 bigText:
-  text: 3 clues
+  text: 4 clues
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: r
         middleNote: r5
