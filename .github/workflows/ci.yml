@@ -18,6 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Validate release note decision
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python3 scripts/validate_pr_release_notes.py
 
       - name: Validate release notes
         run: python3 scripts/validate_release_notes.py
@@ -103,7 +112,6 @@ jobs:
               ;;
           esac
 
-          # Close the race where a new push lands while this notification is being prepared.
           if ! notification_is_current; then
             exit 0
           fi
