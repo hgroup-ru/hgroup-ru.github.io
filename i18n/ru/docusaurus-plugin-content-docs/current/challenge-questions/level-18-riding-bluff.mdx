@@ -1,0 +1,25 @@
+---
+title: Chop-кандидат может быть Riding Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-riding-bluff/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-riding-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы два Elimination-кандидата на красную 2, слоты 4 и 5, причём настоящая красная 2 находится на chop в слоте 5. Слот 4 тоже независимо играбелен. Может ли команда намеренно не давать подсказку и сначала позволить Алисе выполнить обычный Riding Deduction?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Это **Riding Deduction Bluff**. Сначала Алиса играет несвязанную играбельную карту из слота 4, потому что Ride говорит ей, что Elimination-карта не на chop. После этого только слот 5 сохраняет возможность красной 2, и на следующем ходу Алиса играет настоящую красную 2.
+
+</TabItem>
+</Tabs>

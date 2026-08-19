@@ -1,0 +1,25 @@
+---
+title: Two Bad Clues Do Not Create TTE
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-tte-forced/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-tte-forced" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 3 and blue 1 are played. Bob's hand is red 4, red 3, blue 4, blue 4, blue 1. Alice must clue red 4 now. A red clue duplicates red 3, while a number-4 clue duplicates blue 4s. Alice chooses number 4. Should the team infer Trash Touch Elimination from the bad touch?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Both available clue types violate Good Touch Principle, so Alice is forced to choose the lesser evil. Trash Touch Elimination requires a meaningful contrast with a clean alternative; a bad touch that could not reasonably be avoided is interpreted normally.
+
+</TabItem>
+</Tabs>

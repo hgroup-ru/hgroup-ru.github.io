@@ -1,0 +1,25 @@
+---
+title: Avoidable Trash Touch Signals the Missing Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-tte-signal/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-tte-signal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 3 and all other 1s are played. Bob holds red 4, red 1, blue 1, green 1, yellow 1. Alice could clue number 4 cleanly, but instead clues red, touching the playable red 4 and trash red 1. Cathy sees no red 5 in either teammate's hand, and red 5 is the single missing useful red identity. What special message does the avoidable trash touch carry?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+It is **Trash Touch Elimination** for the single missing useful red card, red 5. Because Alice deliberately chose a Good-Touch-violating red clue despite a clean number-4 clue being available, the extra touch is meaningful. Cathy should place red-5 Elimination Notes on her hand.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: A Playable Discard Does Not Always Mean Elimination
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-discard-context/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-discard-context" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice discards a playable red 4, but the previous turns were extremely busy and there was no reasonable opportunity for the team to save it. Should Alice automatically write red-4 Elimination Notes on her remaining hand?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Elimination depends on the surprising decision to let an important card go. If the game was genuinely too busy to save it, that surprise is absent. Players must use context and should not mechanically create Elimination Notes after every playable discard.
+
+</TabItem>
+</Tabs>

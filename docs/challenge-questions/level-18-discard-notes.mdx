@@ -1,0 +1,25 @@
+---
+title: The New Draw Is Not an Elimination Candidate
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-discard-notes/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-discard-notes" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 3 is played. Alice unexpectedly discards a playable red 4 from chop, and the team was not busy. She therefore concludes that the other red 4 must already have been in her hand. After drawing a new slot-1 card, which slots get red-4 Elimination Notes?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Slots 2, 3, 4, and 5.** The newly drawn slot 1 cannot be the copy whose existence explained why the team allowed the discard. Discard Elimination records the possible locations that were already in Alice's hand when the red 4 was lost.
+
+</TabItem>
+</Tabs>

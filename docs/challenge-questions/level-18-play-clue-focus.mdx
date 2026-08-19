@@ -1,0 +1,25 @@
+---
+title: Elimination Can Move the Focus
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-play-clue-focus/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-play-clue-focus" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 and blue 1 are played. Alice has red-2 Elimination Notes on slots 2 through 5. Bob clues number 2, touching slots 1, 3, and 4. Which touched card is the Play Clue focus, and what is promised about the other touched 2s?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Slot 3 is exactly red 2 and is the focus.** Elimination rules out slot 1 as the red 2, so the clue singles out the playable Elimination card. Slots 1 and 4 can be any 2s and are not promised playable. An Elimination Play Clue is not a Delayed Play Clue, Prompt, or Finesse.
+
+</TabItem>
+</Tabs>

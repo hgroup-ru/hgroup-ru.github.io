@@ -1,0 +1,25 @@
+---
+title: Riding Eliminates the Chop Candidate
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-riding/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-riding" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has exactly two red-2 Elimination candidates left: slot 4 and chop slot 5. Her teammates were not busy and deliberately let slot 5 Ride for a full go-around. Which card can Alice play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice can blind-play **slot 4** as an **Elimination Riding Deduction**. If red 2 were on chop, an unbusy teammate would have protected it with a Play Clue or Save Clue. Letting chop Ride eliminates slot 5, so the newer of the two candidates is the red 2.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Exact Elimination Knowledge Protects Itself
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-self-chop/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-self-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice's Elimination Notes have narrowed a critical red 4 to exactly slot 5, but the card still has no positive clue. Must Bob spend a clue to save it from being discarded?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Alice should apply an **Elimination Self-Chop Move**. Because the exact identity is already globally known through Elimination, she can protect the card herself; another player does not need to waste a clue merely to move it off chop.
+
+</TabItem>
+</Tabs>

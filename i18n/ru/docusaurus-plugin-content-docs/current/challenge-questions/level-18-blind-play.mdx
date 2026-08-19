@@ -1,0 +1,25 @@
+---
+title: Одна оставшаяся Note превращается в blind-play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-blind-play/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-blind-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы стоят Elimination Notes для красной 4 на нескольких картах. Последующая синяя подсказка исключает все варианты кроме слота 5. Красная 4 сейчас играбельна. Нужна ли Алисе ещё одна прямая подсказка перед розыгрышем слота 5?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Когда остаётся единственный Elimination-вариант, Алиса знает значение карты без положительной подсказки и может вслепую сыграть слот 5 как **Elimination Blind-Play**.
+
+</TabItem>
+</Tabs>

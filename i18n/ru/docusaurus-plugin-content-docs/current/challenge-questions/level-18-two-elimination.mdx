@@ -1,0 +1,25 @@
+---
+title: Потеря 2 может запустить Elimination
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-two-elimination/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-two-elimination" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Нужную красную 2 позволяют сбросить в обычной позиции, а другую копию не видно ни в одной чужой руке. Какой специальный вывод доступен именно потому, что потерянная карта — 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Команда может применить **2 Elimination**. Save Principle требует сохранять все 2, поэтому необъяснимый сброс 2 является сильным свидетельством, что другая копия уже скрыта в нужной руке. Возможные слоты отмечаются Elimination Notes.
+
+</TabItem>
+</Tabs>

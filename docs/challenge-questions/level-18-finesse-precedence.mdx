@@ -1,0 +1,25 @@
+---
+title: Normal Finesse Beats Self-Elimination Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-finesse-precedence/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-finesse-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Bob has blue-3 Elimination Notes on slots 3, 4, and 5. Alice clues Bob's slot-1 4 as a Self-Finesse. If the 4 could be red 4 with a normal red-3 Finesse from slot 2, or blue 4 with a blue-3 Self-Elimination Finesse from slot 5, which interpretation does Bob take?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob takes the **normal Finesse** and blind-plays slot 2 as red 3. Normal Finesses have priority over Self-Elimination Finesses, so Bob must not jump to the older elimination candidate merely because that alternative also fits.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Точное Elimination-знание защищает себя
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-self-chop/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-self-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Elimination Notes Алисы сузили критическую красную 4 точно до слота 5, но на самой карте всё ещё нет положительной подсказки. Обязан ли Боб потратить подсказку, чтобы спасти её от сброса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Алиса применяет **Elimination Self-Chop Move**. Поскольку точное значение карты уже известно всей команде через Elimination, Алиса сама защищает карту; другому игроку не нужно тратить подсказку только ради переноса с chop.
+
+</TabItem>
+</Tabs>
