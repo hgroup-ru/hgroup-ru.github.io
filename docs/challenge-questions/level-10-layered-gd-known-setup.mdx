@@ -1,5 +1,5 @@
 ---
-title: Before r2 Is Played
+title: Before Cathy's Turn
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -14,14 +14,14 @@ import Question from "./level-10-layered-gd-known-setup/question.yml";
 
 Red 1 is played. Alice knows her red card is `r3`. Bob has a known `r2` ready to play. Cathy has `g1` in slot 1 and the other `r3` in slot 2.
 
-Alice considers discarding `r3`, expecting Bob to play `r2` before Cathy acts. Can that discard be a valid special transfer?
+Can Alice discard `r3`, intending to transfer it to Cathy after Bob plays the known `r2`?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-No. At the moment Alice discards, `r3` is still unplayable, so the discard cannot be a Gentleman's Discard; a Gentleman's Discard only transfers a card that is already playable. An exact unplayable card would instead be a Baton Discard, but Cathy's matching `r3` is in slot 2 behind `g1`, not exactly on her Finesse Position. That would be an illegal Layered Baton Discard. Bob's future `r2` play does not retroactively turn the discard into a legal GD.
+Yes. Alice can **discard `r3` as a Layered Gentleman's Discard**. Bob's already-known `r2` advances red before Cathy needs the transferred card. Cathy's `g1` is the playable layer in front of the `r3`; after that layer is removed, the promised `r3` remains behind it.
 
 </TabItem>
 </Tabs>
