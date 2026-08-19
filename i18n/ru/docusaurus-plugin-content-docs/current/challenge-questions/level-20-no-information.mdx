@@ -1,0 +1,22 @@
+---
+title: Правда ли повторная подсказка ничего не дала?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-information" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Повторная подсказка не добавляет карте нового положительного clue mark, но после неё получатель может сузить суперпозицию {красная 2, красная 3} до точно красной 3, потому что состояние игры изменилось. Это No-Information clue?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** No-Information требует одновременно отсутствия новой положительной информации **и того же множества возможных identity до и после последовательности подсказки**. Сужение суперпозиции — ценная информация, даже без нового видимого clue mark. Кроме того, настоящий No-Information Finesse может получить одну карту, но одиночный No-Information Bluff запрещён: Bluff-интерпретация должна получить две карты.
+
+</TabItem>
+</Tabs>

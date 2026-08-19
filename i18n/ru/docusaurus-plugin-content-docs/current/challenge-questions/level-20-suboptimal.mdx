@@ -1,0 +1,22 @@
+---
+title: Лишь немного хуже
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-suboptimal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы свободный выбор между двумя способами спасти критическую карту. Одна подсказка немного менее эффективна по формальной метрике, зато не затрагивает возможный дубликат уже подсказанной карты Боба. Должен ли Боб автоматически читать выбранную подсказку как Suboptimal Finesse/Bluff только потому, что другая слегка лучше?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Suboptimal-ход должен быть **явно, заметно хуже**, а не просто чуть менее хорош по одной метрике. Good Touch, полезная отрицательная информация и другой контекст могут оправдывать видимую потерю. Дополнительный смысл Play Clue/Finesse/Bluff появляется лишь тогда, когда у худшего выбора нет разумного обычного объяснения.
+
+</TabItem>
+</Tabs>

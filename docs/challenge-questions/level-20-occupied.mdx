@@ -1,0 +1,22 @@
+---
+title: When Is a Player Occupied?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-occupied" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has a globally known playable card but gives a clue instead. Bob comes next. The clue was time-sensitive and Alice was the only player who could reasonably give it. Should Bob automatically treat Alice as Occupied and add the extra Occupied meaning?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Occupied specifically covers a stolen clue that **two or more players could have given**, where Alice's choice to clue despite holding a play leaves Bob with nothing useful to do except discard. If Alice uniquely had the information or the clue was otherwise hers to give, deferring her play can be ordinary teamwork and does not automatically create an Occupied Play Clue/Finesse.
+
+</TabItem>
+</Tabs>

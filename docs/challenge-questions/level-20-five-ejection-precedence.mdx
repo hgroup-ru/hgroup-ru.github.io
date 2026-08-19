@@ -1,0 +1,22 @@
+---
+title: Out-of-Order or 5 Color Ejection?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-five-ejection-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A color clue to an untouched 5 could be repaired as an Out-of-Order Finesse, but that repaired line would require Bob to blind-play **two** cards from his own hand. Which interpretation takes precedence?
+
+</TabItem>
+<TabItem value="solution">
+
+**5 Color Ejection.** The Level 16 two-or-more-blind-plays threshold still takes precedence over the Level 20 Out-of-Order Finesse. If only one Bob blind-play were needed, Out-of-Order plus the Fix Clue could remain the intended line; with two or more, Bob uses Second Finesse Position as the Ejection.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: The Wrong Focus Is Still Important
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-out-of-order-fix" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives an Out-of-Order Play Clue whose initial focus is the later card in a same-suit sequence. Bob gives the required Fix Clue. After the receiver corrects the earlier identities, should they stop and treat the original focus as merely an error?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** In an Out-of-Order line, the original focus remains intentionally meaningful and is promised playable once the earlier sequence is resolved. The Fix Clue corrects the mistaken immediate identity; it does not erase Alice's original Play Clue. The receiver should play the earlier cards and then continue to the original focus.
+
+</TabItem>
+</Tabs>

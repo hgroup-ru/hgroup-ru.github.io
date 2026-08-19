@@ -1,0 +1,22 @@
+---
+title: Merely Slightly Worse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-suboptimal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has a free choice between two ways to save a critical card. One clue is slightly less efficient on paper, but it avoids touching a possible duplicate already clued in Bob's hand. Should Bob automatically treat the chosen clue as a Suboptimal Finesse/Bluff because another clue scores a little better?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Suboptimal move has to be **clearly, conspicuously worse**, not just technically inferior by a small metric. Good Touch concerns, useful negative information, or other context can justify the apparent loss. Only when the worse choice lacks a reasonable ordinary explanation should the team read the extra Play Clue/Finesse/Bluff message.
+
+</TabItem>
+</Tabs>

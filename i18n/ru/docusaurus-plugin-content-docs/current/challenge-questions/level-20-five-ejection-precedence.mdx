@@ -1,0 +1,22 @@
+---
+title: Out-of-Order или 5 Color Ejection?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-five-ejection-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Цветовую подсказку на нетронутую 5 можно было бы исправить как Out-of-Order Finesse, но такая исправленная линия потребовала бы от Боба **двух** blind-play из собственной руки. Какая интерпретация имеет приоритет?
+
+</TabItem>
+<TabItem value="solution">
+
+**5 Color Ejection.** Порог уровня 16 «два или больше blind-play» сохраняет приоритет над Out-of-Order Finesse уровня 20. Если бы Бобу требовался только один blind-play, возможной оставалась бы Out-of-Order линия с Fix Clue; при двух и более Боб использует Second Finesse Position как Ejection.
+
+</TabItem>
+</Tabs>

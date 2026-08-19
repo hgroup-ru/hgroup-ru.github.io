@@ -1,0 +1,22 @@
+---
+title: Did the Re-Clue Really Give Nothing?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-no-information" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A re-clue adds no new positive clue mark to a card, but after the clue the receiver can narrow its superposition from {red 2, red 3} to exactly red 3 because the game state has advanced. Is this a No-Information clue?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** No-Information requires both no additional positive information **and the same set of possibilities before and after the clue sequence**. Narrowing the card's superposition is valuable information even without a new visible clue mark. Also, a genuinely No-Information clue may get a single card by Finesse, but a single-card No-Information Bluff is disallowed; a Bluff interpretation must get two cards.
+
+</TabItem>
+</Tabs>

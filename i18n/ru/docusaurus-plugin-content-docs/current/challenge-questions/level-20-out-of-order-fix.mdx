@@ -1,0 +1,22 @@
+---
+title: Неправильный focus всё ещё важен
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-out-of-order-fix" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Out-of-Order Play Clue, чей первоначальный focus — более поздняя карта последовательности одной масти. Боб даёт обязательную Fix Clue. После исправления ранних identity должен ли получатель остановиться и считать первоначальный focus просто ошибкой?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** В Out-of-Order линии первоначальный focus остаётся намеренно значимым и обещан играбельным после разрешения предыдущей последовательности. Fix Clue исправляет ошибочную немедленную identity, но не отменяет исходную Play Clue Алисы. Получатель играет ранние карты, а затем продолжает до первоначального focus.
+
+</TabItem>
+</Tabs>

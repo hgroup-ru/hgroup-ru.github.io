@@ -1,0 +1,22 @@
+---
+title: Когда игрок Occupied?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={20} id="level-20-occupied" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть глобально известная играбельная карта, но вместо игры она даёт подсказку. Следующим ходит Боб. Подсказка была срочной, и только Алиса разумно могла её дать. Должен ли Боб автоматически считать Алису Occupied и добавлять дополнительный Occupied-смысл?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Occupied относится именно к «украденной» подсказке, которую могли одинаково дать **два или больше игроков**, причём выбор Алисы подсказать при наличии игры оставляет Бобу только бесполезный сброс. Если нужная информация была только у Алисы или подсказка естественно принадлежала ей, откладывание игры может быть обычной командной работой и само по себе не создаёт Occupied Play Clue/Finesse.
+
+</TabItem>
+</Tabs>
