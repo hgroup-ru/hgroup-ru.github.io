@@ -6,6 +6,12 @@
 
 Проект основан на официальном [`hanabi/hanabi.github.io`](https://github.com/hanabi/hanabi.github.io). Игровой смысл, структура официальных материалов и официальные YML-файлы сверяются с закреплённой версией исходного проекта; русский перевод и явно обозначенные локальные дополнения развиваются здесь.
 
+## Состояние проекта
+
+- что планируется и ещё не завершено: [`BACKLOG.md`](BACKLOG.md);
+- что изменилось после последнего официального релиза и история выпусков: [`CHANGELOG.md`](CHANGELOG.md);
+- как устроены публикация сайта и официальные релизы: [`RELEASING.md`](RELEASING.md).
+
 ## Хотите помочь?
 
 Если вы нашли ошибку в русском переводе, терминологии, интерфейсе русской версии или локальных материалах, открывайте Pull Request в этом репозитории.
@@ -41,7 +47,6 @@ npm run build:ru
 - правила локализации: [`localization/README.md`](localization/README.md);
 - русская терминология: [`localization/TERMINOLOGY_RU.md`](localization/TERMINOLOGY_RU.md);
 - архитектура репозитория: [`ARCHITECTURE.md`](ARCHITECTURE.md);
-- открытые задачи: [`BACKLOG.md`](BACKLOG.md);
 - версия исходного проекта: [`upstream.json`](upstream.json).
 
 Осознанные отличия от закреплённого источника перечислены в [`localization/SOURCE_EXCEPTIONS.md`](localization/SOURCE_EXCEPTIONS.md), а возможные исправления и улучшения для исходного проекта — в [`localization/UPSTREAM_CANDIDATES.md`](localization/UPSTREAM_CANDIDATES.md).
