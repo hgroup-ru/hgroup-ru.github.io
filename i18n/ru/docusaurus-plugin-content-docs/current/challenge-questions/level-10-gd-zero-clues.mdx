@@ -1,0 +1,27 @@
+---
+title: Более безопасный специальный сброс
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-gd-zero-clues/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-zero-clues" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 сыграны, подсказок 0. Алиса знает, что её красная карта — `r2`. В первом слоте Боба лежит вторая `r2`, а на chop у Боба находится непотроганная `y5`.
+
+Как должна сходить Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сбросить `r2` как Gentleman's Discard**. Сброс создаёт жетон, Боб играет перенесённую `r2`, а Кэти использует полученный жетон для 5 Save непотроганной `y5` Боба до его следующего хода. Это не Scream Discard: существует менее опасная линия через специальный сброс, а Scream является последним средством.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,27 @@
+---
+title: The Safer Special Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-gd-zero-clues/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-zero-clues" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played and there are 0 clues. Alice knows her red card is `r2`. Bob's slot 1 is the other `r2`, and Bob has an untouched `y5` on chop.
+
+How should Alice move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **Gentleman's Discard the `r2`**. The discard generates a clue, Bob plays the transferred `r2`, and Cathy can use the generated clue to 5 Save Bob's untouched `y5` before his next turn. This is not a Scream Discard: a less dangerous special-discard line exists, and Scream is a last resort.
+
+</TabItem>
+</Tabs>

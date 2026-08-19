@@ -1,0 +1,27 @@
+---
+title: A Useful Layer
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-layered-gd/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-gd" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played and the team is out of clues. Alice knows her red card is `r2`. Bob has a playable `g2` in slot 1 and the other `r2` immediately behind it.
+
+How should Alice move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice can **Gentleman's Discard the `r2`**. This is a Layered Gentleman's Discard: Bob's first card is a playable layer, and the transferred `r2` is behind it. The safe discard also generates a clue token, so there is a concrete reason to choose the GD instead of simply playing `r2` now.
+
+</TabItem>
+</Tabs>

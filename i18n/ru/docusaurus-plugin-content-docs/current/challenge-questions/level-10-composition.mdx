@@ -1,35 +1,49 @@
 ---
-title: "Что осталось у Алисы?"
+title: Прочитать два решения
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Question from "@site/docs/challenge-questions/level-10-composition/question.yml";
+import Start from "@site/docs/challenge-questions/level-10-composition/start.yml";
+import AfterThree from "@site/docs/challenge-questions/level-10-composition/after-three.yml";
+import Current from "@site/docs/challenge-questions/level-10-composition/question.yml";
 
 <ChallengeQuestionProgress level={10} id="level-10-composition" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Все 2 уже были сыграны. В начале у Алисы была одна красная карта с подсказкой, которая по доступной ей информации могла быть `r3`, `r4` или `r5`.
+Все 2 сыграны. Подсказанная красная карта Алисы изначально могла быть `r3`, `r4` или `r5`. Алиса даёт Бобу красную Play Clue на `r4`.
 
-Алиса дала Кэти красную Play Clue по `r4`. Кэти подождала. Затем Боб **сыграл** свою карту из Finesse Position вслепую как `r3`, а не сделал Certain Discard. Позже Кэти **сыграла** свою `r4`, а не сделала Sarcastic Discard. Теперь ход снова вернулся к Алисе; красная стопка дошла до 4.
+**После подсказки Алисы:**
 
-Что Алиса может заключить о собственной скрытой красной карте и что ей следует сделать сейчас?
+<Start />
 
-<Question />
+Боб сбрасывает. Затем Кэти вслепую играет `r3` вместо Certain Discard.
+
+**После розыгрыша Кэти:**
+
+<AfterThree />
+
+Алиса делает безопасный сброс. После этого Боб играет свою `r4` вместо Sarcastic Discard.
+
+**Когда ход возвращается к Алисе:**
+
+<Current />
+
+Какой ход Алисы теперь правильный?
 
 </TabItem>
 <TabItem value="solution">
 
-Алиса может заключить, что её красная карта — ровно `r5`, поэтому должна сыграть её.
+Алисе следует **сыграть свою подсказанную красную карту как `r5`**.
 
-- Решение Боба **сыграть** скрытую `r3` исключает `r3` из вариантов Алисы: если бы у Алисы действительно была дублирующая `r3`, Боб мог бы сделать Certain Discard.
-- Позднейшее решение Кэти **сыграть** `r4` исключает `r4`: если бы у Алисы действительно была дублирующая `r4`, Кэти сделала бы Sarcastic Discard и передала её обратно.
-- Остаётся только `r5`. Красная стопка уже дошла до 4, значит Алисе следует сыграть эту карту.
+- Кэти сыграла `r3` вместо Certain Discard. Значит, у Алисы не может быть `r3`: иначе Кэти передала бы дублированную `r3` назад.
+- Позже Боб сыграл `r4` вместо Sarcastic Discard. Значит, у Алисы не может быть и `r4`.
+- Единственная оставшаяся идентичность — `r5`, а красная стопка уже дошла до 4.
 
-Исходный ход одновременно использовал механизмы Sarcastic Finesse и Certain Finesse; это Composition Finesse.
+Исходная подсказка одновременно использовала механики Sarcastic Finesse и Certain Finesse. Такая комбинация называется **Composition Finesse**.
 
 </TabItem>
 </Tabs>

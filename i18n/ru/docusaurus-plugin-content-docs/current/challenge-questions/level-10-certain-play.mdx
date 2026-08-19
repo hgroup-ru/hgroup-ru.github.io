@@ -1,0 +1,27 @@
+---
+title: Certain означает розыгрыш
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-certain-play/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+История та же, что в предыдущем вопросе: красная стопка дошла до 2, у Кэти подсказанная красная `r3`/`r5`, Кэти дала Бобу красную Play Clue на `r4`, а Боб безопасно сбросил. На этот раз Алиса видит, что неоднозначная красная карта Кэти на самом деле `r5`.
+
+Что должна сделать Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **вслепую сыграть свою Finesse Position как `r3`**. По структуре подсказка всё ещё является **Certain Finesse**, но у Кэти на самом деле нет дублированной `r3`, поэтому передавать назад через Certain Discard нечего. Обещанная слепая карта является соединяющей `r3` и должна играться.
+
+</TabItem>
+</Tabs>

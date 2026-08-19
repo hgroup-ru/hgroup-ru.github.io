@@ -1,0 +1,35 @@
+---
+title: Better Than a Raw Generation Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-gd-over-generation/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-over-generation" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red is stacked through 3 and there are 0 clues. Alice has two clued red cards that she has identified as `r4` and `r5`. Bob's slot 1 is the other `r4`; his `b2` is on chop, while his `b5` already has a 5 clue. Cathy's untouched `y5` is on chop.
+
+How should Alice move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **Gentleman's Discard her known `r4`**.
+
+1. The discard creates one clue.
+2. Bob plays the transferred `r4`.
+3. Cathy gives Bob a blue Play Clue on `b2`; the already-5-clued `b5` is filled in by the same clue.
+4. Alice's known `r5` is now playable; she plays it and regains a clue token.
+5. Bob uses that token to 5 Save Cathy's `y5`.
+
+A raw Generation Discard of an unknown chop card would also buy a token, but it needlessly risks an unknown card and gives up the useful transfer line.
+
+</TabItem>
+</Tabs>

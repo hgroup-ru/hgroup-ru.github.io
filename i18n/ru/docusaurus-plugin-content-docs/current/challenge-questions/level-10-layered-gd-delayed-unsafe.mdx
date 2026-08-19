@@ -1,0 +1,27 @@
+---
+title: Delayed слой, неправильный порядок
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-layered-gd-delayed-unsafe/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-gd-delayed-unsafe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка дошла до 2, зелёная пуста. Алиса знает, что её красная карта — `r3`. Боб ходит сразу после Алисы; у него `g2` в первом слоте и вторая `r3` во втором. У Кэти есть известная `g1`, но она ходит уже после Боба.
+
+Стоит ли Алисе сбрасывать `r3` как Layered Gentleman's Discard?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Нет. Боб ходит раньше, чем Кэти успеет сыграть `g1`. Если Алиса создаст layered-обещание, Боб примет первую карту за играбельный слой и немедленно вслепую сыграет `g2`, пока зелёная стопка ещё на 0. `g2` взорвётся. Те же карты безопасны при обратном порядке игроков, но не здесь.
+
+</TabItem>
+</Tabs>

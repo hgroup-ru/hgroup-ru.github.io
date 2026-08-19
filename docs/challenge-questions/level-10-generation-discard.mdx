@@ -1,0 +1,27 @@
+---
+title: Make the Clue Now
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-generation-discard/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-generation-discard" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played and there are 0 clues. Alice has a known playable `r2`. Bob has no clued cards. Cathy's `y5` is untouched on chop.
+
+How should Alice move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **discard her unknown chop card as a Generation Discard** instead of playing `r2`. That immediately creates a clue for Bob, who can 5 Save Cathy's `y5` before Cathy acts. If Alice simply plays, Bob has no clue to spend; relying on Cathy to choose a clue instead of discarding is exactly the kind of hidden-hand assumption the line should avoid.
+
+</TabItem>
+</Tabs>

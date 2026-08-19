@@ -1,0 +1,27 @@
+---
+title: Certain Means Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-certain-discard/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-discard" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red is stacked through 2. Cathy has a red-clued card that, from her information, is `r3` or `r5`. Cathy gave Bob a red Play Clue on `r4`; Bob then took an unrelated safe discard. Alice is now the reacting player. Alice can see that Cathy's ambiguous red card is actually `r3`.
+
+What should Alice do?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **Certain Discard her Finesse Position**. This is a **Certain Finesse**: because Cathy really holds the potentially duplicated `r3`, a legal clue cannot be a Layered Finesse through some other card first. Alice can therefore be certain that the blind card being passed back is exactly the duplicated `r3`.
+
+</TabItem>
+</Tabs>

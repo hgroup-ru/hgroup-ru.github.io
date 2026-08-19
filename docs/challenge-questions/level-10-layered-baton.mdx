@@ -1,0 +1,27 @@
+---
+title: The Baton Cannot Be Layered
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-layered-baton/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-baton" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice knows her clued red card is `r3`. Bob has a playable `g1` in slot 1 and the other `r3` in slot 2.
+
+May Alice discard `r3` to transfer it to Bob?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+No. That would be a **Layered Baton Discard**, which is explicitly forbidden. A Baton target must be exactly on the current Finesse Position; unlike a Gentleman's Discard, Baton cannot use a playable layer in front of the target.
+
+</TabItem>
+</Tabs>

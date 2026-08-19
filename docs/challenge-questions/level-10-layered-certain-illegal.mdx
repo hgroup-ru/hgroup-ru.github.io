@@ -1,0 +1,27 @@
+---
+title: Layering a Certain Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-layered-certain-illegal/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-certain-illegal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red and green are both stacked through 2. Alice has a red-clued card that she knows is `r3` or `r5`. Cathy has an untouched `r4`. Bob's first two cards are `g3` and `r3`.
+
+Would a red Play Clue from Alice to Cathy's `r4` be valid?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+No. The clue would require Bob to play `g3` first and then `r3`, while Alice herself could still hold `r3`. That is a **Layered Certain Finesse**, and it is illegal. The Certain Finesse rule deliberately forbids putting an unrelated playable layer in front of a card that could be duplicated in the initiator's own hand.
+
+</TabItem>
+</Tabs>

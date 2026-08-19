@@ -1,0 +1,27 @@
+---
+title: Delayed слой, безопасный порядок
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-layered-gd-delayed-safe/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-gd-delayed-safe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка дошла до 2. Алиса знает, что её красная карта — `r3`. У Кэти в первом слоте лежит `g2`, а во втором — вторая `r3`, но зелёная стопка ещё пуста. Боб ходит раньше Кэти и держит известную `g1`.
+
+Можно ли Алисе использовать Layered Gentleman's Discard?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Да. Алиса может сбросить `r3`. Боб ходит до Кэти и играет известную `g1`, поэтому к ходу Кэти её `g2` уже становится играбельной. Кэти может следовать обычной layered-интерпретации: сначала сыграть `g2`, а перенесённую `r3` сохранить за ней. Порядок ходов делает delayed слой безопасным.
+
+</TabItem>
+</Tabs>
