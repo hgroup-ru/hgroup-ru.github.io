@@ -1,0 +1,24 @@
+---
+title: The Duplicated Blind-Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-blind-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives Cathy a valuable Play Clue. Bob blind-plays what he expects to be the connector, but it is instead a playable duplicate of a card that Alice already holds globally known. The clue still satisfies Minimum Clue Value Principle from Cathy's newly secured useful card(s).
+
+Does Bob's surprising duplicate blind-play promise another hidden connector?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** This is a Duplicitous Blind-Play. It follows the same value accounting as a Duplicitous Value Clue: if the clue already satisfies Minimum Clue Value Principle from the useful cards it secures, the duplicated blind-play is accepted as the mechanism used to get that value and does not call for an additional Prompt or blind-play.
+
+</TabItem>
+</Tabs>
