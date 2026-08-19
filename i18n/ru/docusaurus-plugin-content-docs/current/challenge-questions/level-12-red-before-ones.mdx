@@ -1,0 +1,27 @@
+---
+title: Красный, синий или 1?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-red-before-ones/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-red-before-ones" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Первый ход партии. Рука Боба от новой карты к старой: зелёная 4, красная 1, красная 3, синяя 2, синяя 1. Ни у кого больше нет красной 1 или синей 1. Алиса хочет эффективно получить обе 1.
+
+Что Алисе следует подсказать первым: красный цвет, синий цвет или число 1?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сначала подсказать красный цвет**. Подсказка по 1 получает обе 1 как 2-for-1, но затем команде, вероятно, понадобится ещё одна подсказка для синей 2, а красная 3 будет потеряна: всего 3-for-2. Синий цвет первым тоже мешает последующей чистой красной подсказке, потому что она станет chop-focused на красной 3. Красный цвет, а затем синий получают красную 1, красную 3, синюю 1 и синюю 2 за **4-for-2**.
+
+</TabItem>
+</Tabs>

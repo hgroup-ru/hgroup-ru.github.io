@@ -1,0 +1,27 @@
+---
+title: Перед красной 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-save-before-play/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-save-before-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Первый ход партии. Рука Кэти от новой карты к старой: синяя 4, синяя 4, красная 3, красная 1, синяя 5. Ни у кого больше нет красной 1. Алиса хочет сыграть красную 1 и знает, что синюю 5 в итоге необходимо спасти.
+
+Следует ли Алисе сразу подсказать красную 1 или сначала спасти синюю 5?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сначала дать 5 Save**. Немедленная подсказка по красной 1, а затем спасение синей 5 дают лишь 2-for-2. Если Алиса сначала подскажет число 5, Боб сможет продолжить красной Chop-Focus Play Clue, которая получает красную 1 и красную 3 как 2-for-1. Вместе две подсказки получают три полезные карты за **3-for-2**.
+
+</TabItem>
+</Tabs>
