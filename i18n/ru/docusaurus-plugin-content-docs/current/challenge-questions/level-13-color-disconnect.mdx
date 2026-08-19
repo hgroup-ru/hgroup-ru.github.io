@@ -1,0 +1,25 @@
+---
+title: Color Disconnect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-color-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса даёт Кэти красную подсказку по одной карте. Боб вслепую играет синюю 1. Физически подсказанная карта Кэти — красная 3. Какие варианты identity должна оставить Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти оставляет **красную 2 или красную 3**. Синий цвет не соединяется с красной подсказкой, поэтому это Bluff, а не Finesse. Красная 2 — обычная one-away цель; красная 3 тоже допустима по конвенции 3 Bluff уровня 13, когда эта 3 находится в двух шагах от играбельности.
+
+</TabItem>
+</Tabs>
