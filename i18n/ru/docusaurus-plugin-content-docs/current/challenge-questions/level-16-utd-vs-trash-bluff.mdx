@@ -1,0 +1,22 @@
+---
+title: Достаточно ли одного обычного blind-play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-vs-trash-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка фокусирует карту, которая физически является trash. До реакции в empathy получателя эта карта может быть trash, играбельной/Delayed Playable **или полезной, но сейчас неиграбельной**. Достаточно ли обычного blind-play Trash Bluff, чтобы доказать trash?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Полезная, но сейчас неиграбельная возможность делает обычный Trash Bluff недостаточным: стандартный blind-play мог бы оставить получателю ложную полезную identity. Это отличительный случай **Unknown Trash Discharge**, поэтому следующий игрок использует **Third Finesse Position**, чтобы доказать, что focus — trash.
+
+</TabItem>
+</Tabs>

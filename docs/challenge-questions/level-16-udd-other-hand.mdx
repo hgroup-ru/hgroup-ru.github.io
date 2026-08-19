@@ -1,0 +1,22 @@
+---
+title: The Duplicate Is Elsewhere
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-other-hand" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives Cathy a clue that unexpectedly duplicates a card already touched in **Donald's** hand. There is no ordinary reason for the duplication. Can Bob conclude that this is an Unknown Dupe Discharge and play his Third Finesse Position?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Unknown Dupe Discharge only applies when the duplicated cards are in the **same recipient's hand**. Duplicating a card in somebody else's hand is explicitly outside the convention, so Bob must search for another interpretation instead of manufacturing a UDD.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: How Many Blind-Plays?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-five-color-threshold" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a color Play Clue to a previously untouched 5. Bob sees that interpreting it as a Finesse would require him to blind-play **two** cards from his own hand before the 5 can play. Which interpretation takes precedence?
+
+</TabItem>
+<TabItem value="solution">
+
+**5 Color Ejection.** If Bob would need two or more blind-plays from his own hand to fulfill the Finesse, the Finesse is considered unlikely and the clue instead ejects Bob's **Second Finesse Position**. Prompts do not count toward this threshold; only blind-plays do.
+
+</TabItem>
+</Tabs>

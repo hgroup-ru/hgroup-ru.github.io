@@ -1,0 +1,22 @@
+---
+title: A Re-Clued 5
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-reclued-five" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A 5 already has a positive clue. Alice now gives a color Play Clue that re-clues that 5. Bob would need several blind-plays to connect all the way to it. Should Bob use 5 Color Ejection because the chain is long?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** 5 Color Ejection only applies to a 5 with no prior positive clue. Re-cluing an already-clued 5 signals the ordinary Finesse interpretation through the cards leading up to the 5, even if that means multiple blind-plays. A prior Chop Move alone does not count as a positive clue and therefore would not disable 5 Color Ejection.
+
+</TabItem>
+</Tabs>

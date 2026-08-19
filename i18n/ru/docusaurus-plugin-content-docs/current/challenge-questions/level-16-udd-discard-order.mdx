@@ -1,0 +1,22 @@
+---
+title: Какой trash сбрасывается первым?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-discard-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Кэти только что распознала Unknown Dupe Discharge. Его focus-дубликат не является самой левой известной trash-картой в её руке. Что она должна сбросить первым?
+
+</TabItem>
+<TabItem value="solution">
+
+Обычно она сначала сбрасывает **focus UDD**, даже раньше известного trash слева от него. Это исключение уровня 16 из более раннего Known-Trash Discard Order слева направо. Focus-first предотвращает рассинхронизацию о том, распознала ли Кэти UDD/UTD и какая карта действительно безопасна для сброса.
+
+</TabItem>
+</Tabs>

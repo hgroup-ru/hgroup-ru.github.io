@@ -1,0 +1,22 @@
+---
+title: Is One Blind-Play Enough?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-vs-trash-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A clue focuses a card that is actually trash. From the receiver's empathy before any reaction, the card could be either trash, currently playable/delayed playable, **or a useful currently unplayable card**. Is an ordinary Trash Bluff blind-play sufficient to prove the focus is trash?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The useful currently-unplayable possibility makes an ordinary Trash Bluff insufficient: a normal blind-play could leave the receiver with a false useful identity. This is the distinguishing case for an **Unknown Trash Discharge**, so the next player uses the **Third Finesse Position** to prove that the focus is trash.
+
+</TabItem>
+</Tabs>

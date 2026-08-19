@@ -1,0 +1,22 @@
+---
+title: Which Trash Is Discarded First?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-discard-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Cathy has just recognized an Unknown Dupe Discharge. Its focused duplicate is not the leftmost known-trash card in her hand. Which card is she expected to discard first?
+
+</TabItem>
+<TabItem value="solution">
+
+She normally discards the **UDD focus first**, even before older known trash to its left. This is the Level 16 exception to the earlier left-to-right Known-Trash Discard Order. The focus-first convention prevents desynchronization about whether Cathy recognized a UDD/UTD and which card is actually safe to discard.
+
+</TabItem>
+</Tabs>

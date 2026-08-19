@@ -1,0 +1,22 @@
+---
+title: Две карты в Discharge
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-multitouch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка Unknown Trash Discharge впервые затрагивает две карты. После демонстрации Discharge должен ли получатель отметить **обе** карты как trash, как после multi-touch Trash Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Trash только focus.** В Unknown Trash Discharge Good Touch Principle продолжает действовать на остальные впервые затронутые карты, поэтому они считаются полезными. Это намеренно противоположно Trash Bluff, где все впервые затронутые карты считаются trash.
+
+</TabItem>
+</Tabs>

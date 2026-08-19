@@ -1,0 +1,22 @@
+---
+title: Повторно затронутая 5
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-reclued-five" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У 5 уже есть положительная подсказка. Алиса снова даёт на неё цветовую Play Clue. Чтобы соединиться до 5, Бобу пришлось бы сделать несколько blind-play. Должен ли он выбрать 5 Color Ejection из-за длинной цепочки?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** 5 Color Ejection применяется только к 5 без предыдущих положительных подсказок. Повторная подсказка уже затронутой 5 означает обычный Finesse через ведущие к ней карты, даже если для этого требуется несколько blind-play. Один лишь прежний Chop Move не считается положительной подсказкой и потому не отключает 5 Color Ejection.
+
+</TabItem>
+</Tabs>

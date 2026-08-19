@@ -1,0 +1,22 @@
+---
+title: Сколько blind-play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-five-color-threshold" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт цветовую Play Clue на ранее не затронутую 5. Боб видит, что интерпретация через Finesse потребовала бы от него вслепую сыграть **две** карты из собственной руки до 5. Какая интерпретация имеет приоритет?
+
+</TabItem>
+<TabItem value="solution">
+
+**5 Color Ejection.** Если для выполнения Finesse Бобу пришлось бы сделать два или больше blind-play из собственной руки, такой Finesse считается маловероятным, и подсказка вместо этого вызывает игру из **Second Finesse Position** Боба. Prompt не учитывается в этом пороге: считаются только blind-play.
+
+</TabItem>
+</Tabs>

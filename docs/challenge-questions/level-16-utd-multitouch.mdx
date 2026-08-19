@@ -1,0 +1,22 @@
+---
+title: Two Cards Touched by a Discharge
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-utd-multitouch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+An Unknown Trash Discharge clue newly touches two cards. After the Discharge is demonstrated, should the receiver mark **both** touched cards as trash, as they would after a multi-touch Trash Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Only the focus is trash.** In an Unknown Trash Discharge, Good Touch Principle still applies to the non-focused newly touched cards, so they are expected to be useful. This is deliberately the opposite of a Trash Bluff, where all newly touched cards are treated as trash.
+
+</TabItem>
+</Tabs>

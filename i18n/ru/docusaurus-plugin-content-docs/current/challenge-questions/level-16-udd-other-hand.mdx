@@ -1,0 +1,22 @@
+---
+title: Дубликат в другой руке
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-other-hand" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Кэти подсказку, которая неожиданно дублирует уже затронутую карту в руке **Дональда**. Обычной причины для дублирования нет. Может ли Боб решить, что это Unknown Dupe Discharge, и сыграть Third Finesse Position?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Unknown Dupe Discharge применяется только тогда, когда дублированные карты находятся **в одной руке получателя подсказки**. Дублирование карты в руке другого игрока явно не входит в эту конвенцию, поэтому Боб должен искать другую интерпретацию, а не создавать UDD.
+
+</TabItem>
+</Tabs>
