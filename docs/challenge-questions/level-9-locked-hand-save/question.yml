@@ -1,0 +1,47 @@
+stacks:
+  - r: 2
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+bigText:
+  text: Locked Hand
+players:
+  - name: Alice
+    cards:
+      - type: r3
+        border: false
+      - type: y4
+        border: false
+      - type: g1
+        border: false
+      - type: b5
+        border: false
+      - type: p2
+        border: false
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: r
+        middleNote: r4
+      - type: y
+        middleNote: y3
+      - type: g
+        middleNote: g5
+      - type: b
+        middleNote: b4
+      - type: p
+        middleNote: p3
+  - name: Cathy
+    cards:
+      - type: b1
+        border: false
+      - type: g4
+        border: false
+      - type: p2
+        border: false
+      - type: y5
+        border: false
+      - type: r3
+        border: false
+        below: Chop
