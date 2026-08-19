@@ -18,15 +18,15 @@ players:
   - name: Bob
     cards:
       - type: r1
-        middleNote: not blue
+        middleNote: "!blue"
       - type: y1
-        middleNote: not blue
+        middleNote: "!blue"
       - type: g1
-        middleNote: not blue
+        middleNote: "!blue"
       - type: p1
-        middleNote: not blue
+        middleNote: "!blue"
       - type: r2
-        middleNote: not blue
+        middleNote: "!blue"
   - name: Cathy
     cards:
       - type: b2

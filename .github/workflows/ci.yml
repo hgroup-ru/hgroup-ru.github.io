@@ -35,8 +35,8 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Build RU site for fork pull requests
-        if: ${{ always() && steps.setup.outcome == 'success' && github.event.pull_request.head.repo.full_name != github.repository }}
+      - name: Build RU site
+        if: ${{ always() && steps.setup.outcome == 'success' && !startsWith(github.head_ref, 'automation/') }}
         run: npm run build:ru
 
   notify:

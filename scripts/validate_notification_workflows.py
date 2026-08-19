@@ -35,8 +35,17 @@ def main() -> None:
         'if [ "$current_head" != "$RUN_HEAD_SHA" ]',
         'case "$CI_RESULT" in',
         "cancelled|skipped)",
+        "- name: Build RU site",
+        "!startsWith(github.head_ref, 'automation/')",
+        "run: npm run build:ru",
     ):
         require(ci, marker, "ci.yml")
+
+    if "Build RU site for fork pull requests" in ci:
+        fail("ci.yml must build normal same-repository pull requests")
+
+    if "github.event.pull_request.head.repo.full_name != github.repository" in ci:
+        fail("ci.yml contains the retired fork-only build condition")
 
     if ci.count("if ! notification_is_current; then") < 2:
         fail("ci.yml must verify the current PR head before sending")
