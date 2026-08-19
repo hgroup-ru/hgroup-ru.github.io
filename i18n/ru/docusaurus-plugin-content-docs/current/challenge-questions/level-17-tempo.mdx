@@ -1,0 +1,22 @@
+---
+title: Без новой ценной карты
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-tempo" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Duplicitous-подсказка приводит к игре дубликата, но не затрагивает ни одной другой новой ценной карты. При этом она заполняет информацию на уже затронутой карте и показывает, что та играбельна. Как команда должна ретроспективно назвать такую подсказку?
+
+</TabItem>
+<TabItem value="solution">
+
+**Duplicitous Tempo Clue.** Когда дополнительной ценной карты нет, полезным оставшимся эффектом становится Tempo/fill-in уже затронутой играбельной карты. Такая подсказка может дополнительно сделать Tempo Clue Chop Move при тех же условиях, что и обычная Tempo Clue; само дублирование не создаёт нового критерия для Chop Move.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: A Zero-for-One Duplicate
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-direct" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice directly clues Bob to play a card. It turns out to duplicate a globally known playable card, and the clue neither picks up another useful card nor fills in useful tempo. What should Bob do with the cards that were behind the duplicated card?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should **Chop Move the cards behind it** as a direct-form Time Travel Chop Move. Once the duplicate reveals the clue to be a true 0-for-1 with no value or tempo benefit, the team retroactively treats the duplicated card as if it had been clued for a Trash Chop Move on Bob's own hand.
+
+</TabItem>
+</Tabs>

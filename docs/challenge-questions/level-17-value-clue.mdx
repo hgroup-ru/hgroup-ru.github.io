@@ -1,0 +1,22 @@
+---
+title: The Extra Card Is Worth It
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-value-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice knowingly gives Bob a Play Clue that will make him play a duplicate of Alice's already-known card. The same clue also newly saves enough other useful cards to satisfy Minimum Clue Value Principle **without counting the duplicated card**. After the duplicate reveals itself, must the team search for an extra Prompt or Finesse?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** This is a Duplicitous Value Clue. Because the clue already satisfies Minimum Clue Value Principle from the other useful cards, the duplication itself does not call for additional Prompts or blind-plays. Those extra cards are useful, but are not thereby promised to be currently playable.
+
+</TabItem>
+</Tabs>

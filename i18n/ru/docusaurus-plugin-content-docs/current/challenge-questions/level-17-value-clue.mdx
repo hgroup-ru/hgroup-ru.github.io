@@ -1,0 +1,22 @@
+---
+title: Дополнительная карта окупает подсказку
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-value-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса осознанно даёт Бобу Play Clue, из-за которой он сыграет дубликат уже известной карты Алисы. Та же подсказка впервые спасает достаточно других полезных карт, чтобы удовлетворить Minimum Clue Value Principle **без учёта дубликата**. После обнаружения дубликата должна ли команда искать дополнительный Prompt или Finesse?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Это Duplicitous Value Clue. Поскольку подсказка уже удовлетворяет Minimum Clue Value Principle за счёт других полезных карт, само дублирование не вызывает дополнительных Prompt или blind-play. Дополнительные карты полезны, но это не обещает, что они играбельны прямо сейчас.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Дубликат ноль-за-один
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-direct" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса напрямую подсказывает Бобу сыграть карту. Она оказывается дубликатом глобально известной играбельной карты, а подсказка не получает другую полезную карту и не даёт полезного fill-in Tempo. Что Боб должен сделать с картами, которые находились за сыгранным дубликатом?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен сделать **Chop Move карт за ней** как Time Travel Chop Move в direct form. Когда дубликат показывает, что подсказка была настоящей 0-for-1 без ценности или Tempo, команда ретроспективно обращается с дублированной картой так, словно её напрямую затронули ради Trash Chop Move собственной руки Боба.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: When the Blind Form Is Not Available
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-blind" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A clue makes Bob blind-play a duplicate and produces no direct value. However, the same clue already satisfies Minimum Clue Value Principle by picking up useful cards on the clue receiver. Should Bob interpret his duplicate as a blind-form Time Travel Chop Move on his own hand?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The blind form of Time Travel Chop Move requires the result to be bad enough that no simpler duplicitous explanation fits. In particular, the clue must **not** satisfy Minimum Clue Value Principle and must not look like an Assisted Trash Chop Move. Here the useful pickup already explains the duplication, so Bob must not add a Time Travel Chop Move.
+
+</TabItem>
+</Tabs>
