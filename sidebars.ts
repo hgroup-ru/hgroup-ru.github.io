@@ -311,6 +311,23 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-10-composition",
           ],
         },
+        {
+          "Level 11": [
+            "challenge-questions/level-11",
+            "challenge-questions/level-11-after-blue-three",
+            "challenge-questions/level-11-next-player",
+            "challenge-questions/level-11-truth-before-reaction",
+            "challenge-questions/level-11-rank-four",
+            "challenge-questions/level-11-two-threes",
+            "challenge-questions/level-11-no-bluff-target",
+            "challenge-questions/level-11-connect-but-not-blue",
+            "challenge-questions/level-11-stop-after-one",
+            "challenge-questions/level-11-guided-play",
+            "challenge-questions/level-11-simpler-line",
+            "challenge-questions/level-11-false-prompt",
+            "challenge-questions/level-11-queued-signal",
+          ],
+        },
       ],
     },
     {
