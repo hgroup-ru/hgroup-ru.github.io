@@ -9,8 +9,11 @@ on:
       - i18n/**
       - src/**
       - static/**
+      - plugins/**
       - docusaurus.config.ts
       - sidebars.ts
+      - babel.config.cjs
+      - tsconfig.json
       - package.json
       - package-lock.json
       - scripts/build.mts
