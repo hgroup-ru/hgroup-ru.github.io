@@ -1,0 +1,25 @@
+---
+title: Первый слепой игрок не может откладывать
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-15-first-no-deferral/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-first-no-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт красную подсказку на красную 4 Donald в позиции, где Боб может понять, что возможен Double Bluff. Одновременно Боб видит очень привлекательный Finesse, который мог бы дать до своей реакции. Может ли Боб отложить слепой розыгрыш на один ход и сначала дать эту подсказку?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Если первый слепой игрок подозревает **Double Bluff**, он **никогда не должен откладывать** реакцию даже ради другого Finesse или Bluff. Double Bluff обязан разрешиться немедленно, иначе интерпретации получателей подсказок расходятся.
+
+</TabItem>
+</Tabs>

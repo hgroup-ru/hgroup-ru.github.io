@@ -1,0 +1,25 @@
+---
+title: Do Not Invent a Third Blind-Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-triple-bluff/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-triple-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice's clue has already caused Bob and Cathy to make the two immediate blind-plays of a Bluff-style line. Donald's clued red 5 is still not playable. Should Donald expect another player to supply a third blind-play connection before acting on the clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** H-Group explicitly has **no Triple Bluff**. Bluff-style clues are agreed to resolve after two blind-plays. If the clue still needs a third blind-play to make sense as a Bluff, that interpretation is not legal.
+
+</TabItem>
+</Tabs>

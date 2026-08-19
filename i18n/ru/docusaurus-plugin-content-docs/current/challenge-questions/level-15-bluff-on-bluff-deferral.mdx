@@ -1,0 +1,25 @@
+---
+title: Не накладывайте второй Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-15-bluff-on-bluff-deferral/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-bluff-on-bluff-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка Алисы может быть обычным Bluff, поэтому Боб может быть игроком, который должен вслепую реагировать. До разрешения этой подсказки Боб замечает другой заманчивый Bluff, который можно начать собственной подсказкой. Нормально ли для опытной команды сначала запустить этот второй Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Откладывать возможный Bluff ради **другого Bluff почти никогда не следует**. Игра раскалывается на конкурирующие гипотетические состояния для разных получателей подсказок. Если при этом возможен Double Bluff, запрет ещё сильнее: тогда Боб вообще не должен откладывать реакцию.
+
+</TabItem>
+</Tabs>

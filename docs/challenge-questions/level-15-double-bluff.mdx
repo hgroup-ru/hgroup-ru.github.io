@@ -1,0 +1,25 @@
+---
+title: The Second Blind-Play Is Required
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-double-bluff/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-double-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice clues red to Donald's red 4. Bob blind-plays an unrelated blue 1. Cathy sees that red 4 is neither trash nor a legal single-Bluff target, and her Finesse Position is yellow 1. What should Cathy do?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy should **immediately blind-play yellow 1**. The first blind-play cannot explain a red-4 Play Clue as an ordinary Bluff, so the clue points to a **Double Bluff**. Both blind-plays must happen on the two turns directly following the clue.
+
+</TabItem>
+</Tabs>

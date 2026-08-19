@@ -1,0 +1,25 @@
+---
+title: Do Not Stack Another Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-bluff-on-bluff-deferral/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-bluff-on-bluff-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice's clue can be an ordinary Bluff, so Bob may be the reacting blind-player. Before resolving it, Bob notices another tempting Bluff he could initiate with his own clue. Is starting that second Bluff the normal expert line?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Deferring a possible Bluff to perform **another Bluff should almost never be done**. It fractures the game into competing hypothetical states for different clue recipients. A possible Double Bluff makes the prohibition even stronger: then Bob must not defer at all.
+
+</TabItem>
+</Tabs>
