@@ -5,15 +5,18 @@ title: Must This Clue Be Extinguished?
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-extinguish-good-touch/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-extinguish-good-touch" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is the Early Game. The only remaining apparent Play Clue would touch two copies of the same red 1 in one player's hand and would therefore violate Good Touch Principle. No other mandatory Early Game action remains.
+It is the Early Game. The only remaining apparent Play Clue is red to Bob, touching both copies of red 1 in his hand. That clue would violate Good Touch Principle. No other mandatory Early Game action remains.
 
 Must Alice give that Play Clue before the team may make its first completely unknown discard?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

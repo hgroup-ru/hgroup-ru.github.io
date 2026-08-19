@@ -5,15 +5,18 @@ title: Обязательна ли эта подсказка?
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-extinguish-good-touch/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-extinguish-good-touch" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Идёт Early Game. Единственная оставшаяся на вид Play Clue затронет две копии одной и той же красной 1 в руке одного игрока и поэтому нарушит Good Touch Principle. Других обязательных действий Early Game не осталось.
+Идёт Early Game. Единственная оставшаяся на вид Play Clue — красная подсказка Бобу, которая затронет обе копии красной 1 в его руке. Такая подсказка нарушит Good Touch Principle. Других обязательных действий Early Game не осталось.
 
 Обязана ли Алиса дать эту Play Clue до первого сброса полностью неизвестной карты?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

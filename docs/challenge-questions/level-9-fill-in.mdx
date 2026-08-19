@@ -5,15 +5,18 @@ title: More Information
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-fill-in/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-fill-in" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice gives a clue that touches only cards that already have clues and adds new information to them. The team is in an allowed Double Discard Stalling Situation and no higher-precedence clue is available.
+Alice has just discarded a red 4, putting Bob in a Double Discard Stalling Situation. Bob has no higher-precedence clue available. Cathy already has a green clue on her green 3, and Bob could clue number 3, touching only that already-clued card and adding new information.
 
-How should the clue be classified, and would the same shape have the same meaning in a normal situation?
+How should that clue be classified, and would the same clue have the same meaning in a normal situation?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

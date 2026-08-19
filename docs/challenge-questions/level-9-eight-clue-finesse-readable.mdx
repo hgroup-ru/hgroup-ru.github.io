@@ -1,0 +1,27 @@
+---
+title: When the Finesse Is Still Readable
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-9-eight-clue-finesse-readable/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-eight-clue-finesse-readable" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Again it is the Mid-Game with 8 clues. Alice clues red to Cathy's slot 3 red 2, apparently asking Bob to blind-play red 1. This time everybody can see that Donald's already-blue-clued card is the playable blue 2, so Alice had a legal higher-precedence Tempo Clue Stall available.
+
+Does the 8 Clue Save interpretation still explain Alice's clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The visible Tempo Clue Stall has precedence 3, while 8 Clue Save has precedence 4. Alice is not allowed to skip the available higher-precedence stall merely to make an 8 Clue Save. Therefore the team can rule out 8CS as the explanation for this clue and evaluate the clue under the ordinary conventions; if the Finesse is otherwise valid, Bob can react to it.
+
+</TabItem>
+</Tabs>

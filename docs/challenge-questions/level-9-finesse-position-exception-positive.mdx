@@ -1,0 +1,30 @@
+---
+title: When the 5 Stall Preserves a Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-9-finesse-position-exception-positive/question.yml";
+
+<ChallengeQuestionProgress
+  level={9}
+  id="level-9-finesse-position-exception-positive"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the Early Game. The only remaining normal Play Clue would directly touch Cathy's playable red 1 on Finesse Position. Alice can instead 5 Stall Bob's off-chop green 5. If she does, Bob acts before Cathy and can clue Donald's red 2, genuinely Finessing Cathy to play red 1 before Cathy's normal turn.
+
+May Alice use the 5 Stall under the Finesse Position Exception?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** This is the positive form of the Finesse Position Exception: only one Play Clue remains, it touches a card on Finesse Position, and that card can actually be gotten by another player before the recipient reaches their turn. Alice may 5 Stall instead of directly cluing the red 1, preserving the possibility for Bob to Finesse it.
+
+</TabItem>
+</Tabs>

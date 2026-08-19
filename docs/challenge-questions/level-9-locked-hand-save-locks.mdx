@@ -1,0 +1,27 @@
+---
+title: A Save That Would Lock Cathy
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-9-locked-hand-save-locks/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-locked-hand-save-locks" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob has a Locked Hand. Four of Cathy's cards are already clued, and her red 3 is the only completely unclued card, on chop. Bob gives Cathy a red clue touching that chop card. If this were treated as a Locked Hand Save, Cathy would become fully clued.
+
+Should Cathy read the clue as a Locked Hand Save on an arbitrary card?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Locked Hand Save is only available when it does **not** lock the recipient. Because this clue would make Cathy's hand fully clued, the special LHS interpretation is disallowed. Cathy must instead interpret the clue as a normal Play Clue or Save Clue according to the ordinary rules.
+
+</TabItem>
+</Tabs>

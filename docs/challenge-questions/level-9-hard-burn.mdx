@@ -5,15 +5,18 @@ title: No New Information
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-hard-burn/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-hard-burn" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice is in the Early Game with no normal Play Clue or Save Clue and no 5 Stall. She could re-clue a card in a way that gives absolutely no new information: a Hard Burn.
+It is the Early Game. Alice has no normal Play Clue or Save Clue and no available 5 Stall. Bob's blue 5 is already identified, so re-cluing number 5 would add absolutely no information: a Hard Burn.
 
-May she use the Hard Burn as an Early Game Stall?
+May Alice use that Hard Burn as an Early Game Stall?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

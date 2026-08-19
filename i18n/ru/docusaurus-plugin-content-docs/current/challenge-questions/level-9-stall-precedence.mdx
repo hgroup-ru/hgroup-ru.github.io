@@ -5,15 +5,18 @@ title: Три доступные подсказки
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-stall-precedence/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-stall-precedence" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Идёт Mid-Game, и Алиса начинает ход с 8 подсказками. У неё нет известной играбельной карты, нет обычных Play Clue или Save Clue и нет 5 Stall. Она может дать Tempo Clue, повторно затронув карту, чтобы её сыграли, дать Fill-In Clue или сделать 8 Clue Save.
+Идёт Mid-Game, и Алиса начинает ход с 8 подсказками. У неё нет известной играбельной карты, нет обычных Play Clue или Save Clue и нет 5 Stall. Синюю 2 Боба можно повторно подсказать так, чтобы он её сыграл; уже подсказанная 3 Кэти может получить Fill-In Clue; а у Дональда есть карта не в slot 1, которую можно сохранить через 8 Clue Save.
 
 У какого типа подсказки приоритет?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

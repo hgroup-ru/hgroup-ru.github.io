@@ -5,15 +5,18 @@ title: A Clue That Will Be Moved Anyway
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-9-extinguish-order-cm/question.yml";
 
 <ChallengeQuestionProgress level={9} id="level-9-extinguish-order-cm" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is the Early Game. The only remaining visible clue would save a card that will almost certainly be Order Chop Moved by an upcoming player who already has two or more 1s clued in their hand. No other mandatory Early Game action remains.
+It is the Early Game. Bob already has two 1s clued, and the otherwise-unclued red 4 on his chop will almost certainly be protected by the upcoming Order Chop Move. The only remaining visible clue would save that red 4. No other mandatory Early Game action remains.
 
 Must Alice give this clue before the first completely unknown discard?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">

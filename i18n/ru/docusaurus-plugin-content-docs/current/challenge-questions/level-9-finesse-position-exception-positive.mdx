@@ -1,0 +1,30 @@
+---
+title: Когда 5 Stall сохраняет возможность Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-finesse-position-exception-positive/question.yml";
+
+<ChallengeQuestionProgress
+  level={9}
+  id="level-9-finesse-position-exception-positive"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Early Game. Единственная оставшаяся обычная Play Clue напрямую затронет играбельную красную 1 Кэти на Finesse Position. Вместо этого Алиса может дать 5 Stall на off-chop зелёную 5 Боба. После этого Боб ходит раньше Кэти и может подсказать красную 2 Дональда, действительно сделав Finesse красной 1 Кэти до её обычного хода.
+
+Разрешён ли Алисе 5 Stall по Finesse Position Exception?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Это положительный случай Finesse Position Exception: осталась только одна Play Clue, она затрагивает карту на Finesse Position, и эту карту действительно может получить через Finesse другой игрок до хода получателя. Алиса может дать 5 Stall вместо прямой подсказки красной 1 и сохранить возможность Бобу сделать Finesse.
+
+</TabItem>
+</Tabs>

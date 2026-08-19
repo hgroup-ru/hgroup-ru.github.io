@@ -1,0 +1,27 @@
+---
+title: Save, который заблокирует Кэти
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-9-locked-hand-save-locks/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-locked-hand-save-locks" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Боба Locked Hand. Четыре карты Кэти уже подсказаны, а красная 3 на chop — её единственная полностью неподсказанная карта. Боб даёт Кэти красную подсказку на эту chop-карту. Если считать её Locked Hand Save, рука Кэти станет полностью подсказанной.
+
+Должна ли Кэти читать подсказку как Locked Hand Save произвольной карты?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Locked Hand Save допустим только тогда, когда он **не блокирует** получателя. Здесь подсказка сделает руку Кэти полностью подсказанной, поэтому специальная трактовка LHS запрещена. Кэти должна трактовать подсказку как обычную Play Clue или Save Clue по стандартным правилам.
+
+</TabItem>
+</Tabs>

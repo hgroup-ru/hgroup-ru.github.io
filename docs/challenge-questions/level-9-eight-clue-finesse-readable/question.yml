@@ -1,0 +1,53 @@
+stacks:
+  - r: 0
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+bigText:
+  text: 8 clues - Mid-Game
+players:
+  - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: r1
+        border: false
+      - type: y4
+        border: false
+      - type: g4
+        border: false
+      - type: b4
+        border: false
+      - type: p4
+        border: false
+  - name: Cathy
+    cards:
+      - type: y3
+        border: false
+      - type: g3
+        border: false
+      - type: r2
+        border: false
+      - type: b3
+        border: false
+      - type: p3
+        border: false
+  - name: Donald
+    cards:
+      - type: b2
+        clue: b
+        middleNote: blue
+      - type: r4
+        border: false
+      - type: y4
+        border: false
+      - type: g5
+        border: false
+      - type: p5
+        border: false

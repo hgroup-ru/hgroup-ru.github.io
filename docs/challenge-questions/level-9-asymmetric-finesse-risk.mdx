@@ -1,0 +1,27 @@
+---
+title: The Better Stall Only Alice Can See
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-9-asymmetric-finesse-risk/question.yml";
+
+<ChallengeQuestionProgress level={9} id="level-9-asymmetric-finesse-risk" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+At 8 clues, Alice can see that Bob's blue-clued card is the playable blue 2, so Alice knows she had a higher-precedence Tempo Clue Stall available. Instead she clues red to Cathy's slot 3 red 2, intending Bob's slot 1 to Finesse as red 1. Bob, however, only knows that his blue-clued card is blue; he does not know it is the playable blue 2.
+
+Can Alice rely on Bob using the skipped Tempo Stall to rule out 8 Clue Save?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The precedence argument only helps a reacting player when that player can know the higher-precedence option existed. From Bob's information, Alice might have had no Tempo Clue Stall at all, so an 8 Clue Save remains a possible explanation. This makes the intended Finesse unsafe and desynchronization-prone even though Alice and the other players can see why it was not meant as a stall.
+
+</TabItem>
+</Tabs>

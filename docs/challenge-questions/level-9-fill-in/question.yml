@@ -1,0 +1,38 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+discarded:
+  - r4
+bigText:
+  text: DDA - Bob to act
+players:
+  - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: g3
+        clue: g
+        middleNote: green
+      - type: y4
+        border: false
+      - type: b4
+        border: false
+      - type: p4
+        border: false
+      - type: r5
+        border: false
