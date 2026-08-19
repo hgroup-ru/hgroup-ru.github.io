@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Validate release notes
         run: python3 scripts/validate_release_notes.py
@@ -28,6 +30,16 @@ jobs:
       - name: Validate notification workflow invariants
         run: python3 scripts/validate_notification_workflows.py
 
+      - name: Detect site build requirement
+        id: site-build
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          required="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" | python3 scripts/site_build_required.py)"
+          echo "required=$required" >> "$GITHUB_OUTPUT"
+          echo "Site build required: $required"
+
       - name: Setup
         id: setup
         uses: ./.github/workflows/setup
@@ -36,7 +48,7 @@ jobs:
         run: npm run lint
 
       - name: Build RU site
-        if: ${{ always() && steps.setup.outcome == 'success' && !startsWith(github.head_ref, 'automation/') }}
+        if: ${{ always() && steps.setup.outcome == 'success' && steps.site-build.outputs.required == 'true' && !startsWith(github.head_ref, 'automation/') }}
         run: npm run build:ru
 
   notify:

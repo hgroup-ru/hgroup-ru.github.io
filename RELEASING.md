@@ -67,9 +67,13 @@ _Изменений для следующего релиза пока нет._
 
 ## CI
 
-Обычный PR CI остаётся быстрым: invariant checks, формат/типизация/линт и другие проверки из `npm run lint`. Полный RU build не обязателен для каждого внутреннего PR.
+Каждый Pull Request проходит invariant checks, форматирование, типизацию, линтеры и другие проверки из `npm run lint`.
 
-Fork PR дополнительно собирается полностью, потому что для внешнего контрибьютора полезно получить build failure до merge.
+Полный `npm run build:ru` запускается **по содержимому изменения, а не по происхождению PR**. Он обязателен, если diff затрагивает любой production-вход сайта, перечисленный в `on.push.paths` canonical workflow [`.github/workflows/publish.yml`](.github/workflows/publish.yml). Один и тот же контракт применяется к внутренним PR и PR из fork.
+
+Список production-входов не должен дублироваться в CI. Скрипт `scripts/site_build_required.py` читает `publish.yml` напрямую, поэтому `Publish Site` и PR CI используют один source of truth. Если новый файл или каталог начинает влиять на production build, сначала его добавляют в `publish.yml`; после этого PR CI автоматически начинает требовать полный build для таких изменений.
+
+Чистые изменения CI, release machinery, maintainer-документации и другого кода, который не входит в production inputs, не должны бессмысленно собирать Docusaurus. Служебные `automation/*` ветки release-архивации остаются отдельным техническим исключением.
 
 CI не требует release-note решения от автора PR, не публикует сайт и не создаёт release metadata. Если `CHANGELOG.md` всё же изменён в PR, его формат продолжает проверяться обычным CI.
 
@@ -123,6 +127,7 @@ Workflow:
 
 ## Что является source of truth
 
+- production-входы сайта и условие полного PR build: `.github/workflows/publish.yml` → `on.push.paths`;
 - текущий live deployment и его SHA: GitHub Pages deployment history;
 - накопленные пользовательские изменения после прошлого official release: `CHANGELOG.md` → `## Следующий релиз`;
 - история официальных выпусков: архив `CHANGELOG.md` + GitHub Releases + `prod-*` tags;
