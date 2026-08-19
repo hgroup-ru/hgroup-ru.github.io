@@ -45,6 +45,10 @@ def main() -> None:
         "workflows:",
         "- Release",
         "Официальный релиз опубликован",
+        "elif release_url:",
+        "опубликован, но post-release завершился неуспешно",
+        "отменён до публикации GitHub Release",
+        "упал до публикации GitHub Release",
         "Что нового",
         '--data-urlencode "chat_id=${TELEGRAM_CHAT_ID}"',
     ):

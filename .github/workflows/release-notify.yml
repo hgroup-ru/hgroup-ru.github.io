@@ -79,15 +79,22 @@ jobs:
               lines = ["#release #production #success", "🟢 <b>Официальный релиз опубликован</b>"]
               if release_url:
                   lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+          elif release_url:
+              lines = [
+                  "#release #production #warning",
+                  f"🟡 <b>Официальный релиз #{run_number} опубликован, но post-release завершился неуспешно</b>",
+                  "Не запускай новый релиз вслепую: сначала проверь архивирование и state sync.",
+                  f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>',
+              ]
           elif result == "cancelled":
               lines = [
                   "#release #production #cancelled",
-                  f"⚪ <b>Официальный релиз #{run_number} отменён</b>",
+                  f"⚪ <b>Официальный релиз #{run_number} отменён до публикации GitHub Release</b>",
               ]
           else:
               lines = [
                   "#release #production #failed",
-                  f"🔴 <b>Официальный релиз #{run_number} завершился с ошибкой</b>",
+                  f"🔴 <b>Официальный релиз #{run_number} упал до публикации GitHub Release</b>",
                   "Проверь Actions перед повторным запуском.",
               ]
 
