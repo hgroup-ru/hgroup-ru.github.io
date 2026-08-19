@@ -1,22 +1,27 @@
 ---
-title: No-Information Needs a Distant Touched Card
+title: The Re-Clued Red 2
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-20-no-info-distance-layered/question.yml";
 
 <ChallengeQuestionProgress level={20} id="level-20-no-info-distance-layered" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Can a genuine No-Information re-clue cause a No-Information Finesse or Bluff when the touched card is already playable? And can the same principle ever produce a Layered Finesse on the next player?
+Nothing is played. Cathy's red 2 was already red-clued, and Alice gives the same red clue again; by stipulation, the card's superposition is unchanged, so this is a genuine No-Information re-clue. Cathy also has an untouched blue 2 that Alice could have clued normally if she merely wanted to initiate a Bluff. Bob's Finesse Position is green 1 and his Second Finesse Position is red 1. What should Bob do?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-The touched card must be **one-or-more-away-from-playable**; an already-playable touched card does not satisfy this Level 20 condition. The principle **can** produce a No-Information Layered Finesse on the next player. In that case the next player distinguishes it from a Bluff because some other more-useful clue could have initiated the Bluff instead.
+Bob should treat the re-clue as a **No-Information Layered Finesse**. He blind-plays green 1 first; after that unrelated playable card succeeds, he continues through the layer and later blind-plays red 1 to connect Cathy's red 2.
+
+The touched red 2 is one-away-from-playable, satisfying the Level 20 distance condition. Bob distinguishes this from a Bluff because Alice had the more useful untouched blue-2 clue available if a Bluff were all she wanted. An already-playable touched card could not be used for a No-Information Finesse or Bluff.
 
 </TabItem>
 </Tabs>

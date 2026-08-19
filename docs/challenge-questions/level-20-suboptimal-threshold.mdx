@@ -1,22 +1,25 @@
 ---
-title: Slightly Worse Is Not Suboptimal Enough
+title: Blue or Number 3?
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-20-suboptimal-threshold/question.yml";
 
 <ChallengeQuestionProgress level={20} id="level-20-suboptimal-threshold" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice has a free choice between two ways to save a critical card. One clue is slightly less efficient on paper, but the other would touch a possible duplicate 3 already clued in Bob's hand. Should Bob automatically treat Alice's choice as a Suboptimal Prompt, Finesse, or Bluff?
+One blue 3 has been discarded, so Bob's blue 3 on chop is critical. Alice can save it with either blue or number 3. A number-3 clue would also re-touch Bob's known red 3, which duplicates Alice's globally known red 3. Alice chooses blue, touching only the critical blue 3. Should Bob treat that choice as a Suboptimal Prompt, Finesse, or Bluff?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** The clue must be **really bad**, not merely technically worse. Good Touch concerns, useful negative information, or another reasonable contextual benefit can justify the apparent loss. The extra Play Clue meaning is inferred only when the chosen clue is clearly worse without an ordinary explanation.
+**No.** The blue clue has an ordinary **Good Touch Principle** justification: it avoids re-touching a known duplicate red 3. A Suboptimal move must be **clearly and meaningfully worse** than the available alternative with no ordinary explanation. Merely losing some apparent clue efficiency is not enough to manufacture extra Play Clue meaning.
 
 </TabItem>
 </Tabs>

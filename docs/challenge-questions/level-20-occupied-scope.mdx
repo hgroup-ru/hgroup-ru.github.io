@@ -1,22 +1,27 @@
 ---
-title: Occupied Requires a Stolen Clue
+title: Who Could Give the 2 Clue?
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-20-occupied-scope/question.yml";
 
 <ChallengeQuestionProgress level={20} id="level-20-occupied-scope" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice has a globally known playable card but gives a time-sensitive clue instead. Alice is the only player who could reasonably give that clue. Bob comes next and otherwise has nothing useful to do. Should Bob automatically treat Alice as Occupied and add an extra Occupied meaning to the clue?
+Red 2 and yellow 1 are played. Alice has a globally known playable red 3, while Bob has no useful action. Cathy's yellow 2 is on chop. Both Alice and Bob could give Cathy the same number-2 Save Clue, but Alice gives it and Bob then discards. How should Cathy interpret the clued yellow 2?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** Occupied applies only when the clue really could have been given by **two or more players**, but a player with a playable card "steals" it and leaves the next player with nothing to do but discard. If Alice is uniquely able to give the clue, deferring her play is ordinary teamwork and does not create Occupied meaning. When the Occupied condition really does apply, a clue that would normally be a **Save Clue becomes an Occupied Play Clue**, while a normal **Play Clue becomes an Occupied Finesse**; in general, the Occupied move does one extra thing.
+Cathy should treat it as an **Occupied Play Clue** and play the yellow 2. Alice had a playable card, Bob could have given the exact same clue, and Alice's choice to "steal" that clue left Bob with nothing useful to do. Those are the conditions that make Alice **Occupied**, so the ordinary 2 Save gains one extra meaning and becomes a Play Clue.
+
+If Alice had been the only player who could reasonably give the clue, delaying her own play would be ordinary teamwork and would **not** create an Occupied meaning.
 
 </TabItem>
 </Tabs>

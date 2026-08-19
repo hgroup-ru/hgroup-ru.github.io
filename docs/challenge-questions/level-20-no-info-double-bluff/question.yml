@@ -1,0 +1,33 @@
+stacks:
+  - r: 0
+  - y: 1
+  - g: 1
+  - b: 0
+  - p: 0
+bigText:
+  text: Bob played green 1; Cathy then played yellow 1
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 3
+        clue: 3
+        retouched: true
+      - type: x
