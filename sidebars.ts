@@ -294,8 +294,8 @@ const sidebars: SidebarsConfig = {
           "Level 10": [
             "challenge-questions/level-10",
             "challenge-questions/level-10-gd-no-upside",
-            "challenge-questions/level-10-gd-buys-time",
             "challenge-questions/level-10-gd-distribution",
+            "challenge-questions/level-10-gd-buys-time",
             "challenge-questions/level-10-layered-gd",
             "challenge-questions/level-10-baton",
             "challenge-questions/level-10-layered-baton",
