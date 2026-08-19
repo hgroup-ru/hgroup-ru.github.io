@@ -1,0 +1,25 @@
+---
+title: Rank Clue, Same Suit
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-rank-same-suit/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-rank-same-suit" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On turn 1, Alice clues Cathy number 3, touching a physical red 3. Bob blind-plays red 1. Does the shared red suit promise that Bob also has red 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The clue was rank 3, and rank 1 does not connect to rank 3. This remains a 3 Bluff even though the physical cards share a suit. Cathy knows only that her card is a 3; Bob is not promised red 2 by this line.
+
+</TabItem>
+</Tabs>
