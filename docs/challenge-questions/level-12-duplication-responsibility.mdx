@@ -1,0 +1,27 @@
+---
+title: Three Saved 2s
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-duplication-responsibility/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-duplication-responsibility" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Donald has an unclued blue 2 on chop that must be saved. Bob has two cards that are only known to be 2s; Cathy has one card that is only known to be a 2. Either Bob or Cathy can give the 2 Save, but either clue could duplicate a card already in the cluer's hand.
+
+Who has responsibility for the save?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Cathy should save the blue 2.** Under Duplication Responsibility, when somebody must risk violating Good Touch Principle to satisfy Save Principle, the player with fewer matching clued cards takes responsibility. Cathy has one possible matching 2, while Bob has two, so Bob should defer to Cathy.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,27 @@
+---
+title: Две поздние 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-stale-ones/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-stale-ones" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+После нескольких обычных подсказок Алиса сделала первый полностью неизвестный сброс в партии, завершив Early Game. Сразу после этого Боб дал Кэти подсказку числом 1, затронув две ранее нетронутые 1. Если бы обе 1 были полезны, Алиса была бы обязана дать на них подсказку до сброса.
+
+Какую из двух карт Кэти должна сыграть первой и что она должна заключить о второй?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна **пропустить самую старую, правую 1 и сыграть более новую, левую 1**. Это Stale 1's Clue. Неизвестный сброс Алисы сообщил, что обычных Play Clue и Save Clue больше не осталось, поэтому обе только что подсказанные 1 не могут быть полезными. По convention старшая 1 считается stale-картой, которую Кэти иначе сыграла бы первой: её следует отметить как известный trash, а более новую 1 — сыграть.
+
+</TabItem>
+</Tabs>
