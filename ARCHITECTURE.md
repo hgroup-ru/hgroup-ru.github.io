@@ -44,9 +44,13 @@ npm run build:ru
 
 Обычная работа идёт через отдельные ветки и Pull Request.
 
-CI проверяет форматирование, типы, линтеры, release-note decision и другие автоматические требования. Для Pull Request из внешнего fork дополнительно выполняется `npm run build:ru`.
+Каждый PR проходит форматирование, типы, линтеры и invariant checks. Полный `npm run build:ru` зависит не от того, внутренний PR или fork, а от того, может ли изменение повлиять на production site.
 
-User-facing изменение должно либо обновить `CHANGELOG.md` → `## Следующий релиз`, либо явно зафиксировать в PR body решение `[no release note]`, если пользовательского эффекта действительно нет.
+Единственный список production-входов задаётся в `.github/workflows/publish.yml` через `on.push.paths`. PR CI определяет необходимость полного build по этому же списку через `scripts/site_build_required.py`; отдельного второго path-list в CI нет. Поэтому добавление нового production-входа делается один раз — в `publish.yml` — и автоматически влияет и на auto-publish после merge, и на pre-merge build requirement.
+
+Чистые изменения CI/release machinery и другой служебной документации, не являющейся production input, проходят быстрый CI без Docusaurus build. Изменения `docs`, `i18n`, компонентов, плагинов, конфигурации или других production inputs получают полный RU build до merge.
+
+Release notes ведут мейнтейнеры. Автор PR не обязан менять `CHANGELOG.md`, классифицировать изменение для релиза или добавлять `[no release note]`.
 
 ## Публикация и официальный релиз
 
