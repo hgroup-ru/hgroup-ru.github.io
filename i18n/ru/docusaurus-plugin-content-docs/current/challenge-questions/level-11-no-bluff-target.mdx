@@ -1,0 +1,27 @@
+---
+title: 4 с пустого стола
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-no-bluff-target/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-no-bluff-target" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На столе ничего не было сыграно. Алиса дала Дональду Play Clue числом 4. Затем Боб вслепую сыграл красную 1, а Кэти сбросила. С точки зрения Дональда 1 напрямую не соединяется с 4.
+
+Следует ли Дональду из-за этого разрыва по числу трактовать подсказку как Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** При пустом столе не существует 4, которая была бы one-away-from-playable, поэтому 4 здесь не может быть допустимой целью для Bluff. Интерпретация через Bluff невозможна, несмотря на disconnect. Значит, Дональд сохраняет правдивую интерпретацию через Finesse: красная 1 начинает многокарточную связку к красной 4, перед которой должны последовать красная 2 и красная 3.
+
+</TabItem>
+</Tabs>

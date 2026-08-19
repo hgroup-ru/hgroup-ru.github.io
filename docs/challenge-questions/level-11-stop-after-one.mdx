@@ -1,0 +1,27 @@
+---
+title: After the First Blind-Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-stop-after-one/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-stop-after-one" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 2s were played. Alice, who is in Bluff Seat for Bob, gave Cathy a red Play Clue on her red 4. Bob immediately blind-played his Finesse Position expecting red 3; it was the blue 3 and played successfully. Bob's newly exposed Finesse Position really is the red 3.
+
+Should Bob continue digging for the red 3 as a Layered Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** From Bluff Seat, when the immediate unrelated blind-play can form a legal Bluff, the Bluff interpretation takes precedence over a Layered Finesse. Red 4 was a legal one-away-from-playable Bluff target, and blue 3 disconnected from the red clue, so the misinformation was immediately resolved as a Bluff. Bob is no longer promised another blind-play just because the next physical card happens to be red 3.
+
+</TabItem>
+</Tabs>
