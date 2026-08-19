@@ -1,0 +1,24 @@
+---
+title: The New 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-finesse-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Only red 1 is played. Cathy already has a 3 with a number clue and no color information. Alice gives Cathy a Play Clue to a new 4, then Bob blind-plays red 2. No stack is high enough for any 4 to be one-away-from-playable.
+
+Should Cathy keep a simple Hard Bluff interpretation and wait?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Hard Bluff requires a legal simple Bluff target to remain possible. Here no 4 is one-away-from-playable, so the new 4 cannot be an ordinary Bluff target. The truthful explanation is Finesse + Prompt: Cathy is promised red 3 and red 4, so she plays her unknown-color clued 3 as a Self-Prompt for red 3.
+
+</TabItem>
+</Tabs>

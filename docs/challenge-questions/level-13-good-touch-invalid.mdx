@@ -1,0 +1,24 @@
+---
+title: The Number 4 Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch-invalid" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Alice gives Cathy a number 4 clue touching a red 4. Bob blind-plays blue 3. No already-clued blue 4 is visible elsewhere.
+
+Is this a safe Bluff on Cathy's red 4?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Number 3 connects to number 4, so Cathy reads Bob's blue 3 as a Finesse and concludes that her touched 4 is blue 4. She would then misplay the physical red 4 as blue 4. Without the Good Touch elimination supplied by an already-touched blue 4 elsewhere, Alice must not give this Bluff.
+
+</TabItem>
+</Tabs>

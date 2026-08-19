@@ -1,0 +1,24 @@
+---
+title: Негативная информация по 2
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect-rank-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+В партии на четверых на стопках ничего не сыграно. Алиса даёт Дональду красную Play Clue, затрагивая одну карту. На этой карте у Дональда уже есть негативная информация по числу 2. Боб вслепую играет красную 1. Кэти должна решить, задумала ли Алиса 3 Bluff или Double Finesse.
+
+Должна ли Кэти вслепую сыграть свою Finesse Position как красную 2?
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Негативная информация Дональда по числу 2 не позволит ему позднее принять свою карту за красную 2, но не превращает линию в 3 Bluff. Подсказка красная и сыгранная Бобом вслепую карта красная, поэтому подсказка **соединяется** с этим розыгрышем. На уровне 13 линия трактуется как Double Finesse, и Кэти обещана красная 2 в Finesse Position.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Negative Blue Everywhere
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-known-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing is played. Alice gives Cathy a blue Play Clue that could honestly look like a Finesse through blue 1. Bob is the next player, but previous clues have given every card in Bob's hand negative blue information. Bob sees no better explanation for Alice's clue.
+
+Should Bob refuse to blind-play because he knows he cannot have blue 1?
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Bob should blind-play his Finesse Position as a Known Bluff.** Normally the reacting player believes they hold the connecting card of a real Finesse. Here Bob can prove that he does not hold blue 1, but if no better conventional explanation exists, that impossibility is exactly what tells him that Alice is using him for a Bluff.
+
+</TabItem>
+</Tabs>

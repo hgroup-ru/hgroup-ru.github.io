@@ -1,0 +1,24 @@
+---
+title: Новая 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-finesse-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На стопках сыграна только красная 1. У Кэти уже есть 3 с подсказкой числом и без информации о цвете. Алиса даёт Кэти Play Clue на новую 4, после чего Боб вслепую играет красную 2. Ни одна стопка не поднята достаточно высоко, чтобы какая-либо 4 была one-away-from-playable.
+
+Должна ли Кэти сохранить простую интерпретацию Hard Bluff и подождать?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Для Hard Bluff должна оставаться возможной допустимая простая цель Bluff. Здесь ни одна 4 не является one-away-from-playable, поэтому новая 4 не может быть обычной целью Bluff. Правдивая интерпретация — Finesse + Prompt: Кэти обещаны красная 3 и красная 4, поэтому она играет свою 3 неизвестного цвета как Self-Prompt для красной 3.
+
+</TabItem>
+</Tabs>

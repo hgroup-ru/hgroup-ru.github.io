@@ -1,0 +1,24 @@
+---
+title: Подсказка числом 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch-invalid" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На стопках сыграны красная 2 и синяя 2. Алиса даёт Кэти подсказку числом 4, затрагивая красную 4. Боб вслепую играет синюю 3. В других руках нет уже подсказанной синей 4.
+
+Безопасен ли такой Bluff на красную 4 Кэти?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Число 3 соединяется с числом 4, поэтому Кэти читает синюю 3 Боба как Finesse и заключает, что её затронутая 4 — синяя 4. Затем она получила бы мисплей, сыграв физическую красную 4 как синюю 4. Без исключения по Good Touch, которое дала бы уже затронутая синяя 4 в другой руке, Алиса не должна давать такой Bluff.
+
+</TabItem>
+</Tabs>

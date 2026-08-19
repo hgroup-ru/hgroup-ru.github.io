@@ -1,0 +1,24 @@
+---
+title: Везде негативный синий
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-known-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На стопках ничего не сыграно. Алиса даёт Кэти синюю Play Clue, которая при обычном чтении может выглядеть как Finesse через синюю 1. Следующим ходит Боб, но предыдущие подсказки дали каждой карте в его руке негативную информацию по синему цвету. Боб не видит лучшего объяснения подсказки Алисы.
+
+Должен ли Боб отказаться играть вслепую, раз он знает, что синей 1 у него быть не может?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Боб должен вслепую сыграть свою Finesse Position как Known Bluff.** Обычно реагирующий игрок считает, что держит связующую карту настоящего Finesse. Здесь Боб может доказать, что синей 1 у него нет, но при отсутствии лучшего конвенционного объяснения именно эта невозможность показывает ему, что Алиса использует его для Bluff.
+
+</TabItem>
+</Tabs>

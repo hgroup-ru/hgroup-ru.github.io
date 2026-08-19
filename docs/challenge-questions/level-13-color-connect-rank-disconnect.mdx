@@ -1,0 +1,24 @@
+---
+title: Negative 2 Information
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect-rank-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing is played in a four-player game. Alice gives Donald a red Play Clue touching one card. Donald already has negative 2 information on that card. Bob blind-plays red 1. Cathy now has to decide whether Alice intended a 3 Bluff or a Double Finesse.
+
+Should Cathy blind-play her Finesse Position as red 2?
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** Donald's negative 2 information prevents Donald from later mistaking his card for red 2, but it does not turn the line into a 3 Bluff. The clue is red and Bob's blind-play is red, so the clue **connects** to the blind-play. Level 13 therefore treats the line as a Double Finesse, and Cathy is promised red 2 on Finesse Position.
+
+</TabItem>
+</Tabs>
