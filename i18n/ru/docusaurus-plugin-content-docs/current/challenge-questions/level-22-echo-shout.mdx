@@ -1,0 +1,22 @@
+---
+title: Почему Echo Shout не существует
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-shout" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса сбрасывает известный мусор вместо игры, и кто-то предлагает трактовать получившийся Shout Discard как Echo Shout, который проходит через нескольких игроков. Допустима ли такая интерпретация? Какие два варианта остаются вместо неё?
+
+</TabItem>
+<TabItem value="solution">
+
+Нет. **Shout Discard не может создавать Echo Chop Move.** Сброс известного мусора намного менее серьёзен, чем намеренный сброс неизвестной карты с риском проиграть партию, поэтому он не несёт дополнительный Echo-смысл. Действие всегда является либо **одиночным Shout Discard Chop Move**, либо **Generation Discard**.
+
+</TabItem>
+</Tabs>

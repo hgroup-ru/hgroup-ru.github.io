@@ -1,0 +1,25 @@
+---
+title: When the Screamed-at Player Must Discard Anyway
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-22-rebellious/solution.yml";
+
+<ChallengeQuestionProgress level={22} id="level-22-rebellious" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+There are 0 clues. Red 4 is already discarded. Alice has a known-playable blue 2. Bob has a critical red 4 on chop and no playable cards. Cathy's hand is Locked, all critical, and none of her cards is playable. Alice discards instead of playing blue 2, so Bob recognizes a Scream Discard and Chop Moves red 4. Scream rules normally forbid Bob from discarding now. What must Bob do instead of wasting the last clue?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob must make a **Rebellious Discard**. If he obeyed the ordinary post-Scream rule and spent a clue, Cathy would then have no clue and would be forced to discard a critical card. Bob therefore keeps the Scream's Chop Move, then **discards his new chop**, creating the clue Cathy needs. The second emergency discard is itself another Scream Discard.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

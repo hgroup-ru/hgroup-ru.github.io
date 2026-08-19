@@ -1,0 +1,22 @@
+---
+title: Когда Scream создаёт Echo
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-scream" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает действие, которое обычно было бы Scream Discard последней надежды. У Боба, следующего игрока, уже есть известная играбельная карта или известный безопасный мусор для сброса. Что означает сброс Алисы на Level 22 и кому после реакции запрещено сбрасывать свой chop на следующем ходу?
+
+</TabItem>
+<TabItem value="solution">
+
+Поскольку у Боба уже есть безопасное действие, обычный Scream только на Боба не был бы последней надеждой. Поэтому сброс становится **Echo Scream Discard Chop Move**: он «отскакивает» от Боба и делает Chop Move Бобу и следующему за ним игроку. Как и при обычном Scream Discard, **каждому игроку, получившему Chop Move, нельзя сбрасывать этот chop на следующем ходу**.
+
+</TabItem>
+</Tabs>

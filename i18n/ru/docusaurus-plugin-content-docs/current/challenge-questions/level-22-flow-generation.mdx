@@ -1,0 +1,22 @@
+---
+title: Ветка flowchart: Generation Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-flow-generation" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает экстренный сброс из flowchart Level 22. У Боба нет известной игры и известного безопасного сброса. У Кэти их тоже нет, но на chop у Кэти находится уникальная играбельная карта, критическая карта или уникальная 2. Как flowchart называет сброс Алисы и что должен сделать Боб?
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Generation Discard**, а не Scream Discard Chop Move. Боб должен использовать созданную подсказку, чтобы дать **Play Clue или Save Clue важной карте Кэти на chop**, а не делать Chop Move собственной карте.
+
+</TabItem>
+</Tabs>

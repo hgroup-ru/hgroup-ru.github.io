@@ -1,0 +1,22 @@
+---
+title: Ветка flowchart: Echo или за пределами схемы?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-flow-echo-boundary" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает экстренный сброс из flowchart, а у Боба уже есть известная игра или известный безопасный сброс. Случай A: у Кэти нет известного безопасного действия, но на chop есть уникальная играбельная, критическая карта или уникальная 2. Случай B: у Кэти нет безопасного действия и нет такой важной карты на chop. Что говорит flowchart в каждом случае?
+
+</TabItem>
+<TabItem value="solution">
+
+В случае A это **Echo Scream Discard Chop Move**: и Боб, и Кэти делают Chop Move, а Бобу не нужно давать подсказку карте Кэти на chop. В случае B flowchart намеренно останавливается: Алиса сделала **продвинутый ход, который эта схема не покрывает**, либо ошиблась. Level 22 говорит, что Scream и Generation Discard должны быть ходами последней надежды, поэтому Боб обязан рассуждать о том, какие карты нужно спасать и у кого самые безопасные chop, а не насильно выбирать стандартное название.
+
+</TabItem>
+</Tabs>

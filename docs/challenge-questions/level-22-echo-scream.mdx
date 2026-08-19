@@ -1,0 +1,22 @@
+---
+title: When a Scream Echoes
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-echo-scream" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice makes what would normally be a last-resort Scream Discard. Bob, the next player, already has either a known playable card or a known safe trash discard. What does Alice's discard mean at Level 22, and which players are prevented from discarding their chop on their next turn?
+
+</TabItem>
+<TabItem value="solution">
+
+Because Bob already has a safe action, an ordinary Scream aimed only at Bob would not be a last resort. The discard therefore becomes an **Echo Scream Discard Chop Move**: it bounces off Bob and Chop Moves both Bob and the player after him. As with a normal Scream Discard, **every player who was Chop Moved may not discard that chop on their next turn**.
+
+</TabItem>
+</Tabs>
