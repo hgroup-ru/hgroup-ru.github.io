@@ -1,0 +1,24 @@
+---
+title: The Previous Hand
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-permission-to-discard" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is still the Early Game. On Bob's turn, every normal Play Clue and Save Clue has been extinguished except for a clue he could give to Alice, the player who acted directly before him. There are no other mandatory Early Game actions remaining.
+
+Must Bob clue Alice before he may discard?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Permission to Discard is the important exception for the previous player's hand. Bob is not required to clue Alice, because Alice acted directly before him. He may clue her if he wants, or he may discard. This exception does not make arbitrary other visible Play Clues or Save Clues optional.
+
+</TabItem>
+</Tabs>

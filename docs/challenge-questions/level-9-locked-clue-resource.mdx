@@ -1,0 +1,24 @@
+---
+title: One Clue Left
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-locked-clue-resource" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Cathy has a fully clued Locked Hand and will act after Alice. The team has exactly 1 clue. Alice has no urgent normal clue to give and is considering spending the last clue on a low-value clue elsewhere.
+
+Is Alice free to spend it?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Locked player cannot discard to generate a clue. Level 9 therefore protects the team's clue resource around a Locked Hand: at 0 clues another player must discard to generate one for the Locked player, and with only 1 clue left the team must not steal that last clue from them. Alice should preserve it rather than spend it on the unrelated low-value clue.
+
+</TabItem>
+</Tabs>

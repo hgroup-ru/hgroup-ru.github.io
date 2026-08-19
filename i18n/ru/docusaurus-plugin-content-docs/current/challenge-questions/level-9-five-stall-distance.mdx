@@ -1,0 +1,24 @@
+---
+title: Две пятёрки
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-five-stall-distance" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса находится в допустимой Early Game Stalling Situation, и единственное оставшееся обязательное действие — 5 Stall. У Боба off-chop 5 в одной карте от chop. У Кэти off-chop 5 в двух картах от chop. При этом у Боба есть две известные играбельные карты.
+
+Какую 5 должна подсказать Алиса?
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса должна подсказать **5 Боба**. На уровне 9 5 Stall обязан выбирать 5, которая ближе всего к chop. Наличие у Боба играбельных карт не меняет этот порядок: в исходном примере выбирается более близкая к chop 5, даже когда у её владельца есть две играбельные карты.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Осталась одна подсказка
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-locked-clue-resource" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Кэти полностью подсказанная Locked Hand, и она ходит после Алисы. У команды ровно 1 подсказка. У Алисы нет срочной обычной подсказки, и она думает потратить последнюю подсказку на малоценную подсказку в другом месте.
+
+Можно ли Алисе свободно её потратить?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Игрок с Locked Hand не может сбросить карту, чтобы получить подсказку. Поэтому уровень 9 защищает ресурс подсказок рядом с Locked Hand: при 0 подсказок другой игрок должен сбросить карту и получить подсказку для Locked-игрока, а при единственной оставшейся подсказке команда не должна её у него отнимать. Алисе следует сохранить эту подсказку, а не тратить её на несвязанное малоценное действие.
+
+</TabItem>
+</Tabs>

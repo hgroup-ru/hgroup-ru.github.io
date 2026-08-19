@@ -1,0 +1,24 @@
+---
+title: Три доступные подсказки
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-stall-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Mid-Game, и Алиса начинает ход с 8 подсказками. У неё нет обычных Play Clue или Save Clue и нет 5 Stall. Она может дать Tempo Clue, повторно затронув карту, чтобы её сыграли, дать Fill-In Clue или сделать 8 Clue Save.
+
+У какого типа подсказки приоритет?
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса должна предпочесть **Tempo Clue Stall**. При 8 подсказках Stall Table разрешает все три варианта, но их очередность не равна: Tempo Clue Stall имеет очередь 3, а Fill-In Clue и 8 Clue Save — очередь 4. Нельзя выбирать Stall с более низкой очередностью только потому, что он тоже разрешён в текущей Stalling Situation.
+
+</TabItem>
+</Tabs>

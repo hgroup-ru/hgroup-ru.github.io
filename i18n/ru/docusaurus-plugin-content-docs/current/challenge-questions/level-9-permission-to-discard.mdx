@@ -1,0 +1,24 @@
+---
+title: Рука предыдущего игрока
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-permission-to-discard" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Всё ещё идёт Early Game. На ходу Боба все обычные Play Clue и Save Clue уже исчерпаны, кроме подсказки, которую он мог бы дать Алисе — игроку, ходившему непосредственно перед ним. Других обязательных действий Early Game не осталось.
+
+Обязан ли Боб подсказать Алисе перед тем, как сможет сбросить карту?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Permission to Discard — важное исключение для руки предыдущего игрока. Боб не обязан подсказывать Алисе, потому что она ходила непосредственно перед ним. Он может дать ей подсказку, если хочет, или может сбросить карту. Это исключение не делает произвольные другие видимые Play Clue или Save Clue необязательными.
+
+</TabItem>
+</Tabs>
