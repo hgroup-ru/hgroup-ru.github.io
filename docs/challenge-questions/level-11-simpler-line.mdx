@@ -1,0 +1,27 @@
+---
+title: One Blind-Play or Two
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-simpler-line/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-simpler-line" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A reacting player has ruled out a direct Play Clue and a Prompt. Two interpretations remain conventionally legal and fit all visible information: one is a Bluff that requires exactly one blind-play, and the other is a Finesse that requires two blind-plays. No later action is needed to distinguish them before the reaction.
+
+Which interpretation should the reacting player choose?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+The player should assume the **one-blind-play Bluff**. Under Occam's Razor, after simpler direct and Prompt interpretations have been ruled out, players prefer the interpretation requiring fewer blind-plays. This does not make an otherwise illegal Bluff legal; the premise here explicitly says both remaining interpretations are valid.
+
+</TabItem>
+</Tabs>

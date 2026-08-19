@@ -1,0 +1,27 @@
+---
+title: Второй сигнал
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-queued-signal/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-queued-signal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб уже Finessed предыдущей подсказкой и на ближайшем ходу должен вслепую сыграть карту из первой связки. Теперь Алиса рассматривает новую подсказку, задуманную как Bluff на Боба, причём карта Bluff должна сыграться лишь после ранее Finessed-карты.
+
+Разрешён ли такой Queued Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Queued Bluffs запрещены.** Боб воспримет новую подсказку как слой поверх уже ожидающего Finesse и сначала сыграет ранее Finessed-карту. Поэтому новая дезинформация не может разрешиться на ближайшем ходу Боба. Это делает её Lie, а не разрешённым Fib, и нарушает Lie Principle.
+
+</TabItem>
+</Tabs>

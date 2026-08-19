@@ -1,0 +1,27 @@
+---
+title: A Second Signal
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-queued-signal/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-queued-signal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob is already Finessed from an earlier clue and is expected to blind-play that first connection on his next turn. Alice now considers giving a new clue whose intended meaning would be a Bluff on Bob, expecting the Bluff card to be played only after the earlier Finesse card.
+
+Is that queued Bluff allowed?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Queued Bluffs are illegal.** Bob will treat the new clue as layering on top of the Finesse he already owes and will first play the previously Finessed card. The new misinformation therefore cannot resolve on Bob's very next turn. That makes it a Lie rather than an allowed Fib and violates the Lie Principle.
+
+</TabItem>
+</Tabs>

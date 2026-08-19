@@ -1,0 +1,27 @@
+---
+title: Один blind-play или два
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-simpler-line/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-simpler-line" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Реагирующий игрок уже исключил прямую Play Clue и Prompt. Остались две интерпретации, обе допустимы по conventions и согласуются со всей видимой информацией: Bluff ровно с одним blind-play и Finesse с двумя blind-play. До реакции не требуется ждать будущих действий, чтобы их различить.
+
+Какую интерпретацию следует выбрать?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Следует выбрать **Bluff с одним blind-play**. По бритве Оккама (Occam's Razor), после исключения более простых прямых интерпретаций и Prompt игроки предпочитают линию с меньшим числом blind-play. Это не делает запрещённый Bluff допустимым: в условии отдельно зафиксировано, что обе оставшиеся интерпретации корректны.
+
+</TabItem>
+</Tabs>

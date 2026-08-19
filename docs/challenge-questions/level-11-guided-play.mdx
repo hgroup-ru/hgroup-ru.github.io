@@ -1,0 +1,27 @@
+---
+title: The Critical 5
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-guided-play/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-guided-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing is played. Alice gives Donald a red Play Clue on his red 2. Bob sees no red 1 in anyone else's hand, so Alice is clearly asking him to blind-play now. Cathy has a critical yellow 5 on chop.
+
+Should Bob save Cathy's 5 instead of blind-playing?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Bob should blind-play.** Guide Principle applies when Bob is being directed into a Finesse or Bluff. Alice can see Cathy's endangered chop; if Bob needed to save it first, Alice should have delayed the clue. Bob therefore follows Alice's immediate guidance instead of independently overriding the line with a Save Clue.
+
+</TabItem>
+</Tabs>
