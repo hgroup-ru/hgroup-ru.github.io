@@ -328,6 +328,23 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-11-queued-signal",
           ],
         },
+        {
+          "Level 12": [
+            "challenge-questions/level-12",
+            "challenge-questions/level-12-asymmetric-default",
+            "challenge-questions/level-12-duplication-responsibility",
+            "challenge-questions/level-12-stale-ones",
+            "challenge-questions/level-12-focus-inversion",
+            "challenge-questions/level-12-duplication-tie",
+            "challenge-questions/level-12-selfish-clue",
+            "challenge-questions/level-12-selfish-finesse",
+            "challenge-questions/level-12-ego-clue",
+            "challenge-questions/level-12-self-finesse-precedence",
+            "challenge-questions/level-12-connecting-play",
+            "challenge-questions/level-12-red-before-ones",
+            "challenge-questions/level-12-save-before-play",
+          ],
+        },
       ],
     },
     {
