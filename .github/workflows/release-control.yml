@@ -1,4 +1,4 @@
-name: Release Control
+name: Publication Control
 
 on:
   issues:
@@ -15,7 +15,7 @@ jobs:
     if: github.event.issue.number == 100 || github.event.issue.number == 102
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch Production workflow
+      - name: Dispatch publication workflow
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -28,8 +28,8 @@ jobs:
           fi
 
           case "$CONTROL_ISSUE" in
-            100) mode="release" ;;
-            102) mode="fix" ;;
+            100) workflow="release.yml"; label="Official Release" ;;
+            102) workflow="publish.yml"; label="Publish Site" ;;
             *)
               echo "Unsupported control issue: $CONTROL_ISSUE"
               exit 1
@@ -37,18 +37,16 @@ jobs:
           esac
 
           source_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
-          echo "Dispatching Release mode=$mode from main at $source_sha."
-
-          jq -n --arg ref main --arg mode "$mode" \
-            '{ref: $ref, inputs: {mode: $mode}}' |
+          echo "Dispatching $label from main at $source_sha."
+          jq -n --arg ref main '{ref: $ref}' |
             gh api \
               --method POST \
-              "repos/${GITHUB_REPOSITORY}/actions/workflows/release.yml/dispatches" \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/dispatches" \
               --input -
 
           gh issue comment "$CONTROL_ISSUE" \
             --repo "$GITHUB_REPOSITORY" \
-            --body "Production workflow requested in \`$mode\` mode from \`main\` at \`$source_sha\`."
+            --body "${label} requested from \`main\` at \`$source_sha\`."
 
       - name: Reopen control issue
         if: always()
