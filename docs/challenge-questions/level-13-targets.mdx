@@ -1,0 +1,22 @@
+---
+title: Legal Bluff Targets
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Which completely untouched cards can be legal Bluff targets with a **number clue**: (a) any one-away-from-playable card, (b) any two-away-from-playable 3, (c) any critical non-5?
+
+</TabItem>
+<TabItem value="solution">
+
+**(a) and (b), but not (c).** An ordinary one-away target works with either clue type. The artificial 3 Bluff also allows a **two-away-from-playable 3** with either color or number. An arbitrary critical non-5 is added only by Critical **Color** Bluff, so a number clue does not make it legal.
+
+</TabItem>
+</Tabs>

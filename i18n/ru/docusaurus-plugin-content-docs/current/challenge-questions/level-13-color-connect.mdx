@@ -1,0 +1,25 @@
+---
+title: Color Connect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-color-connect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса даёт Кэти красную подсказку на физическую красную 3. Боб вслепую играет красную 1. Законный ли это 3 Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Красный цвет соединяется с красным. Поэтому Кэти воспринимает красную 1 Боба как соединение Finesse и ожидает, что её красная карта — красная 2. Без дополнительной информации она сыграет красную 3 как красную 2 и получит мисплей. Bluff недопустим, если выглядит как такой соединяющий Finesse.
+
+</TabItem>
+</Tabs>

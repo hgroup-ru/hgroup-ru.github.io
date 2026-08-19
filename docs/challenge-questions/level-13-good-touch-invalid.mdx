@@ -1,0 +1,25 @@
+---
+title: An Unsafe Number 4 Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-good-touch-invalid/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch-invalid" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Alice gives Cathy a number 4 clue on a physical red 4. Bob blind-plays blue 3. No already-touched blue 4 is visible elsewhere. Is this a safe Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Rank 3 connects to rank 4, so Cathy reads the line as a Finesse and concludes that her card is blue 4. She would misplay the physical red 4 as blue 4. Without information that rules out blue 4, Alice must not give this Bluff.
+
+</TabItem>
+</Tabs>

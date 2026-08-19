@@ -1,0 +1,25 @@
+---
+title: Critical Color Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-critical-color/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-critical-color" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played and one red 4 is discarded. Alice gives Cathy a red Play Clue on one previously untouched card. Bob blind-plays blue 1. Which red identities must Cathy consider?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy keeps **red 3 and red 4**. Red 3 is the ordinary one-away Bluff target. The remaining red 4 is critical, so it is also legal under Critical Color Bluff: the clue is a color clue, the card was completely untouched, and the target is not a 5.
+
+</TabItem>
+</Tabs>

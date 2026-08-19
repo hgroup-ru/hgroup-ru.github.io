@@ -1,0 +1,22 @@
+---
+title: Допустимые цели Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={13} id="level-13-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Какие полностью не подсказанные карты могут быть допустимой целью Bluff при **подсказке по числу**: (a) любая карта в одном шаге от играбельности, (b) любая 3 в двух шагах от играбельности, (c) любая критическая карта, кроме 5?
+
+</TabItem>
+<TabItem value="solution">
+
+**(a) и (b), но не (c).** Обычная one-away цель работает с обоими типами подсказок. Искусственная конвенция 3 Bluff также разрешает **3 в двух шагах от играбельности** с подсказкой и по цвету, и по числу. Произвольная критическая карта, кроме 5, добавляется только Critical **Color** Bluff, поэтому подсказка по числу не делает её допустимой целью.
+
+</TabItem>
+</Tabs>

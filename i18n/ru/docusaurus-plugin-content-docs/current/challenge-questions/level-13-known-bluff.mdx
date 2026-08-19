@@ -1,0 +1,25 @@
+---
+title: Known Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-known-bluff/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-known-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Ничего не сыграно. Алиса даёт Кэти синюю Play Clue, которая обычно потребовала бы от Боба соединить её синей 1. Но на каждой карте Боба есть отрицательная информация по синему, и лучшего конвенционного объяснения он не видит. Должен ли Боб отказаться от слепого розыгрыша?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Боб знает, что ожидаемая identity Finesse для него невозможна, и именно эта невозможность становится сигналом. Если лучшего объяснения нет, он вслепую играет Finesse Position как **Known Bluff**, а не делает вид, будто у него может быть синяя 1.
+
+</TabItem>
+</Tabs>

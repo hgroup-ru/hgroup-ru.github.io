@@ -1,0 +1,25 @@
+---
+title: Good Touch Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-good-touch/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Alice clues Cathy number 4 on a physical red 4, and Bob blind-plays blue 3. Donald already has a touched blue card that is visibly blue 4 to the team. Should Cathy still conclude that she is blue 4?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** If Cathy were also blue 4, Alice would have duplicated Donald's already-touched blue 4 and violated Good Touch Principle. That visible duplicate rules out the superficially connecting blue-4 Finesse. Cathy can therefore interpret her card as the other legal one-away 4, red 4, and recognize the clue as a **Good Touch Bluff**.
+
+</TabItem>
+</Tabs>

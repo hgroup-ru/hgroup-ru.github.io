@@ -1,0 +1,25 @@
+---
+title: Finesse + Prompt, а не Hard Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-finesse-prompt/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-finesse-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Сыграна только красная 1. У Кэти уже есть 3 с подсказкой по числу и без информации о цвете. Алиса даёт Кэти Play Clue на новую 4, затем Боб вслепую играет красную 2. Сейчас ни одна 4 не находится в одном шаге от играбельности. Должна ли Кэти сохранить простую трактовку Bluff и ждать?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Для простого Bluff нужна допустимая цель, но здесь каждая 4 находится минимум в двух шагах от играбельности. Поэтому Кэти может исключить Bluff. Ей обещаны красная 3 и красная 4: она играет подсказанную 3 как Self-Prompt на красную 3, завершая линию Finesse + Prompt.
+
+</TabItem>
+</Tabs>

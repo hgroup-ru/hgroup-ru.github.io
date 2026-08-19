@@ -1,0 +1,25 @@
+---
+title: Finesse + Prompt, Not a Hard Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-finesse-prompt/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-finesse-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Only red 1 is played. Cathy has an unknown-color 3 already clued by rank. Alice gives Cathy a Play Clue to a new 4, then Bob blind-plays red 2. No 4 is currently one-away-from-playable. Should Cathy keep a simple Bluff interpretation and wait?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A simple Bluff needs a legal Bluff target, but every 4 is at least two-away here. Cathy can therefore reject the Bluff interpretation. She is promised red 3 and red 4: she plays her clued 3 as a Self-Prompt for red 3, completing the Finesse + Prompt line.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,28 @@
+---
+title: Color Connect с Rank Disconnect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-color-connect-rank-disconnect/question.yml";
+
+<ChallengeQuestionProgress
+  level={13}
+  id="level-13-color-connect-rank-disconnect"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+В игре на четверых ничего не сыграно. Алиса даёт Дональду красную подсказку. На затронутой карте Дональда есть отрицательная информация по числу 2. Боб вслепую играет красную 1. Должна ли Кэти считать это 3 Bluff и не играть вслепую?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Отрицательная информация по 2 не позволит Дональду позже принять свою карту за красную 2, но не разрывает связь между подсказкой и слепым розыгрышем Боба. **Красный соединяется с красным**, поэтому Кэти обязана трактовать линию как Double Finesse и сыграть Finesse Position как красную 2.
+
+</TabItem>
+</Tabs>

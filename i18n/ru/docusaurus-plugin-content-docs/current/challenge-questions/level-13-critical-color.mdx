@@ -1,0 +1,25 @@
+---
+title: Critical Color Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-critical-color/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-critical-color" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 сыграна, а одна красная 4 уже сброшена. Алиса даёт Кэти красную Play Clue на одну ранее не подсказанную карту. Боб вслепую играет синюю 1. Какие красные варианты должна оставить Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти оставляет **красную 3 и красную 4**. Красная 3 — обычная one-away цель Bluff. Оставшаяся красная 4 критическая, поэтому она тоже допустима как Critical Color Bluff: использована подсказка по цвету, карта до этого была полностью не подсказана, и цель не является 5.
+
+</TabItem>
+</Tabs>
