@@ -1,22 +1,27 @@
 ---
-title: When a Strange Chop Move Is Not an Ignition
+title: No Clean Direct Clue
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-cmi-exceptions/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-cmi-exceptions" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-A playable card is Chop Moved instead of being given the obvious direct Play Clue. Must the next player always react with an Ignition? Name the source-supported reasons that can make the Chop Move useful on its own. Also, what happens to Chop Move-related interpretations once there are no eligible cards left to Chop Move?
+Red 1 is played. Cathy's hand from newest to oldest is red 4, yellow 2, blue 4, blue 5, red 2. Alice clues number 5 to slot 4, Chop Moving Cathy's playable red 2 on chop. A direct red clue would also touch red 4, and a direct number 2 clue would also touch yellow 2; neither extra touch is useful now.
+
+Should Bob treat the strange Chop Move of a playable card as a Chop Move Ignition and blind-play?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-No. A Chop Move Ignition exists only when there is **no other good reason** for the Chop Move. Level 21 specifically lists avoiding a Good Touch Principle violation, saving a Delayed Playable followed by a critical card, and obtaining an Elimination blind-play when the duplicate is visible. Once there are no eligible one-away-from-playable cards that cannot receive a direct Play or Save Clue, Chop Move-related clues are turned off and the action transforms into another interpretation, such as a Play Clue or some kind of Double Ignition.
+**No.** A Chop Move Ignition exists only when there is no other good reason to Chop Move the playable card. Here the Chop Move avoids a **Good Touch Principle** problem: both obvious direct Play Clues would unnecessarily touch another unplayable card. Because the Chop Move already has independent value, Bob must not manufacture an extra Ignition from it.
 
 </TabItem>
 </Tabs>
