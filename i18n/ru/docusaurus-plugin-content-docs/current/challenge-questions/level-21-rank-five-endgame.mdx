@@ -1,0 +1,22 @@
+---
+title: Две границы взаимодействия с подсказкой 5
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-rank-five-endgame" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Рассмотрим подсказку числом 5, сфокусированную на 5 ровно в одной карте от chop. Сначала это Mid-Game и сама 5 на самом деле играбельна. Затем та же форма возникает в End-Game. Должен ли следующий игрок реагировать одинаково в обоих случаях?
+
+</TabItem>
+<TabItem value="solution">
+
+Нет. Пока взаимодействие Level 21 активно, даже **реально играбельная 5** трактуется так, будто числовая подсказка 5 не была Play Clue: следующий игрок обязан реагировать как если бы 5 не была играбельной, потому что такие Play Clue-интерпретации отключены. Но весь **Chop Move Ignition Interaction отключается в End-Game**, поэтому там это специальное правило Level 21 уже не действует.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Что обещано про средние карты?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-cmi-middle-cards" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Chop Move Ignition охватывает три или больше карты между затронутой подсказкой и chop. Что конвенция обещает про карты строго между левой и правой значимыми картами? Нужно ли получателю помечать эти средние карты как Chop Moved?
+
+</TabItem>
+<TabItem value="solution">
+
+Про **средние карты ничего не обещано**. Если диапазон содержит три или больше карт, средние карты прямо считаются **не Chop Moved** и могут иметь любое значение. Обещание Level 21 относится только к граничным условиям для левой и правой Chop Moved-карт.
+
+</TabItem>
+</Tabs>

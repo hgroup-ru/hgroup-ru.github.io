@@ -1,0 +1,25 @@
+---
+title: Взаимодействие с 5 ровно в одной карте от chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-21-rank-five-one-away/solution.yml";
+
+<ChallengeQuestionProgress level={21} id="level-21-rank-five-one-away" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Mid-Game, на столе красная 3. Рука Кэти от новой карты к старой: синяя 4, зелёная 3, синяя 4, синяя 5, синяя 1. Алиса даёт Кэти подсказку числом 5, фокусируя синюю 5 ровно в одной карте от chop. Боб ожидал от Алисы подсказку числом 1 Кэти. Может ли на Level 21 Боб считать эту подсказку Play Clue на 5 и что он должен сделать?
+
+</TabItem>
+<TabItem value="solution">
+
+Нет. В **Chop Move Ignition Interaction** интерпретации Play Clue для числовой подсказки 5, сфокусированной на 5 ровно в одной карте от chop, отключены. Поэтому Боб считает 5 Chop Moved и реагирует на Chop Move Ignition blind-play из Finesse Position; в исходной позиции это красная 4. После этого Кэти распознаёт CMI и вслепую играет слот 5. Blind-play относится к Chop Moved-карте, а не напрямую связывается с 5.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

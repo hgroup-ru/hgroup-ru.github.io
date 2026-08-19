@@ -1,0 +1,22 @@
+---
+title: Who Plays in an Ambiguous Double Ignition?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-double-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A Double Ignition is triggered. Bob, Cathy, and Donald can each see that they have a playable card in Finesse Position. Bob already has another known-playable card in hand; Cathy does not; Donald is the last player among the candidates with a playable Finesse Position card. Who performs the two Ignitions?
+
+</TabItem>
+<TabItem value="solution">
+
+The first Ignition goes to **Cathy**, the first player after Bob who does not already have a known-playable card. Normally the first Ignition must be on Bob, but Bob's known-playable card activates the stated exception. The second Ignition goes to **Donald**, because it must be on the last player with a playable card.
+
+</TabItem>
+</Tabs>

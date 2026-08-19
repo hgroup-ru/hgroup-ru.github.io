@@ -1,0 +1,25 @@
+---
+title: Условия Chop Move Ignition с несколькими картами
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "@site/docs/challenge-questions/level-21-cmi-two-cards/solution.yml";
+
+<ChallengeQuestionProgress level={21} id="level-21-cmi-two-cards" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 сыграны. Рука Кэти от новой карты к старой: синяя 4, синяя 1, красная 2, синяя 4. Алиса даёт подсказку числом 1 слоту 2 Кэти, что обычно делает Trash Chop Move для слотов 3 и 4. Какие два условия необходимы для корректного Chop Move Ignition с двумя или более Chop Moved-картами и как исходная позиция их выполняет?
+
+</TabItem>
+<TabItem value="solution">
+
+Нужны оба условия: **левая из Chop Moved-карт должна быть играбельной**, а **правая должна быть мусором или копией карты без подсказки в той же руке**. Здесь слот 3 — играбельная красная 2, а слот 4 — синяя 4, копия другой синей 4 без подсказки у Кэти. Поэтому Боб вслепую играет синюю 2 для Ignition; Кэти затем вслепую играет красную 2 и считает правую карту известным мусором. Когда позже она сбрасывает правую карту и видит синюю 4, ложная мусорная отметка создаёт Elimination Notes для другой копии.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>

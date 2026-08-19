@@ -1,0 +1,22 @@
+---
+title: Кто играет при Ambiguous Double Ignition?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={21} id="level-21-double-targets" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Срабатывает Double Ignition. Боб, Кэти и Дональд видят, что у каждого в Finesse Position есть играбельная карта. Но у Боба уже есть другая известная играбельная карта; у Кэти такой карты нет; Дональд — последний из кандидатов с играбельной картой в Finesse Position. Кто выполняет два Ignition?
+
+</TabItem>
+<TabItem value="solution">
+
+Первый Ignition делает **Кэти** — первый игрок после Боба, у которого ещё нет известной играбельной карты. Обычно первый Ignition обязан приходиться на Боба, но здесь действует явное исключение. Второй Ignition делает **Дональд**, потому что он обязан приходиться на последнего игрока с играбельной картой.
+
+</TabItem>
+</Tabs>

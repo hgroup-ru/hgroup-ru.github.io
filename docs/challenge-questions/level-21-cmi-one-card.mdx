@@ -1,0 +1,25 @@
+---
+title: A One-Card Chop Move Ignition
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SolutionDiagram from "./level-21-cmi-one-card/solution.yml";
+
+<ChallengeQuestionProgress level={21} id="level-21-cmi-one-card" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn, Cathy's hand from newest to oldest is blue 4, blue 4, blue 5, red 1. Alice clues number 5 to Cathy, touching slot 3. Bob can see that Alice had ordinary Play Clues available and that Chop Moving Cathy's playable red 1 would otherwise be nonsensical. What must Bob do, and what does Cathy learn from his action?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob treats the strange Chop Move as a **Chop Move Ignition** and blind-plays his Finesse Position; in the source position it is blue 1. Bob's blind-play tells Cathy that the clue was not merely an Early 5's Chop Move. Cathy therefore knows the Chop Moved card is playable and blind-plays slot 4, the card immediately to the right of the clued 5.
+
+<SolutionDiagram />
+
+</TabItem>
+</Tabs>
