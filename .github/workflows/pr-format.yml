@@ -16,10 +16,7 @@ permissions:
 
 jobs:
   format:
-    if: >-
-      github.event.issue.pull_request
-      && github.event.comment.body == '/format'
-      && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    if: github.event.issue.pull_request && github.event.comment.body == '/format'
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +26,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
         run: |
+          case "$AUTHOR_ASSOCIATION" in
+            OWNER | MEMBER | COLLABORATOR) ;;
+            *)
+              echo "The /format command requires repository write access."
+              exit 1
+              ;;
+          esac
+
           pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}")"
           state="$(printf '%s' "$pr_json" | jq -r .state)"
           head_repo="$(printf '%s' "$pr_json" | jq -r .head.repo.full_name)"
@@ -42,7 +48,7 @@ jobs:
           fi
 
           if [ "$head_repo" != "$GITHUB_REPOSITORY" ]; then
-            echo "PR #$PR_NUMBER comes from $head_repo; formatting fork PRs is not allowed."
+            echo "PR #$PR_NUMBER comes from a fork; refusing to format."
             exit 1
           fi
 
@@ -63,7 +69,7 @@ jobs:
         run: |
           actual_head="$(git rev-parse HEAD)"
           if [ "$actual_head" != "$EXPECTED_HEAD_SHA" ]; then
-            echo "PR head moved before checkout: expected $EXPECTED_HEAD_SHA, got $actual_head."
+            echo "PR head moved before checkout."
             exit 1
           fi
 
