@@ -1,0 +1,22 @@
+---
+title: Три blind-play до 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Play Clue на ранее не затронутую и пока неиграбельную 4. Prompt невозможен, а естественный Finesse потребовал бы от Боба **трёх** blind-play из собственной руки. У Кэти нет правдоподобной линии 4 Double Bluff. Какой fallback должен рассмотреть Боб?
+
+</TabItem>
+<TabItem value="solution">
+
+**4 Charm**: Боб играет вслепую свою **Fourth Finesse Position**. Один или два blind-play Боба всё ещё предпочитают интерпретацию Finesse; три делают её достаточно маловероятной, чтобы после исключения более ранних интерпретаций перейти к Charm. Prompt не учитываются в пороге из трёх blind-play.
+
+</TabItem>
+</Tabs>

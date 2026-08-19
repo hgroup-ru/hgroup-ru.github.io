@@ -1,0 +1,22 @@
+---
+title: Three Blind-Plays to a 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a Play Clue to a previously untouched, currently unplayable 4. Prompt is impossible, and Bob would need to blind-play **three** cards from his own hand to satisfy the natural Finesse. Cathy does not provide a plausible 4 Double Bluff line. Which fallback should Bob consider?
+
+</TabItem>
+<TabItem value="solution">
+
+A **4 Charm**: Bob blind-plays his **Fourth Finesse Position**. One or two Bob blind-plays still favor the Finesse interpretation; three makes the Finesse unlikely enough to reach Charm after the earlier interpretations are excluded. Prompts do not count toward the three-blind-play threshold.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Position, Not Slot Number
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-position" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice makes a Blaze Discard. Cathy's matching card is on her **Second Finesse Position**, which happens to be slot 2. Bob has a positively clued card in slot 1, so Bob's Finesse Position is slot 2 and his Second Finesse Position is slot 3. Which slot should Bob blind-play to communicate the location?
+
+</TabItem>
+<TabItem value="solution">
+
+**Bob plays slot 3**, his own Second Finesse Position. Blaze Discard encodes a **Finesse Position ordinal**, not an absolute slot number. Bob matches Cathy's Second Finesse Position with his Second Finesse Position even though the physical slot numbers differ.
+
+</TabItem>
+</Tabs>

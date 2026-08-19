@@ -1,0 +1,22 @@
+---
+title: Может ли Blaze ждать или иметь слой?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-immediate" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Странный перенос Gentleman’s/Baton задуман как Blaze Discard. Боб хочет сначала сделать несвязанное действие и показать соответствующую позицию на следующем ходу; кроме того, перед совпадающей позицией лежит играбельный слой. Разрешены ли задержка или Layered Blaze?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет в обоих случаях.** Blaze Discard должен быть продемонстрирован **самым следующим игроком немедленно**, а Layered Blaze Discard явно запрещён как на ignited-игроке, так и на игроке с совпадающей картой. Конвенцию намеренно держат простой и однозначной по позиции.
+
+</TabItem>
+</Tabs>

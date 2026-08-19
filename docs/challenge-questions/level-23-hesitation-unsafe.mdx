@@ -1,0 +1,22 @@
+---
+title: Two Possible Connectors
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-hesitation-unsafe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob receives a Play Clue and then hesitates by discarding in a safe, clue-rich position. Cathy sees that Bob could be waiting either for a connector already clued in Cathy's hand **or** for Cathy's Finesse Position. May Cathy blind-play her Finesse Position as a Hesitation Blind-Play?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Hesitation Blind-Play is only safe when the hesitation uniquely points to that blind card. If Bob could be waiting for a clued card or the Finesse Position, Cathy cannot know which connector Alice intended. Acting on the guess risks a misplay. Similar safety blocks apply to Self-Finesse hesitation, an identical copy of the clued card, and plays that would make the clue look like a Double Finesse with a self component.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Две возможные связки
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-hesitation-unsafe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб получает Play Clue, а затем в безопасной позиции с большим числом подсказок медлит и сбрасывает. Кэти видит, что Боб может ждать либо связку уже с подсказкой в руке Кэти, **либо** карту на её Finesse Position. Может ли Кэти сыграть Finesse Position вслепую как Hesitation Blind-Play?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Hesitation Blind-Play безопасен только когда hesitation однозначно указывает именно на эту слепую карту. Если Боб может ждать карту с подсказкой или Finesse Position, Кэти не знает, какую связку задумала Алиса. Игра наугад рискует misplay. Аналогичные блокеры существуют при Self-Finesse, идентичной копии подсказанной карты и ходе, который заставил бы подсказку выглядеть как Double Finesse с self-компонентом.
+
+</TabItem>
+</Tabs>

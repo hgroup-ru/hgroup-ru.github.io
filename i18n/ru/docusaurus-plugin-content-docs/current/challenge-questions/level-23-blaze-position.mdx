@@ -1,0 +1,22 @@
+---
+title: Position, а не номер слота
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-position" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает Blaze Discard. Совпадающая карта Кэти находится на её **Second Finesse Position**, физически это слот 2. У Боба в слоте 1 есть карта с положительной подсказкой, поэтому Finesse Position Боба — слот 2, а Second Finesse Position — слот 3. Какой слот должен сыграть Боб вслепую, чтобы передать местоположение?
+
+</TabItem>
+<TabItem value="solution">
+
+**Боб играет слот 3**, то есть собственную Second Finesse Position. Blaze Discard кодирует **порядковый номер Finesse Position**, а не абсолютный номер слота. Боб сопоставляет Second Finesse Position Кэти со своей Second Finesse Position, даже если физические номера слотов различаются.
+
+</TabItem>
+</Tabs>

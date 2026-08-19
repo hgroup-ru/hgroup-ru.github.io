@@ -1,0 +1,22 @@
+---
+title: A Discarded Playable 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-one-blaze-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice discards a playable 1 in a position where the action could look either like an ordinary Gentleman's Discard to another copy or like a Blaze Discard encoding a non-first Finesse Position. Which interpretation has precedence at Level 23?
+
+</TabItem>
+<TabItem value="solution">
+
+**Blaze Discard takes precedence.** Because 1s have three copies, a plain Gentleman's Discard can be ambiguous about a third copy on Finesse Position. The Level 23 convention resolves that ambiguity by preferring Blaze when the weird positional-transfer conditions fit.
+
+</TabItem>
+</Tabs>

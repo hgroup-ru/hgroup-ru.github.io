@@ -1,0 +1,22 @@
+---
+title: Can Blaze Wait or Layer?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-immediate" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A weird Gentleman's/Baton transfer is intended as Blaze Discard. Bob would prefer to take an unrelated action first and demonstrate the matching position on his next turn; additionally, a playable layer sits in front of the matching position. Is either delay or Layered Blaze allowed?
+
+</TabItem>
+<TabItem value="solution">
+
+**No to both.** Blaze Discard must be demonstrated by the **very next player immediately**, and Layered Blaze Discard is explicitly illegal on either the ignited player or the player holding the matching card. The convention is intentionally kept simple and position-explicit.
+
+</TabItem>
+</Tabs>

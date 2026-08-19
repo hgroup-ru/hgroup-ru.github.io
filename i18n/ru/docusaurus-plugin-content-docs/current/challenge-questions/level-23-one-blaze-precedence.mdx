@@ -1,0 +1,22 @@
+---
+title: Сброшенная играбельная 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-one-blaze-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса сбрасывает играбельную 1 в позиции, где действие может выглядеть либо обычным Gentleman's Discard на другую копию, либо Blaze Discard, кодирующим не первую Finesse Position. Какая интерпретация имеет приоритет на уровне 23?
+
+</TabItem>
+<TabItem value="solution">
+
+**Приоритет у Blaze Discard.** Поскольку единиц три копии, обычный Gentleman's Discard может быть неоднозначен относительно третьей копии на Finesse Position. Конвенция уровня 23 разрешает неоднозначность в пользу Blaze, если подходят условия странного позиционного переноса.
+
+</TabItem>
+</Tabs>
