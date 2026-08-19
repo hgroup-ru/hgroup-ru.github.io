@@ -132,6 +132,20 @@ jobs:
               if release_url:
                   label = "Technical marker" if is_fix else "GitHub Release"
                   lines.append(f'<a href="{html.escape(release_url, quote=True)}">{label}</a>')
+          elif release_result == "cancelled":
+              if pages_result == "success":
+                  lines = [
+                      "#release #production #cancelled #warning",
+                      f"🟡 <b>Production уже задеплоен, но публикация #{run_number} была отменена</b>",
+                      "Проверь post-release этапы перед повторным запуском.",
+                  ]
+              else:
+                  lines = [
+                      "#release #production #cancelled",
+                      f"⚪ <b>Публикация #{run_number} отменена до успешного deploy</b>",
+                  ]
+              if run_url:
+                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
           elif pages_result == "success":
               kind = "Production fix" if is_fix else "Release"
               lines = [
@@ -172,7 +186,7 @@ jobs:
               if run_url:
                   lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
 
-          if notes and pages_result == "success" and not is_fix:
+          if notes and pages_result == "success" and not is_fix and release_result != "cancelled":
               max_notes = 1800
               if len(notes) > max_notes:
                   notes = notes[:max_notes].rstrip() + "\n…"
