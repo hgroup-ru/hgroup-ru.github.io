@@ -1,0 +1,25 @@
+---
+title: Какой известный мусор сбрасывать первым?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-known-trash-order/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-known-trash-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны. У Алисы две карты с подсказкой числа 1 — в слотах 2 и 4, поэтому обе одинаково известны как мусор. Более поздние исключения с Discharge не действуют. Какую карту Алиса должна сбросить, если хочет сделать обычный сброс известного мусора без дополнительного сообщения?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Слот 2.** Если в руке несколько одинаково известных мусорных карт, Known-Trash Discard Order требует сбрасывать **самую левую**. Сброс слота 4 пропустил бы ожидаемую мусорную карту и поэтому мог бы нести дополнительный смысл.
+
+</TabItem>
+</Tabs>

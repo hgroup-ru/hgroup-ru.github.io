@@ -1,0 +1,25 @@
+---
+title: Covering Both Reverse Interpretations
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-reverse-cover/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-cover" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clues number 2 to Bob's slot 1. From Bob's perspective it looks like the final red 2, but Bob sees another red 2 on Cathy's Finesse Position, so Reverse Trash Finesse is possible. What single action covers both the normal-Play-Clue case and the Reverse Trash Finesse case?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should **immediately discard the touched 2**. If it is trash, the discard demonstrates the Reverse Trash Finesse and Cathy can react. If it is actually red 2, the discard becomes a **Gentleman's Discard** on Cathy. Playing cannot safely cover both possibilities.
+
+</TabItem>
+</Tabs>

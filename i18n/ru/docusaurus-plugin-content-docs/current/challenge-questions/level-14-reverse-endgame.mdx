@@ -1,0 +1,25 @@
+---
+title: Reverse Trash Finesse в эндшпиле
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-reverse-endgame/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-endgame" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Игра находится в явно критичном по темпу эндшпиле: в колоде осталась одна карта. Алиса рассматривает подсказку числа 2 на мусорную 2 Боба, рассчитывая, что Кэти отреагирует через Reverse Trash Finesse. Доступна ли здесь такая интерпретация?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Level 14 явно отключает **Reverse Trash Finesse ближе к концу игры**, потому что этот ход медленный и требует дополнительных сбросов именно тогда, когда команде нужен темп. Алиса не должна рассчитывать на reverse-интерпретацию в такой позиции в конце игры.
+
+</TabItem>
+</Tabs>

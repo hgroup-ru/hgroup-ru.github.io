@@ -1,0 +1,25 @@
+---
+title: The Forced GD Still Chop Moves
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-forced-gd-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-forced-gd-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clues Bob's slot-1 2 in a position that could be a Reverse Trash Finesse on Cathy's red 2, so Bob is forced to cover both cases by discarding. The discarded card turns out to be the playable red 2, making Bob's action a Gentleman's Discard rather than a Trash Finesse. Are Bob's slots 2 through 5 Chop Moved?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** A **Forced Gentleman's Discard** that looked like a Reverse Trash Finesse inherits the same Chop Move: Bob's slots 2 through 5 are Chop Moved even though ordinary Gentleman's Discards do not normally cause that Chop Move.
+
+</TabItem>
+</Tabs>

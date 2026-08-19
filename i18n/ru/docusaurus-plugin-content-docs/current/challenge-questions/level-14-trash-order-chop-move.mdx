@@ -1,0 +1,25 @@
+---
+title: Пропуск ожидаемого мусора
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-trash-order-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-order-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Слоты 2 и 4 Алисы одинаково известны как мусор и имеют подсказки одного типа. Вместо ожидаемого сброса самого левого мусора из слота 2 Алиса намеренно сбрасывает слот 4. Что должна понять команда?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Trash Order Chop Move**. Алиса пропустила ожидаемый сброс известного мусора, поэтому **следующий игрок, Боб, делает Chop Move**. Условие про одинаковый тип подсказок важно: если мусорные карты подсказаны по-разному, выбор конкретного сброса может сообщать информацию об identity, а не быть TOCM.
+
+</TabItem>
+</Tabs>

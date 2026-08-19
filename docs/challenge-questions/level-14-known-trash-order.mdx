@@ -1,0 +1,25 @@
+---
+title: Which Known Trash Goes First?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-known-trash-order/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-known-trash-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are already played. Alice has two number-1-clued cards, on slots 2 and 4, so both are equally known trash. No later-level discharge exception is active. If Alice wants an ordinary known-trash discard with no extra message, which card should she discard?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Slot 2.** When a player has multiple equally known-trash cards, the expected Known-Trash Discard Order is the **leftmost** trash card. Discarding slot 4 instead would skip the expected trash card and can therefore carry extra meaning.
+
+</TabItem>
+</Tabs>

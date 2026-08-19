@@ -1,0 +1,25 @@
+---
+title: What Gets Chop Moved?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-trash-finesse-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-finesse-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice's number-1 clue to Donald's slot 2 looks like a Play Clue on red 1 or yellow 1, but Cathy blind-plays red 1 from Finesse Position. Donald now knows that his touched 1 is trash. Which of Donald's other cards are Chop Moved by the Trash Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Slots 3 and 4.** A Trash Finesse is simultaneously a Finesse and a Trash Chop Move: the recipient Chop Moves **all cards to the right of the trash card**. The touched trash on slot 2 itself is not the moved region.
+
+</TabItem>
+</Tabs>

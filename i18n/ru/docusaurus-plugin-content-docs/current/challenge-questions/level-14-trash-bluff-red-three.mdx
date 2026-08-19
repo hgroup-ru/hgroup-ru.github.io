@@ -1,0 +1,25 @@
+---
+title: Когда красная подсказка не доказывает мусор
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-trash-bluff-red-three/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-bluff-red-three" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Теперь красная стопка только на 3. Алиса снова хочет использовать красную подсказку на мусорную красную 1 Кэти как начало Trash Bluff. Допустима ли эта красная подсказка для той же цели?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** При красной стопке на 3 слепой розыгрыш может оставить затронутую красную карту выглядящей как **красная 5**, а не доказать её мусором. Trash Bluff допустим только тогда, когда слепой розыгрыш доказывает, что подсказанная карта — мусор; обычные Bluff-интерпретации имеют приоритет. Поэтому Алиса не может использовать здесь красную подсказку как начало Trash Bluff.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Нет потенциального Gentleman's Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-reverse-critical/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-critical" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Одна красная 2 уже в сбросе, а вторая красная 2 находится на Finesse Position Кэти. Алиса даёт подсказку числа 2 на слот 1 Боба; Боб видит, что его затронутая 2 не может быть красной, и сбрасывает её как мусор. Должна ли Кэти теперь вслепую сыграть свою красную 2 как реакцию на Reverse Trash Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Reverse Trash Finesse обязан содержать **потенциальный Gentleman's Discard**. Здесь красная 2 критическая, поэтому гипотетический вариант, в котором у Боба была красная 2, нельзя было бы покрыть её сбросом. Кэти не должна превращать мусорный сброс Боба в Reverse Trash Finesse.
+
+</TabItem>
+</Tabs>

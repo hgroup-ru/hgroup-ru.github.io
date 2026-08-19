@@ -1,0 +1,25 @@
+---
+title: Как покрыть обе reverse-интерпретации
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-14-reverse-cover/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-reverse-cover" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт подсказку числа 2 на слот 1 Боба. Для Боба это выглядит как последняя красная 2, но он видит ещё одну красную 2 на Finesse Position Кэти, поэтому возможен Reverse Trash Finesse. Какое одно действие покрывает и обычный Play Clue, и Reverse Trash Finesse?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен **немедленно сбросить затронутую 2**. Если это мусор, сброс демонстрирует Reverse Trash Finesse, и Кэти может реагировать. Если это действительно красная 2, сброс становится **Gentleman's Discard** на Кэти. Розыгрыш карты не покрывает безопасно оба варианта.
+
+</TabItem>
+</Tabs>

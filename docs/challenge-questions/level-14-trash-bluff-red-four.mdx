@@ -1,0 +1,25 @@
+---
+title: Can Red Initiate This Trash Bluff?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-14-trash-bluff-red-four/question.yml";
+
+<ChallengeQuestionProgress level={14} id="level-14-trash-bluff-red-four" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+The red stack is on 4. Alice wants to clue red to Cathy's trash red 1 and use Bob's Bluff-Seat blind-play to reveal that Cathy's touched red card is trash. Is a red clue a valid Trash Bluff initiator at this stack height?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** With red already on 4, the only useful red card would be red 5. A Bluff-Seat blind-play in response proves that Cathy's touched card was **not** a normal red-5 Play Clue, so the touched red card can be demonstrated as trash. This satisfies the Trash Bluff proof requirement.
+
+</TabItem>
+</Tabs>
