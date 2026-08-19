@@ -1,0 +1,25 @@
+---
+title: The Duplicate Must Be in the Same Hand
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-udd-same-hand/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-same-hand" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives Cathy a red clue that appears to duplicate a red 2 already visible in Donald's hand. None of the normal duplication exceptions applies. Can Bob treat this as an Unknown Dupe Discharge merely because a duplicate exists somewhere at the table?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Unknown Dupe Discharge applies only when the two duplicated cards are in the **same person's hand**. Duplicating a card in somebody else's hand cannot be used to initiate UDD; the clue must have some other interpretation.
+
+</TabItem>
+</Tabs>

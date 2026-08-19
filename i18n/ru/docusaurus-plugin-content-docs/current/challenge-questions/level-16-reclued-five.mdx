@@ -1,0 +1,27 @@
+---
+title: Повторно подсказанная 5 — не 5CE
+---
+
+{/* cspell:ignore reclued */}
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-reclued-five/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-reclued-five" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 5 Кэти уже имеет положительную подсказку числа 5. Алиса теперь повторно подсказывает её красным. Боб видит, что путь до красной 5 обычно потребовал бы нескольких слепых розыгрышей. Применяется ли 5 Color Ejection?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** 5 Color Ejection применяется только к 5 **без предыдущих положительных подсказок**. Повторная подсказка уже положительно подсказанной 5 означает Finesse на карты, ведущие к ней. Невидимая информация от Chop Move не мешала бы 5CE, но настоящая подсказка числа мешает.
+
+</TabItem>
+</Tabs>

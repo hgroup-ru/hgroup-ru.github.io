@@ -1,0 +1,25 @@
+---
+title: Дубликат должен быть в той же руке
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-udd-same-hand/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-same-hand" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Кэти красную подсказку, которая выглядит как дублирование красной 2, уже видимой в руке Donald. Обычные исключения для допустимого дублирования не действуют. Может ли Боб считать это Unknown Dupe Discharge просто потому, что дубликат существует где-то за столом?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Unknown Dupe Discharge применяется только когда две дублированные карты находятся **в руке одного и того же игрока**. Дублирование карты в чужой руке нельзя использовать для запуска UDD; у подсказки должно быть другое значение.
+
+</TabItem>
+</Tabs>

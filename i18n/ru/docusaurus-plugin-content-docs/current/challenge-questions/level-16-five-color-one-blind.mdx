@@ -1,0 +1,25 @@
+---
+title: Один слепой розыгрыш — всё ещё Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-five-color-one-blind/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-five-color-one-blind" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка уже на 3. Алиса даёт Кэти красную подсказку, впервые затрагивая неподсказанную красную 5. Боб видит, что для обычного Finesse ему пришлось бы вслепую сыграть только одну карту — красную 4. Из какой позиции Боб должен играть?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен вслепую сыграть из **Finesse Position**, а не из Second Finesse Position. 5 Color Ejection заменяет Finesse только когда следующему игроку понадобилось бы **два или больше слепых розыгрыша**. Один слепой розыгрыш остаётся обычным Finesse.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Исключение UDD для двух карт
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-16-udd-two-card-order/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-two-card-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка UDD впервые затронула ровно две карты в руке Кэти, и она может вывести, что обе — одинаковые дублированные красные 2. Слот 2 — focus, слот 3 — вторая копия. Обязана ли Кэти всё равно сначала сбросить focus?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Не обязательно.** Если впервые затронуты ровно две карты и Кэти знает, что они одинаковые, она может вместо focus сбросить **нефокусную копию**, чтобы сделать **Trash Order Chop Move**. Это явное исключение из обычного правила UDD focus-first.
+
+</TabItem>
+</Tabs>

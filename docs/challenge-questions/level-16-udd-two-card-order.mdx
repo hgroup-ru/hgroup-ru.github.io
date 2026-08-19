@@ -1,0 +1,25 @@
+---
+title: The Two-Card UDD Exception
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-16-udd-two-card-order/question.yml";
+
+<ChallengeQuestionProgress level={16} id="level-16-udd-two-card-order" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A UDD clue newly touched exactly two cards in Cathy's hand, and she can deduce that both must be the same duplicated red 2. Slot 2 is the focus and slot 3 is the other copy. Must Cathy still discard the focus first?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Not necessarily.** When exactly two new cards were touched and Cathy knows they are the same card, she may discard the **non-focused copy** instead to cause a **Trash Order Chop Move**. This is the explicit exception to the normal focus-first UDD discard rule.
+
+</TabItem>
+</Tabs>
