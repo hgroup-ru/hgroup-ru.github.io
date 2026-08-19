@@ -1,0 +1,27 @@
+---
+title: Before Bob Discards
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-ego-clue/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-ego-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice knows she has a playable blue 1. Bob has a red 2 on chop followed by another red 2. Alice could give Cathy a yellow Play Clue now, hoping Bob will then have nothing to do and discard so Alice can cleanly clue the red 2 afterward.
+
+Should Alice give Cathy's yellow clue to force that discard?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Alice should play her blue 1.** Giving the unrelated yellow clue to steal a clue from Bob and force his discard is an Ego Clue. The better teamwork line is to empower Bob: Alice plays her known playable card and Bob can clue Cathy's yellow card himself. Accelerating the later red-2 clue is normally not worth forcing Bob into a discard from Alice's one-sided perspective.
+
+</TabItem>
+</Tabs>

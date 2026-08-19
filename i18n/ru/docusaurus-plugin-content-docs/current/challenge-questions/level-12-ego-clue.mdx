@@ -1,0 +1,27 @@
+---
+title: До сброса Боба
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-ego-clue/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-ego-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 сыграна. Алиса знает, что у неё есть играбельная синяя 1. У Боба на chop лежит красная 2, за которой находится ещё одна красная 2. Алиса может сейчас дать Кэти жёлтую Play Clue, надеясь, что после этого Бобу будет нечего делать и он сбросит карту, а Алиса затем сможет чисто подсказать красную 2.
+
+Следует ли Алисе дать жёлтую подсказку Кэти, чтобы вынудить этот сброс?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Алисе следует сыграть свою синюю 1.** Несвязанная жёлтая подсказка, которой Алиса забирает подсказку у Боба и заставляет его сбрасывать, — это Ego Clue. Линия с лучшей командной работой оставляет Бобу свободу действий: Алиса играет известную играбельную карту, а Боб сам может подсказать жёлтую карту Кэти. Обычно ускорение будущей подсказки по красной 2 не оправдывает попытку вынудить Боба к сбросу из односторонней перспективы Алисы.
+
+</TabItem>
+</Tabs>

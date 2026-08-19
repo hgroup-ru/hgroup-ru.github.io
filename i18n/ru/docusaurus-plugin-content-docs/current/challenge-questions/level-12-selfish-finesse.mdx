@@ -1,0 +1,27 @@
+---
+title: До розыгрыша красной 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-selfish-finesse/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-selfish-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На столе ничего не сыграно. У Боба есть глобально известная красная 1. Вместо её розыгрыша Боб даёт Кэти красную Play Clue по её красной 3. Алиса видит, что Боб знает свою красную 1, а её собственная Finesse Position всё ещё полностью без подсказок.
+
+Что Алиса должна вывести о своей Finesse Position и следует ли ей сыграть её немедленно?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса должна отметить свою Finesse Position как **красную 2**, но **не играть её прямо сейчас**. Подсказка Боба — Selfish Finesse: он отложил свою известную красную 1, чтобы зафиксировать Finesse до возможного сдвига Finesse Position Алисы. Участники связки записывают вывод и спокойно ждут, пока Боб сыграет красную 1; только после этого Алиса вслепую играет красную 2.
+
+</TabItem>
+</Tabs>

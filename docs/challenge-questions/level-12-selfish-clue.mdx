@@ -1,0 +1,27 @@
+---
+title: Before Playing Red 2
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-selfish-clue/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-selfish-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice knows she has the playable red 2. Bob's hand, newest to oldest, is blue 1, red 3, red 4, red 5, blue 1. Bob and Cathy both have safe discards. If Alice simply plays red 2, Bob will probably discard and the team will later struggle to get all three red cards efficiently.
+
+What should Alice do now?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **clue red to Bob now**, before playing her red 2. This is the rare good Selfish Clue from the level-12 example: it locks in a 3-for-1 touch on red 3, red 4, and red 5 before Bob's hand shifts. The line loses Tempo compared with playing red 2 immediately, but Bob and Cathy both have safe discards, so the efficiency gain compensates for that delay.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,27 @@
+---
+title: Two Ways to Duplicate
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-duplication-tie/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-duplication-tie" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Donald has a blue 2 on chop that must be saved. Bob has two unknown blue cards. Cathy has two unknown 2s. One non-blue 2 has already been played, while no blue cards have been played. Bob and Cathy therefore have the same number of potentially matching clued cards, but Cathy's cards are slightly more likely to contain the blue 2.
+
+Who should take Duplication Responsibility?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Bob should give the save.** When the counts are tied, the player whose existing clues make the matching card less specifically implicated takes responsibility. Here each of Bob's unknown blue cards has the lower chance of being blue 2 than each of Cathy's unknown 2s because one non-blue 2 is already accounted for. This is the level-12 source's tie-break example: Bob accepts the smaller duplication risk.
+
+</TabItem>
+</Tabs>
