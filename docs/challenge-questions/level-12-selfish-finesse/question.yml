@@ -10,7 +10,7 @@ players:
   - name: Alice
     cards:
       - type: x
-        middleNote: r2
+      - type: x
       - type: x
       - type: x
       - type: x
@@ -25,6 +25,8 @@ players:
         border: false
       - type: p5
         border: false
+      - type: b4
+        border: false
   - name: Cathy
     cards:
       - type: r3
@@ -34,4 +36,6 @@ players:
       - type: b4
         border: false
       - type: y5
+        border: false
+      - type: p4
         border: false
