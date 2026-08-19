@@ -1,0 +1,48 @@
+name: Release Control
+
+on:
+  issues:
+    types:
+      - closed
+
+permissions:
+  actions: write
+  contents: read
+  issues: write
+
+jobs:
+  dispatch:
+    if: github.event.issue.number == 100
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Production Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONTROL_ISSUE: ${{ github.event.issue.number }}
+        run: |
+          default_branch="$(gh api "repos/${GITHUB_REPOSITORY}" --jq .default_branch)"
+          if [ "$default_branch" != "main" ]; then
+            echo "Expected default branch main, got $default_branch."
+            exit 1
+          fi
+
+          source_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
+          echo "Dispatching Production Release from main at $source_sha."
+
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/release.yml/dispatches" \
+            -f ref=main
+
+          gh issue comment "$CONTROL_ISSUE" \
+            --repo "$GITHUB_REPOSITORY" \
+            --body "Production Release requested from \`main\` at \`$source_sha\`. Release workflow owns build, Pages deploy, production tag, GitHub Release, Algolia, changelog archival, and state sync."
+
+      - name: Reopen control issue
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONTROL_ISSUE: ${{ github.event.issue.number }}
+        run: gh issue reopen "$CONTROL_ISSUE" --repo "$GITHUB_REPOSITORY"
