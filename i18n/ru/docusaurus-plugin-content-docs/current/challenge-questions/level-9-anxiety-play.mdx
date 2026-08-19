@@ -1,0 +1,24 @@
+---
+title: Ноль подсказок
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-anxiety-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Боба Locked Hand, и он начинает ход при 0 подсказок. Команда намеренно оставила его при 0, вместо того чтобы потратить подсказку и повторно подсказать одну из его карт. Две карты Боба выглядят одинаково вероятными кандидатами на играбельную.
+
+Что предписывает конвенция Бобу?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен сделать **Anxiety Play**. Если Locked-игрока намеренно оставили при 0 подсказок, это сообщает ему, что одна из его карт на самом деле играбельна. Он должен сыграть карту, которая выглядит наиболее вероятно играбельной; если несколько вариантов одинаково правдоподобны, Leftmost Playable Principle выбирает самую левую.
+
+</TabItem>
+</Tabs>

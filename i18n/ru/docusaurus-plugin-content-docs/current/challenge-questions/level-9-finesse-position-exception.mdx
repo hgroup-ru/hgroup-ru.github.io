@@ -1,0 +1,24 @@
+---
+title: Последняя подсказка
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-finesse-position-exception" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт Early Game, осталась 1 подсказка. Алиса может сделать 5 Stall на off-chop 5 Боба. Единственная оставшаяся обычная Play Clue затронула бы Finesse Position Кэти. Если Алиса потратит последнюю подсказку на 5 Stall, Боб при 0 подсказок будет вынужден сбросить карту, а сразу после него ходит Кэти — раньше, чем кто-либо успеет сделать Finesse её карты.
+
+Разрешает ли Finesse Position Exception сделать 5 Stall?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Исключение действует только тогда, когда играбельную карту на Finesse Position действительно может кто-то получить через Finesse или иным способом. При таком порядке ходов Кэти получает свой ход раньше, чем команда успевает сделать Finesse этой карты, поэтому исключение не работает. Алиса обязана напрямую подсказать играбельную карту Кэти.
+
+</TabItem>
+</Tabs>

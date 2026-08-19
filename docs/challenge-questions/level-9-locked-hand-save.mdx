@@ -1,0 +1,24 @@
+---
+title: Saving an Ordinary Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={9} id="level-9-locked-hand-save" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob has a Locked Hand. He has no higher-precedence clue available. Cathy's chop card is neither critical nor playable, but Bob can give it a color clue without making Cathy's entire hand Locked.
+
+May Bob save that chop card as a Locked Hand Save?
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** A Locked Hand Save may save **any** card on chop, not only a critical or playable card, provided no higher-precedence clue is available and the save itself does not Lock the recipient. If the clue would Lock Cathy, it would instead be interpreted as a normal Play Clue or Save Clue rather than as a Locked Hand Save.
+
+</TabItem>
+</Tabs>
