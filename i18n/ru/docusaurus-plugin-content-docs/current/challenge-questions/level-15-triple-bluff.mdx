@@ -1,0 +1,22 @@
+---
+title: Третий blind-play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-triple-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+После подсказки Алисы Боб и Кэти уже вслепую сыграли несвязанные играбельные карты как Double Bluff. У Дональда тоже играбельная Finesse Position. Должен ли Дональд тоже сыграть вслепую, чтобы завершить Triple Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Triple Bluff явно запрещён. В этой прогрессии Bluff-подобная подсказка должна закончиться максимум после двух blind-play. Дональд не продолжает интерпретацию только потому, что существует ещё одна играбельная Finesse Position.
+
+</TabItem>
+</Tabs>

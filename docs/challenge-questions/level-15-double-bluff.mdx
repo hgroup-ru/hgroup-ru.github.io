@@ -1,0 +1,22 @@
+---
+title: Two Immediate Blind-Plays
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-double-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a Play Clue from Bluff Seat to a useful card that is **not** a legal single-Bluff target. Bob blind-plays successfully, and Cathy also has a playable Finesse Position. What must happen for the clue to resolve as a Double Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob and Cathy must both blind-play on the **two turns immediately following the clue**. A Double Bluff is used when a single Bluff cannot legally explain the target, and it resolves after exactly two blind-plays. Like other Bluff-style moves it is Bluff Seat-only and immediate; the team does not queue it for later turns.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Может ли Кэти отложить blind-play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-no-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб только что сделал blind-play после подсказки Алисы. Кэти не может исключить, что Алиса задумала Double Bluff, но Кэти видит привлекательный Finesse, который могла бы дать перед своей игрой. Можно ли ей отложить blind-play ради этой подсказки?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Если Кэти не может исключить Double Bluff, она не имеет права откладывать blind-play. Второй blind-play должен произойти немедленно, иначе последующие действия уже не будут прочитаны как часть Double Bluff и возникнет невосстановимая Information Desynchronization. Это строже обычного правила, при котором возможный одиночный Bluff иногда можно отложить ради Finesse.
+
+</TabItem>
+</Tabs>

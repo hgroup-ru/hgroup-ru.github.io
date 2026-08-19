@@ -1,0 +1,22 @@
+---
+title: Can Cathy Defer?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-no-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob has just blind-played after Alice's clue. Cathy cannot rule out that Alice intended a Double Bluff, but Cathy also sees an attractive Finesse she could give before playing. May she defer her blind-play to give that clue?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** If Cathy cannot rule out a Double Bluff, she must not defer. The second blind-play has to occur immediately or later actions will no longer be read as part of the Double Bluff, causing unrecoverable Information Desynchronization. This is stricter than the ordinary rule where a possible single Bluff may sometimes be deferred for a Finesse.
+
+</TabItem>
+</Tabs>

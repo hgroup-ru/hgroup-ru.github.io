@@ -1,0 +1,22 @@
+---
+title: Why Cathy Must Also Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-pestilent" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clues Donald number 2 on an untouched 2. Bob blind-plays green 1, so Donald would now naturally identify his card as green 2. Cathy can see that the physical card is not green 2 and that her own Finesse Position is playable. Why must Cathy blind-play immediately?
+
+</TabItem>
+<TabItem value="solution">
+
+This can be a **Pestilent Double Bluff**. The first blind-play created a false synchronized identity for Donald's card. Cathy's immediate second blind-play is needed to break that false green-2 conclusion and resynchronize the team. After both blind-plays, Donald can eliminate both connecting identities associated with Bob and Cathy rather than treating Bob's play as an ordinary single Bluff/Finesse proof.
+
+</TabItem>
+</Tabs>

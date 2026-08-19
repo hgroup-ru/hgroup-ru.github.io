@@ -1,0 +1,22 @@
+---
+title: A Third Blind-Play?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-triple-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+After Alice's clue, Bob and Cathy have already blind-played unrelated playable cards as a Double Bluff. Donald also has a playable Finesse Position. Should Donald blind-play too to complete a Triple Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Triple Bluff is explicitly illegal. Bluff-style clues are defined to finish after at most two blind-plays in this progression. Donald must not extend the interpretation merely because another playable Finesse Position exists.
+
+</TabItem>
+</Tabs>

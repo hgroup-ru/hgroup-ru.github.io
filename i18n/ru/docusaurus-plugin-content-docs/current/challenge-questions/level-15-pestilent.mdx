@@ -1,0 +1,22 @@
+---
+title: Почему Кэти тоже должна сыграть
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-pestilent" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Дональду подсказку по 2 на нетронутую 2. Боб вслепую играет зелёную 1, поэтому Дональд естественно решил бы, что его карта — зелёная 2. Кэти видит, что физическая карта не зелёная 2, а её собственная Finesse Position играбельна. Почему Кэти должна немедленно сделать blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+Это может быть **Pestilent Double Bluff**. Первый blind-play создал для Дональда ложную синхронизированную идентичность карты. Немедленный второй blind-play Кэти нужен, чтобы разрушить ложный вывод про зелёную 2 и снова синхронизировать команду. После двух blind-play Дональд может исключить обе соединяющиеся идентичности, связанные с Бобом и Кэти, вместо того чтобы считать ход Боба обычным доказательством одиночного Bluff/Finesse.
+
+</TabItem>
+</Tabs>

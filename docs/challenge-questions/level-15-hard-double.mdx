@@ -1,0 +1,22 @@
+---
+title: Same Suit, Still No Connector
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-hard-double" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing is played. Alice clues Donald number 4. Bob blind-plays red 1 and Cathy immediately blind-plays red 2. Donald's physical card is red 4. Is anyone now promised red 3 because the two blind-plays share the red suit with the 4?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Two immediate blind-plays identify a Hard Double Bluff. Even though red 1 and red 2 happen to share the suit of the physical red 4, the team does not invent a red-3 connector. Donald only knows the clued card can be a 4; the matching suits do not turn the Double Bluff into a three-card Finesse chain.
+
+</TabItem>
+</Tabs>

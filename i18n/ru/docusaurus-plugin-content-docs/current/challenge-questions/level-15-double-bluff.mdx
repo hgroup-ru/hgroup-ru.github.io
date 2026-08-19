@@ -1,0 +1,22 @@
+---
+title: Два немедленных blind-play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={15} id="level-15-double-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса из Bluff Seat даёт Play Clue на полезную карту, которая **не является** легальной целью одиночного Bluff. Боб успешно играет вслепую, а у Кэти тоже есть играбельная Finesse Position. Что должно произойти, чтобы подсказка разрешилась как Double Bluff?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб и Кэти должны оба сделать blind-play на **двух ходах непосредственно после подсказки**. Double Bluff используется, когда одиночный Bluff не может легально объяснить цель, и разрешается ровно после двух blind-play. Как и другие Bluff-подобные ходы, он возможен только из Bluff Seat и должен демонстрироваться сразу, а не ставиться в очередь на потом.
+
+</TabItem>
+</Tabs>
