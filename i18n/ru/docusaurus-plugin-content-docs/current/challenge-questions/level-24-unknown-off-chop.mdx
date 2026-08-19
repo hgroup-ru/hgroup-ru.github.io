@@ -1,0 +1,22 @@
+---
+title: Unknown trash вне chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-unknown-off-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Unnecessary advanced-ход использует цель подсказки, которая является **unknown trash вне chop**. После обычного blind-play/discharge эффекта хода какое дополнительное изменение руки сообщается получателю подсказки?
+
+</TabItem>
+<TabItem value="solution">
+
+**Chop Move**, словно была дана Trash Chop Move. Это может создать информационную асимметрию: во многих unnecessary advanced-ходах игрок, сделавший blind-play, сначала не знает, что карта получателя была Chop Moved, хотя остальные это видят. Команда должна сохранять такую рассинхронизацию до демонстрации Chop Move.
+
+</TabItem>
+</Tabs>

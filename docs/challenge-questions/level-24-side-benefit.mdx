@@ -1,0 +1,22 @@
+---
+title: A Complicated Move With a Side Benefit
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-side-benefit" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice could directly Play Clue a target card, but instead uses a complicated advanced move that also picks up another useful card and fixes an impending Good Touch problem. Is the move automatically Unnecessary merely because a direct Play Clue existed?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A move is only Unnecessary when the complicated route could be replaced by a direct Play Clue **without losing a meaningful side benefit**. Picking up useful cards, fixing an impending misplay/Good Touch violation, or positively filling in existing touched cards can make the advanced move Necessary. Negative-information fill-in alone does not count for this simplification.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Was the Trash Finesse Actually Necessary?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-trash-finesse-always" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Because of blocking, Alice genuinely could not directly clue Bob's blind-played connector. She uses a Trash Finesse to obtain it. Should the team say the move was Necessary and therefore suppress all Level 24 extra effects?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Trash Finesses and Trash Bluffs are a deliberate exception: the group always treats them as **Unnecessary**, regardless of whether the blind-played card could actually have been obtained by a normal clue. This simplification keeps their downstream Level 24 extra-message behavior stable.
+
+</TabItem>
+</Tabs>

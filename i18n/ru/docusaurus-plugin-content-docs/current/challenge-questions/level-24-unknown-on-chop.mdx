@@ -1,0 +1,22 @@
+---
+title: Unknown trash на chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-unknown-on-chop" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Тот же Unnecessary advanced-ход вместо этого использует **unknown trash на chop** как цель подсказки. Остаётся ли дополнительный эффект Chop Move?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Это становится Trash Push.** Когда focus распознан как trash на chop, уровень 24 читает дополнительное сообщение unnecessary-хода так, словно known trash был подсказан на chop: карта непосредственно слева от него, то есть новый chop, выталкивается на игру. Именно off-chop версия добавляет Chop Move.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,22 @@
+---
+title: Был ли Trash Finesse на самом деле Necessary?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-trash-finesse-always" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Из-за блокировки Алиса действительно не могла напрямую подсказать связку, которую Боб сыграл вслепую. Она получает её через Trash Finesse. Должна ли команда назвать ход Necessary и поэтому отключить все дополнительные эффекты уровня 24?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Trash Finesse и Trash Bluff — намеренное исключение: группа всегда считает их **Unnecessary**, независимо от того, можно ли было реально получить blind-play обычной подсказкой. Это упрощение сохраняет стабильными их дополнительные сообщения уровня 24.
+
+</TabItem>
+</Tabs>

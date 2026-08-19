@@ -1,0 +1,22 @@
+---
+title: Сложный ход с побочной выгодой
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-side-benefit" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса могла бы дать прямую Play Clue на нужную карту, но вместо этого использует сложный advanced-ход, который также затрагивает ещё одну полезную карту и исправляет грядущее нарушение Good Touch. Становится ли ход автоматически Unnecessary только потому, что существовала прямая Play Clue?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Ход является Unnecessary только когда сложный путь можно заменить прямой Play Clue **без потери значимой побочной выгоды**. Дополнительные полезные карты, исправление грядущего misplay/нарушения Good Touch или положительный fill-in уже затронутых карт могут сделать advanced-ход Necessary. Один лишь fill-in отрицательной информацией для этого упрощения не считается.
+
+</TabItem>
+</Tabs>
