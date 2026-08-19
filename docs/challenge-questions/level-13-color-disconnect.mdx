@@ -1,0 +1,27 @@
+---
+title: After the Blue 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-color-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn, Alice clued Cathy red, touching one card. Bob immediately blind-played a blue 1. Cathy's touched card is physically the red 3 shown in the diagram.
+
+What possibilities should Cathy keep for the touched card?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy should keep **red 2 or red 3**. The blue 1 disconnects from the red clue, so this is a Bluff rather than a Finesse. A normal Bluff can target the one-away red 2, while the Level 13 3 Bluff convention additionally allows the useful red 3. Nothing in this line distinguishes the two yet.
+
+</TabItem>
+</Tabs>

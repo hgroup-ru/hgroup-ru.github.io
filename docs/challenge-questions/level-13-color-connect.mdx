@@ -1,0 +1,25 @@
+---
+title: After the Red 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-color-connect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clued Cathy red on the first turn. Bob then blind-played red 1. The touched card is physically red 3. Is this a legal way to perform a 3 Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Red connects to red. Cathy therefore reads Bob's red 1 as the first card of a Finesse and expects the touched red card to be red 2. With no extra information stopping her, she would play the red 3 as red 2 and misplay. A 3 Bluff must not masquerade as this connecting Finesse line.
+
+</TabItem>
+</Tabs>

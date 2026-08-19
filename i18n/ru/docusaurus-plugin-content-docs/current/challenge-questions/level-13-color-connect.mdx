@@ -1,0 +1,25 @@
+---
+title: После красной 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-color-connect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса на первом ходу дала Кэти красную подсказку. Затем Боб вслепую сыграл красную 1. Физически затронутая карта — красная 3. Можно ли так легально сделать 3 Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Красная карта соединяется с красной. Поэтому Кэти воспринимает красную 1 Боба как первую карту Finesse и ожидает, что её затронутая красная карта — красная 2. Без дополнительной информации, которая остановит её, она сыграет красную 3 как красную 2 и получит misplay. 3 Bluff не должен маскироваться под такую соединяющуюся линию Finesse.
+
+</TabItem>
+</Tabs>

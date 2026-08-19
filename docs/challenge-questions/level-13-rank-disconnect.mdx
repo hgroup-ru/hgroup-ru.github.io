@@ -1,0 +1,25 @@
+---
+title: A Number 3 Clue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-rank-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-rank-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn, Alice clued Cathy number 3, touching one card. Bob blind-played a blue 1. What does Cathy know about the touched card beyond the positive rank clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+This is a **3 Bluff**. A played 1 does not connect to a number 3 clue, so the clue is not a Finesse. Cathy knows the card is a 3 from the clue itself, but the Bluff gives her no suit information; she should keep it as any 3 rather than inventing a connecting suit.
+
+</TabItem>
+</Tabs>

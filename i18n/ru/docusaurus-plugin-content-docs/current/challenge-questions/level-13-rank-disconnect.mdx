@@ -1,0 +1,25 @@
+---
+title: Подсказка по 3
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-rank-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-rank-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса дала Кэти подсказку по 3, затронув одну карту. Боб вслепую сыграл синюю 1. Что Кэти знает о затронутой карте помимо самой положительной подсказки по рангу?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Это **3 Bluff**. Сыгранная 1 не соединяется с подсказкой по 3, поэтому это не Finesse. Из самой подсказки Кэти знает, что карта — 3, но Bluff не даёт ей информации о масти: она должна оставить вариант «любая 3», а не выдумывать соединяющуюся масть.
+
+</TabItem>
+</Tabs>

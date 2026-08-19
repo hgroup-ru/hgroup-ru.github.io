@@ -1,0 +1,25 @@
+---
+title: Та же масть
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-rank-same-suit/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-rank-same-suit" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса на первом ходу дала Кэти подсказку по 3. Боб вслепую сыграл красную 1, а затронутая карта Кэти физически оказалась красной 3. Обещает ли совпадение красной масти, что у Боба есть ещё и красная 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Подсказка была по рангу 3, а ранг 1 не соединяется с рангом 3. Поэтому это 3 Bluff, хотя физические карты одной масти. Кэти знает только, что её карта — 3; красная 2 у Боба этой линией не обещана.
+
+</TabItem>
+</Tabs>

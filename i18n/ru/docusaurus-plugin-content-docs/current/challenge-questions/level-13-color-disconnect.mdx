@@ -1,0 +1,27 @@
+---
+title: После синей 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-color-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На первом ходу Алиса дала Кэти красную подсказку, затронув одну карту. Боб сразу вслепую сыграл синюю 1. Физически затронутая карта Кэти — показанная на диаграмме красная 3.
+
+Какие варианты должна оставить Кэти для этой карты?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна оставить **красную 2 или красную 3**. Синяя 1 не соединяется с красной подсказкой, поэтому это Bluff, а не Finesse. Обычный Bluff может указывать на красную 2, которая one-away-from-playable, а конвенция 3 Bluff на уровне 13 дополнительно разрешает полезную красную 3. Пока ничто в этой линии не различает эти два варианта.
+
+</TabItem>
+</Tabs>
