@@ -1,0 +1,25 @@
+---
+title: Trash Finesse может помочь Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-assisted-trash-finesse/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-assisted-trash-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Синяя 1 уже сыграна, а у Алисы находится известная всей команде жёлтая 1. Алиса даёт Кэти подсказку числом 1, затрагивая синюю 1 в слоте 3 как Play Clue. Боб читает Trash Finesse и вслепую играет Finesse Position, но там дублированная жёлтая 1, которая успешно разыгрывается. Других карт подсказка не затронула. Что Кэти должна сделать со слотами 4 и 5?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна сделать **Chop Move слотов 4 и 5**. Расточительный blind-play дубликата без дополнительной ценности раскрывает **Assisted Trash Chop Move** на получателя подсказки. Двигаются карты справа от подсказанной trash-карты.
+
+</TabItem>
+</Tabs>

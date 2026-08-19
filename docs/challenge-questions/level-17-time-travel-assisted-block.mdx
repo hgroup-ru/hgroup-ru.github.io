@@ -1,0 +1,25 @@
+---
+title: Assisted Trash Takes Precedence Over Time Travel
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-time-travel-assisted-block/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-assisted-block" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Blue 1 is played. Alice has a globally known yellow 1 and clues number 1 to Cathy, touching blue 1 on slot 3. Bob reads the Trash Finesse and blind-plays yellow 1, duplicating Alice's known card. No extra valuable cards were touched. Bob notices that his own duplicate blind-play was a 0-for-1. Should he therefore Time Travel Chop Move his own hand?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Blind-form Time Travel is unavailable when the clue looks like an **Assisted Trash Chop Move** on the clue receiver. This position has exactly that simpler explanation: Cathy Chop Moves the cards to the right of her clued blue 1. Bob does not add a second Chop Move on his own hand.
+
+</TabItem>
+</Tabs>

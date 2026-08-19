@@ -1,0 +1,25 @@
+---
+title: Value Blocks Blind Time Travel
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-time-travel-value-block/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-value-block" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clues number 3 to Bob. The clue fills a previously red-clued card in as red 3 **and** newly secures another valuable 3, enough to satisfy Minimum Clue Value Principle. Bob blind-plays what he thinks is red 2, but it is a playable duplicate of Cathy's globally known blue 2. Should Bob add a Time Travel Chop Move on his own hand because his blind-play was duplicated?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Blind-form Time Travel requires the clue to **fail Minimum Clue Value Principle**. Here the newly secured valuable 3 already supplies a normal duplicitous explanation, so the duplicate blind-play is a **Duplicitous Blind-Play**, not Time Travel. Bob must not manufacture an extra Chop Move.
+
+</TabItem>
+</Tabs>

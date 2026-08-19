@@ -1,0 +1,25 @@
+---
+title: A Discharge Can Assist the Same Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-assisted-utd/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-assisted-utd" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Blue 1 is played and Alice has a globally known yellow 1. Alice clues blue to Cathy, touching blue 1 on slot 2 as a Play Clue. Bob recognizes an Unknown Trash Discharge and blind-plays his Third Finesse Position, but that card is the duplicated yellow 1 and successfully plays. No additional cards were touched. Which cards should Cathy Chop Move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy should **Chop Move slots 3, 4, and 5**. The same Assisted Trash Chop Move logic works when the duplicate is reached through an Unknown Trash Discharge: with no extra value to explain the duplicate blind-play, the message is a Trash Chop Move on the clue receiver's cards to the right of the clued trash card.
+
+</TabItem>
+</Tabs>

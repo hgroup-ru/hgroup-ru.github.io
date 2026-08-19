@@ -1,0 +1,25 @@
+---
+title: A True Zero-for-One Travels Back to the Chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-time-travel-direct/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-direct" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 2s are played and Cathy has a globally known red 3. Alice clues number 3 to Bob, newly touching only the 3 on slot 2 as a Play Clue. Bob plays it expecting a non-red 3, but it is red 3 and successfully duplicates Cathy's known card. The clue gained no other card and provided no useful Tempo. What happens to Bob's cards behind slot 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should **Chop Move the cards behind the duplicated red 3**. The clue has revealed itself as a genuine 0-for-1 with neither extra value nor Tempo, so it is a **Time Travel Chop Move (Direct Form)**. The team retroactively treats the duplicated card as if it had been directly clued for a Trash Chop Move on Bob's own hand.
+
+</TabItem>
+</Tabs>

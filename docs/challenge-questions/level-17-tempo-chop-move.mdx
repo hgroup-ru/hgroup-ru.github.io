@@ -1,0 +1,25 @@
+---
+title: Duplicitous Tempo Can Still Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-tempo-chop-move/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-tempo-chop-move" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Use the Duplicitous Tempo position shown below. Alice was **not** in a valid stalling situation, and the fill-in on Bob's green 2 gives only one unit of Tempo on a Promptable card, so that Tempo is not Valuable. After Bob discovers that the focused play was the duplicate red 2, does the clue also move Bob's chop?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** Duplicitous Tempo Clues use the **same Tempo Clue Chop Move conditions as ordinary Tempo Clues**. Here the clue cannot be explained as an allowed stall and its one unit of Tempo is not Valuable, so Bob also interprets it as a Tempo Clue Chop Move.
+
+</TabItem>
+</Tabs>

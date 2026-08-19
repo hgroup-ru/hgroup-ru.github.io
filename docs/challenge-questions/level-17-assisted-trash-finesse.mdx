@@ -1,0 +1,25 @@
+---
+title: Trash Finesse Can Assist a Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-assisted-trash-finesse/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-assisted-trash-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Blue 1 is played and Alice has a globally known yellow 1. Alice clues number 1 to Cathy, touching blue 1 on slot 3 as a Play Clue. Bob reads a Trash Finesse and blind-plays his Finesse Position, but it is the duplicated yellow 1 and successfully plays. No additional cards were touched. What should Cathy do with slots 4 and 5?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Cathy should **Chop Move slots 4 and 5**. The otherwise wasteful duplicate blind-play, with no extra card value to explain it, reveals an **Assisted Trash Chop Move** on the clue receiver. The cards to the right of the clued trash card are the cards being moved.
+
+</TabItem>
+</Tabs>

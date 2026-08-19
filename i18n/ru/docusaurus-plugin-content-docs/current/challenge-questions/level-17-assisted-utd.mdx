@@ -1,0 +1,25 @@
+---
+title: Discharge может помочь тому же Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-assisted-utd/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-assisted-utd" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Синяя 1 уже сыграна, а у Алисы находится известная всей команде жёлтая 1. Алиса даёт Кэти синюю подсказку, затрагивая синюю 1 в слоте 2 как Play Clue. Боб распознаёт Unknown Trash Discharge и вслепую играет Third Finesse Position, но там дублированная жёлтая 1, которая успешно разыгрывается. Других карт подсказка не затронула. Какие карты Кэти должна пометить как Chop Moved?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна сделать **Chop Move слотов 3, 4 и 5**. Та же логика Assisted Trash Chop Move работает, когда дубликат достигается через Unknown Trash Discharge: без дополнительной ценности, объясняющей blind-play дубликата, сообщение является Trash Chop Move на карты получателя подсказки справа от подсказанной trash-карты.
+
+</TabItem>
+</Tabs>

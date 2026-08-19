@@ -1,0 +1,25 @@
+---
+title: The Duplicate Does Not Count Toward Value
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-value-clue/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-value-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 2 and blue 2 are played. Alice has a globally known red 3. She clues number 3 to Bob, touching two cards. Bob plays the focused 3 expecting blue 3, but it is red 3 and successfully duplicates Alice's known card. The other touched 3 is independently valuable enough to satisfy Minimum Clue Value Principle. Must the team call for another Prompt or blind-play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** This is a **Duplicitous Value Clue**. The clue already satisfies Minimum Clue Value Principle from the other valuable card **without counting the duplicated red 3**, so the duplicate does not create another connection. The other 3 is saved as useful, not promised to be currently playable.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Ценность блокирует blind Time Travel
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-17-time-travel-value-block/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-time-travel-value-block" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Бобу подсказку числом 3. Подсказка дополняет ранее красную карту до красной 3 **и** впервые сохраняет ещё одну ценную 3, чего достаточно для Minimum Clue Value Principle. Боб вслепую играет карту, которую считает красной 2, но там играбельный дубликат известной всей команде синей 2 Кэти. Должен ли Боб добавить Time Travel Chop Move на собственной руке из-за дублированного blind-play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Blind form Time Travel требует, чтобы подсказка **не удовлетворяла Minimum Clue Value Principle**. Здесь впервые сохранённая ценная 3 уже даёт обычное duplicitous-объяснение, поэтому дублированный blind-play — это **Duplicitous Blind-Play**, а не Time Travel. Боб не должен создавать дополнительный Chop Move.
+
+</TabItem>
+</Tabs>

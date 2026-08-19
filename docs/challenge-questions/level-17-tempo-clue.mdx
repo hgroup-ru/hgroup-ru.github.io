@@ -1,0 +1,25 @@
+---
+title: Value Disappears, Tempo Remains
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-17-tempo-clue/question.yml";
+
+<ChallengeQuestionProgress level={17} id="level-17-tempo-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1, green 1, and blue 1 are played, and Cathy has a globally known red 2. Bob already had a touched green card whose rank was unknown. Alice clues number 2 to Bob, newly touching one focused card and filling the green card in as green 2. Bob plays the focus expecting blue 2, but it is red 2. No other new valuable card was touched. What does the clue become after the duplication is revealed?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+A **Duplicitous Tempo Clue**. Once the focused card turns out to be a duplicate, there is no extra newly touched valuable card to justify a Duplicitous Value Clue. The useful remaining effect is that the already-touched green card was filled in and revealed as the playable green 2, so the clue is retroactively treated as a Tempo Clue.
+
+</TabItem>
+</Tabs>
