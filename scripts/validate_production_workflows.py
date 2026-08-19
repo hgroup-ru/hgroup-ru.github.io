@@ -52,15 +52,14 @@ def main() -> None:
     ):
         require(release, marker, "release.yml")
 
-    forbidden_release_markers = (
+    for marker in (
         "actions/deploy-pages@",
         "actions/upload-pages-artifact@",
         "prod-fix-",
         "mode:",
         "ALGOLIA_CRAWLER",
         "crawler.algolia.com",
-    )
-    for marker in forbidden_release_markers:
+    ):
         if marker in release:
             fail(f"release.yml contains retired or publish-owned marker: {marker!r}")
 
@@ -68,11 +67,11 @@ def main() -> None:
         if path == PUBLISH_WORKFLOW:
             continue
         text = path.read_text(encoding="utf-8")
-        for marker in ("actions/deploy-pages@", "pages: write"):
+        for marker in ("actions/deploy-pages@", "actions/upload-pages-artifact@"):
             if marker in text:
                 fail(
-                    f"{path} contains publish-owned marker {marker!r}; "
-                    "only publish.yml may deploy GitHub Pages"
+                    f"{path} contains publish implementation marker {marker!r}; "
+                    "only publish.yml may implement GitHub Pages deployment"
                 )
 
     for marker in (
