@@ -2,31 +2,22 @@ name: Release
 
 on:
   workflow_dispatch:
-    inputs:
-      mode:
-        description: Publication mode
-        required: true
-        default: release
-        type: choice
-        options:
-          - release
-          - fix
 
 concurrency:
-  group: github-pages-release
+  group: official-release
   cancel-in-progress: false
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - name: Require main branch
         if: github.ref != 'refs/heads/main'
         run: |
-          echo "Release must run from main."
+          echo "Official Release must run from main."
           exit 1
 
       - uses: actions/checkout@v7
@@ -34,7 +25,6 @@ jobs:
           fetch-depth: 0
 
       - name: Validate fresh release notes
-        if: inputs.mode != 'fix'
         shell: bash
         run: |
           notes_file="$(mktemp)"
@@ -60,179 +50,102 @@ jobs:
           }
 
           extract_notes CHANGELOG.md > "$notes_file"
-
           if ! normalize_notes < "$notes_file" | grep -q .; then
             echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
             exit 1
           fi
-
           if ! grep -Eq '^<!-- release-title: .+ -->$' "$notes_file"; then
             echo "CHANGELOG.md is missing '<!-- release-title: ... -->' metadata."
             exit 1
           fi
 
-          previous_tag="$(
-            git tag --list 'prod-*' --sort=-creatordate |
-              grep -E '^prod-[0-9]{8}-[0-9]+$' |
-              head -n 1
-          )"
-          if [ -n "$previous_tag" ] &&
-            git cat-file -e "$previous_tag:CHANGELOG.md" 2>/dev/null; then
-            git show "$previous_tag:CHANGELOG.md" |
-              awk '
-                /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
-                capture && /^## / { exit }
-                capture { print }
-              ' > "$previous_notes_file"
-
-            if diff -q \
-              <(normalize_notes < "$notes_file") \
-              <(normalize_notes < "$previous_notes_file") >/dev/null; then
+          previous_tag="$(git tag --list 'prod-*' --sort=-creatordate | grep -E '^prod-[0-9]{8}-[0-9]+$' | head -n 1)"
+          if [ -n "$previous_tag" ] && git cat-file -e "$previous_tag:CHANGELOG.md" 2>/dev/null; then
+            git show "$previous_tag:CHANGELOG.md" | awk '
+              /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+              capture && /^## / { exit }
+              capture { print }
+            ' > "$previous_notes_file"
+            if diff -q <(normalize_notes < "$notes_file") <(normalize_notes < "$previous_notes_file") >/dev/null; then
               echo "Release notes are unchanged from $previous_tag."
-              echo "Update CHANGELOG.md before running Production Release."
               exit 1
             fi
           fi
 
-      - name: Record production-fix mode
-        if: inputs.mode == 'fix'
-        run: |
-          echo "Production fix mode: release-note freshness and archival are intentionally skipped."
-          echo "### Publication mode: production fix" >> "$GITHUB_STEP_SUMMARY"
-
-      - uses: ./.github/workflows/setup
-
-      - name: Lint release candidate
-        run: npm run lint
-
-      - name: Build RU release
-        run: npm run build:ru
-
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
+  publish:
+    needs: prepare
+    uses: ./.github/workflows/publish.yml
     permissions:
-      contents: write
+      contents: read
       pages: write
       id-token: write
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       production_tag: ${{ steps.production_tag.outputs.tag }}
       github_release: ${{ steps.github_release.outputs.name }}
-
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
-
-      - name: Check out released source for tagging
-        uses: actions/checkout@v7
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.sha }}
           fetch-depth: 0
 
-      - name: Tag production source
+      - name: Tag official release source
         id: production_tag
         shell: bash
-        env:
-          RELEASE_MODE: ${{ inputs.mode }}
         run: |
-          if [ "$RELEASE_MODE" = "fix" ]; then
-            tag="prod-fix-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
-          else
-            tag="prod-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
-          fi
-
+          tag="prod-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
             tagged_sha="$(git rev-list -n 1 "$tag")"
             if [ "$tagged_sha" != "$GITHUB_SHA" ]; then
-              echo "Production tag $tag already exists on $tagged_sha, expected $GITHUB_SHA."
+              echo "Release tag $tag already exists on $tagged_sha, expected $GITHUB_SHA."
               exit 1
             fi
-            echo "Production tag $tag already exists on this source SHA; keeping it."
           else
-            git tag -a "$tag" "$GITHUB_SHA" -m "Production deployment from $GITHUB_SHA"
+            git tag -a "$tag" "$GITHUB_SHA" -m "Official release from $GITHUB_SHA"
             git push origin "$tag"
           fi
-
           echo "PRODUCTION_TAG=$tag" >> "$GITHUB_ENV"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
-          echo "### Production tag: $tag" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publish GitHub Release
         id: github_release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_MODE: ${{ inputs.mode }}
         run: |
           notes_file="$(mktemp)"
-
-          if [ "$RELEASE_MODE" = "fix" ]; then
-            printf '%s\n\n%s\n' \
-              "Technical production fix from source $GITHUB_SHA." \
-              "No user-facing release notes were published or archived." \
-              > "$notes_file"
-            title="H-Group RU — $PRODUCTION_TAG (production fix)"
-          else
-            awk '
-              /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
-              capture && /^## / { exit }
-              capture && /^<!-- release-title: .* -->$/ { next }
-              capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
-              capture { print }
-            ' CHANGELOG.md > "$notes_file"
-
-            if ! grep -q '[^[:space:]]' "$notes_file"; then
-              echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
-              exit 1
-            fi
-
-            title="H-Group RU — $PRODUCTION_TAG"
-          fi
-
+          awk '
+            /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+            capture && /^## / { exit }
+            capture && /^<!-- release-title: .* -->$/ { next }
+            capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
+            capture { print }
+          ' CHANGELOG.md > "$notes_file"
+          title="H-Group RU — $PRODUCTION_TAG"
           if gh release view "$PRODUCTION_TAG" >/dev/null 2>&1; then
-            gh release edit "$PRODUCTION_TAG" \
-              --title "$title" \
-              --notes-file "$notes_file"
+            gh release edit "$PRODUCTION_TAG" --title "$title" --notes-file "$notes_file"
           else
-            gh release create "$PRODUCTION_TAG" \
-              --verify-tag \
-              --title "$title" \
-              --notes-file "$notes_file"
+            gh release create "$PRODUCTION_TAG" --verify-tag --title "$title" --notes-file "$notes_file"
           fi
-
-          release_url="$(gh release view "$PRODUCTION_TAG" --json url --jq .url)"
           echo "name=$title" >> "$GITHUB_OUTPUT"
-          echo "### GitHub Release marker: $release_url" >> "$GITHUB_STEP_SUMMARY"
 
   archive-release-notes:
-    needs: deploy
-    if: inputs.mode != 'fix'
+    needs: release
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
-
     permissions:
       actions: read
       checks: read
       contents: read
       pull-requests: read
-
     steps:
       - name: Validate archive configuration
         shell: bash
@@ -240,10 +153,7 @@ jobs:
           APP_CLIENT_ID: ${{ vars.STATE_SYNC_APP_CLIENT_ID }}
           APP_PRIVATE_KEY: ${{ secrets.STATE_SYNC_APP_PRIVATE_KEY }}
         run: |
-          if [ -z "$APP_CLIENT_ID" ] || [ -z "$APP_PRIVATE_KEY" ]; then
-            echo "Required GitHub App configuration for release-note archival is incomplete."
-            exit 1
-          fi
+          test -n "$APP_CLIENT_ID" && test -n "$APP_PRIVATE_KEY"
 
       - name: Create short-lived archive token
         id: archive_token
@@ -269,15 +179,13 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.archive_token.outputs.token }}
           RELEASED_SOURCE_SHA: ${{ github.sha }}
-          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
-          GITHUB_RELEASE: ${{ needs.deploy.outputs.github_release }}
+          PRODUCTION_TAG: ${{ needs.release.outputs.production_tag }}
+          GITHUB_RELEASE: ${{ needs.release.outputs.github_release }}
         run: |
           released_changelog="$(mktemp)"
           git show "$RELEASED_SOURCE_SHA:CHANGELOG.md" > "$released_changelog"
-
           published_at="$(gh release view "$PRODUCTION_TAG" --json publishedAt --jq .publishedAt)"
           release_date="$(TZ=Europe/Moscow date -d "$published_at" +%F)"
-
           python3 scripts/archive_release_notes.py \
             --current CHANGELOG.md \
             --released "$released_changelog" \
@@ -285,14 +193,10 @@ jobs:
             --released-source "$RELEASED_SOURCE_SHA" \
             --production-tag "$PRODUCTION_TAG" \
             --github-release "$GITHUB_RELEASE"
-
           if git diff --quiet -- CHANGELOG.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Release notes are already archived."
             exit 0
           fi
-
-          base_sha="$(git rev-parse HEAD)"
           branch="automation/archive-${PRODUCTION_TAG}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           git switch -c "$branch"
           git config user.name "github-actions[bot]"
@@ -300,9 +204,7 @@ jobs:
           git add CHANGELOG.md
           git commit -m "docs: archive $PRODUCTION_TAG release notes"
           git push origin "$branch"
-
           echo "changed=true" >> "$GITHUB_OUTPUT"
-          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
           echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
@@ -313,15 +215,10 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.archive_token.outputs.token }}
           BRANCH: ${{ steps.archive_change.outputs.branch }}
-          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+          PRODUCTION_TAG: ${{ needs.release.outputs.production_tag }}
         run: |
-          pr_url="$(gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "docs: archive $PRODUCTION_TAG release notes" \
-            --body "Mechanical post-release archival of the released \`Следующий релиз\` section in \`CHANGELOG.md\`.")"
+          pr_url="$(gh pr create --base main --head "$BRANCH" --title "docs: archive $PRODUCTION_TAG release notes" --body "Mechanical post-release archival of the released \`Следующий релиз\` section in \`CHANGELOG.md\`.")"
           echo "url=$pr_url" >> "$GITHUB_OUTPUT"
-          echo "### Changelog archive PR: $pr_url" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Wait for archival PR checks
         if: steps.archive_change.outputs.changed == 'true'
@@ -340,25 +237,18 @@ jobs:
           GH_TOKEN: ${{ steps.archive_token.outputs.token }}
           PR_URL: ${{ steps.archive_pr.outputs.url }}
           HEAD_SHA: ${{ steps.archive_change.outputs.head_sha }}
-        run: |
-          gh pr merge "$PR_URL" \
-            --squash \
-            --delete-branch \
-            --match-head-commit "$HEAD_SHA"
+        run: gh pr merge "$PR_URL" --squash --delete-branch --match-head-commit "$HEAD_SHA"
 
   sync-maintainer-state:
     needs:
-      - deploy
+      - release
       - archive-release-notes
-    if: ${{ always() && needs.deploy.result == 'success' && (needs.archive-release-notes.result == 'success' || needs.archive-release-notes.result == 'skipped') }}
+    if: ${{ always() && needs.release.result == 'success' && needs.archive-release-notes.result == 'success' }}
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
-
     environment:
       name: github-pages
-
     steps:
       - name: Validate state sync configuration
         shell: bash
@@ -368,13 +258,7 @@ jobs:
           TARGET_REPOSITORY: ${{ vars.STATE_SYNC_REPOSITORY }}
           TARGET_ENTRYPOINT: ${{ vars.STATE_SYNC_ENTRYPOINT }}
         run: |
-          if [ -z "$APP_CLIENT_ID" ] ||
-             [ -z "$APP_PRIVATE_KEY" ] ||
-             [ -z "$TARGET_REPOSITORY" ] ||
-             [ -z "$TARGET_ENTRYPOINT" ]; then
-            echo "Required post-release state sync configuration is incomplete."
-            exit 1
-          fi
+          test -n "$APP_CLIENT_ID" && test -n "$APP_PRIVATE_KEY" && test -n "$TARGET_REPOSITORY" && test -n "$TARGET_ENTRYPOINT"
 
       - name: Create short-lived state sync token
         id: state_sync_token
@@ -410,8 +294,8 @@ jobs:
         working-directory: maintainer-state-sync
         env:
           STATE_SYNC_RELEASED_SOURCE_SHA: ${{ github.sha }}
-          STATE_SYNC_PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
-          STATE_SYNC_GITHUB_RELEASE: ${{ needs.deploy.outputs.github_release }}
+          STATE_SYNC_PRODUCTION_TAG: ${{ needs.release.outputs.production_tag }}
+          STATE_SYNC_GITHUB_RELEASE: ${{ needs.release.outputs.github_release }}
           STATE_SYNC_PUBLIC_MAIN_SHA: ${{ steps.public_main.outputs.sha }}
           TARGET_ENTRYPOINT: ${{ vars.STATE_SYNC_ENTRYPOINT }}
         run: python3 "$TARGET_ENTRYPOINT"
@@ -421,15 +305,12 @@ jobs:
         shell: bash
         working-directory: maintainer-state-sync
         env:
-          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+          PRODUCTION_TAG: ${{ needs.release.outputs.production_tag }}
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "State sync produced no changes."
             exit 0
           fi
-
-          base_sha="$(git rev-parse HEAD)"
           branch="automation/release-state-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           git switch -c "$branch"
           git config user.name "github-actions[bot]"
@@ -437,40 +318,29 @@ jobs:
           git add -A
           git commit -m "state: sync $PRODUCTION_TAG"
           git push origin "$branch"
-
           echo "changed=true" >> "$GITHUB_OUTPUT"
-          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
           echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Create and merge mechanical state PR
+      - name: Create state sync PR
+        id: state_pr
         if: steps.state_change.outputs.changed == 'true'
         shell: bash
         working-directory: maintainer-state-sync
         env:
           GH_TOKEN: ${{ steps.state_sync_token.outputs.token }}
-          TARGET_REPOSITORY: ${{ vars.STATE_SYNC_REPOSITORY }}
           BRANCH: ${{ steps.state_change.outputs.branch }}
-          BASE_SHA: ${{ steps.state_change.outputs.base_sha }}
-          HEAD_SHA: ${{ steps.state_change.outputs.head_sha }}
-          PRODUCTION_TAG: ${{ needs.deploy.outputs.production_tag }}
+          PRODUCTION_TAG: ${{ needs.release.outputs.production_tag }}
         run: |
-          target="${GITHUB_REPOSITORY_OWNER}/${TARGET_REPOSITORY}"
-          pr_url="$(gh pr create \
-            --repo "$target" \
-            --base main \
-            --head "$BRANCH" \
-            --title "state: sync $PRODUCTION_TAG" \
-            --body "Mechanical post-release synchronization of objective production facts from the successful public Release workflow.")"
+          pr_url="$(gh pr create --base main --head "$BRANCH" --title "state: sync $PRODUCTION_TAG" --body "Mechanical sync of objective official-release facts from hgroup-ru.github.io.")"
+          echo "url=$pr_url" >> "$GITHUB_OUTPUT"
 
-          current_base="$(gh api "repos/$target/git/ref/heads/main" --jq .object.sha)"
-          if [ "$current_base" != "$BASE_SHA" ]; then
-            echo "Target main moved from $BASE_SHA to $current_base; leaving $pr_url open for review."
-            exit 1
-          fi
-
-          gh pr merge "$pr_url" \
-            --squash \
-            --delete-branch \
-            --match-head-commit "$HEAD_SHA"
-          echo "### State sync: $pr_url" >> "$GITHUB_STEP_SUMMARY"
+      - name: Merge state sync PR
+        if: steps.state_change.outputs.changed == 'true'
+        shell: bash
+        working-directory: maintainer-state-sync
+        env:
+          GH_TOKEN: ${{ steps.state_sync_token.outputs.token }}
+          PR_URL: ${{ steps.state_pr.outputs.url }}
+          HEAD_SHA: ${{ steps.state_change.outputs.head_sha }}
+        run: gh pr merge "$PR_URL" --squash --delete-branch --match-head-commit "$HEAD_SHA"
