@@ -1,0 +1,27 @@
+---
+title: Перед розыгрышем красной 2
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-selfish-clue/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-selfish-clue" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 сыграны. Алиса знает, что у неё есть играбельная красная 2. Рука Боба от новой карты к старой: синяя 1, красная 3, красная 4, красная 5, синяя 1. И у Боба, и у Кэти есть безопасный сброс. Если Алиса просто сыграет красную 2, Боб, вероятно, сбросит карту, и позже команде будет трудно эффективно получить все три красные карты.
+
+Как Алисе следует сходить сейчас?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сейчас дать Бобу красную подсказку**, до розыгрыша своей красной 2. Это редкий полезный Selfish Clue из примера 12-го уровня: подсказка заранее фиксирует 3-for-1 по красной 3, красной 4 и красной 5 до сдвига руки Боба. По сравнению с немедленным розыгрышем красной 2 команда теряет Tempo, но у Боба и Кэти есть безопасные сбросы, поэтому выигрыш в Efficiency компенсирует задержку.
+
+</TabItem>
+</Tabs>

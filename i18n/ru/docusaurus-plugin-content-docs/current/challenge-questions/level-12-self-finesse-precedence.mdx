@@ -1,0 +1,24 @@
+---
+title: Число перед инверсией
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={12} id="level-12-self-finesse-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказку по числу можно прочитать двумя способами, и оба согласуются с видимым состоянием: одна интерпретация — rank Self-Finesse, другая использует Focus Inversion и переносит focus с chop. Знание карт не исключает ни один вариант.
+
+Какая интерпретация имеет приоритет на 12-м уровне?
+
+</TabItem>
+<TabItem value="solution">
+
+Следует предположить **rank Self-Finesse**. На 12-м уровне прямо сказано, что Self-Finesse по числу имеет приоритет над Focus Inversion. Это отдельное исключение из обычного порядка Occam's Razor, поэтому внешне более простая интерпретация через инверсию focus не побеждает только из-за меньшего числа дополнительных действий.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,27 @@
+---
+title: Два риска дублирования
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-duplication-tie/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-duplication-tie" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Дональда на chop лежит синяя 2, которую необходимо спасти. У Боба есть две неизвестные синие карты. У Кэти есть две неизвестные 2. Одна 2 другого цвета уже сыграна, а синих карт ещё не сыграно. Поэтому у Боба и Кэти одинаковое число потенциально совпадающих карт с подсказками, но карты Кэти немного вероятнее содержат синюю 2.
+
+Кто должен взять на себя Duplication Responsibility?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Save Clue должен дать Боб.** При равном числе потенциально совпадающих карт ответственность берёт игрок, чьи существующие подсказки слабее указывают на нужную карту. Здесь каждая неизвестная синяя карта Боба менее вероятно является синей 2, чем каждая неизвестная 2 Кэти, потому что одна 2 другого цвета уже известна как сыгранная. Именно так устроен tie-break в примере 12-го уровня: Боб принимает меньший риск дублирования.
+
+</TabItem>
+</Tabs>

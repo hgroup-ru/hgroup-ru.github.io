@@ -1,0 +1,27 @@
+---
+title: Two Playable Cards
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-connecting-play/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-connecting-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice knows that she has both the playable red 2 and the playable blue 2. Bob visibly holds the red 3 but no blue 3. Alice has no unusually strong clue to give instead.
+
+Which playable card should Alice prefer?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **play red 2 first**, because it leads directly into Bob's red 3 and therefore empowers a teammate. Level 12 treats this as the normal teamwork preference when choosing between multiple known playable cards. If Alice instead played blue 2, teammates should not automatically interpret the unexpected order as a coded signal; special mandatory play ordering is introduced only later.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: An Unexpected Deduction
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={12} id="level-12-asymmetric-default" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob takes an action that would make sense if he had privately deduced the exact identity of one of his own cards. Cathy cannot reconstruct such a deduction from the information available to her, but there is also an ordinary conventional explanation for Bob's action that requires no asymmetric knowledge.
+
+Should Cathy assume that Bob has asymmetric information?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** At level 12, players should not assume that another player has asymmetric information by default. Asymmetric knowledge is the exception. Cathy should use the ordinary conventional explanation while one remains available; she should infer that Bob has special private knowledge only when there is no other reasonable explanation for his action.
+
+</TabItem>
+</Tabs>

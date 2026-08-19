@@ -1,0 +1,27 @@
+---
+title: Red, Blue, or 1?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-red-before-ones/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-red-before-ones" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the first turn. Bob's hand, newest to oldest, is green 4, red 1, red 3, blue 2, blue 1. No one else has a red 1 or blue 1. Alice wants to get both 1s played efficiently.
+
+Should Alice clue red, blue, or number 1 first?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **clue red first**. A number-1 clue gets both 1s for 2-for-1, but the team will probably need another clue for blue 2 and red 3 is likely lost, giving only 3-for-2. Blue first also blocks a later clean red clue because it would become chop-focused on red 3. Red first and blue later obtains red 1, red 3, blue 1, and blue 2 for **4-for-2**.
+
+</TabItem>
+</Tabs>

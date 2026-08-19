@@ -1,0 +1,24 @@
+---
+title: Неожиданный вывод
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={12} id="level-12-asymmetric-default" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб делает ход, который можно было бы объяснить тем, что он самостоятельно вывел точное значение одной из своих карт. Кэти не может восстановить такой вывод из доступной ей информации, но у хода Боба есть и обычное объяснение по conventions, не требующее асимметричного знания.
+
+Следует ли Кэти считать, что у Боба есть асимметричная информация?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** На 12-м уровне по умолчанию не следует предполагать, что другой игрок располагает асимметричной информацией. Такое знание — исключение. Пока существует обычное объяснение по conventions, Кэти должна использовать его; особое личное знание Боба следует выводить только тогда, когда другого разумного объяснения его ходу не остаётся.
+
+</TabItem>
+</Tabs>

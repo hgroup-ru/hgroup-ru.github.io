@@ -1,0 +1,27 @@
+---
+title: Две играбельные карты
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-connecting-play/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-connecting-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса знает, что у неё есть и играбельная красная 2, и играбельная синяя 2. У Боба видна красная 3, но нет синей 3. Необычно сильной подсказки вместо розыгрыша у Алисы нет.
+
+Какую играбельную карту Алисе следует предпочесть?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сначала сыграть красную 2**, потому что она сразу соединяется с красной 3 Боба и тем самым даёт партнёру продолжение. На 12-м уровне это обычное командное предпочтение при выборе между несколькими известными играбельными картами. Если Алиса всё же сыграет синюю 2, партнёрам не следует автоматически искать в неожиданном порядке скрытый сигнал: обязательный специальный порядок розыгрыша появляется только на более позднем уровне.
+
+</TabItem>
+</Tabs>

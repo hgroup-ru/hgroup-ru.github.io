@@ -1,0 +1,30 @@
+---
+title: Три сохранённые 2
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-duplication-responsibility/question.yml";
+
+<ChallengeQuestionProgress
+  level={12}
+  id="level-12-duplication-responsibility"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Дональда на chop лежит синяя 2 без подсказок, которую необходимо спасти. У Боба есть две карты, известные только как 2; у Кэти — одна карта, известная только как 2. И Боб, и Кэти могут дать 2 Save, но любая такая подсказка рискует продублировать карту в руке дающего подсказку.
+
+Кто отвечает за Save Clue?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Синюю 2 должна спасти Кэти.** По Duplication Responsibility, когда ради Save Principle кому-то приходится рискнуть нарушением Good Touch Principle, ответственность берёт игрок с меньшим числом подходящих карт с подсказками. У Кэти одна возможная совпадающая 2, а у Боба две, поэтому Боб должен уступить Кэти.
+
+</TabItem>
+</Tabs>

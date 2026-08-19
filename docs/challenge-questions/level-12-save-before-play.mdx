@@ -1,0 +1,27 @@
+---
+title: Before the Red 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-12-save-before-play/question.yml";
+
+<ChallengeQuestionProgress level={12} id="level-12-save-before-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the first turn. Cathy's hand, newest to oldest, is blue 4, blue 4, red 3, red 1, blue 5. No one else has red 1. Alice wants red 1 played and knows blue 5 must eventually be saved.
+
+Should Alice clue the red 1 immediately, or save the blue 5 first?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **give the 5 Save first**. Cluing the red 1 immediately and then saving blue 5 gives only 2-for-2. If Alice first clues number 5, Bob can follow with a red Chop-Focus Play Clue that gets red 1 and red 3 as a 2-for-1. Together the two clues obtain three useful cards for **3-for-2**.
+
+</TabItem>
+</Tabs>
