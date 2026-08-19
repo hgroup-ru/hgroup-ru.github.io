@@ -1,0 +1,22 @@
+---
+title: Delayed Playable или Phantom Playable?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-phantom-definition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Карта станет играбельной после двух видимых связующих карт в руке другого игрока. Эти связки ещё не имеют подсказок и не находятся в Finesse Position. Это просто Delayed Playable или Phantom Playable? Можно ли сразу дать целевой карте Play Clue?
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Phantom Playable**. Delayed Playable становится играбельной через уже подсказанные карты или через карты в Finesse Position. Здесь связки лишь видимы в чужой руке, поэтому целевая карта играбельна только «фантомно». Команда **не должна давать ей Play Clue прямо сейчас**: сначала нужно подсказать промежуточные карты.
+
+</TabItem>
+</Tabs>

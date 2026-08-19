@@ -1,0 +1,22 @@
+---
+title: "Ветка flowchart: обычный Scream"
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-flow-scream" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает экстренный сброс из flowchart. У Боба нет известной игры или известного безопасного сброса. У Кэти есть известная игра или известный безопасный сброс. Как Боб должен трактовать действие Алисы и какое ограничение действует после его реакции?
+
+</TabItem>
+<TabItem value="solution">
+
+Flowchart определяет обычный **Scream Discard Chop Move**. Важная карта находится у Боба на chop, поэтому он навсегда сдвигает chop на одну карту. После этого ему **нельзя сбрасывать на этом ходу**. Уже безопасное действие Кэти объясняет, почему сброс Алисы не требуется трактовать как Generation Discard для Кэти.
+
+</TabItem>
+</Tabs>

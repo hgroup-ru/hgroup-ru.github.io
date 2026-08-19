@@ -1,0 +1,22 @@
+---
+title: Заблокированный игрок жертвует подсказанную карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={22} id="level-22-sacrifice" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Рука Боба заблокирована. Одна подсказанная карта пригодится позже, но не критическая: существует ещё одна копия. Позиция крайне тяжёлая, и Боб сбрасывает эту подсказанную карту. Обязана ли команда трактовать сброс как Sarcastic Discard или Gentleman's Discard? Как отличить этот ход от Generation Discard?
+
+</TabItem>
+<TabItem value="solution">
+
+Нет. Игрок с Locked Hand может намеренно сбросить некритическую подсказанную карту как **Sacrifice Discard**, и в такой экстренной ситуации это **не означает** Sarcastic Discard или Gentleman's Discard. Некритический сброс заблокированного игрока может быть и Generation Discard; команда различает их по состоянию партии. Sacrifice Discard очень редок и обычно нужен только в действительно тяжёлых ситуациях.
+
+</TabItem>
+</Tabs>
