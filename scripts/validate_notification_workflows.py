@@ -35,14 +35,16 @@ def main() -> None:
         'if [ "$current_head" != "$RUN_HEAD_SHA" ]',
         'case "$CI_RESULT" in',
         "cancelled|skipped)",
+        "- name: Detect site build requirement",
+        "scripts/site_build_required.py",
+        "steps.site-build.outputs.required == 'true'",
         "- name: Build RU site",
-        "!startsWith(github.head_ref, 'automation/')",
         "run: npm run build:ru",
     ):
         require(ci, marker, "ci.yml")
 
     if "Build RU site for fork pull requests" in ci:
-        fail("ci.yml must build normal same-repository pull requests")
+        fail("ci.yml contains the retired fork-only build policy")
 
     if "github.event.pull_request.head.repo.full_name != github.repository" in ci:
         fail("ci.yml contains the retired fork-only build condition")
