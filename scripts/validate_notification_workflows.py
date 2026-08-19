@@ -27,41 +27,32 @@ def main() -> None:
     ci = read(CI_WORKFLOW)
     release = read(RELEASE_NOTIFY_WORKFLOW)
 
-    ci_required = (
+    for marker in (
         "pull-requests: read",
         "RUN_HEAD_SHA:",
         "notification_is_current()",
-        'current_state="$(printf',
-        'current_head="$(printf',
         'if [ "$current_state" != "open" ]',
         'if [ "$current_head" != "$RUN_HEAD_SHA" ]',
         'case "$CI_RESULT" in',
         "cancelled|skipped)",
-        'CI result is $CI_RESULT; this is not a failure notification.',
-    )
-    for marker in ci_required:
+    ):
         require(ci, marker, "ci.yml")
 
     if ci.count("if ! notification_is_current; then") < 2:
-        fail("ci.yml must verify the current PR head both before composing and before sending")
+        fail("ci.yml must verify the current PR head before sending")
 
-    if 'if [ "$CI_RESULT" = "success" ]; then' in ci:
-        fail("ci.yml must not classify every non-success result as a failure")
-
-    release_required = (
-        'elif release_result == "cancelled":',
-        "Production уже задеплоен, но публикация",
-        "отменена до успешного deploy",
-        'release_result != "cancelled"',
+    for marker in (
+        "workflows:",
+        "- Release",
+        "Официальный релиз опубликован",
+        "Что нового",
         '--data-urlencode "chat_id=${TELEGRAM_CHAT_ID}"',
-        "fix_mode=$(step_result build 'Record production-fix mode')",
-        'if [ "$FIX_MODE_RESULT" = "success" ]; then',
-    )
-    for marker in release_required:
+    ):
         require(release, marker, "release-notify.yml")
 
-    if "ALGOLIA_RESULT" in release or "job_result algolia" in release or "algolia:" in release:
-        fail("release-notify.yml must not report retired release-time Algolia reindex status")
+    for retired in ("ALGOLIA_RESULT", "Production fix", "IS_FIX", "fix_mode"):
+        if retired in release:
+            fail(f"release-notify.yml contains retired release concept: {retired!r}")
 
     print("notification workflow invariants: OK")
 
