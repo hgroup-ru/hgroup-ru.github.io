@@ -1,5 +1,5 @@
 ---
-title: Buying the Turn Back
+title: Four Players
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,7 +12,7 @@ import Question from "./level-10-gd-buys-time/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-All 1s are played and the team has no clues. Alice knows her red card is `r2`. Bob's slot 1 is the other `r2`, while his `g3` is on chop. Cathy has a visible playable `g2`.
+All 1s are played and the team has no clues. Alice knows her red card is `r2`. Bob's slot 1 is the other `r2`, and his `g3` is on chop. Donald has `g2` in his Finesse Position.
 
 How should Alice move?
 
@@ -21,7 +21,7 @@ How should Alice move?
 </TabItem>
 <TabItem value="solution">
 
-Alice should **discard her known `r2` as a Gentleman's Discard**. The discard creates a clue. Bob then blind-plays his slot 1 as `r2`; Cathy can play `g2`; and Alice gets another turn before Bob's next discard, so she can clue the now-playable `g3`. Here the side benefit is real and pays for the lost Tempo.
+Alice should **discard her known `r2` as a Gentleman's Discard**. The discard creates a clue, and Bob blind-plays his slot 1 as the transferred `r2`. Cathy can now spend the generated clue on Bob's chop `g3` as a Play Clue. Since `g3` is one-away-from-playable, Donald blind-plays his Finesse Position as `g2`; after that, Bob's clued `g3` is playable. The Gentleman's Discard costs Tempo, but here it buys the clue that turns Bob's endangered chop into a productive Finesse chain.
 
 </TabItem>
 </Tabs>

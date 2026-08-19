@@ -55,24 +55,32 @@ jobs:
         run: |
           changelog_file="$(mktemp)"
           notes_file="$(mktemp)"
-
-          gh api "repos/${GITHUB_REPOSITORY}/contents/CHANGELOG.md?ref=${SOURCE_SHA}" \
-            --jq .content | base64 --decode > "$changelog_file"
-
-          awk '
-            /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
-            capture && /^## / { exit }
-            capture && /^<!-- release-title: .* -->$/ { next }
-            capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
-            capture { print }
-          ' "$changelog_file" > "$notes_file"
-
           releases="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/releases?per_page=100")"
           suffix="-${RUN_NUMBER}"
-          release_url="$(printf '%s' "$releases" | jq -r --arg suffix "$suffix" \
-            '[.[] | select(.tag_name | endswith($suffix))][0].html_url // ""')"
+          release_record="$(printf '%s' "$releases" | jq -c --arg suffix "$suffix" \
+            '[.[] | select(.tag_name | endswith($suffix))][0] // {}')"
+          release_url="$(printf '%s' "$release_record" | jq -r '.html_url // ""')"
+          release_tag="$(printf '%s' "$release_record" | jq -r '.tag_name // ""')"
+
+          is_fix=false
+          if [[ "$release_tag" == prod-fix-* ]]; then
+            is_fix=true
+          else
+            gh api "repos/${GITHUB_REPOSITORY}/contents/CHANGELOG.md?ref=${SOURCE_SHA}" \
+              --jq .content | base64 --decode > "$changelog_file"
+
+            awk '
+              /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+              capture && /^## / { exit }
+              capture && /^<!-- release-title: .* -->$/ { next }
+              capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
+              capture { print }
+            ' "$changelog_file" > "$notes_file"
+          fi
 
           echo "url=$release_url" >> "$GITHUB_OUTPUT"
+          echo "tag=$release_tag" >> "$GITHUB_OUTPUT"
+          echo "is_fix=$is_fix" >> "$GITHUB_OUTPUT"
 
           delimiter="RELEASE_NOTES_$(date +%s%N)"
           echo "notes<<$delimiter" >> "$GITHUB_OUTPUT"
@@ -96,6 +104,7 @@ jobs:
           RUN_URL: ${{ github.event.workflow_run.html_url }}
           RELEASE_URL: ${{ steps.metadata.outputs.url }}
           RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
+          IS_FIX: ${{ steps.metadata.outputs.is_fix }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "Telegram notifications are not configured; skipping."
@@ -113,15 +122,21 @@ jobs:
           release_url = os.environ.get("RELEASE_URL", "").strip()
           run_url = os.environ.get("RUN_URL", "").strip()
           notes = os.environ.get("RELEASE_NOTES", "").strip()
+          is_fix = os.environ.get("IS_FIX", "false") == "true"
 
           if release_result == "success":
-              lines = ["#release #production #success", "🟢 <b>Релиз опубликован</b>"]
+              if is_fix:
+                  lines = ["#release #production #fix #success", "🟢 <b>Production fix опубликован</b>"]
+              else:
+                  lines = ["#release #production #success", "🟢 <b>Релиз опубликован</b>"]
               if release_url:
-                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+                  label = "Technical marker" if is_fix else "GitHub Release"
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">{label}</a>')
           elif pages_result == "success":
+              kind = "Production fix" if is_fix else "Release"
               lines = [
                   "#release #production #warning",
-                  f"🟡 <b>Production уже задеплоен, но Release #{run_number} завершился с ошибкой</b>",
+                  f"🟡 <b>Production уже задеплоен, но {kind} #{run_number} завершился с ошибкой</b>",
                   "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
                       build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
                       pages=html.escape(pages_result),
@@ -132,16 +147,17 @@ jobs:
                       archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
                       state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
                   ),
-                  "Не перезапускай релиз вслепую — сначала проверь упавший этап.",
+                  "Не перезапускай публикацию вслепую — сначала проверь упавший этап.",
               ]
               if release_url:
-                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">Production marker</a>')
               if run_url:
                   lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
           else:
+              kind = "Production fix" if is_fix else "Production Release"
               lines = [
                   "#release #production #failed",
-                  f"🔴 <b>Production Release #{run_number} упал до успешного deploy</b>",
+                  f"🔴 <b>{kind} #{run_number} упал до успешного deploy</b>",
                   "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
                       build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
                       pages=html.escape(pages_result),
@@ -156,7 +172,7 @@ jobs:
               if run_url:
                   lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
 
-          if notes and pages_result == "success":
+          if notes and pages_result == "success" and not is_fix:
               max_notes = 1800
               if len(notes) > max_notes:
                   notes = notes[:max_notes].rstrip() + "\n…"

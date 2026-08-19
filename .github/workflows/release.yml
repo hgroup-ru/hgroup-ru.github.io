@@ -1,7 +1,16 @@
 name: Release
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Publication mode
+        required: true
+        default: release
+        type: choice
+        options:
+          - release
+          - fix
 
 concurrency:
   group: github-pages-release
@@ -25,6 +34,7 @@ jobs:
           fetch-depth: 0
 
       - name: Validate fresh release notes
+        if: inputs.mode != 'fix'
         shell: bash
         run: |
           notes_file="$(mktemp)"
@@ -61,7 +71,11 @@ jobs:
             exit 1
           fi
 
-          previous_tag="$(git tag --list 'prod-*' --sort=-creatordate | head -n 1)"
+          previous_tag="$(
+            git tag --list 'prod-*' --sort=-creatordate |
+              grep -E '^prod-[0-9]{8}-[0-9]+$' |
+              head -n 1
+          )"
           if [ -n "$previous_tag" ] &&
             git cat-file -e "$previous_tag:CHANGELOG.md" 2>/dev/null; then
             git show "$previous_tag:CHANGELOG.md" |
@@ -79,6 +93,12 @@ jobs:
               exit 1
             fi
           fi
+
+      - name: Record production-fix mode
+        if: inputs.mode == 'fix'
+        run: |
+          echo "Production fix mode: release-note freshness and archival are intentionally skipped."
+          echo "### Publication mode: production fix" >> "$GITHUB_STEP_SUMMARY"
 
       - uses: ./.github/workflows/setup
 
@@ -124,8 +144,15 @@ jobs:
       - name: Tag production source
         id: production_tag
         shell: bash
+        env:
+          RELEASE_MODE: ${{ inputs.mode }}
         run: |
-          tag="prod-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          if [ "$RELEASE_MODE" = "fix" ]; then
+            tag="prod-fix-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          else
+            tag="prod-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -173,22 +200,33 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          RELEASE_MODE: ${{ inputs.mode }}
         run: |
           notes_file="$(mktemp)"
-          awk '
-            /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
-            capture && /^## / { exit }
-            capture && /^<!-- release-title: .* -->$/ { next }
-            capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
-            capture { print }
-          ' CHANGELOG.md > "$notes_file"
 
-          if ! grep -q '[^[:space:]]' "$notes_file"; then
-            echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
-            exit 1
+          if [ "$RELEASE_MODE" = "fix" ]; then
+            printf '%s\n\n%s\n' \
+              "Technical production fix from source $GITHUB_SHA." \
+              "No user-facing release notes were published or archived." \
+              > "$notes_file"
+            title="H-Group RU — $PRODUCTION_TAG (production fix)"
+          else
+            awk '
+              /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+              capture && /^## / { exit }
+              capture && /^<!-- release-title: .* -->$/ { next }
+              capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
+              capture { print }
+            ' CHANGELOG.md > "$notes_file"
+
+            if ! grep -q '[^[:space:]]' "$notes_file"; then
+              echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
+              exit 1
+            fi
+
+            title="H-Group RU — $PRODUCTION_TAG"
           fi
 
-          title="H-Group RU — $PRODUCTION_TAG"
           if gh release view "$PRODUCTION_TAG" >/dev/null 2>&1; then
             gh release edit "$PRODUCTION_TAG" \
               --title "$title" \
@@ -202,10 +240,11 @@ jobs:
 
           release_url="$(gh release view "$PRODUCTION_TAG" --json url --jq .url)"
           echo "name=$title" >> "$GITHUB_OUTPUT"
-          echo "### GitHub Release: $release_url" >> "$GITHUB_STEP_SUMMARY"
+          echo "### GitHub Release marker: $release_url" >> "$GITHUB_STEP_SUMMARY"
 
   archive-release-notes:
     needs: deploy
+    if: inputs.mode != 'fix'
     runs-on: ubuntu-latest
 
     environment:
@@ -334,6 +373,7 @@ jobs:
     needs:
       - deploy
       - archive-release-notes
+    if: ${{ always() && needs.deploy.result == 'success' && (needs.archive-release-notes.result == 'success' || needs.archive-release-notes.result == 'skipped') }}
     runs-on: ubuntu-latest
 
     permissions:

@@ -8,12 +8,17 @@ RELEASE_WORKFLOW = WORKFLOWS_DIR / "release.yml"
 CONTROL_WORKFLOW = WORKFLOWS_DIR / "release-control.yml"
 
 RELEASE_REQUIRED = (
-    "workflow_dispatch",
+    "workflow_dispatch:",
+    "mode:",
+    "- release",
+    "- fix",
     "group: github-pages-release",
     "actions/deploy-pages@",
     "Tag production source",
+    "prod-fix-",
     "Publish GitHub Release",
     "archive-release-notes:",
+    "if: inputs.mode != 'fix'",
     "sync-maintainer-state:",
 )
 
@@ -59,9 +64,12 @@ def main() -> None:
         "issues:",
         "- closed",
         "github.event.issue.number == 100",
+        "github.event.issue.number == 102",
         "actions: write",
         'actions/workflows/release.yml/dispatches',
-        "-f ref=main",
+        'mode="release"',
+        'mode="fix"',
+        "inputs: {mode: $mode}",
         "Reopen control issue",
     )
     for marker in control_required:
@@ -82,6 +90,13 @@ def main() -> None:
                 "release-control.yml must only dispatch release.yml; "
                 f"found forbidden marker {marker!r}"
             )
+
+    normal_tag_filter = "grep -E '^prod-[0-9]{8}-[0-9]+$'"
+    if normal_tag_filter not in release:
+        fail("normal release-note freshness must ignore prod-fix tags")
+
+    if "No user-facing release notes were published or archived." not in release:
+        fail("fix mode must use technical metadata instead of CHANGELOG release notes")
 
     print("production workflow invariants: OK")
 
