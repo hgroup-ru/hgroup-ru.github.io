@@ -367,6 +367,23 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-12-save-before-play",
           ],
         },
+        {
+          "Level 13": [
+            "challenge-questions/level-13",
+            "challenge-questions/level-13-color-disconnect",
+            "challenge-questions/level-13-rank-disconnect",
+            "challenge-questions/level-13-color-connect",
+            "challenge-questions/level-13-color-connect-rank-disconnect",
+            "challenge-questions/level-13-rank-same-suit",
+            "challenge-questions/level-13-critical-color",
+            "challenge-questions/level-13-finesse-prompt",
+            "challenge-questions/level-13-hard-bluff",
+            "challenge-questions/level-13-known-bluff",
+            "challenge-questions/level-13-good-touch-invalid",
+            "challenge-questions/level-13-good-touch",
+            "challenge-questions/level-13-targets",
+          ],
+        },
       ],
     },
     {
