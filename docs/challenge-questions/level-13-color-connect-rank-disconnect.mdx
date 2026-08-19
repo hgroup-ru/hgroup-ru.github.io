@@ -1,0 +1,25 @@
+---
+title: Color Connect With Rank Disconnect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-13-color-connect-rank-disconnect/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-color-connect-rank-disconnect" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing is played in a four-player game. Alice clues Donald red. Donald's touched card has negative 2 information. Bob blind-plays red 1. Should Cathy treat the line as a 3 Bluff and decline to blind-play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** The negative 2 information prevents Donald from later mistaking his own card for red 2, but it does not disconnect the clue from Bob's blind-play. **Red connects to red**, so Cathy must treat the line as a Double Finesse and blind-play her Finesse Position as red 2.
+
+</TabItem>
+</Tabs>
