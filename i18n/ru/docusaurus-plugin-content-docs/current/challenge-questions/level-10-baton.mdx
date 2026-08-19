@@ -1,0 +1,27 @@
+---
+title: Передать неиграбельную карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-baton/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-baton" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 уже сыграна. У Алисы есть подсказанная красная карта, которую она полностью определила как `r3`. В первом слоте Боба лежит вторая `r3`.
+
+Может ли Алиса безопасно сбросить известную `r3`?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Да. Поскольку `r3` пока неиграбельна, это **Baton Discard**, а не Gentleman's Discard. Совпадающая карта находится ровно на Finesse Position Боба, поэтому перенос допустим.
+
+</TabItem>
+</Tabs>

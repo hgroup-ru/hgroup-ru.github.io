@@ -1,0 +1,27 @@
+---
+title: Без побочной выгоды
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-gd-no-upside/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-no-upside" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны. У Алисы есть подсказанная красная карта, которую она определила как `r2`. В первом слоте Боба лежит вторая `r2`. Другой срочной проблемы на столе нет.
+
+Как лучше всего сходить Алисе?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сыграть свою `r2`**. Gentleman's Discard здесь допустим, но он лишь переносит ту же играбельную карту Бобу и задерживает продвижение стопки без какой-либо компенсации. Это ненужный GD, который теряет Tempo.
+
+</TabItem>
+</Tabs>

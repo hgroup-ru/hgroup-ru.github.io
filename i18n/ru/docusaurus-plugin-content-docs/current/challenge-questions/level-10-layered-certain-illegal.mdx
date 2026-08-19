@@ -1,0 +1,27 @@
+---
+title: Слоёный Certain Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-layered-certain-illegal/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-certain-illegal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная и зелёная стопки дошли до 2. У Алисы есть подсказанная красная карта, про которую она знает, что это `r3` или `r5`. У Кэти лежит `r4` без подсказок. Первые две карты Боба — `g3` и `r3`.
+
+Допустима ли красная Play Clue Алисы на `r4` Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Нет. Такая подсказка требовала бы от Боба сначала сыграть `g3`, а затем `r3`, хотя у самой Алисы всё ещё может находиться `r3`. Это **Layered Certain Finesse**, и он запрещён. Правило Certain Finesse специально не позволяет ставить посторонний играбельный слой перед картой, которая потенциально дублируется в руке инициатора.
+
+</TabItem>
+</Tabs>

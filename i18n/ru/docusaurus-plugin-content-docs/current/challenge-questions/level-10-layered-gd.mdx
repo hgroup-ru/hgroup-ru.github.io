@@ -1,0 +1,27 @@
+---
+title: Полезный слой
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-layered-gd/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-gd" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 сыграны, жетонов подсказок нет. Алиса знает, что её красная карта — `r2`. В первом слоте Боба лежит играбельная `g2`, а сразу за ней — вторая `r2`.
+
+Как должна сходить Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса может **сбросить `r2` как Gentleman's Discard**. Это Layered Gentleman's Discard: первая карта Боба является играбельным слоем, а переносимая `r2` находится за ней. Безопасный сброс одновременно создаёт жетон подсказки, поэтому у GD здесь есть конкретная побочная выгода.
+
+</TabItem>
+</Tabs>

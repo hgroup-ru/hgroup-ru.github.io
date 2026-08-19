@@ -1,0 +1,27 @@
+---
+title: Certain означает сброс
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-certain-discard/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-discard" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка дошла до 2. У Кэти есть подсказанная красная карта, которая по её информации является `r3` или `r5`. Кэти дала Бобу красную Play Clue на `r4`, после чего Боб сделал безопасный несвязанный сброс. Теперь реагирует Алиса. Алиса видит, что неоднозначная красная карта Кэти на самом деле `r3`.
+
+Что должна сделать Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сделать Certain Discard своей Finesse Position**. Это **Certain Finesse**: поскольку у Кэти действительно лежит потенциально дублируемая `r3`, допустимая подсказка не может означать Layered Finesse через другую карту впереди. Поэтому Алиса может быть уверена, что передаваемая вслепую карта — именно дублированная `r3`.
+
+</TabItem>
+</Tabs>

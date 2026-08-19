@@ -1,0 +1,27 @@
+---
+title: The Connector Is Already Known
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-layered-gd-known-setup/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-layered-gd-known-setup" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice knows her red card is `r3`. Bob has a known `r2` ready to play. Cathy has `g1` in slot 1 and the other `r3` in slot 2.
+
+What should Alice do?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice can **discard `r3` as a Layered Gentleman's Discard**. Bob's already-known `r2` advances red before Cathy needs the transferred card. Cathy's `g1` is the playable layer in front of the `r3`; after that layer is removed, the promised `r3` remains behind it. No label is needed on Cathy's cards before Alice acts—the discard itself creates the promise.
+
+</TabItem>
+</Tabs>

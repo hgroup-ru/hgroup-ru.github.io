@@ -1,0 +1,27 @@
+---
+title: Купить ещё один круг
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-gd-buys-time/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-buys-time" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже сыграны, жетонов подсказок нет. Алиса знает, что её красная карта — `r2`. В первом слоте Боба лежит вторая `r2`, а его `g3` находится на chop. У Кэти видна играбельная `g2`.
+
+Как должна сходить Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сбросить известную `r2` как Gentleman's Discard**. Сброс создаёт жетон. Боб вслепую играет свой первый слот как `r2`, Кэти играет `g2`, а Алиса получает ещё один ход до следующего сброса Боба и успевает подсказать уже играбельную `g3`. Здесь побочная выгода действительно компенсирует потерю Tempo.
+
+</TabItem>
+</Tabs>

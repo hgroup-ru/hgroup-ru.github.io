@@ -1,0 +1,27 @@
+---
+title: The Busy Hand
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-gd-distribution/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-distribution" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice knows her red card is `r2`. Bob's slot 1 is the other `r2`, but Bob already has three known playable 2s in the same hand.
+
+How should Alice move?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice should **play her own `r2`**. A GD is legal, but it would move yet another useful action into Bob's already-busy hand. That works against Team Distribution and adds delay without solving a problem.
+
+</TabItem>
+</Tabs>

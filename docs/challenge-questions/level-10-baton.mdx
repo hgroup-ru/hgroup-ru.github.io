@@ -1,0 +1,27 @@
+---
+title: Passing an Unplayable Card
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-10-baton/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-baton" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice has a clued red card that she has fully identified as `r3`. Bob's first slot is the other `r3`.
+
+May Alice safely discard her known `r3`?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Yes. Because `r3` is not playable yet, this is a **Baton Discard**, not a Gentleman's Discard. The matching card is exactly on Bob's Finesse Position, so the transfer is valid.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,35 @@
+---
+title: Лучше обычного Generation Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-10-gd-over-generation/question.yml";
+
+<ChallengeQuestionProgress level={10} id="level-10-gd-over-generation" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная стопка дошла до 3, подсказок 0. У Алисы две подсказанные красные карты, которые она определила как `r4` и `r5`. В первом слоте Боба лежит вторая `r4`; его `b2` находится на chop, а `b5` уже имеет подсказку 5. У Кэти на chop лежит `y5` без подсказок.
+
+Как должна сходить Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алисе следует **сбросить известную `r4` как Gentleman's Discard**.
+
+1. Сброс создаёт один жетон.
+2. Боб играет перенесённую `r4`.
+3. Кэти даёт Бобу синюю Play Clue на `b2`; уже подсказанная по 5 `b5` заодно получает дополнительную информацию.
+4. Известная `r5` Алисы становится играбельной; Алиса играет её и возвращает жетон за сыгранную 5.
+5. Боб использует жетон для 5 Save `y5` Кэти.
+
+Обычный Generation Discard неизвестной карты с chop тоже создал бы жетон, но зря рисковал бы неизвестной картой и терял полезную линию переноса.
+
+</TabItem>
+</Tabs>
