@@ -1,22 +1,27 @@
 ---
-title: Когда Bomb означает Triple Ignition
+title: Более дорогая линия
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-bomb-triple/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-bomb-triple" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса намеренно взрывает известный мусор, будто начиная Bomb Double Ignition. При этом все ясно видят, что она могла использовать обычный вариант Double Ignition через подсказку, например Replay Double Ignition. Какое дополнительное сообщение передаёт выбор страйка?
+Алиса может очевидным образом запустить обычный Double Ignition подсказкой: повторно дать Кэти подсказку к её глобально известной играбельной жёлтой 2, не затронув новых карт. Вместо этого Алиса намеренно делает мисплей своей глобально известной мусорной картой. У Боба, Кэти и Дональда в Finesse Position лежит по играбельной карте.
+
+Какую дополнительную информацию передаёт выбор заведомо более дорогого действия?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Это **Bomb Triple Ignition**. Подсказка почти всегда предпочтительнее траты страйка, поэтому команда обычно должна сначала использовать Double Ignition через подсказку. Если у Алисы явно была такая возможность, но она всё равно выбрала Bomb-вариант, лишняя цена передаёт ещё один Ignition — Triple Ignition.
+Сообщение усиливается до **Bomb Triple Ignition**. Потеря жетона ошибки хуже доступного Double Ignition через подсказку, поэтому выбор мисплея при очевидном более дешёвом способе и является дополнительным сигналом. Боб, Кэти и Дональд должны выполнить по Ignition, а не останавливаться после двух слепых розыгрышей.
 
 </TabItem>
 </Tabs>

@@ -1,22 +1,27 @@
 ---
-title: Когда странный Chop Move не является Ignition
+title: Две прямые подсказки
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-cmi-exceptions/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-cmi-exceptions" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Играбельную карту помечают как Chop Moved вместо очевидного прямого Play Clue. Обязан ли следующий игрок всегда реагировать через Ignition? Назови причины из источника, которые сами по себе делают такой Chop Move полезным. И что происходит с Chop Move-интерпретациями, когда больше нет подходящих карт для Chop Move?
+Красная 1 сыграна. Рука Кэти от новой карты к старой: красная 4, жёлтая 2, синяя 4, синяя 5, красная 2. Алиса даёт подсказку числом 5 карте в слоте 4, делая Chop Move играбельной красной 2 Кэти на chop. Прямая красная подсказка дополнительно затронула бы красную 4, а прямая подсказка числом 2 — жёлтую 2; ни одно из этих дополнительных касаний сейчас не полезно.
+
+Должен ли Боб трактовать странный Chop Move играбельной карты как Chop Move Ignition и играть вслепую?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Нет. Chop Move Ignition существует только тогда, когда у Chop Move **нет другой хорошей причины**. Level 21 прямо перечисляет: избежать нарушения Good Touch Principle; спасти Delayed Playable, за которой идёт критическая карта; получить blind-play через Elimination, когда виден дубликат. Когда не остаётся подходящих one-away-from-playable карт, которым нельзя дать прямой Play Clue или Save Clue, Chop Move-интерпретации отключаются, а действие превращается в другую интерпретацию — например Play Clue или один из Double Ignition.
+**Нет.** Chop Move Ignition существует только тогда, когда у Chop Move играбельной карты нет другой веской причины. Здесь Chop Move избегает проблемы с **Good Touch Principle**: обе очевидные прямые Play Clue без необходимости затронули бы ещё одну неиграбельную карту. Поскольку сам Chop Move уже приносит пользу, Боб не должен придумывать дополнительный Ignition.
 
 </TabItem>
 </Tabs>

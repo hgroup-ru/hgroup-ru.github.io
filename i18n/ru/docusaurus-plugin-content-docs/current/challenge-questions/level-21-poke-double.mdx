@@ -1,22 +1,27 @@
 ---
-title: Poke Double Ignition
+title: Повторная подсказка мусору
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-poke-double/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-poke-double" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса повторно даёт подсказку глобально известной мусорной карте, не затрагивая новых карт. Она не находится в Stalling Situation. Что означает повторное касание и ограничен ли этот ход концом игры?
+Все 1 сыграны. Боб уже знает, что его карта с красной подсказкой — мусор. У Алисы есть известный безопасный сброс, но вместо сброса она снова даёт Бобу ту же красную подсказку и не затрагивает новых карт.
+
+Как команда должна интерпретировать повторное касание?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Это **Poke Double Ignition**: повторное касание известной мусорной карты — само по себе бесполезное действие, которое передаёт более глубокое сообщение Double Ignition. Как и Replay Double Ignition, PDI не должен затрагивать новые карты и может выполняться на протяжении всей игры; ограничение концом партии относится к Trash Double Ignition.
+Это **Poke Double Ignition**. Повторная подсказка глобально известному мусору сама по себе бесполезна, кроме ситуации, когда игроку нужен Stall. Здесь у Алисы есть безопасный сброс, поэтому Stall не объясняет действие; новых карт подсказка не затрагивает, и повторное касание передаёт Double Ignition. Poke Double Ignition можно использовать на протяжении всей игры, а не только ближе к концу.
 
 </TabItem>
 </Tabs>

@@ -1,22 +1,27 @@
 ---
-title: Poke Double Ignition
+title: The Repeated Trash Clue
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-poke-double/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-poke-double" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice re-clues a globally known-trash card and touches no new cards. She is not in a stalling situation. What does the re-touch mean, and is this move restricted to the end of the game?
+All 1s are played. Bob already knows that his red-clued card is trash. Alice has a known safe discard, but instead she gives Bob the same red clue again and touches no new cards.
+
+How should the team interpret the re-touch?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-It is a **Poke Double Ignition**: re-touching the known-trash card is the otherwise useless action that sends the deeper Double Ignition message. Like Replay Double Ignition, PDI must not introduce new cards and can be performed throughout the game; the end-game restriction belongs to Trash Double Ignition instead.
+It is a **Poke Double Ignition**. Re-cluing globally known trash is otherwise a useless action except when a player needs a Stall. Alice has a safe discard here, so the Stall explanation is absent; because no new cards are introduced, the re-touch communicates a Double Ignition. Poke Double Ignition can be used throughout the game rather than only near the end.
 
 </TabItem>
 </Tabs>

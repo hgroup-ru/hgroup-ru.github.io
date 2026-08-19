@@ -1,22 +1,27 @@
 ---
-title: "Flowchart Branch: Generation Discard"
+title: After Alice's Emergency Discard I
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-flow-generation/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-flow-generation" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice makes the emergency discard described by the Level 22 flowchart. Bob has no known play and no known safe discard. Cathy also has no known play or safe discard, but Cathy has a unique playable card, critical card, or unique 2 on chop. What does the flowchart call Alice's discard, and what should Bob do?
+Alice had a known play at 0 clues but made an emergency discard instead, creating one clue. Bob has no known play or known safe discard. Cathy also has no safe action, and her yellow 5 on chop is critical because the other yellow 5 is already discarded.
+
+What should Bob do with the generated clue?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-This is a **Generation Discard**, not a Scream Discard Chop Move. Bob should use the generated clue to give a **Play Clue or Save Clue to Cathy's important chop card** rather than Chop Moving his own chop.
+Bob should **save Cathy's yellow 5**. In this branch Alice's discard is a **Generation Discard**, not a Scream aimed at Bob: Cathy has the important chop and no safe action, so Bob should use the newly generated clue for a Play Clue or Save Clue on that card rather than Chop Moving his own chop.
 
 </TabItem>
 </Tabs>

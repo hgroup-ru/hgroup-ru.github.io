@@ -1,22 +1,27 @@
 ---
-title: "Ветка flowchart: Echo или за пределами схемы?"
+title: После экстренного сброса Алисы III
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-22-flow-echo-boundary/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-flow-echo-boundary" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Алиса делает экстренный сброс из flowchart, а у Боба уже есть известная игра или известный безопасный сброс. Случай A: у Кэти нет известного безопасного действия, но на chop есть уникальная играбельная, критическая карта или уникальная 2. Случай B: у Кэти нет безопасного действия и нет такой важной карты на chop. Что говорит flowchart в каждом случае?
+Алиса делает экстренный сброс. У Боба уже есть известная играбельная красная 2. У Кэти нет известной игры или безопасного сброса, но её chop — обычная некритическая карта: это не уникальная играбельная карта, не критическая карта и не уникальная 2.
+
+Должен ли Боб насильно относить эту позицию к стандартной ветке Echo Scream или Generation из flowchart уровня 22?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-В случае A это **Echo Scream Discard Chop Move**: и Боб, и Кэти делают Chop Move, а Бобу не нужно давать подсказку карте Кэти на chop. В случае B flowchart намеренно останавливается: Алиса сделала **продвинутый ход, который эта схема не покрывает**, либо ошиблась. Level 22 говорит, что Scream и Generation Discard должны быть ходами последней надежды, поэтому Боб обязан рассуждать о том, какие карты нужно спасать и у кого самые безопасные chop, а не насильно выбирать стандартное название.
+**Нет.** Именно на этой ветке flowchart уровня 22 намеренно заканчивается. Алиса либо сделала продвинутый ход, который схема не классифицирует, либо просто ошиблась. Поскольку Scream и Generation Discard должны быть ходами последней надежды, Бобу нужно рассуждать по реальным картам, которые требуется спасать, и по безопасности chop, а не придумывать стандартную метку Echo или Generation.
 
 </TabItem>
 </Tabs>

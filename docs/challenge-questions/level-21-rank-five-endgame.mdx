@@ -1,22 +1,27 @@
 ---
-title: Two Boundaries of the Rank 5 Interaction
+title: The Same 5 in End-Game
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-21-rank-five-endgame/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-rank-five-endgame" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Consider a rank-5 clue that focuses a 5 exactly one-away-from-chop. First, suppose it is Mid-Game and the 5 is actually playable. Second, suppose the same shape occurs in End-Game. Does the next player react the same way in both cases?
+It is End-Game. Red 3 is played, and Cathy has a blue 5 exactly one-away-from-chop. Alice clues number 5 to Cathy. Bob's Finesse Position card is the playable red 4.
+
+Does the Level 21 Chop Move Ignition Interaction by itself force Bob to blind-play red 4?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-No. During the active Level 21 interaction, even an **actually playable 5** is treated as though the rank-5 clue were not a Play Clue: the next player must react as if the 5 were not playable, because all such Play Clue interpretations are turned off. But the entire **Chop Move Ignition Interaction is turned off in End-Game**, so that special Level 21 rule no longer applies there.
+**No.** The special Chop Move Ignition Interaction for rank-5 clues is explicitly turned off in End-Game. Bob must therefore interpret the clue using the ordinary End-Game possibilities rather than automatically reacting as though every such rank-5 clue were a 5's Chop Move Ignition. The Mid-Game rule that turns off the Play Clue interpretation does not apply here.
 
 </TabItem>
 </Tabs>

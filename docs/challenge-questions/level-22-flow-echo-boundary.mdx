@@ -1,22 +1,27 @@
 ---
-title: "Flowchart Branch: Echo or Beyond the Chart?"
+title: After Alice's Emergency Discard III
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-flow-echo-boundary/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-flow-echo-boundary" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Alice makes the flowchart's emergency discard and Bob already has a known play or known safe discard. Case A: Cathy has no known safe action but does have a unique playable, critical, or unique 2 on chop. Case B: Cathy has no known safe action and no such important chop. What does the flowchart say in each case?
+Alice makes an emergency discard. Bob already has a known playable red 2. Cathy has no known play or safe discard, but her chop is an ordinary non-critical card: it is not a unique playable card, a critical card, or a unique 2.
+
+Should Bob force this position into the standard Echo Scream or Generation branches of the Level 22 flowchart?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-In case A, it is an **Echo Scream Discard Chop Move**: both Bob and Cathy Chop Move, and Bob does not need to clue Cathy's chop. In case B, the flowchart deliberately stops: Alice made **an advanced move not covered by this flowchart**, or Alice may have made a mistake. Level 22 says Scream and Generation Discards must be last-resort moves, so Bob must reason from which cards need saving and which chops are safest rather than forcing a standard label.
+**No.** This is the branch where the Level 22 flowchart deliberately stops. Alice has made an advanced move that the chart does not classify, or she may simply have made a mistake. Because Scream and Generation Discards must be last-resort actions, Bob has to reason from the actual cards that need saving and the relative safety of the chops instead of inventing a standard Echo or Generation label.
 
 </TabItem>
 </Tabs>

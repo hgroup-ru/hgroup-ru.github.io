@@ -1,22 +1,27 @@
 ---
-title: How Far Can an Echo Scream Travel?
+title: Two Safe Players in a Row
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-echo-chain/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-echo-chain" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-After Alice's Scream Discard, the next two players in a row each have a known play or known safe discard. How many Chop Moves does the Echo Scream create? Does the mechanism stop working if Alice's triggering discard was known trash?
+Alice makes a genuine last-resort Scream Discard. Bob and Cathy, the next two players in order, each already have a known playable card. Donald is the first player after them who does not have a safe action.
+
+How many Chop Moves does the Scream create?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-It creates **three Chop Moves in total**: the echo bounces off two players. More generally, three such players in a row would create four Chop Moves, and so on. The Echo Scream rule still works the same way when the triggering Scream Discard is done with **known trash**.
+It creates **three Chop Moves**: Bob, Cathy, and Donald all Chop Move. The Echo Scream bounces off each consecutive player who already has a known play or known safe discard, then reaches the next player. The same bounce rule also works when the underlying Scream Discard is performed with known trash.
 
 </TabItem>
 </Tabs>

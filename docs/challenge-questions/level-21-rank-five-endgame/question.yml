@@ -1,0 +1,41 @@
+stacks:
+  - r: 3
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: End-Game
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: r4
+        border: false
+      - type: y4
+        border: false
+      - type: g5
+        border: false
+      - type: p4
+        border: false
+      - type: p3
+        border: false
+  - name: Cathy
+    cards:
+      - type: b4
+        border: false
+      - type: g3
+        border: false
+      - type: b4
+        border: false
+      - type: b5
+        clue: 5
+      - type: b1
+        border: false

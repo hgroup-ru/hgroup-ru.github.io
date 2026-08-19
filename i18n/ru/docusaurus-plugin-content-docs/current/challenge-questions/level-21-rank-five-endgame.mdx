@@ -1,22 +1,27 @@
 ---
-title: Две границы взаимодействия с подсказкой 5
+title: Та же 5 в End-Game
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-21-rank-five-endgame/question.yml";
 
 <ChallengeQuestionProgress level={21} id="level-21-rank-five-endgame" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Рассмотрим подсказку числом 5, сфокусированную на 5 ровно в одной карте от chop. Сначала это Mid-Game и сама 5 на самом деле играбельна. Затем та же форма возникает в End-Game. Должен ли следующий игрок реагировать одинаково в обоих случаях?
+Идёт End-Game. Красная 3 сыграна, а синяя 5 Кэти находится ровно в одной карте от chop. Алиса даёт Кэти подсказку числом 5. В Finesse Position Боба лежит играбельная красная 4.
+
+Обязывает ли сам по себе Chop Move Ignition Interaction уровня 21 Боба вслепую сыграть красную 4?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Нет. Пока взаимодействие Level 21 активно, даже **реально играбельная 5** трактуется так, будто числовая подсказка 5 не была Play Clue: следующий игрок обязан реагировать как если бы 5 не была играбельной, потому что такие Play Clue-интерпретации отключены. Но весь **Chop Move Ignition Interaction отключается в End-Game**, поэтому там это специальное правило Level 21 уже не действует.
+**Нет.** Специальный Chop Move Ignition Interaction для подсказок числом 5 явно отключается в End-Game. Боб должен разбирать подсказку по обычным вариантам End-Game, а не автоматически реагировать так, будто любая такая подсказка числом 5 является 5's Chop Move Ignition. Правило Mid-Game, отключающее трактовку Play Clue, здесь не действует.
 
 </TabItem>
 </Tabs>

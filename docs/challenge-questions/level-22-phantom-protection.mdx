@@ -1,22 +1,27 @@
 ---
-title: How Hard Should the Team Protect a Phantom Playable?
+title: One Clue, Two Chops
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-22-phantom-protection/question.yml";
 
 <ChallengeQuestionProgress level={22} id="level-22-phantom-protection" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-A player has a Phantom Playable card approaching chop. The team can keep it by spending scarce clues and taking awkward emergency actions, but the position is otherwise tight. Does Save Principle require the team to preserve it at any cost?
+Only one clue is available. Bob has a critical yellow 5 on chop because the other yellow 5 is already discarded. Cathy's red 4 on chop is Phantom Playable through Donald's visible, unclued red 2 and red 3.
+
+Does Save Principle require Alice to spend the clue protecting Cathy's Phantom Playable instead of Bob's critical 5?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-No. The team should **try** to protect Phantom Playable cards when practical, because they are nearly as important as Delayed Playable cards, and teammates will often discard to let the owner clue the in-between card. But Phantom Playable cards may be discarded when clues are scarce or the position is tight. Unlike playable and Delayed Playable cards, their protection is not absolute.
+**No.** Alice must protect Bob's genuinely critical yellow 5. The team should try to preserve Phantom Playable cards when practical, but their protection is not absolute. In a tight position a Phantom Playable may be allowed to discard, especially when saving it would compete with a truly critical card.
 
 </TabItem>
 </Tabs>
