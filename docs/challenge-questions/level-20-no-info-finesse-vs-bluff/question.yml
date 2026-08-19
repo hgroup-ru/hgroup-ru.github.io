@@ -1,0 +1,33 @@
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: Bob just blind-played red 1 after the re-clue
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: 3
+        clue: 3
+        retouched: true
+      - type: x
+      - type: x
