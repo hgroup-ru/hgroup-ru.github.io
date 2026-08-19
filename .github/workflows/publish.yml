@@ -5,21 +5,21 @@ on:
     branches:
       - main
     paths:
-      - "docs/**"
-      - "i18n/**"
-      - "src/**"
-      - "static/**"
-      - "docusaurus.config.ts"
-      - "sidebars.ts"
-      - "package.json"
-      - "package-lock.json"
-      - "scripts/build.mts"
-      - "scripts/compilePlugin.mts"
-      - "scripts/generateProductData.mts"
-      - "scripts/tsconfig.json"
-      - ".github/workflows/setup/**"
-  workflow_dispatch:
-  workflow_call:
+      - docs/**
+      - i18n/**
+      - src/**
+      - static/**
+      - docusaurus.config.ts
+      - sidebars.ts
+      - package.json
+      - package-lock.json
+      - scripts/build.mts
+      - scripts/compilePlugin.mts
+      - scripts/generateProductData.mts
+      - scripts/tsconfig.json
+      - .github/workflows/setup/**
+  workflow_dispatch: {}
+  workflow_call: {}
 
 concurrency:
   group: github-pages-publish
