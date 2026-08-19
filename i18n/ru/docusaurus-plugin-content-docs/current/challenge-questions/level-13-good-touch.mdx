@@ -1,0 +1,25 @@
+---
+title: Good Touch Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-13-good-touch/question.yml";
+
+<ChallengeQuestionProgress level={13} id="level-13-good-touch" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Сыграны красная 2 и синяя 2. Алиса даёт Кэти подсказку по числу 4 на физическую красную 4, а Боб вслепую играет синюю 3. У Дональда уже есть подсказанная синяя карта, которую команда видит как синюю 4. Должна ли Кэти всё равно решить, что она синяя 4?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Если бы Кэти тоже была синей 4, Алиса продублировала бы уже подсказанную синюю 4 Дональда и нарушила Good Touch Principle. Видимый дубль исключает кажущийся соединяющим Finesse на синюю 4. Поэтому Кэти может определить свою карту как другую допустимую one-away 4 — красную 4 — и распознать **Good Touch Bluff**.
+
+</TabItem>
+</Tabs>
