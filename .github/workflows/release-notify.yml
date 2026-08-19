@@ -16,35 +16,6 @@ jobs:
     name: Telegram notification
     runs-on: ubuntu-latest
     steps:
-      - name: Collect release job results
-        id: release
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          RUN_ID: ${{ github.event.workflow_run.id }}
-        run: |
-          jobs="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/jobs?per_page=100")"
-
-          job_result() {
-            name="$1"
-            printf '%s' "$jobs" | jq -r --arg name "$name" \
-              '[.jobs[] | select(.name == $name) | .conclusion][0] // "not-run"'
-          }
-
-          step_result() {
-            job_name="$1"
-            step_name="$2"
-            printf '%s' "$jobs" | jq -r --arg job "$job_name" --arg step "$step_name" \
-              '[.jobs[] | select(.name == $job) | .steps[]? | select(.name == $step) | .conclusion][0] // "not-run"'
-          }
-
-          echo "build=$(job_result build)" >> "$GITHUB_OUTPUT"
-          echo "pages_deploy=$(step_result deploy 'Deploy to GitHub Pages')" >> "$GITHUB_OUTPUT"
-          echo "github_release=$(step_result deploy 'Publish GitHub Release')" >> "$GITHUB_OUTPUT"
-          echo "archive=$(job_result archive-release-notes)" >> "$GITHUB_OUTPUT"
-          echo "state=$(job_result sync-maintainer-state)" >> "$GITHUB_OUTPUT"
-          echo "fix_mode=$(step_result build 'Record production-fix mode')" >> "$GITHUB_OUTPUT"
-
       - name: Collect release metadata
         id: metadata
         shell: bash
@@ -52,37 +23,25 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
           RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
-          FIX_MODE_RESULT: ${{ steps.release.outputs.fix_mode }}
         run: |
           changelog_file="$(mktemp)"
           notes_file="$(mktemp)"
           releases="$(gh api --paginate "repos/${GITHUB_REPOSITORY}/releases?per_page=100")"
           suffix="-${RUN_NUMBER}"
-          release_record="$(printf '%s' "$releases" | jq -c --arg suffix "$suffix" \
-            '[.[] | select(.tag_name | endswith($suffix))][0] // {}')"
+          release_record="$(printf '%s' "$releases" | jq -c --arg suffix "$suffix" '[.[] | select(.tag_name | endswith($suffix))][0] // {}')"
           release_url="$(printf '%s' "$release_record" | jq -r '.html_url // ""')"
-          release_tag="$(printf '%s' "$release_record" | jq -r '.tag_name // ""')"
 
-          is_fix=false
-          if [ "$FIX_MODE_RESULT" = "success" ]; then
-            is_fix=true
-          else
-            gh api "repos/${GITHUB_REPOSITORY}/contents/CHANGELOG.md?ref=${SOURCE_SHA}" \
-              --jq .content | base64 --decode > "$changelog_file"
-
-            awk '
-              /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
-              capture && /^## / { exit }
-              capture && /^<!-- release-title: .* -->$/ { next }
-              capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
-              capture { print }
-            ' "$changelog_file" > "$notes_file"
-          fi
+          gh api "repos/${GITHUB_REPOSITORY}/contents/CHANGELOG.md?ref=${SOURCE_SHA}" \
+            --jq .content | base64 --decode > "$changelog_file"
+          awk '
+            /^## Следующий релиз[[:space:]]*$/ { capture = 1; next }
+            capture && /^## / { exit }
+            capture && /^<!-- release-title: .* -->$/ { next }
+            capture && /^_Изменений для следующего релиза пока нет\._$/ { next }
+            capture { print }
+          ' "$changelog_file" > "$notes_file"
 
           echo "url=$release_url" >> "$GITHUB_OUTPUT"
-          echo "tag=$release_tag" >> "$GITHUB_OUTPUT"
-          echo "is_fix=$is_fix" >> "$GITHUB_OUTPUT"
-
           delimiter="RELEASE_NOTES_$(date +%s%N)"
           echo "notes<<$delimiter" >> "$GITHUB_OUTPUT"
           cat "$notes_file" >> "$GITHUB_OUTPUT"
@@ -95,16 +54,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
           RELEASE_RESULT: ${{ github.event.workflow_run.conclusion }}
-          BUILD_RESULT: ${{ steps.release.outputs.build }}
-          PAGES_DEPLOY_RESULT: ${{ steps.release.outputs.pages_deploy }}
-          GITHUB_RELEASE_RESULT: ${{ steps.release.outputs.github_release }}
-          ARCHIVE_RESULT: ${{ steps.release.outputs.archive }}
-          STATE_RESULT: ${{ steps.release.outputs.state }}
           RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
           RUN_URL: ${{ github.event.workflow_run.html_url }}
           RELEASE_URL: ${{ steps.metadata.outputs.url }}
           RELEASE_NOTES: ${{ steps.metadata.outputs.notes }}
-          IS_FIX: ${{ steps.metadata.outputs.is_fix }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "Telegram notifications are not configured; skipping."
@@ -116,78 +69,34 @@ jobs:
           import html
           import os
 
-          release_result = os.environ.get("RELEASE_RESULT", "")
-          pages_result = os.environ.get("PAGES_DEPLOY_RESULT", "not-run")
+          result = os.environ.get("RELEASE_RESULT", "")
           run_number = os.environ.get("RUN_NUMBER", "?")
           release_url = os.environ.get("RELEASE_URL", "").strip()
           run_url = os.environ.get("RUN_URL", "").strip()
           notes = os.environ.get("RELEASE_NOTES", "").strip()
-          is_fix = os.environ.get("IS_FIX", "false") == "true"
 
-          if release_result == "success":
-              if is_fix:
-                  lines = ["#release #production #fix #success", "🟢 <b>Production fix опубликован</b>"]
-              else:
-                  lines = ["#release #production #success", "🟢 <b>Релиз опубликован</b>"]
+          if result == "success":
+              lines = ["#release #production #success", "🟢 <b>Официальный релиз опубликован</b>"]
               if release_url:
-                  label = "Technical marker" if is_fix else "GitHub Release"
-                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">{label}</a>')
-          elif release_result == "cancelled":
-              if pages_result == "success":
-                  lines = [
-                      "#release #production #cancelled #warning",
-                      f"🟡 <b>Production уже задеплоен, но публикация #{run_number} была отменена</b>",
-                      "Проверь post-release этапы перед повторным запуском.",
-                  ]
-              else:
-                  lines = [
-                      "#release #production #cancelled",
-                      f"⚪ <b>Публикация #{run_number} отменена до успешного deploy</b>",
-                  ]
-              if run_url:
-                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
-          elif pages_result == "success":
-              kind = "Production fix" if is_fix else "Release"
+                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">GitHub Release</a>')
+          elif result == "cancelled":
               lines = [
-                  "#release #production #warning",
-                  f"🟡 <b>Production уже задеплоен, но {kind} #{run_number} завершился с ошибкой</b>",
-                  "build: {build} | pages: {pages} | release: {release}".format(
-                      build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
-                      pages=html.escape(pages_result),
-                      release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
-                  ),
-                  "archive: {archive} | state: {state}".format(
-                      archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
-                      state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
-                  ),
-                  "Не перезапускай публикацию вслепую — сначала проверь упавший этап.",
+                  "#release #production #cancelled",
+                  f"⚪ <b>Официальный релиз #{run_number} отменён</b>",
               ]
-              if release_url:
-                  lines.append(f'<a href="{html.escape(release_url, quote=True)}">Production marker</a>')
-              if run_url:
-                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
           else:
-              kind = "Production fix" if is_fix else "Production Release"
               lines = [
                   "#release #production #failed",
-                  f"🔴 <b>{kind} #{run_number} упал до успешного deploy</b>",
-                  "build: {build} | pages: {pages} | release: {release}".format(
-                      build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
-                      pages=html.escape(pages_result),
-                      release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
-                  ),
-                  "archive: {archive} | state: {state}".format(
-                      archive=html.escape(os.environ.get("ARCHIVE_RESULT", "not-run")),
-                      state=html.escape(os.environ.get("STATE_RESULT", "not-run")),
-                  ),
+                  f"🔴 <b>Официальный релиз #{run_number} завершился с ошибкой</b>",
+                  "Проверь Actions перед повторным запуском.",
               ]
-              if run_url:
-                  lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
 
-          if notes and pages_result == "success" and not is_fix and release_result != "cancelled":
-              max_notes = 1800
-              if len(notes) > max_notes:
-                  notes = notes[:max_notes].rstrip() + "\n…"
+          if run_url and result != "success":
+              lines.append(f'<a href="{html.escape(run_url, quote=True)}">Actions</a>')
+
+          if notes and result == "success":
+              if len(notes) > 1800:
+                  notes = notes[:1800].rstrip() + "\n…"
               lines.extend(["", "<b>Что нового</b>", f"<blockquote expandable>{html.escape(notes)}</blockquote>"])
 
           print("\n".join(lines))
