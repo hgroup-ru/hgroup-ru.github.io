@@ -1,5 +1,5 @@
 ---
-title: Без новой информации
+title: Синяя 5 Боба
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,16 +12,16 @@ import Question from "@site/docs/challenge-questions/level-9-hard-burn/question.
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Идёт Early Game. У Алисы нет обычной Play Clue или Save Clue и нет доступного 5 Stall. Синяя 5 Боба уже определена, поэтому повторная подсказка по числу 5 не добавит вообще никакой информации: это Hard Burn.
+Идёт Early Game. У Алисы нет обычной Play Clue или Save Clue и нет доступного 5 Stall. На синей 5 Боба уже достаточно информации, чтобы Боб точно знал её идентичность. Алиса думает ещё раз дать Бобу подсказку числом 5, чтобы не делать первый неизвестный сброс.
 
-Разрешено ли использовать такой Hard Burn как Stall в Early Game?
+Будет ли это допустимым Stall в Early Game?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**Нет.** Hard Burn — вариант с самой низкой очередностью в Stall Table, и в Early Game он не разрешён. Он становится доступен только в более серьёзных Stalling Situations: Double Discard / Scream Discard, Locked Hand и при 8 подсказках, причём лишь после исчерпания всех доступных подсказок с более высокой очередностью.
+**Нет.** Повторная подсказка не добавляет новой информации, поэтому это **Hard Burn**. Hard Burn не разрешён как Stall в Early Game: он предназначен для более серьёзных Stalling Situations и имеет меньшую очередность, чем остальные допустимые Stall-подсказки. Алиса не может создать себе дополнительное действие в Early Game, повторно подсказав карту, которую Боб уже точно знает.
 
 </TabItem>
 </Tabs>
