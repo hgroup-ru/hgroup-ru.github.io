@@ -1,5 +1,5 @@
 ---
-title: Has the Phase Ended?
+title: Donald's Turn
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -11,12 +11,14 @@ import TabItem from "@theme/TabItem";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-No completely unknown card has been discarded yet. Bob discarded a card that he knew was trash, and later Cathy misplayed a card. Is the Early Game over?
+No completely unknown card has been discarded yet. Earlier, Bob discarded a card he knew was trash, and Cathy later misplayed a card. Donald now has no normal Play Clue, Save Clue, or 5 Stall, but he could give a Tempo Clue that he would be happy to use as a Mid-Game stall.
+
+Can Donald treat the game as Mid-Game and give the Tempo Clue merely to avoid discarding?
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** At level 9, the Early Game ends only when the first **completely unknown** card is discarded. A known-trash discard does not end it, and a misplay does not end it either. Special transfer discards likewise do not end the Early Game.
+**No.** Neither event ended the Early Game. It ends only when the first **completely unknown** card is discarded; a known-trash discard and a misplay do not count. Donald therefore cannot use the Mid-Game Tempo Clue Stall interpretation here. If he gives the Tempo Clue, it keeps its ordinary interpretation; if he does not want that interpretation and no required Early Game clue remains, he must discard.
 
 </TabItem>
 </Tabs>

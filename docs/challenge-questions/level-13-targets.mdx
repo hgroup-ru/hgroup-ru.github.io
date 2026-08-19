@@ -1,5 +1,5 @@
 ---
-title: Legal Bluff Targets
+title: Cathy's Untouched 3
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -11,12 +11,14 @@ import TabItem from "@theme/TabItem";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Which completely untouched cards can be legal Bluff targets with a **number clue**: (a) any one-away-from-playable card, (b) any two-away-from-playable 3, (c) any critical non-5?
+Green 1 is played, but green 2 is not. Alice is in Bluff Seat for Bob. Cathy has a completely untouched green 3. Alice gives Cathy a number 3 Play Clue, and Bob immediately blind-plays an unrelated blue 1.
+
+Can Cathy's green 3 be the legal target of this Bluff even though it was two-away-from-playable when Alice gave the clue?
 
 </TabItem>
 <TabItem value="solution">
 
-**(a) and (b), but not (c).** An ordinary one-away target works with either clue type. The artificial 3 Bluff also allows a **two-away-from-playable 3** with either color or number. An arbitrary critical non-5 is added only by Critical **Color** Bluff, so a number clue does not make it legal.
+**Yes.** Level 13 adds the special **3 Bluff**: an untouched 3 may be a Bluff target while it is still two-away-from-playable. The exception works with either a color clue or a number clue. Bob's unrelated blind-play disconnects from the rank-3 clue, so Cathy can read the clue as this Bluff rather than as a connecting Finesse.
 
 </TabItem>
 </Tabs>

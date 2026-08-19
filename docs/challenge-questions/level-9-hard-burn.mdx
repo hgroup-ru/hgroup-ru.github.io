@@ -1,5 +1,5 @@
 ---
-title: No New Information
+title: Bob's Blue 5
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,16 +12,16 @@ import Question from "./level-9-hard-burn/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is the Early Game. Alice has no normal Play Clue or Save Clue and no available 5 Stall. Bob's blue 5 is already identified, so re-cluing number 5 would add absolutely no information: a Hard Burn.
+It is the Early Game. Alice has no normal Play Clue or Save Clue and no available 5 Stall. Bob's blue 5 already has enough information for Bob to know exactly what it is. Alice considers giving Bob another number 5 clue so that she does not have to make the first unknown discard.
 
-May Alice use that Hard Burn as an Early Game Stall?
+Is that a legal Early Game stall?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** Hard Burn is the lowest-precedence Stall-table option and is not allowed in the Early Game. It becomes available only in the more severe Double Discard / Scream Discard, Locked Hand, and 8-clue Stalling Situations, and only after every higher-precedence available clue has been exhausted.
+**No.** The re-clue adds no information, so it is a **Hard Burn**. Hard Burn is not an Early Game Stall; it is reserved for more severe Stalling Situations and sits below the other allowed stall clues in precedence. Alice cannot manufacture an extra Early Game action by re-cluing a card that Bob already knows exactly.
 
 </TabItem>
 </Tabs>

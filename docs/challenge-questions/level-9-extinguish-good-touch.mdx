@@ -1,5 +1,5 @@
 ---
-title: Must This Clue Be Extinguished?
+title: Two Red 1s
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,16 +12,16 @@ import Question from "./level-9-extinguish-good-touch/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is the Early Game. The only remaining apparent Play Clue is red to Bob, touching both copies of red 1 in his hand. That clue would violate Good Touch Principle. No other mandatory Early Game action remains.
+It is the Early Game. Bob has two completely untouched red 1s. The only apparent Play Clue left is a red clue to Bob, which would touch both copies at once. No other mandatory Early Game action remains.
 
-Must Alice give that Play Clue before the team may make its first completely unknown discard?
+Must Alice give the red clue before the team makes its first completely unknown discard?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** Extinguishing every clue in the Early Game does not include Play Clues that would violate Good Touch Principle. The team may wait for one duplicate to be discarded instead of spending a clue to duplicate the same identity. Once the genuinely required Early Game actions are exhausted, this clue does not prevent the first completely unknown discard.
+**No.** Alice is expected to notice that the red clue would duplicate the same identity and violate Good Touch Principle. The requirement to extinguish every Early Game clue does not include Play Clues that violate Good Touch. The team can wait for one copy to leave Bob's hand instead of spending a clue to touch both red 1s.
 
 </TabItem>
 </Tabs>

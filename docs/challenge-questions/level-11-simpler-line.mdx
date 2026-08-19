@@ -1,5 +1,5 @@
 ---
-title: One Blind-Play or Two
+title: Bob Has to Choose Now
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -11,14 +11,14 @@ import TabItem from "@theme/TabItem";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-A reacting player has ruled out a direct Play Clue and a Prompt. Two interpretations remain conventionally legal and fit all visible information: one is a Bluff that requires exactly one blind-play, and the other is a Finesse that requires two blind-plays. No later action is needed to distinguish them before the reaction.
+Alice gives Cathy a strange Play Clue. Bob is the reacting player: if he simply ignores the clue, Cathy will eventually misplay. Bob can rule out a direct Play Clue and a Prompt. He can make the remaining cards fit in two legal ways: a Bluff in which only Bob blind-plays, or a Finesse line that requires Bob and then another player to blind-play. Nobody will act before Bob has to choose.
 
-Which interpretation should the reacting player choose?
+Which line should Bob follow?
 
 </TabItem>
 <TabItem value="solution">
 
-The player should assume the **one-blind-play Bluff**. Under Occam's Razor, after simpler direct and Prompt interpretations have been ruled out, players prefer the interpretation requiring fewer blind-plays. This does not make an otherwise illegal Bluff legal; the premise here explicitly says both remaining interpretations are valid.
+Bob should follow the **one-blind-play Bluff**. Once direct and Prompt interpretations are impossible and Bob cannot wait for new information, Occam's Razor tells the reacting player to choose the interpretation with fewer blind-plays. The premise that both complete lines are legal matters: Occam's Razor chooses between valid interpretations; it never makes an otherwise illegal Bluff valid.
 
 </TabItem>
 </Tabs>
