@@ -79,15 +79,34 @@ _Изменений для следующего релиза пока нет._
 3. Если секция не пустая, в ней есть корректный `release-title`.
 4. Текст читается как публичная заметка для пользователя, а не как список PR.
 5. Обычный PR CI зелёный.
-6. Production Release запускается вручную с актуального `main`.
+6. Production Release запускается с актуального `main`: вручную через `Release` или машинно закрытием служебного issue `Release Control`.
 
 Release workflow дополнительно проверяет свежесть заметок, выполняет lint и полный RU build, публикует GitHub Pages, создаёт production tag и GitHub Release, запускает Algolia crawler и затем архивирует выпущенную секцию `Следующий релиз`.
+
+## Production Fix
+
+`Production Fix` предназначен для небольшого исправления уже опубликованного production, когда не нужен новый пользовательский релиз с отдельным текстом `Что нового`.
+
+После merge исправления в `main` закройте служебный issue `Production Fix Control`. Release Control запустит тот же workflow `Release`, но с `mode=fix`.
+
+В режиме `fix` сохраняются production-инварианты:
+
+- выполняются обычные lint и полный `build:ru`;
+- GitHub Pages публикуется только из workflow `Release`;
+- точный source SHA отмечается отдельным тегом `prod-fix-YYYYMMDD-N`;
+- создаётся технический GitHub Release marker для трассировки source/tag, но без пользовательских release notes;
+- запускаются Algolia crawler и maintainer-state sync;
+- секция `## Следующий релиз` не проверяется на свежесть, не публикуется как текст фикса, не архивируется и не очищается.
+
+Таким образом, pending release notes можно продолжать собирать для следующего обычного релиза: production fix их не потребляет. Обычный Production Release при проверке свежести игнорирует `prod-fix-*` и сравнивается с последним обычным `prod-YYYYMMDD-N`.
+
+Не используйте `Production Fix` для нового содержательного пакета, который должен появиться в публичной истории релизов. Для такого изменения подготовьте обычные release notes и запускайте Production Release.
 
 ## Если release workflow упал
 
 Сначала определите, на каком этапе произошёл сбой.
 
 - Если исправление не требует менять released source SHA, например проблема во внешней конфигурации post-release шага, допустим rerun соответствующего failed job или attempt.
-- Если для исправления нужно внести новый коммит в `main`, старый workflow run не подходит: rerun останется привязан к исходному SHA. После merge исправления запускайте новый Production Release с актуального `main`.
+- Если для исправления нужно внести новый коммит в `main`, старый workflow run не подходит: rerun останется привязан к исходному SHA. После merge выберите правильный путь: обычный Production Release для нового пользовательского пакета или `Production Fix` для точечного исправления уже опубликованного production.
 
-Не считайте merge в `main` публикацией: Production Release остаётся отдельным ручным gate.
+Не считайте merge в `main` публикацией: Production Release и Production Fix остаются отдельными production gates.
