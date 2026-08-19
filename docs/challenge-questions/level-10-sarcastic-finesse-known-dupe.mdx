@@ -1,0 +1,22 @@
+---
+title: The Known Duplicate
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-sarcastic-finesse-known-dupe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice already knows that her clued 2 is exactly red 2. She gives Cathy a red Play Clue touching another red 2, intending Bob to blind-play red 1 and then have Cathy Sarcastic Discard the duplicate if necessary. Is this a valid Sarcastic Finesse?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** In a Sarcastic Finesse, the potentially duplicated card in the initiator's own hand must still be unknown. If Alice already knows that she has red 2, Cathy should not interpret the newly touched red 2 through the special Sarcastic Finesse mechanism; the clue would instead look like a normal next-card interpretation and can desynchronize the team.
+
+</TabItem>
+</Tabs>

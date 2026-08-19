@@ -1,0 +1,22 @@
+---
+title: Один сброс, две публичные возможности
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-one-true-identity" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+С точки зрения Алисы карта Боба с подсказкой публично может быть красной 2 или синей 2. Из прошлых ходов у Боба есть дополнительная асимметричная информация, позволяющая ему точно знать, что это красная 2, и он сбрасывает её как Gentleman's Discard. Алиса видит красную 2 и синюю 2 на разных Finesse Position. Переносит ли сброс Боба обе публичные возможности?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Переносится только истинная карта.** Gentleman's Discard может выглядеть неоднозначно для другого игрока, потому что у сбрасывающего может быть асимметричная информация. Double Gentleman's Discard явно запрещён. Боб сбросил именно красную 2, поэтому переносится только совпадающая красная 2; Алиса не должна дополнительно вызывать blind-play синей 2.
+
+</TabItem>
+</Tabs>

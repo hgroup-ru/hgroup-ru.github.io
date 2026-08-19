@@ -1,0 +1,22 @@
+---
+title: From the Next Seat
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-bluff-seat" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A clue would otherwise set up a Certain Finesse, but it is being initiated from Bluff Seat, so the blind-playing player cannot know whether the clue might instead be a Bluff. May the team still rely on a Certain Discard if the initiator happens to hold the duplicate?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Certain Discard is allowed only when the blind-playing player knows they have **not** been Bluffed. Therefore a Certain Finesse cannot be initiated from Bluff Seat. The safety of the discard comes from certainty that layering through the possible own-hand duplicate was illegal; once a Bluff interpretation is live, that certainty disappears.
+
+</TabItem>
+</Tabs>

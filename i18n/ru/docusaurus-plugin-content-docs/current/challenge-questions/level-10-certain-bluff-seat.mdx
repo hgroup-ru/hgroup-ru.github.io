@@ -1,0 +1,22 @@
+---
+title: Из следующего места
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-certain-bluff-seat" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Подсказка иначе создавала бы Certain Finesse, но она даётся из Bluff Seat, поэтому игрок с blind-play не может знать, не является ли подсказка Bluff. Может ли команда всё равно рассчитывать на Certain Discard, если у инициатора действительно окажется дубликат?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Certain Discard разрешён только тогда, когда игрок с blind-play знает, что его **не Bluffed**. Поэтому Certain Finesse нельзя начинать из Bluff Seat. Безопасность сброса основана на уверенности, что Layered Finesse через возможный дубликат в собственной руке инициатора был незаконен; при живой интерпретации Bluff эта уверенность исчезает.
+
+</TabItem>
+</Tabs>

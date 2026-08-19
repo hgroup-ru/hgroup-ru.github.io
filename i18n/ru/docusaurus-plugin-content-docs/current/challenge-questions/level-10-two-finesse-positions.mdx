@@ -1,0 +1,22 @@
+---
+title: Два возможных получателя
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-two-finesse-positions" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса точно знает красную 1 с подсказкой в своей руке. Две другие копии красной 1 одновременно находятся в Finesse Position Боба и Кэти. Может ли Алиса сбросить свою красную 1 как Gentleman's Discard и оставить команде определить, кто должен сыграть?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Уровень 10 явно запрещает Gentleman's Discard единицы, когда две другие копии одновременно находятся в двух разных Finesse Position. Такой перенос не определяет единственного получателя, поэтому Алиса должна выбрать другое действие.
+
+</TabItem>
+</Tabs>

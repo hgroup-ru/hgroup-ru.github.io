@@ -1,0 +1,22 @@
+---
+title: Известный дубликат
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-sarcastic-finesse-known-dupe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса уже точно знает, что её 2 с подсказкой — красная 2. Она даёт Кэти красную Play Clue на другую красную 2, рассчитывая, что Боб вслепую сыграет красную 1, а Кэти при необходимости сделает Sarcastic Discard дубликата. Это легальный Sarcastic Finesse?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** В Sarcastic Finesse потенциально дублирующая карта в собственной руке инициатора должна оставаться неизвестной. Если Алиса уже знает, что у неё красная 2, Кэти не должна интерпретировать новую красную 2 через специальную механику Sarcastic Finesse; подсказка будет выглядеть как обычное продолжение масти и может рассинхронизировать команду.
+
+</TabItem>
+</Tabs>

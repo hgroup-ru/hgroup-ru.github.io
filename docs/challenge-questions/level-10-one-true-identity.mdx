@@ -1,0 +1,22 @@
+---
+title: One Discard, Two Public Possibilities
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-one-true-identity" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+From Alice's perspective, Bob's clued playable card could publicly be either red 2 or blue 2. Bob has additional asymmetric history that lets him know it is exactly red 2, and he discards it as a Gentleman's Discard. Alice can see a red 2 and a blue 2 on different Finesse Positions. Does Bob's discard transfer both public possibilities?
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Only the true identity is transferred.** A Gentleman's Discard may look ambiguous to another player because the discarder can possess asymmetric information. Double Gentleman's Discard is explicitly illegal. Bob discarded exactly red 2, so only the matching red 2 is transferred; Alice must not also call for a blue 2 blind-play.
+
+</TabItem>
+</Tabs>

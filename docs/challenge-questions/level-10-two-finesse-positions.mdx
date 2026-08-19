@@ -1,0 +1,22 @@
+---
+title: Two Possible Recipients
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={10} id="level-10-two-finesse-positions" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice knows a clued red 1 in her hand. The other two copies of red 1 are simultaneously on Bob's and Cathy's Finesse Positions. May Alice discard her red 1 as a Gentleman's Discard and let the team infer which recipient should play?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Level 10 explicitly forbids a Gentleman's Discard of a 1 when the other two copies are on two different Finesse Positions at the same time. The transfer would not identify a unique recipient, so Alice must choose another action.
+
+</TabItem>
+</Tabs>
