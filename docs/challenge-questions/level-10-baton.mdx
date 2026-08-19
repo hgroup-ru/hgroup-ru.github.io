@@ -12,16 +12,16 @@ import Question from "./level-10-baton/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Red 1 is played and the team is out of clues. Alice has a clued red card that she has fully identified as `r3`. Bob's Finesse Position is the other `r3`; Alice has no other known safe discard.
+Red 1 is played and the team is out of clues. Alice has a clued red card that she has fully identified as `r3`. Bob's Finesse Position is the other `r3`.
 
-How should Alice move?
+Can Alice discard her known `r3`, intending to transfer it to Bob?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Alice should **discard her known `r3` as a Baton Discard**. `r3` is not playable yet, so this is not a Gentleman's Discard. The matching card is exactly on Bob's Finesse Position, which makes the Baton transfer legal; it also lets Alice avoid risking an unknown chop while generating a clue token.
+Yes. Alice can **discard her known `r3` as a Baton Discard**. `r3` is not playable yet, so this is not a Gentleman's Discard. The matching card is exactly on Bob's Finesse Position, which makes the Baton transfer legal; the discard also generates a clue token.
 
 </TabItem>
 </Tabs>
