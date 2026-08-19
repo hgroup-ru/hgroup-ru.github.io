@@ -40,10 +40,10 @@ jobs:
 
           echo "build=$(job_result build)" >> "$GITHUB_OUTPUT"
           echo "pages_deploy=$(step_result deploy 'Deploy to GitHub Pages')" >> "$GITHUB_OUTPUT"
-          echo "algolia=$(job_result algolia)" >> "$GITHUB_OUTPUT"
           echo "github_release=$(step_result deploy 'Publish GitHub Release')" >> "$GITHUB_OUTPUT"
           echo "archive=$(job_result archive-release-notes)" >> "$GITHUB_OUTPUT"
           echo "state=$(job_result sync-maintainer-state)" >> "$GITHUB_OUTPUT"
+          echo "fix_mode=$(step_result build 'Record production-fix mode')" >> "$GITHUB_OUTPUT"
 
       - name: Collect release metadata
         id: metadata
@@ -52,6 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
           RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+          FIX_MODE_RESULT: ${{ steps.release.outputs.fix_mode }}
         run: |
           changelog_file="$(mktemp)"
           notes_file="$(mktemp)"
@@ -63,7 +64,7 @@ jobs:
           release_tag="$(printf '%s' "$release_record" | jq -r '.tag_name // ""')"
 
           is_fix=false
-          if [[ "$release_tag" == prod-fix-* ]]; then
+          if [ "$FIX_MODE_RESULT" = "success" ]; then
             is_fix=true
           else
             gh api "repos/${GITHUB_REPOSITORY}/contents/CHANGELOG.md?ref=${SOURCE_SHA}" \
@@ -96,7 +97,6 @@ jobs:
           RELEASE_RESULT: ${{ github.event.workflow_run.conclusion }}
           BUILD_RESULT: ${{ steps.release.outputs.build }}
           PAGES_DEPLOY_RESULT: ${{ steps.release.outputs.pages_deploy }}
-          ALGOLIA_RESULT: ${{ steps.release.outputs.algolia }}
           GITHUB_RELEASE_RESULT: ${{ steps.release.outputs.github_release }}
           ARCHIVE_RESULT: ${{ steps.release.outputs.archive }}
           STATE_RESULT: ${{ steps.release.outputs.state }}
@@ -151,10 +151,9 @@ jobs:
               lines = [
                   "#release #production #warning",
                   f"🟡 <b>Production уже задеплоен, но {kind} #{run_number} завершился с ошибкой</b>",
-                  "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
+                  "build: {build} | pages: {pages} | release: {release}".format(
                       build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
                       pages=html.escape(pages_result),
-                      algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
                       release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
                   ),
                   "archive: {archive} | state: {state}".format(
@@ -172,10 +171,9 @@ jobs:
               lines = [
                   "#release #production #failed",
                   f"🔴 <b>{kind} #{run_number} упал до успешного deploy</b>",
-                  "build: {build} | pages: {pages} | algolia: {algolia} | release: {release}".format(
+                  "build: {build} | pages: {pages} | release: {release}".format(
                       build=html.escape(os.environ.get("BUILD_RESULT", "not-run")),
                       pages=html.escape(pages_result),
-                      algolia=html.escape(os.environ.get("ALGOLIA_RESULT", "not-run")),
                       release=html.escape(os.environ.get("GITHUB_RELEASE_RESULT", "not-run")),
                   ),
                   "archive: {archive} | state: {state}".format(
