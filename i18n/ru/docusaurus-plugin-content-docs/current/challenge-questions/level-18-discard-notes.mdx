@@ -1,0 +1,25 @@
+---
+title: Новая карта не входит в Elimination
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-discard-notes/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-discard-notes" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 3 уже сыграна. Алиса неожиданно сбрасывает с chop играбельную красную 4, а команда не была занята более срочными действиями. Поэтому Алиса заключает, что другая красная 4 уже была у неё в руке. После добора новой карты в слот 1 на какие слоты ставятся Elimination Notes для красной 4?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**На слоты 2, 3, 4 и 5.** Новая карта в слоте 1 не может быть той копией, наличие которой объясняло, почему команда допустила сброс. Discard Elimination отмечает возможные места, уже находившиеся в руке Алисы в момент потери красной 4.
+
+</TabItem>
+</Tabs>

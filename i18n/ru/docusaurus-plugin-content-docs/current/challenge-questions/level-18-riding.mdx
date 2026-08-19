@@ -1,0 +1,25 @@
+---
+title: Riding исключает chop-кандидата
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-riding/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-riding" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы осталось ровно два Elimination-кандидата на красную 2: слот 4 и chop-слот 5. Партнёры не были заняты и намеренно позволили слоту 5 Ride полный круг. Какую карту Алиса может сыграть?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса может вслепую сыграть **слот 4** как **Elimination Riding Deduction**. Если бы красная 2 была на chop, свободный партнёр защитил бы её Play Clue или Save Clue. Разрешённый Ride исключает слот 5, поэтому более новая из двух карт является красной 2.
+
+</TabItem>
+</Tabs>

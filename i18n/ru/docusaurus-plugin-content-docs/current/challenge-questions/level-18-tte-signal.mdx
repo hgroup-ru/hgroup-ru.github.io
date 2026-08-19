@@ -1,0 +1,25 @@
+---
+title: Избегаемое trash-касание сообщает недостающую карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-tte-signal/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-tte-signal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 3 и все остальные 1 уже сыграны. У Боба красная 4, красная 1, синяя 1, зелёная 1 и жёлтая 1. Алиса могла чисто подсказать число 4, но вместо этого даёт красную подсказку, затрагивая играбельную красную 4 и trash-красную 1. Кэти не видит красную 5 ни в одной чужой руке, а красная 5 — единственная недостающая полезная красная карта. Какое специальное сообщение несёт избегаемое trash-касание?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Trash Touch Elimination** для единственной недостающей полезной красной карты — красной 5. Алиса намеренно выбрала красную подсказку, нарушающую Good Touch, хотя была доступна чистая подсказка числом 4, поэтому лишнее касание значимо. Кэти ставит Elimination Notes для красной 5 на своей руке.
+
+</TabItem>
+</Tabs>

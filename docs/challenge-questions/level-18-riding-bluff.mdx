@@ -1,0 +1,25 @@
+---
+title: The Chop Candidate Can Be a Riding Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-riding-bluff/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-riding-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has two red-2 Elimination candidates, slots 4 and 5, and the true red 2 is actually on chop slot 5. Slot 4 is also independently playable. May the team intentionally give no clue and let Alice perform the normal Riding Deduction first?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** This is a **Riding Deduction Bluff**. Alice first plays the unrelated playable slot 4 because the Ride tells her the Elimination card is not on chop. After that play, only slot 5 retains the red-2 possibility, so Alice can play the true red 2 on her next turn.
+
+</TabItem>
+</Tabs>

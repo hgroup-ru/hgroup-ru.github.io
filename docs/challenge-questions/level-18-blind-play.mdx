@@ -1,0 +1,25 @@
+---
+title: One Remaining Note Becomes a Blind-Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-blind-play/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-blind-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has red-4 Elimination Notes on several cards. A follow-up blue clue eliminates every candidate except slot 5. Red 4 is currently playable. Does Alice need another direct clue before playing slot 5?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Once only one Elimination possibility remains, Alice knows the identity without a positive clue and can blind-play slot 5 as an **Elimination Blind-Play**.
+
+</TabItem>
+</Tabs>

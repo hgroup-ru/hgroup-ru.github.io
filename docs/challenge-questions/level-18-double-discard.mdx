@@ -1,0 +1,25 @@
+---
+title: Discarding Through DDA Reveals Information
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-double-discard/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-double-discard" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice just discarded a red 4. Bob appears to be in a Double Discard situation for red 4 and has an obvious legal 5 Stall available, yet Bob discards anyway. Alice cannot see another red 4 outside her own hand. What should Alice conclude?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob's discard says that he **sees the other red 4**, so he knew he was not truly Double Discarding. Since Alice cannot see that copy elsewhere, she should place red-4 Elimination Notes across her hand. This is Double Discard Elimination: the trigger is another player's otherwise impossible discard.
+
+</TabItem>
+</Tabs>

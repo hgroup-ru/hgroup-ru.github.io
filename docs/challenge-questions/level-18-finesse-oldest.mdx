@@ -1,0 +1,25 @@
+---
+title: Elimination Finesse Uses the Oldest Candidate
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-finesse-oldest/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-finesse-oldest" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Blue 2 is played. Alice has blue-3 Elimination Notes on slots 2, 3, 4, and 5. Bob clues Cathy blue 4 and Cathy discards, so Alice is being Reverse Finessed for blue 3. Slot 5 is already Chop Moved. Which card should Alice play?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Alice plays the **oldest non-Chop-Moved Elimination candidate: slot 4**. Elimination Finesse does not use ordinary Finesse Position; it promises the oldest card carrying the relevant Elimination Note, while skipping Chop Moved candidates. If all candidates were Chop Moved, she would use the oldest of those instead.
+
+</TabItem>
+</Tabs>

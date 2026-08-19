@@ -1,0 +1,25 @@
+---
+title: Losing a 2 Can Trigger Elimination
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-18-two-elimination/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-two-elimination" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+A needed red 2 is allowed to be discarded in an otherwise ordinary position, and the other copy is not visible in anyone else's hand. What special inference is available because the lost card is a 2?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+The team can use **2 Elimination**. Save Principle says that all 2s should be saved, so an unexplained discarded 2 is strong evidence that another copy is already hidden in the relevant player's hand. Elimination Notes can represent its possible slots.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Играбельный сброс не всегда означает Elimination
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-discard-context/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-discard-context" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса сбрасывает играбельную красную 4, но предыдущие ходы были очень напряжёнными и у команды не было разумной возможности спасти её. Должна ли Алиса автоматически поставить Elimination Notes для красной 4 на оставшуюся руку?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Elimination возникает из неожиданного решения команды позволить потерять важную карту. Если партия действительно была слишком занята для Save, неожиданности нет. Elimination Notes нельзя механически создавать после каждого сброса играбельной карты.
+
+</TabItem>
+</Tabs>

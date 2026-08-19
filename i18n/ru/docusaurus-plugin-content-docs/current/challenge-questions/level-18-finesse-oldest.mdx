@@ -1,0 +1,25 @@
+---
+title: Elimination Finesse использует старейшего кандидата
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-finesse-oldest/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-finesse-oldest" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Синяя 2 уже сыграна. У Алисы стоят Elimination Notes для синей 3 на слотах 2, 3, 4 и 5. Боб даёт Кэти синюю подсказку на синюю 4, а Кэти сбрасывает, поэтому Алису Reverse Finesse на синюю 3. Слот 5 уже Chop Moved. Какую карту должна сыграть Алиса?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Алиса играет **самого старого не-Chop-Moved Elimination-кандидата: слот 4**. Elimination Finesse не использует обычную Finesse Position; она обещает самую старую карту с нужной Elimination Note, пропуская Chop Moved-кандидатов. Если бы все кандидаты были Chop Moved, игралась бы самая старая из них.
+
+</TabItem>
+</Tabs>

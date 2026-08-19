@@ -1,0 +1,25 @@
+---
+title: Обычный Finesse имеет приоритет
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-finesse-precedence/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-finesse-precedence" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 2 и синяя 2 уже сыграны. У Боба стоят Elimination Notes для синей 3 на слотах 3, 4 и 5. Алиса подсказывает 4 Боба в слоте 1 как Self-Finesse. Если эта 4 может быть красной 4 с обычным Finesse на красную 3 из слота 2 или синей 4 с Self-Elimination Finesse на синюю 3 из слота 5, какую интерпретацию выбирает Боб?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Боб выбирает **обычный Finesse** и вслепую играет слот 2 как красную 3. Обычный Finesse имеет приоритет над Self-Elimination Finesse, поэтому Боб не должен переходить к старому elimination-кандидату только потому, что такая альтернатива тоже подходит.
+
+</TabItem>
+</Tabs>

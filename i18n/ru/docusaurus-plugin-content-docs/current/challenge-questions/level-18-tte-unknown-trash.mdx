@@ -1,0 +1,25 @@
+---
+title: Неизвестный мусор может раскрыть последнюю полезную карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-18-tte-unknown-trash/question.yml";
+
+<ChallengeQuestionProgress level={18} id="level-18-tte-unknown-trash" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 4, зелёная 1 и синяя 1 уже сыграны. Алиса даёт Бобу красную подсказку на красную 4 в слоте 3. Боб видит красную 5 Кэти, поэтому знает, что его красная карта — мусор, и сбрасывает её ради Trash Chop Move. Кэти не знала, что карта Боба мусорная, и удивлена сбросом. Красная 5 — единственная оставшаяся полезная красная карта. Что выводит Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти выводит, что **красная 5 находится в её собственной руке**, и ставит Elimination Notes для красной 5. Боб мог знать, что его красная карта мусорная, только видя последнюю полезную красную карту где-то ещё. Если бы оставалось две или больше подходящих полезных красных карт, такого доказательства не было бы и ожидалась бы интерпретация Trash Finesse.
+
+</TabItem>
+</Tabs>
