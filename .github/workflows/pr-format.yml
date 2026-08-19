@@ -4,9 +4,12 @@ on:
   issue_comment:
     types:
       - created
+  pull_request:
+    branches:
+      - main
 
 concurrency:
-  group: pr-format-${{ github.event.issue.number }}
+  group: pr-format-${{ github.event.issue.number || github.event.pull_request.number }}
   cancel-in-progress: true
 
 permissions:
@@ -16,7 +19,7 @@ permissions:
 
 jobs:
   format:
-    if: github.event.issue.pull_request && github.event.comment.body == '/format'
+    if: github.event_name == 'issue_comment' && github.event.issue.pull_request && github.event.comment.body == '/format'
     runs-on: ubuntu-latest
 
     steps:
@@ -94,3 +97,22 @@ jobs:
           git add --all
           git commit -m "style: автоформат PR #${PR_NUMBER}"
           git push origin "HEAD:${{ steps.pr.outputs.head_ref }}"
+
+  self-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup
+        uses: ./.github/workflows/setup
+
+      - name: Show canonical formatting diff
+        shell: bash
+        run: |
+          npm run format
+          git diff -- .github/workflows/pr-format.yml
+          test -z "$(git status --porcelain)"
