@@ -12,7 +12,7 @@ import Question from "./level-10-certain-play/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-The history is the same as in the previous question: red is stacked through 2, Cathy has a red-clued `r3`/`r5`, Cathy gave Bob a red Play Clue on `r4`, and Bob safely discarded. This time Alice can see that Cathy's ambiguous red card is actually `r5`.
+Red is stacked through 2. Cathy has a red-clued card that she knows is `r3` or `r5`. Cathy gives Bob a red Play Clue on `r4`, and Bob then makes a safe unrelated discard. Alice now reacts and can see that Cathy's ambiguous red card is actually `r5`.
 
 What should Alice do?
 
@@ -21,7 +21,7 @@ What should Alice do?
 </TabItem>
 <TabItem value="solution">
 
-Alice should **blind-play her Finesse Position as `r3`**. The clue is still a **Certain Finesse** in structure, but Cathy does not actually hold the duplicated `r3`, so there is nothing to pass back with a Certain Discard. The promised blind card is the connecting `r3` and should play.
+Alice should **blind-play her Finesse Position as `r3`**. The clue is a **Certain Finesse** in structure, but Cathy does not actually hold the duplicated `r3`, so there is nothing to pass back with a Certain Discard. The promised blind card is the connecting `r3` and should play.
 
 </TabItem>
 </Tabs>

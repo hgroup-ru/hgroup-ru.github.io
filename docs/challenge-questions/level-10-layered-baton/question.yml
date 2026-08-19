@@ -5,10 +5,9 @@ stacks:
   - b: 0
   - p: 0
 bigText:
-  text: 3 clues
+  text: 0 clues
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x

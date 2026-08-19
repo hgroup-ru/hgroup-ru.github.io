@@ -14,14 +14,14 @@ import Question from "./level-10-layered-gd-delayed-safe/question.yml";
 
 Red is stacked through 2. Alice knows her red card is `r3`. Cathy has `g2` in slot 1 and the other `r3` in slot 2, but green has not started yet. Bob, who acts before Cathy, has a known `g1`.
 
-How should Alice move?
+Alice considers discarding `r3` as a Layered Gentleman's Discard. Is that move valid?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Alice can discard `r3` as a Layered Gentleman's Discard. Bob acts before Cathy and plays his known `g1`, so by the time Cathy acts her `g2` has become playable. Cathy can then follow the ordinary layered interpretation—play `g2` first, and keep the transferred `r3` behind it. The turn order makes the delayed layer safe.
+No. The card in front of the transferred `r3` is `g2`, which is not a playable layer when the discard is made. Alice cannot rely on Bob's later `g1` play to patch that layer. Advanced rules call this a Patch Gentleman's Discard and explicitly forbid it. The fact that this particular turn order would make `g2` playable before Cathy acts does not make the original transfer legal.
 
 </TabItem>
 </Tabs>

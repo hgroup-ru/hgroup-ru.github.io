@@ -8,7 +8,6 @@ bigText:
   text: 2 clues
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: r

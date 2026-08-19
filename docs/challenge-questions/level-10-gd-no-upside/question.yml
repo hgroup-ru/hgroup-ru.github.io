@@ -8,7 +8,6 @@ bigText:
   text: 3 clues
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: r
@@ -30,13 +29,13 @@ players:
         border: false
   - name: Cathy
     cards:
-      - type: b2
+      - type: b3
         border: false
-      - type: y2
+      - type: y3
         border: false
-      - type: g1
+      - type: g4
         border: false
       - type: p3
         border: false
-      - type: b4
+      - type: r4
         border: false
