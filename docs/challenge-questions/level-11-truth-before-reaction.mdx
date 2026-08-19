@@ -1,0 +1,27 @@
+---
+title: Before Bob Reacts
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-truth-before-reaction/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-truth-before-reaction" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice has just given Donald a blue Play Clue on his blue 3. Cathy has the blue 2 in her Finesse Position. Bob's own Finesse Position happens to be playable, but Bob cannot see its identity.
+
+Should Bob blind-play it as a possible Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Bob can see a truthful Finesse interpretation: Cathy can blind-play the blue 2 and connect to Donald's blue 3. Under Bob's Truth Principle, before any blind-play Bob assumes a real Finesse over a Bluff whenever the truthful interpretation is possible. He therefore does not blind-play his own Finesse Position, even if that card would happen to play successfully.
+
+</TabItem>
+</Tabs>
