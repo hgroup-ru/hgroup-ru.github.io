@@ -1,0 +1,27 @@
+---
+title: После синей 3
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-after-blue-three/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-after-blue-three" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 2 уже были сыграны. Алиса дала Кэти красную Play Clue, затронув одну карту. Боб сразу вслепую сыграл свою Finesse Position, ожидая связующую красную 3; там оказалась синяя 3, которая успешно сыгралась.
+
+Как теперь команда должна трактовать подсказку Алисы?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Это **Bluff**. Синяя 3 Боба не соединяется с красной подсказкой, поэтому по Cathy's Connecting Principle обычная интерпретация через Finesse отпадает. Значит, цель подсказки должна быть красной картой, которая в момент подсказки была one-away-from-playable: красной 4.
+
+</TabItem>
+</Tabs>

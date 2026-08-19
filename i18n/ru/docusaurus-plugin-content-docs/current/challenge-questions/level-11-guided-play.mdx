@@ -1,0 +1,27 @@
+---
+title: Критическая 5
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-guided-play/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-guided-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+На столе ничего не сыграно. Алиса даёт Дональду красную Play Clue по его красной 2. Боб не видит красную 1 ни в одной чужой руке, поэтому Алиса явно просит его сыграть карту вслепую прямо сейчас. У Кэти на chop лежит критическая жёлтая 5.
+
+Следует ли Бобу вместо blind-play спасти 5 Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Бобу следует сыграть карту вслепую.** Когда Боба направляют в Finesse или Bluff, действует Guide Principle. Алиса видит опасную chop-карту Кэти; если Бобу требовалось сначала её спасти, Алиса должна была отложить подсказку. Поэтому Боб следует немедленному направлению Алисы, а не самостоятельно прерывает линию Save Clue.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,27 @@
+---
+title: The Clued 2
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-false-prompt/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-false-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 and blue 1 are played. Bob has a card clued only as a 2. Alice gives Donald a red Play Clue on his red 3. Bob sees no red 2 elsewhere, so the clue makes his unknown 2 look Prompted as the red 2. In reality Bob's card is the blue 2.
+
+May Alice intentionally use this fake Prompt as a Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No. Bluff Prompts / Prompt Bluffs are illegal.** A Prompt must be truthful. If Bob plays the blue 2, the successful play does not immediately tell the rest of the team that Alice's red connection was false; another player can still infer a missing red 2 and misplay. The misinformation therefore fails the Lie Principle as well as the rule that Prompts must be the truth.
+
+</TabItem>
+</Tabs>

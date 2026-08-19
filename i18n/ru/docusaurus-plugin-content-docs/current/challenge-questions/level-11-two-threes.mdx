@@ -1,0 +1,27 @@
+---
+title: Две 3 с подсказками
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-two-threes/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-two-threes" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 уже были сыграны. У Кэти уже есть две разные карты с подсказками по числу 3. Затем Алиса дала Дональду красную Play Clue по его красной 4. Боб сразу вслепую сыграл синюю 2 вместо ожидаемой красной 2, поэтому подсказка раскрылась как Bluff.
+
+Что именно Кэти может заключить о своих двух 3 с подсказками?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти обещано, что **одна из подходящих 3 с подсказками является красной 3**, но **конкретный слот ей не обещан**. Bluff может проходить через уже подсказанную связующую карту и устанавливать её значение, однако при нескольких подходящих картах позиция остаётся неоднозначной. Кэти должна сохранять оба варианта слота, пока дальнейшая информация их не различит.
+
+</TabItem>
+</Tabs>

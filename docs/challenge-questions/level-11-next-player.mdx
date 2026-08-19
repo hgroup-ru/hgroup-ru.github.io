@@ -1,0 +1,27 @@
+---
+title: The Next Player
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-next-player/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-next-player" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+The turn order is Alice → Bob → Cathy → Donald. All 2s are played. Alice could clue Donald red, touching his red 4. Cathy has a playable blue 3 in her Finesse Position.
+
+Can Alice give this clue intending it to be a Bluff on Cathy?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Alice is in Bluff Seat for Bob, not Cathy. A Bluff may only make the very next player blind-play on the very next turn. Alice cannot deliberately skip Bob and use Cathy's later blind-play as the reveal of a Bluff; that would leave misinformation unresolved and violate the Bluff Seat / Lie Principle restrictions.
+
+</TabItem>
+</Tabs>

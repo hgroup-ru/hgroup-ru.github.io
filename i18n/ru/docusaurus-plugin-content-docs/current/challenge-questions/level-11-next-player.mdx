@@ -1,0 +1,27 @@
+---
+title: Следующий игрок
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-next-player/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-next-player" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Порядок ходов: Алиса → Боб → Кэти → Дональд. Все 2 уже сыграны. Алиса может дать Дональду красную подсказку, затрагивающую его красную 4. В Finesse Position Кэти лежит играбельная синяя 3.
+
+Может ли Алиса дать эту подсказку с намерением сделать Bluff на Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Алиса находится в Bluff Seat для Боба, а не для Кэти. Bluff разрешён только тогда, когда следующий игрок играет карту вслепую на своём ближайшем ходу. Алиса не может намеренно пропустить Боба и использовать более поздний blind-play Кэти как раскрытие Bluff: дезинформация не разрешилась бы немедленно, что нарушает ограничения Bluff Seat и Lie Principle.
+
+</TabItem>
+</Tabs>

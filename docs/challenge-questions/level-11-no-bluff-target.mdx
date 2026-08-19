@@ -1,0 +1,27 @@
+---
+title: A 4 From Empty Stacks
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-11-no-bluff-target/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-no-bluff-target" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing was played. Alice gave Donald a number 4 Play Clue. Bob then blind-played the red 1. Cathy discarded. From Donald's perspective, 1 does not connect directly to 4.
+
+Should Donald interpret the clue as a Bluff because of the rank disconnect?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** With empty stacks there is no one-away-from-playable 4, so a 4 cannot be a legal Bluff target here. The Bluff interpretation is impossible despite the disconnect. Donald must therefore keep the truthful Finesse interpretation: the red 1 begins a multi-card connection toward a red 4, requiring red 2 and red 3 before the clued card.
+
+</TabItem>
+</Tabs>

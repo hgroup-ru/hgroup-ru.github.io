@@ -1,0 +1,27 @@
+---
+title: 2 с подсказкой
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-11-false-prompt/question.yml";
+
+<ChallengeQuestionProgress level={11} id="level-11-false-prompt" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 и синяя 1 сыграны. У Боба есть карта, подсказанная только как 2. Алиса даёт Дональду красную Play Clue по его красной 3. Боб не видит красную 2 в других руках, поэтому его неизвестная 2 выглядит Prompted как красная 2. На самом деле карта Боба — синяя 2.
+
+Может ли Алиса намеренно использовать этот ложный Prompt как Bluff?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет. Bluff Prompts / Prompt Bluffs запрещены.** Prompt обязан быть правдивым. Если Боб сыграет синюю 2, успешный розыгрыш не сообщит остальной команде немедленно, что красная связка Алисы была ложной: следующий игрок всё ещё может вывести отсутствующую красную 2 и сделать мисплей. Поэтому дезинформация нарушает и Lie Principle, и требование правдивости Prompt.
+
+</TabItem>
+</Tabs>
