@@ -1,0 +1,25 @@
+---
+title: No Red 3 Is Promised
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-hard-double/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-hard-double" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Nothing is played. Alice clues number 4 to Donald's red 4. Bob blind-plays red 1 and Cathy immediately blind-plays red 2. Does the matching red sequence promise that somebody must also hold and play red 3 for Donald?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** This is a **Hard Double Bluff**. The fact that exactly two blind-plays happened immediately after the clue tells the team not to extend the connection to red 3. Donald should treat his card as an unknown 4 rather than as a promised red 4 chain.
+
+</TabItem>
+</Tabs>

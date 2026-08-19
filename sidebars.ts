@@ -408,6 +408,21 @@ const sidebars: SidebarsConfig = {
             "challenge-questions/level-14-trash-bluff-red-three",
           ],
         },
+        {
+          "Level 15": [
+            "challenge-questions/level-15",
+            "challenge-questions/level-15-single-vs-double",
+            "challenge-questions/level-15-double-bluff",
+            "challenge-questions/level-15-connecting-first-play",
+            "challenge-questions/level-15-triple-bluff",
+            "challenge-questions/level-15-hard-double",
+            "challenge-questions/level-15-pestilent",
+            "challenge-questions/level-15-first-no-deferral",
+            "challenge-questions/level-15-second-no-deferral",
+            "challenge-questions/level-15-bluff-on-bluff-deferral",
+            "challenge-questions/level-15-bobs-truth",
+          ],
+        },
       ],
     },
     {

@@ -1,0 +1,25 @@
+---
+title: The First Blind-Play Connects
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-connecting-first-play/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-connecting-first-play" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice clues red to Donald's red 4. Bob's Finesse Position is actually red 2, so Bob blind-plays a card that directly connects toward the clued red card. Does that connection let Cathy stop instead of blind-playing her yellow 1?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Double Bluff remains valid even when Bob's first blind-play connects to the clued card. Cathy may not know whether the clue is a Double Bluff or a Double Finesse until after she blind-plays, but she still has to make that second immediate blind-play.
+
+</TabItem>
+</Tabs>

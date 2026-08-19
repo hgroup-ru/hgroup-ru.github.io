@@ -1,0 +1,25 @@
+---
+title: The First Blind-Player Cannot Defer
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-first-no-deferral/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-first-no-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clues red to Donald's red 4 in a position where Bob can recognize that a Double Bluff is possible. Bob also sees a very attractive Finesse clue he could give before responding. May Bob defer his blind-play for one turn to give that clue first?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** If the first blind-player suspects a **Double Bluff**, they should **never defer**, even to perform another Finesse or Bluff. Double Bluffs must resolve immediately or the recipients' interpretations desynchronize.
+
+</TabItem>
+</Tabs>

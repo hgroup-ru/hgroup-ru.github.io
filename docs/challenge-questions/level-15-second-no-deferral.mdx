@@ -1,0 +1,25 @@
+---
+title: The Second Blind-Player Cannot Defer
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-second-no-deferral/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-second-no-deferral" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice clued Donald's red 4, and Bob has just blind-played blue 1. Cathy cannot rule out that the clue is a Double Bluff, but she sees a strong clue she would like to give now. May she postpone her own blind-play until her next turn?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** If Cathy cannot rule out a Double Bluff after Bob's blind-play, she should **never defer**. A later blind-play would no longer be interpreted as belonging to the original Double Bluff and would create unrecoverable information desynchronization.
+
+</TabItem>
+</Tabs>

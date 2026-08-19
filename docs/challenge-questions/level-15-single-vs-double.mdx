@@ -1,0 +1,25 @@
+---
+title: Does Cathy Need to Follow?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-single-vs-double/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-single-vs-double" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is played. Alice clues red to Donald's red 2. Bob blind-plays an unrelated blue 1 from Finesse Position. Cathy has a playable yellow 1 on her own Finesse Position. Should Cathy also blind-play it as a Double Bluff continuation?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Red 2 is a legal ordinary Bluff target here. Bob's single blind-play can therefore resolve the clue as a normal Bluff, so Cathy has no reason to add a second blind-play. Double Bluffs are normally initiated with a non-trash card that is **not** a legal Bluff target.
+
+</TabItem>
+</Tabs>

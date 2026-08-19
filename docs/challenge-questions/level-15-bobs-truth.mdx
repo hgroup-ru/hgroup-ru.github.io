@@ -1,0 +1,25 @@
+---
+title: Bob's Truth Beats the Shorter Bluff
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "./level-15-bobs-truth/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-bobs-truth" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+On the first turn, Alice clues number 4 to Bob's slot 1. Bob sees a playable red 1 on Cathy's Finesse Position. The clue could be a Reverse Finesse on red 4 that eventually needs red 1, red 2, and red 3, or a shorter Double Bluff. Which interpretation should Bob choose?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should assume the **Reverse Finesse**. Normally Occam's Razor prefers the interpretation with fewer blind-plays and Prompts, but here **Bob's Truth Principle takes precedence**: when Bob can see a choice between a Double Bluff and a Finesse, he assumes the Finesse even when it is longer.
+
+</TabItem>
+</Tabs>

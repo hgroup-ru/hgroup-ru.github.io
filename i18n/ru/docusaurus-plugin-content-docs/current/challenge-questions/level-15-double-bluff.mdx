@@ -1,0 +1,25 @@
+---
+title: Второй слепой розыгрыш обязателен
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-15-double-bluff/question.yml";
+
+<ChallengeQuestionProgress level={15} id="level-15-double-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 сыграна. Алиса даёт красную подсказку на красную 4 Donald. Боб вслепую играет несвязанную синюю 1. Кэти видит, что красная 4 не является ни мусором, ни допустимой целью одиночного Bluff, а на её Finesse Position лежит жёлтая 1. Что должна сделать Кэти?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+Кэти должна **немедленно вслепую сыграть жёлтую 1**. Первый слепой розыгрыш не может объяснить Play Clue на красную 4 как обычный Bluff, поэтому подсказка указывает на **Double Bluff**. Оба слепых розыгрыша должны произойти в два хода сразу после подсказки.
+
+</TabItem>
+</Tabs>
