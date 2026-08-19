@@ -40,7 +40,7 @@ jobs:
 
           echo "build=$(job_result build)" >> "$GITHUB_OUTPUT"
           echo "pages_deploy=$(step_result deploy 'Deploy to GitHub Pages')" >> "$GITHUB_OUTPUT"
-          echo "algolia=$(step_result deploy 'Run Algolia Crawler')" >> "$GITHUB_OUTPUT"
+          echo "algolia=$(job_result algolia)" >> "$GITHUB_OUTPUT"
           echo "github_release=$(step_result deploy 'Publish GitHub Release')" >> "$GITHUB_OUTPUT"
           echo "archive=$(job_result archive-release-notes)" >> "$GITHUB_OUTPUT"
           echo "state=$(job_result sync-maintainer-state)" >> "$GITHUB_OUTPUT"
