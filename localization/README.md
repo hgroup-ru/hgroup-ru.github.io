@@ -43,7 +43,7 @@
 
 Levels 1–25 содержат локальные Training Questions. Они созданы H-Group RU и не являются Official Challenge Questions.
 
-Полный стандарт составления и проверки локальных вопросов описан в [`TRAINING_QUESTIONS.md`](TRAINING_QUESTIONS.md). Он задаёт требования к педагогической ценности, blind solve, однозначности, EN/RU review, диаграммам и многошаговым scenario timelines.
+Полный стандарт составления и проверки локальных вопросов описан в [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md). Он задаёт требования к педагогической ценности, blind solve, однозначности, EN/RU review, диаграммам и многошаговым scenario timelines.
 
 Ответы Training исключаются из поискового индекса, чтобы поиск не раскрывал решение до открытия вопроса; сами вопросы остаются доступными для поиска.
 
@@ -58,7 +58,7 @@ Levels 1–25 содержат локальные Training Questions. Они с�
 ## Связанные документы
 
 - [`TERMINOLOGY_RU.md`](TERMINOLOGY_RU.md) — принятая терминология;
-- [`TRAINING_QUESTIONS.md`](TRAINING_QUESTIONS.md) — стандарт составления, вычитки и semantic QA локальных Training Questions;
+- [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md) — единый стандарт составления, вычитки и semantic QA локальных Training Questions;
 - [`SOURCE_EXCEPTIONS.md`](SOURCE_EXCEPTIONS.md) — осознанные отличия от закреплённой версии источника;
 - [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) — находки, которые могут быть полезны исходному проекту.
 - [`upstream-candidates/README.md`](upstream-candidates/README.md) — подробные рабочие карточки для подготовки upstream Pull Request.
