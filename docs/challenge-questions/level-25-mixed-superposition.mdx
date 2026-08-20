@@ -1,0 +1,24 @@
+---
+title: The Unknown Card Straddles Priority
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-mixed-superposition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice can play a fully-known red 3. She also has an unknown playable card whose remaining possibilities are blue 2 and another 3 that would have lower Priority than the red 3 because of its position. Thus red 3 has lower Priority than one possible identity of the unknown card but higher Priority than the other. Alice plays red 3.
+
+Must the team read a Priority signal from that choice?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A fully-known card played over an unknown card can trigger Priority only when the known card has lower Priority than **every possible identity** of the unknown card. Here the superposition is mixed, so Alice's red 3 is not unambiguously the lower-Priority choice. No special Priority signal is forced.
+
+</TabItem>
+</Tabs>

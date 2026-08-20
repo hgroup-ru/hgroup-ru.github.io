@@ -1,0 +1,24 @@
+---
+title: The Saved 2 Is Not Leftmost
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-important-two" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Earlier, Alice gave Bob a 2 Save touching three 2s; the chop 2 was the focus of that Save. Much later all 1s are played, so Bob knows all three 2s are playable but still does not know their colors. The saved chop 2 is not the leftmost 2.
+
+Must Bob follow the normal same-rank left-to-right order?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Bob knows the original Save focus is the **more important** 2. That importance overrides the ordinary leftmost tie-breaker, so he plays the saved 2 first and then returns to the normal left-to-right order. Doing so must not be misread as a right-to-left Priority Finesse.
+
+</TabItem>
+</Tabs>

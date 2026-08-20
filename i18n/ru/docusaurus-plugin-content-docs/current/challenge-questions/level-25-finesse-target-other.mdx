@@ -1,0 +1,24 @@
+---
+title: Видимый коннектор находится у Кэти
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-finesse-target-other" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса намеренно играет полностью известную синюю 2 вместо полностью известной карты с более высоким Priority. Следующим ходит Боб. У Боба нет подсказанной синей 3, но он видит играбельную синюю 3 в Finesse Position Кэти.
+
+Должен ли Боб вслепую сыграть собственную Finesse Position только потому, что он следующий игрок?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Боб видит задуманный коннектор в Finesse Position **Кэти**, поэтому это Priority Finesse на Кэти. Боб делает несвязанный ход, а Кэти в свой ход вслепую играет Finesse Position. Priority Finesse не назначается автоматически следующему игроку, когда видимый совпадающий коннектор указывает на другого.
+
+</TabItem>
+</Tabs>

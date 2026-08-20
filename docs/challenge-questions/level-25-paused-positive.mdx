@@ -1,0 +1,24 @@
+---
+title: The Layer Has Been Demonstrated
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-paused-positive" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob is Finessed for red 1 and red 2 inside a Layered Finesse. He has just blind-played green 1 as the first card from the layer. Everyone can therefore see that green 1 was unrelated to the intended red connection and that Bob is still holding the promised red cards inside the layer. Bob also has a fully-known playable card whose play would create a valid Priority Finesse.
+
+Must Bob immediately continue the red layer instead?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Bob may temporarily pause the Layered Finesse and make a **Paused Priority Finesse**. The unrelated green 1 has already demonstrated that the layer exists and that the promised red connection remains inside it, so the rest of the team no longer needs Bob to prove that fact immediately.
+
+</TabItem>
+</Tabs>

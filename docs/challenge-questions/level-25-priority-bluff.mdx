@@ -1,0 +1,24 @@
+---
+title: No Blue 3 Is Visible
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-priority-bluff" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice deliberately plays a fully-known blue 2 instead of a higher-Priority known card. Bob has no clued blue 3 and cannot see a blue 3 in anyone else's hand. His own hand is completely unclued.
+
+What should Bob do, and what does he learn if the blind-play is not blue 3?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should blind-play his **Finesse Position**. With no Prompt and no visible blue 3 elsewhere, the Priority signal can be a **Priority Bluff** on Bob. If his blind-play is not blue 3, he learns that he was Bluffed and that no one has the blue 3 connection Alice appeared to promise.
+
+</TabItem>
+</Tabs>

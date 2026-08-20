@@ -1,0 +1,24 @@
+---
+title: Первый blind-play оказался настоящим коннектором
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-paused-negative" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб находится в Finesse на красную 1 и красную 2 внутри известного ему Layered Finesse. На этот раз его первый blind-play — действительно красная 1, следующая связующая карта исходного Finesse. Кроме того, у Боба есть полностью известная играбельная карта, которая в другой ситуации создала бы Priority Finesse.
+
+Можно ли Бобу теперь сделать паузу и сыграть эту другую карту перед красной 2?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Розыгрыш настоящего коннектора — красной 1 — **не доказал** команде, что Боб всё ещё находится в Finesse на красную 2. Особое разрешение Paused Priority Finesse действует только после несвязанного blind-play, который доказывает, что слой продолжается. Боб должен продолжать исходный Finesse, а не посылать новый Priority-сигнал.
+
+</TabItem>
+</Tabs>

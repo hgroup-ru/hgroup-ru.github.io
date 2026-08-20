@@ -1,0 +1,24 @@
+---
+title: Слой уже продемонстрирован
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-paused-positive" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб находится в Finesse на красную 1 и красную 2 внутри Layered Finesse. Только что он вслепую сыграл зелёную 1 как первую карту слоя. Поэтому всем видно, что зелёная 1 не относится к ожидаемой красной связи и обещанные красные карты всё ещё находятся внутри слоя у Боба. Кроме того, у Боба есть полностью известная играбельная карта, розыгрыш которой создаст допустимый Priority Finesse.
+
+Обязан ли Боб немедленно продолжить красный слой?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Боб может временно приостановить Layered Finesse и сделать **Paused Priority Finesse**. Несвязанная зелёная 1 уже продемонстрировала существование слоя и то, что обещанная красная связь остаётся внутри него, поэтому команде больше не нужно немедленное подтверждение этого факта от Боба.
+
+</TabItem>
+</Tabs>

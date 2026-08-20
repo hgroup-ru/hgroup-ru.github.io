@@ -1,0 +1,24 @@
+---
+title: The Other Line Unlocks Cathy
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-locked-override" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has two known playable cards. Blue 3 immediately leads into Bob's known blue 4 and would normally win the "play into someone else's hand" comparison. Red 3 instead advances the suit needed to make a useful card playable for Cathy, who is currently Locked. The table can clearly see that helping Cathy will unlock her.
+
+Must Alice still choose blue 3 because it has the normal immediate-hand Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A **Locked player is the explicit exception** to the simple "consider only the very next card" rule. When one line works toward unlocking Cathy, the team should prioritize that strategic need rather than mechanically following the ordinary immediate-hand comparison.
+
+</TabItem>
+</Tabs>

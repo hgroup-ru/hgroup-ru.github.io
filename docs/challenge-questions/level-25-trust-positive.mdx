@@ -1,0 +1,24 @@
+---
+title: The Unknown Play Abandons Obvious Teamwork
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-trust-positive" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+All 1s are played. Alice has a globally-known playable red 2 that leads directly into Bob's globally-known red 3. She also has a playable rank-2 card whose color is globally unknown, although Alice herself has enough private context to know that it is blue 2. Bob has blue 3 on his Finesse Position. Alice plays the globally-unknown 2 instead of the red 2.
+
+Can this unknown-card play send a special signal even though unknown cards normally do not trigger Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** Giving up the obvious red 2 → Bob's red 3 teamwork is extremely suboptimal unless Alice is communicating something. Her globally-unknown blue 2 can therefore initiate a **Trust Finesse** on Bob's blue 3. Trust moves are the narrow exception to the usual rule that playing an unknown card sends no Priority signal.
+
+</TabItem>
+</Tabs>

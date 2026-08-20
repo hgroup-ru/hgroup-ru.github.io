@@ -1,0 +1,24 @@
+---
+title: Возможные значения карты лежат по разные стороны Priority
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-mixed-superposition" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса может сыграть полностью известную красную 3. У неё также есть неизвестная играбельная карта, для которой остаются два возможных значения: синяя 2 и другая 3, имеющая более низкий Priority, чем красная 3, из-за своего положения. Поэтому красная 3 имеет более низкий Priority, чем одно возможное значение неизвестной карты, но более высокий — чем другое. Алиса играет красную 3.
+
+Обязана ли команда прочитать в этом выборе Priority-сигнал?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Розыгрыш полностью известной карты вместо неизвестной может запустить Priority только тогда, когда известная карта имеет более низкий Priority, чем **каждое возможное значение** неизвестной карты. Здесь суперпозиция смешанная, поэтому выбор красной 3 не является однозначным отказом от карты с Priority. Специальный Priority-сигнал не обязателен.
+
+</TabItem>
+</Tabs>
