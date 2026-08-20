@@ -97,9 +97,11 @@ function trimUrl(rawUrl: string): string {
   let url = rawUrl;
   while (
     url.endsWith(")")
+    || url.endsWith("]")
     || url.endsWith(">")
     || url.endsWith(",")
     || url.endsWith(";")
+    || url.endsWith(".")
   ) {
     url = url.slice(0, -1);
   }
@@ -123,7 +125,9 @@ function isDocumentLike(rawUrl: string): boolean {
     return true;
   }
   return (
-    url.hostname === "docs.google.com" || url.hostname === "gist.github.com"
+    url.hostname === "docs.google.com"
+    || url.hostname === "gist.github.com"
+    || url.hostname === "hackmd.io"
   );
 }
 
