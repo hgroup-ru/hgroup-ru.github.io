@@ -31,7 +31,7 @@ const registry = JSON.parse(
 ) as readonly RegistryEntry[];
 const files = await glob(path.join(RU_ROOT, "**/*.mdx"));
 const occurrenceGroups = await Promise.all(
-  files.map(async (filePath) => collectDocumentLinks(filePath)),
+  files.map(async (filePath) => await collectDocumentLinks(filePath)),
 );
 const occurrences = occurrenceGroups.flat();
 
@@ -93,8 +93,12 @@ async function collectDocumentLinks(
 
 function trimUrl(rawUrl: string): string {
   let url = rawUrl;
-  const trailingCharacters = [")", ">", ",", ";"] as const;
-  while (trailingCharacters.some((character) => url.endsWith(character))) {
+  while (
+    url.endsWith(")")
+    || url.endsWith(">")
+    || url.endsWith(",")
+    || url.endsWith(";")
+  ) {
     url = url.slice(0, -1);
   }
   return url;
