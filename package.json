@@ -2,6 +2,7 @@
   "name": "hgroup-ru.github.io",
   "private": true,
   "scripts": {
+    "audit:external-links": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkExternalReadingLinks.mts",
     "build": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/build.mts",
     "build:ru": "npm run generate-product-data && npm run compile-plugin && docusaurus clear && docusaurus build --locale ru",
     "clear": "docusaurus clear",
@@ -9,7 +10,7 @@
     "docusaurus": "docusaurus",
     "format": "npm run generate-product-data && eslint --fix . && prettier --write .",
     "generate-product-data": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/generateProductData.mts",
-    "lint": "npm run generate-product-data && tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts",
+    "lint": "npm run generate-product-data && tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts && npm run audit:external-links",
     "prepare": "husky",
     "serve": "docusaurus serve",
     "start": "npm run generate-product-data && npm run compile-plugin && docusaurus start",
