@@ -1,0 +1,24 @@
+---
+title: Положительное и отрицательное дополнение информации
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-fill-in-sign" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+В обоих случаях Алиса использует один и тот же сложный ход, чтобы получить карту, которой можно было дать прямую Play Clue. В случае A её подсказка положительно затрагивает ранее подсказанную карту и добавляет новую положительную информацию. В случае B единственная дополнительная информация на ранее подсказанной карте — новая отрицательная подсказка.
+
+В каком случае дополнение информации считается побочной выгодой и не даёт ходу стать Unnecessary?
+
+</TabItem>
+<TabItem value="solution">
+
+Только в **случае A**. Положительное дополнение информации считается побочной выгодой и может сделать сложный ход Necessary. Для простоты **отрицательное дополнение информации не считается** такой выгодой. Поэтому случай B остаётся Unnecessary, если другой побочной выгоды нет.
+
+</TabItem>
+</Tabs>

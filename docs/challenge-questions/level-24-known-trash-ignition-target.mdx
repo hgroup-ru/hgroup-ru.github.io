@@ -1,0 +1,27 @@
+---
+title: Bob Already Has a Play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress
+  level={24}
+  id="level-24-known-trash-ignition-target"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice performs an Unnecessary move using known trash, so the extra effect is an Ignition. Bob is the next player, but he already has a known playable card. Bob can also see playable Finesse Position cards on Cathy and Donald, with Donald later in turn order.
+
+Who receives the Ignition?
+
+</TabItem>
+<TabItem value="solution">
+
+**Donald.** Known-trash Unnecessary moves normally Ignite Bob, but this is one of the explicit exceptions: when Bob already has a play and can see playable Finesse Position cards later in turn order, the Ignition goes to the **last player with a visible playable Finesse Position**. Here that player is Donald.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Неизвестный мусор вне chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-off-chop-asymmetry" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Unnecessary move использует карту, которая в момент подсказки была неизвестным мусором и находилась не на chop получателя подсказки. После демонстрации хода остальные игроки видят, что цель была мусором, но игрок, выполнивший blind-play, пока этого не знает.
+
+Какой дополнительный эффект применяет получатель подсказки и у кого сначала может не быть этой информации?
+
+</TabItem>
+<TabItem value="solution">
+
+Получатель подсказки применяет **Chop Move**, как при Trash Chop Move. При этом возможна **асимметрия информации**: игрок, сделавший blind-play, может ещё не знать, что карта была Chop Moved, тогда как остальные это знают. Команда должна сохранять это различие знаний, пока Chop Move не будет продемонстрирован.
+
+</TabItem>
+</Tabs>
