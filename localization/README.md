@@ -39,11 +39,15 @@
 
 Они хранятся рядом с соответствующими русскими страницами и рендерятся тем же штатным плагином, что и официальные диаграммы.
 
-## Training Questions
+## Локальные учебные вопросы
 
-Levels 1–25 содержат локальные Training Questions. Они созданы H-Group RU и не являются Official Challenge Questions.
+На сайте есть два разных локальных учебных слоя, и их не следует смешивать.
 
-Ответы Training исключаются из поискового индекса, чтобы поиск не раскрывал решение до открытия вопроса; сами вопросы остаются доступными для поиска.
+**Local Challenge Questions** — отдельные полноценные challenge-style страницы с игровыми позициями, Solutions, а при необходимости диаграммами и scenario timelines. Они созданы H-Group RU и не являются Official Challenge Questions. Полный стандарт авторинга и semantic QA описан в [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md).
+
+**Quick Checks / Быстрая самопроверка** — короткие встроенные вопросы в конце Level для проверки ключевых invariants, boundaries, precedence и misconceptions. Это RU-only материал; сейчас upstream для него не планируется. Стандарт описан в [`QUICK_CHECKS.md`](QUICK_CHECKS.md).
+
+Ответы обоих локальных учебных слоёв исключаются из поискового индекса, чтобы поиск не раскрывал решение до открытия вопроса; сами вопросы остаются доступными для поиска.
 
 ## Mermaid
 
@@ -51,11 +55,13 @@ Levels 1–25 содержат локальные Training Questions. Они с�
 
 ## Новый локальный материал
 
-Не добавляйте новые Training Questions, диаграммы, объяснения, примеры или мнемоники без явного обоснования. В Pull Request должно быть понятно, зачем материал нужен именно русской версии и почему его нельзя или не нужно предложить исходному проекту.
+Не добавляйте новые Local Challenge Questions, Quick Checks, диаграммы, объяснения, примеры или мнемоники без явного обоснования. В Pull Request должно быть понятно, зачем материал нужен именно русской версии и почему его нельзя или не нужно предложить исходному проекту.
 
 ## Связанные документы
 
 - [`TERMINOLOGY_RU.md`](TERMINOLOGY_RU.md) — принятая терминология;
+- [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md) — стандарт составления, вычитки и semantic QA локальных challenge-style задач;
+- [`QUICK_CHECKS.md`](QUICK_CHECKS.md) — короткий стандарт встроенной быстрой самопроверки;
 - [`SOURCE_EXCEPTIONS.md`](SOURCE_EXCEPTIONS.md) — осознанные отличия от закреплённой версии источника;
 - [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) — находки, которые могут быть полезны исходному проекту.
 - [`upstream-candidates/README.md`](upstream-candidates/README.md) — подробные рабочие карточки для подготовки upstream Pull Request.
