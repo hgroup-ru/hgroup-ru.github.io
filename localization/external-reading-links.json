@@ -1,0 +1,37 @@
+[
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
+    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Selfish_Conventions.md",
+    "classification": "third-party-resource",
+    "decision": "permission-required",
+    "note": "User-facing continuation material. Do not republish automatically; verify license/permission and attribution first."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
+    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Number_Mute_Conventions.md",
+    "classification": "third-party-resource",
+    "decision": "permission-required",
+    "note": "User-facing continuation material. Do not republish automatically; verify license/permission and attribution first."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
+    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Score_Hunting_Guide.md",
+    "classification": "third-party-resource",
+    "decision": "blocked-pending-permission",
+    "note": "Explicitly blocked in BACKLOG.md pending Jeff/IAMJEFF permission."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/hat-guessing.mdx",
+    "url": "https://github.com/fpvandoorn/hanabi/blob/master/doc_hat_player.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Original Hat Guessing source/provenance link; the RU site already contains a local explanatory page."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/hat-guessing.mdx",
+    "url": "https://quuxplusone.github.io/blog/images/how-to-make-the-perfect-fireworks-display.pdf",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Referenced research paper used as provenance for the separate Hat Guessing system."
+  }
+]
