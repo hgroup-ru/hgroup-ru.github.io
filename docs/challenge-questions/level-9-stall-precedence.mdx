@@ -14,14 +14,14 @@ import Question from "./level-9-stall-precedence/question.yml";
 
 It is the Mid-Game and Alice starts her turn with 8 clues. Alice has no known playable card, no normal Play Clue or Save Clue, and no 5 Stall. Bob's blue 2 can be re-clued to make it play, Cathy's already-clued 3 can receive a Fill-In Clue, and Donald has an off-slot-1 card that could receive an 8 Clue Save.
 
-Which class of clue has priority?
+Which clue should Alice give?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Alice must prefer the **Tempo Clue Stall**. At 8 clues, the Stall Table allows all three options, but their precedence is not tied: Tempo Clue Stall is precedence 3, while Fill-In Clue and 8 Clue Save are precedence 4. A lower-precedence stall is not available merely because it is also permitted by the current Stalling Situation.
+Alice should **re-clue Bob's blue 2 as a Tempo Clue Stall**. At 8 clues, the Stall Table allows all three options, but their precedence is not tied: Tempo Clue Stall is precedence 3, while Fill-In Clue and 8 Clue Save are precedence 4. Alice cannot choose a lower-precedence stall merely because it is also permitted by the current Stalling Situation.
 
 </TabItem>
 </Tabs>

@@ -10,7 +10,7 @@ players:
   - name: Alice
     cards:
       - type: r
-        middleNote: 4/5
+        middleNote: 3/4/5
       - type: x
       - type: x
       - type: x
