@@ -1,0 +1,24 @@
+---
+title: Красная 4 после красной 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm-two-blinds" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 уже сыграна. Алиса даёт Кэти числовую Play Clue на ранее нетронутую красную 4, которая пока неиграбельна. У Боба нет подходящего Prompt. С точки зрения Боба обычный Finesse потребует вслепую сыграть красную 2 и красную 3 из своей руки, прежде чем красная 4 Кэти станет играбельной.
+
+Должен ли Боб пропустить эти два blind-play и вместо этого трактовать подсказку как 4 Charm?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Два необходимых blind-play всё ещё соответствуют обычной интерпретации Finesse. К 4 Charm переходят, когда кажущийся Finesse потребовал бы **три** blind-play и более ранние интерпретации уже исключены. Боб должен продолжить Finesse с двумя blind-play, а не переходить к своей Fourth Finesse Position.
+
+</TabItem>
+</Tabs>

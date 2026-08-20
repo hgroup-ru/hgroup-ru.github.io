@@ -1,0 +1,24 @@
+---
+title: A Playable 1 With Two Readings
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-playable-one" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice discards a known playable 1 in a position that otherwise satisfies the non-emergency Blaze pattern: another copy is visible off the expected Finesse Position and the next player can demonstrate its true Finesse Position. Because there are three copies of each 1, the discard could superficially also look like a normal Gentleman's Discard involving the third copy.
+
+Which interpretation has precedence?
+
+</TabItem>
+<TabItem value="solution">
+
+**Blaze Discard has precedence.** The extra third copy of a 1 can make the discard superficially ambiguous, but the convention explicitly resolves this ambiguity in favor of Blaze. The team should not default to the ordinary Gentleman's Discard merely because a third physical copy exists.
+
+</TabItem>
+</Tabs>

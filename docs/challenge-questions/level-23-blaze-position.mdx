@@ -1,0 +1,24 @@
+---
+title: Slot 2 Is Not Second Position
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-position" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice makes a non-emergency Blaze Discard of a known red 3. Bob sees the other red 3 in Cathy's completely unclued hand on slot 2, so it is Cathy's Second Finesse Position. Bob has a clued 5 on slot 1, which moves his own Finesse Position to slot 2 and his Second Finesse Position to slot 3.
+
+Which slot must Bob blind-play to communicate the location of Cathy's red 3?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob must blind-play **slot 3**, his **Second Finesse Position**. Blaze Discards copy the matching card's **Finesse Position number**, not its raw slot number. Cathy's red 3 is on her Second Finesse Position, so Bob demonstrates his Second Finesse Position even though that happens to be slot 3 for him.
+
+</TabItem>
+</Tabs>

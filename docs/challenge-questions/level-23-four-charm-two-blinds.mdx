@@ -1,0 +1,24 @@
+---
+title: Red 4 After Red 1
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm-two-blinds" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 is already played. Alice gives Cathy a number 4 Play Clue to a previously untouched red 4 that is not yet playable. Bob has no matching Prompt. From Bob's perspective, completing the ordinary Finesse would require him to blind-play red 2 and red 3 from his hand before Cathy's red 4 can play.
+
+Should Bob skip those two blind-plays and instead treat the clue as a 4 Charm?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Two required blind-plays are still within the normal Finesse interpretation. The 4 Charm fallback becomes relevant when the apparent Finesse would require **three** blind-plays, after the earlier interpretations have been ruled out. Bob should follow the two-card Finesse rather than jump to his Fourth Finesse Position.
+
+</TabItem>
+</Tabs>

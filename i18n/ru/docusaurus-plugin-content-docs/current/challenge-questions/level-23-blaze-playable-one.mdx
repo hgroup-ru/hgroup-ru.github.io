@@ -1,0 +1,24 @@
+---
+title: Играбельная 1 с двумя трактовками
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-playable-one" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса сбрасывает известную играбельную 1 в позиции без экстренной ситуации, которая во всём остальном соответствует Blaze: другая копия видна не в ожидаемой Finesse Position, а следующий игрок может показать её настоящую Finesse Position. Поскольку у каждой 1 есть три копии, сброс внешне может также напоминать обычный Gentleman's Discard с третьей копией.
+
+Какая интерпретация имеет приоритет?
+
+</TabItem>
+<TabItem value="solution">
+
+Приоритет имеет **Blaze Discard**. Третья копия 1 действительно создаёт внешнюю неоднозначность, но convention явно разрешает её в пользу Blaze. Команда не должна автоматически выбирать обычный Gentleman's Discard только потому, что физически существует третья копия.
+
+</TabItem>
+</Tabs>

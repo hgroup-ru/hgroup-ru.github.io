@@ -1,0 +1,27 @@
+---
+title: У Кэти два возможных коннектора
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress
+  level={23}
+  id="level-23-hesitation-ambiguous-connector"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Боб получает Play Clue, а затем делает паузу, сбрасывая безопасный chop. У Кэти есть уже подсказанная играбельная карта, которая может быть коннектором, которого ждёт Боб. Кроме того, в её Finesse Position лежит неподсказанная играбельная карта, которая может быть другим допустимым коннектором к той же подсказанной карте.
+
+Может ли Кэти безопасно вслепую сыграть свою Finesse Position только на основании паузы Боба?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Hesitation Blind-Play небезопасен, если пауза может относиться **либо к подсказанной карте в твоей руке, либо к карте в Finesse Position**. Пауза Боба не говорит Кэти, какую из двух связей он допускает. Угадывание Finesse Position может привести к мисплею критической карты, поэтому Кэти не должна воспринимать паузу как однозначный выбор этой позиции.
+
+</TabItem>
+</Tabs>

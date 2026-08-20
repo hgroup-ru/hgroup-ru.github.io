@@ -1,0 +1,24 @@
+---
+title: Боб ждёт при пяти подсказках
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-hesitation-safe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Красная 1 и 2 всех остальных цветов уже сыграны. При пяти доступных подсказках и безопасных chop за столом Алиса даёт Бобу числовую Play Clue на 3. Боб мог бы сыграть сразу, но вместо этого сбрасывает безопасный chop. Кэти видит, что единственная карта, которую Боб разумно может ждать, — красная 2, и только Finesse Position Кэти может её показать.
+
+Можно ли Кэти в ответ на паузу Боба вслепую сыграть свою Finesse Position?
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Это читаемый **Hesitation Blind-Play**. Большое число подсказок и безопасные chop исключают обычное экстренное объяснение, а возможный Reverse Finesse даёт Бобу причину подождать. Поскольку красная 2 — единственный коннектор, который Кэти может подтвердить, её blind-play не требует угадывать между конкурирующими связями.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Bob Waits With Five Clues
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-hesitation-safe" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Red 1 and all non-red 2s are played. With five clues available and safe chops around the table, Alice gives Bob a number 3 Play Clue. Bob could play immediately, but instead discards his safe chop. Cathy sees that the only card Bob could reasonably be waiting for is red 2, and Cathy's Finesse Position is the only place that red 2 could be demonstrated.
+
+May Cathy blind-play her Finesse Position in response to Bob's hesitation?
+
+</TabItem>
+<TabItem value="solution">
+
+**Yes.** This is a readable **Hesitation Blind-Play**. The plentiful clues and safe chops rule out the ordinary emergency explanation, while the possible Reverse Finesse gives Bob a reason to wait. Because red 2 is the only connector Cathy could be proving, her blind-play does not require choosing between competing connections.
+
+</TabItem>
+</Tabs>

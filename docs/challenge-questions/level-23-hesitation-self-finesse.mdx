@@ -1,0 +1,24 @@
+---
+title: The Receiver Is Self-Finessed
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-hesitation-self-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives Bob a Play Clue. Bob is also Self-Finessed by that clue and, instead of immediately resolving the clued card, discards his safe chop. Cathy sees a playable card on her own Finesse Position that could appear to connect to one possible identity of Bob's clued card.
+
+May Cathy treat Bob's hesitation as proof that her Finesse Position should be blind-played?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Hesitation is not safe to act on when the clue receiver is **Self-Finessed**. Bob may be waiting because of his own hidden connection, and Cathy's playable Finesse Position is not guaranteed to match the clued card. The hesitation therefore does not uniquely authorize Cathy's blind-play.
+
+</TabItem>
+</Tabs>

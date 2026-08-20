@@ -1,0 +1,27 @@
+---
+title: Two Ways Cathy Could Connect
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress
+  level={23}
+  id="level-23-hesitation-ambiguous-connector"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Bob receives a Play Clue and then hesitates by discarding a safe chop. Cathy has one already-clued playable card in her hand that could be the connector Bob is waiting for. She also has an unclued playable card on her Finesse Position that could be a different valid connector to the same clued card.
+
+Can Cathy safely blind-play her Finesse Position just because Bob hesitated?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Hesitation Blind-Play is unsafe when the hesitation could be for **either a clued card in your hand or your Finesse Position card**. Bob's pause does not tell Cathy which of the two connections he is allowing. Guessing the Finesse Position could misplay a critical card, so Cathy must not act on the hesitation as if it uniquely selected that slot.
+
+</TabItem>
+</Tabs>

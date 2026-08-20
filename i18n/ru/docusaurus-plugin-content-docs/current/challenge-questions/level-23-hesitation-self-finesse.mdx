@@ -1,0 +1,24 @@
+---
+title: Получатель находится в Self-Finesse
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-hesitation-self-finesse" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Бобу Play Clue. Эта же подсказка создаёт для Боба Self-Finesse, и вместо немедленного розыгрыша подсказанной карты он сбрасывает безопасный chop. Кэти видит играбельную карту в своей Finesse Position, которая могла бы соединяться с одним из возможных значений подсказанной карты Боба.
+
+Можно ли Кэти считать паузу Боба доказательством того, что ей следует вслепую сыграть свою Finesse Position?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** На паузу нельзя безопасно реагировать, когда получатель подсказки находится в **Self-Finesse**. Боб может ждать из-за собственной скрытой связи, а играбельная Finesse Position Кэти не обязана совпадать с подсказанной картой. Поэтому пауза не даёт однозначного разрешения на blind-play Кэти.
+
+</TabItem>
+</Tabs>

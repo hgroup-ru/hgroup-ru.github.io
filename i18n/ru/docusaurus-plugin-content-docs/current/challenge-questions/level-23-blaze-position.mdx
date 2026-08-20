@@ -1,0 +1,24 @@
+---
+title: Слот 2 — не Second Finesse Position
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-position" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает Blaze Discard известной красной 3 в позиции без экстренной ситуации. Боб видит вторую красную 3 в полностью неподсказанной руке Кэти на слоте 2, то есть в её Second Finesse Position. У Боба на слоте 1 лежит подсказанная 5, поэтому его Finesse Position находится на слоте 2, а Second Finesse Position — на слоте 3.
+
+Какой слот Боб должен сыграть вслепую, чтобы сообщить положение красной 3 Кэти?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен вслепую сыграть **слот 3**, свою **Second Finesse Position**. Blaze Discard копирует **номер Finesse Position** совпадающей карты, а не её физический номер слота. Красная 3 Кэти находится в её Second Finesse Position, поэтому Боб демонстрирует свою Second Finesse Position, которая у него приходится на слот 3.
+
+</TabItem>
+</Tabs>
