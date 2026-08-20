@@ -12,30 +12,28 @@ const REGISTRY_PATH = path.join(
   "localization/external-reading-links.json",
 );
 
-const MARKDOWN_LINK_PATTERN = /\]\((?<url>https?:\/\/[^)\s]+)\)/gv;
-const AUTOLINK_PATTERN = /<(?<url>https?:\/\/[^>\s]+)>/gv;
-const HREF_PATTERN = /href=["'](?<url>https?:\/\/[^"']+)["']/gv;
-const DOCUMENT_EXTENSION_PATTERN = /\.(?:md|mdx|pdf)$/v;
-
-type RegistryEntry = {
+interface RegistryEntry {
   readonly source: string;
   readonly url: string;
   readonly classification: string;
   readonly decision: string;
   readonly note: string;
-};
+}
 
-type LinkOccurrence = {
+interface LinkOccurrence {
   readonly source: string;
   readonly url: string;
   readonly line: number;
-};
+}
 
-const registry = JSON.parse(await readFile(REGISTRY_PATH)) as readonly RegistryEntry[];
+const registry = JSON.parse(
+  await readFile(REGISTRY_PATH),
+) as readonly RegistryEntry[];
 const files = await glob(path.join(RU_ROOT, "**/*.mdx"));
-const occurrences = (
-  await Promise.all(files.map((filePath) => collectDocumentLinks(filePath)))
-).flat();
+const occurrenceGroups = await Promise.all(
+  files.map(async (filePath) => collectDocumentLinks(filePath)),
+);
+const occurrences = occurrenceGroups.flat();
 
 const actualKeys = new Set(occurrences.map(linkKey));
 const registryKeys = new Set(registry.map(linkKey));
@@ -58,8 +56,9 @@ if (missing.length > 0 || stale.length > 0) {
   );
 }
 
+const sourcePages = new Set(occurrences.map((entry) => entry.source));
 console.log(
-  `External reading-link registry is current: ${occurrences.length} document-like links across ${new Set(occurrences.map((entry) => entry.source)).size} RU pages.`,
+  `External reading-link registry is current: ${occurrences.length} document-like links across ${sourcePages.size} RU pages.`,
 );
 
 async function collectDocumentLinks(
@@ -67,16 +66,14 @@ async function collectDocumentLinks(
 ): Promise<readonly LinkOccurrence[]> {
   const contents = await readFile(filePath);
   const source = relative(filePath);
-  const matches = [
-    ...contents.matchAll(MARKDOWN_LINK_PATTERN),
-    ...contents.matchAll(AUTOLINK_PATTERN),
-    ...contents.matchAll(HREF_PATTERN),
-  ];
+  const urlPattern = /https?:\/\/\S+/gv;
 
-  return matches
+  return contents
+    .matchAll(urlPattern)
     .map((match) => {
-      const url = match.groups?.["url"];
-      if (url === undefined || !isDocumentLike(url)) {
+      const rawUrl = match[0];
+      const url = trimUrl(rawUrl);
+      if (!isDocumentLike(url)) {
         return undefined;
       }
       return {
@@ -86,6 +83,7 @@ async function collectDocumentLinks(
       };
     })
     .filter((entry): entry is LinkOccurrence => entry !== undefined)
+    .toArray()
     .toSorted((left, right) =>
       left.source === right.source
         ? left.line - right.line
@@ -93,10 +91,20 @@ async function collectDocumentLinks(
     );
 }
 
+function trimUrl(rawUrl: string): string {
+  let url = rawUrl;
+  const trailingCharacters = [")", ">", ",", ";"] as const;
+  while (trailingCharacters.some((character) => url.endsWith(character))) {
+    url = url.slice(0, -1);
+  }
+  return url;
+}
+
 function isDocumentLike(rawUrl: string): boolean {
   const url = new URL(rawUrl);
   const pathname = url.pathname.toLowerCase();
-  if (DOCUMENT_EXTENSION_PATTERN.test(pathname)) {
+  const documentExtensionPattern = /\.(?:md|mdx|pdf)$/v;
+  if (documentExtensionPattern.test(pathname)) {
     return true;
   }
   if (url.hostname === "raw.githubusercontent.com") {
