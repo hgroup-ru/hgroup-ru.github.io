@@ -227,11 +227,15 @@ import RuL9DiagramFiveStall from "./level-9/five-stall.yml";
 
 <details className="ru-training">
 
-<summary>1. Что такое Stalling Situation?</summary>
+<summary>
+  1. У Алисы нет нормальной Play/Save Clue, а сброс chop может снизить
+  максимальный счёт. Можно ли ей дать низкоценную подсказку, которая обычно
+  недопустима?
+</summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-Это ситуация, в которой обычный сброс chop опасен и по конвенциям вместо него разрешена или требуется низкоценная подсказка. Конкретные допустимые Stall Clues и их очередность задаёт _Stall Table_; нельзя произвольно объявить любой неудобный ход Stall.
+Только если текущая позиция является одной из Stalling Situations и эта подсказка разрешена Stall Table для соответствующей серьёзности и очередности. Сам по себе неудобный сброс не разрешает произвольный Stall.
 
 </div>
 
@@ -266,11 +270,15 @@ import RuL9DiagramFiveStall from "./level-9/five-stall.yml";
 
 <details className="ru-training">
 
-<summary>4. Что такое Permission to Discard (PTD)?</summary>
+<summary>
+  4. В Early Game Алиса не видит ни одной Play/Save Clue, которую Боб мог бы
+  дать. Боб ходил непосредственно перед ней. Обязана ли Алиса всё равно дать
+  подсказку в его руку, прежде чем сбросить?
+</summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-Если Алиса не видит для Боба обязательной Play/Save Clue, она не обязана давать подсказку в руку игрока прямо перед собой; это неявно разрешает Бобу сбросить.
+Нет. Это Permission to Discard (PTD): подсказки в руку непосредственно предыдущего игрока не обязаны быть исчерпаны, поэтому Алиса может сбросить.
 
 </div>
 

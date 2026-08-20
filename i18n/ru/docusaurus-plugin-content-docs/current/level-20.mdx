@@ -243,11 +243,14 @@ import RuL20DiagramNoInformationDoubleBluff from "./level-20/no-information-doub
 
 <details className="ru-training">
 
-<summary>2. Что делает Occupied с обычной интерпретацией подсказки?</summary>
+<summary>
+  2. Обычный 2 Save даёт Occupied-игрок: следующий игрок мог дать ту же
+  подсказку и иначе вынужден был бы сбросить. Остаётся ли это просто Save Clue?
+</summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-Ход делает ещё одно действие: например, обычная Save Clue становится Occupied Play Clue, а обычная Play Clue — Occupied Finesse.
+Нет. Occupied добавляет одно действие: обычная Save Clue превращается в Occupied Play Clue.
 
 </div>
 
@@ -281,11 +284,15 @@ import RuL20DiagramNoInformationDoubleBluff from "./level-20/no-information-doub
 
 <details className="ru-training">
 
-<summary>5. Что говорит Out-of-Order Corollary?</summary>
+<summary>
+  5. Алиса даёт подсказку с неверным фокусом, которая могла бы быть Out-of-Order
+  Play Clue. Боб вместо обязательной Fix Clue делает blind-play. Что Кэти может
+  исключить для затронутых карт?
+</summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-Если при потенциальной Out-of-Order Play Clue следующий игрок делает blind-play вместо обязательной Fix Clue, получатель может исключить следующую играбельную карту из всех затронутых вариантов.
+Они не являются следующей играбельной картой, которую должна была бы обозначать исходная подсказка: иначе Боб был бы обязан дать Fix Clue. Это Out-of-Order Corollary.
 
 </div>
 
@@ -307,11 +314,15 @@ import RuL20DiagramNoInformationDoubleBluff from "./level-20/no-information-doub
 
 <details className="ru-training">
 
-<summary>7. Какие два условия определяют No-Information Clue?</summary>
+<summary>
+  7. Повторная подсказка не добавила положительной информации, но после всей
+  последовательности суперпозиция карты сузилась. Является ли она No-Information
+  Clue?
+</summary>
 
 <div className="ru-training-answer" data-ru-search-exclude="true">
 
-Повторная подсказка не даёт новой положительной информации, и суперпозиция карты остаётся той же до и после последовательности подсказок. Одиночный No-Information Bluff на одну карту запрещён.
+Нет. Для No-Information одновременно нужны отсутствие новой положительной информации и неизменная суперпозиция до и после всей последовательности.
 
 </div>
 
