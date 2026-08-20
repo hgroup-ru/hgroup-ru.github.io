@@ -1,0 +1,24 @@
+---
+title: Та же мусорная карта переходит на chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-on-chop-trash-push" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Рассмотрим Unnecessary move, целью подсказки в котором служит неизвестный мусор. В первом варианте цель находится вне chop, поэтому дополнительным эффектом Level 24 был бы Chop Move. Изменим только один факт: поместим ту же цель с неизвестным мусором на chop получателя подсказки.
+
+Во что превращается дополнительный эффект?
+
+</TabItem>
+<TabItem value="solution">
+
+В **Trash Push**. Level 24 явно различает положение неизвестного мусора: **вне chop → Chop Move; на chop → Trash Push**. Перемещение цели на chop меняет интерпретацию, хотя сама карта по-прежнему является неизвестным мусором.
+
+</TabItem>
+</Tabs>

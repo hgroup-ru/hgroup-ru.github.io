@@ -1,0 +1,27 @@
+---
+title: У Боба уже есть розыгрыш
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress
+  level={24}
+  id="level-24-known-trash-ignition-target"
+/>
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает Unnecessary move через известный мусор, поэтому дополнительный эффект — Ignition. Боб ходит следующим, но у него уже есть известная играбельная карта. Кроме того, Боб видит играбельные карты в Finesse Position Кэти и Дональда, причём Дональд ходит позже.
+
+Кто получает Ignition?
+
+</TabItem>
+<TabItem value="solution">
+
+**Дональд.** Обычно Unnecessary move через известный мусор даёт Ignition Бобу, но здесь действует явное исключение: если у Боба уже есть розыгрыш и он видит играбельные Finesse Position дальше по порядку хода, Ignition получает **последний игрок с видимой играбельной Finesse Position**. Здесь это Дональд.
+
+</TabItem>
+</Tabs>

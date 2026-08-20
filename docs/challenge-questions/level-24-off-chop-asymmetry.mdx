@@ -1,0 +1,24 @@
+---
+title: Unknown Trash Away From Chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-off-chop-asymmetry" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+An Unnecessary move uses a card that was unknown trash at clue time, and that trash card is off the clue receiver's chop. After the move is demonstrated, the other players can see that the target was trash, but the player who made the blind-play does not yet know that fact.
+
+What extra effect should the clue receiver apply, and who may initially be missing that information?
+
+</TabItem>
+<TabItem value="solution">
+
+The clue receiver applies a **Chop Move**, just as for a Trash Chop Move. This can create **information asymmetry**: the player who made the blind-play may not know that the card was Chop Moved, while the other players do. The table must preserve that asymmetric knowledge until the Chop Move is demonstrated.
+
+</TabItem>
+</Tabs>

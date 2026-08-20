@@ -1,0 +1,24 @@
+---
+title: Сложный ход подхватывает ещё одну карту
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-side-benefit" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса использует сложный ход, чтобы получить играбельную красную 3 Боба, хотя могла дать ему прямую красную Play Clue. Однако сложная подсказка также затрагивает вторую полезную карту в руке Кэти и даёт ей положительную информацию, которой не дала бы прямая подсказка.
+
+Должна ли команда считать ход Алисы Unnecessary и добавлять обычный дополнительный эффект?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Сложный ход считается Unnecessary только при отсутствии побочной выгоды. Получение дополнительной полезной карты — реальная выгода, поэтому для Level 24 ход считается **Necessary**, хотя основную играбельную карту можно было подсказать напрямую. Дополнительный эффект Unnecessary move не возникает.
+
+</TabItem>
+</Tabs>

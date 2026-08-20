@@ -1,0 +1,24 @@
+---
+title: Move the Same Trash Card to Chop
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-on-chop-trash-push" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Take an Unnecessary move whose clue target is unknown trash. In the first version the target is off chop, so the Level 24 extra effect would be a Chop Move. Change only one fact: put that same unknown-trash target on the clue receiver's chop.
+
+What does the extra effect become?
+
+</TabItem>
+<TabItem value="solution">
+
+It becomes a **Trash Push**. Level 24 deliberately distinguishes unknown trash by position: **off chop → Chop Move; on chop → Trash Push**. Moving the target onto chop changes the interpretation even though the target is still unknown trash.
+
+</TabItem>
+</Tabs>

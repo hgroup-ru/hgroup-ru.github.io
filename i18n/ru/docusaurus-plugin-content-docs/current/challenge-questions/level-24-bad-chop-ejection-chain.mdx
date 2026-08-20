@@ -1,0 +1,24 @@
+---
+title: Chop Move сдвинет мусор
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-bad-chop-ejection-chain" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса делает Unnecessary Unknown Trash Discharge через неизвестный мусор вне chop Дональда. Боб выполняет обычный blind-play Discharge. Теперь Кэти видит, что Алиса могла дать прямую Play Clue на карту Боба, поэтому дополнительный смысл Level 24 обычно сделал бы Chop Move карт Дональда справа от цели подсказки. Кэти также видит, что карта, которую этот Chop Move сдвинет, уже является мусором.
+
+Должна ли Кэти просто позволить Дональду выполнить такой плохой Chop Move?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Кэти распознаёт предстоящий Chop Move мусора как **Bad Chop Move Ejection** и вслепую играет соответствующую Finesse Position, чтобы вместо этого выполнить Ejection полезной карты. Дополнительный Chop Move Level 24 по-прежнему подчиняется защите от заведомого сдвига мусора, поэтому интерпретация Unnecessary move может перейти в цепочку Ejection, а не закончиться на первом Chop Move.
+
+</TabItem>
+</Tabs>

@@ -56,6 +56,19 @@ const sidebars = {
                 "challenge-questions/level-23-hesitation-ambiguous-connector",
               ],
             },
+            {
+              "Level 24": [
+                "challenge-questions/level-24",
+                "challenge-questions/level-24-side-benefit",
+                "challenge-questions/level-24-fill-in-sign",
+                "challenge-questions/level-24-trash-finesse-always",
+                "challenge-questions/level-24-known-trash-ignition-target",
+                "challenge-questions/level-24-trash-chop-illegal",
+                "challenge-questions/level-24-off-chop-asymmetry",
+                "challenge-questions/level-24-on-chop-trash-push",
+                "challenge-questions/level-24-bad-chop-ejection-chain",
+              ],
+            },
           ],
         }
       : element,

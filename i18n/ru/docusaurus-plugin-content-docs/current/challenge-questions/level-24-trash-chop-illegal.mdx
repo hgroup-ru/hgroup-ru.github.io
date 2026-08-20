@@ -1,0 +1,24 @@
+---
+title: Избыточный Trash Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={24} id="level-24-trash-chop-illegal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса может дать прямую Play Clue на нужную карту, но вместо этого рассматривает Trash Chop Move, обычный эффект которого получил бы ту же карту. Побочной выгоды нет, поэтому в остальных отношениях ход подходил бы под Unnecessary.
+
+Разрешено ли Алисе намеренно использовать это как Unnecessary Trash Chop Move и ожидать дополнительного смысла Level 24?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** **Unnecessary Trash Chop Move запрещён.** Его невозможно отличить от Chop Move Ignition, поэтому convention явно запрещает такую конструкцию, а не заставляет команду угадывать между двумя смыслами.
+
+</TabItem>
+</Tabs>
