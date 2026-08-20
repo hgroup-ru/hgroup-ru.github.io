@@ -32,7 +32,6 @@ players:
     cards:
       - type: r3
         clue: r
-        middleNote: r2?
       - type: y3
         border: false
       - type: g4
