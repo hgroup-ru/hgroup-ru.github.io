@@ -1,0 +1,24 @@
+---
+title: The Visible Connector Is on Cathy
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-finesse-target-other" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice deliberately plays a fully-known blue 2 instead of a higher-Priority fully-known card. Bob is next. Bob has no clued blue 3, but he can see a playable blue 3 on Cathy's Finesse Position.
+
+Should Bob blind-play his own Finesse Position because he is the next player?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** Bob can see the intended connector on **Cathy's** Finesse Position, so this is a Priority Finesse on Cathy. Bob does something unrelated; Cathy blind-plays her Finesse Position on her turn. Priority Finesse is not automatically assigned to the next player when the matching visible connector identifies someone else.
+
+</TabItem>
+</Tabs>

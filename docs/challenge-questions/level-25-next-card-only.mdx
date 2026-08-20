@@ -1,0 +1,24 @@
+---
+title: One Line Is Longer but Not Sooner
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-next-card-only" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice has known playable blue 3 and red 3. Bob has known blue 4. Cathy has known red 5, but no one holds a known red 4 as the immediate next card. Looking far ahead, the red line could eventually reach Cathy's red 5, while blue 3 immediately leads into Bob's blue 4. No player is Locked.
+
+Which play gets the "leads into someone else's hand" Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+**Blue 3.** When deciding whether a card leads into someone else's hand, Priority considers only the **very next card**. Blue 3 immediately leads to Bob's blue 4; red 3 does not immediately lead to a teammate merely because a later red 5 exists. Longer future chains are ignored for this comparison.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: 4 ведёт в собственную руку
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-four-exception" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть известная играбельная 4, которая ведёт в другую известную карту в её собственной руке. Кроме того, у неё есть известная играбельная 5. По обычной таблице Priority карта, ведущая в собственную руку Алисы, имела бы преимущество над 5.
+
+Обязана ли Алиса сначала сыграть 4?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** **4's Priority Exception** меняет именно это сравнение: известная играбельная **5 имеет Priority** над известной играбельной 4, ведущей в собственную руку игрока. Возвращаемый жетон подсказки и стратегическая гибкость 5 оправдывают это исключение.
+
+</TabItem>
+</Tabs>

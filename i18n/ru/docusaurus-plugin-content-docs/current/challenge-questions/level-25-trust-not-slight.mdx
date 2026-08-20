@@ -1,0 +1,24 @@
+---
+title: Неизвестный вариант лишь немного хуже
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-trust-not-slight" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса выбирает между двумя играбельными картами. Одна полностью известна и немного предпочтительнее по обычному Priority. Вторая глобально неизвестна. Розыгрыш неизвестной карты не теряет явный Tempo, не отказывается от очевидной связи и лишь немного хуже известного розыгрыша.
+
+Должна ли команда принудительно читать Trust Finesse только потому, что Алиса выбрала неизвестную карту?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Розыгрыш неизвестной карты обычно не запускает ничего специального. Для Trust Finesse выбор без скрытого сообщения должен быть **крайне субоптимальным**. Небольшого преимущества по Priority недостаточно, чтобы обычный розыгрыш неизвестной карты превратился в обязательный Trust-сигнал.
+
+</TabItem>
+</Tabs>

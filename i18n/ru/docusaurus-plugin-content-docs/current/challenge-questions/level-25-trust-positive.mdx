@@ -1,0 +1,24 @@
+---
+title: Неизвестный розыгрыш отказывается от очевидной командной линии
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-trust-positive" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Все 1 сыграны. У Алисы есть полностью известная команде играбельная красная 2, которая сразу ведёт в полностью известную красную 3 Боба. Ещё у Алисы есть играбельная 2 неизвестного для команды цвета, хотя сама Алиса по контексту точно знает, что это синяя 2. В Finesse Position Боба лежит синяя 3. Алиса играет неизвестную для команды 2 вместо красной 2.
+
+Может ли розыгрыш неизвестной карты передавать специальный сигнал, хотя обычно такие карты не запускают Priority?
+
+</TabItem>
+<TabItem value="solution">
+
+**Да.** Отказ от очевидной командной линии красная 2 → красная 3 Боба был бы крайне субоптимален, если Алиса ничего не сообщает. Поэтому её неизвестная команде синяя 2 может запустить **Trust Finesse** на синюю 3 Боба. Trust moves — узкое исключение из общего правила, что розыгрыш неизвестной карты не передаёт Priority-сигнал.
+
+</TabItem>
+</Tabs>

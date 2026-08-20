@@ -1,0 +1,24 @@
+---
+title: Одна линия длиннее, но не ближе
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={25} id="level-25-next-card-only" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+У Алисы есть известные играбельные синяя 3 и красная 3. У Боба есть известная синяя 4. У Кэти есть известная красная 5, но известной красной 4 как непосредственно следующей карты нет ни у кого. Если смотреть далеко вперёд, красная линия когда-нибудь может дойти до красной 5 Кэти, а синяя 3 сразу ведёт в синюю 4 Боба. Locked-игроков нет.
+
+Какой розыгрыш получает Priority за «ведение в чужую руку»?
+
+</TabItem>
+<TabItem value="solution">
+
+**Синяя 3.** При определении того, ведёт ли карта в чужую руку, Priority учитывает только **самую следующую карту**. Синяя 3 немедленно ведёт в синюю 4 Боба; красная 3 не ведёт сразу к партнёру только из-за существования более поздней красной 5. Длинные будущие цепочки в этом сравнении игнорируются.
+
+</TabItem>
+</Tabs>
