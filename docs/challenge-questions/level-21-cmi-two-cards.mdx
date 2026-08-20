@@ -1,5 +1,5 @@
 ---
-title: Two-Card Chop Move Ignition Conditions
+title: Cathy's Red 2 and Two Blue 4s
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,12 +12,14 @@ import SolutionDiagram from "./level-21-cmi-two-cards/solution.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-All 1s are played. Cathy's hand from newest to oldest is blue 4, blue 1, red 2, blue 4. Alice clues number 1 to Cathy's slot 2, which would normally Trash Chop Move slots 3 and 4. Under what two conditions is a Chop Move Ignition with two or more Chop Moved cards valid, and how does this source position satisfy them?
+All 1s are played. Cathy's hand from newest to oldest is blue 4, blue 1, red 2, blue 4. Alice clues number 1 to Cathy's slot 2, which would normally Trash Chop Move slots 3 and 4. Bob can see that the left Chop Moved card is the playable red 2, while the right one is a blue 4 matching Cathy's other untouched blue 4.
+
+Should Bob treat this strange two-card Chop Move as an Ignition, and what should happen next?
 
 </TabItem>
 <TabItem value="solution">
 
-Both conditions are required: **the leftmost Chop Moved card must be playable**, and **the rightmost Chop Moved card must be trash or a copy of an unclued card in the same hand**. Here slot 3 is the playable red 2, while slot 4 is blue 4, a copy of Cathy's other unclued blue 4. Bob therefore blind-plays blue 2 for the Ignition; Cathy then blind-plays red 2 and treats the rightmost card as known trash. When that rightmost card is later discarded as blue 4, the false-trash result creates Elimination Notes for the other copy.
+**Yes.** A multi-card Chop Move Ignition requires the **leftmost Chop Moved card to be playable** and the **rightmost Chop Moved card to be trash or a copy of an unclued card in the same hand**. This position satisfies both conditions. Bob therefore blind-plays blue 2 for the Ignition; Cathy then blind-plays red 2 and treats the rightmost card as known trash. When that rightmost card is later discarded as blue 4, the false-trash result creates Elimination Notes for the other copy.
 
 <SolutionDiagram />
 

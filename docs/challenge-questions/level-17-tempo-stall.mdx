@@ -1,5 +1,5 @@
 ---
-title: The Same Tempo Position II
+title: The Duplicate in a Stalling Situation
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
@@ -12,14 +12,16 @@ import Question from "./level-17-tempo-stall/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-The same kind of duplicate play reveals a Duplicitous Tempo Clue, but this time Alice is in a stalling situation where an ordinary Tempo Clue Stall is legal at the relevant precedence. Does the fact that the played card was a duplicate automatically add a Tempo Clue Chop Move?
+Red 1, green 1, and blue 1 are played, and Cathy has a globally known red 2. Alice is in a Stalling Situation where a Tempo Clue Stall is allowed at the current precedence. She clues number 2 to Bob, filling his already-touched green card in as green 2 and focusing another 2. Bob plays the focus expecting blue 2, but it is red 2 and duplicates Cathy's known card.
+
+Should Bob also Chop Move his chop because the focused play was a duplicate?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** Duplication does not create a new Chop Move rule. A Duplicitous Tempo Clue may or may not Chop Move under exactly the same conditions as an ordinary Tempo Clue. If the clue is legitimately explained as a Tempo Clue Stall, there is no extra Chop Move merely because a duplicate was involved.
+**No.** Duplication does not create a new Chop Move rule. A Duplicitous Tempo Clue may or may not Chop Move under exactly the same conditions as an ordinary Tempo Clue. Here the clue is legitimately explained as a Tempo Clue Stall, so there is no extra Chop Move merely because a duplicate was involved.
 
 </TabItem>
 </Tabs>
