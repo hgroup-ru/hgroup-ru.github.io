@@ -1,0 +1,24 @@
+---
+title: Скрытая карта в нужной позиции
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-layered-illegal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса хочет использовать Blaze Discard, но на стороне Боба Finesse Position, которой нужно показать положение совпадающей карты, скрыта за несвязанным играбельным слоем. Теоретически Боб мог бы вслепую пройти этот слой и в итоге добраться до нужной позиции.
+
+Разрешено ли Алисе использовать такую layered-последовательность как демонстрацию Blaze?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** **Layered Blaze Discard запрещён** — независимо от того, слой находится у «зажжённого» игрока или у игрока с совпадающей картой. Blaze намеренно остаётся простой convention: нужная Finesse Position должна быть показана напрямую, а не через layered-последовательность.
+
+</TabItem>
+</Tabs>

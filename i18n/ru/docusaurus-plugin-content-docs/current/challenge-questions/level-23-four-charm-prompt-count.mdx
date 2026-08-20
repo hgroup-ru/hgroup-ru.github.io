@@ -1,0 +1,24 @@
+---
+title: Один Prompt и два blind-play
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm-prompt-count" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Алиса даёт Play Clue на ранее нетронутую 4, которая пока неиграбельна. Боб видит допустимую связь: сначала срабатывает Prompt на уже подсказанной карте, а затем Бобу нужно сделать два blind-play, прежде чем 4 станет играбельной.
+
+Считается ли Prompt вместе с двумя blind-play той самой «тройкой», из-за которой Боб должен отказаться от Finesse в пользу 4 Charm?
+
+</TabItem>
+<TabItem value="solution">
+
+**Нет.** Для порога 4 Charm считаются только **blind-play**. Prompt не входит в проверку «три или более blind-play». Поэтому связь из одного Prompt и двух blind-play всё ещё читается как обычная линия Prompt/Finesse, а не как 4 Charm только по этой причине.
+
+</TabItem>
+</Tabs>

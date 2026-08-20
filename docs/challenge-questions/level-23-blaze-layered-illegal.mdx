@@ -1,0 +1,24 @@
+---
+title: A Hidden Card in the Required Position
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-layered-illegal" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice wants to use a Blaze Discard, but on Bob's side the Finesse Position that would have to demonstrate the matching card is hidden behind an unrelated playable layer. Bob could theoretically blind-play through that layer and eventually reach the required position.
+
+Is Alice allowed to use that layered sequence as the Blaze demonstration?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A **Layered Blaze Discard is illegal**, whether the layer is on the ignited player or on the player holding the matching card. Blaze is intentionally kept simple: the required Finesse Position must be demonstrated directly rather than recovered through a layered sequence.
+
+</TabItem>
+</Tabs>

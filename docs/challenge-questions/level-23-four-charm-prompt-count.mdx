@@ -1,0 +1,24 @@
+---
+title: One Prompt, Two Blind-Plays
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm-prompt-count" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice gives a Play Clue to a previously untouched 4 that is not yet playable. Bob can see a valid connection in which one already-clued card is Prompted and then Bob must make two blind-plays before the 4 becomes playable.
+
+Does the Prompt count together with the two blind-plays as the "three" that should make Bob abandon the Finesse for a 4 Charm?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** For the 4 Charm threshold, players count only **blind-plays**. Prompts do not count toward the "three or more blind-plays" test. A connection containing one Prompt plus two blind-plays is therefore still read as the ordinary Prompt/Finesse line, not as a 4 Charm for that reason alone.
+
+</TabItem>
+</Tabs>

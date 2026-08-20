@@ -1,0 +1,24 @@
+---
+title: First-Turn Number 4
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm-three-blinds" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+It is the first turn and all stacks are at 0. Alice gives Cathy a number 4 Play Clue to an untouched red 4. Bob sees no red cards in the other hands, so an ordinary Finesse would require Bob to blind-play red 1, red 2, and red 3. Cathy has a currently unplayable card on her Finesse Position, so a 4 Double Bluff cannot use that position.
+
+Which position should Bob blind-play?
+
+</TabItem>
+<TabItem value="solution">
+
+Bob should blind-play his **Fourth Finesse Position** as a **4 Charm**. A number clue avoids the Critical Color Bluff interpretation, the ordinary Finesse would require three blind-plays, and Cathy's unplayable Finesse Position rules out the normal 4 Double Bluff route. Those failures are exactly what make Bob fall through to the 4 Charm interpretation.
+
+</TabItem>
+</Tabs>

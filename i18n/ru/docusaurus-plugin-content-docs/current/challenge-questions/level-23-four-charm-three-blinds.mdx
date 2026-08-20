@@ -1,0 +1,24 @@
+---
+title: Числовая 4 на первом ходу
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-four-charm-three-blinds" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
+<TabItem value="question">
+
+Идёт первый ход, все стопки на 0. Алиса даёт Кэти числовую Play Clue на нетронутую красную 4. Боб не видит красных карт в других руках, поэтому обычный Finesse потребовал бы от него вслепую сыграть красную 1, красную 2 и красную 3. В Finesse Position Кэти лежит пока неиграбельная карта, поэтому обычный 4 Double Bluff не может использовать эту позицию.
+
+Какую позицию должен вслепую сыграть Боб?
+
+</TabItem>
+<TabItem value="solution">
+
+Боб должен вслепую сыграть свою **Fourth Finesse Position** как **4 Charm**. Числовая подсказка исключает интерпретацию Critical Color Bluff, обычный Finesse потребовал бы три blind-play, а неиграбельная Finesse Position Кэти исключает обычную линию 4 Double Bluff. После исключения этих вариантов остаётся 4 Charm.
+
+</TabItem>
+</Tabs>

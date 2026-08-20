@@ -1,0 +1,24 @@
+---
+title: Bob Cannot Demonstrate the Position
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<ChallengeQuestionProgress level={23} id="level-23-blaze-next-player" />
+
+<Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
+<TabItem value="question">
+
+Alice makes a weird Gentleman's Discard in a non-emergency position. The matching card is off Cathy's Finesse Position, but Bob—the very next player—cannot safely blind-play the corresponding Finesse Position. Donald, who acts after Cathy, could demonstrate that position cleanly.
+
+Can Alice intend a Blaze Discard that waits for Donald to perform the blind-play later?
+
+</TabItem>
+<TabItem value="solution">
+
+**No.** A Blaze Discard must be demonstrated by the **very next player**. Bob has to react immediately to prove the matching card's Finesse Position. A later player cannot rescue an otherwise unreadable Blaze line; if Bob cannot make the required immediate play, Alice cannot rely on Donald to turn the discard into a valid Blaze.
+
+</TabItem>
+</Tabs>
