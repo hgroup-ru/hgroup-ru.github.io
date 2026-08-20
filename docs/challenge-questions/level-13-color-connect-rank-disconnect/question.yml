@@ -28,7 +28,6 @@ players:
   - name: Cathy
     cards:
       - type: b5
-        below: Finesse
         border: false
       - type: y3
         border: false

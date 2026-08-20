@@ -6,8 +6,6 @@ stacks:
   - p: 0
 discarded:
   - r4
-bigText:
-  text: Critical Color Bluff
 players:
   - name: Alice
     clueGiver: true
@@ -34,7 +32,6 @@ players:
     cards:
       - type: r4
         clue: r
-        middleNote: r3,r4
       - type: y3
         border: false
       - type: g4
