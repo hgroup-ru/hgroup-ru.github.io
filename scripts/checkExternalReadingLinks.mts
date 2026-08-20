@@ -37,7 +37,9 @@ const occurrences = occurrenceGroups.flat();
 
 const actualKeys = new Set(occurrences.map(linkKey));
 const registryKeys = new Set(registry.map(linkKey));
-const missing = occurrences.filter((entry) => !registryKeys.has(linkKey(entry)));
+const missing = occurrences.filter(
+  (entry) => !registryKeys.has(linkKey(entry)),
+);
 const stale = registry.filter((entry) => !actualKeys.has(linkKey(entry)));
 
 if (missing.length > 0 || stale.length > 0) {
@@ -121,8 +123,7 @@ function isDocumentLike(rawUrl: string): boolean {
     return true;
   }
   return (
-    url.hostname === "docs.google.com"
-    || url.hostname === "gist.github.com"
+    url.hostname === "docs.google.com" || url.hostname === "gist.github.com"
   );
 }
 
