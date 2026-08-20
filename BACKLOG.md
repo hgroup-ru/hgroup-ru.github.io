@@ -48,9 +48,19 @@ Selfish Conventions и Number Mute links, которые находятся ря
 
 ## Редакционный и semantic QA
 
+### Аудит встроенных Quick Checks
+
+Отдельно пройти короткие вопросы `Тренировочные вопросы`, встроенные в Levels, и привести их к роли **Quick Checks / Быстрой самопроверки**, не смешивая их с Local Challenge Questions.
+
+Для каждого вопроса применить лёгкий `KEEP / REWRITE / DELETE` review по [`localization/QUICK_CHECKS.md`](localization/QUICK_CHECKS.md): сохранить полезные micro-cases на boundary, modality, precedence и misconception; definition/vocabulary recall переписать в короткое применение либо удалить, если отдельной педагогической функции нет.
+
+Проверить наборы целиком: не дублируют ли Quick Checks cognitive task уже существующего Local Challenge Question, не возникли ли искусственные квоты, и достаточно ли естественно написан русский текст. Не превращать Quick Checks в скрытый второй набор Challenge Questions.
+
+Сейчас Quick Checks являются RU-only локальным слоем. Подготовка английских версий и предложение этого формата upstream **не входят в текущий план**; решение можно пересмотреть отдельно позже.
+
 ### Level 10: возможный вопрос про Double Gentleman's Discard
 
-При следующем полном review Level 10 отдельно решить, нужен ли локальный Training Question на запрещённый **Double Gentleman's Discard** и связанную с ним asymmetric-information ошибку из Common Mistakes.
+При следующем полном review Level 10 отдельно решить, нужен ли локальный Challenge Question на запрещённый **Double Gentleman's Discard** и связанную с ним asymmetric-information ошибку из Common Mistakes.
 
 Не добавлять вопрос автоматически ради coverage. Сначала проверить, добавляет ли он самостоятельную педагогическую ценность по сравнению с уже сильным набором Level 10, и при необходимости заменить им более слабый/избыточный вопрос, а не просто увеличивать количество страниц.
 
@@ -100,7 +110,7 @@ Selfish Conventions и Number Mute links, которые находятся ря
 
 ### QA coverage registry
 
-Продумать лёгкий способ фиксировать, какие материалы уже прошли отдельные виды review: source-fidelity, Training Questions, diagram review и whole-site consistency.
+Продумать лёгкий способ фиксировать, какие материалы уже прошли отдельные виды review: source-fidelity, Local Challenge Questions, Quick Checks, diagram review и whole-site consistency.
 
 Цель — при будущих обновлениях перепроверять в первую очередь новые и изменившиеся материалы, а не запускать полный ручной аудит всего сайта с нуля.
 
@@ -108,7 +118,7 @@ Selfish Conventions и Number Mute links, которые находятся ря
 
 ### Единый audit pipeline
 
-По возможности свести повторяемые проверки в один воспроизводимый pipeline/report: upstream drift, структура, терминология, подозрительные translation pairs, Training Questions, ссылки, labels/consistency и diagram coverage.
+По возможности свести повторяемые проверки в один воспроизводимый pipeline/report: upstream drift, структура, терминология, подозрительные translation pairs, Local Challenge Questions, Quick Checks, ссылки, labels/consistency и diagram coverage.
 
 Итог должен быть ориентирован на проблемы и предлагаемые исправления, чтобы человеку не приходилось вручную просматривать успешные проверки.
 
