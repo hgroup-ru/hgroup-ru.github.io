@@ -64,6 +64,20 @@
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
+    "url": "https://hackmd.io/@hanab/reactor",
+    "classification": "third-party-resource",
+    "decision": "permission-required",
+    "note": "User-facing Reactor continuation documentation. The RU overview intentionally does not republish concrete rules; verify license/permission and provenance before any local republication."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
+    "url": "https://hackmd.io/@hanab/EasyReactor",
+    "classification": "third-party-resource",
+    "decision": "permission-required",
+    "note": "User-facing Easy Reactor continuation documentation. The RU overview intentionally does not republish concrete rules; verify license/permission and provenance before any local republication."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
     "url": "https://github.com/hanabi/hanabi.github.io/blob/f80d79d904a5df1d4ac561bec35d9414ed8daeeb/misc/hat-guessing.md",
     "classification": "source-attribution",
     "decision": "keep-external",
