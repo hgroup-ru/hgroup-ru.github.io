@@ -1,5 +1,40 @@
 [
   {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/about.mdx",
+    "url": "https://github.com/hgroup-ru/hgroup-ru.github.io/blob/main/CONTRIBUTING.md",
+    "classification": "project-meta",
+    "decision": "keep-external",
+    "note": "Russian contributor documentation in this repository; GitHub is the intended destination."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/about.mdx",
+    "url": "https://github.com/hgroup-ru/hgroup-ru.github.io/blob/main/upstream.json",
+    "classification": "project-meta",
+    "decision": "keep-external",
+    "note": "Machine-readable localization provenance; not an English reading-flow dependency."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/about.mdx",
+    "url": "https://github.com/hgroup-ru/hgroup-ru.github.io/blob/main/LICENSE",
+    "classification": "project-meta",
+    "decision": "keep-external",
+    "note": "Project legal/license destination."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/about.mdx",
+    "url": "https://github.com/hgroup-ru/hgroup-ru.github.io/blob/main/LOCALIZATION_NOTICE_RU.md",
+    "classification": "project-meta",
+    "decision": "keep-external",
+    "note": "Russian localization and attribution notice in this repository."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/example-images.mdx",
+    "url": "https://raw.githubusercontent.com/hanabi/hanabi.github.io/refs/heads/main/docs/level-2.mdx",
+    "classification": "official-upstream-technical",
+    "decision": "keep-external",
+    "note": "Developer-facing upstream MDX example used to demonstrate document structure, not a user reading continuation."
+  },
+  {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
     "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Selfish_Conventions.md",
     "classification": "third-party-resource",
@@ -21,6 +56,55 @@
     "note": "Explicitly blocked in BACKLOG.md pending Jeff/IAMJEFF permission."
   },
   {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/learning-path.mdx",
+    "url": "https://github.com/Hanabi-Live/hanabi-live/blob/main/docs/variants.md",
+    "classification": "third-party-reference",
+    "decision": "keep-external",
+    "note": "Hanabi Live variant catalog referenced as the external platform's own documentation."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
+    "url": "https://github.com/hanabi/hanabi.github.io/blob/f80d79d904a5df1d4ac561bec35d9414ed8daeeb/misc/hat-guessing.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Pinned official H-Group source cited as provenance for the framework overview."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
+    "url": "https://github.com/fpvandoorn/hanabi/blob/master/doc_hat_player.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Original Hat Guessing documentation cited as provenance."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
+    "url": "https://docs.google.com/document/d/1TsqcRDeZkqcAl8zgfSOAxc9-DCtqKtSpVgPvRPRDwAY/edit?usp=sharing",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Canonical Follow the Leader document; the RU overview intentionally does not republish its detailed mechanics."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
+    "url": "https://hackmd.io/@hanab/r1BNv-bqo",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Community convention index used as a source/reference for the overview."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/empty-clues.mdx",
+    "url": "https://www.brettspiele-report.de/images/h/hanabi/Spielanleitung-Hanabi.pdf",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Historical German rulebook cited as primary evidence for the status of Empty Clues."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/empty-clues.mdx",
+    "url": "https://quuxplusone.github.io/blog/images/how-to-make-the-perfect-fireworks-display.pdf",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Research paper cited for historical/strategic context; no local republication is implied."
+  },
+  {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/hat-guessing.mdx",
     "url": "https://github.com/fpvandoorn/hanabi/blob/master/doc_hat_player.md",
     "classification": "source-attribution",
@@ -33,5 +117,26 @@
     "classification": "source-attribution",
     "decision": "keep-external",
     "note": "Referenced research paper used as provenance for the separate Hat Guessing system."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/hat-guessing.mdx",
+    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/hat-guessing/Advanced_Hat_Guessing.md",
+    "classification": "third-party-resource",
+    "decision": "permission-required",
+    "note": "User-facing advanced continuation material by Jeff/IAMJEFF. Do not republish automatically without permission/license review."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/hat-guessing.mdx",
+    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/hat-guessing/Variant-Specific_Hat_Guessing_Tables.md",
+    "classification": "third-party-resource",
+    "decision": "permission-required",
+    "note": "User-facing variant-specific continuation material by Jeff/IAMJEFF. Do not republish automatically without permission/license review."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/variant-specific.mdx",
+    "url": "https://github.com/Hanabi-Live/hanabi-live/blob/main/docs/variants.md",
+    "classification": "third-party-reference",
+    "decision": "keep-external",
+    "note": "Hanabi Live variant catalog referenced as the external platform's own documentation."
   }
 ]
