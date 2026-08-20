@@ -2,7 +2,7 @@ stacks:
   - r: 0
   - y: 0
   - g: 0
-  - b: 0
+  - b: 1
   - p: 0
 bigText:
   text: 2 clues
