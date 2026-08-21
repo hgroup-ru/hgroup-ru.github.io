@@ -62,16 +62,6 @@
 
 Текущее QA-покрытие и его границы фиксируются в [`localization/QA_COVERAGE.md`](localization/QA_COVERAGE.md).
 
-### Единый audit pipeline / report orchestration
-
-Свести оставшиеся повторяемые maintenance-проверки в более удобный problem-oriented workflow там, где это реально снижает ручную работу.
-
-Уже существуют отдельные deterministic guards для Local CQ structure и document-like external links; не дублировать их новым скриптом ради одного названия pipeline.
-
-Оставшийся полезный scope: upstream drift, terminology, suspicious translation pairs, labels/cross-consistency candidates и diagram coverage, с итоговым report, ориентированным на проблемы и предлагаемые действия, а не на длинный список успешных проверок.
-
-Semantic/cross-consistency verdicts не автоматизировать: pipeline может собирать кандидатов, но не решать за человека, является ли отличие ошибкой, progression или допустимой формулировкой.
-
 ## Локальные учебные диаграммы
 
 ### Расширить coverage в Extras и Variant-Specific
@@ -96,7 +86,7 @@ Semantic/cross-consistency verdicts не автоматизировать: pipel
 
 ### Upstream drift check перед крупными продуктовыми изменениями
 
-Перед следующим большим product batch сравнить закреплённую revision из [`upstream.json`](upstream.json) с текущим official upstream и понять, появились ли изменения MDX/YML/структуры, которые разумнее забрать до новой реализации.
+Перед следующим большим product batch запустить ручной [`Maintenance Audit`](.github/workflows/maintenance-audit.yml) и проверить, совпадает ли закреплённая revision из [`upstream.json`](upstream.json) с текущим official upstream.
 
 Не обновлять pin автоматически только ради свежести. Если drift не затрагивает наш scope или не даёт полезных изменений, оставить текущую revision.
 
