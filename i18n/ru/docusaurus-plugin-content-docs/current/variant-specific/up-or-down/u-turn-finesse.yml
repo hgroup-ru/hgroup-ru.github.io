@@ -1,6 +1,5 @@
 players:
-  - clueGiver: true
-    cards:
+  - cards:
       - type: x
         middleNote: r1
       - type: x
@@ -10,7 +9,8 @@ players:
       - type: x
         middleNote: r4
       - type: x
-  - cards:
+  - clueGiver: true
+    cards:
       - type: x
       - type: x
       - type: x
