@@ -1,7 +1,7 @@
 name: PR Format Patch
 
 on:
-  pull_request:
+  pull_request: {}
 
 permissions:
   contents: read
