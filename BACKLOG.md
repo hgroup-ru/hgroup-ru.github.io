@@ -4,15 +4,11 @@
 
 ## Продукт
 
-### Jeff's 2-player Score Hunting Guide — BLOCKED
+### Jeff's 2-player Score Hunting Guide — DEFERRED / BLOCKED
 
-**BLOCKED pending Jeff permission.** Не переводить, не публиковать и не продолжать research по этому материалу до явного разрешения Jeff/IAMJEFF на локализацию и публикацию.
+Не считать это текущей задачей. Возвращаться к локализации или републикации только после явного разрешения Jeff/IAMJEFF и отдельного решения о source revision, attribution и допустимом scope.
 
-После получения разрешения вернуться к задаче отдельным решением: зафиксировать точную source revision, требования к attribution и допустимый scope перевода, а затем локализовать source-faithfully. До этого момента задача остаётся в бэклоге только как blocker record.
-
-Источник на текущем сайте ведёт в репозиторий IAMJEFF (`iamwhoiamhahaha/hanabi`, `2-player/Score_Hunting_Guide.md`). Не представлять этот внешний материал как официальный H-Group text, если источник сам этого не утверждает.
-
-Selfish Conventions и Number Mute links, которые находятся рядом в том же source-блоке, не включать автоматически в scope этой задачи; оценить их отдельно при инвентаризации 2-player ресурсов.
+До этого момента внешний материал остаётся внешним. Не представлять его как официальный H-Group text и не блокировать им остальную работу проекта.
 
 ### Контекстный возврат
 
@@ -48,109 +44,68 @@ Selfish Conventions и Number Mute links, которые находятся ря
 
 ## Редакционный и semantic QA
 
-### Local Challenge Questions: одинаковый аудит и оставшиеся Levels
+### Полная ручная вычитка Local Challenge Questions
 
-Сначала провести fresh page-by-page ruthless audit локальных Challenge Questions **Levels 9–22** по [`localization/LOCAL_CHALLENGE_QUESTIONS.md`](localization/LOCAL_CHALLENGE_QUESTIONS.md). Предыдущий PASS, массовый screening или недавняя правка не заменяют нового независимого review.
+После завершённых level-by-level audits, глобального red-team и pre-proof triage остаётся отдельный human-grade proofreading pass по активному корпусу из 242 Local Challenge Questions.
 
-Для каждой страницы требуются blind solve, самостоятельные EN и RU editorial passes, EN ↔ RU parity, Solution review, adversarial/mutation checks, POV/epistemics/timeline и явный `KEEP / REWRITE / DELETE`. В рабочем evidence дополнительно отмечать, совпадает ли learning objective с Quick Check: `none` или `intentional prerequisite`.
+[`localization/CQ_PREPROOF_AUDIT_2026-08-20.md`](localization/CQ_PREPROOF_AUDIT_2026-08-20.md) содержит механическую pre-proof проверку и рекомендуемый порядок ручного чтения. Этот report — guide по приоритетам, а не доказательство отсутствия semantic/editorial defects.
 
-**Levels 2–8 остаются заморожены** для повторного аудита Official Challenge Questions и официального материала.
+При вычитке:
 
-После стабилизации Levels 9–22 отдельно подготовить локальные Challenge Questions для **Levels 23–25**. Обычные Level pages 23–25 существуют, но отдельный локальный challenge-question coverage для них нужно проектировать с нуля по актуальному стандарту; не выдавать его за Official Challenge Questions и не оптимизировать количество страниц.
+- читать Question и Solution как полноценный учебный материал, а не только искать структурные ошибки;
+- проверять естественность русского текста, modality, POV/epistemics, chronology и достаточность объяснения;
+- сравнивать EN/RU там, где формулировка вызывает сомнение;
+- не считать предыдущие PASS доказательством идеальности;
+- исправлять только подтверждённые defects и оставлять короткий audit trail для реально изменённых вопросов.
 
-Изменения интегрировать разумными небольшими batches/PR, даже если методологически аудит всего диапазона является единым проходом.
+**Official Challenge Questions и официальный материал Levels 2–8 остаются заморожены** для повторного аудита; Local CQ proofreading не является основанием автоматически открывать этот scope.
 
-### Аудит встроенных Quick Checks
+Текущее QA-покрытие и его границы фиксируются в [`localization/QA_COVERAGE.md`](localization/QA_COVERAGE.md).
 
-После стабилизации Local Challenge Questions отдельно пройти короткие вопросы `Тренировочные вопросы`, встроенные в Levels, и привести их к роли **Quick Checks / Быстрой самопроверки**, не смешивая их с Local Challenge Questions.
+### Единый audit pipeline / report orchestration
 
-Для каждого вопроса применить лёгкий `KEEP / REWRITE / DELETE` review по [`localization/QUICK_CHECKS.md`](localization/QUICK_CHECKS.md): сохранить полезные micro-cases на boundary, modality, precedence и misconception; definition/vocabulary recall переписать в короткое применение либо удалить, если отдельной педагогической функции нет.
+Свести оставшиеся повторяемые maintenance-проверки в более удобный problem-oriented workflow там, где это реально снижает ручную работу.
 
-Начать с калибровки на Levels 10, 1 и 25, затем масштабировать аудит на Levels 1–25. В Levels 2–8 можно редактировать только локальный Quick Check layer; это не основание заново аудировать Official CQ, source text или official diagrams.
+Уже существуют отдельные deterministic guards для Local CQ structure и document-like external links; не дублировать их новым скриптом ради одного названия pipeline.
 
-Проверить наборы целиком: не дублируют ли Quick Checks cognitive task уже существующего Local Challenge Question, не возникли ли искусственные квоты, и достаточно ли естественно написан русский текст. Не превращать Quick Checks в скрытый второй набор Challenge Questions.
+Оставшийся полезный scope: upstream drift, terminology, suspicious translation pairs, labels/cross-consistency candidates и diagram coverage, с итоговым report, ориентированным на проблемы и предлагаемые действия, а не на длинный список успешных проверок.
 
-Сейчас Quick Checks являются RU-only локальным слоем. Подготовка английских версий и предложение этого формата upstream **не входят в текущий план**; решение можно пересмотреть отдельно позже.
-
-### Level 10: возможный вопрос про Double Gentleman's Discard
-
-При следующем полном review Level 10 отдельно решить, нужен ли локальный Challenge Question на запрещённый **Double Gentleman's Discard** и связанную с ним asymmetric-information ошибку из Common Mistakes.
-
-Не добавлять вопрос автоматически ради coverage. Сначала проверить, добавляет ли он самостоятельную педагогическую ценность по сравнению с уже сильным набором Level 10, и при необходимости заменить им более слабый/избыточный вопрос, а не просто увеличивать количество страниц.
-
-Хороший кандидат должен проверять именно misconception «если для наблюдателя discard мог означать две identities, значит он переносит обе», а не просить пересказать запрет из текста Level.
-
-### Аудит внешних англоязычных материалов и ссылок
-
-Автоматически проинвентаризировать пользовательские ссылки по всему RU-сайту, которые ведут на внешние текстовые материалы и могут оставлять читателя на английской странице: GitHub `blob`/`raw`, Markdown/MDX-файлы, внешние guides, appendices, examples и аналогичные документы.
-
-Каждую такую ссылку классифицировать:
-
-- официальный H-Group upstream material;
-- сторонний авторский ресурс;
-- source/attribution link, который должен оставаться внешним;
-- техническая или служебная ссылка, не являющаяся частью пользовательского reading flow.
-
-Для пользовательских англоязычных материалов, которые реально нужны русской версии:
-
-- если это официальный материал из нашего pinned upstream, локализовать его source-faithfully и опубликовать на нормальном RU destination;
-- если это сторонний ресурс, сначала зафиксировать точную revision/version и проверить license/permission и attribution; переносить перевод к нам только когда это разрешено;
-- сохранить авторство и оригинальную source-ссылку рядом с локальной версией, когда это важно для provenance;
-- после появления локальной версии заменить пользовательские переходы на canonical RU-link, не удаляя необходимый source/attribution access;
-- если републикация невозможна по лицензии или разрешению, не копировать текст молча: отдельно решить допустимый RU-сопроводительный вариант и сохранить внешний источник;
-- прогнать link QA, чтобы не осталось маршрутов, где русская статья неожиданно отправляет пользователя читать английский файл только потому, что так было устроено в upstream.
-
-Этот аудит должен включать не только основной H-Group repository: внешние репозитории и авторские guides тоже входят в scope.
-
-### QA coverage registry
-
-Продумать лёгкий способ фиксировать, какие материалы уже прошли отдельные виды review: source-fidelity, Local Challenge Questions, Quick Checks, diagram review и whole-site consistency.
-
-Цель — при будущих обновлениях перепроверять в первую очередь новые и изменившиеся материалы, а не запускать полный ручной аудит всего сайта с нуля.
-
-Не превращать registry в тяжёлую ручную базу данных или формальную бюрократию.
-
-### Единый audit pipeline
-
-По возможности свести повторяемые проверки в один воспроизводимый pipeline/report: upstream drift, структура, терминология, подозрительные translation pairs, Local Challenge Questions, Quick Checks, ссылки, labels/consistency и diagram coverage.
-
-Итог должен быть ориентирован на проблемы и предлагаемые исправления, чтобы человеку не приходилось вручную просматривать успешные проверки.
+Semantic/cross-consistency verdicts не автоматизировать: pipeline может собирать кандидатов, но не решать за человека, является ли отличие ошибкой, progression или допустимой формулировкой.
 
 ## Contributor experience
 
-### CI autofix для внешних контрибьюторов
+### Fork-safe CI autofix для внешних контрибьюторов
 
-Добавить безопасный механизм автоматического исправления технических ошибок в PR от внешних контрибьюторов там, где исправление детерминировано и не меняет смысл материала.
+Текущий `/format` уже решает formatter-only исправления для авторизованных same-repository PR. Оставшийся scope — безопасная архитектура для fork PR.
 
-В первую очередь рассмотреть:
+Нельзя выполнять непроверенный код из fork с write-token или secrets. Предпочтительный дизайн:
 
-- Prettier и другие formatter-only исправления;
-- простые ESLint fixes, для которых `--fix` не меняет семантику;
-- нормализацию trailing newline / whitespace и аналогичные механические проблемы;
-- при необходимости — понятный комментарий CI о том, что было исправлено автоматически, а что осталось ручным.
+- untrusted validation формирует диагностический результат и при необходимости patch/diff artifact;
+- privileged шаг запускается только после явного maintainer action и заново проверяет точный PR/head;
+- deterministic formatter/fixer применяется из доверенного workflow;
+- если безопасный push в fork невозможен, пользователю выдаётся готовый patch/suggestion вместо обхода permission model.
 
-Отдельно проверить модель GitHub permissions для fork PR. Нельзя небезопасно выполнять непроверенный код из внешнего PR с write-token или secrets. Если прямой push в ветку автора невозможен или небезопасен, выбрать безопасную архитектуру: например, разделить untrusted validation и privileged autofix, использовать maintainer-triggered workflow либо выдавать готовый patch/commit suggestion.
-
-Autofix не должен пытаться самостоятельно исправлять source-fidelity, терминологические решения, смысл Hanabi-конвенций или другие semantic failures. Такие проверки должны оставаться diagnostic-only и объяснять контрибьютору, что именно нужно решить.
+Autofix не должен исправлять source-fidelity, терминологические решения, смысл Hanabi-конвенций или другие semantic failures. Такие проверки остаются diagnostic-only.
 
 ### Ревизия публичной документации для контрибьюторов
 
-Вычитать Markdown-документы публичного репозитория как contributor-facing продукт и определить, какие из них действительно нужны внешнему участнику, насколько понятно они написаны и нет ли там исторического или внутреннего maintainer-контекста, который только мешает.
+Вычитать Markdown-документы публичного репозитория как contributor-facing продукт и определить, какие из них действительно нужны внешнему участнику, насколько понятно они написаны и нет ли там исторического или внутреннего maintainer-контекста.
 
-Начальный scope включает как минимум `README.md`, `CONTRIBUTING.md`, `ARCHITECTURE.md`, `LOCALIZATION_NOTICE_RU.md`, `Reference.md` и другие корневые/служебные `.md`, которые видит потенциальный контрибьютор. Для каждого файла классифицировать назначение: onboarding, contribution workflow, архитектура, provenance/legal, compatibility redirect, maintainer-only или кандидат на удаление/слияние.
+Начальный scope включает как минимум `README.md`, `CONTRIBUTING.md`, `ARCHITECTURE.md`, `LOCALIZATION_NOTICE_RU.md`, `Reference.md` и другие корневые/служебные `.md`, которые видит потенциальный контрибьютор.
+
+Для каждого файла классифицировать назначение: onboarding, contribution workflow, архитектура, provenance/legal, compatibility redirect, maintainer-only или кандидат на удаление/слияние.
 
 Проверить:
 
 - понятно ли человеку без внутреннего контекста, что это за проект и куда отправлять разные типы правок;
 - достаточно ли короток путь от README до первого успешного PR;
 - не дублируют ли README/CONTRIBUTING/ARCHITECTURE друг друга;
-- актуальны ли команды, CI expectations, naming/branch conventions и описание структуры репозитория;
+- актуальны ли команды, CI expectations и описание структуры репозитория;
 - хорошо ли объяснена граница между upstream H-Group content и локальными RU-дополнениями;
 - нет ли инструкций, которые нужны только maintainers и должны жить в приватном maintainer repo;
-- можно ли что-то сократить, объединить или удалить без потери полезного contributor guidance;
-- нужны ли дополнительные короткие разделы вроде «быстрый старт», «что можно править», «как проверить изменение» и «что произойдёт после открытия PR».
+- можно ли что-то сократить, объединить или удалить без потери полезного contributor guidance.
 
-Результатом должен быть конкретный proposal по каждому contributor-facing `.md`: оставить, переписать, сократить, дополнить, объединить, перенести или удалить. После согласования сделать один компактный docs cleanup batch, а не серию косметических PR.
+Результатом должен быть конкретный proposal по каждому contributor-facing `.md`, затем один компактный docs cleanup batch.
 
 ## Локальные учебные диаграммы
 
@@ -174,7 +129,7 @@ Autofix не должен пытаться самостоятельно испр
 
 ## Сопровождение upstream
 
-### Upstream drift check перед крупными продуктовым изменениями
+### Upstream drift check перед крупными продуктовыми изменениями
 
 Перед следующим большим product batch сравнить закреплённую revision из [`upstream.json`](upstream.json) с текущим official upstream и понять, появились ли изменения MDX/YML/структуры, которые разумнее забрать до новой реализации.
 
