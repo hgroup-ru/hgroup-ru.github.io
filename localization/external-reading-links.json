@@ -65,16 +65,16 @@
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
     "url": "https://hackmd.io/@hanab/reactor",
-    "classification": "third-party-resource",
-    "decision": "permission-required",
-    "note": "User-facing Reactor continuation documentation. The RU overview intentionally does not republish concrete rules; verify license/permission and provenance before any local republication."
+    "classification": "third-party-reference",
+    "decision": "keep-external",
+    "note": "Canonical Reactor continuation documentation for a separate convention system. H-Group RU intentionally keeps this external and does not plan a local translation/republication."
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
     "url": "https://hackmd.io/@hanab/EasyReactor",
-    "classification": "third-party-resource",
-    "decision": "permission-required",
-    "note": "User-facing Easy Reactor continuation documentation. The RU overview intentionally does not republish concrete rules; verify license/permission and provenance before any local republication."
+    "classification": "third-party-reference",
+    "decision": "keep-external",
+    "note": "Canonical Easy Reactor continuation documentation for a separate convention system. H-Group RU intentionally keeps this external and does not plan a local translation/republication."
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/misc/convention-systems-overview.mdx",
