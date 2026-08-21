@@ -72,41 +72,6 @@
 
 Semantic/cross-consistency verdicts не автоматизировать: pipeline может собирать кандидатов, но не решать за человека, является ли отличие ошибкой, progression или допустимой формулировкой.
 
-## Contributor experience
-
-### Fork-safe CI autofix для внешних контрибьюторов
-
-Текущий `/format` уже решает formatter-only исправления для авторизованных same-repository PR. Оставшийся scope — безопасная архитектура для fork PR.
-
-Нельзя выполнять непроверенный код из fork с write-token или secrets. Предпочтительный дизайн:
-
-- untrusted validation формирует диагностический результат и при необходимости patch/diff artifact;
-- privileged шаг запускается только после явного maintainer action и заново проверяет точный PR/head;
-- deterministic formatter/fixer применяется из доверенного workflow;
-- если безопасный push в fork невозможен, пользователю выдаётся готовый patch/suggestion вместо обхода permission model.
-
-Autofix не должен исправлять source-fidelity, терминологические решения, смысл Hanabi-конвенций или другие semantic failures. Такие проверки остаются diagnostic-only.
-
-### Ревизия публичной документации для контрибьюторов
-
-Вычитать Markdown-документы публичного репозитория как contributor-facing продукт и определить, какие из них действительно нужны внешнему участнику, насколько понятно они написаны и нет ли там исторического или внутреннего maintainer-контекста.
-
-Начальный scope включает как минимум `README.md`, `CONTRIBUTING.md`, `ARCHITECTURE.md`, `LOCALIZATION_NOTICE_RU.md`, `Reference.md` и другие корневые/служебные `.md`, которые видит потенциальный контрибьютор.
-
-Для каждого файла классифицировать назначение: onboarding, contribution workflow, архитектура, provenance/legal, compatibility redirect, maintainer-only или кандидат на удаление/слияние.
-
-Проверить:
-
-- понятно ли человеку без внутреннего контекста, что это за проект и куда отправлять разные типы правок;
-- достаточно ли короток путь от README до первого успешного PR;
-- не дублируют ли README/CONTRIBUTING/ARCHITECTURE друг друга;
-- актуальны ли команды, CI expectations и описание структуры репозитория;
-- хорошо ли объяснена граница между upstream H-Group content и локальными RU-дополнениями;
-- нет ли инструкций, которые нужны только maintainers и должны жить в приватном maintainer repo;
-- можно ли что-то сократить, объединить или удалить без потери полезного contributor guidance.
-
-Результатом должен быть конкретный proposal по каждому contributor-facing `.md`, затем один компактный docs cleanup batch.
-
 ## Локальные учебные диаграммы
 
 ### Расширить coverage в Extras и Variant-Specific
