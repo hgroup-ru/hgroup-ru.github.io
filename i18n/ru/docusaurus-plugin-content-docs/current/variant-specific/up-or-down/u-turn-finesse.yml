@@ -1,0 +1,33 @@
+players:
+  - cards:
+      - type: x
+        middleNote: r1
+      - type: x
+        middleNote: r2
+      - type: x
+        middleNote: r3
+      - type: x
+        middleNote: r4
+      - type: x
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r5
+        clue: r
+        retouched: true
+        below: Play
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

@@ -1,0 +1,38 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Blue 1
+        below: Blind-play
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+        above: Green 1
+        below: Blind-play
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: r2
+        clue: r
+        below: Play
+      - type: x
+      - type: x
+      - type: x
+      - type: x

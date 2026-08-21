@@ -4,6 +4,7 @@ title: Ejections
 
 import RankChoice from "./ejections/rank-choice.yml";
 import BadTrashFinesseEjection from "./ejections/bad-trash-finesse-ejection.yml";
+import TrashPushEjection from "./ejections/trash-push-ejection.yml";
 
 - _Ejection_ — это blind-play, при котором игрок разыгрывает карту из своей _Second Finesse Position_.
   - Например, если на руке игрока вообще нет подсказок, его _Second Finesse Position_ — слот 2.
@@ -24,6 +25,10 @@ import BadTrashFinesseEjection from "./ejections/bad-trash-finesse-ejection.yml"
 - Но что, если _Pushed_-карта _two-or-more-away-from-playable_? Обычно это был бы _Trash Push Double Finesse_ на Боба, но такая интерпретация маловероятна.
 - Вместо этого, поскольку ни один одиночный розыгрыш не может предотвратить немедленный мисплей _Pushed_-карты, Боб трактует подсказку как _Ejection_.
 - После _Trash Push Ejection_ получателю подсказки следует пометить _two-or-more-away-from-playable_ карту как _Chop Moved_.
+
+> **Локальная учебная диаграмма H-Group RU.** Это не официальный upstream-расклад: схема минимально варьирует официальный пример _Trash Push_, чтобы вытолкнутая красная 4 была _two-or-more-away-from-playable_ и тем самым наглядно показывала переход к _Ejection_.
+
+<TrashPushEjection />
 
 ### Bad Chop Move Ejection (BCME) {/* #the-bad-chop-move-ejection-bcme */}
 

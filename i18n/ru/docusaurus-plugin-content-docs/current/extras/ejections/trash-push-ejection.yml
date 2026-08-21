@@ -1,0 +1,35 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+        above: Blue 2
+        below: Ejection
+      - type: x
+      - type: x
+      - type: x
+  - cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: r4
+        border: false
+        cm: true
+        above: Pushed
+        below: Chop Move
+      - type: 1
+        clue: 1
+        trash: true
+        below: Trash

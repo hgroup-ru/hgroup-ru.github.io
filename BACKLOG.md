@@ -68,13 +68,10 @@
 
 Текущие известные кандидаты:
 
-- [`extras/ejections`](i18n/ru/docusaurus-plugin-content-docs/current/extras/ejections.mdx) — Trash Push Ejection / Bad Chop Move Ejection;
+- [`extras/ejections`](i18n/ru/docusaurus-plugin-content-docs/current/extras/ejections.mdx) — Bad Chop Move Ejection;
 - [`extras/special-bluffs`](i18n/ru/docusaurus-plugin-content-docs/current/extras/special-bluffs.mdx) — Pass / Double Pass / Triple Pass Bluff;
 - [`extras/pushes-pulls`](i18n/ru/docusaurus-plugin-content-docs/current/extras/pushes-pulls.mdx) — Trash Pull и взаимодействие с Trash Double Ignition;
-- [`extras/play-clues`](i18n/ru/docusaurus-plugin-content-docs/current/extras/play-clues.mdx) — Continuation Clue внутри/снаружи Layered Finesse;
-- [`variant-specific/up-or-down`](i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/up-or-down.mdx) — U-Turn Finesse;
-- [`variant-specific/no-positive-clues`](i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/no-positive-clues.mdx) — Transparent Double Bluff;
-- [`variant-specific/odds-and-evens`](i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/odds-and-evens.mdx) — 5 Odd Ejection.
+- [`extras/play-clues`](i18n/ru/docusaurus-plugin-content-docs/current/extras/play-clues.mdx) — Continuation Clue внутри/снаружи Layered Finesse.
 
 ## Сопровождение upstream
 
