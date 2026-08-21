@@ -111,6 +111,74 @@ jobs:
             echo "- ⚪ NOT RUN: visual QA is outside this maintenance audit."
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Notify Telegram
+        if: ${{ always() }}
+        continue-on-error: true
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          CORE_OUTCOME: ${{ steps.core.outcome }}
+          LOCAL_CQ_OUTCOME: ${{ steps.local-cq.outcome }}
+          EXTERNAL_LINKS_OUTCOME: ${{ steps.external-links.outcome }}
+          UPSTREAM_OUTCOME: ${{ steps.upstream.outcome }}
+          UPSTREAM_DRIFT: ${{ steps.upstream.outputs.drift }}
+          PINNED_REVISION: ${{ steps.upstream.outputs.pinned }}
+          UPSTREAM_HEAD: ${{ steps.upstream.outputs.head }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram notifications are not configured; skipping."
+            exit 0
+          fi
+
+          check_status() {
+            if [ "$1" = "success" ]; then
+              printf '%s' '🟢'
+            else
+              printf '%s' '🔴'
+            fi
+          }
+
+          if [ "$CORE_OUTCOME" != "success" ] \
+            || [ "$LOCAL_CQ_OUTCOME" != "success" ] \
+            || [ "$EXTERNAL_LINKS_OUTCOME" != "success" ] \
+            || [ "$UPSTREAM_OUTCOME" != "success" ]; then
+            headline='🔴 Maintenance Audit: FAIL'
+            tag='#failed'
+          elif [ "$UPSTREAM_DRIFT" = "true" ]; then
+            headline='🟡 Maintenance Audit: PASS, есть upstream drift'
+            tag='#warning'
+          else
+            headline='🟢 Maintenance Audit: PASS'
+            tag='#success'
+          fi
+
+          if [ "$UPSTREAM_OUTCOME" != "success" ]; then
+            upstream_line='🔴 upstream check failed'
+          elif [ "$UPSTREAM_DRIFT" = "true" ]; then
+            upstream_line="🟡 upstream drift: ${PINNED_REVISION:0:7} → ${UPSTREAM_HEAD:0:7}"
+          else
+            upstream_line="🟢 upstream: ${PINNED_REVISION:0:7}"
+          fi
+
+          text="$(printf '#maintenance #audit %s\n%s\n%s core · %s local-cq · %s links\n%s\n%s' \
+            "$tag" "$headline" \
+            "$(check_status "$CORE_OUTCOME")" \
+            "$(check_status "$LOCAL_CQ_OUTCOME")" \
+            "$(check_status "$EXTERNAL_LINKS_OUTCOME")" \
+            "$upstream_line" "$RUN_URL")"
+
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --request POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${text}" \
+            >/dev/null
+
       - name: Enforce deterministic audit result
         if: ${{ always() }}
         shell: bash
