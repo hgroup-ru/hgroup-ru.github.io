@@ -22,7 +22,6 @@ players:
       - type: x
   - cards:
       - type: r
-        clue: r
         below: Loaded
       - type: x
       - type: x
