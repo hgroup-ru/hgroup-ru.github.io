@@ -62,6 +62,7 @@
 - [`TERMINOLOGY_RU.md`](TERMINOLOGY_RU.md) — принятая терминология;
 - [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md) — стандарт составления, вычитки и semantic QA локальных challenge-style задач;
 - [`QUICK_CHECKS.md`](QUICK_CHECKS.md) — короткий стандарт встроенной быстрой самопроверки;
+- [`QA_COVERAGE.md`](QA_COVERAGE.md) — лёгкий registry уже выполненных типов review, их scope, evidence и явных границ покрытия;
 - [`SOURCE_EXCEPTIONS.md`](SOURCE_EXCEPTIONS.md) — осознанные отличия от закреплённой версии источника;
-- [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) — находки, которые могут быть полезны исходному проекту.
+- [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) — находки, которые могут быть полезны исходному проекту;
 - [`upstream-candidates/README.md`](upstream-candidates/README.md) — подробные рабочие карточки для подготовки upstream Pull Request.
