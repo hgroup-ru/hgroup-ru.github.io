@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch publication workflow
+        id: dispatch
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -37,6 +38,7 @@ jobs:
           esac
 
           source_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
+          echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
           echo "Dispatching $label from main at $source_sha."
           jq -n --arg ref main '{ref: $ref}' |
             gh api \
@@ -47,6 +49,36 @@ jobs:
           gh issue comment "$CONTROL_ISSUE" \
             --repo "$GITHUB_REPOSITORY" \
             --body "${label} requested from \`main\` at \`$source_sha\`."
+
+      - name: Notify Telegram that official release started
+        if: github.event.issue.number == 100 && steps.dispatch.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          SOURCE_SHA: ${{ steps.dispatch.outputs.source_sha }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram notifications are not configured; skipping."
+            exit 0
+          fi
+
+          message="#release #production #started
+          🚀 <b>Официальный релиз запущен</b>
+          Source: <code>${SOURCE_SHA}</code>"
+
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --request POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "disable_web_page_preview=true" \
+            --data-urlencode "text=${message}" \
+            >/dev/null
 
       - name: Reopen control issue
         if: always()
