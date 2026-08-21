@@ -10,7 +10,7 @@
     "docusaurus": "docusaurus",
     "format": "npm run generate-product-data && eslint --fix . && prettier --write .",
     "generate-product-data": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/generateProductData.mts",
-    "lint": "npm run generate-product-data && tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts && npm run audit:external-links",
+    "lint": "npm run generate-product-data && tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts && tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkLocalChallengeQuestions.mts && npm run audit:external-links",
     "prepare": "husky",
     "serve": "docusaurus serve",
     "start": "npm run generate-product-data && npm run compile-plugin && docusaurus start",
