@@ -69,7 +69,7 @@ jobs:
               "screenshots/${slug}-desktop.png"
             npx --yes playwright@1.55.0 screenshot \
               --browser chromium \
-              --device "iPhone 13" \
+              --device "Pixel 5" \
               --full-page \
               "$url" \
               "screenshots/${slug}-mobile.png"
