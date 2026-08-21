@@ -1,58 +1,58 @@
-# Challenge Questions pre-proof audit — 2026-08-20
+# Предварительный аудит контрольных вопросов перед вычиткой — 2026-08-20
 
-Status: **🟡 PENDING** manual full proofreading.
+Статус: **🟡 PENDING** — требуется полная ручная вычитка.
 
-This is a fast pre-proofing layer after the global CQ red-team pass in PR #178. It is intentionally **not** a second full semantic red-team and does not claim that every question is proven correct. Its purpose is to remove mechanical/state-integrity distractions and give the human proofreading pass a useful priority order.
+Это быстрый предварительный слой проверки после глобального red-team корпуса CQ в PR #178. Он намеренно **не** является вторым полным semantic red-team и не утверждает, что корректность каждого вопроса доказана. Его задача — убрать отвлекающие механические проблемы и проблемы целостности состояний, а также дать полезный порядок приоритетов для ручной вычитки.
 
-## Baseline and source
+## Базовая версия и источник
 
-- Repository baseline: `43c33c93df5bdbba355f066929cc8cada6fe1f15` (merge of PR #178).
-- Pinned H-Group upstream: `hanabi/hanabi.github.io@f80d79d904a5df1d4ac561bec35d9414ed8daeeb`.
-- Local Challenge Questions are H-Group RU instructional material, not Official H-Group Challenge Questions unless a page explicitly embeds an official Q/S.
+- Базовая версия репозитория: `43c33c93df5bdbba355f066929cc8cada6fe1f15` (merge PR #178).
+- Закреплённый upstream H-Group: `hanabi/hanabi.github.io@f80d79d904a5df1d4ac561bec35d9414ed8daeeb`.
+- Local Challenge Questions — это учебный материал H-Group RU, а не Official H-Group Challenge Questions, если только на странице явно не встроены официальный Question/Solution.
 
-## Corpus inventory
+## Инвентаризация корпуса
 
 **🟢 PASS**
 
-- 242 CQ pages after excluding the 24 Level intro pages (`level-2.mdx` … `level-25.mdx`).
-- 242/242 have paired EN and RU pages.
-- No missing Question/Solution tabs were found.
-- 208/242 import one or more YAML states/diagrams.
-- 34/242 are text-only.
-- No imported YAML path was missing.
-- Effective sidebar coverage is 242/242. `sidebars.ts` deliberately wraps `sidebars-base.ts` and appends Levels 23–25; checking only `sidebars-base.ts` produces a false 30-page "orphan" signal.
+- 242 страницы CQ после исключения 24 вводных страниц уровней (`level-2.mdx` … `level-25.mdx`).
+- Для 242/242 существуют парные EN- и RU-страницы.
+- Отсутствующих вкладок Question/Solution не обнаружено.
+- 208/242 импортируют одно или несколько YAML-состояний/диаграмм.
+- 34/242 содержат только текст.
+- Отсутствующих путей к импортируемым YAML не обнаружено.
+- Фактическое покрытие sidebar — 242/242. `sidebars.ts` намеренно оборачивает `sidebars-base.ts` и добавляет уровни 23–25; проверка только `sidebars-base.ts` даёт ложный сигнал о 30 «осиротевших» страницах.
 
 ## EN ↔ RU triage
 
-The machine pass generated candidates for changed polarity/modality (`must`, `only`, prohibitions), explicit card-identity tokens, and clue-count wording. These are **candidate generators only**: Russian often expresses the same semantic force without a one-to-one lexical marker.
+Машинный проход сформировал кандидатов по различиям в polarity/modality (`must`, `only`, запреты), явным токенам идентичности карт и формулировкам количества подсказок. Это **только генераторы кандидатов**: русский язык часто передаёт ту же смысловую силу без прямого лексического соответствия один к одному.
 
-The highest-priority candidate set was reviewed side-by-side by the model. No confirmed EN↔RU semantic defect was found in that reviewed top set. Typical false positives included:
+Набор кандидатов с наивысшим приоритетом был просмотрен моделью параллельно в EN и RU. В этой проверенной верхней группе подтверждённых EN↔RU semantic defects не найдено. Типичные ложные срабатывания:
 
-- English `must not` vs Russian `не должна` / a negative construction outside the detector;
-- English `only` vs Russian wording that encodes uniqueness through the sentence structure;
-- repeated English `8 clues` / `5 clue` wording vs a single Russian mention with unchanged game state;
-- `must` in explanatory English rendered as a direct Russian consequence without weakening the rule.
+- английское `must not` против русского `не должна` или отрицательной конструкции вне детектора;
+- английское `only` против русской формулировки, где уникальность задаётся структурой предложения;
+- повторяющиеся английские формулировки `8 clues` / `5 clue` против одного упоминания по-русски при неизменном игровом состоянии;
+- `must` в объяснительном английском, переданное по-русски как прямое следствие без ослабления правила.
 
-This does **not** clear the remaining lexical candidates automatically. They remain useful places to pay extra attention during manual proofreading.
+Это **не** означает автоматического снятия остальных лексических кандидатов. Они остаются полезными местами, которым стоит уделить дополнительное внимание при ручной вычитке.
 
-## Diagram/state-grounded anomaly pass
+## Проверка аномалий, привязанная к диаграммам и состояниям
 
-All 208 state-bearing CQ were included in the deterministic state/text pass. Four apparent stack contradictions were generated and all four were semantically adjudicated as false positives:
+Все 208 CQ с состояниями вошли в детерминированный state/text pass. Были сгенерированы четыре предполагаемых противоречия со стопками; все четыре семантически разобраны как ложные срабатывания:
 
-1. `level-21-ignition-definition` — YAML has green stack at 1 and Bob holds green 2. The prose describes Bob **blind-playing** that playable green 2; it does not claim green 2 is already on the stack.
-2. `level-2-two-possibilities-i` — YAML has blue stack at 1 and Cathy holds blue 2. The Solution explicitly says blue 2 **has not been played**; the detector matched the negated phrase.
-3. `level-5-multiple-possibilities` — YAML has yellow stack at 1 and Cathy's yellow 2 is the Prompt possibility. The prose discusses the prospective play/interpretation, not an already-played yellow 2.
-4. `level-7-another-scream-discard` — YAML has green stack at 2 and Bob's green 4 is one-away-from-playable because green 3 **has not been played yet**. The detector again matched a negated/future statement.
+1. `level-21-ignition-definition` — в YAML зелёная стопка находится на 1, а у Боба зелёная 2. В тексте описывается, как Боб **вслепую разыгрывает** эту играбельную зелёную 2; там не утверждается, что зелёная 2 уже находится на стопке.
+2. `level-2-two-possibilities-i` — в YAML синяя стопка находится на 1, а у Кэти синяя 2. В Solution прямо сказано, что синяя 2 **ещё не сыграна**; детектор сработал на отрицательную формулировку.
+3. `level-5-multiple-possibilities` — в YAML жёлтая стопка находится на 1, а жёлтая 2 Кэти является возможностью Prompt. В тексте обсуждается будущий розыгрыш/интерпретация, а не уже сыгранная жёлтая 2.
+4. `level-7-another-scream-discard` — в YAML зелёная стопка находится на 2, а зелёная 4 Боба считается one-away-from-playable, потому что зелёная 3 **ещё не сыграна**. Детектор снова сработал на отрицательное/будущее высказывание.
 
-Result: **🟢 PASS** for the filtered state-grounded contradiction pass: no confirmed diagram/state defect was found among generated anomalies.
+Результат: **🟢 PASS** для отфильтрованной проверки state-grounded contradictions: среди сгенерированных аномалий подтверждённых дефектов диаграмм/состояний не найдено.
 
-This is not a replacement for a fresh human visual inspection of every diagram. No diagram/YML was changed in this batch, so browser visual QA is **⚪ NOT RUN**.
+Это не заменяет новую ручную визуальную проверку каждой диаграммы. В этом batch ни одна диаграмма/YML не менялась, поэтому browser visual QA: **⚪ NOT RUN**.
 
-## Suggested manual proofreading order
+## Рекомендуемый порядок ручной вычитки
 
-The scoring below is a **priority heuristic**, not a defect verdict. Start with questions that combine semantic-marker differences, multi-state reasoning, and advanced convention interactions.
+Оценка ниже — **эвристика приоритета**, а не verdict о наличии дефекта. Начинать стоит с вопросов, где сочетаются различия semantic markers, reasoning по нескольким состояниям и взаимодействие продвинутых conventions.
 
-### First pass
+### Первый проход
 
 - `level-21-ignition-definition`
 - `level-23-hesitation-self-finesse`
@@ -77,25 +77,25 @@ The scoring below is a **priority heuristic**, not a defect verdict. Start with 
 - `level-25-finesse-target-other`
 - `level-25-priority-bluff`
 
-### Then multi-state / chronology-heavy questions
+### Затем вопросы с несколькими состояниями / сложной хронологией
 
-- `level-3-playing-multiple-1-s-ii` — 4 states
-- `level-4-order-is-important` — 3 states
-- `level-20-suboptimal-finesse-bluff` — 3 states
-- `level-7-alice-loves-garbage` — 2 states
-- `level-7-another-scream-discard` — 2 states
-- `level-7-screaming-into-the-void` — 2 states
-- `level-8-3-cards-left` — 2 states
-- `level-2-find-the-best-clue-iii` — 2 states
-- `level-5-a-tricky-spot-i` — 2 states
+- `level-3-playing-multiple-1-s-ii` — 4 состояния
+- `level-4-order-is-important` — 3 состояния
+- `level-20-suboptimal-finesse-bluff` — 3 состояния
+- `level-7-alice-loves-garbage` — 2 состояния
+- `level-7-another-scream-discard` — 2 состояния
+- `level-7-screaming-into-the-void` — 2 состояния
+- `level-8-3-cards-left` — 2 состояния
+- `level-2-find-the-best-clue-iii` — 2 состояния
+- `level-5-a-tricky-spot-i` — 2 состояния
 
-For each manually-read CQ, the most valuable questions remain the project standard: is the answer unique from the stated information; does the Solution use only the player's available knowledge; is modality preserved; does timing/precedence work; and, for diagrams, does the state show exactly the facts the reasoning needs without leaking the answer?
+Для каждого вручную прочитанного CQ наиболее ценные вопросы остаются стандартными для проекта: однозначен ли ответ из заявленной информации; использует ли Solution только знания, доступные игроку; сохранена ли modality; корректны ли timing/precedence; и, для диаграмм, показывает ли состояние ровно те факты, которые нужны reasoning, не раскрывая ответ заранее?
 
-## What this batch did not redo
+## Что этот batch не переделывал
 
-- It did not repeat the full 242-question adversarial semantic review from PR #178.
-- It did not claim that lexical EN/RU marker parity proves translation correctness.
-- It did not perform a new browser/visual inspection of all 208 state-bearing questions.
-- It did not modify any CQ prose or YML merely to satisfy a heuristic.
+- Он не повторял полный adversarial semantic review всех 242 вопросов из PR #178.
+- Он не утверждал, что лексический паритет EN/RU markers доказывает корректность перевода.
+- Он не выполнял новую browser/visual inspection всех 208 вопросов с состояниями.
+- Он не менял текст CQ или YML только ради удовлетворения эвристики.
 
-The next acceptance layer is the planned human full proofreading. Any human-found defect should be fixed source-faithfully and then re-run through the applicable deterministic/browser gates before clean-baseline promotion.
+Следующий acceptance layer — запланированная полная ручная вычитка. Любой дефект, найденный человеком, следует исправлять source-faithfully, после чего снова прогонять применимые deterministic/browser gates перед promotion в clean-baseline.
