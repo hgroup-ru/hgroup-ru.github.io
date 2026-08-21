@@ -1,0 +1,128 @@
+name: Maintenance Audit
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup
+        uses: ./.github/workflows/setup
+
+      - name: Core repository and terminology checks
+        id: core
+        continue-on-error: true
+        run: npm run lint:core
+
+      - name: Local Challenge Question structure
+        id: local-cq
+        continue-on-error: true
+        run: tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkLocalChallengeQuestions.mts
+
+      - name: External document-like links
+        id: external-links
+        continue-on-error: true
+        run: npm run audit:external-links
+
+      - name: Upstream drift
+        id: upstream
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          upstream_repo="$(node -p 'require("./upstream.json").repository')"
+          pinned_revision="$(node -p 'require("./upstream.json").revision')"
+          upstream_head="$(git ls-remote "$upstream_repo" refs/heads/main | awk '{print $1}')"
+
+          if [ -z "$upstream_head" ]; then
+            echo "Could not resolve upstream main." >&2
+            exit 1
+          fi
+
+          {
+            echo "repository=$upstream_repo"
+            echo "pinned=$pinned_revision"
+            echo "head=$upstream_head"
+          } >> "$GITHUB_OUTPUT"
+
+          if [ "$pinned_revision" = "$upstream_head" ]; then
+            echo "drift=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "drift=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write audit summary
+        if: ${{ always() }}
+        shell: bash
+        env:
+          CORE_OUTCOME: ${{ steps.core.outcome }}
+          LOCAL_CQ_OUTCOME: ${{ steps.local-cq.outcome }}
+          EXTERNAL_LINKS_OUTCOME: ${{ steps.external-links.outcome }}
+          UPSTREAM_OUTCOME: ${{ steps.upstream.outcome }}
+          UPSTREAM_DRIFT: ${{ steps.upstream.outputs.drift }}
+          UPSTREAM_REPOSITORY: ${{ steps.upstream.outputs.repository }}
+          PINNED_REVISION: ${{ steps.upstream.outputs.pinned }}
+          UPSTREAM_HEAD: ${{ steps.upstream.outputs.head }}
+        run: |
+          status() {
+            if [ "$1" = "success" ]; then
+              printf '%s' '🟢 PASS'
+            else
+              printf '%s' '🔴 FAIL'
+            fi
+          }
+
+          if [ "$UPSTREAM_OUTCOME" != "success" ]; then
+            upstream_status='🔴 FAIL'
+          elif [ "$UPSTREAM_DRIFT" = "true" ]; then
+            upstream_status='🟡 WARNING'
+          else
+            upstream_status='🟢 PASS'
+          fi
+
+          {
+            echo "## H-Group RU Maintenance Audit"
+            echo
+            echo "| Check | Status |"
+            echo "| --- | --- |"
+            echo "| Core repository + RU terminology | $(status "$CORE_OUTCOME") |"
+            echo "| Local Challenge Question structure | $(status "$LOCAL_CQ_OUTCOME") |"
+            echo "| External document-like links | $(status "$EXTERNAL_LINKS_OUTCOME") |"
+            echo "| Upstream drift | $upstream_status |"
+            echo
+            echo "### Upstream"
+            if [ "$UPSTREAM_OUTCOME" = "success" ]; then
+              echo "- Repository: \`$UPSTREAM_REPOSITORY\`"
+              echo "- Pinned revision: \`$PINNED_REVISION\`"
+              echo "- Current upstream main: \`$UPSTREAM_HEAD\`"
+            else
+              echo "- 🔴 FAIL: could not resolve the configured upstream main revision."
+            fi
+            echo
+            echo "### Scope boundary"
+            echo "- 🟡 PENDING: semantic and cross-consistency verdicts still require model/human review; this workflow only surfaces deterministic maintenance state."
+            echo "- ⚪ NOT RUN: visual QA is outside this maintenance audit."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Enforce deterministic audit result
+        if: ${{ always() }}
+        shell: bash
+        env:
+          CORE_OUTCOME: ${{ steps.core.outcome }}
+          LOCAL_CQ_OUTCOME: ${{ steps.local-cq.outcome }}
+          EXTERNAL_LINKS_OUTCOME: ${{ steps.external-links.outcome }}
+          UPSTREAM_OUTCOME: ${{ steps.upstream.outcome }}
+        run: |
+          if [ "$CORE_OUTCOME" != "success" ] \
+            || [ "$LOCAL_CQ_OUTCOME" != "success" ] \
+            || [ "$EXTERNAL_LINKS_OUTCOME" != "success" ] \
+            || [ "$UPSTREAM_OUTCOME" != "success" ]; then
+            exit 1
+          fi
