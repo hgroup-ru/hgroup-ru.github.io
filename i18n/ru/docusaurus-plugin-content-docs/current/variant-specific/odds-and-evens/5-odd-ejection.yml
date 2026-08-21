@@ -28,5 +28,6 @@ players:
       - type: x
       - type: x
       - type: y5
-        clue: 5
-        below: Odd Play
+        border: false
+        above: Odd clue
+        below: Play
