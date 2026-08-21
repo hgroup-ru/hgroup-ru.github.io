@@ -23,7 +23,7 @@ jobs:
       - name: Local Challenge Question structure
         id: local-cq
         continue-on-error: true
-        run: tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkLocalChallengeQuestions.mts
+        run: npm run audit:local-cq
 
       - name: External document-like links
         id: external-links
