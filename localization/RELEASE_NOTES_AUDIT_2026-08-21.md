@@ -10,20 +10,20 @@ GitHub connector не предоставляет доступ к Release API/bod
 
 ## Production boundaries
 
-| Release | Production source | Итог проверки текущего архива |
-| --- | --- | --- |
-| `prod-20260815-5` | `a0b7add8278f7d70e00fd5abbf652988a99f501f` | 🟢 PASS — Product V1 baseline подробно зафиксирован |
-| `prod-20260815-7` | `1e64d33074a6bedeecfd5392d79343b0118c1d1d` | 🟢 PASS — source-fidelity fixes и QA отражены |
-| `prod-20260816-8` | `2d1b5c53d52c7f665de378f06bee1e082f023f0f` | 🟢 PASS — Training Questions audit отражён |
-| `prod-20260816-9` | `43507980bdd308ff28bb1b854c84107e139a3056` | 🟢 PASS в текущем changelog; исторический Release body имел подтверждённый пропуск |
-| `prod-20260816-11` | `6b2e9336ff2dba5d424b35bbe661e422838524bc` | 🟢 PASS в текущем changelog после отдельной correction |
-| `prod-20260817-13` | `434caa0623a1bd66795d15ca4a53dc74f370c5c3` | 🟢 PASS — 2-player material и навигация отражены |
+| Release            | Production source                          | Итог проверки текущего архива                                                                         |
+| ------------------ | ------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| `prod-20260815-5`  | `a0b7add8278f7d70e00fd5abbf652988a99f501f` | 🟢 PASS — Product V1 baseline подробно зафиксирован                                                   |
+| `prod-20260815-7`  | `1e64d33074a6bedeecfd5392d79343b0118c1d1d` | 🟢 PASS — source-fidelity fixes и QA отражены                                                         |
+| `prod-20260816-8`  | `2d1b5c53d52c7f665de378f06bee1e082f023f0f` | 🟢 PASS — Training Questions audit отражён                                                            |
+| `prod-20260816-9`  | `43507980bdd308ff28bb1b854c84107e139a3056` | 🟢 PASS в текущем changelog; исторический Release body имел подтверждённый пропуск                    |
+| `prod-20260816-11` | `6b2e9336ff2dba5d424b35bbe661e422838524bc` | 🟢 PASS в текущем changelog после отдельной correction                                                |
+| `prod-20260817-13` | `434caa0623a1bd66795d15ca4a53dc74f370c5c3` | 🟢 PASS — 2-player material и навигация отражены                                                      |
 | `prod-20260817-14` | `5c009dd871bd4548bb62cc81206f120652ea8b7b` | 🟢 PASS — notes были дополированы до релиза и позже синхронизированы с отредактированным Release body |
-| `prod-20260817-17` | `3ed4a08d9baf0757fd6b0f3d4ca477713c21a0b7` | 🟢 PASS — 3 Bluffs history и локальные переходы отражены |
-| `prod-20260817-18` | `69b20598dfc13c95c020a6ade3a38fe401bf9816` | 🟢 PASS — misc corpus и hotkeys отражены на уровне публичных категорий |
-| `prod-20260818-19` | `521306d19e87b928ea338795b49c9e95bdac8ef5` | 🟢 PASS — полный diff был отдельно сверён перед релизом, пропуски добавлены |
-| `prod-20260818-20` | `7c1da27847d2189a159ff8e37175eb13d76df921` | 🟢 PASS — Level 10 CQ, `/` hotkey и 2-player clarification отражены |
-| `prod-20260819-21` | `bc12c2b17cf118f377e2f62c41801b86fbc9c7d1` | 🟢 PASS — переработка Level 10 CQ отражена подробно |
+| `prod-20260817-17` | `3ed4a08d9baf0757fd6b0f3d4ca477713c21a0b7` | 🟢 PASS — 3 Bluffs history и локальные переходы отражены                                              |
+| `prod-20260817-18` | `69b20598dfc13c95c020a6ade3a38fe401bf9816` | 🟢 PASS — misc corpus и hotkeys отражены на уровне публичных категорий                                |
+| `prod-20260818-19` | `521306d19e87b928ea338795b49c9e95bdac8ef5` | 🟢 PASS — полный diff был отдельно сверён перед релизом, пропуски добавлены                           |
+| `prod-20260818-20` | `7c1da27847d2189a159ff8e37175eb13d76df921` | 🟢 PASS — Level 10 CQ, `/` hotkey и 2-player clarification отражены                                   |
+| `prod-20260819-21` | `bc12c2b17cf118f377e2f62c41801b86fbc9c7d1` | 🟢 PASS — переработка Level 10 CQ отражена подробно                                                   |
 
 ## Подтверждённые исторические проблемы
 
