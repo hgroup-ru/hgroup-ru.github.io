@@ -63,3 +63,5 @@ jobs:
           git diff --cached --check
           git commit -m 'docs: remove internal crawler wording from training questions'
           git push origin HEAD:fix/human-review-diagram-notes
+
+# Trigger once after workflow creation; remove before merge.
