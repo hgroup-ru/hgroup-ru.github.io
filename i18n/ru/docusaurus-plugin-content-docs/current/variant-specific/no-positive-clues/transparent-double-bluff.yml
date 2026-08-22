@@ -14,14 +14,12 @@ players:
   - cards:
       - type: x
         above: Blue 1
-        below: Bluff
       - type: x
       - type: x
       - type: x
   - cards:
       - type: x
         above: Green 1
-        below: Bluff
       - type: x
       - type: x
       - type: x
