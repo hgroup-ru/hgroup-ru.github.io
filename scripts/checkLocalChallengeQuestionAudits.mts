@@ -47,9 +47,7 @@ const configuredLevels = LEVEL_CONFIG_SCHEMA.parse(
   JSON.parse(await readFile(CONFIG_PATH)) as unknown,
 );
 
-for (const level of configuredLevels) {
-  await validateLevel(level);
-}
+await Promise.all(configuredLevels.map(async (level) => validateLevel(level)));
 
 console.log(
   `Local CQ audit evidence passed for levels: ${configuredLevels.join(", ")}.`,
@@ -70,11 +68,13 @@ async function validateLevel(level: number) {
   );
   const recordsById = new Map(audit.records.map((record) => [record.id, record] as const));
 
-  const missing = [...expectedIds].filter((id) => !recordsById.has(id));
-  const extra = [...recordsById.keys()].filter((id) => !expectedIds.has(id));
+  const missing = expectedIds.values().filter((id) => !recordsById.has(id)).toArray();
+  const extra = recordsById.keys().filter((id) => !expectedIds.has(id)).toArray();
   if (missing.length > 0 || extra.length > 0) {
+    const missingText = missing.length === 0 ? "none" : missing.join(", ");
+    const extraText = extra.length === 0 ? "none" : extra.join(", ");
     throw new Error(
-      `${relative(auditPath)} does not match published Level ${level} CQ ids. Missing: ${missing.join(", ") || "none"}; extra: ${extra.join(", ") || "none"}.`,
+      `${relative(auditPath)} does not match published Level ${level} CQ ids. Missing: ${missingText}; extra: ${extraText}.`,
     );
   }
 
