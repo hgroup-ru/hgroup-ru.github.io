@@ -4,8 +4,8 @@ import path from "node:path";
 import { parse } from "yaml";
 import { z } from "zod";
 
-import type { Player } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState.ts";
-import { hanabiGameStateSchema } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState.ts";
+import type { Player } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState";
+import { hanabiGameStateSchema } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const EN_ROOT = path.join(REPO_ROOT, "docs/challenge-questions");
