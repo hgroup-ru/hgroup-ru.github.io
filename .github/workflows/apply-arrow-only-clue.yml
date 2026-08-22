@@ -49,7 +49,6 @@ jobs:
           path.write_text(text)
           PY
 
-          npx prettier --write plugins/hanabiDocusaurusPlugin/plugin/src/convertYAMLToSVG.ts plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState.ts
           git diff --check
 
       - name: Commit renderer patch
