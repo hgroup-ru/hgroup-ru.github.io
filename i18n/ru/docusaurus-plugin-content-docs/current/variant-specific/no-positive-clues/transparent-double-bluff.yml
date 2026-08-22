@@ -14,12 +14,15 @@ players:
   - cards:
       - type: x
         above: Blue 1
+        middleNote: r1
+        below: Bluff
       - type: x
       - type: x
       - type: x
   - cards:
       - type: x
         above: Green 1
+        below: Bluff
       - type: x
       - type: x
       - type: x
@@ -27,7 +30,18 @@ players:
       - type: r2
         border: false
         clueArrow: true
-        below: 1-away
+        middleNote: "1,bg2"
+        below: Play
+      - type: x
+      - type: x
+      - type: x
+  - text: "After both blind-plays..."
+  - offset: -1
+    cards:
+      - type: r2
+        border: false
+        clueArrow: true
+        middleNote: ryp2
       - type: x
       - type: x
       - type: x
