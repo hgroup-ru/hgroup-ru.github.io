@@ -28,7 +28,6 @@ players:
     cards:
       - type: r2
         border: false
-        below: Finesse
       - type: b3
         border: false
       - type: p4

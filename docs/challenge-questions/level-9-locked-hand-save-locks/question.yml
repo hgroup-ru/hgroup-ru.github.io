@@ -9,39 +9,39 @@ bigText:
 players:
   - name: Alice
     cards:
-      - type: g4
-        border: false
       - type: r1
         border: false
-      - type: y4
+      - type: y3
         border: false
-      - type: b4
+      - type: g3
         border: false
-      - type: p4
+      - type: b3
+        border: false
+      - type: p3
         border: false
   - name: Bob
     clueGiver: true
     cards:
       - type: r4
         middleNote: r
-      - type: y4
-        middleNote: y
+      - type: y5
+        middleNote: 5
       - type: g5
         middleNote: g
-      - type: b4
-        middleNote: b
-      - type: p4
+      - type: b5
+        middleNote: 5
+      - type: p5
         middleNote: p
   - name: Cathy
     cards:
-      - type: y1
+      - type: y4
         middleNote: y
-      - type: g1
-        middleNote: 1
-      - type: b1
+      - type: g4
+        middleNote: 4
+      - type: b4
         middleNote: b
-      - type: p1
-        middleNote: 1
+      - type: p4
+        middleNote: 4
       - type: r3
         clue: r
         below: Chop
