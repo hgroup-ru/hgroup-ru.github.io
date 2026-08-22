@@ -9,11 +9,11 @@ bigText:
 players:
   - name: Alice
     cards:
-      - type: r4
+      - type: g4
+        border: false
+      - type: r1
         border: false
       - type: y4
-        border: false
-      - type: g4
         border: false
       - type: b4
         border: false
@@ -34,14 +34,14 @@ players:
         middleNote: p
   - name: Cathy
     cards:
-      - type: y4
+      - type: y1
         middleNote: y
-      - type: g4
-        middleNote: 4
-      - type: p4
-        middleNote: p
-      - type: b4
-        middleNote: 4
+      - type: g1
+        middleNote: 1
+      - type: b1
+        middleNote: b
+      - type: p1
+        middleNote: 1
       - type: r3
         clue: r
         below: Chop

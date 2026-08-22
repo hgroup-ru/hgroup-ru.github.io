@@ -8,6 +8,7 @@ bigText:
   text: 8 clues
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -33,7 +34,7 @@ players:
       - type: g3
         border: false
       - type: r2
-        border: false
+        clue: r
       - type: b4
         border: false
       - type: p3

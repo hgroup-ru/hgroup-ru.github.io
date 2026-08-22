@@ -9,11 +9,11 @@ bigText:
 players:
   - name: Alice
     cards:
-      - type: r4
+      - type: g4
+        border: false
+      - type: r1
         border: false
       - type: y4
-        border: false
-      - type: g4
         border: false
       - type: b4
         border: false
@@ -34,13 +34,13 @@ players:
         middleNote: p
   - name: Cathy
     cards:
-      - type: b4
+      - type: y1
         border: false
-      - type: g4
+      - type: g1
         border: false
-      - type: p4
+      - type: b1
         border: false
-      - type: y4
+      - type: p1
         border: false
       - type: r4
         border: false

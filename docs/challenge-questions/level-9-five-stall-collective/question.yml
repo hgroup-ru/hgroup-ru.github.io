@@ -8,6 +8,7 @@ bigText:
   text: Early Game
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x

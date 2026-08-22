@@ -8,8 +8,8 @@ bigText:
   text: 8 clues
 players:
   - name: Alice
+    clueGiver: true
     cards:
-      - type: x
       - type: x
       - type: x
       - type: x
@@ -24,8 +24,6 @@ players:
         border: false
       - type: b4
         border: false
-      - type: p4
-        border: false
   - name: Cathy
     cards:
       - type: y3
@@ -33,9 +31,7 @@ players:
       - type: g3
         border: false
       - type: r2
-        border: false
-      - type: b3
-        border: false
+        clue: r
       - type: p3
         border: false
   - name: Donald
@@ -45,8 +41,6 @@ players:
       - type: r4
         border: false
       - type: y4
-        border: false
-      - type: g4
         border: false
       - type: p4
         border: false
