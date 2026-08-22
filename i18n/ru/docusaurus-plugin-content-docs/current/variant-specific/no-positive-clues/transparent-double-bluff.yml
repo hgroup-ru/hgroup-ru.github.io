@@ -11,20 +11,17 @@ players:
       - type: x
       - type: x
       - type: x
-      - type: x
   - cards:
       - type: x
         above: Blue 1
-        below: Blind-play
-      - type: x
+        below: Bluff
       - type: x
       - type: x
       - type: x
   - cards:
       - type: x
         above: Green 1
-        below: Blind-play
-      - type: x
+        below: Bluff
       - type: x
       - type: x
       - type: x
@@ -32,7 +29,6 @@ players:
       - type: r2
         clue: r
         below: Play
-      - type: x
       - type: x
       - type: x
       - type: x
