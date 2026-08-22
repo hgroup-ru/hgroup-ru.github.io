@@ -34,7 +34,7 @@ players:
         clue: 1
         trash: true
         below: Trash
-  - text: "After Bob ejects:"
+  - text: "After Bob ejects, the pushed card becomes Chop Moved:"
   - name: Cathy
     cards:
       - type: x
@@ -44,7 +44,6 @@ players:
         border: false
         cm: true
         above: Pushed
-        below: Chop Move
       - type: 1
         clue: 1
         trash: true
