@@ -22,14 +22,14 @@ const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
 const LEVEL_CONFIG_SCHEMA = z.array(z.int().positive()).min(1).readonly();
 const CARD_SCHEMA = z
   .object({ type: z.coerce.string().min(1) })
-  .passthrough()
+  .loose()
   .readonly();
 const PLAYER_SCHEMA = z
   .object({
     name: z.coerce.string().min(1).optional(),
     cards: z.array(CARD_SCHEMA).readonly(),
   })
-  .passthrough()
+  .loose()
   .readonly();
 const STACK_SCHEMA = z.record(z.string().length(1), z.number()).readonly();
 const STATE_PREFLIGHT_SCHEMA = z
@@ -38,7 +38,7 @@ const STATE_PREFLIGHT_SCHEMA = z
     discarded: z.array(z.coerce.string().min(1)).readonly().optional(),
     stacks: z.array(STACK_SCHEMA).readonly().optional(),
   })
-  .passthrough()
+  .loose()
   .readonly();
 
 const configContents = await readFile(CONFIG_PATH);
@@ -106,11 +106,13 @@ async function validateState(filePath: string) {
     }
   }
 
-  for (const card of state.discarded ?? []) {
+  const discarded = state.discarded ?? [];
+  for (const card of discarded) {
     recordExactCard(card);
   }
 
-  for (const stack of state.stacks ?? []) {
+  const stacks = state.stacks ?? [];
+  for (const stack of stacks) {
     for (const [suit, rank] of Object.entries(stack)) {
       if (rank < 0 || rank > 5 || !Number.isSafeInteger(rank)) {
         fail(filePath, `invalid ${suit} stack height: ${rank}`);
