@@ -5,14 +5,16 @@ stacks:
   - b: 0
   - p: 0
 players:
-  - clueGiver: true
+  - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
+  - name: Bob
+    cards:
       - type: x
       - type: x
         above: Blue 1
@@ -20,8 +22,10 @@ players:
       - type: x
       - type: x
       - type: x
-  - cards:
+  - name: Cathy
+    cards:
       - type: r
+        middleNote: r5
         below: Loaded
       - type: x
       - type: x
@@ -30,3 +34,14 @@ players:
         border: false
         above: Odd clue
         below: Play
+  - text: "After Bob ejects:"
+  - name: Cathy
+    cards:
+      - type: r
+        middleNote: r5
+      - type: x
+      - type: x
+      - type: x
+      - type: ygbp5
+        middleNote: "!r5"
+        below: Non-red 5
