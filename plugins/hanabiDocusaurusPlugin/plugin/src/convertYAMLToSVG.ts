@@ -675,7 +675,7 @@ class ImageGenerator {
     }
 
     const { clue } = card;
-    if (clue !== undefined) {
+    if (clue !== undefined || card.clueArrow === true) {
       // Draw the arrow above the card.
       const arrowName = card.retouched === true ? "arrow_dark" : "arrow";
       this.svgFile.addImage(`${PIECES_PATH}/${arrowName}.svg`, {
@@ -685,7 +685,8 @@ class ImageGenerator {
         height: 70,
       });
 
-      // Draw the clue circle on the arrow.
+      if (clue !== undefined) {
+        // Draw the clue circle on the arrow.
       let color: string;
       if (/^\d$/v.test(clue)) {
         // For numeric clues, use black.
@@ -733,6 +734,8 @@ class ImageGenerator {
           "text-anchor": "middle",
           "dominant-baseline": "central",
         });
+      }
+
       }
 
       if (this.yOffset === 0) {
