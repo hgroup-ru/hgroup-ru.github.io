@@ -28,6 +28,10 @@
 - [Level 18 — Riding deduction](upstream-candidates/diagrams/level-18-riding-deduction.md) — `candidate` · transfer: `low`
 - [Level 24 — Unnecessary UTD / BCME](upstream-candidates/diagrams/level-24-unnecessary-utd-bcme.md) — `candidate` · transfer: `low`
 - [Level 25 — Important 2 Save](upstream-candidates/diagrams/level-25-important-2-save.md) — `candidate` · transfer: `low`
+- [Variant-Specific — Transparent Double Bluff](upstream-candidates/diagrams/transparent-double-bluff.md) — `candidate` · transfer: `medium`
+- [Variant-Specific — 5 Odd Ejection](upstream-candidates/diagrams/5-odd-ejection.md) — `candidate` · transfer: `medium`
+- [Variant-Specific — U-Turn Finesse](upstream-candidates/diagrams/u-turn-finesse.md) — `candidate` · transfer: `low`
+- [Extras — Trash Push Ejection](upstream-candidates/diagrams/trash-push-ejection.md) — `candidate` · transfer: `low`
 
 Локальные Mermaid Levels 1, 19, 22 и 25 сначала нужно [сравнить с текущим upstream](upstream-candidates/diagrams/mermaid-review.md); они пока не объявлены кандидатами.
 
