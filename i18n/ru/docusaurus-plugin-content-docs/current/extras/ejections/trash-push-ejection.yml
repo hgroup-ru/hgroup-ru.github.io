@@ -5,14 +5,16 @@ stacks:
   - b: 1
   - p: 1
 players:
-  - clueGiver: true
+  - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
+  - name: Bob
+    cards:
       - type: x
       - type: x
         above: Blue 2
@@ -20,7 +22,21 @@ players:
       - type: x
       - type: x
       - type: x
-  - cards:
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: r4
+        border: false
+        above: Pushed
+      - type: 1
+        clue: 1
+        trash: true
+        below: Trash
+  - text: "After Bob ejects:"
+  - name: Cathy
+    cards:
       - type: x
       - type: x
       - type: x
