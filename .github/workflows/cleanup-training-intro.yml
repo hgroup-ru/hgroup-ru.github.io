@@ -1,0 +1,65 @@
+name: Cleanup Training Intro
+
+on:
+  push:
+    branches:
+      - fix/human-review-diagram-notes
+    paths:
+      - .github/workflows/cleanup-training-intro.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/human-review-diagram-notes
+          fetch-depth: 0
+
+      - name: Remove internal crawler wording
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+
+          root = Path("i18n/ru/docusaurus-plugin-content-docs/current")
+          needle = "; ответы помечены так, чтобы RU crawler мог исключать их из глобального поиска."
+          paths = sorted(root.glob("level-*.mdx"))
+          hits = []
+          for path in paths:
+              text = path.read_text()
+              count = text.count(needle)
+              if count:
+                  hits.extend([path] * count)
+                  path.write_text(text.replace(needle, "."))
+
+          expected = {
+              root / "level-1.mdx",
+              root / "level-3.mdx",
+              root / "level-4.mdx",
+              root / "level-5.mdx",
+              root / "level-25.mdx",
+          }
+          if len(hits) != 5 or set(hits) != expected:
+              raise SystemExit(f"Unexpected RU crawler occurrences: {[str(p) for p in hits]}")
+          PY
+
+          if grep -RIn --include='level-*.mdx' 'RU crawler' i18n/ru/docusaurus-plugin-content-docs/current; then
+            echo 'RU crawler wording still present' >&2
+            exit 1
+          fi
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add i18n/ru/docusaurus-plugin-content-docs/current/level-{1,3,4,5,25}.mdx
+          git diff --cached --check
+          git commit -m 'docs: remove internal crawler wording from training questions'
+          git push origin HEAD:fix/human-review-diagram-notes
