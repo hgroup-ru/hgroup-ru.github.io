@@ -4,7 +4,11 @@
 
 ## Следующий релиз
 
-_Изменений для следующего релиза пока нет._
+<!-- release-title: Учебные диаграммы сложных примеров -->
+
+### Добавлено
+
+- В Variant-Specific и Extras добавлены четыре локальные учебные диаграммы H-Group RU для сложных примеров без official YML: Transparent Double Bluff, 5 Odd Ejection, U-Turn Finesse и Trash Push Ejection; локальные схемы явно отделены от официальных upstream-диаграмм.
 
 ## 2026-08-21 — Учебные вопросы, BGA learning path и DocSearch
 

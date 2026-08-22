@@ -5,14 +5,16 @@ stacks:
   - b: 0
   - p: 0
 players:
-  - clueGiver: true
+  - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
+  - name: Bob
+    cards:
       - type: x
       - type: x
         above: Blue 1
@@ -20,13 +22,24 @@ players:
       - type: x
       - type: x
       - type: x
-  - cards:
+  - text: "Alice gives Cathy an odd Play Clue:"
+  - name: Cathy
+    cards:
       - type: r
+        middleNote: r5
         below: Loaded
       - type: x
       - type: x
       - type: x
       - type: y5
         border: false
-        above: Odd clue
         below: Play
+  - text: "After Bob ejects: the odd card is a non-red 5."
+  - name: Cathy
+    cards:
+      - type: r
+        middleNote: r5
+      - type: x
+      - type: x
+      - type: x
+      - type: ygbp5
