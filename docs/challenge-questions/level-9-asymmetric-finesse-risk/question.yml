@@ -5,7 +5,7 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: 8 clues - Bob must react
+  text: 8 clues
 players:
   - name: Alice
     cards:
@@ -19,8 +19,7 @@ players:
       - type: r1
         border: false
       - type: b2
-        clue: b
-        middleNote: blue
+        middleNote: b
       - type: y4
         border: false
       - type: g4

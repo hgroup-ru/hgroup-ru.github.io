@@ -17,7 +17,7 @@ players:
   - name: Bob
     cards:
       - type: r2
-        clue: r
+        middleNote: r
       - type: y4
         border: false
       - type: g4

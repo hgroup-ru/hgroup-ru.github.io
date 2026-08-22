@@ -18,10 +18,12 @@ players:
   - name: Bob
     cards:
       - type: r1
+        middleNote: r1
       - type: b1
+        middleNote: b1
       - type: x
       - type: g5
-        clue: 5
+        border: false
       - type: x
         below: Chop
   - name: Cathy

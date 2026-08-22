@@ -8,6 +8,7 @@ bigText:
   text: Early Game
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -17,10 +18,10 @@ players:
   - name: Bob
     cards:
       - type: y1
-        clue: 1
+        middleNote: 1
       - type: g1
-        clue: 1
-      - type: b3
+        middleNote: 1
+      - type: b4
         border: false
       - type: p4
         border: false
@@ -36,5 +37,6 @@ players:
         border: false
       - type: b4
         border: false
-      - type: p3
+      - type: r5
         border: false
+        below: Chop
