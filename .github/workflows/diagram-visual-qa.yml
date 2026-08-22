@@ -84,10 +84,21 @@ jobs:
                   });
                   const heading = page.locator(`#${anchor}`);
                   await heading.waitFor({ state: 'visible' });
-                  const diagram = heading.locator(
-                    'xpath=following::svg[contains(concat(" ", normalize-space(@class), " "), " example ")][1]',
-                  );
-                  await diagram.waitFor({ state: 'visible' });
+                  const headingBox = await heading.boundingBox();
+                  if (!headingBox) throw new Error(`No heading box for ${anchor}`);
+
+                  const diagrams = page.locator('svg.example');
+                  const count = await diagrams.count();
+                  let diagram = null;
+                  for (let index = 0; index < count; index += 1) {
+                    const candidate = diagrams.nth(index);
+                    const box = await candidate.boundingBox();
+                    if (box && box.y > headingBox.y) {
+                      diagram = candidate;
+                      break;
+                    }
+                  }
+                  if (!diagram) throw new Error(`No diagram found below ${anchor}`);
                   await diagram.scrollIntoViewIfNeeded();
                   await diagram.screenshot({ path: `screenshots/${slug}-${profile}.png` });
                 }
