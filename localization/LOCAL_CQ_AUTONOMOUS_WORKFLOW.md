@@ -16,9 +16,9 @@
 
 При необходимости используется таблица вида:
 
-| факт | objective | Alice knows | Bob knows | Cathy knows |
-| --- | --- | --- | --- | --- |
-| Alice slot 1 = r2 | yes | no | yes | yes |
+| факт              | objective | Alice knows | Bob knows | Cathy knows |
+| ----------------- | --------- | ----------- | --------- | ----------- |
+| Alice slot 1 = r2 | yes       | no          | yes       | yes         |
 
 Semantic review должен рассуждать из masked POV, а не из omniscient state.
 

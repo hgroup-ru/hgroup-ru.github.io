@@ -19,7 +19,12 @@ const RECORD_SCHEMA = z
     risk: z.enum(["low", "medium", "high"]),
     source_rule: z.string().min(1),
     learning_objective: z.string().min(1),
-    question_type: z.enum(["best_move", "legality", "interpretation", "deduction"]),
+    question_type: z.enum([
+      "best_move",
+      "legality",
+      "interpretation",
+      "deduction",
+    ]),
     modality: z.enum(["can", "should", "must", "only_if"]),
     critical_variable: z.string().min(1),
     pov_player: z.string().min(1),
@@ -47,7 +52,11 @@ const configuredLevels = LEVEL_CONFIG_SCHEMA.parse(
   JSON.parse(await readFile(CONFIG_PATH)) as unknown,
 );
 
-await Promise.all(configuredLevels.map(async (level) => validateLevel(level)));
+await Promise.all(
+  configuredLevels.map(async (level) => {
+    await validateLevel(level);
+  }),
+);
 
 console.log(
   `Local CQ audit evidence passed for levels: ${configuredLevels.join(", ")}.`,
@@ -59,17 +68,27 @@ async function validateLevel(level: number) {
     JSON.parse(await readFile(auditPath)) as unknown,
   );
   if (audit.level !== level) {
-    throw new Error(`${relative(auditPath)} declares level ${audit.level}, expected ${level}`);
+    throw new Error(
+      `${relative(auditPath)} declares level ${audit.level}, expected ${level}`,
+    );
   }
 
   const questionFiles = await glob(path.join(EN_ROOT, `level-${level}-*.mdx`));
   const expectedIds = new Set(
     questionFiles.map((filePath) => path.basename(filePath, ".mdx")),
   );
-  const recordsById = new Map(audit.records.map((record) => [record.id, record] as const));
+  const recordsById = new Map(
+    audit.records.map((record) => [record.id, record] as const),
+  );
 
-  const missing = expectedIds.values().filter((id) => !recordsById.has(id)).toArray();
-  const extra = recordsById.keys().filter((id) => !expectedIds.has(id)).toArray();
+  const missing = expectedIds
+    .values()
+    .filter((id) => !recordsById.has(id))
+    .toArray();
+  const extra = recordsById
+    .keys()
+    .filter((id) => !expectedIds.has(id))
+    .toArray();
   if (missing.length > 0 || extra.length > 0) {
     const missingText = missing.length === 0 ? "none" : missing.join(", ");
     const extraText = extra.length === 0 ? "none" : extra.join(", ");
@@ -84,7 +103,7 @@ async function validateLevel(level: number) {
       ["timeline", record.timeline],
       ["physical_state", record.physical_state],
     ] as const) {
-      if (/fail|pending|not run/iu.test(value)) {
+      if (/fail|not run|pending/iv.test(value)) {
         throw new Error(
           `${relative(auditPath)}: ${record.id} cannot KEEP with ${field}=${value}`,
         );
