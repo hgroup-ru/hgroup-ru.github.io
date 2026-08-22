@@ -65,6 +65,12 @@ async function validateState(filePath: string): Promise<void> {
 
   const expectedHandSize = players.length <= 3 ? 5 : 4;
   const physicalCounts = new Map<string, number>();
+  const recordExactCard = (type: string): void => {
+    if (!EXACT_CARD_PATTERN.test(type)) {
+      return;
+    }
+    physicalCounts.set(type, (physicalCounts.get(type) ?? 0) + 1);
+  };
 
   for (const [playerIndex, player] of players.entries()) {
     if (player.cards.length !== expectedHandSize) {
@@ -76,21 +82,23 @@ async function validateState(filePath: string): Promise<void> {
     }
 
     for (const card of player.cards) {
-      recordExactCard(physicalCounts, card.type);
+      recordExactCard(card.type);
     }
   }
 
-  for (const card of state.discarded ?? []) {
-    recordExactCard(physicalCounts, card);
+  const discarded = state.discarded ?? [];
+  for (const card of discarded) {
+    recordExactCard(card);
   }
 
-  for (const stack of state.stacks ?? []) {
+  const stacks = state.stacks ?? [];
+  for (const stack of stacks) {
     for (const [suit, rank] of Object.entries(stack)) {
       if (rank < 0 || rank > 5) {
         fail(filePath, `invalid ${suit} stack height: ${rank}`);
       }
       for (let currentRank = 1; currentRank <= rank; currentRank += 1) {
-        recordExactCard(physicalCounts, `${suit}${currentRank}`);
+        recordExactCard(`${suit}${currentRank}`);
       }
     }
   }
@@ -112,16 +120,6 @@ function isPlayer(
   entry: z.infer<typeof hanabiGameStateSchema>["players"][number],
 ): entry is Player {
   return typeof entry === "object" && "cards" in entry;
-}
-
-function recordExactCard(
-  counts: Map<string, number>,
-  type: string,
-): void {
-  if (!EXACT_CARD_PATTERN.test(type)) {
-    return;
-  }
-  counts.set(type, (counts.get(type) ?? 0) + 1);
 }
 
 function fail(filePath: string, message: string): never {
