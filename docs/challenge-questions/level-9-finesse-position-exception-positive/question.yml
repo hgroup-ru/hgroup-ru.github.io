@@ -11,7 +11,6 @@ players:
     clueGiver: true
     cards:
       - type: r2
-        middleNote: r2
       - type: x
       - type: x
       - type: x

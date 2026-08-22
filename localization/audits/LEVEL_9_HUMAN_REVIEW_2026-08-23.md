@@ -10,13 +10,13 @@ Reviewer: human site review after the first Level 9 repair was deployed.
 - CQ 5 `level-9-early-game-ending`: Russian wording now says Cathy "взорвала карту" instead of the unnatural transliteration "сделала мисплей"; the solution uses "взрыв карты" consistently.
 - CQ 9 `level-9-double-discard`: Russian wording now says Alice "случайно взорвала" red 4, including the formal DDA explanation.
 - CQ 14 `level-9-finesse-position-exception`: removed the `Finesse` label from Cathy's card; the question must require the reader to identify Finesse Position rather than printing the answer on the diagram.
-- CQ 15 `level-9-finesse-position-exception-positive`: previous state was not a clean positive control because Alice could herself use the visible connector to give the Finesse. Rebuilt the control so the connecting red 2 is in Alice's own hand and known to her; Alice cannot clue her own card, while Bob can clue it after the 5 Stall and before Cathy's turn.
+- CQ 15 `level-9-finesse-position-exception-positive`: previous states were not clean positive controls. First, Alice could herself use a visible connector to give the Finesse. A follow-up revision incorrectly made Alice know the red 2 in her own hand. Final state: the connecting red 2 is physically in Alice's hand but is unknown to Alice; Bob can see it and, after Alice's 5 Stall, can clue it before Cathy's turn. This preserves the FPE point without giving Alice knowledge of the exact connector.
 - CQ 19 `level-9-locked-hand-save-locks`: replaced Cathy's implausible four-1 hand with four already-clued non-playable 4s. The final red clue still locks her hand and is an ordinary Play Clue on playable red 3.
 - CQ 20 `level-9-anxiety-play`: removed the 5 from Cathy's chop to avoid an irrelevant Save/5 distraction; the chop is now purple 4.
 
 ## QA state
 
-- Semantic review of the seven reported points: 🟢 PASS after the targeted rewrites above.
+- Semantic review of the reported points: 🟢 PASS after the targeted rewrites above.
 - Exact card multiplicity / hand-size preflight: must pass in PR CI before merge.
 - RU production build: must pass in PR CI before merge.
 - Browser visual QA: ⚪ NOT RUN in automation; final subjective visual acceptance remains a human site-review gate after deployment.

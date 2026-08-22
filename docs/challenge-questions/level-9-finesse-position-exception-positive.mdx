@@ -15,7 +15,7 @@ import Question from "./level-9-finesse-position-exception-positive/question.yml
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-It is the Early Game and Alice starts her turn with 2 clues. The only remaining normal Play Clue would directly touch Cathy's playable red 1 on Finesse Position. Alice cannot Finesse that card herself: the red 2 that can connect to it is in Alice's own hand, where it is already known as red 2. Alice can instead 5 Stall Bob's off-chop green 5. Bob acts next, with 1 clue left, and can clue Alice's red 2 before Cathy acts. That clue can Finesse Cathy, who would then blind-play her red 1 on her own turn.
+It is the Early Game and Alice starts her turn with 2 clues. The only remaining normal Play Clue would directly touch Cathy's playable red 1 on Finesse Position. Alice has an unknown red 2 in her own hand, so she cannot know that specific connector herself and cannot clue her own card. Alice can instead 5 Stall Bob's off-chop green 5. Bob acts next, with 1 clue left, and can see and clue Alice's red 2 before Cathy acts. That clue can Finesse Cathy, who would then blind-play her red 1 on her own turn.
 
 May Alice use the 5 Stall under the Finesse Position Exception?
 
@@ -24,7 +24,7 @@ May Alice use the 5 Stall under the Finesse Position Exception?
 </TabItem>
 <TabItem value="solution">
 
-**Yes.** This is the positive form of the Finesse Position Exception: only one Play Clue is available to Alice, it touches a card on Finesse Position, and another player can actually Finesse that card before its owner acts. Alice cannot give that Finesse herself because the connecting red 2 is in her own hand. After Alice spends one of the 2 clues on the 5 Stall, Bob still has a clue available and acts before Cathy, so he can clue Alice's red 2; Cathy then blind-plays the red 1 on her turn.
+**Yes.** This is the positive form of the Finesse Position Exception: only one Play Clue is available to Alice, it touches a card on Finesse Position, and another player can actually Finesse that card before its owner acts. Alice does not need to know the exact connector herself: the red 2 is unknown in her own hand, while Bob can see it. After Alice spends one of the 2 clues on the 5 Stall, Bob still has a clue available and acts before Cathy, so he can clue Alice's red 2; Cathy then blind-plays the red 1 on her turn.
 
 </TabItem>
 </Tabs>
