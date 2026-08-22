@@ -38,6 +38,9 @@ const card = z
     /** The type of clue that is "on" the card. For example, "r" to signify a red clue. */
     clue: z.coerce.string().min(1).optional(),
 
+    /** Draw only the clue arrow, without a color/rank clue circle. */
+    clueArrow: z.boolean().optional(),
+
     /**
      * If the card is clued, setting this to true will change the color of the clue arrow to make it
      * look like the card is being touched again. Defaults to false.
