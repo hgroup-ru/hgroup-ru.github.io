@@ -44,7 +44,7 @@
     "prism-react-renderer": "2.4.1",
     "raw-loader": "4.0.2",
     "react": "19.2.7",
-    "react-circular-progressbar": "4.2.0",
+    "react-circular-progressbar": "2.2.0",
     "react-dom": "19.2.7",
     "react-zoom-pan-pinch": "4.0.3",
     "yaml": "2.9.0",
