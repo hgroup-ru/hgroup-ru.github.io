@@ -22,7 +22,6 @@ players:
   - cards:
       - type: x
         above: Green 1
-        below: Bluff
       - type: x
       - type: x
       - type: x
@@ -36,6 +35,7 @@ players:
       - type: x
       - type: x
   - text: "After both blind-plays..."
+  - space: 15
   - offset: -1
     cards:
       - type: r2
