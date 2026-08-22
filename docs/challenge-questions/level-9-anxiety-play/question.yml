@@ -42,5 +42,5 @@ players:
         border: false
       - type: b3
         border: false
-      - type: p5
+      - type: p4
         border: false

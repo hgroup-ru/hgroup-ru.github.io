@@ -10,7 +10,8 @@ players:
   - name: Alice
     clueGiver: true
     cards:
-      - type: x
+      - type: r2
+        middleNote: r2
       - type: x
       - type: x
       - type: x
@@ -36,7 +37,7 @@ players:
         border: false
   - name: Donald
     cards:
-      - type: r2
+      - type: r4
         border: false
       - type: y4
         border: false
