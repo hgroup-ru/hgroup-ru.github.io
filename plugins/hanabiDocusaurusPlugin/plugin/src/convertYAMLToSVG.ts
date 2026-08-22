@@ -675,7 +675,7 @@ class ImageGenerator {
     }
 
     const { clue } = card;
-    if (clue !== undefined) {
+    if (clue !== undefined || card.clueArrow === true) {
       // Draw the arrow above the card.
       const arrowName = card.retouched === true ? "arrow_dark" : "arrow";
       this.svgFile.addImage(`${PIECES_PATH}/${arrowName}.svg`, {
@@ -685,54 +685,56 @@ class ImageGenerator {
         height: 70,
       });
 
-      // Draw the clue circle on the arrow.
-      let color: string;
-      if (/^\d$/v.test(clue)) {
-        // For numeric clues, use black.
-        color = "black";
-      } else {
-        // For color clues, look up the suit, then use its color.
-        const cssColorOverrides: ReadonlyMap<string, string> = new Map([
-          ["green", "lightgreen"],
-          ["purple", "blueviolet"],
-        ]);
-        const suitWord = this.suitAbbreviationToWord.get(clue);
-        if (suitWord === undefined) {
-          throw new Error(
-            `Failed to find the word for a suit corresponding to the abbreviation of: ${clue}`,
-          );
+      if (clue !== undefined) {
+        // Draw the clue circle on the arrow.
+        let color: string;
+        if (/^\d$/v.test(clue)) {
+          // For numeric clues, use black.
+          color = "black";
+        } else {
+          // For color clues, look up the suit, then use its color.
+          const cssColorOverrides: ReadonlyMap<string, string> = new Map([
+            ["green", "lightgreen"],
+            ["purple", "blueviolet"],
+          ]);
+          const suitWord = this.suitAbbreviationToWord.get(clue);
+          if (suitWord === undefined) {
+            throw new Error(
+              `Failed to find the word for a suit corresponding to the abbreviation of: ${clue}`,
+            );
+          }
+          color =
+            cssColorOverrides.get(suitWord)
+            ?? WORD_TO_COLOR.get(suitWord)
+            ?? suitWord;
         }
-        color =
-          cssColorOverrides.get(suitWord)
-          ?? WORD_TO_COLOR.get(suitWord)
-          ?? suitWord;
-      }
-      const cx = this.xOffset + 35;
-      const cy = this.yOffset - 15;
-      this.svgFile.addElement("circle", {
-        cx,
-        cy,
-        r: "15",
-        fill: color,
-        stroke: color === "black" ? "white" : "black",
-        "stroke-width": "2",
-      });
+        const cx = this.xOffset + 35;
+        const cy = this.yOffset - 15;
+        this.svgFile.addElement("circle", {
+          cx,
+          cy,
+          r: "15",
+          fill: color,
+          stroke: color === "black" ? "white" : "black",
+          "stroke-width": "2",
+        });
 
-      if (/^\d$/v.test(clue)) {
-        const r = this.svgFile.addSVG({
-          x: this.xOffset + 27,
-          y: this.yOffset - 23,
-          width: 16,
-          height: 16,
-        });
-        r.addText(clue, {
-          x: "50%",
-          y: "50%",
-          fill: "white",
-          style: "font-size: 1.4em;",
-          "text-anchor": "middle",
-          "dominant-baseline": "central",
-        });
+        if (/^\d$/v.test(clue)) {
+          const r = this.svgFile.addSVG({
+            x: this.xOffset + 27,
+            y: this.yOffset - 23,
+            width: 16,
+            height: 16,
+          });
+          r.addText(clue, {
+            x: "50%",
+            y: "50%",
+            fill: "white",
+            style: "font-size: 1.4em;",
+            "text-anchor": "middle",
+            "dominant-baseline": "central",
+          });
+        }
       }
 
       if (this.yOffset === 0) {

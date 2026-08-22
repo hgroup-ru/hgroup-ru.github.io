@@ -33,6 +33,7 @@ players:
       - type: x
       - type: y5
         border: false
+        clueArrow: true
         below: Play
   - text: "After Bob ejects: the odd card is a non-red 5."
   - name: Cathy

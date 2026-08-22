@@ -26,6 +26,7 @@ players:
   - cards:
       - type: r2
         border: false
+        clueArrow: true
         below: 1-away
       - type: x
       - type: x
