@@ -2,16 +2,16 @@ players:
   - name: Alice
     cards:
       - type: x
-        above: r1
+        above: Red 1
         below: Finesse
       - type: x
-        above: r2
+        above: Red 2
         below: Finesse
       - type: x
-        above: r3
+        above: Red 3
         below: Finesse
       - type: x
-        above: r4
+        above: Red 4
         below: Finesse
   - name: Bob
     clueGiver: true
