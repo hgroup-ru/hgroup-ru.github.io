@@ -1,24 +1,27 @@
 ---
-title: Подсказка Бобу по числу
+title: Подсказка Бобу числом 3
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-self-finesse-precedence/question.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-self-finesse-precedence" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Боб получает Play Clue по числу, которая затрагивает его chop и более новую карту. Из уже имеющихся заметок Боб знает, что chop не может быть обычным играбельным фокусом, поэтому Focus Inversion обычно перенёс бы фокус на более новую карту. Однако та же подсказка по числу одновременно образует допустимый Self-Finesse на Боба, и знание карт эту линию не исключает.
+Красная стопка на 1, зелёная — на 2. На chop Боба уже есть красная информация. Алиса теперь даёт Бобу Play Clue числом 3, затрагивающую более новую карту и chop. Поэтому Боб знает, что карта на chop — красная 3 и прямо сейчас неиграбельна. В руках Алисы и Кэти он не видит красной 2, а его Finesse Position полностью без подсказок. Более новая затронутая карта могла бы быть играбельной зелёной 3, поэтому Focus Inversion тоже выглядит возможной интерпретацией.
 
-Какую интерпретацию должен выбрать Боб?
+Что Боб должен сделать первым?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Боб должен выбрать **Self-Finesse по числу**. На уровне 12 это специальное исключение из обычного порядка Occam's Razor: когда Self-Finesse по числу и Focus Inversion одновременно возможны, Self-Finesse имеет приоритет. Боб не должен выбирать внешне более простую интерпретацию через инверсию фокуса только потому, что она требует меньше дополнительных действий.
+Боб должен **сначала сыграть Finesse Position вслепую**. Подсказка числом 3 может быть Self-Finesse через собственную красную 2 Боба к красной 3 на chop. На 12-м уровне Self-Finesse по числу явно имеет приоритет над Focus Inversion, поэтому Боб не выбирает внешне более простую линию с зелёной 3. Если бы про Finesse Position Боба было известно, что это не 2, линия Self-Finesse исчезла бы и Focus Inversion мог бы стать основной интерпретацией.
 
 </TabItem>
 </Tabs>

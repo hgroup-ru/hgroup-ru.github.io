@@ -5,7 +5,7 @@ stacks:
   - b: 0
   - p: 0
 bigText:
-  text: 2 clues
+  text: 6 clues
 players:
   - name: Alice
     cards:
@@ -16,26 +16,19 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: b1
+      - type: b
         clue: b
-      - type: y3
-        border: false
-      - type: g4
-        border: false
-      - type: p5
-        border: false
-      - type: b3
+      - type: x
+      - type: x
+      - type: x
+      - type: b2345
         clue: b
         middleNote: not1
   - name: Cathy
+    clueGiver: true
     cards:
-      - type: y1
-        border: false
-      - type: g2
-        border: false
-      - type: p3
-        border: false
-      - type: r4
-        border: false
-      - type: b4
-        border: false
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

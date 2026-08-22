@@ -1,24 +1,27 @@
 ---
-title: Bob's Rank Clue
+title: Bob's Number 3 Clue
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "./level-12-self-finesse-precedence/question.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-self-finesse-precedence" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Bob receives a rank Play Clue that touches his chop and a newer card. From Bob's existing notes, the chop cannot be the straightforward playable focus, so Focus Inversion would normally move focus to the newer card. However, the same rank clue also forms a legal Self-Finesse on Bob, and nothing in his card knowledge rules that line out.
+Red is on 1 and green is on 2. Bob's chop already has red information. Alice now gives Bob a number 3 Play Clue touching a newer card and chop. Bob therefore knows that chop is red 3 and is not directly playable. He sees no red 2 in Alice's or Cathy's hand, and his own Finesse Position is completely unclued. The newer touched card could instead be the directly playable green 3, so Focus Inversion also looks possible.
 
-Which interpretation should Bob follow?
+What should Bob do first?
+
+<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Bob should follow the **rank Self-Finesse**. Level 12 makes this a specific exception to the usual Occam's Razor ordering: when a rank Self-Finesse and Focus Inversion are both live, the Self-Finesse has precedence. Bob should not choose the apparently simpler inverted-focus reading merely because it requires less machinery.
+Bob should **blind-play his Finesse Position first**. The number 3 clue can be a Self-Finesse through Bob's own red 2 to the red 3 on chop. Level 12 explicitly gives rank Self-Finesses precedence over Focus Inversion, so Bob does not take the apparently simpler direct green-3 focus. If his Finesse Position were known not to be a 2, that Self-Finesse line would disappear and the Focus Inversion reading could take over.
 
 </TabItem>
 </Tabs>
