@@ -5,7 +5,7 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: 2 clues
+  text: Bob to act
 players:
   - name: Alice
     cards:
@@ -36,7 +36,7 @@ players:
   - name: Donald
     cards:
       - type: b3
-        clue: b
+        middleNote: b
       - type: g3
         border: false
       - type: y5
