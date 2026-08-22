@@ -5,7 +5,7 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: DDA after misplay
+  text: DDA
   color: orange
 players:
   - name: Alice
@@ -14,9 +14,7 @@ players:
       - type: x
       - type: x
       - type: x
-      - type: r4
-        below: Misplay
-        border: false
+      - type: x
   - name: Bob
     clueGiver: true
     cards:
@@ -37,5 +35,7 @@ players:
         border: false
       - type: y4
         border: false
-      - type: b5
+      - type: b4
         border: false
+discarded:
+  - r4

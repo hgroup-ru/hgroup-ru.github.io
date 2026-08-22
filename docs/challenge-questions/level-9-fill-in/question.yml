@@ -7,16 +7,22 @@ stacks:
 discarded:
   - r4
 bigText:
-  text: DDA - Bob to act
+  text: DDA
 players:
   - name: Alice
     cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: x
+      - type: r3
+        border: false
+      - type: y3
+        border: false
+      - type: g4
+        border: false
+      - type: b4
+        border: false
+      - type: p4
+        border: false
   - name: Bob
+    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -26,13 +32,12 @@ players:
   - name: Cathy
     cards:
       - type: g3
-        clue: g
-        middleNote: green
+        middleNote: g
       - type: y4
         border: false
-      - type: b4
+      - type: b1
         border: false
-      - type: p4
+      - type: p1
         border: false
-      - type: r5
+      - type: r1
         border: false

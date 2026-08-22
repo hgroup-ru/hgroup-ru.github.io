@@ -15,7 +15,7 @@ import Question from "@site/docs/challenge-questions/level-9-finesse-position-ex
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Идёт Early Game. Единственная оставшаяся обычная Play Clue напрямую затронет играбельную красную 1 Кэти на Finesse Position. Вместо этого Алиса может дать 5 Stall на off-chop зелёную 5 Боба. После этого Боб ходит раньше Кэти и может подсказать красную 2 Дональда, действительно сделав Finesse красной 1 Кэти до её обычного хода.
+Идёт Early Game, и Алиса начинает ход с 2 подсказками. Единственная оставшаяся обычная Play Clue напрямую затронет играбельную красную 1 Кэти на Finesse Position. Вместо этого Алиса может дать 5 Stall на off-chop зелёную 5 Боба. Следующим ходит Боб; после 5 Stall останется 1 подсказка, и Боб сможет до хода Кэти подсказать красную 2 Дональда. Эта подсказка может быть Finesse: на своём ходу Кэти вслепую сыграет красную 1.
 
 Разрешён ли Алисе 5 Stall по Finesse Position Exception?
 
@@ -24,7 +24,7 @@ import Question from "@site/docs/challenge-questions/level-9-finesse-position-ex
 </TabItem>
 <TabItem value="solution">
 
-**Да.** Это положительный случай Finesse Position Exception: осталась только одна Play Clue, она затрагивает карту на Finesse Position, и эту карту действительно может получить через Finesse другой игрок до хода получателя. Алиса может дать 5 Stall вместо прямой подсказки красной 1 и сохранить возможность Бобу сделать Finesse.
+**Да.** Это положительный случай Finesse Position Exception: осталась только одна Play Clue, она затрагивает карту на Finesse Position, и другой игрок действительно успевает дать Finesse-подсказку до хода владельца этой карты. После 5 Stall у команды остаётся одна подсказка, а Боб ходит раньше Кэти: он даёт Finesse-подсказку, после чего Кэти на своём ходу вслепую играет красную 1.
 
 </TabItem>
 </Tabs>

@@ -5,9 +5,10 @@ stacks:
   - b: 0
   - p: 0
 bigText:
-  text: Early Game - Alice to act
+  text: 2 clues
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x

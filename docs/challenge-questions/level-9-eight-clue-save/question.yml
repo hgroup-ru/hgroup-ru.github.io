@@ -19,24 +19,23 @@ players:
     cards:
       - type: r4
         border: false
-      - type: y1
-        border: false
-      - type: g3
-        border: false
-      - type: b5
-        border: false
-      - type: p2
-        border: false
-  - name: Cathy
-    cards:
-      - type: b1
+      - type: y4
         border: false
       - type: g4
         border: false
-      - type: p3
+      - type: b4
         border: false
-      - type: y5
+      - type: p4
         border: false
-      - type: r3
+  - name: Cathy
+    cards:
+      - type: r1
         border: false
-        below: Chop
+      - type: g1
+        border: false
+      - type: p4
+        border: false
+      - type: y4
+        border: false
+      - type: b4
+        border: false

@@ -5,15 +5,28 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: 1 clue - Cathy acts next
+  text: 1 clue
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
+  - name: Cathy
+    cards:
+      - type: r4
+        middleNote: r
+      - type: y5
+        middleNote: 5
+      - type: g3
+        middleNote: g
+      - type: b5
+        middleNote: b
+      - type: p3
+        middleNote: 3
   - name: Bob
     cards:
       - type: r4
@@ -26,15 +39,3 @@ players:
         border: false
       - type: p4
         border: false
-  - name: Cathy
-    cards:
-      - type: r2
-        clue: 2
-      - type: y5
-        clue: 5
-      - type: g3
-        clue: g
-      - type: b5
-        clue: b
-      - type: p3
-        clue: 3

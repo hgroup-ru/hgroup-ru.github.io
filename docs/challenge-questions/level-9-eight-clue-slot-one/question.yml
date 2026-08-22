@@ -5,9 +5,10 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: 8 clues - Mid-Game
+  text: 8 clues
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -17,7 +18,7 @@ players:
   - name: Bob
     cards:
       - type: y2
-        border: false
+        clue: y
       - type: r4
         border: false
       - type: g4

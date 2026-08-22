@@ -4,6 +4,7 @@
   "scripts": {
     "audit:external-links": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkExternalReadingLinks.mts",
     "audit:local-cq": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkLocalChallengeQuestions.mts",
+    "audit:local-cq-states": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/checkLocalChallengeQuestionStates.mts",
     "build": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/build.mts",
     "build:ru": "npm run generate-product-data && npm run compile-plugin && docusaurus clear && docusaurus build --locale ru",
     "clear": "docusaurus clear",
@@ -11,7 +12,7 @@
     "docusaurus": "docusaurus",
     "format": "npm run generate-product-data && eslint --fix . && prettier --write .",
     "generate-product-data": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/generateProductData.mts",
-    "lint": "npm run lint:core && npm run audit:local-cq && npm run audit:external-links",
+    "lint": "npm run lint:core && npm run audit:local-cq && npm run audit:local-cq-states && npm run audit:external-links",
     "lint:core": "npm run generate-product-data && tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts",
     "prepare": "husky",
     "serve": "docusaurus serve",
