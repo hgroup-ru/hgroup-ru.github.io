@@ -5,7 +5,7 @@ stacks:
   - b: 1
   - p: 0
 bigText:
-  text: Alice's proposed clue
+  text: 2 clues
 players:
   - name: Alice
     cards:
