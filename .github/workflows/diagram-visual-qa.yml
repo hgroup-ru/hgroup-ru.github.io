@@ -30,8 +30,12 @@ jobs:
       - name: Build RU site
         run: npm run build:ru
 
-      - name: Install Chromium
-        run: npx --yes playwright@1.55.0 install --with-deps chromium
+      - name: Install Playwright and Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save --ignore-scripts playwright@1.55.0
+          npx playwright install --with-deps chromium
 
       - name: Capture exact teaching diagrams
         shell: bash
@@ -53,7 +57,7 @@ jobs:
             sleep 1
           done
 
-          npx --yes --package playwright@1.55.0 node <<'NODE'
+          node <<'NODE'
           const { chromium } = require('playwright');
 
           (async () => {
