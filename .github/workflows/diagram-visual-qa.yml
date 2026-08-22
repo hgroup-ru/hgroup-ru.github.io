@@ -1,0 +1,82 @@
+name: Diagram Visual QA
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - i18n/ru/docusaurus-plugin-content-docs/current/extras/ejections.mdx
+      - i18n/ru/docusaurus-plugin-content-docs/current/extras/ejections/**
+      - i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/no-positive-clues.mdx
+      - i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/no-positive-clues/**
+      - i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/odds-and-evens.mdx
+      - i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/odds-and-evens/**
+      - i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/up-or-down.mdx
+      - i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/up-or-down/**
+      - .github/workflows/diagram-visual-qa.yml
+
+permissions:
+  contents: read
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup
+        uses: ./.github/workflows/setup
+
+      - name: Build RU site
+        run: npm run build:ru
+
+      - name: Install Chromium
+        run: npx --yes playwright@1.55.0 install --with-deps chromium
+
+      - name: Capture diagram pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p screenshots
+          python3 -m http.server 3000 --directory build >/tmp/diagram-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+
+          for page in \
+            extras/ejections \
+            variant-specific/no-positive-clues \
+            variant-specific/odds-and-evens \
+            variant-specific/up-or-down
+          do
+            url="http://127.0.0.1:3000/${page}.html"
+            for attempt in $(seq 1 30); do
+              if curl --fail --silent "$url" >/dev/null; then
+                break
+              fi
+              if [ "$attempt" -eq 30 ]; then
+                cat /tmp/diagram-http.log
+                exit 1
+              fi
+              sleep 1
+            done
+
+            slug="${page//\//-}"
+            npx --yes playwright@1.55.0 screenshot \
+              --browser chromium \
+              --device "Desktop Chrome" \
+              --full-page \
+              "$url" \
+              "screenshots/${slug}-desktop.png"
+            npx --yes playwright@1.55.0 screenshot \
+              --browser chromium \
+              --device "Pixel 5" \
+              --full-page \
+              "$url" \
+              "screenshots/${slug}-mobile.png"
+          done
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagram-visual-qa
+          path: screenshots/*.png
