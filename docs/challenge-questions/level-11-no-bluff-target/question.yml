@@ -5,7 +5,7 @@ stacks:
   - b: 0
   - p: 0
 bigText:
-  text: After Cathy discards
+  text: 2 clues
 players:
   - name: Alice
     cards:
