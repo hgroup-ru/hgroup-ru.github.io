@@ -4,9 +4,6 @@ import path from "node:path";
 import { parse } from "yaml";
 import { z } from "zod";
 
-import type { Player } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState";
-import { hanabiGameStateSchema } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState";
-
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const EN_ROOT = path.join(REPO_ROOT, "docs/challenge-questions");
 const CONFIG_PATH = path.join(
@@ -23,6 +20,26 @@ const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
   [5, 1],
 ]);
 const LEVEL_CONFIG_SCHEMA = z.array(z.int().positive()).min(1).readonly();
+const CARD_SCHEMA = z
+  .object({ type: z.coerce.string().min(1) })
+  .passthrough()
+  .readonly();
+const PLAYER_SCHEMA = z
+  .object({
+    name: z.coerce.string().min(1).optional(),
+    cards: z.array(CARD_SCHEMA).readonly(),
+  })
+  .passthrough()
+  .readonly();
+const STACK_SCHEMA = z.record(z.string().length(1), z.number()).readonly();
+const STATE_PREFLIGHT_SCHEMA = z
+  .object({
+    players: z.array(z.unknown()).readonly(),
+    discarded: z.array(z.coerce.string().min(1)).readonly().optional(),
+    stacks: z.array(STACK_SCHEMA).readonly().optional(),
+  })
+  .passthrough()
+  .readonly();
 
 const configContents = await readFile(CONFIG_PATH);
 const configuredLevels = LEVEL_CONFIG_SCHEMA.parse(
@@ -56,8 +73,11 @@ console.log(
 
 async function validateState(filePath: string) {
   const contents = await readFile(filePath);
-  const state = hanabiGameStateSchema.parse(parse(contents) as unknown);
-  const players = state.players.filter(isPlayer);
+  const state = STATE_PREFLIGHT_SCHEMA.parse(parse(contents) as unknown);
+  const players = state.players.flatMap((entry) => {
+    const parsedPlayer = PLAYER_SCHEMA.safeParse(entry);
+    return parsedPlayer.success ? [parsedPlayer.data] : [];
+  });
 
   if (players.length < 2 || players.length > 5) {
     fail(filePath, `unsupported player count: ${players.length}`);
@@ -86,15 +106,13 @@ async function validateState(filePath: string) {
     }
   }
 
-  const discarded = state.discarded ?? [];
-  for (const card of discarded) {
+  for (const card of state.discarded ?? []) {
     recordExactCard(card);
   }
 
-  const stacks = state.stacks ?? [];
-  for (const stack of stacks) {
+  for (const stack of state.stacks ?? []) {
     for (const [suit, rank] of Object.entries(stack)) {
-      if (rank < 0 || rank > 5) {
+      if (rank < 0 || rank > 5 || !Number.isSafeInteger(rank)) {
         fail(filePath, `invalid ${suit} stack height: ${rank}`);
       }
       for (let currentRank = 1; currentRank <= rank; currentRank++) {
@@ -117,12 +135,6 @@ async function validateState(filePath: string) {
       );
     }
   }
-}
-
-function isPlayer(
-  entry: z.infer<typeof hanabiGameStateSchema>["players"][number],
-): entry is Player {
-  return typeof entry === "object" && "cards" in entry;
 }
 
 function fail(filePath: string, message: string): never {
