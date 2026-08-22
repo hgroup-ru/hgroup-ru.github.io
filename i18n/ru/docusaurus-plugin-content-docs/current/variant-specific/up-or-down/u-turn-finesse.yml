@@ -2,13 +2,17 @@ players:
   - name: Alice
     cards:
       - type: x
-        middleNote: r1
+        above: r1
+        below: Finesse
       - type: x
-        middleNote: r2
+        above: r2
+        below: Finesse
       - type: x
-        middleNote: r3
+        above: r3
+        below: Finesse
       - type: x
-        middleNote: r4
+        above: r4
+        below: Finesse
   - name: Bob
     clueGiver: true
     cards:

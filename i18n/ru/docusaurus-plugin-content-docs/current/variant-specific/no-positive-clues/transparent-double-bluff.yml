@@ -25,8 +25,8 @@ players:
       - type: x
   - cards:
       - type: r2
-        clue: r
-        below: Play
+        border: false
+        below: 1-away
       - type: x
       - type: x
       - type: x
