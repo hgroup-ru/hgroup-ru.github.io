@@ -5,23 +5,37 @@ title: After the Blue 3
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Question from "./level-11-after-blue-three/question.yml";
+import Clue from "./level-11-after-blue-three/clue.yml";
+import After from "./level-11-after-blue-three/question.yml";
+import Answer from "./level-11-after-blue-three/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-after-blue-three" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-All 2s were played. Alice gave Cathy a red Play Clue touching one card. Bob immediately blind-played his Finesse Position, expecting the connecting red 3; it was the blue 3 and played successfully.
+All 2s were played. Alice gave Cathy a red Play Clue touching one card.
+
+**Alice's clue:**
+
+<Clue />
+
+Bob immediately blind-played his Finesse Position, expecting the connecting red 3. It was the blue 3 and played successfully.
+
+**After Bob's play:**
+
+<After />
 
 How should the team interpret Alice's clue now?
-
-<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-This is a **Bluff**. Bob's blue 3 does not connect to the red clue, so Cathy's Connecting Principle rules out the ordinary Finesse interpretation. The clue target must instead be a red card that was one-away-from-playable when the clue was given: the red 4.
+This is a **Bluff**. Bob's blue 3 does not connect to the red clue, so Cathy's Connecting Principle rules out the ordinary Finesse interpretation. The clue target must instead be a red card that was one-away-from-playable when the clue was given: the red 4. Cathy can now write **r4** on the clued card.
+
+**Resulting note:**
+
+<Answer />
 
 </TabItem>
 </Tabs>

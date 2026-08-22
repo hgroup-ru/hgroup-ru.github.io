@@ -16,22 +16,23 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: p2
+      - type: b2
         border: false
       - type: x
       - type: x
       - type: x
   - name: Cathy
     cards:
-      - type: b2
-        border: false
-      - type: x
+      - type: r3
+        middleNote: 3
+      - type: g3
+        middleNote: 3
       - type: x
       - type: x
   - name: Donald
     cards:
-      - type: b3
-        clue: b
+      - type: r4
+        clue: r
       - type: x
       - type: x
       - type: x

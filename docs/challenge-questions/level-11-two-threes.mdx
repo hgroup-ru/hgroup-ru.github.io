@@ -5,23 +5,37 @@ title: Two Clued 3s
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Question from "./level-11-two-threes/question.yml";
+import Clue from "./level-11-two-threes/clue.yml";
+import After from "./level-11-two-threes/question.yml";
+import Answer from "./level-11-two-threes/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-two-threes" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-All 1s were played. Cathy already had two different cards clued as 3s. Alice then gave Donald a red Play Clue on his red 4. Bob immediately blind-played a blue 2 instead of the expected red 2, so the clue is revealed as a Bluff.
+All 1s were played. Cathy already had two different cards clued as 3s. Alice then gave Donald a red Play Clue on his red 4.
+
+**Alice's clue:**
+
+<Clue />
+
+Bob immediately blind-played his Finesse Position instead of the expected red 2. It was the blue 2 and played successfully, so the clue is revealed as a Bluff.
+
+**After Bob's play:**
+
+<After />
 
 What exactly can Cathy conclude about her two clued 3s?
-
-<Question />
 
 </TabItem>
 <TabItem value="solution">
 
 Cathy is promised that **one of the matching clued 3s is the red 3**, but she is **not promised which slot**. The Bluff can pass through an already-clued connecting card and establish its identity class, but when several matching clued cards exist it does not identify the position. Cathy must keep both slot possibilities alive until later information resolves them.
+
+A convenient way to record that is to keep **r3?** on both candidate slots; the cross-slot fact is that exactly one of them is the red 3.
+
+<Answer />
 
 </TabItem>
 </Tabs>

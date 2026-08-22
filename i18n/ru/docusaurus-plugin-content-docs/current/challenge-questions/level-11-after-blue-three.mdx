@@ -5,23 +5,37 @@ title: После синей 3
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Question from "@site/docs/challenge-questions/level-11-after-blue-three/question.yml";
+import Clue from "@site/docs/challenge-questions/level-11-after-blue-three/clue.yml";
+import After from "@site/docs/challenge-questions/level-11-after-blue-three/question.yml";
+import Answer from "@site/docs/challenge-questions/level-11-after-blue-three/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-after-blue-three" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Все 2 уже были сыграны. Алиса дала Кэти красную Play Clue, затронув одну карту. Боб сразу вслепую сыграл свою Finesse Position, ожидая связующую красную 3; там оказалась синяя 3, которая успешно сыгралась.
+Все 2 уже были сыграны. Алиса дала Кэти красную Play Clue, затронув одну карту.
+
+**Подсказка Алисы:**
+
+<Clue />
+
+Боб сразу вслепую сыграл свою Finesse Position, ожидая связующую красную 3. Там оказалась синяя 3, которая успешно сыгралась.
+
+**После хода Боба:**
+
+<After />
 
 Как теперь команда должна трактовать подсказку Алисы?
-
-<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Это **Bluff**. Синяя 3 Боба не соединяется с красной подсказкой, поэтому по Cathy's Connecting Principle обычная интерпретация через Finesse отпадает. Значит, цель подсказки должна быть красной картой, которая в момент подсказки была one-away-from-playable: красной 4.
+Это **Bluff**. Синяя 3 Боба не соединяется с красной подсказкой, поэтому по Cathy's Connecting Principle обычная интерпретация через Finesse отпадает. Значит, цель подсказки должна быть красной картой, которая в момент подсказки была one-away-from-playable: красной 4. Кэти теперь может записать **r4** на затронутой карте.
+
+**Итоговая заметка:**
+
+<Answer />
 
 </TabItem>
 </Tabs>
