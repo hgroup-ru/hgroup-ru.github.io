@@ -38,13 +38,10 @@ jobs:
                   path.write_text(text.replace(needle, "."))
 
           expected = {
-              root / "level-1.mdx",
-              root / "level-3.mdx",
               root / "level-4.mdx",
               root / "level-5.mdx",
-              root / "level-25.mdx",
           }
-          if len(hits) != 5 or set(hits) != expected:
+          if len(hits) != 2 or set(hits) != expected:
               raise SystemExit(f"Unexpected RU crawler occurrences: {[str(p) for p in hits]}")
           PY
 
@@ -59,7 +56,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add i18n/ru/docusaurus-plugin-content-docs/current/level-{1,3,4,5,25}.mdx
+          git add i18n/ru/docusaurus-plugin-content-docs/current/level-{4,5}.mdx
           git diff --cached --check
           git commit -m 'docs: remove internal crawler wording from training questions'
           git push origin HEAD:${{ github.head_ref }}
