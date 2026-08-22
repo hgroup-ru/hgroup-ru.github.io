@@ -33,7 +33,7 @@ jobs:
       - name: Install Chromium
         run: npx --yes playwright@1.55.0 install --with-deps chromium
 
-      - name: Capture diagram pages
+      - name: Capture exact teaching diagrams
         shell: bash
         run: |
           set -euo pipefail
@@ -42,38 +42,56 @@ jobs:
           server_pid=$!
           trap 'kill "$server_pid" || true' EXIT
 
-          for page in \
-            extras/ejections \
-            variant-specific/no-positive-clues \
-            variant-specific/odds-and-evens \
-            variant-specific/up-or-down
-          do
-            url="http://127.0.0.1:3000/${page}.html"
-            for attempt in $(seq 1 30); do
-              if curl --fail --silent "$url" >/dev/null; then
-                break
-              fi
-              if [ "$attempt" -eq 30 ]; then
-                cat /tmp/diagram-http.log
-                exit 1
-              fi
-              sleep 1
-            done
-
-            slug="${page//\//-}"
-            npx --yes playwright@1.55.0 screenshot \
-              --browser chromium \
-              --device "Desktop Chrome" \
-              --full-page \
-              "$url" \
-              "screenshots/${slug}-desktop.png"
-            npx --yes playwright@1.55.0 screenshot \
-              --browser chromium \
-              --device "Pixel 5" \
-              --full-page \
-              "$url" \
-              "screenshots/${slug}-mobile.png"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3000/variant-specific/up-or-down.html >/dev/null; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              cat /tmp/diagram-http.log
+              exit 1
+            fi
+            sleep 1
           done
+
+          npx --yes --package playwright@1.55.0 node <<'NODE'
+          const { chromium } = require('playwright');
+
+          const targets = [
+            ['transparent-double-bluff', 'variant-specific/no-positive-clues', 'the-transparent-double-bluff'],
+            ['five-odd-ejection', 'variant-specific/odds-and-evens', 'the-5-odd-ejection'],
+            ['u-turn-finesse', 'variant-specific/up-or-down', 'the-u-turn-finesse'],
+            ['trash-push-ejection', 'extras/ejections', 'trash-push-ejection'],
+          ];
+
+          const profiles = [
+            ['desktop', { width: 1280, height: 900 }],
+            ['mobile', { width: 390, height: 844 }],
+          ];
+
+          const browser = await chromium.launch({ headless: true });
+          try {
+            for (const [profile, viewport] of profiles) {
+              const context = await browser.newContext({ viewport });
+              const page = await context.newPage();
+              for (const [slug, path, anchor] of targets) {
+                await page.goto(`http://127.0.0.1:3000/${path}.html#${anchor}`, {
+                  waitUntil: 'networkidle',
+                });
+                const heading = page.locator(`#${anchor}`);
+                await heading.waitFor({ state: 'visible' });
+                const diagram = heading.locator(
+                  'xpath=following::svg[contains(concat(" ", normalize-space(@class), " "), " example ")][1]',
+                );
+                await diagram.waitFor({ state: 'visible' });
+                await diagram.scrollIntoViewIfNeeded();
+                await diagram.screenshot({ path: `screenshots/${slug}-${profile}.png` });
+              }
+              await context.close();
+            }
+          } finally {
+            await browser.close();
+          }
+          NODE
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
