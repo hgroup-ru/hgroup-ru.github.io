@@ -5,7 +5,7 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: Bob to act
+  text: 2 clues
 players:
   - name: Alice
     cards:
