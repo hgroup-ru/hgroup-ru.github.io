@@ -34,6 +34,7 @@
 ## Content
 
 - [Level 10 — локальные Challenge Questions](upstream-candidates/content/level-10-challenge-questions.md) — `candidate` · transfer: `medium`
+- [5 Odd Ejection — переписать пример](upstream-candidates/content/5-odd-ejection-example.md) — `candidate` · transfer: `low`
 - [Level 23 — Cathy / Alice](upstream-candidates/content/level-23-cathy-alice.md) — `candidate` · transfer: `low`
 - [Level 24 — player count](upstream-candidates/content/level-24-player-count.md) — `candidate` · transfer: `low`
 - [how-to-join — Discord UI](upstream-candidates/content/how-to-join-discord.md) — `candidate` · transfer: `low`
