@@ -9,10 +9,14 @@ bigText:
 players:
   - name: Alice
     cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
+      - type: y2
+        border: false
+      - type: g2
+        border: false
+      - type: p2
+        border: false
+      - type: y4
+        border: false
   - name: Bob
     cards:
       - type: r1

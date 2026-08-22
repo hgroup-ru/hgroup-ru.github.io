@@ -26,9 +26,9 @@ players:
   - name: Cathy
     cards:
       - type: r3
-        clue: 3
+        middleNote: 3
       - type: g3
-        clue: 3
+        middleNote: 3
       - type: y5
         border: false
       - type: p4
@@ -36,7 +36,7 @@ players:
   - name: Donald
     cards:
       - type: r4
-        clue: r
+        middleNote: r
       - type: b4
         border: false
       - type: g5
