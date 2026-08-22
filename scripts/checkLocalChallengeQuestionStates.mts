@@ -4,10 +4,8 @@ import path from "node:path";
 import { parse } from "yaml";
 import { z } from "zod";
 
-import {
-  hanabiGameStateSchema,
-  type Player,
-} from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState.ts";
+import type { Player } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState.ts";
+import { hanabiGameStateSchema } from "../plugins/hanabiDocusaurusPlugin/plugin/src/hanabiGameState.ts";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const EN_ROOT = path.join(REPO_ROOT, "docs/challenge-questions");
@@ -16,7 +14,7 @@ const CONFIG_PATH = path.join(
   "localization/LOCAL_CQ_STATE_PREFLIGHT_LEVELS.json",
 );
 
-const EXACT_CARD_PATTERN = /^(?:[rygbp])(?<rank>[1-5])$/v;
+const EXACT_CARD_PATTERN = /^[bgpry](?<rank>[1-5])$/v;
 const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
   [1, 3],
   [2, 2],
@@ -48,13 +46,15 @@ for (const { level, files } of statesByLevel) {
   }
 }
 
-await Promise.all(statesByLevel.flatMap(({ files }) => files.map(validateState)));
+await Promise.all(
+  statesByLevel.flatMap(({ files }) => files.map(validateState)),
+);
 
 console.log(
   `Local CQ state preflight passed for levels: ${configuredLevels.join(", ")}.`,
 );
 
-async function validateState(filePath: string): Promise<void> {
+async function validateState(filePath: string) {
   const contents = await readFile(filePath);
   const state = hanabiGameStateSchema.parse(parse(contents) as unknown);
   const players = state.players.filter(isPlayer);
@@ -97,7 +97,7 @@ async function validateState(filePath: string): Promise<void> {
       if (rank < 0 || rank > 5) {
         fail(filePath, `invalid ${suit} stack height: ${rank}`);
       }
-      for (let currentRank = 1; currentRank <= rank; currentRank += 1) {
+      for (let currentRank = 1; currentRank <= rank; currentRank++) {
         recordExactCard(`${suit}${currentRank}`);
       }
     }
@@ -111,7 +111,10 @@ async function validateState(filePath: string): Promise<void> {
     }
     const limit = COPY_LIMITS.get(Number(rankText));
     if (limit !== undefined && count > limit) {
-      fail(filePath, `${card} appears ${count} physical times; deck limit is ${limit}`);
+      fail(
+        filePath,
+        `${card} appears ${count} physical times; deck limit is ${limit}`,
+      );
     }
   }
 }
