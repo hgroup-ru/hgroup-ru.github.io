@@ -34,7 +34,7 @@ players:
       - type: y5
         border: false
         below: Play
-  - text: "After Bob ejects, Cathy marks the odd card as a non-red 5:"
+  - text: "After Bob ejects: the odd card is a non-red 5."
   - name: Cathy
     cards:
       - type: r
@@ -43,4 +43,3 @@ players:
       - type: x
       - type: x
       - type: ygbp5
-        middleNote: "!r5"
