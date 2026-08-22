@@ -27,7 +27,7 @@
 
 ## Локальные учебные диаграммы
 
-Семь YML-файлов являются учебным материалом H-Group RU, а не официальными YML H-Group:
+Одиннадцать YML-файлов являются учебным материалом H-Group RU, а не официальными YML H-Group:
 
 - Level 3: `local-information-lock-identity.yml`;
 - Level 3: `local-information-lock-superposition.yml`;
@@ -35,9 +35,13 @@
 - Level 15: `local-truth-vs-occam.yml`;
 - Level 18: `local-riding-deduction.yml`;
 - Level 24: `local-unnecessary-utd-bcme.yml`;
-- Level 25: `local-important-2-save.yml`.
+- Level 25: `local-important-2-save.yml`;
+- Variant-Specific / No Positive Clues: `transparent-double-bluff.yml`;
+- Variant-Specific / Odds and Evens: `5-odd-ejection.yml`;
+- Variant-Specific / Up or Down: `u-turn-finesse.yml`;
+- Extras / Ejections: `trash-push-ejection.yml`.
 
-Они хранятся рядом с соответствующими русскими страницами и рендерятся тем же штатным плагином, что и официальные диаграммы.
+Они хранятся рядом с соответствующими русскими страницами и рендерятся тем же штатным плагином, что и официальные диаграммы. Локальные teaching diagrams, которые потенциально полезны upstream, отдельно отслеживаются в [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) и карточках [`upstream-candidates/diagrams/`](upstream-candidates/diagrams/).
 
 ## Локальные учебные вопросы
 
