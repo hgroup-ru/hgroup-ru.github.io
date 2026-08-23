@@ -6,6 +6,7 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "./level-12-focus-inversion/question.yml";
+import Answer from "./level-12-focus-inversion/answer.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-focus-inversion" />
 
@@ -22,6 +23,8 @@ Where is the focus of Cathy's clue?
 <TabItem value="solution">
 
 The focus is **slot 1**, not chop. Normally a new multi-touch Play Clue that includes chop would be chop-focused. But Bob already knows from the earlier number 1 clue that slot 5 cannot be the blue 1, so the chop card cannot be the currently playable blue card. Focus Inversion applies: the clue focuses the leftmost newly touched blue card, while the blue chop card can be blue 2, 3, 4, or 5 and is not promised playable now.
+
+<Answer />
 
 </TabItem>
 </Tabs>

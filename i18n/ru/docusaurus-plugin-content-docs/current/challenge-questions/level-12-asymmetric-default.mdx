@@ -5,6 +5,8 @@ title: Три подсказанные 2 Боба
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Question from "@site/docs/challenge-questions/level-12-asymmetric-default/question.yml";
+import Answer from "@site/docs/challenge-questions/level-12-asymmetric-default/answer.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-asymmetric-default" />
 
@@ -12,6 +14,8 @@ import TabItem from "@theme/TabItem";
 <TabItem value="question">
 
 Идёт Early Game, у команды 3 подсказки. У Боба три карты, которые раньше были спасены 2 Save, и с тех пор Боб не сбрасывал. У Кэти на chop лежит красная 2. Алиса делает первый полностью неизвестный сброс и заканчивает Early Game.
+
+<Question />
 
 Какие игроки теперь должны пометить три подсказанные 2 Боба как возможные красные 2?
 
@@ -21,6 +25,8 @@ import TabItem from "@theme/TabItem";
 **Алиса, Боб и Дональд должны; Кэти — нет.** Сброс Алисы означает, что обязательных подсказок больше не оставалось, поэтому видимая красная 2 на chop Кэти не может быть единственной красной 2 вне руки Боба. Поскольку после своего 2 Save Боб не сбрасывал, Алиса, Боб и Дональд могут вывести, что одна из трёх подсказанных 2 Боба — вторая красная 2, и пометить все три как возможные красные 2.
 
 Кэти не видит собственную карту на chop и не может восстановить этот вывод. Это именно рассинхронизация асимметричной информации из источника Level 12: команда должна помнить, что у Кэти **нет** этих заметок.
+
+<Answer />
 
 </TabItem>
 </Tabs>

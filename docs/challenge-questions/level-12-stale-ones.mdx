@@ -6,6 +6,7 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "./level-12-stale-ones/question.yml";
+import Answer from "./level-12-stale-ones/answer.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-stale-ones" />
 
@@ -22,6 +23,8 @@ Which of the two cards should Cathy play first, and what should she conclude abo
 <TabItem value="solution">
 
 Cathy should **skip the oldest/rightmost 1 and play the newer/leftmost 1**. This is a Stale 1's Clue. Alice's unknown discard implied that no ordinary Play Clue or Save Clue remained, so both newly clued 1s cannot be good. By convention the oldest 1 is the stale one Cathy would otherwise have played first, so she marks it known-trash and plays the newer 1.
+
+<Answer />
 
 </TabItem>
 </Tabs>

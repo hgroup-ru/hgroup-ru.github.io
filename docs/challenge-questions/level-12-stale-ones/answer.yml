@@ -12,7 +12,6 @@ players:
       - type: x
       - type: x
   - name: Bob
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -22,9 +21,9 @@ players:
     cards:
       - type: x
       - type: 1
-        clue: 1
       - type: 1
-        clue: 1
+        middleNote: kt
+        trash: true
       - type: x
   - name: Donald
     cards:

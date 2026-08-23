@@ -6,7 +6,6 @@ stacks:
   - p: 1
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: r4
         border: false
@@ -21,15 +20,14 @@ players:
   - name: Bob
     cards:
       - type: x
+        above: Red 2
+        below: Finesse
       - type: 3
-        clue: 3
       - type: y4
         border: false
       - type: b4
         border: false
       - type: r3
-        clue: 3
-        middleNote: r
   - name: Cathy
     cards:
       - type: r4

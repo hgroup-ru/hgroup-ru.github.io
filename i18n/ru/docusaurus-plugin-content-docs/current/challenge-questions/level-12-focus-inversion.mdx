@@ -6,6 +6,7 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "@site/docs/challenge-questions/level-12-focus-inversion/question.yml";
+import Answer from "@site/docs/challenge-questions/level-12-focus-inversion/answer.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-focus-inversion" />
 
@@ -22,6 +23,8 @@ import Question from "@site/docs/challenge-questions/level-12-focus-inversion/qu
 <TabItem value="solution">
 
 Фокус находится **в слоте 1**, а не на chop. Обычно новая Play Clue, которая затрагивает несколько карт вместе с chop, имела бы фокус на chop. Но из предыдущей подсказки по 1 Боб уже знает, что слот 5 не может быть синей 1, поэтому chop-карта не может быть текущей играбельной синей картой. Срабатывает Focus Inversion: подсказка фокусируется на самой левой новой синей карте, а синяя chop-карта может быть синей 2, 3, 4 или 5 и не обещана играбельной прямо сейчас.
+
+<Answer />
 
 </TabItem>
 </Tabs>
