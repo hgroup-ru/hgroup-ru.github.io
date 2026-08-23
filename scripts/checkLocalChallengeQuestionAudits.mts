@@ -24,7 +24,7 @@ const SCOPE_SCHEMA = z
   .strict();
 const UPSTREAM_SCHEMA = z
   .object({ revision: z.string().regex(/^[0-9a-f]{40}$/v) })
-  .passthrough();
+  .loose();
 const STATUS_SCHEMA = z.string().refine(
   (value) => /^(?:pass(?:\b.*)?|n\/a(?:\b.*)?)$/iv.test(value.trim()),
   "status must start with pass or N/A",
@@ -140,7 +140,7 @@ async function discoverPublishedLevels(): Promise<ReadonlySet<number>> {
 function validateScope(
   name: string,
   section: z.infer<typeof SCOPE_SECTION_SCHEMA>,
-  publishedLevels: ReadonlySet<number>,
+  levels: ReadonlySet<number>,
 ): void {
   const enforced = new Set(section.enforced);
   const deferred = new Set(section.deferred);
@@ -152,11 +152,13 @@ function validateScope(
     throw new Error(`${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`);
   }
   const classified = new Set([...enforced, ...deferred]);
-  const missing = [...publishedLevels].filter((level) => !classified.has(level));
-  const stale = [...classified].filter((level) => !publishedLevels.has(level));
+  const missing = [...levels].filter((level) => !classified.has(level));
+  const stale = [...classified].filter((level) => !levels.has(level));
   if (missing.length > 0 || stale.length > 0) {
+    const missingText = missing.length === 0 ? "none" : missing.join(", ");
+    const staleText = stale.length === 0 ? "none" : stale.join(", ");
     throw new Error(
-      `${name} scope must classify every published Local CQ level exactly once. Missing: ${missing.join(", ") || "none"}; stale: ${stale.join(", ") || "none"}.`,
+      `${name} scope must classify every published Local CQ level exactly once. Missing: ${missingText}; stale: ${staleText}.`,
     );
   }
 }

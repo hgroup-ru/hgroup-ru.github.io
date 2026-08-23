@@ -180,33 +180,39 @@ async function validateState(filePath: string, solutionState: boolean) {
 
 async function collectSolutionStateFiles(level: number): Promise<ReadonlySet<string>> {
   const mdxFiles = await glob(path.join(EN_ROOT, `level-${level}-*.mdx`));
-  const solutionFiles = new Set<string>();
   const importPattern = /import\s+(?<name>[A-Za-z_$][\w$]*)\s+from\s+"(?<source>[^"]+\.(?:ya?ml))"/gv;
   const solutionPattern = /<TabItem\s+value="solution">(?<body>[\s\S]*?)<\/TabItem>/v;
 
-  for (const mdxFile of mdxFiles) {
-    const contents = await readFile(mdxFile);
-    const solutionBody = solutionPattern.exec(contents)?.groups?.["body"];
-    if (solutionBody === undefined) {
-      continue;
-    }
-    for (const match of contents.matchAll(importPattern)) {
-      const name = match.groups?.["name"];
-      const source = match.groups?.["source"];
-      if (name === undefined || source === undefined) {
-        continue;
+  const stateFilesByPage = await Promise.all(
+    mdxFiles.map(async (mdxFile) => {
+      const contents = await readFile(mdxFile);
+      const solutionBody = solutionPattern.exec(contents)?.groups?.["body"];
+      if (solutionBody === undefined) {
+        return [] as string[];
       }
-      if (!new RegExp(`<${name}(?:\\s|/|>)`, "v").test(solutionBody)) {
-        continue;
-      }
-      const resolved = source.startsWith("@site/")
-        ? path.join(REPO_ROOT, source.slice("@site/".length))
-        : path.resolve(path.dirname(mdxFile), source);
-      solutionFiles.add(resolved);
-    }
-  }
 
-  return solutionFiles;
+      return contents
+        .matchAll(importPattern)
+        .flatMap((match) => {
+          const name = match.groups?.["name"];
+          const source = match.groups?.["source"];
+          if (name === undefined || source === undefined) {
+            return [];
+          }
+          const componentPattern = new RegExp(`<${name}(?:\\s|/|>)`, "v");
+          if (!componentPattern.test(solutionBody)) {
+            return [];
+          }
+          const resolved = source.startsWith("@site/")
+            ? path.join(REPO_ROOT, source.slice("@site/".length))
+            : path.resolve(path.dirname(mdxFile), source);
+          return [resolved];
+        })
+        .toArray();
+    }),
+  );
+
+  return new Set(stateFilesByPage.flat());
 }
 
 async function discoverPublishedLevels(): Promise<ReadonlySet<number>> {
@@ -223,7 +229,7 @@ async function discoverPublishedLevels(): Promise<ReadonlySet<number>> {
 function validateScope(
   name: string,
   section: z.infer<typeof SCOPE_SECTION_SCHEMA>,
-  publishedLevels: ReadonlySet<number>,
+  levels: ReadonlySet<number>,
 ): void {
   const enforced = new Set(section.enforced);
   const deferred = new Set(section.deferred);
@@ -235,11 +241,13 @@ function validateScope(
     throw new Error(`${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`);
   }
   const classified = new Set([...enforced, ...deferred]);
-  const missing = [...publishedLevels].filter((level) => !classified.has(level));
-  const stale = [...classified].filter((level) => !publishedLevels.has(level));
+  const missing = [...levels].filter((level) => !classified.has(level));
+  const stale = [...classified].filter((level) => !levels.has(level));
   if (missing.length > 0 || stale.length > 0) {
+    const missingText = missing.length === 0 ? "none" : missing.join(", ");
+    const staleText = stale.length === 0 ? "none" : stale.join(", ");
     throw new Error(
-      `${name} scope must classify every published Local CQ level exactly once. Missing: ${missing.join(", ") || "none"}; stale: ${stale.join(", ") || "none"}.`,
+      `${name} scope must classify every published Local CQ level exactly once. Missing: ${missingText}; stale: ${staleText}.`,
     );
   }
 }
