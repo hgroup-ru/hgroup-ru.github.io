@@ -9,10 +9,8 @@ bigText:
 players:
   - name: Alice
     cards:
-      - type: x
-        middleNote: r2
-      - type: x
-        middleNote: b2
+      - type: r2
+      - type: b2
       - type: x
       - type: x
       - type: x
