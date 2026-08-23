@@ -6,6 +6,8 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "./level-12-save-before-play/question.yml";
+import AfterAlice from "./level-12-save-before-play/after-alice.yml";
+import AfterBob from "./level-12-save-before-play/after-bob.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-save-before-play" />
 
@@ -21,7 +23,19 @@ Should Alice clue the red 1 immediately, or save the blue 5 first?
 </TabItem>
 <TabItem value="solution">
 
-Alice should **give the 5 Save first**. Cluing the red 1 immediately and then saving blue 5 gives only 2-for-2. If Alice first clues number 5, Bob can follow with a red Chop-Focus Play Clue that gets red 1 and red 3 as a 2-for-1. Together the two clues obtain three useful cards for **3-for-2**.
+Alice should **give the 5 Save first**. Cluing the red 1 immediately and then saving blue 5 gives only 2-for-2.
+
+**After Alice's 5 Save:**
+
+<AfterAlice />
+
+Now the saved 5 is no longer chop, so Bob can follow with a red Chop-Focus Play Clue that gets red 1 and red 3 as a 2-for-1.
+
+**After Bob's red clue:**
+
+<AfterBob />
+
+Together the two clues obtain three useful cards for **3-for-2**.
 
 </TabItem>
 </Tabs>
