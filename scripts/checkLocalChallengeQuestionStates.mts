@@ -12,6 +12,7 @@ const CONFIG_PATH = path.join(
 );
 
 const EXACT_CARD_PATTERN = /^[bgpry](?<rank>[1-5])$/v;
+const ANSWER_STATE_PATTERN = /^(?:answer|solution)(?:[.-]|$)/v;
 const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
   [1, 3],
   [2, 2],
@@ -21,12 +22,19 @@ const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
 ]);
 const LEVEL_CONFIG_SCHEMA = z.array(z.int().positive()).min(1).readonly();
 const CARD_SCHEMA = z
-  .object({ type: z.coerce.string().min(1) })
+  .object({
+    type: z.coerce.string().min(1),
+    clue: z.coerce.string().min(1).optional(),
+    middleNote: z.coerce.string().min(1).optional(),
+    above: z.coerce.string().min(1).optional(),
+    below: z.coerce.string().min(1).optional(),
+  })
   .loose()
   .readonly();
 const PLAYER_SCHEMA = z
   .object({
     name: z.coerce.string().min(1).optional(),
+    clueGiver: z.boolean().optional(),
     cards: z.array(CARD_SCHEMA).readonly(),
   })
   .loose()
@@ -85,6 +93,9 @@ async function validateState(filePath: string) {
 
   const expectedHandSize = players.length <= 3 ? 5 : 4;
   const physicalCounts = new Map<string, number>();
+  const answerState = ANSWER_STATE_PATTERN.test(
+    path.basename(filePath).toLowerCase(),
+  );
   const recordExactCard = (type: string): void => {
     if (!EXACT_CARD_PATTERN.test(type)) {
       return;
@@ -93,16 +104,47 @@ async function validateState(filePath: string) {
   };
 
   for (const [playerIndex, player] of players.entries()) {
+    const name = player.name ?? `#${playerIndex + 1}`;
     if (player.cards.length !== expectedHandSize) {
-      const name = player.name ?? `#${playerIndex + 1}`;
       fail(
         filePath,
         `${name} has ${player.cards.length} cards; ${players.length}-player Hanabi requires ${expectedHandSize}`,
       );
     }
 
-    for (const card of player.cards) {
+    if (answerState && player.clueGiver === true) {
+      fail(
+        filePath,
+        `${name} is still marked clueGiver in an answer/solution knowledge state; historical clues must not be rendered as current actions`,
+      );
+    }
+
+    for (const [cardIndex, card] of player.cards.entries()) {
       recordExactCard(card.type);
+
+      if (!answerState) {
+        continue;
+      }
+
+      const slot = cardIndex + 1;
+      if (card.clue !== undefined) {
+        fail(
+          filePath,
+          `${name} slot ${slot} still has clue=${card.clue} in an answer/solution knowledge state; encode historical knowledge without a current clue arrow`,
+        );
+      }
+
+      if (
+        EXACT_CARD_PATTERN.test(card.type) &&
+        (card.middleNote !== undefined ||
+          card.above !== undefined ||
+          card.below !== undefined)
+      ) {
+        fail(
+          filePath,
+          `${name} slot ${slot} uses objective exact identity ${card.type} as a carrier for owner knowledge; use an owner-knowledge card type (for example x, r, or 4) and keep the conclusion in notes/labels`,
+        );
+      }
     }
   }
 

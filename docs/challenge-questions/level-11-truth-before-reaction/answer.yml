@@ -20,17 +20,16 @@ players:
       - type: x
   - name: Cathy
     cards:
-      - type: b2
-        middleNote: b2
+      - type: x
+        above: Blue 2
         below: Finesse
       - type: x
       - type: x
       - type: x
   - name: Donald
     cards:
-      - type: b3
+      - type: b
         middleNote: b3
-        below: Play
       - type: x
       - type: x
       - type: x

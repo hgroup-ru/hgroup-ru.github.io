@@ -19,15 +19,15 @@ players:
       - type: x
   - name: Cathy
     cards:
-      - type: r3
+      - type: 3
         middleNote: r3?
-      - type: g3
+      - type: 3
         middleNote: r3?
       - type: x
       - type: x
   - name: Donald
     cards:
-      - type: r4
+      - type: r
         middleNote: r4
       - type: x
       - type: x
