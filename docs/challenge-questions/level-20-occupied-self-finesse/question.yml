@@ -4,9 +4,10 @@ stacks:
   - g: 0
   - b: 1
   - p: 0
+bigText:
+  text: Bob has discarded
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -23,8 +24,7 @@ players:
   - name: Cathy
     cards:
       - type: x
-      - type: 2
-        clue: 2
+      - type: "2"
       - type: x
       - type: x
       - type: x

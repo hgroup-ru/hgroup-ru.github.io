@@ -20,9 +20,8 @@ players:
   - name: Cathy
     clueGiver: true
     cards:
-      - type: b5
-        clue: 5
-      - type: r2
+      - type: "5"
+      - type: x
       - type: x
       - type: x
   - name: Donald

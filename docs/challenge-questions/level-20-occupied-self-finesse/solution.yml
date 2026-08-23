@@ -1,31 +1,29 @@
 stacks:
-  - r: 0
+  - r: 1
   - y: 0
   - g: 0
   - b: 1
   - p: 0
 players:
-  - clueGiver: true
+  - name: Alice
     cards:
       - type: x
       - type: x
       - type: g1
       - type: x
       - type: x
-  - cards:
+  - name: Bob
+    cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
+  - name: Cathy
+    cards:
       - type: x
-        above: Red 1
-        below: Finesse
-      - type: 2
-        clue: 2
-        above: Red 2
-        below: op
+      - type: "2"
+        middleNote: r2
       - type: x
       - type: x
       - type: x

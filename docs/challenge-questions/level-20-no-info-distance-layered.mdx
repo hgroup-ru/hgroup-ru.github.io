@@ -12,16 +12,16 @@ import Question from "./level-20-no-info-distance-layered/question.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Nothing is played. Cathy's red-clued card is already known to her as exactly red 2. Alice gives the same red clue again, adding no positive information and leaving the card's possible identity unchanged. Cathy also has an untouched blue 2 that Alice could have clued normally if she merely wanted to initiate a Bluff. Bob's Finesse Position is green 1 and his Second Finesse Position is red 1. What should Bob do?
+Before the clue, nothing is played. Cathy's red-clued card is already known to her as exactly red 2. Alice gives the same red clue again, adding no positive information and leaving the card's possible identity unchanged. Cathy also has an untouched blue 2 that Alice could have clued normally if she merely wanted to initiate a Bluff. Bob blind-plays his Finesse Position, and it reveals as an unrelated playable green 1. Should Bob now stop, or does the No-Information line require another layer?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Bob should treat the re-clue as a **No-Information Layered Finesse**. He blind-plays green 1 first; after that unrelated playable card succeeds, he continues through the layer and later blind-plays red 1 to connect Cathy's red 2.
+Bob should continue the **No-Information Layered Finesse**. The successful but unrelated green 1 is the outer layer; on his next opportunity Bob continues with the connecting card from the next Finesse Position, which must be red 1 for Cathy's red 2.
 
-The touched red 2 is one-away-from-playable, satisfying the Level 20 distance condition. Bob distinguishes this from a Bluff because Alice had the more useful untouched blue-2 clue available if a Bluff were all she wanted. An already-playable touched card could not be used for a No-Information Finesse or Bluff.
+The touched red 2 was one-away-from-playable at clue time, satisfying the Level 20 distance condition. Bob distinguishes this from a Bluff because Alice had the more useful untouched blue-2 clue available if a Bluff were all she wanted. An already-playable touched card could not be used for a No-Information Finesse or Bluff.
 
 </TabItem>
 </Tabs>

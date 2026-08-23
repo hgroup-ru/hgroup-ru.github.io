@@ -16,16 +16,16 @@ players:
   - name: Bob
     cards:
       - type: r1
-        clue: r
       - type: x
       - type: x
       - type: x
       - type: x
   - name: Cathy
     cards:
-      - type: b5
+      - type: "5"
         clue: 5
-      - type: r2
+      - type: x
+        middleNote: r2?
       - type: x
       - type: x
       - type: x

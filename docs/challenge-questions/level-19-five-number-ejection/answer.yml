@@ -1,12 +1,11 @@
 stacks:
-  - r: 3
+  - r: 1
   - y: 0
   - g: 0
   - b: 0
   - p: 0
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -22,9 +21,10 @@ players:
       - type: x
   - name: Cathy
     cards:
-      - type: r5
-        clue: 5
-      - type: b1
+      - type: "5"
+      - type: x
+        cm: true
+        middleNote: cm, 34
       - type: x
       - type: x
       - type: x

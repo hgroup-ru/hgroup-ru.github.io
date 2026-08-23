@@ -1,14 +1,13 @@
 stacks:
-  - r: 0
+  - r: 1
   - y: 0
   - g: 0
   - b: 0
   - p: 0
 bigText:
-  text: First turn
+  text: Cathy just blind-played red 1
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -17,25 +16,15 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r3
-        clue: r
-      - type: r2
-        clue: r
-      - type: y4
-        border: false
-      - type: g4
-        border: false
-      - type: b4
-        border: false
+      - type: r
+      - type: r
+      - type: x
+      - type: x
+      - type: x
   - name: Cathy
     cards:
-      - type: r1
-        border: false
-      - type: y5
-        border: false
-      - type: g5
-        border: false
-      - type: b5
-        border: false
-      - type: p4
-        border: false
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x

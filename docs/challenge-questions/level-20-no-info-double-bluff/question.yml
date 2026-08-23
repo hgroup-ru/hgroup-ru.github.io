@@ -8,7 +8,6 @@ bigText:
   text: Bob played green 1; Cathy then played yellow 1
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -27,7 +26,5 @@ players:
       - type: x
       - type: x
       - type: x
-      - type: 3
-        clue: 3
-        retouched: true
+      - type: "3"
       - type: x

@@ -1,60 +1,28 @@
 stacks:
-  - r: 0
+  - r: 1
   - y: 0
   - g: 0
   - b: 0
   - p: 0
-bigText:
-  text: First turn
 players:
-  - clueGiver: true
+  - name: Alice
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
-      - type: r
-        above: Red 3
-        clue: r
-        middleNote: r1, r2
-        below: Play
-      - type: r
-        above: Red 2
-        clue: r
-      - type: x
-      - type: x
-      - type: x
-        below: Discards
-  - cards:
-      - type: x
-        above: Red 1
-        below: Finesse
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-  - text: Cathy blind-plays red 1.
-  - offset: -3
-    clueGiver: true
+  - name: Bob
     cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-  - cards:
-      - type: x
       - type: r
         middleNote: r3
-      - type: r2
-        clue: 2
-        retouched: true
-        below: Fix
+      - type: r
+        middleNote: r2
       - type: x
       - type: x
-  - cards:
+      - type: x
+  - name: Cathy
+    cards:
       - type: x
       - type: x
       - type: x

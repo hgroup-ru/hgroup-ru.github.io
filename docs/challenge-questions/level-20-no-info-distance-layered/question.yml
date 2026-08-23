@@ -1,12 +1,13 @@
 stacks:
   - r: 0
   - y: 0
-  - g: 0
+  - g: 1
   - b: 0
   - p: 0
+bigText:
+  text: Bob's first blind-play revealed green 1
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: y4
         border: false
@@ -20,16 +21,11 @@ players:
         border: false
   - name: Bob
     cards:
-      - type: g1
-        border: false
-      - type: r1
-        border: false
-      - type: y4
-        border: false
-      - type: p4
-        border: false
-      - type: b5
-        border: false
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
   - name: Cathy
     cards:
       - type: y3
@@ -37,8 +33,6 @@ players:
       - type: g3
         border: false
       - type: r2
-        clue: r
-        middleNote: r2
       - type: p3
         border: false
       - type: b2

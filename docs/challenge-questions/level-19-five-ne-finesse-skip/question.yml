@@ -6,7 +6,6 @@ stacks:
   - p: 0
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -22,8 +21,10 @@ players:
       - type: x
   - name: Cathy
     cards:
-      - type: g3
-      - type: r2
+      - type: x
+        cm: true
+        middleNote: cm, 34
+      - type: x
       - type: x
       - type: x
       - type: x
