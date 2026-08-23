@@ -5,6 +5,7 @@ title: После первого blind-play
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Clue from "@site/docs/challenge-questions/level-11-stop-after-one/clue.yml";
 import Question from "@site/docs/challenge-questions/level-11-stop-after-one/question.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-stop-after-one" />
@@ -12,11 +13,19 @@ import Question from "@site/docs/challenge-questions/level-11-stop-after-one/que
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Все 2 уже были сыграны. Алиса, находясь в Bluff Seat для Боба, дала Кэти красную Play Clue по её красной 4. Боб сразу вслепую сыграл свою Finesse Position, ожидая красную 3; там оказалась синяя 3, которая успешно сыгралась. Новая Finesse Position Боба физически действительно является красной 3.
+Все 2 уже были сыграны. Алиса, находясь в Bluff Seat для Боба, дала Кэти красную Play Clue по её красной 4.
 
-Следует ли Бобу продолжить «копать» красную 3 как Layered Finesse?
+**Подсказка Алисы:**
+
+<Clue />
+
+Боб сразу вслепую сыграл свою Finesse Position, ожидая красную 3; там оказалась синяя 3, которая успешно сыгралась. Новая добранная карта на Finesse Position Боба физически действительно является красной 3.
+
+**После blind-play Боба:**
 
 <Question />
+
+Следует ли Бобу продолжить «копать» красную 3 как Layered Finesse?
 
 </TabItem>
 <TabItem value="solution">
