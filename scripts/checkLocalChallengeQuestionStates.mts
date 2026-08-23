@@ -6,13 +6,9 @@ import { z } from "zod";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const EN_ROOT = path.join(REPO_ROOT, "docs/challenge-questions");
-const CONFIG_PATH = path.join(
-  REPO_ROOT,
-  "localization/LOCAL_CQ_STATE_PREFLIGHT_LEVELS.json",
-);
+const SCOPE_PATH = path.join(REPO_ROOT, "localization/LOCAL_CQ_QA_SCOPE.json");
 
 const EXACT_CARD_PATTERN = /^[bgpry](?<rank>[1-5])$/v;
-const ANSWER_STATE_PATTERN = /^(?:answer|solution)(?:\.|-|$)/v;
 const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
   [1, 3],
   [2, 2],
@@ -20,7 +16,16 @@ const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
   [4, 2],
   [5, 1],
 ]);
-const LEVEL_CONFIG_SCHEMA = z.array(z.int().positive()).min(1).readonly();
+const LEVEL_LIST_SCHEMA = z.array(z.int().positive()).readonly();
+const SCOPE_SECTION_SCHEMA = z
+  .object({ enforced: LEVEL_LIST_SCHEMA, deferred: LEVEL_LIST_SCHEMA })
+  .strict();
+const SCOPE_SCHEMA = z
+  .object({
+    state_preflight: SCOPE_SECTION_SCHEMA,
+    release_evidence: SCOPE_SECTION_SCHEMA,
+  })
+  .strict();
 const CARD_SCHEMA = z
   .object({
     type: z.coerce.string().min(1),
@@ -49,37 +54,35 @@ const STATE_PREFLIGHT_SCHEMA = z
   .loose()
   .readonly();
 
-const configContents = await readFile(CONFIG_PATH);
-const configuredLevels = LEVEL_CONFIG_SCHEMA.parse(
-  JSON.parse(configContents) as unknown,
-);
+const scope = SCOPE_SCHEMA.parse(JSON.parse(await readFile(SCOPE_PATH)) as unknown);
+const publishedLevels = await discoverPublishedLevels();
+validateScope("state_preflight", scope.state_preflight, publishedLevels);
 
 const statesByLevel = await Promise.all(
-  configuredLevels.map(async (level) => {
-    const matches = await glob(
-      path.join(EN_ROOT, `level-${level}-*/*.{yml,yaml}`),
-    );
-    return { level, files: matches.toSorted() } as const;
+  scope.state_preflight.enforced.map(async (level) => {
+    const files = await glob(path.join(EN_ROOT, `level-${level}-*/*.{yml,yaml}`));
+    const solutionFiles = await collectSolutionStateFiles(level);
+    return { level, files: files.toSorted(), solutionFiles } as const;
   }),
 );
 
 for (const { level, files } of statesByLevel) {
   if (files.length === 0) {
-    throw new Error(
-      `No Local CQ diagram states found for configured level ${level}.`,
-    );
+    throw new Error(`No Local CQ diagram states found for enforced level ${level}.`);
   }
 }
 
 await Promise.all(
-  statesByLevel.flatMap(({ files }) => files.map(validateState)),
+  statesByLevel.flatMap(({ files, solutionFiles }) =>
+    files.map((filePath) => validateState(filePath, solutionFiles.has(filePath))),
+  ),
 );
 
 console.log(
-  `Local CQ state preflight passed for levels: ${configuredLevels.join(", ")}.`,
+  `Local CQ state preflight passed for levels: ${scope.state_preflight.enforced.join(", ")}.`,
 );
 
-async function validateState(filePath: string) {
+async function validateState(filePath: string, solutionState: boolean) {
   const contents = await readFile(filePath);
   const state = STATE_PREFLIGHT_SCHEMA.parse(parse(contents) as unknown);
   const players = state.players.flatMap((entry) => {
@@ -93,9 +96,6 @@ async function validateState(filePath: string) {
 
   const expectedHandSize = players.length <= 3 ? 5 : 4;
   const physicalCounts = new Map<string, number>();
-  const answerState = ANSWER_STATE_PATTERN.test(
-    path.basename(filePath).toLowerCase(),
-  );
   const recordExactCard = (type: string): void => {
     if (!EXACT_CARD_PATTERN.test(type)) {
       return;
@@ -112,17 +112,17 @@ async function validateState(filePath: string) {
       );
     }
 
-    if (answerState && player.clueGiver === true) {
+    if (solutionState && player.clueGiver === true) {
       fail(
         filePath,
-        `${name} is still marked clueGiver in an answer/solution knowledge state; historical clues must not be rendered as current actions`,
+        `${name} is still marked clueGiver in a Solution knowledge state; historical clues must not be rendered as current actions`,
       );
     }
 
     for (const [cardIndex, card] of player.cards.entries()) {
       recordExactCard(card.type);
 
-      if (!answerState) {
+      if (!solutionState) {
         continue;
       }
 
@@ -130,7 +130,7 @@ async function validateState(filePath: string) {
       if (card.clue !== undefined) {
         fail(
           filePath,
-          `${name} slot ${slot} still has clue=${card.clue} in an answer/solution knowledge state; encode historical knowledge without a current clue arrow`,
+          `${name} slot ${slot} still has clue=${card.clue} in a Solution knowledge state; encode historical knowledge without a current clue arrow`,
         );
       }
 
@@ -173,11 +173,74 @@ async function validateState(filePath: string) {
     }
     const limit = COPY_LIMITS.get(Number(rankText));
     if (limit !== undefined && count > limit) {
-      fail(
-        filePath,
-        `${card} appears ${count} physical times; deck limit is ${limit}`,
-      );
+      fail(filePath, `${card} appears ${count} physical times; deck limit is ${limit}`);
     }
+  }
+}
+
+async function collectSolutionStateFiles(level: number): Promise<ReadonlySet<string>> {
+  const mdxFiles = await glob(path.join(EN_ROOT, `level-${level}-*.mdx`));
+  const solutionFiles = new Set<string>();
+  const importPattern = /import\s+(?<name>[A-Za-z_$][\w$]*)\s+from\s+"(?<source>[^"]+\.(?:ya?ml))"/gv;
+  const solutionPattern = /<TabItem\s+value="solution">(?<body>[\s\S]*?)<\/TabItem>/v;
+
+  for (const mdxFile of mdxFiles) {
+    const contents = await readFile(mdxFile);
+    const solutionBody = solutionPattern.exec(contents)?.groups?.["body"];
+    if (solutionBody === undefined) {
+      continue;
+    }
+    for (const match of contents.matchAll(importPattern)) {
+      const name = match.groups?.["name"];
+      const source = match.groups?.["source"];
+      if (name === undefined || source === undefined) {
+        continue;
+      }
+      if (!new RegExp(`<${name}(?:\\s|/|>)`, "v").test(solutionBody)) {
+        continue;
+      }
+      const resolved = source.startsWith("@site/")
+        ? path.join(REPO_ROOT, source.slice("@site/".length))
+        : path.resolve(path.dirname(mdxFile), source);
+      solutionFiles.add(resolved);
+    }
+  }
+
+  return solutionFiles;
+}
+
+async function discoverPublishedLevels(): Promise<ReadonlySet<number>> {
+  const files = await glob(path.join(EN_ROOT, "level-*-*.mdx"));
+  return new Set(
+    files.flatMap((filePath) => {
+      const match = /^level-(?<level>\d+)-/v.exec(path.basename(filePath));
+      const level = match?.groups?.["level"];
+      return level === undefined ? [] : [Number(level)];
+    }),
+  );
+}
+
+function validateScope(
+  name: string,
+  section: z.infer<typeof SCOPE_SECTION_SCHEMA>,
+  publishedLevels: ReadonlySet<number>,
+): void {
+  const enforced = new Set(section.enforced);
+  const deferred = new Set(section.deferred);
+  if (enforced.size !== section.enforced.length || deferred.size !== section.deferred.length) {
+    throw new Error(`${name} scope contains duplicate level entries.`);
+  }
+  const overlap = [...enforced].filter((level) => deferred.has(level));
+  if (overlap.length > 0) {
+    throw new Error(`${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`);
+  }
+  const classified = new Set([...enforced, ...deferred]);
+  const missing = [...publishedLevels].filter((level) => !classified.has(level));
+  const stale = [...classified].filter((level) => !publishedLevels.has(level));
+  if (missing.length > 0 || stale.length > 0) {
+    throw new Error(
+      `${name} scope must classify every published Local CQ level exactly once. Missing: ${missing.join(", ") || "none"}; stale: ${stale.join(", ") || "none"}.`,
+    );
   }
 }
 

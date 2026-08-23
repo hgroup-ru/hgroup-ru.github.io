@@ -1,71 +1,181 @@
-# Автономный workflow для Local Challenge Questions
+# Release contract для Local Challenge Questions
 
-Этот документ превращает правила из `LOCAL_CHALLENGE_QUESTIONS.md` и `LOCAL_CHALLENGE_AUDIT_PROTOCOL.md` в обязательный release contract для следующих уровней. Цель: человеческое ревью должно быть финальной редакторской/визуальной вычиткой, а не основным способом находить ошибки Hanabi-семантики, POV, таймлайна и диаграмм.
+Этот документ — исполняемый Definition of Done для Local Challenge Questions. Редакционные критерии хорошего вопроса живут в [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md); здесь не повторяется теория авторинга, а фиксируется, **какое evidence обязано существовать перед merge/deploy и перед clean-baseline**.
 
-## 1. Design matrix до авторинга
+`LOCAL_CHALLENGE_QUESTIONS.md` отвечает на вопрос «хорош ли материал?». Этот файл отвечает на вопрос «доказали ли мы это достаточно строго для выпуска?». Исторический `LOCAL_CHALLENGE_AUDIT_PROTOCOL.md` оставлен только как redirect на этот контракт.
 
-До MDX/YML для каждого кандидата фиксируются: точное source rule из pinned upstream, learning objective, misconception/boundary, question type, modality, critical variable, reasoning POV, strongest competing move/interpretation, risk tier и причина, почему это не дубль Quick Check/соседнего CQ. Кандидат без реального decision boundary удаляется до авторинга; количество вопросов не является целью.
+## 1. Scope сначала классифицируется
 
-## 2. Mutation twin для high-risk
+Канонический scope deterministic QA находится в [`LOCAL_CQ_QA_SCOPE.json`](LOCAL_CQ_QA_SCOPE.json). Для каждого Level, где существуют Local Challenge Questions, каждая проверка обязана явно классифицировать Level как:
 
-Для каждого high-risk CQ (Finesse/Bluff, precedence, asymmetric information, multi-turn timing, OCM, Locked Hand и другие хрупкие handcrafted states) до semantic freeze строится внутренняя A/B-пара. Меняется только declared critical variable, и ответ либо decisive reasoning должен предсказуемо измениться. Публиковать twin необязательно. Если чистую mutation построить нельзя, concept ещё не доказан.
+- `enforced` — gate реально запускается и блокирует CI;
+- `deferred` — Level ещё не мигрирован на этот gate.
 
-## 3. Явный POV proof
+Level не может отсутствовать в обеих группах и не может находиться в обеих одновременно. CI сверяет конфиг с фактически опубликованными `level-N-*.mdx`, поэтому новый Level нельзя добавить и случайно забыть классифицировать.
 
-Для medium/high-risk CQ отдельно фиксируются objective physical truth, что reasoning player видит, что он действительно знает из clues/history и что знают другие игроки, если на их реакции опирается Solution. `type` в YML — объективная карта, а не знание владельца. Рассуждение по точной карте в собственной руке запрещено без основания в history/notes.
+`deferred` — не PASS и не освобождение от качества. Это только явная граница текущей автоматизации.
 
-При необходимости используется таблица вида:
+## 2. Design evidence до авторинга
 
-| факт              | objective | Alice knows | Bob knows | Cathy knows |
-| ----------------- | --------- | ----------- | --------- | ----------- |
-| Alice slot 1 = r2 | yes       | no          | yes       | yes         |
+Для каждого нового/существенно переписываемого CQ до prose фиксируются: точное source rule из pinned upstream, learning objective, misconception/boundary, question type, modality, critical variable, reasoning POV, strongest competing move/interpretation и risk tier.
 
-Semantic review должен рассуждать из masked POV, а не из omniscient state.
+Кандидат без реального decision boundary удаляется до авторинга. Количество вопросов не является целью. Quick Check и соседний CQ отдельно проверяются на cognitive duplicate.
 
-## 4. Opposite-answer breaker
+## 3. High-risk proof
 
-До финального Solution отдельный breaker получает только Question/state/source rules и обязан: решить blind; перечислить credible Play/Save clues, plays, discards и special moves; проверить precedence/last-resort; seating/timing; forcedness будущих реакций; явно попытаться доказать противоположный ответ; отдельно спросить, не может ли текущий actor сам сделать действие, которое proposed line зачем-то делегирует следующему игроку.
+Для high-risk CQ (Finesse/Bluff, precedence, asymmetric information, multi-turn timing, OCM, Locked Hand и другие хрупкие handcrafted states) обязательны:
 
-High-risk `KEEP` блокируется, если opposite-answer попытка находит сопоставимо правдоподобную legal line.
+1. **masked POV proof** — objective truth отделён от того, что reasoning player видит/знает;
+2. **mutation twin** — меняется только critical variable, а answer/reasoning предсказуемо меняется;
+3. **opposite-answer breaker** — blind solve без Solution, перечисление credible alternatives и попытка доказать противоположный ответ;
+4. **actor-direct-alternative check** — может ли текущий actor сам сделать действие, которое proposed line зачем-то поручает следующему игроку;
+5. **reaction robustness** — будущая ключевая реакция должна быть forced/uniquely best либо несущественной для вывода.
 
-## 5. Hanabi noise sweep
+Если breaker находит сопоставимо правдоподобную legal line, `KEEP` блокируется.
 
-После фиксации логики проверяются каждая заметная 5, playable/critical/chop card, clusters одинаковых ranks/colors, необычная clued hand, возможный Save/Tempo/Stall, known trash/safe discard. Для каждой детали должен существовать ответ: `required by proof`, `intentional distractor and checked` или `remove`. Filler не должен случайно вводить более простую convention или делать руку искусственной.
+## 4. Physical state и timeline
 
-## 6. Leakage sweep
+Для каждого diagram-state проверяются как минимум hand size, physical copy limits, stacks/discard, clue legality, slots, turn order и отсутствие одной физической копии в нескольких местах.
 
-Отдельно проверяются title/sidebar label/caption/`bigText`/`below`/`middleNote`/borders/clue arrows. Названия `Finesse`, `Bluff`, `Prompt`, `DDA`, `Anxiety`, `Chop Move` и т.п. подозрительны, если распознавание этой техники — cognitive target. Historical clue нельзя рисовать как current clue action.
+Для multi-step CQ фиксируется evaluation moment и цепочка:
 
-## 7. Timeline proof
+`pre-state -> action -> post-state -> action -> question-state`.
 
-Для вопроса с несколькими действиями фиксируется evaluation moment и доказывается цепочка `pre-state -> action -> post-state -> action -> question-state`. Stacks, hands/draws, clues, notes, chop/Finesse Position и current player должны относиться к одному моменту диаграммы. Post-action stack нельзя объявлять ошибкой только потому, что prose начался с более раннего pre-state; сначала выравнивается timeline. Но historical clue arrow в post-state остаётся ошибкой.
+После play/discard replacement draw приходит в slot 1/newest. Stacks, hands, clues, notes и current player должны принадлежать одному моменту timeline.
 
-## 8. Diagram story и knowledge-state в Solution
+## 5. Diagram roles и action/history contract
 
-Если решение зависит от перехода между двумя моментами, а одна статичная картинка заставляет читателя мысленно восстанавливать действие, предпочтительны две отдельные диаграммы: **trigger/action state** и **post-action state**. В trigger-state текущая подсказка должна иметь `clueGiver` и реальные clue arrows. В post-action state стрелка убирается, stacks/рука обновляются, новая карта после play/discard приходит в slot 1, а историческая информация остаётся только через knowledge representation (`middleNote`, уже затронутую карту и т.п.).
+Роль state определяется **тем, где YML реально используется в MDX**, а не только именем файла. State, который рендерится внутри вкладки Solution, считается solution/knowledge-state для deterministic gate даже если файл назван не `answer.yml`.
 
-Если основной педагогический смысл Solution состоит в том, **кто что должен записать или понять**, отдельная answer/knowledge diagram **обязательна**. Текстовое перечисление заметок не заменяет диаграмму. Но answer diagram должна показывать именно **итоговое полезное знание в уже принятой локальной нотации**, а не копировать служебные labels из official explanatory YML. Для Finesse неизвестная собственная карта остаётся `type: x` и при необходимости получает `above: Red 2` / `above: Red 3` + `below: Finesse`; нельзя превращать её в объективную `r2`/`r3` только потому, что это известно зрителю. На итоговой диаграмме нельзя оставлять ложную промежуточную гипотезу, лишний `Play`, дублирующий `above` с уже видимой точной картой или текущую clue arrow для исторической подсказки. Answer diagram живёт только во вкладке Solution и не считается допустимой причиной для answer leakage в Question. Question diagrams по-прежнему должны быть нейтральными.
+Для trigger/action state:
 
-Все YML-состояния локального CQ — `question.yml`, дополнительные transition/clue states и `answer.yml`/solution states — должны проходить state preflight, а не только первая картинка вопроса.
+- текущий clue имеет `clueGiver`;
+- реальные clue arrows показывают только действие, происходящее на этом кадре.
 
-## 9. Проза после semantic freeze
+Для post-action/solution knowledge-state:
 
-Порядок работы: `source -> design matrix -> physical state -> POV proof -> mutation twin -> breaker -> noise/leakage -> semantic freeze -> EN editorial -> RU editorial -> EN/RU parity`. Не полировать текст позиции, которая ещё не прошла semantic gates.
+- historical clue не остаётся current arrow;
+- `clueGiver` текущего действия убран;
+- historical knowledge показывается через принятую knowledge notation;
+- objective identity не подменяет знание владельца.
 
-## 10. Regression taxonomy
+Если ключевой переход трудно восстановить по одной статичной картинке, используются отдельные **trigger/action state** и **post-action state**.
 
-Каждый human-found defect становится постоянным regression class. Обязательные проверки сейчас включают: невозможные copies/hand sizes/stacks; prose и diagram в разных timeline moments; historical clue как current action; owner knowledge из objective identity; later player делает действие, доступное текущему actor; future reaction merely possible вместо forced/uniquely best; answer leakage; filler 5/Save/Tempo noise; искусственная hand shape; ненужное hypothetical wording в concrete state; Quick Check/CQ duplicate; actor/recipient/turn/Finesse Position mismatch между prose и YML; post-play/post-discard hand без новой карты в slot 1; multi-step reasoning, сжатое в одну диаграмму так, что читатель вынужден восстанавливать ключевой переход в голове; Solution с нетривиальными note updates без отдельного наглядного knowledge-state; answer diagram с objective identity вместо owner knowledge; ложная промежуточная заметка, сохранённая после reveal; historical clue arrow или необоснованный `Play`/другой status-label в итоговом knowledge-state.
+## 6. Answer/knowledge diagrams
 
-## 11. Evidence как release gate
+Если педагогический смысл Solution состоит в том, **кто что теперь должен записать или понять на картах**, отдельная answer/knowledge diagram обязательна, если это знание естественно представляется состоянием карт.
 
-Для configured Levels каждый опубликованный CQ должен иметь machine-readable audit record минимум с `id`, `risk`, `source_rule`, `learning_objective`, `question_type`, `modality`, `critical_variable`, `pov_player`, blind/ambiguity, opposite-answer breaker, actor-direct-alternative check, mutation result (или обоснованное N/A), noise, leakage, timeline, physical-state и итоговым `KEEP | REWRITE | DELETE`.
+Она показывает только итоговое полезное знание в принятой локальной нотации:
 
-CI проверяет полноту evidence и объективные invariants, но не объявляет Hanabi-семантику доказанной: semantic conclusions остаются model-reviewed evidence.
+- неизвестная собственная карта не превращается в объективную `r2`/`b3` только потому, что её знает зритель;
+- для Finesse неизвестная карта обычно остаётся `type: x`, а вывод показывается через `above`/`below` или другую уже принятую knowledge notation;
+- ложная промежуточная гипотеза удаляется после reveal;
+- не добавляются декоративные `Play`/`Bluff`/`Finesse` labels без реального semantic основания;
+- не дублируется очевидная objective identity (`Blue 1` над уже видимой синей 1);
+- historical clue не рисуется current arrow.
 
-## 12. Human review только после production deploy
+Question diagrams остаются нейтральными и не получают derived conclusion из Solution.
 
-Release loop: `candidate -> semantic/deterministic QA -> green CI -> merge main -> public deploy -> human final read -> targeted fixes -> repeat`. Нельзя просить человека читать branch/PR/unpublished candidate. Production-deployed Level с pending human acceptance ещё не `clean-baseline`.
+## 7. Noise и leakage sweeps
 
-## 13. Exit criterion
+Перед semantic freeze выполняются два отдельных прохода.
 
-Перед передачей Level человеку автор обязан для каждого опубликованного CQ четырьмя короткими фразами объяснить: что именно он проверяет; почему ответ однозначен; какая сильнейшая альтернатива проверена и почему отпала; какая mutation меняет ответ/reasoning. Если один из четырёх ответов слабый, CQ ещё не готов к human review.
+**Hanabi noise:** каждая заметная 5, playable/critical/chop card, cluster одинаковых ranks/colors, необычная clued hand, Save/Tempo/Stall и known safe discard должны быть `required by proof`, `intentional distractor and checked` или удалены.
+
+**Leakage:** отдельно проверяются title, slug/sidebar/search label, captions, `bigText`, `below`, `middleNote`, borders и clue arrows. Эпистемически истинная annotation всё равно запрещена, если выдаёт cognitive target.
+
+## 8. Prose только после semantic freeze
+
+Порядок работы:
+
+`source -> design evidence -> physical state -> POV -> mutation -> breaker -> noise/leakage -> semantic freeze -> EN editorial -> RU editorial -> EN/RU parity`.
+
+Не полировать prose позиции, которая ещё не доказана семантически.
+
+## 9. Release evidence schema
+
+Для каждого Level в `release_evidence.enforced` существует `localization/audits/LEVEL_N_LOCAL_CQ_AUDIT.json`.
+
+Исполняемый schema определяется `scripts/checkLocalChallengeQuestionAudits.mts`; документация не должна поддерживать второй, расходящийся JSON-schema. В текущем release evidence обязательны:
+
+- `id`, `risk`, `source_rule`, `learning_objective`;
+- `question_type`, `modality`, `critical_variable`, `pov_player`;
+- `blind_answer`, `ambiguity`;
+- `opposite_answer_breaker`, `actor_direct_alternative`, `mutation`, `noise`;
+- `leakage`, `timeline`, `physical_state`;
+- `verdict`.
+
+`source_revision` должен **точно** совпадать с `upstream.json`. Audit IDs должны быть уникальны и в точности совпадать с опубликованными CQ IDs Level.
+
+Для release evidence status-поля начинаются только с `pass` или `N/A`; после них можно добавить короткое проверяемое пояснение. Свободная строка вроде `looks good` не является PASS.
+
+Рабочий editorial review до выпуска по-прежнему может иметь `KEEP | REWRITE | DELETE`. Release evidence содержит только опубликованный прошедший набор, поэтому его `verdict` — `KEEP`.
+
+## 10. Deterministic gates
+
+`npm run lint` запускает:
+
+- общий CQ structural check;
+- Local CQ state preflight для `state_preflight.enforced`;
+- release-evidence check для `release_evidence.enforced`;
+- остальные общие project checks.
+
+State preflight проверяет **все YML/YAML states** в enforced Levels. Solution-role states дополнительно блокируются, если:
+
+- остался `clueGiver: true`;
+- осталась текущая `clue` arrow;
+- exact objective card identity используется как носитель owner knowledge через `middleNote`/`above`/`below`.
+
+Deterministic PASS не доказывает Hanabi semantics и не разрешает выдумывать status labels по контексту.
+
+## 11. Regression taxonomy
+
+Каждый подтверждённый human-found defect становится постоянным regression class. Обязательный semantic sweep включает:
+
+- impossible copies/hand sizes/stacks;
+- prose и diagram в разных timeline moments;
+- historical clue как current action;
+- owner knowledge из objective identity;
+- later player делает действие, доступное текущему actor;
+- future reaction merely possible вместо forced/uniquely best;
+- answer leakage;
+- filler 5/Save/Tempo noise и искусственные руки;
+- hypothetical wording в уже concrete state;
+- Quick Check/CQ cognitive duplicate;
+- actor/recipient/turn/Finesse Position mismatch;
+- post-play/post-discard hand без replacement draw в slot 1;
+- multi-step reasoning, сжатое в один кадр до потери понятности;
+- нет answer knowledge-state при существенных note updates;
+- ложная промежуточная заметка после reveal;
+- необоснованный status-label в итоговом knowledge-state.
+
+## 12. Lifecycle: KEEP != clean-baseline
+
+Разделяются три вещи:
+
+- **semantic verdict `KEEP`** — вопрос достоин публикации и прошёл semantic gates;
+- **technical-pass** — применимые deterministic/browser checks зелёные;
+- **clean-baseline** — technical-pass + завершённая required human acceptance.
+
+Rendered reader pass — обязательная часть release review для нового/изменённого diagram/timeline CQ. Он отличается от browser smoke: человек/модель читает `title -> Question -> diagrams -> самостоятельное решение -> Solution` как ученик, а browser QA проверяет реальный rendering/geometry/runtime.
+
+При изменении diagrams/renderer/layout browser visual QA обязателен. Если среда не позволяет реально открыть rendered site, статус остаётся **⚪ NOT RUN**; source/static checks нельзя выдавать за visual PASS.
+
+## 13. Production-first human review
+
+Наш release loop:
+
+`candidate -> semantic/deterministic QA -> green CI -> merge main -> public deploy -> human final read -> targeted fixes -> repeat`.
+
+Человека не просят вычитывать branch/PR/unpublished candidate. Production-deployed Level с pending human acceptance остаётся `technical-pass`, но не `clean-baseline`.
+
+## 14. Exit criterion
+
+Перед передачей Level человеку для каждого опубликованного CQ должны существовать четыре коротких ответа:
+
+1. что именно он проверяет;
+2. почему ответ однозначен;
+3. какая сильнейшая альтернатива проверена и почему отпала;
+4. какая mutation меняет ответ/reasoning.
+
+Если один ответ слабый, CQ ещё не готов к human review.

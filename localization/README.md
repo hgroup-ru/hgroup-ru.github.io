@@ -27,35 +27,30 @@
 
 ## Локальные учебные диаграммы
 
-Одиннадцать YML-файлов являются учебным материалом H-Group RU, а не официальными YML H-Group:
-
-- Level 3: `local-information-lock-identity.yml`;
-- Level 3: `local-information-lock-superposition.yml`;
-- Level 3: `local-information-lock-break.yml`;
-- Level 15: `local-truth-vs-occam.yml`;
-- Level 18: `local-riding-deduction.yml`;
-- Level 24: `local-unnecessary-utd-bcme.yml`;
-- Level 25: `local-important-2-save.yml`;
-- Variant-Specific / No Positive Clues: `transparent-double-bluff.yml`;
-- Variant-Specific / Odds and Evens: `5-odd-ejection.yml`;
-- Variant-Specific / Up or Down: `u-turn-finesse.yml`;
-- Extras / Ejections: `trash-push-ejection.yml`.
-
-Они хранятся рядом с соответствующими русскими страницами и рендерятся тем же штатным плагином, что и официальные диаграммы. Локальные teaching diagrams, которые потенциально полезны upstream, отдельно отслеживаются в [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) и карточках [`upstream-candidates/diagrams/`](upstream-candidates/diagrams/).
+Локальные teaching YML явно относятся к H-Group RU, хранятся рядом с соответствующими русскими страницами и рендерятся тем же штатным плагином, что и официальные диаграммы. Их актуальный inventory не дублируется в этом нормативном файле: конкретные файлы находятся по префиксу `local-`, а потенциально полезные upstream материалы отдельно отслеживаются в [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) и карточках [`upstream-candidates/diagrams/`](upstream-candidates/diagrams/).
 
 ## Локальные учебные вопросы
 
 На сайте есть два разных локальных учебных слоя, и их не следует смешивать.
 
-**Local Challenge Questions** — отдельные полноценные challenge-style страницы с игровыми позициями, Solutions, а при необходимости диаграммами и scenario timelines. Они созданы H-Group RU и не являются Official Challenge Questions. Полный стандарт авторинга и semantic QA описан в [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md).
+**Local Challenge Questions** — отдельные полноценные challenge-style страницы с игровыми позициями, Solutions, а при необходимости диаграммами и scenario timelines. Они созданы H-Group RU и не являются Official Challenge Questions.
+
+Для них есть два канонических документа:
+
+- [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md) — редакционный и semantic-стандарт: что делает вопрос хорошим;
+- [`LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](LOCAL_CQ_AUTONOMOUS_WORKFLOW.md) — исполняемый release contract: какое evidence и QA нужны перед выпуском и clean-baseline.
+
+Старый [`LOCAL_CHALLENGE_AUDIT_PROTOCOL.md`](LOCAL_CHALLENGE_AUDIT_PROTOCOL.md) сохранён только как redirect для исторических ссылок и не является третьим источником правил.
 
 **Quick Checks / Быстрая самопроверка** — короткие встроенные вопросы в конце Level для проверки ключевых invariants, boundaries, precedence и misconceptions. Это RU-only материал; сейчас upstream для него не планируется. Стандарт описан в [`QUICK_CHECKS.md`](QUICK_CHECKS.md).
 
 Ответы обоих локальных учебных слоёв исключаются из поискового индекса, чтобы поиск не раскрывал решение до открытия вопроса; сами вопросы остаются доступными для поиска.
 
+Текущие frozen/deferred scopes, coverage и acceptance state не кодируются в нормативных правилах как вечные свойства проекта. Их источник истины — [`QA_COVERAGE.md`](QA_COVERAGE.md), [`LOCAL_CQ_QA_SCOPE.json`](LOCAL_CQ_QA_SCOPE.json) и открытые задачи в [`../BACKLOG.md`](../BACKLOG.md).
+
 ## Mermaid
 
-В русских материалах Levels 1, 19, 22 и 25 используются локализованные Mermaid-схемы.
+Локализованные Mermaid-схемы являются обычным локальным presentation layer. Их актуальный inventory определяется фактическими imports/content, а не ручным списком Levels в этом файле.
 
 ## Новый локальный материал
 
@@ -64,9 +59,11 @@
 ## Связанные документы
 
 - [`TERMINOLOGY_RU.md`](TERMINOLOGY_RU.md) — принятая терминология;
-- [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md) — стандарт составления, вычитки и semantic QA локальных challenge-style задач;
+- [`LOCAL_CHALLENGE_QUESTIONS.md`](LOCAL_CHALLENGE_QUESTIONS.md) — editorial/semantic стандарт Local CQ;
+- [`LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](LOCAL_CQ_AUTONOMOUS_WORKFLOW.md) — release contract Local CQ;
+- [`LOCAL_CQ_QA_SCOPE.json`](LOCAL_CQ_QA_SCOPE.json) — явная граница включённых и deferred deterministic gates;
 - [`QUICK_CHECKS.md`](QUICK_CHECKS.md) — короткий стандарт встроенной быстрой самопроверки;
-- [`QA_COVERAGE.md`](QA_COVERAGE.md) — лёгкий registry уже выполненных типов review, их scope, evidence и явных границ покрытия;
+- [`QA_COVERAGE.md`](QA_COVERAGE.md) — registry реально выполненных review, их scope, evidence и границ покрытия;
 - [`SOURCE_EXCEPTIONS.md`](SOURCE_EXCEPTIONS.md) — осознанные отличия от закреплённой версии источника;
 - [`UPSTREAM_CANDIDATES.md`](UPSTREAM_CANDIDATES.md) — находки, которые могут быть полезны исходному проекту;
 - [`upstream-candidates/README.md`](upstream-candidates/README.md) — подробные рабочие карточки для подготовки upstream Pull Request.
