@@ -4,11 +4,13 @@ stacks:
   - g: 1
   - b: 1
   - p: 1
+discarded:
+  - r2
 players:
   - name: Alice
     cards:
       - type: x
-      - type: r2
+      - type: x
       - type: x
       - type: x
       - type: x

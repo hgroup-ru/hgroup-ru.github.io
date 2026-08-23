@@ -7,14 +7,18 @@ stacks:
 players:
   - name: Alice
     cards:
-      - type: y2
+      - type: "2"
         clue: 2
       - type: x
-      - type: r2
+        middleNote: r2?
+      - type: "2"
         clue: 2
-      - type: g2
+        middleNote: r2?
+      - type: "2"
         clue: 2
+        middleNote: r2?
       - type: x
+        middleNote: r2?
   - name: Bob
     clueGiver: true
     cards:

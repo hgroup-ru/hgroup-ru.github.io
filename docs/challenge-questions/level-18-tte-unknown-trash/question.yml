@@ -4,9 +4,10 @@ stacks:
   - g: 1
   - b: 1
   - p: 0
+discarded:
+  - r4
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -15,16 +16,15 @@ players:
       - type: x
   - name: Bob
     cards:
+      - type: x
       - type: b1
       - type: b1
-      - type: r4
-        clue: r
       - type: b3
       - type: g3
   - name: Cathy
     cards:
       - type: x
-      - type: r5
+      - type: x
       - type: x
       - type: x
       - type: x

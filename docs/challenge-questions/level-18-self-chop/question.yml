@@ -11,7 +11,8 @@ players:
       - type: x
       - type: x
       - type: x
-      - type: r4
+      - type: x
+        middleNote: r4
   - name: Bob
     cards:
       - type: x

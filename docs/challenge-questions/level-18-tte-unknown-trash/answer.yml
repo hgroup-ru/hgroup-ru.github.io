@@ -1,9 +1,11 @@
 stacks:
-  - r: 2
+  - r: 4
   - y: 0
   - g: 1
   - b: 1
   - p: 0
+discarded:
+  - r4
 players:
   - name: Alice
     cards:
@@ -15,14 +17,19 @@ players:
   - name: Bob
     cards:
       - type: x
-      - type: x
-      - type: g2
-      - type: x
-      - type: x
+      - type: b1
+      - type: b1
+      - type: b3
+      - type: g3
   - name: Cathy
     cards:
       - type: x
+        middleNote: r5?
       - type: x
+        middleNote: r5?
       - type: x
-      - type: r2
+        middleNote: r5?
       - type: x
+        middleNote: r5?
+      - type: x
+        middleNote: r5?

@@ -6,6 +6,7 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "./level-18-focus-before-clue/question.yml";
+import Answer from "./level-18-focus-before-clue/answer.yml";
 
 <ChallengeQuestionProgress level={18} id="level-18-focus-before-clue" />
 
@@ -20,6 +21,8 @@ Alice has red-2 Elimination Notes on slots 2 through 5. Bob gives number 3 touch
 <TabItem value="solution">
 
 **No.** Chop-focus is evaluated **before the clue is given**. At that moment the clue normally focuses the newest touched card, slot 2. The fact that the clue's negative information later singles out red 2 on slot 5 does not retroactively move the clue's focus to slot 4.
+
+<Answer />
 
 </TabItem>
 </Tabs>

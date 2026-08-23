@@ -8,13 +8,17 @@ players:
   - name: Alice
     cards:
       - type: x
-      - type: r3
+      - type: "3"
         clue: 3
-      - type: g3
+        middleNote: r2?
+      - type: "3"
         clue: 3
-      - type: b3
+        middleNote: r2?
+      - type: "3"
         clue: 3
-      - type: r2
+        middleNote: r2?
+      - type: x
+        middleNote: r2?
   - name: Bob
     clueGiver: true
     cards:

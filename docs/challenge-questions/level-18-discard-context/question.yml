@@ -14,11 +14,11 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r5
-      - type: y5
-      - type: g5
-      - type: b5
-      - type: p5
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
   - name: Cathy
     cards:
       - type: x

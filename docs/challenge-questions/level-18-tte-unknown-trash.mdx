@@ -6,20 +6,23 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "./level-18-tte-unknown-trash/question.yml";
+import Answer from "./level-18-tte-unknown-trash/answer.yml";
 
 <ChallengeQuestionProgress level={18} id="level-18-tte-unknown-trash" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Red 4, green 1, and blue 1 are played. Alice clues Bob red, touching his red 4 on slot 3. Bob can see Cathy's red 5, so he knows his red card is trash and discards it for a Trash Chop Move. Cathy is surprised that Bob did not misplay the red 4 as red 5. Red 5 is the only remaining useful red identity. What does Cathy infer?
+Red 4, green 1, and blue 1 are played. Alice gives Bob a red Play Clue to his red 4. Red 5 is the only remaining useful red identity. Bob discards the red card for a Trash Chop Move instead of playing it as red 5. Cathy cannot see red 5 in Alice's hand. What should Cathy infer about her own hand?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Cathy infers that **red 5 is in her own hand** and writes red-5 Elimination Notes. Bob could only know his red card was trash by seeing the last useful red card elsewhere. If two or more good red identities or copies were still possible, this proof would be absent and the expected interpretation would instead be a Trash Finesse.
+Cathy should infer that **red 5 is in her own hand** and write red-5 Elimination Notes. Bob could only know that his red card was trash by seeing the last useful red card elsewhere; Cathy can see that it is not in Alice's hand, leaving her own hand as the only place Bob could have seen it. If two or more useful red identities were still possible, this proof would be absent and the expected interpretation would instead be a Trash Finesse.
+
+<Answer />
 
 </TabItem>
 </Tabs>

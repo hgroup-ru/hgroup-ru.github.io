@@ -7,15 +7,16 @@ stacks:
 players:
   - name: Alice
     cards:
-      - type: b1
+      - type: b
         clue: b
-      - type: b2
+      - type: b
         clue: b
-      - type: b3
+      - type: b
         clue: b
-      - type: b4
+      - type: b
         clue: b
-      - type: r4
+      - type: x
+        middleNote: r4
   - name: Bob
     clueGiver: true
     cards:
