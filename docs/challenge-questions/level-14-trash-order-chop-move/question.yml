@@ -9,10 +9,10 @@ players:
     cards:
       - type: x
       - type: r1
-        clue: 1
+        trash: true
       - type: x
       - type: y1
-        clue: 1
+        trash: true
       - type: x
   - name: Bob
     cards:
