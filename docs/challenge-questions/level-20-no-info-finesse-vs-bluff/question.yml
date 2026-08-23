@@ -8,7 +8,6 @@ bigText:
   text: Bob just blind-played red 1 after the re-clue
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -26,8 +25,6 @@ players:
     cards:
       - type: x
       - type: x
-      - type: 3
-        clue: 3
-        retouched: true
+      - type: "3"
       - type: x
       - type: x

@@ -2,40 +2,24 @@ stacks:
   - r: 0
   - y: 0
   - g: 0
-  - b: 0
+  - b: 1
   - p: 0
-bigText:
-  text: First turn
 players:
-  - clueGiver: true
+  - name: Alice
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
-      - type: x
-      - type: x
-        above: Blue 1
-        below: Ejection
+  - name: Bob
+    cards:
       - type: x
       - type: x
       - type: x
-  - space
-  - cards:
-      - type: r5
-        middleNote: r1
-        clue: r
-        below: Play
-      - type: r1
-        clue: r
-      - type: r2
-        clue: r
       - type: x
       - type: x
-  - text: "After Bob blind-plays slot 2:"
-  - offset: -1
+  - name: Cathy
     cards:
       - type: r
         middleNote: r5

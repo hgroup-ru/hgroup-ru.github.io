@@ -11,7 +11,6 @@ players:
     clueGiver: true
     cards:
       - type: r3
-        middleNote: r3
       - type: y4
         border: false
       - type: g4
@@ -27,13 +26,10 @@ players:
       - type: g5
         border: false
       - type: r3
-        clue: 3
-        middleNote: r3
       - type: p4
         border: false
-      - type: b3
+      - type: b
         clue: b
-        middleNote: b3
   - name: Cathy
     cards:
       - type: r5

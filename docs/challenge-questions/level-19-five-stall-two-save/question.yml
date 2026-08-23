@@ -14,9 +14,9 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: b5
+      - type: "5"
         clue: 5
-      - type: r2
+      - type: x
       - type: x
       - type: x
   - name: Cathy
