@@ -6,6 +6,7 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "@site/docs/challenge-questions/level-11-no-bluff-target/question.yml";
+import Answer from "@site/docs/challenge-questions/level-11-no-bluff-target/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-no-bluff-target" />
 
@@ -22,6 +23,10 @@ import Question from "@site/docs/challenge-questions/level-11-no-bluff-target/qu
 <TabItem value="solution">
 
 **Нет.** При пустом столе не существует 4, которая была бы one-away-from-playable, поэтому 4 здесь не может быть допустимой целью для Bluff. Интерпретация через Bluff невозможна, несмотря на disconnect. Значит, Дональд сохраняет правдивую интерпретацию через Finesse: красная 1 начинает цепочку из нескольких карт к красной 4, перед которой должны последовать красная 2 и красная 3.
+
+Дональд может записать это прямо на картах: красная 2 и красная 3 — две карты Finesse, ведущие к его красной 4.
+
+<Answer />
 
 </TabItem>
 </Tabs>

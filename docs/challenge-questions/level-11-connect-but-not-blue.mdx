@@ -5,23 +5,37 @@ title: A Connected 3
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Question from "./level-11-connect-but-not-blue/question.yml";
+import Clue from "./level-11-connect-but-not-blue/clue.yml";
+import After from "./level-11-connect-but-not-blue/question.yml";
+import Answer from "./level-11-connect-but-not-blue/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-connect-but-not-blue" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Red 2 and blue 2 are played. Alice gave Cathy a number 4 Play Clue. Bob immediately blind-played the blue 3. Cathy's clued 4 already had negative blue information.
+Red 2 and blue 2 are played. Alice gives Cathy a number 4 Play Clue. Cathy's clued 4 already has negative blue information.
+
+**Alice's clue:**
+
+<Clue />
+
+Bob immediately blind-plays his Finesse Position. It is the blue 3 and plays successfully.
+
+**After Bob's play:**
+
+<After />
 
 Does the apparent 3→4 connection make this a Finesse?
-
-<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**No.** A rank connection would normally point to the blue 4, but Cathy's negative blue information makes that truthful Finesse interpretation impossible. The clue must instead be a **Bluff**. Among Cathy's remaining possibilities, the red 4 is the one-away-from-playable 4 that can legally be the Bluff target.
+**No.** A rank connection would normally point to the blue 4, but Cathy's negative blue information makes that truthful Finesse interpretation impossible. The clue must instead be a **Bluff**. Among Cathy's remaining possibilities, the red 4 is the one-away-from-playable 4 that can legally be the Bluff target. Cathy therefore records **r4** on the clued card.
+
+**Resulting interpretation:**
+
+<Answer />
 
 </TabItem>
 </Tabs>

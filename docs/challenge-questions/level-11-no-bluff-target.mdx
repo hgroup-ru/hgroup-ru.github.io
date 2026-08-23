@@ -6,6 +6,7 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "./level-11-no-bluff-target/question.yml";
+import Answer from "./level-11-no-bluff-target/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-no-bluff-target" />
 
@@ -22,6 +23,10 @@ Should Donald interpret the clue as a Bluff because of the rank disconnect?
 <TabItem value="solution">
 
 **No.** With empty stacks there is no one-away-from-playable 4, so a 4 cannot be a legal Bluff target here. The Bluff interpretation is impossible despite the disconnect. Donald must therefore keep the truthful Finesse interpretation: the red 1 begins a multi-card connection toward a red 4, requiring red 2 and red 3 before the clued card.
+
+Donald can record that explicitly: red 2 and red 3 are the two Finesse cards leading into his red 4.
+
+<Answer />
 
 </TabItem>
 </Tabs>
