@@ -1,12 +1,11 @@
 stacks:
-  - r: 0
+  - r: 1
   - y: 0
   - g: 1
   - b: 1
   - p: 1
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -20,14 +19,14 @@ players:
       - type: x
   - name: Cathy
     cards:
-      - type: r1
+      - type: x
       - type: x
       - type: x
       - type: x
   - name: Donald
     cards:
       - type: x
-      - type: b1
-        clue: 1
+      - type: 1
+        trash: true
       - type: x
       - type: x
