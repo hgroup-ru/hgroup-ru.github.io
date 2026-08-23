@@ -135,10 +135,10 @@ async function validateState(filePath: string) {
       }
 
       if (
-        EXACT_CARD_PATTERN.test(card.type) &&
-        (card.middleNote !== undefined ||
-          card.above !== undefined ||
-          card.below !== undefined)
+        EXACT_CARD_PATTERN.test(card.type)
+        && (card.middleNote !== undefined
+          || card.above !== undefined
+          || card.below !== undefined)
       ) {
         fail(
           filePath,
