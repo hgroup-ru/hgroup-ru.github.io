@@ -22,7 +22,7 @@ players:
   - name: Cathy
     cards:
       - type: x
-      - type: r4
+      - type: r
         middleNote: r4
         below: Bluff
       - type: x
