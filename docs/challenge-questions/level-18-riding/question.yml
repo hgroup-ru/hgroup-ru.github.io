@@ -10,8 +10,10 @@ players:
       - type: x
       - type: x
       - type: x
-      - type: r2
-      - type: b4
+      - type: x
+        middleNote: r2?
+      - type: x
+        middleNote: r2?
   - name: Bob
     cards:
       - type: x

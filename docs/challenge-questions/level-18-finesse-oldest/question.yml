@@ -9,11 +9,15 @@ players:
     cards:
       - type: x
       - type: x
+        middleNote: b3?
       - type: x
-      - type: b3
+        middleNote: b3?
       - type: x
+        middleNote: b3?
+      - type: x
+        middleNote: b3?
+        cm: true
   - name: Bob
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -23,8 +27,7 @@ players:
   - name: Cathy
     cards:
       - type: x
-      - type: b4
-        clue: b
+      - type: b
       - type: x
       - type: x
       - type: x

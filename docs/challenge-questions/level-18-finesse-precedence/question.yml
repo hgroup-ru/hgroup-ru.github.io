@@ -15,12 +15,15 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r4
+      - type: "4"
         clue: 4
-      - type: r3
       - type: x
       - type: x
-      - type: b3
+        middleNote: b3?
+      - type: x
+        middleNote: b3?
+      - type: x
+        middleNote: b3?
   - name: Cathy
     cards:
       - type: x
