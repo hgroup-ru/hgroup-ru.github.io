@@ -5,7 +5,7 @@ stacks:
   - b: 0
   - p: 0
 bigText:
-  text: Alice, Bob, Donald
+  text: A/B/D: r2?; C: no note
 players:
   - name: Alice
     cards:
