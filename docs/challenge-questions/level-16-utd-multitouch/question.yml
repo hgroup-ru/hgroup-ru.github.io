@@ -11,11 +11,13 @@ players:
       - type: x
       - type: x
       - type: x
+      - type: x
   - name: Bob
     cards:
       - type: x
       - type: g2
       - type: b2
+      - type: x
       - type: x
   - name: Cathy
     cards:
@@ -24,4 +26,5 @@ players:
         clue: r
       - type: r
         clue: r
+      - type: x
       - type: x

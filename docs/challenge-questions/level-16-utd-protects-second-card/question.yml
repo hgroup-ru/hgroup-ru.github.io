@@ -12,8 +12,10 @@ players:
       - type: x
       - type: x
       - type: x
+      - type: x
   - name: Bob
     cards:
+      - type: x
       - type: x
       - type: x
       - type: x
@@ -24,5 +26,6 @@ players:
         clue: 1
       - type: r1
         clue: 1
+      - type: x
       - type: x
       - type: x
