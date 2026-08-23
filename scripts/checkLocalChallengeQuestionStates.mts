@@ -54,13 +54,17 @@ const STATE_PREFLIGHT_SCHEMA = z
   .loose()
   .readonly();
 
-const scope = SCOPE_SCHEMA.parse(JSON.parse(await readFile(SCOPE_PATH)) as unknown);
+const scope = SCOPE_SCHEMA.parse(
+  JSON.parse(await readFile(SCOPE_PATH)) as unknown,
+);
 const publishedLevels = await discoverPublishedLevels();
 validateScope("state_preflight", scope.state_preflight, publishedLevels);
 
 const statesByLevel = await Promise.all(
   scope.state_preflight.enforced.map(async (level) => {
-    const files = await glob(path.join(EN_ROOT, `level-${level}-*/*.{yml,yaml}`));
+    const files = await glob(
+      path.join(EN_ROOT, `level-${level}-*/*.{yml,yaml}`),
+    );
     const solutionFiles = await collectSolutionStateFiles(level);
     return { level, files: files.toSorted(), solutionFiles } as const;
   }),
@@ -68,13 +72,17 @@ const statesByLevel = await Promise.all(
 
 for (const { level, files } of statesByLevel) {
   if (files.length === 0) {
-    throw new Error(`No Local CQ diagram states found for enforced level ${level}.`);
+    throw new Error(
+      `No Local CQ diagram states found for enforced level ${level}.`,
+    );
   }
 }
 
 await Promise.all(
   statesByLevel.flatMap(({ files, solutionFiles }) =>
-    files.map((filePath) => validateState(filePath, solutionFiles.has(filePath))),
+    files.map(async (filePath) => {
+      await validateState(filePath, solutionFiles.has(filePath));
+    }),
   ),
 );
 
@@ -173,15 +181,22 @@ async function validateState(filePath: string, solutionState: boolean) {
     }
     const limit = COPY_LIMITS.get(Number(rankText));
     if (limit !== undefined && count > limit) {
-      fail(filePath, `${card} appears ${count} physical times; deck limit is ${limit}`);
+      fail(
+        filePath,
+        `${card} appears ${count} physical times; deck limit is ${limit}`,
+      );
     }
   }
 }
 
-async function collectSolutionStateFiles(level: number): Promise<ReadonlySet<string>> {
+async function collectSolutionStateFiles(
+  level: number,
+): Promise<ReadonlySet<string>> {
   const mdxFiles = await glob(path.join(EN_ROOT, `level-${level}-*.mdx`));
-  const importPattern = /import\s+(?<name>[A-Za-z_$][\w$]*)\s+from\s+"(?<source>[^"]+\.(?:ya?ml))"/gv;
-  const solutionPattern = /<TabItem\s+value="solution">(?<body>[\s\S]*?)<\/TabItem>/v;
+  const importPattern =
+    /import\s+(?<name>[$A-Z_a-z][\w$]*)\s+from\s+"(?<source>[^"]+\.ya?ml)"/gv;
+  const solutionPattern =
+    /<TabItem\s+value="solution">(?<body>[\s\S]*?)<\/TabItem>/v;
 
   const stateFilesByPage = await Promise.all(
     mdxFiles.map(async (mdxFile) => {
@@ -199,7 +214,10 @@ async function collectSolutionStateFiles(level: number): Promise<ReadonlySet<str
           if (name === undefined || source === undefined) {
             return [];
           }
-          const componentPattern = new RegExp(`<${name}(?:\\s|/|>)`, "v");
+          const componentPattern = new RegExp(
+            String.raw`<${name}(?:\s|/|>)`,
+            "v",
+          );
           if (!componentPattern.test(solutionBody)) {
             return [];
           }
@@ -230,15 +248,20 @@ function validateScope(
   name: string,
   section: z.infer<typeof SCOPE_SECTION_SCHEMA>,
   levels: ReadonlySet<number>,
-): void {
+) {
   const enforced = new Set(section.enforced);
   const deferred = new Set(section.deferred);
-  if (enforced.size !== section.enforced.length || deferred.size !== section.deferred.length) {
+  if (
+    enforced.size !== section.enforced.length
+    || deferred.size !== section.deferred.length
+  ) {
     throw new Error(`${name} scope contains duplicate level entries.`);
   }
   const overlap = [...enforced].filter((level) => deferred.has(level));
   if (overlap.length > 0) {
-    throw new Error(`${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`);
+    throw new Error(
+      `${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`,
+    );
   }
   const classified = new Set([...enforced, ...deferred]);
   const missing = [...levels].filter((level) => !classified.has(level));

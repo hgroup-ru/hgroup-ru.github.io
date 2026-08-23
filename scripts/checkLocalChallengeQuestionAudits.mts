@@ -25,10 +25,12 @@ const SCOPE_SCHEMA = z
 const UPSTREAM_SCHEMA = z
   .object({ revision: z.string().regex(/^[0-9a-f]{40}$/v) })
   .loose();
-const STATUS_SCHEMA = z.string().refine(
-  (value) => /^(?:pass(?:\b.*)?|n\/a(?:\b.*)?)$/iv.test(value.trim()),
-  "status must start with pass or N/A",
-);
+const STATUS_SCHEMA = z
+  .string()
+  .refine(
+    (value) => /^(?:pass(?:\b.*)?|n\/a(?:\b.*)?)$/iv.test(value.trim()),
+    "status must start with pass or N/A",
+  );
 const RECORD_SCHEMA = z
   .object({
     id: z.string().min(1),
@@ -64,7 +66,9 @@ const AUDIT_SCHEMA = z
   })
   .strict();
 
-const scope = SCOPE_SCHEMA.parse(JSON.parse(await readFile(SCOPE_PATH)) as unknown);
+const scope = SCOPE_SCHEMA.parse(
+  JSON.parse(await readFile(SCOPE_PATH)) as unknown,
+);
 const upstream = UPSTREAM_SCHEMA.parse(
   JSON.parse(await readFile(UPSTREAM_PATH)) as unknown,
 );
@@ -104,7 +108,9 @@ async function validateLevel(level: number, sourceRevision: string) {
   const recordsById = new Map<string, (typeof audit.records)[number]>();
   for (const record of audit.records) {
     if (recordsById.has(record.id)) {
-      throw new Error(`${relative(auditPath)} contains duplicate id: ${record.id}`);
+      throw new Error(
+        `${relative(auditPath)} contains duplicate id: ${record.id}`,
+      );
     }
     recordsById.set(record.id, record);
   }
@@ -141,15 +147,20 @@ function validateScope(
   name: string,
   section: z.infer<typeof SCOPE_SECTION_SCHEMA>,
   levels: ReadonlySet<number>,
-): void {
+) {
   const enforced = new Set(section.enforced);
   const deferred = new Set(section.deferred);
-  if (enforced.size !== section.enforced.length || deferred.size !== section.deferred.length) {
+  if (
+    enforced.size !== section.enforced.length
+    || deferred.size !== section.deferred.length
+  ) {
     throw new Error(`${name} scope contains duplicate level entries.`);
   }
   const overlap = [...enforced].filter((level) => deferred.has(level));
   if (overlap.length > 0) {
-    throw new Error(`${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`);
+    throw new Error(
+      `${name} scope has levels both enforced and deferred: ${overlap.join(", ")}`,
+    );
   }
   const classified = new Set([...enforced, ...deferred]);
   const missing = [...levels].filter((level) => !classified.has(level));
