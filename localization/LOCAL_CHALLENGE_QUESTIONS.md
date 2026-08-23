@@ -1,302 +1,155 @@
 # Авторинг и ревью Local Challenge Questions
 
-Этот документ — единый редакционный и semantic-стандарт для локальных Challenge Questions, подготовленных H-Group RU. Они являются локальным учебным материалом и **не являются Official Challenge Questions H-Group**.
+Этот документ — канонический **редакционный и semantic-стандарт** для Local Challenge Questions H-Group RU. Он отвечает на вопрос: **что делает задачу достойной публикации?**
 
-Правила ниже не применяются ретроактивно к официальным Challenge Questions: официальный материал сохраняется source-faithfully. Для локальных Challenge Questions цель — не количество и не механическое покрытие каждого абзаца Level, а небольшой набор сильных задач, которые проверяют Hanabi reasoning и помогают учиться на ошибках.
+Исполняемый Definition of Done, machine-readable evidence, deterministic gates и lifecycle находятся отдельно в [`LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](LOCAL_CQ_AUTONOMOUS_WORKFLOW.md). Не дублируйте release contract здесь.
+
+Local Challenge Questions являются локальным учебным материалом и **не являются Official Challenge Questions H-Group**. Официальные материалы сохраняются source-faithfully.
 
 ## 1. Публикационный критерий
 
-Хороший Local Challenge Question должен заслуживать место рядом с основной документацией. Он должен заставлять применить материал, распознать interpretation, boundary, interaction, misconception или временную причинность, а не пересказать абзац Level или вспомнить название convention.
+Хороший CQ заставляет применить материал, распознать boundary, interaction, misconception, interpretation или временную причинность. Он не существует только потому, что в Level есть раздел про соответствующую convention.
+
+Для каждого кандидата должно быть понятно:
+
+- зачем он нужен;
+- какую правдоподобную ошибку диагностирует;
+- что игрок поймёт лучше после Solution.
 
 Главный тест:
 
-> Если бы этот вопрос прислал живой автор для хорошего учебника по Hanabi, оставили бы мы его как есть?
+> Если бы эту задачу прислал живой автор для сильного учебника по Hanabi, оставили бы мы её как есть?
 
-Для каждого опубликованного вопроса должно быть возможно кратко объяснить:
+Не существует квоты на число CQ. Несколько сильных вопросов лучше механического покрытия каждого абзаца Level.
 
-- почему он вообще нужен;
-- какую правдоподобную ошибку игрока он диагностирует;
-- что игрок поймёт лучше после разбора Solution.
+## 2. Сначала проектируется learning task
 
-Формулировка «потому что в Level есть раздел про X» недостаточна. Существование страницы не является аргументом за её сохранение.
+До prose определите:
 
-## 2. Сначала проектируйте набор
+- source rule из pinned upstream;
+- learning objective и misconception/boundary;
+- question type: `best_move`, `legality`, `interpretation` или `deduction`;
+- modality: `can`, `should`, `must`, `only_if`;
+- critical variable;
+- reasoning POV и critical timeline;
+- strongest competing move/interpretation;
+- нужна ли позиция, одна диаграмма или timeline.
 
-Перед новым большим набором составьте лёгкую матрицу. Для каждого кандидата достаточно зафиксировать:
+Один CQ имеет одну главную педагогическую цель; несколько conventions нужны только когда именно их interaction является целью.
 
-- source section / правило из закреплённого upstream;
-- основной learning objective;
-- misconception или boundary;
-- тип вопроса;
-- требуемую модальность ответа;
-- critical variable, от которого реально зависит решение;
-- critical timeline и POV;
-- главный competing move / interpretation;
-- нужна ли одна диаграмма или scenario timeline.
+По умолчанию предпочтительна конкретная игровая ситуация. Концептуальный вопрос допустим, когда он чище проверяет настоящую boundary/precedence, чем искусственная полная раздача.
 
-Не превращайте это в бюрократическую базу. Матрица нужна, чтобы сначала спроектировать обучение, а потом писать страницы.
+Каждый вопрос self-contained. Он может требовать материал текущего и предыдущих Levels, но не будущие refinements.
 
-При поиске сильных кандидатов особенно полезно смотреть на source-формулировки `only`, `illegal`, `unless`, `last resort`, `takes precedence`, `however`, `rare cases` и Common Mistakes: там часто находятся настоящие decision boundaries.
+## 3. Однозначность: blind solve, breaker, mutation
 
-Один вопрос должен иметь одну главную педагогическую цель. Несколько правил допустимы, когда именно их interaction является целью.
+Question сначала решается **без Solution**. По title, prose и question-state ревьюер должен получить intended answer из доступной игроку информации, а не из намерения автора.
 
-## 3. Формат задачи и уровень знаний
+Если остаётся вторая сопоставимо правдоподобная line, CQ не готов.
 
-По умолчанию предпочтительна конкретная игровая ситуация. Концептуальный вопрос без полноценной позиции допустим редко: он должен проверять тонкую boundary, precedence или interaction, которую искусственно загонять в полную позицию хуже. Вопросы вида «перечислите условия X» или «что сказано в разделе X» почти всегда нужно заменить.
+При adversarial review обязательно спросите:
 
-Каждый вопрос должен быть self-contained. Не используйте как необходимый контекст ответ на соседний вопрос, «ту же позицию» без повторения существенного состояния или заголовок `Part II` вместо условий.
+- почему не strongest alternative;
+- существует ли более простой Play/Save Clue, play или discard;
+- есть ли precedence или last-resort restriction;
+- не используется ли hidden/future knowledge;
+- forced/uniquely best ли ключевая будущая reaction;
+- может ли текущий actor сам сделать действие, которое Solution зачем-то поручает следующему игроку.
 
-Вопрос текущего Level может использовать текущий и предыдущий материал, но не требует будущих refinements. При review мысленно ставьте себя на место игрока, который только что закончил этот Level.
+Не чините ambiguity оговоркой только в Solution: меняйте Question/state.
 
-### Тип вопроса
+### Mutation и minimal state
 
-Определите, что именно проверяется, до окончательной формулировки:
+Назовите critical variable и измените только её. Answer или decisive reasoning должны предсказуемо поменяться. Если не меняются из-за более простой причины, intended concept декоративен.
 
-- `best move` — действительно однозначно лучший ход в рамках изученных conventions;
-- `legality` — допустимо ли конкретное действие;
-- `interpretation` — что означает уже сделанный clue/discard/play;
-- `deduction` — что игрок может заключить из доступной информации.
+Удаляйте лишние условия по одному. Оставшаяся деталь должна быть необходимой или осознанным проверенным distractor, а не искусственным шумом.
 
-Не маскируйте legality под `best move` и не спрашивайте о следующем ходе, когда реальная цель — interpretation.
+Controlled contrast полезен: две почти одинаковые позиции могут обе быть нужны, если одна причинная переменная меняет ответ. Плохой дубль повторяет тот же cognitive task под другими цветами.
 
-### Modality ladder
+## 4. POV, epistemics, physical state и timeline
 
-Отдельно фиксируйте силу вывода: `legal/can`, `valid interpretation`, `best/should`, `forced/must`, `last resort/only if`. Нельзя незаметно превращать разрешённый ход в обязательный или хороший ход в единственно допустимый.
-
-## 4. Title и answer leakage
-
-Title и Question не должны выдавать искомую interpretation, exception или technique до того, как игрок должен её распознать.
-
-Название convention допустимо, если распознавание этой convention **не является проверяемым навыком**, а название лишь задаёт семейство задачи и уменьшает лишнюю cognitive load. Например, контрастная серия может называться `Baton I / Baton II`, если вопрос проверяет boundary внутри Baton. Если применение Baton и есть ответ, название уже спойлер.
-
-Практический тест: мысленно убрать название convention. Если без него задача превращается из reasoning в угадывание нужного термина, название даёт слишком много.
-
-Проверяйте leakage не только в title, но и в slug, sidebar/search label, captions и видимых служебных именах diagram states.
-
-## 5. Blind solve и adversarial review
-
-Каждый вопрос сначала решается без чтения Solution. По title, Question и question-state diagrams ревьюер должен самостоятельно определить ответ, reasoning и существенно правдоподобные альтернативы.
-
-Если intended answer требует угадывать намерение автора или остаётся второй сопоставимо правдоподобный ответ, вопрос не готов.
-
-После blind solve специально попытайтесь его сломать:
-
-- почему не X;
-- есть ли более простой valid interpretation;
-- существует ли другой Play/Save Clue или обычный/специальный discard сопоставимой ценности;
-- есть ли convention с precedence;
-- используется ли last-resort move при наличии менее опасной линии;
-- зависит ли решение от скрытого или будущего знания;
-- обязан ли партнёр выполнить именно реакцию, на которой держится Solution.
-
-Не исправляйте неоднозначность дополнительной оговоркой в Solution: исправьте Question или state.
-
-### Mutation и minimal-state tests
-
-Назовите critical variable и мысленно измените только её. Если именно она должна определять решение, ответ или reasoning должны измениться предсказуемо. Если ничего не меняется из-за более простой причины, intended concept, вероятно, декоративен.
-
-Затем удаляйте условия по одному. Каждая оставшаяся существенная деталь должна быть необходимой или осмысленным правдоподобным distractor. Не усложняйте позицию ради ощущения сложности.
-
-Избегайте искусственных stipulations вроде «никакое другое исключение не действует», если это можно выразить нормальным состоянием игры.
-
-## 6. Controlled contrast вместо плохих дублей
-
-Semantic similarity сама по себе не делает два вопроса redundant.
-
-Сильная contrastive pair намеренно сохраняет почти всё состояние и меняет одну причинную переменную — например seating order, наличие безопасного discard или положение карты — так, чтобы ответ изменился. Такая пара явно показывает boundary и является хорошим учебным приёмом.
-
-Плохой дубль повторяет тот же cognitive task и тот же вывод под другими цветами/картами без новой границы.
-
-Простой baseline-вопрос тоже может заслуживать KEEP как **contrast anchor**, если последующий вопрос использует его для ясного сравнения. Но baseline должен быть нужен именно серии, а не сохранён как filler.
-
-## 7. POV, epistemics и timeline
-
-Различайте:
+Всегда различайте:
 
 - объективное физическое состояние;
-- что игрок реально видит;
-- что игрок уже вывел и знает.
+- что игрок видит;
+- что он уже знает/вывел.
 
-Reasoning не может использовать информацию из будущего. Видимая физическая карта у партнёра не означает автоматически, что владелец знает её identity.
+`type` карты в YML не означает, что владелец знает exact identity. Reasoning не может использовать будущую информацию.
 
-Для каждого значимого predicate — `playable`, `known`, `critical`, `on chop`, `Finesse Position`, число clues — спрашивайте: **в какой именно момент timeline это должно быть истинно?** Не проверяйте условие слишком рано или слишком поздно.
+Для значимых predicates (`playable`, `known`, `critical`, chop, Finesse Position, clues) фиксируйте момент timeline, в котором они истинны. Seating order является частью state, если влияет на доступность реакции.
 
-Если решение зависит от seating order, порядок игроков является частью state. Одинаковые карты могут давать разные ответы, если prerequisite action происходит до или после обязательной реакции.
+Локальная позиция должна быть физически возможна: hand size, card copies, stacks/discard, draw shifts, clue touches, slots, clue count и turn order должны согласовываться между prose и diagrams.
 
-### Reaction robustness
+Если Solution прогнозирует будущие действия партнёров, каждый решающий переход должен быть forced/uniquely best либо не влиять на вывод.
 
-Если Solution прогнозирует несколько будущих ходов, каждый ключевой переход должен быть forced, uniquely best либо несущественным для вывода. Нельзя строить «единственное решение» на том, что партнёр просто мог бы выбрать одну удобную автору линию.
+## 5. Диаграммы — часть reasoning
 
-Действие или сознательное бездействие партнёра само может быть evidence. Продвинутые вопросы могут проверять вывод из того, что игрок сыграл карту вместо допустимого discard, не дал clue, выбрал одну interpretation и тем самым исключил другую. Такое reasoning особенно тщательно проверяется на POV и common knowledge.
+Диаграмма нужна, когда card order/spatial state существенно влияет на ответ. Несколько простых states лучше одной перегруженной картинки, если задача многошаговая.
 
-## 8. Физическая корректность позиции
+Question diagrams нейтральны: title, captions, `bigText`, notes, borders и labels не должны выдавать cognitive target. Эпистемически корректная annotation всё равно может быть педагогическим spoiler.
 
-Локальный state должен быть возможен в реальной игре. Проверяйте как минимум:
+Для multi-step задачи естественная модель:
 
-- количество физических копий каждой карты;
-- stacks и discard;
-- draw и hand shifts;
-- законность заявленных clues и touches;
-- clue marks и notes относительно history;
-- chop/Finesse Position в реальном слоте;
-- clues/tokens и turn order;
-- отсутствие одной физической карты сразу в нескольких местах.
+`State 0 -> action -> State 1 -> action -> State 2 -> question`.
 
-Для локальных YML не ставьте clue-border на untouched opponent card; pre-action state не должен содержать labels, возникающие только после будущей interpretation. Если утверждается, что карта владельцу `known`, этому нужно основание в history/notes, а не только её видимость читателю.
+Существенная история не должна существовать только в prose, если её нормально представить states. Текущая clue рисуется как действие только на соответствующем кадре; historical clue не изображается current arrow.
 
-Card-copy, stack и очевидные state-transition invariants стоит постепенно автоматизировать. Автоматика не заменяет semantic review знаний и conventions.
+Если Solution по сути отвечает **«что игрок теперь записывает/понимает на своих картах?»**, knowledge-state diagram обычно является частью хорошего feedback. Точный обязательный diagram/release contract находится в [`LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](LOCAL_CQ_AUTONOMOUS_WORKFLOW.md).
 
-## 9. Диаграммы как часть reasoning
-
-Если spatial/card-order information существенно влияет на ответ, диаграмма требуется по умолчанию. Если она лишь повторяет два простых факта, её можно не добавлять.
-
-В Question и Solution допустимы несколько диаграмм. Для длинной последовательности действий несколько простых состояний обычно лучше, чем одна перегруженная картинка или пересказ множества ходов словами.
-
-Question-diagrams должны быть нейтральными. Notes, annotations, labels и captions не должны подсказывать решение. Более того, **эпистемически корректная информация тоже может быть педагогическим спойлером**: не записывайте на question-state уже готовый вывод, который ученик должен получить сам.
-
-Это cognitive-target alignment: Question, diagram и Solution должны проверять одно и то же рассуждение.
-
-### Scenario timeline
-
-Для новых и существенно переписываемых многошаговых задач используйте migration-friendly модель:
-
-`State 0 -> action -> State 1 -> action -> State 2 -> question`
-
-Каждый переход должен быть явным и законным. Руки, draw, stacks, discard, clues, notes, focus, chop и turn order не меняются молча.
-
-Сегодня timeline может отображаться статическими диаграммами; в будущем те же states/actions должны по возможности поддерживать интерактивный replay. Существенную историю не кодируйте только в prose, если её естественно представить состояниями. Без JavaScript статический fallback остаётся полноценным.
-
-Педагогическая минимизация notes допустима, эпистемическая ложь — нет.
-
-## 10. Solution — feedback, а не второй источник правил
-
-Solution и Question проверяются отдельно.
+## 6. Solution — feedback, а не второй источник правил
 
 Хорошая Solution:
 
-1. сразу даёт прямой ответ;
+1. сразу отвечает;
 2. называет решающий факт;
 3. объясняет причинную цепочку;
-4. разбирает главный правдоподобный wrong answer, если это полезно;
+4. разбирает strongest wrong answer, когда это полезно;
 5. не подменяет reasoning названием convention.
 
-При сравнении нескольких линий объясняйте их по возможности в **first divergence** — первой точке, где последствия начинают различаться. Не проигрывайте десять ходов, если правильный выбор определяется уже на втором.
+При сравнении линий объясняйте **first divergence** — первую точку, где последствия различаются. Короткий counterfactual полезен, если показывает, какой один факт сделал бы альтернативу правильной.
 
-Короткий counterfactual в конце иногда полезен: какой один изменённый факт сделал бы альтернативу правильной.
+Solution не должна впервые вводить правило/refinement/exception, без которого Question нельзя решить. Это либо `CQ bug`, либо `documentation gap`; gap исправляется в основной документации, а не прячется в Solution.
 
-Solution не должна впервые вводить правило, refinement, exception или precedence, без которого Question невозможно решить. Если такое произошло, классифицируйте:
+## 7. Corpus quality и граница с Quick Checks
 
-- `CQ bug` — вопрос преждевременный или неправильно построен;
-- `documentation gap` — сильный вопрос выявил реальную дыру или неоднозначность основной документации.
+После page-level review проверяется набор:
 
-Не чините documentation gap молча внутри Solution: Level и Questions не должны становиться двумя независимыми источниками правил.
-
-## 11. Worked examples и transfer
-
-Не копируйте основной пример только ради recall. Но близкая к source example позиция может быть отличным CQ, если меняется **cognitive task**: другой POV, completion, prediction, reverse deduction, comparison или вывод из реакций игроков.
-
-Следите за recency bias: читатель знает, какой Level только что прочитал, и может механически применять последнюю convention. Набор должен естественно включать non-application, earlier-rule precedence и ситуации, где обычная линия остаётся правильной.
-
-## 12. EN и RU — два самостоятельных редакционных прохода
-
-Английская и русская версии оцениваются независимо, затем проверяется parity.
-
-EN должен выглядеть как естественная часть документации H-Group: ясный, компактный, без AI-like prose и локальных RU-workarounds. Для потенциального upstream PR это отдельный portability gate.
-
-RU не является механическим downstream-переводом EN. Русская версия должна звучать так, будто её изначально написал сильный русскоязычный Hanabi-редактор:
-
-- естественный порядок слов и нормальная длина предложений;
-- никакого канцелярита, кальки и Runglish вне принятых convention names;
-- стабильная H-Group терминология;
-- сохранённая модальность и epistemic strength;
-- естественные captions, diagram labels и объяснения;
-- право перестроить предложение или порядок объяснения, если смысл и логика остаются теми же и русский становится лучше.
-
-RU проходит отдельный blind/editorial reader pass; недостаточно сказать «перевод совпадает с EN».
-
-После этого EN <-> RU parity check подтверждает одинаковые условия, доступную информацию, модальность, intended answer, reasoning и исключения.
-
-## 13. KEEP / REWRITE / DELETE
-
-Результат каждого полного review явный:
-
-- `KEEP` — вопрос действительно хорош;
-- `REWRITE` — learning objective полезен, но постановка, Solution, язык или diagrams слабее стандарта;
-- `DELETE` — вопрос искусственный, лишний, дублирующий или не даёт достаточной учебной ценности.
-
-Не существует целевого количества Questions на Level. Не каждый важный факт обязан иметь свой CQ.
-
-Полезный edge case может быть semantic regression fixture, но быть слишком искусственным для публикации. Publication CQ, teaching example и internal regression case — разные артефакты.
-
-Для каждого KEEP ревьюер должен уметь закончить фразы:
-
-- «Этот вопрос нужен, потому что игрок может ошибочно решить, что ...»;
-- «После ошибки игрок лучше поймёт ...».
-
-## 14. Corpus-level review
-
-Сначала каждый вопрос должен быть хорош сам по себе, затем проверяется набор.
-
-Ищите:
-
-- настоящие semantic duplicates, но не удаляйте полезные controlled contrasts;
-- повторяющиеся learning objectives;
-- gaps в важных misconceptions/boundaries;
-- перекос в yes/no или одном типе reasoning;
-- слишком много лёгких flashcards или редких многослойных monsters;
-- неправильный knowledge ceiling;
+- semantic duplicates против полезных controlled contrasts;
+- gaps в важных boundaries/misconceptions;
+- перекос по типам reasoning и yes/no;
+- knowledge ceiling и progression;
+- recency bias и слабый transfer;
 - title/metadata leakage;
-- слабый transfer и recency bias.
+- повторение того же cognitive task в Quick Check.
 
-Полезный fingerprint:
+Quick Check может проверять базовый invariant, а CQ — применение среди competing lines. Если оба проверяют ровно одну и ту же мысль, один слой лишний, если только baseline не нужен как осмысленный contrast anchor.
 
-`premise -> competing interpretations -> tested rule -> required action`
+Publication CQ, teaching example и internal regression fixture — разные артефакты. Полезный edge case не обязан быть хорошей публичной задачей.
 
-Вместо квоты «N вопросов на convention» используйте лёгкий coverage graph:
+Результат editorial review: `KEEP`, `REWRITE` или `DELETE`. Это **semantic verdict**, не lifecycle status и не синоним `clean-baseline`.
 
-`question -> concept -> misconception/boundary -> prerequisites -> knowledge ceiling`
+## 8. EN/RU editorial quality
 
-Для важной convention полезно также посмотреть decision-boundary matrix: есть ли смысловые случаи `applies / does not apply / legal but bad / actually best / competitor has precedence / last resort`. Это диагностический инструмент, а не квота на шесть вопросов.
+EN и RU проходят самостоятельные editorial passes, затем parity check по условиям, доступной информации, modality, intended answer и reasoning.
 
-## 15. Rendered reader pass и diagram audit
+RU должен звучать как естественный русскоязычный Hanabi-текст, а не механический перевод EN:
 
-После semantic/editorial pass изменённые Questions полезно пройти в интерфейсе как ученик:
+- нормальный порядок слов и длина предложений;
+- никакого канцелярита и случайного Runglish;
+- стабильная утверждённая терминология;
+- точная modality/epistemic strength;
+- естественные captions и diagram labels.
 
-`title -> Question -> diagram/timeline -> самостоятельное решение -> Solution`
+Для конкретного неудачного розыгрыша в живой CQ-прозе допустима естественная формулировка **«взорвал/взорвала карту»**, когда речь именно о произошедшем bomb/misplay. `мисплей` сохраняется, когда называется техническое понятие `misplay`; не возвращайте механическое `сделал/сделала мисплей` только ради буквального соответствия английскому слову.
 
-Это editorial UX review, не технический visual QA.
+## 9. Rendered reader pass
 
-Отдельный semantic diagram audit для выбранного scope проверяет:
+Новый или изменённый diagram/timeline CQ перед release читается в интерфейсе как ученик:
 
-1. source fidelity для официальных YML;
-2. text <-> diagram consistency;
-3. game-state legality;
-4. timeline и epistemics;
-5. cognitive-target leakage;
-6. законность переходов между states;
-7. visual readability отдельным rendered/browser pass, когда он требуется.
+`title -> Question -> diagram/timeline -> самостоятельное решение -> Solution`.
 
-Этот аудит не является основанием повторно открывать замороженный scope. Levels 2–8 остаются вне повторного аудита, если пользователь явно не изменит это решение.
+Это editorial/semantic reader pass, а не browser smoke. Он проверяет text↔diagram consistency, понятность timeline, notes/labels, leakage и то, что визуальная композиция действительно помогает reasoning.
 
-## 16. Доказательство полного аудита
+Технические требования к browser visual QA, evidence, production-first human review и clean-baseline не повторяются здесь — они определены в [`LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](LOCAL_CQ_AUTONOMOUS_WORKFLOW.md).
 
-Массовый screening, grep, предыдущий hard pass и отсутствие найденных smells не равны независимому page-by-page review.
-
-Для каждой страницы полный audit оставляет короткую запись `KEEP`, `REWRITE` или `DELETE` с причиной. Выявленный дефект основной документации помечается `documentation gap`.
-
-Рекомендуемый порядок:
-
-1. blind solve: title + Question + diagrams без Solution;
-2. reason-for-existence, modality, ambiguity, adversarial alternatives и leakage;
-3. mutation/minimal-state/contrast check там, где он полезен;
-4. physical legality, POV, epistemics, temporal predicates и reaction robustness;
-5. Solution: direct answer, causal reasoning, first divergence, why-not и отсутствие новых правил;
-6. независимый EN editorial pass;
-7. независимый RU editorial pass;
-8. EN <-> RU parity;
-9. diagram/scenario-timeline review;
-10. `KEEP / REWRITE / DELETE` с evidence;
-11. Level/corpus coverage, transfer, diversity и progression review;
-12. rendered reader pass и применимый технический QA.
-
-Перед большим аудитом полезно откалибровать стандарт на нескольких заведомо сильных и слабых Questions, чтобы критерий качества не смягчался по мере прохождения корпуса.
+Текущий scope, frozen/deferred Levels и acceptance state являются **project state**, а не вечными editorial-правилами. Их источники истины: [`QA_COVERAGE.md`](QA_COVERAGE.md), [`LOCAL_CQ_QA_SCOPE.json`](LOCAL_CQ_QA_SCOPE.json) и [`../BACKLOG.md`](../BACKLOG.md).
