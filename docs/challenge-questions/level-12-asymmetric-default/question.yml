@@ -1,0 +1,35 @@
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+bigText:
+  text: 3 clues
+players:
+  - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+        below: Discard
+  - name: Bob
+    cards:
+      - type: x
+      - type: 2
+      - type: 2
+      - type: 2
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: r2
+        border: false
+  - name: Donald
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
