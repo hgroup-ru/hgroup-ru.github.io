@@ -7,6 +7,7 @@ stacks:
 players:
   - name: Alice
     clueGiver: true
+    clueArrow: true
     cards:
       - type: x
       - type: x
@@ -14,9 +15,9 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r2
-      - type: b1
-      - type: r3
+      - type: x
+      - type: x
+      - type: x
       - type: x
   - name: Cathy
     cards:

@@ -1,12 +1,11 @@
 stacks:
   - r: 1
-  - y: 1
+  - y: 2
   - g: 1
   - b: 1
   - p: 1
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -14,15 +13,15 @@ players:
       - type: x
   - name: Bob
     cards:
+      - type: x
       - type: g2
       - type: b2
-      - type: y2
       - type: x
   - name: Cathy
     cards:
       - type: x
-      - type: r1
+      - type: r
         clue: r
-      - type: r5
+      - type: r
         clue: r
       - type: x
