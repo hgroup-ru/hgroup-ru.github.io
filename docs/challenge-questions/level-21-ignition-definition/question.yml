@@ -1,24 +1,21 @@
 stacks:
   - r: 1
   - y: 1
-  - g: 1
+  - g: 2
   - b: 1
   - p: 1
 bigText:
-  text: "Clues: 2"
+  text: After Bob blind-plays green 2
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
-        middleNote: kt
   - name: Bob
     cards:
-      - type: g2
-        border: false
+      - type: x
       - type: y4
         border: false
       - type: p5

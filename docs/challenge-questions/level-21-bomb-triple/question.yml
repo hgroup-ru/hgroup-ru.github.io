@@ -5,14 +5,13 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: Cheaper clue available
+  text: After Alice chooses the expensive bomb line
 players:
   - name: Alice
     cards:
       - type: x
       - type: x
       - type: x
-        middleNote: kt
       - type: x
   - name: Bob
     cards:

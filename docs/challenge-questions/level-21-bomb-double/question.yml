@@ -5,14 +5,13 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: Mid-Game
+  text: After Alice deliberately misplays known trash
 players:
   - name: Alice
     cards:
       - type: x
       - type: x
       - type: x
-        middleNote: kt
       - type: x
       - type: x
   - name: Bob

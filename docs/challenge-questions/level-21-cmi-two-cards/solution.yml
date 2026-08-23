@@ -2,38 +2,38 @@ stacks:
   - r: 1
   - y: 1
   - g: 1
-  - b: 1
+  - b: 2
   - p: 1
 bigText:
-  text: First turn
+  text: After Bob's Ignition blind-play
 players:
-  - clueGiver: true
+  - name: Alice
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
-  - cards:
-      - type: x
-        above: Blue 2
-        below: Ignition
+  - name: Bob
+    cards:
       - type: x
       - type: x
       - type: x
-  - cards:
+      - type: x
+  - name: Cathy
+    cards:
       - type: b4
         border: false
-      - type: b1
-        clue: 1
+      - type: 1
+      - type: x
+        cm: true
+        below: Playable
+      - type: x
+        cm: true
         trash: true
-        below: Trash
-      - type: r2
-        border: false
-        below: Plays
-      - type: b4
-        border: false
         middleNote: kt
-  - cards:
+        below: Globally known trash
+  - name: Donald
+    cards:
       - type: x
       - type: x
       - type: x
