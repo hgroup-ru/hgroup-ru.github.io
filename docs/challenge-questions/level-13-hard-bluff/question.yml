@@ -28,8 +28,7 @@ players:
         border: false
   - name: Cathy
     cards:
-      - type: r3
-        clue: 3
+      - type: 3
         middleNote: 3
       - type: r4
         clue: 4
