@@ -7,7 +7,6 @@ stacks:
 players:
   - name: Alice
     clueGiver: true
-    clueArrow: true
     cards:
       - type: x
       - type: x
@@ -24,5 +23,6 @@ players:
       - type: x
       - type: r5
         clue: 5
+        clueArrow: true
       - type: x
       - type: x
