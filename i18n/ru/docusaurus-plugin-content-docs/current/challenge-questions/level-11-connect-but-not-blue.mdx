@@ -5,23 +5,37 @@ title: Соединяющаяся 3
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Question from "@site/docs/challenge-questions/level-11-connect-but-not-blue/question.yml";
+import Clue from "@site/docs/challenge-questions/level-11-connect-but-not-blue/clue.yml";
+import After from "@site/docs/challenge-questions/level-11-connect-but-not-blue/question.yml";
+import Answer from "@site/docs/challenge-questions/level-11-connect-but-not-blue/answer.yml";
 
 <ChallengeQuestionProgress level={11} id="level-11-connect-but-not-blue" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Красная 2 и синяя 2 сыграны. Алиса дала Кэти Play Clue числом 4. Боб сразу вслепую сыграл синюю 3. На 4 Кэти уже была негативная информация по синему цвету.
+Красная 2 и синяя 2 сыграны. Алиса даёт Кэти Play Clue числом 4. На 4 Кэти уже была негативная информация по синему цвету.
+
+**Подсказка Алисы:**
+
+<Clue />
+
+Боб сразу вслепую играет свою Finesse Position. Там оказывается синяя 3, которая успешно играется.
+
+**После хода Боба:**
+
+<After />
 
 Делает ли видимая связь 3→4 эту подсказку Finesse?
-
-<Question />
 
 </TabItem>
 <TabItem value="solution">
 
-**Нет.** Связь по числу обычно указывала бы на синюю 4, но негативная информация Кэти по синему делает правдивую интерпретацию через Finesse невозможной. Значит, подсказка является **Bluff**. Среди оставшихся вариантов Кэти красная 4 — это one-away-from-playable 4, которая может быть допустимой целью Bluff.
+**Нет.** Связь по числу обычно указывала бы на синюю 4, но негативная информация Кэти по синему делает правдивую интерпретацию через Finesse невозможной. Значит, подсказка является **Bluff**. Среди оставшихся вариантов Кэти красная 4 — это one-away-from-playable 4, которая может быть допустимой целью Bluff. Поэтому Кэти записывает на затронутой карте **r4**.
+
+**Итоговая интерпретация:**
+
+<Answer />
 
 </TabItem>
 </Tabs>
