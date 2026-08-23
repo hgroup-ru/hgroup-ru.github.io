@@ -2,7 +2,7 @@ stacks:
   - r: 2
   - y: 0
   - g: 0
-  - b: 2
+  - b: 3
   - p: 0
 players:
   - name: Alice
@@ -13,8 +13,7 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: b3
-        border: false
+      - type: x
       - type: y4
         border: false
       - type: g5
