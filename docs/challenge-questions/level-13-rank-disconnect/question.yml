@@ -4,8 +4,6 @@ stacks:
   - g: 0
   - b: 0
   - p: 0
-bigText:
-  text: Turn 1
 players:
   - name: Alice
     clueGiver: true
@@ -30,9 +28,8 @@ players:
         border: false
   - name: Cathy
     cards:
-      - type: r3
+      - type: 3
         clue: 3
-        middleNote: 3
       - type: y2
         border: false
       - type: g4
