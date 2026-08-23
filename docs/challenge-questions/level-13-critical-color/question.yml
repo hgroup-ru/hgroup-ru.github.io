@@ -30,7 +30,7 @@ players:
         border: false
   - name: Cathy
     cards:
-      - type: r4
+      - type: r
         clue: r
       - type: y3
         border: false
