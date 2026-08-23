@@ -21,7 +21,7 @@ players:
   - name: Bob
     cards:
       - type: x
-      - type: g3
+      - type: 3
         clue: 3
       - type: y4
         border: false
