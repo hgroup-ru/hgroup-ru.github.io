@@ -6,9 +6,9 @@ stacks:
   - p: 2
 discarded:
   - r2
+  - g2
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -17,10 +17,7 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: rygbp2
-        clue: 2
-        crossedOut: r
-        below: Trash
+      - type: x
       - type: x
       - type: x
       - type: x
