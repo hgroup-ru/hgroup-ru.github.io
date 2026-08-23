@@ -1,0 +1,35 @@
+stacks:
+  - r: 1
+  - y: 2
+  - g: 2
+  - b: 2
+  - p: 2
+discarded:
+  - r2
+players:
+  - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+        cm: true
+      - type: x
+        cm: true
+      - type: x
+        cm: true
+      - type: x
+        cm: true
+  - name: Cathy
+    cards:
+      - type: r2
+        border: false
+      - type: x
+      - type: x
+      - type: x
+      - type: x
