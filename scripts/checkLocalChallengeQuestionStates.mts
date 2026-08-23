@@ -49,7 +49,7 @@ const configuredLevels = LEVEL_CONFIG_SCHEMA.parse(
 const statesByLevel = await Promise.all(
   configuredLevels.map(async (level) => {
     const matches = await glob(
-      path.join(EN_ROOT, `level-${level}-*/question.yml`),
+      path.join(EN_ROOT, `level-${level}-*/*.{yml,yaml}`),
     );
     return { level, files: matches.toSorted() } as const;
   }),
@@ -58,7 +58,7 @@ const statesByLevel = await Promise.all(
 for (const { level, files } of statesByLevel) {
   if (files.length === 0) {
     throw new Error(
-      `No Local CQ question states found for configured level ${level}.`,
+      `No Local CQ diagram states found for configured level ${level}.`,
     );
   }
 }
