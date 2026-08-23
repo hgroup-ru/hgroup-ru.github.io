@@ -40,9 +40,9 @@
 
 ### Полная ручная вычитка Local Challenge Questions
 
-После завершённых level-by-level audits, глобального red-team и pre-proof triage остаётся отдельный human-grade proofreading pass по активному корпусу из 242 Local Challenge Questions.
+После исторических level-by-level audits и global red-team остаётся human-grade proofreading активного Local CQ corpus.
 
-[`localization/CQ_PREPROOF_AUDIT_2026-08-20.md`](localization/CQ_PREPROOF_AUDIT_2026-08-20.md) содержит механическую pre-proof проверку и рекомендуемый порядок ручного чтения. Этот report — guide по приоритетам, а не доказательство отсутствия semantic/editorial defects.
+Текущий порядок работы определяется не датированным pre-proof report, а [`localization/QA_COVERAGE.md`](localization/QA_COVERAGE.md), machine-readable scope [`localization/LOCAL_CQ_QA_SCOPE.json`](localization/LOCAL_CQ_QA_SCOPE.json) и фактически начатым level-by-level проходом. Датированные Markdown reports в [`localization/audits/`](localization/audits/) являются historical evidence и могут относиться к старому source revision или состоянию YML.
 
 При вычитке:
 
@@ -50,11 +50,10 @@
 - проверять естественность русского текста, modality, POV/epistemics, chronology и достаточность объяснения;
 - сравнивать EN/RU там, где формулировка вызывает сомнение;
 - не считать предыдущие PASS доказательством идеальности;
-- исправлять только подтверждённые defects и оставлять короткий audit trail для реально изменённых вопросов.
+- исправлять подтверждённые defects и превращать повторяемые классы ошибок в regression rules/deterministic gates;
+- после semantic/CI pass сначала выкатывать candidate на public site и только затем отдавать его на финальную human read.
 
-**Official Challenge Questions и официальный материал Levels 2–8 остаются заморожены** для повторного аудита; Local CQ proofreading не является основанием автоматически открывать этот scope.
-
-Текущее QA-покрытие и его границы фиксируются в [`localization/QA_COVERAGE.md`](localization/QA_COVERAGE.md).
+Текущее QA-покрытие и его границы фиксируются в [`localization/QA_COVERAGE.md`](localization/QA_COVERAGE.md). Нормативный Local CQ release contract — [`localization/LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](localization/LOCAL_CQ_AUTONOMOUS_WORKFLOW.md).
 
 ## Локальные учебные диаграммы
 
