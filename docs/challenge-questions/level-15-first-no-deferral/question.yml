@@ -14,7 +14,7 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: b1
+      - type: x
       - type: x
       - type: x
       - type: x

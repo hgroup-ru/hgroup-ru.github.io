@@ -14,9 +14,9 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: b1
-      - type: g1
-      - type: y1
+      - type: x
+      - type: x
+      - type: x
       - type: x
   - name: Cathy
     cards:

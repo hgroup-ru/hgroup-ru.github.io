@@ -1,25 +1,28 @@
 ---
-title: Красная 1 и красная 5
+title: Две впервые затронутые красные карты
 ---
 
 import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "@site/docs/challenge-questions/level-16-utd-multitouch/question.yml";
+import Answer from "@site/docs/challenge-questions/level-16-utd-multitouch/answer.yml";
 
 <ChallengeQuestionProgress level={16} id="level-16-utd-multitouch" />
 
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Все 1 уже сыграны. Алиса подсказывает Кэти красный цвет, впервые затрагивая красную 1 в фокусе подсказки в слоте 2 и красную 5 в слоте 3. Боб обозначает Unknown Trash Discharge. Какие затронутые карты Кэти может отметить как мусор?
+Все 1 уже сыграны. Алиса даёт Кэти красную подсказку, впервые затрагивая карту в фокусе подсказки в слоте 2 и ещё одну карту в слоте 3. Боб вслепую играет карту с Third Finesse Position, она успешно играется и обозначает Unknown Trash Discharge. Какие затронутые карты Кэти может отметить как мусор?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Только **карта в фокусе подсказки, слот 2,** является мусором. В Unknown Trash Discharge с несколькими затронутыми картами Good Touch Principle продолжает действовать на нефокусные карты, поэтому красная 5 Кэти остаётся полезной. Это намеренно противоположно Trash Bluff с несколькими затронутыми картами, где все затронутые карты считаются мусором.
+Только **карта в фокусе подсказки, слот 2,** является мусором. В Unknown Trash Discharge с несколькими затронутыми картами Good Touch Principle продолжает действовать на нефокусные карты, поэтому Кэти знает, что красная карта в слоте 3 остаётся полезной, но не узнаёт её точный ранг из Discharge. Это намеренно противоположно Trash Bluff с несколькими затронутыми картами, где все затронутые карты считаются мусором.
+
+<Answer />
 
 </TabItem>
 </Tabs>
