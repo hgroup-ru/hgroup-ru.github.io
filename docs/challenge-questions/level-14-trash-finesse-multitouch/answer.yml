@@ -1,0 +1,35 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 0
+  - p: 1
+players:
+  - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Donald
+    cards:
+      - type: 1
+        trash: true
+      - type: 1
+        trash: true
+      - type: x
+        cm: true
+      - type: x
+        cm: true
