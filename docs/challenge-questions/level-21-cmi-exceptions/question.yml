@@ -17,16 +17,11 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: g1
-        border: false
-      - type: y4
-        border: false
-      - type: p5
-        border: false
-      - type: b3
-        border: false
-      - type: g4
-        border: false
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
   - name: Cathy
     cards:
       - type: r4

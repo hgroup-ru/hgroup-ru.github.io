@@ -4,8 +4,10 @@ stacks:
   - g: 1
   - b: 1
   - p: 1
+discarded:
+  - r3
 bigText:
-  text: Dire position
+  text: After Bob sacrifices the clued red 3
 players:
   - name: Alice
     cards:
@@ -15,9 +17,7 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r3
-        clue: r
-        middleNote: r3
+      - type: x
       - type: y4
         clue: 4
       - type: g5

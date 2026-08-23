@@ -4,8 +4,6 @@ stacks:
   - g: 1
   - b: 1
   - p: 1
-discarded:
-  - y5
 bigText:
   text: "After discard: 1 clue"
 players:

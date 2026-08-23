@@ -4,8 +4,6 @@ stacks:
   - g: 0
   - b: 1
   - p: 0
-discarded:
-  - y5
 bigText:
   text: "Clues: 0"
 players:
