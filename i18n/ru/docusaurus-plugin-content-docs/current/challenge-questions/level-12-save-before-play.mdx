@@ -6,6 +6,8 @@ import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Question from "@site/docs/challenge-questions/level-12-save-before-play/question.yml";
+import AfterAlice from "@site/docs/challenge-questions/level-12-save-before-play/after-alice.yml";
+import AfterBob from "@site/docs/challenge-questions/level-12-save-before-play/after-bob.yml";
 
 <ChallengeQuestionProgress level={12} id="level-12-save-before-play" />
 
@@ -21,7 +23,19 @@ import Question from "@site/docs/challenge-questions/level-12-save-before-play/q
 </TabItem>
 <TabItem value="solution">
 
-Алисе следует **сначала дать 5 Save**. Немедленная подсказка по красной 1, а затем спасение синей 5 дают лишь 2-for-2. Если Алиса сначала подскажет число 5, Боб сможет продолжить красной Chop-Focus Play Clue, которая позволяет получить красную 1 и красную 3 как 2-for-1. Вместе две подсказки получают три полезные карты за **3-for-2**.
+Алисе следует **сначала дать 5 Save**. Немедленная подсказка по красной 1, а затем спасение синей 5 дают лишь 2-for-2.
+
+**После 5 Save Алисы:**
+
+<AfterAlice />
+
+Теперь сохранённая 5 больше не является chop, поэтому Боб может продолжить красной Chop-Focus Play Clue, которая получает красную 1 и красную 3 как 2-for-1.
+
+**После красной подсказки Боба:**
+
+<AfterBob />
+
+Вместе две подсказки получают три полезные карты за **3-for-2**.
 
 </TabItem>
 </Tabs>
