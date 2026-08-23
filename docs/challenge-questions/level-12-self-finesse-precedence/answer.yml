@@ -7,15 +7,15 @@ stacks:
 players:
   - name: Alice
     cards:
+      - type: y2
+        border: false
+      - type: b2
+        border: false
+      - type: p2
+        border: false
       - type: r4
         border: false
       - type: g4
-        border: false
-      - type: b4
-        border: false
-      - type: p4
-        border: false
-      - type: y3
         border: false
   - name: Bob
     cards:
@@ -27,7 +27,9 @@ players:
         border: false
       - type: b4
         border: false
-      - type: r3
+      - type: 3
+        crossedOut: g
+        middleNote: r3
   - name: Cathy
     cards:
       - type: r4

@@ -13,16 +13,16 @@ import Answer from "./level-12-self-finesse-precedence/answer.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Red is on 1 and green is on 2. Bob's chop already has red information. Alice now gives Bob a number 3 Play Clue touching a newer card and chop. Bob therefore knows that chop is red 3 and is not directly playable. He sees no red 2 in Alice's or Cathy's hand, and his own Finesse Position is completely unclued. The newer touched card could instead be the directly playable green 3, so Focus Inversion also looks possible.
+Red is on 1 and green is on 2. Bob's chop has old negative green information, but it has never been clued red. Alice now gives Bob a number 3 Play Clue touching a newer card and chop. Because chop cannot be green, the ordinary Focus Inversion reading would put the directly playable green 3 on the newer touched card. Bob can also see yellow 2, blue 2, and purple 2 outside his hand, while green 2 is already played; he sees no red 2, and his own Finesse Position is completely unclued.
 
-What should Bob do first?
+Should Bob take the new card as the green-3 focus, or blind-play his Finesse Position first?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Bob should **blind-play his Finesse Position first**. The number 3 clue can be a Self-Finesse through Bob's own red 2 to the red 3 on chop. Level 12 explicitly gives rank Self-Finesses precedence over Focus Inversion, so Bob does not take the apparently simpler direct green-3 focus. If his Finesse Position were known not to be a 2, that Self-Finesse line would disappear and the Focus Inversion reading could take over.
+Bob should **blind-play his Finesse Position first**. The Focus Inversion alternative really does focus the newer touched 3, because chop is known not green. But a rank Self-Finesse is also available: with the other connecting 2s accounted for, Bob can be holding red 2 for the red 3 among the touched cards. Level 12 explicitly gives rank Self-Finesses precedence over Focus Inversion, so Bob tries the Finesse first rather than immediately treating the newer 3 as green 3.
 
 <Answer />
 
