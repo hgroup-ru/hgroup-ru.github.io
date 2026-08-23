@@ -4,8 +4,6 @@ stacks:
   - g: 0
   - b: 0
   - p: 0
-bigText:
-  text: Finesse
 players:
   - name: Alice
     cards:
@@ -35,14 +33,13 @@ players:
         border: false
   - name: Donald
     cards:
-      - type: r2
-        middleNote: r2
+      - type: x
+        above: Red 2
         below: Finesse
-      - type: r3
-        middleNote: r3
+      - type: x
+        above: Red 3
         below: Finesse
-      - type: r4
+      - type: 4
         middleNote: r4
-        below: Play
       - type: y5
         border: false

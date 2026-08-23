@@ -4,11 +4,8 @@ stacks:
   - g: 0
   - b: 2
   - p: 0
-bigText:
-  text: Bluff
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -17,7 +14,7 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: b3
+      - type: x
         above: Blue 3
         below: Bluff
       - type: x
@@ -27,9 +24,7 @@ players:
   - name: Cathy
     cards:
       - type: rygp4
-        clue: 4
         middleNote: r4
-        below: Play
       - type: x
       - type: x
       - type: x
