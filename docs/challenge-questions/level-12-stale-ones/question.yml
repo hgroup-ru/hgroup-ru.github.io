@@ -4,8 +4,6 @@ stacks:
   - g: 2
   - b: 0
   - p: 0
-bigText:
-  text: 2 clues
 players:
   - name: Alice
     cards:
