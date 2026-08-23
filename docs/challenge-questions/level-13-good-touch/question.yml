@@ -36,7 +36,7 @@ players:
   - name: Donald
     cards:
       - type: b4
-        clue: b
+        border: false
         middleNote: blue
       - type: y2
         border: false

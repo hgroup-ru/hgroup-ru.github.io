@@ -18,9 +18,13 @@ players:
     cards:
       - type: x
       - type: x
+        cm: true
       - type: x
+        cm: true
       - type: x
+        cm: true
       - type: x
+        cm: true
   - name: Cathy
     cards:
       - type: r2

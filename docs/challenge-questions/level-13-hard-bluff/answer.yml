@@ -1,12 +1,11 @@
 stacks:
-  - r: 1
+  - r: 2
   - y: 0
   - g: 0
-  - b: 0
+  - b: 2
   - p: 0
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -15,9 +14,7 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r2
-        below: Blind-play
-        border: false
+      - type: x
       - type: y4
         border: false
       - type: g5
@@ -29,9 +26,9 @@ players:
   - name: Cathy
     cards:
       - type: 3
-        middleNote: 3
-      - type: r4
-        clue: 4
+        middleNote: r3?
+      - type: 4
+        middleNote: r4/b4
       - type: y3
         border: false
       - type: g4

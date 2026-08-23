@@ -4,8 +4,8 @@ stacks:
   - g: 2
   - b: 2
   - p: 2
-discarded:
-  - r2
+bigText:
+  text: Discard
 players:
   - name: Alice
     cards:
@@ -16,7 +16,9 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: x
+      - type: 2
+        middleNote: r2?
+        below: Discard
       - type: x
       - type: x
       - type: x

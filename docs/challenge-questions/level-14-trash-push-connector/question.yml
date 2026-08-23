@@ -15,7 +15,7 @@ players:
   - name: Bob
     cards:
       - type: r2
-        clue: 2
+        border: false
       - type: x
       - type: x
       - type: x
@@ -30,5 +30,7 @@ players:
       - type: x
       - type: x
       - type: r3
-      - type: g1
+        border: false
+      - type: 1
         clue: 1
+        trash: true
