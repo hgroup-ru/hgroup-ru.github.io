@@ -1,0 +1,42 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 2
+  - b: 1
+  - p: 1
+players:
+  - name: Alice
+    cards:
+      - type: r4
+        border: false
+      - type: g4
+        border: false
+      - type: b4
+        border: false
+      - type: p4
+        border: false
+      - type: y3
+        border: false
+  - name: Bob
+    cards:
+      - type: x
+        above: Red 2
+        below: Finesse
+      - type: 3
+      - type: y4
+        border: false
+      - type: b4
+        border: false
+      - type: r3
+  - name: Cathy
+    cards:
+      - type: r4
+        border: false
+      - type: g4
+        border: false
+      - type: p4
+        border: false
+      - type: y4
+        border: false
+      - type: p3
+        border: false
