@@ -12,8 +12,7 @@ const CONFIG_PATH = path.join(
 );
 
 const EXACT_CARD_PATTERN = /^[bgpry](?<rank>[1-5])$/v;
-const ANSWER_STATE_PATTERN =
-  /^(?:answer|solution)(?:\.|-|$)/v;
+const ANSWER_STATE_PATTERN = /^(?:answer|solution)(?:\.|-|$)/v;
 const COPY_LIMITS: ReadonlyMap<number, number> = new Map([
   [1, 3],
   [2, 2],
