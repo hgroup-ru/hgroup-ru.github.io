@@ -127,7 +127,7 @@
       "risk": "high",
       "source_rule": "Trash Push Prompt/Finesse connections cannot be reverse and must fully resolve before the clued player gets a turn.",
       "learning_objective": "Require Bob's known red 2 to play before Donald demonstrates the pushed red 3.",
-      "question_type": "timing",
+      "question_type": "best_move",
       "modality": "must",
       "critical_variable": "Donald's pushed card is one-away red 3 and Bob holds the connecting playable red 2.",
       "pov_player": "Bob/team",
