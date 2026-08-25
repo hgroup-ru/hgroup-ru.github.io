@@ -12,7 +12,7 @@ import Question from "@site/docs/challenge-questions/level-21-trash-double/quest
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Вопрос', value: 'question'}, {label: 'Решение', value: 'solution'}]}>
 <TabItem value="question">
 
-Все 1 сыграны. Ещё до хода Алисы команда глобально знала, что карта Кэти в слоте 2 — мусор. Алиса даёт Кэти красную подсказку, впервые затрагивая только эту карту вне chop. Боб видит, что карты позади неё, которые спас бы Trash Chop Move, тоже являются мусором; сама подсказка не дана карте на chop, поэтому Trash Push её не объясняет.
+Все 1 сыграны. Ещё до хода Алисы вся команда знала, что карта Кэти в слоте 2 — мусор. Алиса даёт Кэти красную подсказку, впервые затрагивая только эту карту вне chop. Боб видит, что карты позади неё, которые спас бы Trash Chop Move, тоже являются мусором; сама подсказка не дана карте на chop, поэтому Trash Push её не объясняет.
 
 Какой вывод должен сделать Боб?
 
@@ -21,7 +21,7 @@ import Question from "@site/docs/challenge-questions/level-21-trash-double/quest
 </TabItem>
 <TabItem value="solution">
 
-Это **Trash Double Ignition**. Обычные трактовки подсказки известному мусору в этой позиции исключены: Trash Chop Move спасал бы только плохие карты, а Trash Push требует подсказки известному мусору на chop. Значит необъяснимая обычными причинами новая подсказка известному мусору передаёт Double Ignition. Даже если можно придумать Bad Trash Chop Move Ejection, Level 21 отдаёт приоритет Trash Double Ignition: плохой Ejection чрезвычайно редок и относится к более позднему материалу.
+Это **Trash Double Ignition**. Обычные трактовки подсказки карте, уже известной как мусор, в этой позиции исключены: Trash Chop Move спасал бы только плохие карты, а Trash Push требует подсказки известному мусору на chop. Значит, новая подсказка известному мусору, которую нельзя объяснить обычными причинами, передаёт Double Ignition. Даже если можно придумать Bad Trash Chop Move Ejection, Level 21 отдаёт приоритет Trash Double Ignition: плохой Ejection чрезвычайно редок и относится к более позднему материалу.
 
 </TabItem>
 </Tabs>
