@@ -17,6 +17,7 @@ players:
       - type: x
       - type: x
       - type: x
+  - text: A2
   - name: Bob
     cards:
       - type: x
@@ -25,10 +26,10 @@ players:
       - type: b
         clue: b
         middleNote: b2
-        above: A2
       - type: x
         cm: true
         middleNote: cm
+  - text: A3
   - name: Bob
     cards:
       - type: x
@@ -36,13 +37,13 @@ players:
       - type: b
         clue: b
         middleNote: b2
-        above: A3
       - type: x
         cm: true
         middleNote: cm
       - type: x
         cm: true
         middleNote: cm
+  - text: A4
   - name: Bob
     cards:
       - type: x
@@ -50,7 +51,6 @@ players:
       - type: b
         clue: b
         middleNote: b2
-        above: A4
       - type: x
       - type: x
       - type: x
