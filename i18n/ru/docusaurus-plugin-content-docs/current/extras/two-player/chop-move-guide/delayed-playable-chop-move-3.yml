@@ -1,23 +1,23 @@
 # Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md delayed playable-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
 stacks:
-  - r: 2
+  - r: 3
   - y: 2
   - g: 2
   - b: 2
   - p: 2
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
+      - type: 5
       - type: x
-      - type: x
+        cm: true
+        middleNote: r4
   - name: Bob
     cards:
-      - type: r3
-        clue: r
+      - type: x
       - type: x
       - type: x
       - type: x
