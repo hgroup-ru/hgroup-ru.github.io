@@ -10,9 +10,7 @@ if (!isArray(mainSidebar)) {
   );
 }
 
-const twoPlayerIndex = mainSidebar.findIndex(
-  (element) => element === "extras/two-player",
-);
+const twoPlayerIndex = mainSidebar.indexOf("extras/two-player");
 if (twoPlayerIndex === -1) {
   throw new TypeError(
     'Failed to find "extras/two-player" in sidebars-base.ts.',

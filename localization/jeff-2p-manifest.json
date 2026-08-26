@@ -36,9 +36,7 @@
     },
     "Selfish_Conventions.md": {
       "local": "/two-player/selfish-conventions",
-      "companions": [
-        "/two-player/score-hunting-guide"
-      ]
+      "companions": ["/two-player/score-hunting-guide"]
     },
     "Analysis.md": {
       "local": "/two-player/analysis",
