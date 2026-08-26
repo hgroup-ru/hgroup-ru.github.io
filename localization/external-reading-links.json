@@ -36,24 +36,10 @@
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
-    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Selfish_Conventions.md",
+    "url": "https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Number_Mute_Conventions.md",
     "classification": "third-party-resource",
     "decision": "permission-required",
-    "note": "Legacy external link still present on the baseline 2-player page; replace with the local companion page in this feature before merge."
-  },
-  {
-    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
-    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Number_Mute_Conventions.md",
-    "classification": "third-party-resource",
-    "decision": "permission-required",
-    "note": "Number Mute is outside the current translation scope; the source URL should be modernized while remaining external."
-  },
-  {
-    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
-    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Score_Hunting_Guide.md",
-    "classification": "third-party-resource",
-    "decision": "blocked-pending-permission",
-    "note": "Legacy external link still present on the baseline 2-player page; permission is now cleared and this link must be replaced with the local Score Hunting Guide before merge."
+    "note": "Number Mute remains outside the current translation scope and is intentionally kept external; URL updated to the pinned current Jeff repository."
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player/analysis.mdx",
