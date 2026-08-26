@@ -9,8 +9,10 @@ players:
   - name: Alice
     clueGiver: true
     cards:
-      - type: r1
-      - type: b1
+      - type: 1
+        clue: 1
+      - type: 1
+        clue: 1
       - type: x
       - type: x
       - type: x
