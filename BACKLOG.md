@@ -4,11 +4,13 @@
 
 ## Продукт
 
-### Jeff's 2-player Score Hunting Guide — DEFERRED / BLOCKED
+### Jeff's 2-player Score Hunting package — IN PROGRESS
 
-Не считать это текущей задачей. Возвращаться к локализации или републикации только после явного разрешения Jeff/IAMJEFF и отдельного решения о source revision, attribution и допустимом scope.
+Разрешение IAMJEFF на перевод и публикацию `Score Hunting Guide`, `Chop Move Guide`, `Selfish Conventions` и используемых ими изображений получено 23.08.2026. Для текущей публикации `Analysis.md` и связанные с ним изображения также считаются cleared; provenance Dr_Kakashi сохраняется отдельно и материал не приписывается IAMJEFF. Материалы локализуются как авторский, более агрессивный 2P score-hunting layer рядом с консервативной страницей H-Group «Игра вдвоём», а не как современный нормативный H-Group text.
 
-До этого момента внешний материал остаётся внешним. Не представлять его как официальный H-Group text и не блокировать им остальную работу проекта.
+Закреплённый источник: `waweiwoowu/hanabi-iamjeff` @ `cfa4007c6512edfed00ad821cca412a9fd0e6559`.
+
+Контент, semantic review и локальные assets завершены. До завершения текущего batch остаются deterministic CI/build, production deploy, browser visual QA и финальная human read опубликованного production candidate. Для CI добавлены устойчивость concurrency по head SHA, ручной `workflow_dispatch` и push-fallback для feature-веток; required `validate` всё равно должен пройти на актуальном head перед merge.
 
 ### Интерактивные многошаговые примеры
 

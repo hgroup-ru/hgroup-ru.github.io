@@ -87,6 +87,8 @@ Keybind
 немусорных
 немусорную
 референциальный
+неиграбельны
+неиграбелен
 
 мейнтейнер
 мейнтейнерам
@@ -104,3 +106,7 @@ rulebook
 гринда
 timotree
 winstreak
+Kimbi
+Eevee
+eevee
+charmander

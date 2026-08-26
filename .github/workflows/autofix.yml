@@ -2,7 +2,8 @@
 
 name: autofix.ci # This cannot be renamed or else the action will fail.
 
-on: [push, pull_request]
+on:
+  pull_request: {}
 
 permissions:
   contents: read
