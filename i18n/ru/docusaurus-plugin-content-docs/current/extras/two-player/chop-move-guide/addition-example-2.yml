@@ -13,6 +13,4 @@ players:
         border: false
       - type: x
       - type: x
-        below: one-away
       - type: x
-        below: Chop

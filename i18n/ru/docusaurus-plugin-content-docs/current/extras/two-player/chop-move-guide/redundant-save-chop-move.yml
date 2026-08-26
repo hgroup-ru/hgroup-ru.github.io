@@ -6,16 +6,6 @@ stacks:
   - b: 0
   - p: 0
 players:
-  - name: Bob
-    clueGiver: true
-    cards:
-      - type: r1
-        border: false
-      - type: b1
-        border: false
-      - type: x
-      - type: x
-      - type: x
   - name: Alice
     cards:
       - type: x
@@ -26,3 +16,13 @@ players:
         middleNote: cm
       - type: r5
         clue: 5
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: r1
+        border: false
+      - type: b1
+        border: false
+      - type: x
+      - type: x
+      - type: x

@@ -1,24 +1,14 @@
 # Local H-Group RU teaching sequence based on IAMJEFF Chop_Move_Guide.md delayed critical-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
+discarded:
+  - g4
 players:
-  - text: Боб сбрасывает зелёную 4.
-  - name: Bob
-    cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: x
   - name: Alice
-    cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: g4
-        border: false
-  - text: Алиса даёт Бобу 5 Save.
-  - offset: -2
-    name: Alice
     clueGiver: true
     cards:
       - type: x
@@ -35,17 +25,7 @@ players:
       - type: x
       - type: 5
         clue: 5
-  - text: Боб отвечает 5CM. Теперь chop Алисы становится важным: это вторая зелёная 4.
-  - offset: -2
-    name: Bob
-    clueGiver: true
-    cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: 5
-        clue: 5
+  - space: 1
   - name: Alice
     cards:
       - type: x
@@ -57,3 +37,12 @@ players:
         border: false
         cm: true
         middleNote: g4
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: 5
+        clue: 5
