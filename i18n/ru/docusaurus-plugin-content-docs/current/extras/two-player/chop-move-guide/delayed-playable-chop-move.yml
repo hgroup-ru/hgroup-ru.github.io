@@ -6,7 +6,7 @@ stacks:
   - b: 2
   - p: 2
 players:
-  - text: После сброса мусора Алиса даёт Бобу красную Play Clue по красной 3.
+  - text: Алиса даёт Бобу красную Play Clue по красной 3.
   - name: Alice
     clueGiver: true
     cards:
@@ -24,7 +24,7 @@ players:
       - type: x
       - type: x
       - type: x
-  - text: Боб вместо немедленного розыгрыша даёт Алисе 5CM.
+  - text: Боб отвечает 5CM. Алиса отмечает свою chop-карту как красную 4.
   - offset: -2
     name: Bob
     clueGiver: true
@@ -46,7 +46,7 @@ players:
         border: false
         cm: true
         middleNote: r4
-  - text: Боб играет красную 3; затем Алиса вслепую играет отмеченную красную 4.
+  - text: Боб играет красную 3. Следующим ходом Алиса вслепую играет отмеченную красную 4.
   - offset: -2
     name: Bob
     cards:
@@ -67,13 +67,3 @@ players:
         border: false
         cm: true
         middleNote: r4
-  - text: После двух розыгрышей красный стек доходит до 4.
-  - offset: -2
-    name: Alice
-    cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: 5
-        clue: 5
-      - type: x
