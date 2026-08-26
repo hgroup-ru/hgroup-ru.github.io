@@ -1,0 +1,22 @@
+# Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md addition example 3 @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+bigText:
+  text: Example 3
+players:
+  - cards:
+      - type: r1
+        clue: 1
+        trash: true
+        middleNote: kt
+        below: left trash
+      - type: y1
+        clue: 1
+        trash: true
+        middleNote: kt
+        below: right trash
+      - type: x
+      - type: x
+        below: one-away
+      - type: x
+        below: Chop
+  - text: "Сброс right trash = Single; сброс chop = Double; сброс one-away = Triple."
+  - text: "Взрыв left trash = Double; right trash = Triple."

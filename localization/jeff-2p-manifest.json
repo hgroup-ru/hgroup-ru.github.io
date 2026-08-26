@@ -53,6 +53,30 @@
       "provenance": "Dr-Kakashi"
     }
   },
+  "local_teaching_diagrams": {
+    "status": "hgroup-ru-authored-from-pinned-prose-not-upstream-yml",
+    "source_revision": "cfa4007c6512edfed00ad821cca412a9fd0e6559",
+    "Selfish_Conventions.md": [
+      "selfish-chop-move.yml",
+      "selfish-bluff.yml",
+      "selfish-focus-inversion.yml",
+      "selfish-cases-a.yml",
+      "selfish-cases-b.yml"
+    ],
+    "Chop_Move_Guide.md": [
+      "redundant-save-chop-move.yml",
+      "addition-example-1.yml",
+      "addition-example-2.yml",
+      "addition-example-3.yml",
+      "delayed-critical-chop-move.yml",
+      "delayed-playable-chop-move.yml"
+    ],
+    "notes": [
+      "No local diagram is added for Trash Chop Move with a stale 1; the page links to the Level 12 Stale 1's Clue material instead.",
+      "Addition Example 4 keeps IAMJEFF's original PNG rather than reconstructing it from prose.",
+      "Analysis keeps its existing source PNGs and receives no new local diagrams."
+    ]
+  },
   "images": [
     {
       "file": "first_turn_stall_guide.png",

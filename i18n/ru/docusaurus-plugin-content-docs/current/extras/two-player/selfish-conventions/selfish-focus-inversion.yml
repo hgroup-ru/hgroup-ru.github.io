@@ -1,0 +1,26 @@
+# Local H-Group RU teaching diagram based on IAMJEFF Selfish_Conventions.md @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+stacks:
+  - b: 0
+players:
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: b1
+        border: false
+        below: Playable
+      - type: x
+      - type: x
+  - name: Alice
+    cards:
+      - type: x
+      - type: b
+        clue: b
+      - type: b
+        clue: b
+        below: SFI
+      - type: x
+        below: one-away
+      - type: x
+        below: Chop
