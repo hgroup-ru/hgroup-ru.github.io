@@ -1,0 +1,115 @@
+{
+  "source_revision": "cfa4007c6512edfed00ad821cca412a9fd0e6559",
+  "documents": {
+    "Score_Hunting_Guide.md": {
+      "local": "/two-player/score-hunting-guide",
+      "companions": [
+        "/two-player/chop-move-guide",
+        "/two-player/selfish-conventions",
+        "/two-player/analysis"
+      ],
+      "external_documents": [
+        "https://github.com/waweiwoowu/hanabi-competition/blob/master/Clue_Starved_Strategies.md"
+      ],
+      "replays": [
+        "https://hanabi.live/replay/160166",
+        "https://hanabi.live/replay/154213/21",
+        "https://hanabi.live/replay/154213/33",
+        "https://hanabi.live/replay/160146/21",
+        "https://hanabi.live/replay/160146/43",
+        "https://hanabi.live/replay/171723/43",
+        "https://hanabi.live/replay/171735/42",
+        "https://hanab.live/replay/331127#13",
+        "https://hanabi.live/replay/174021",
+        "https://hanabi.live/replay/174021/25",
+        "https://hanabi.live/replay/174021/26",
+        "https://hanabi.live/replay/174021/27",
+        "https://hanabi.live/replay/174021/28"
+      ]
+    },
+    "Chop_Move_Guide.md": {
+      "local": "/two-player/chop-move-guide",
+      "companions": [
+        "/two-player/score-hunting-guide",
+        "/two-player/selfish-conventions"
+      ]
+    },
+    "Selfish_Conventions.md": {
+      "local": "/two-player/selfish-conventions",
+      "companions": ["/two-player/score-hunting-guide"]
+    },
+    "Analysis.md": {
+      "local": "/two-player/analysis",
+      "publication": "cleared",
+      "provenance": "Dr-Kakashi"
+    }
+  },
+  "images": [
+    {
+      "file": "first_turn_stall_guide.png",
+      "source_blob": "e045d9872fc3824731de28e1140909aa9fe191a2",
+      "size": 888860,
+      "used_by": ["Score_Hunting_Guide.md"],
+      "publication": "cleared"
+    },
+    {
+      "file": "2020-10-05_13-42-30.png",
+      "source_blob": "58d6a12dda32fa308b3a0587f27a42799df260a9",
+      "size": 1890259,
+      "used_by": ["Score_Hunting_Guide.md"],
+      "publication": "cleared"
+    },
+    {
+      "file": "2020-09-27_07-13-33.png",
+      "source_blob": "cf53103edc4589ba4f2fb18935ce02d23a585df5",
+      "size": 1808689,
+      "used_by": ["Score_Hunting_Guide.md"],
+      "publication": "cleared"
+    },
+    {
+      "file": "2020-09-27_07-25-03.png",
+      "source_blob": "2db80d6d64f51e5019d401fde0870d36fbc129c2",
+      "size": 1899742,
+      "used_by": ["Score_Hunting_Guide.md"],
+      "publication": "cleared"
+    },
+    {
+      "file": "chop_move_addition_example_4.png",
+      "source_blob": "38d1be522c59872d7b5463c2584c8d1072d641ed",
+      "size": 946498,
+      "used_by": ["Chop_Move_Guide.md"],
+      "publication": "cleared"
+    },
+    {
+      "file": "2020-09-28_20-31-10.png",
+      "source_blob": "a5dc73e0f1e0487bdef3be9052d6f9614915221e",
+      "size": 1935264,
+      "used_by": ["Analysis.md"],
+      "publication": "cleared",
+      "original_repository": "Dr-Kakashi/hanabi"
+    },
+    {
+      "file": "2020-09-30_08-14-15.png",
+      "source_blob": "eb91601102628bd22c4adfb14c2208ff32262bdb",
+      "size": 1904465,
+      "used_by": ["Analysis.md"],
+      "publication": "cleared",
+      "original_repository": "Dr-Kakashi/hanabi"
+    },
+    {
+      "file": "2020-09-30_08-30-48.png",
+      "source_blob": "e2a1d48692dafa08d6584fca430af1fdb1c7e535",
+      "size": 1975259,
+      "used_by": ["Analysis.md"],
+      "publication": "cleared",
+      "original_repository": "Dr-Kakashi/hanabi"
+    }
+  ],
+  "asset_source_verification": {
+    "status": "verified-from-user-supplied-github-archive",
+    "archive_sha256": "1aea641d123ee6c1c5489e004c75f62a7c9a9f23ea8d8d4d267296b6c9926a55",
+    "all_expected_image_sizes_match": true,
+    "all_expected_git_blob_shas_match": true
+  },
+  "asset_copy_status": "copied-local-byte-for-byte-verified"
+}
