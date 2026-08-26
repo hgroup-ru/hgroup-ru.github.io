@@ -18,5 +18,5 @@ players:
         below: one-away
       - type: x
         below: Chop
-  - text: "Сброс right trash = Single; сброс chop = Double; сброс one-away = Triple."
-  - text: "Взрыв left trash = Double; right trash = Triple."
+  - text: Сброс right trash = Single; сброс chop = Double; сброс one-away = Triple.
+  - text: Взрыв left trash = Double; right trash = Triple.
