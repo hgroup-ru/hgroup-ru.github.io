@@ -38,6 +38,12 @@ const card = z
     /** The type of clue that is "on" the card. For example, "r" to signify a red clue. */
     clue: z.coerce.string().min(1).optional(),
 
+    /**
+     * A historical clue to render with its clue circle and arrow without implying a current clue
+     * action. For example, "r" to show that a red clue was previously given to this card.
+     */
+    historicalClue: z.coerce.string().min(1).optional(),
+
     /** Draw only the clue arrow, without a color/rank clue circle. */
     clueArrow: z.boolean().optional(),
 
@@ -104,7 +110,6 @@ const text = z
   .object({
     text: z.coerce
       .string()
-      // A null value will coerce to the literal "null", which is not intended.
       .refine((value) => value !== "null", "The text value must not be empty."),
   })
   .strict()
@@ -127,7 +132,6 @@ export const hanabiGameStateSchema = z
     discarded: z.array(cardType).readonly().optional(),
     bigText: bigText.optional(),
     players: z
-      // eslint-disable-next-line unicorn/max-nested-calls
       .array(player.or(text).or(space).or(z.literal("space")))
       .min(1)
       .readonly(),
