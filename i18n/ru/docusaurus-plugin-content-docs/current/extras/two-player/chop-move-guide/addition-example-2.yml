@@ -8,10 +8,10 @@ stacks:
 players:
   - cards:
       - type: 1
-        clue: 1
+        border: true
         below: 1 cm
       - type: 1
-        clue: 1
+        border: true
       - type: x
       - type: x
         below: 3 cm
