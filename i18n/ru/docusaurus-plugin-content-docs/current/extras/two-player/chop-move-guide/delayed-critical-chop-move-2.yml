@@ -1,0 +1,21 @@
+# Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md delayed critical-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+discarded:
+  - g4
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: g4
+        border: false
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: 5
+        clue: 5
