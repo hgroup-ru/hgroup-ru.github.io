@@ -4,15 +4,14 @@
 
 ## IAMJEFF — 2-player Score Hunting materials
 
-- автор: IAMJEFF (`waweiwoowu`);
+- автор основного пакета: IAMJEFF (`waweiwoowu`);
 - исходный репозиторий: `waweiwoowu/hanabi-iamjeff`;
 - закреплённая revision для текущей локализации: `cfa4007c6512edfed00ad821cca412a9fd0e6559`;
-- разрешённый scope: `Score Hunting Guide`, `Chop Move Guide`, `Selfish Conventions` и используемые ими изображения;
-- разрешение на перевод и републикацию на H-Group RU под `CC BY-SA 4.0` с ясной атрибуцией и ссылками на оригиналы получено от IAMJEFF 23.08.2026;
+- публикуемый scope: `Score Hunting Guide`, `Chop Move Guide`, `Selfish Conventions`, `Analysis` и используемые ими изображения;
+- разрешение на перевод и републикацию материалов пакета на H-Group RU под `CC BY-SA 4.0` с ясной атрибуцией и ссылками на оригиналы принято как cleared для текущей публикации;
+- `Analysis.md` и связанные с ним изображения имеют provenance Dr_Kakashi и не приписываются IAMJEFF;
 - материалы публикуются как авторский 2P score-hunting package и не представляются как текущий официальный норматив H-Group;
 - IAMJEFF предупредил, что отдельные 2P conventions могли устареть, и не указал более новой версии, которая должна заменить закреплённый GitHub source.
-
-`Analysis.md` не включён в перечисленный выше cleared scope: Git provenance связывает этот документ с Dr_Kakashi. Его перевод может существовать как candidate, но публичная републикация требует отдельного clarification.
 
 ## `@cspell/dict-ru_ru`
 
