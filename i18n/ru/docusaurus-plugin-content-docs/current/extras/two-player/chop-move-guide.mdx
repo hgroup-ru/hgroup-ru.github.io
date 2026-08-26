@@ -3,10 +3,21 @@ title: "Chop Move Guide"
 slug: /two-player/chop-move-guide
 ---
 
+import JeffRedundantSaveChopMove from "./chop-move-guide/redundant-save-chop-move.yml";
+import JeffChopAdditionExample1 from "./chop-move-guide/addition-example-1.yml";
+import JeffChopAdditionExample2 from "./chop-move-guide/addition-example-2.yml";
+import JeffChopAdditionExample3 from "./chop-move-guide/addition-example-3.yml";
+import JeffDelayedCriticalChopMove from "./chop-move-guide/delayed-critical-chop-move.yml";
+import JeffDelayedPlayableChopMove from "./chop-move-guide/delayed-playable-chop-move.yml";
+
 > Часть авторских материалов IAMJEFF для [Score Hunting Guide](./score-hunting-guide). Оригинал: [Chop Move Guide](https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Chop_Move_Guide.md). Перевод сохраняет механику source revision `cfa4007c6512edfed00ad821cca412a9fd0e6559`, но использует современные названия H-Group там, где механика совпадает.
 
+:::info[Об учебных диаграммах]
+Новые YML-схемы на этой странице — локальные учебные иллюстрации H-Group RU, построенные по ситуациям из закреплённого текста IAMJEFF. Они не заменяют исходную иллюстрацию автора в примере 4 и не выдаются за оригинальные диаграммы источника.
+:::
+
 - _Chop Moves_ критически важны в игре вдвоём. Умение выполнять их в специальных обстоятельствах — один из ключей к идеальному счёту.
-- Гайд создан [IAMJEFF](https://github.com/waweiwoowu) в мае 2020 года и в основном предназначен для игры вдвоём с conventions из [Score Hunting Guide](./score-hunting-guide).
+- Гайд создан [IAMJEFF](https://github.com/waweiwoowu) в мае 2020 года и в основном предназначен для игры вдвоём с конвенциями из [Score Hunting Guide](./score-hunting-guide).
 
 ## Неаварийные Chop Moves
 
@@ -20,16 +31,19 @@ slug: /two-player/chop-move-guide
 ### Redundant Save Chop Move
 
 - Если у игрока две или больше неизвестных играбельных 1, вместо _Order Chop Move_ он может дать прямую _Save Clue_, затрагивающую **ровно одну** карту на chop партнёра. Это сигнал _Redundant Save Chop Move_.
+- Иными словами, вместо розыгрыша одной из 1 как _Order Chop Move_ игрок напрямую спасает текущую chop-карту партнёра; после подсказки chop партнёра сдвигается на следующую карту без подсказки.
 - Этот ход использовался редко.
 
+<JeffRedundantSaveChopMove />
+
 :::note[Исторический контекст]
-В современном общем H-Group эта convention больше не является обычной активной convention, но в специализированном 2P framework IAMJEFF она сохраняется как активная часть системы.
+В современном общем H-Group эта конвенция больше не является обычной активной конвенцией, но в специализированном 2P framework IAMJEFF она сохраняется как активная часть системы.
 :::
 
 ### [5's Chop Move](/level-4#the-5s-chop-move-5cm)
 
 - Если у партнёра 5 находится в одной карте от chop, игрок может дать подсказку числом 5 как _5's Chop Move_.
-- Convention отключена в _8 Clues Situation_, включая первый ход.
+- Конвенция отключена в _8 Clues Situation_, включая первый ход.
 
 ### [Trash Chop Move](/level-4#the-trash-chop-move-tcm)
 
@@ -67,6 +81,7 @@ slug: /two-player/chop-move-guide
 ### Dark Chop Move
 
 - Если у партнёра карта цвета типа One-of-Each находится в одной карте от chop, её разрешено «рано» спасти _Color Clue_, которая одновременно сигнализирует _Dark Chop Move_.
+- По структуре это аналогично _5's Chop Move_: ранняя подсказка карте в одной карте от chop одновременно служит сигналом _Chop Move_ для текущей chop-карты.
 - Этот ход использовался редко из-за существования [_Self Color Bluff_](/extras/special-bluffs#self-color-bluffs-1-for-1-form-scb).
 
 ## Аварийные Chop Moves
@@ -86,7 +101,7 @@ slug: /two-player/chop-move-guide
 
 ### [Scream Discard Chop Move с известным мусором](/level-7#the-scream-discard-chop-move-with-known-trash)
 
-- Если у игрока есть известный мусор, но нет играбельной карты, он может сбросить chop вместо известного мусора. В современном H-Group это та же _Scream Discard_ convention с другим триггером.
+- Если у игрока есть известный мусор, но нет играбельной карты, он может сбросить chop вместо известного мусора. В современном H-Group это та же конвенция _Scream Discard_ с другим триггером.
 
 :::note[Название в источнике]
 IAMJEFF называл эту форму `Whisper Discard Chop Move`. Современный H-Group объединил её с `Scream Discard Chop Move`, поэтому дальше используется современное название. Правила сложения ниже при этом сохраняют механику исходного Jeff framework, даже там, где современный H-Group применяет более строгие ограничения.
@@ -112,7 +127,7 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
 
 - _Chop Moves_ можно складывать.
 - Поэтому в подходящих обстоятельствах легко сделать _Double Chop Move_, _Triple Chop Move_ или ещё больше.
-- В формулах ниже `Scream (мусор)` означает форму Scream Discard, где игрок сбрасывает chop вместо известного мусора. Это только компактная запись Jeff-era правил сложения, а не отдельное современное название convention.
+- В формулах ниже `Scream (мусор)` означает форму Scream Discard, где игрок сбрасывает chop вместо известного мусора. Это только компактная запись Jeff-era правил сложения, а не отдельное современное название конвенции.
 
 ### Пример 1: Scream Discard Chop Move
 
@@ -127,6 +142,8 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
   - сбросить карту в одной карте от chop: Scream + Scream (мусор) + Skipped Discard;
   - намеренно взорвать chop: Bomb + Skipped Discard.
 
+<JeffChopAdditionExample1 />
+
 ### Пример 2: Order Chop Move
 
 `У игрока две неизвестные играбельные 1.`
@@ -138,6 +155,8 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
 - **Triple Chop Move**
   - сбросить карту в одной карте от chop: Order + Scream + Skipped Discard;
   - намеренно взорвать chop: Order + Bomb.
+
+<JeffChopAdditionExample2 />
 
 ### Пример 3: Trash Order Chop Move
 
@@ -151,6 +170,8 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
 - **Triple Chop Move**
   - сбросить карту в одной карте от chop: Trash Order + Scream (мусор) + Skipped Discard;
   - намеренно взорвать правый мусор Out-of-Order: Trash Order + Bomb.
+
+<JeffChopAdditionExample3 />
 
 ### Пример 4: две известные играбельные дублированные карты
 
@@ -173,7 +194,7 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
 
 ### Trash Chop Move со stale 1
 
-- Если игрок получает подсказку числом 1 по карте в одной или нескольких картах от chop и контекст достаточно ясно показывает, что она неиграбельна, подсказку следует трактовать как _Trash Chop Move_.
+- Если игрок получает подсказку числом 1 по карте в одной или нескольких картах от chop и контекст достаточно ясно показывает, что она неиграбельна, подсказку следует трактовать как _Trash Chop Move_. Базовую идею чтения залежавшихся 1 по контексту уже показывает [Stale 1's Clue на Level 12](/level-12#the-stale-1s-clue), поэтому здесь отдельная дублирующая диаграмма не добавляется.
 - Пример:
   - красная 1 сыграна;
   - Алиса сбрасывает, затем Боб сбрасывает;
@@ -193,6 +214,8 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
   - поскольку Боб только что сбросил зелёную 4, Chop Moved-карта должна быть второй зелёной 4;
   - Алиса записывает слот 5 как зелёную 4 и делает нерелевантное действие.
 
+<JeffDelayedCriticalChopMove />
+
 ### Delayed Chop Move по играбельной карте
 
 - Если игрок получает Chop Move сразу после того, как дал партнёру прямую _Play Clue_, и контекст показывает, что раньше chop не был важным, Chop Moved-карта должна быть играбельной через руку партнёра.
@@ -206,3 +229,5 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
   - Алиса записывает слот 5 как красную 4 и делает нерелевантное действие;
   - Боб играет красную 3;
   - Алиса вслепую играет слот 5 — это красная 4, и она успешно играет.
+
+<JeffDelayedPlayableChopMove />

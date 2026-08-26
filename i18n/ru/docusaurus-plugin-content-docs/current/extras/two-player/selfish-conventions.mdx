@@ -3,7 +3,17 @@ title: "Selfish Conventions"
 slug: /two-player/selfish-conventions
 ---
 
+import JeffSelfishChopMove from "./selfish-conventions/selfish-chop-move.yml";
+import JeffSelfishBluff from "./selfish-conventions/selfish-bluff.yml";
+import JeffSelfishFocusInversion from "./selfish-conventions/selfish-focus-inversion.yml";
+import JeffSelfishCasesA from "./selfish-conventions/selfish-cases-a.yml";
+import JeffSelfishCasesB from "./selfish-conventions/selfish-cases-b.yml";
+
 > Часть авторских материалов IAMJEFF для [Score Hunting Guide](./score-hunting-guide). Оригинал: [Selfish Conventions](https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Selfish_Conventions.md), source revision `cfa4007c6512edfed00ad821cca412a9fd0e6559`.
+
+:::info[Об учебных диаграммах]
+YML-схемы на этой странице — локальные учебные иллюстрации H-Group RU, построенные по ситуациям из закреплённого текста IAMJEFF. Они не являются исходными диаграммами автора и нужны только для наглядности описанной механики.
+:::
 
 - Это инструкция о том, как трактовать _Selfish Color Clue_ в игре вдвоём.
 
@@ -24,27 +34,37 @@ slug: /two-player/selfish-conventions
   - Алиса даёт Бобу синюю подсказку, затрагивая синюю 1 в его слоте 3;
   - вместо розыгрыша синей 1 Боб даёт Алисе синюю подсказку, затрагивая синюю 2 в её слоте 4, в одной карте от chop;
   - это выглядит странно: Боб мог бы сначала сыграть синюю 1, а потом получить синюю 2. Если бы синяя карта Алисы была на chop, подсказка была бы естественной — иначе Алиса могла бы сбросить играбельную карту. Но здесь она не на chop;
-  - представьте, что на chop Алисы лежит критическая карта, а Боб видит, что Алисе нечего делать. Если Боб напрямую спасёт критическую chop-карту, команда может потерять играбельную карту. Именно для такой ситуации и существует эта convention;
+  - представьте, что на chop Алисы лежит критическая карта, а Боб видит, что Алисе нечего делать. Если Боб напрямую спасёт критическую chop-карту, команда может потерять играбельную карту. Именно для такой ситуации и существует эта конвенция;
   - на своём ходу Алиса удивляется, что Боб не сыграл синюю 1 и вместо этого дал синюю подсказку. Это не _Selfish Focus Inversion_, потому что затронута только одна синяя карта;
   - Алиса понимает, что её синяя карта — именно синяя 2, и одновременно помечает слот 5 как Chop Moved по _Selfish Chop Move_.
+
+<JeffSelfishChopMove />
 
 ### Selfish Bluff
 
 - Если игрок даёт _Selfish Clue_, затрагивающую **только одну** карту, а эта карта находится в трёх или больше картах от chop, Chop Move трёх или более карт выглядит маловероятно. Поэтому получатель должен вслепую сыграть карту в _Finesse Position_ как _Selfish Bluff_.
 - Карта, затронутая _Selfish Clue_, обещана как играбельная через карту игрока, который дал подсказку.
 
+<JeffSelfishBluff />
+
 ### Selfish Focus Inversion
 
 - _Selfish Focus Inversion_ можно выполнять только подсказкой, затрагивающей две или больше карт, и только в специальных обстоятельствах, описанных в [Case B3](#case-b3-ни-одна-карта-не-на-chop-и-ни-одна-не-в-одной-карте-от-chop).
 
+<JeffSelfishFocusInversion />
+
 :::note[Современный H-Group]
-В этом Jeff-era 2P framework _Selfish Focus Inversion_ остаётся активной convention. В современном общем H-Group она больше не используется; здесь сохраняется механика авторского 2P framework.
+В этом Jeff-era 2P framework _Selfish Focus Inversion_ остаётся активной конвенцией. В современном общем H-Group она больше не используется; здесь сохраняется механика авторского 2P framework.
 :::
 
 ## Интерпретации
 
 - **Case A:** подсказка затрагивает только одну карту — _Selfish Chop Move_ или _Selfish Bluff_.
 - **Case B:** подсказка затрагивает несколько карт — обычная _Play Clue_ или _Selfish Focus Inversion_.
+
+Схемы ниже показывают именно **расположение затронутых карт относительно chop**. Конкретные достоинства скрытых карт в этих обзорных схемах не являются дополнительным правилом.
+
+<JeffSelfishCasesA />
 
 ### Case A1: карта с подсказкой на chop
 
@@ -66,6 +86,8 @@ slug: /two-player/selfish-conventions
 
 - Интерпретация: **Selfish Bluff**.
 - Объяснение: Chop Move трёх карт подряд выглядит маловероятным даже в сложных вариантах.
+
+<JeffSelfishCasesB />
 
 ### Case B1: одна из карт находится на chop
 
