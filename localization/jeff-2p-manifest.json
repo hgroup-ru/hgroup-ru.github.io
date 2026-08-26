@@ -105,5 +105,11 @@
       "original_repository": "Dr-Kakashi/hanabi"
     }
   ],
-  "asset_copy_status": "blocked-by-current-tooling-byte-extraction"
+  "asset_source_verification": {
+    "status": "verified-from-user-supplied-github-archive",
+    "archive_sha256": "1aea641d123ee6c1c5489e004c75f62a7c9a9f23ea8d8d4d267296b6c9926a55",
+    "all_expected_image_sizes_match": true,
+    "all_expected_git_blob_shas_match": true
+  },
+  "asset_copy_status": "verified-locally-awaiting-repository-binary-upload"
 }
