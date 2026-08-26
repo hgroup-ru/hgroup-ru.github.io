@@ -14,5 +14,5 @@ players:
         below: one-away
       - type: x
         below: Chop
-  - text: "Розыгрыш left 1 = Single; сброс chop = Double; сброс one-away = Triple."
-  - text: "Взрыв chop = Triple."
+  - text: Розыгрыш left 1 = Single; сброс chop = Double; сброс one-away = Triple.
+  - text: Взрыв chop = Triple.
