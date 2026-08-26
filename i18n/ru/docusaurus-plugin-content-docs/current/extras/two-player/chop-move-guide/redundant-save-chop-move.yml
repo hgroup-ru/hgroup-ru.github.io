@@ -10,9 +10,9 @@ players:
     clueGiver: true
     cards:
       - type: 1
-        clue: 1
+        border: true
       - type: 1
-        clue: 1
+        border: true
       - type: x
       - type: x
       - type: x
