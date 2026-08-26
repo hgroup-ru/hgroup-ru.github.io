@@ -13,16 +13,16 @@ import Answer from "./level-12-self-finesse-precedence/answer.yml";
 <Tabs queryString="tab" defaultValue="question" values={[{label: 'Question', value: 'question'}, {label: 'Solution', value: 'solution'}]}>
 <TabItem value="question">
 
-Red is on 1 and green is on 2. Bob's chop already has negative green information. Alice gives Bob a number 3 Play Clue touching a newer card and chop. Under ordinary Focus Inversion, the newer card would be the directly playable green 3. But Bob can also see every connecting 2 except red 2, and his own Finesse Position is completely unclued.
+Red is on 1 and green is on 2. Bob's chop already has negative green information. Alice gives Bob a number 3 Play Clue touching a newer card and chop.
 
-Should Bob take the new card as the green-3 focus, or blind-play his Finesse Position first?
+Should Bob read this as Focus Inversion and take the newer touched 3 as the focus, or blind-play his Finesse Position first?
 
 <Question />
 
 </TabItem>
 <TabItem value="solution">
 
-Bob should **blind-play his Finesse Position first**. The Focus Inversion alternative really does focus the newer touched 3, because chop is known not green. But a rank Self-Finesse is also available: with the other connecting 2s accounted for, Bob can be holding red 2 for the red 3 among the touched cards. Level 12 explicitly gives rank Self-Finesses precedence over Focus Inversion, so Bob tries the Finesse first rather than immediately treating the newer 3 as green 3.
+Bob should **blind-play his Finesse Position first**. Focus Inversion would move the focus away from chop because chop is known not green, but Level 12 has a specific exception: a rank Self-Finesse takes precedence over Focus Inversion. Bob therefore tries the Finesse first.
 
 <Answer />
 
