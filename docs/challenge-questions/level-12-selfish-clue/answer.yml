@@ -8,7 +8,6 @@ bigText:
   text: Selfish Clue
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
         middleNote: r2
@@ -21,14 +20,14 @@ players:
       - type: b1
         border: false
       - type: r
-        clue: r
+        clueArrow: true
         middleNote: r3
         below: Play
       - type: r
-        clue: r
+        clueArrow: true
         middleNote: r4, r5
       - type: r
-        clue: r
+        clueArrow: true
         middleNote: r4, r5
       - type: b1
         border: false
