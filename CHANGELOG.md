@@ -18,6 +18,7 @@
 
 ### Изменено
 
+- Весь Jeff 2P package повторно вычитан как единый корпус: терминология приведена к текущей политике H-Group RU, добавлены ссылки на соответствующие современные H-Group материалы, а устаревшее название `Whisper Discard Chop Move` заменено современным `Scream Discard Chop Move` там, где механика совпадает. Jeff-era правила сложения при этом сохранены как механика закреплённого источника.
 - Страница `/two-player` остаётся консервативной точкой входа в официальные H-Group 2-player conventions, но теперь из неё можно перейти к отдельному Score Hunting package IAMJEFF. В боковой навигации `Score Hunting Guide` расположен сразу после основной страницы про игру вдвоём; companion-документы открываются уже из него и не перегружают основное меню.
 - Исторические conventions IAMJEFF не «осовременивались» молча. `Selfish Focus Inversion` и `Redundant Save Chop Move` сохранены активными внутри Jeff framework; advanced form of `Tempo Clue Chop Move` не смешивается с удалённой `Tempo Clue Chop Move Change (Jeff)`; `Bomb Chop Move` не переименован автоматически в современный `Bomb Double Ignition`.
 - В `Analysis` сохранена исходная Priority-модель даже там, где она расходится с включённым в Score Hunting framework `Priority Change`; расхождение отмечено явно. Отсутствующий в источнике `End Game Analysis` и незавершённый Priority example не дописывались за автора.
