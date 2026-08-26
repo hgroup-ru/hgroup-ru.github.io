@@ -11,10 +11,9 @@
     "cleared": [
       "2-player/Score_Hunting_Guide.md",
       "2-player/Chop_Move_Guide.md",
-      "2-player/Selfish_Conventions.md"
-    ],
-    "pending": [
+      "2-player/Selfish_Conventions.md",
       "2-player/Analysis.md"
-    ]
+    ],
+    "pending": []
   }
 }
