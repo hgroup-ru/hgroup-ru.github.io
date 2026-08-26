@@ -8,11 +8,11 @@ stacks:
 players:
   - cards:
       - type: b1
-        clue: b
       - type: x
       - type: r1
-        clue: 1
         trash: true
-        middleNote: kt
+        below: 1 cm
       - type: x
+        below: 3 cm
       - type: x
+        below: 2 cm

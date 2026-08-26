@@ -8,13 +8,12 @@ stacks:
 players:
   - cards:
       - type: r1
-        clue: 1
         trash: true
-        middleNote: kt
       - type: y1
-        clue: 1
         trash: true
-        middleNote: kt
+        below: 1 cm
       - type: x
       - type: x
+        below: 3 cm
       - type: x
+        below: 2 cm

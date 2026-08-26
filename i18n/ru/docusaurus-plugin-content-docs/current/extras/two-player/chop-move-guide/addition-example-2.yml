@@ -8,9 +8,10 @@ stacks:
 players:
   - cards:
       - type: r1
-        border: false
+        below: 1 cm
       - type: b1
-        border: false
       - type: x
       - type: x
+        below: 3 cm
       - type: x
+        below: 2 cm

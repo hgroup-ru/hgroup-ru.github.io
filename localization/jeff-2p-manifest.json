@@ -69,11 +69,15 @@
       "addition-example-2.yml",
       "addition-example-3.yml",
       "delayed-critical-chop-move.yml",
-      "delayed-playable-chop-move.yml"
+      "delayed-critical-chop-move-2.yml",
+      "delayed-playable-chop-move.yml",
+      "delayed-playable-chop-move-2.yml",
+      "delayed-playable-chop-move-3.yml"
     ],
     "notes": [
       "No local diagram is added for Trash Chop Move with a stale 1; the page links to the Level 12 Stale 1's Clue material instead.",
       "Addition Example 4 keeps IAMJEFF's original PNG rather than reconstructing it from prose.",
+      "Delayed Chop Move examples are rendered as separate sequential teaching states so each move remains legible.",
       "Analysis keeps its existing source PNGs and receives no new local diagrams."
     ]
   },

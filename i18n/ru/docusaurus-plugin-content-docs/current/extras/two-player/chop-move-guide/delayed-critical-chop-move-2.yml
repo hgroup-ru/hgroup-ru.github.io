@@ -9,6 +9,16 @@ discarded:
   - g4
 players:
   - name: Alice
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 5
+        clue: 5
+      - type: x
+        cm: true
+        middleNote: g4
+  - name: Bob
     clueGiver: true
     cards:
       - type: x
@@ -16,11 +26,3 @@ players:
       - type: x
       - type: x
       - type: x
-  - name: Bob
-    cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: 5
-        clue: 5

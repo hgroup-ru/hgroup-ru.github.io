@@ -8,7 +8,10 @@ import JeffChopAdditionExample1 from "./chop-move-guide/addition-example-1.yml";
 import JeffChopAdditionExample2 from "./chop-move-guide/addition-example-2.yml";
 import JeffChopAdditionExample3 from "./chop-move-guide/addition-example-3.yml";
 import JeffDelayedCriticalChopMove from "./chop-move-guide/delayed-critical-chop-move.yml";
+import JeffDelayedCriticalChopMove2 from "./chop-move-guide/delayed-critical-chop-move-2.yml";
 import JeffDelayedPlayableChopMove from "./chop-move-guide/delayed-playable-chop-move.yml";
+import JeffDelayedPlayableChopMove2 from "./chop-move-guide/delayed-playable-chop-move-2.yml";
+import JeffDelayedPlayableChopMove3 from "./chop-move-guide/delayed-playable-chop-move-3.yml";
 
 > Часть авторских материалов IAMJEFF для [Score Hunting Guide](./score-hunting-guide). Оригинал: [Chop Move Guide](https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Chop_Move_Guide.md). Перевод сохраняет механику source revision `cfa4007c6512edfed00ad821cca412a9fd0e6559`, но использует современные названия H-Group там, где механика совпадает.
 
@@ -214,7 +217,13 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
   - поскольку Боб только что сбросил зелёную 4, Chop Moved-карта должна быть второй зелёной 4;
   - Алиса записывает слот 5 как зелёную 4 и делает нерелевантное действие.
 
+**После сброса зелёной 4: Алиса спасает 5 Боба.**
+
 <JeffDelayedCriticalChopMove />
+
+**Следующим ходом Боб даёт 5's Chop Move. По контексту Алиса понимает, что её chop — вторая зелёная 4.**
+
+<JeffDelayedCriticalChopMove2 />
 
 ### Delayed Chop Move по играбельной карте
 
@@ -230,4 +239,14 @@ IAMJEFF называл эту форму `Whisper Discard Chop Move`. Совре
   - Боб играет красную 3;
   - Алиса вслепую играет слот 5 — это красная 4, и она успешно играет.
 
+**Алиса даёт Бобу красную Play Clue по красной 3.**
+
 <JeffDelayedPlayableChopMove />
+
+**Боб отвечает 5's Chop Move. Алиса отмечает chop как красную 4.**
+
+<JeffDelayedPlayableChopMove2 />
+
+**Боб играет красную 3; теперь отмеченная красная 4 готова к blind-play.**
+
+<JeffDelayedPlayableChopMove3 />

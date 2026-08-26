@@ -8,46 +8,49 @@ stacks:
 bigText:
   text: Case A
 players:
-  - text: A1
-  - cards:
-      - type: x
-      - type: x
-      - type: x
-      - type: x
-      - type: b
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: b1
         clue: b
-        below: Focus
-  - text: A2
-  - cards:
       - type: x
       - type: x
       - type: x
-      - type: b
-        clue: b
-        middleNote: b2
       - type: x
-        cm: true
-        middleNote: cm
-  - text: A3
-  - cards:
+  - name: Bob
+    cards:
+      - type: x
       - type: x
       - type: x
       - type: b
         clue: b
         middleNote: b2
+        above: A2
+      - type: x
+        cm: true
+        middleNote: cm
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+      - type: b
+        clue: b
+        middleNote: b2
+        above: A3
       - type: x
         cm: true
         middleNote: cm
       - type: x
         cm: true
         middleNote: cm
-  - text: A4
-  - cards:
+  - name: Bob
+    cards:
       - type: x
         below: Bluff
       - type: b
         clue: b
         middleNote: b2
+        above: A4
       - type: x
       - type: x
       - type: x
