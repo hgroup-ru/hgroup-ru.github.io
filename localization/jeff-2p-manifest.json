@@ -1,5 +1,14 @@
 {
   "source_revision": "cfa4007c6512edfed00ad821cca412a9fd0e6559",
+  "editorial_policy": {
+    "modern_hgroup_links": true,
+    "modern_hgroup_name_when_mechanically_equivalent": true,
+    "historical_aliases": "mention-once-only-when-needed-for-source-history",
+    "preserve_jeff_mechanics_when_not_equivalent": true,
+    "approved_name_updates": {
+      "Whisper Discard Chop Move": "Scream Discard Chop Move (known-trash form)"
+    }
+  },
   "documents": {
     "Score_Hunting_Guide.md": {
       "local": "/two-player/score-hunting-guide",
