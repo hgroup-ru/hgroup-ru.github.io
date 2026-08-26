@@ -19,9 +19,9 @@ players:
       - type: g4
         border: false
       - type: r1
-        clueArrow: true
+        clue: r
       - type: r3
-        clueArrow: true
+        clue: r
       - type: b2
         border: false
       - type: b1

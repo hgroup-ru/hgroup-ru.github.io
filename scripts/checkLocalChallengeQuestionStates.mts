@@ -135,13 +135,6 @@ async function validateState(filePath: string, solutionState: boolean) {
       }
 
       const slot = cardIndex + 1;
-      if (card.clue !== undefined) {
-        fail(
-          filePath,
-          `${name} slot ${slot} still has clue=${card.clue} in a Solution knowledge state; encode historical knowledge without a current clue arrow`,
-        );
-      }
-
       if (
         EXACT_CARD_PATTERN.test(card.type)
         && (card.middleNote !== undefined

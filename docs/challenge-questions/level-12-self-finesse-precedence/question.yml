@@ -21,13 +21,13 @@ players:
   - name: Bob
     cards:
       - type: x
-      - type: rg3
+      - type: 3
         clue: 3
       - type: y4
         border: false
       - type: b4
         border: false
-      - type: rg3
+      - type: 3
         clue: 3
         crossedOut: g
   - name: Cathy
