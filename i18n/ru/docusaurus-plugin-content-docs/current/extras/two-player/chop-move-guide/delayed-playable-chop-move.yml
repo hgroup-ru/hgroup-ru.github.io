@@ -1,23 +1,29 @@
-# Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md delayed playable-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+# Local H-Group RU teaching sequence based on IAMJEFF Chop_Move_Guide.md delayed playable-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
 stacks:
   - r: 2
   - y: 2
   - g: 2
   - b: 2
   - p: 2
-bigText:
-  text: После красной подсказки
 players:
-  - name: Bob
+  - name: Alice
     clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: r4
+        border: false
+  - name: Bob
     cards:
       - type: r3
         clue: r
-        below: Play
       - type: x
       - type: x
       - type: x
       - type: x
+  - space: 1
   - name: Alice
     cards:
       - type: x
@@ -25,9 +31,16 @@ players:
       - type: x
       - type: 5
         clue: 5
-        below: 5CM
       - type: r4
         border: false
         cm: true
         middleNote: r4
-        below: cm
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: r3
+        clue: r
+      - type: x
+      - type: x
+      - type: x
+      - type: x

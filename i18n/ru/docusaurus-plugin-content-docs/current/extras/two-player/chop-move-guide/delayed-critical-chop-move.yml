@@ -1,17 +1,31 @@
-# Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md delayed critical-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+# Local H-Group RU teaching sequence based on IAMJEFF Chop_Move_Guide.md delayed critical-card example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
 discarded:
   - g4
-bigText:
-  text: После сброса g4
 players:
-  - name: Bob
+  - name: Alice
     clueGiver: true
     cards:
       - type: x
       - type: x
       - type: x
       - type: x
+      - type: g4
+        border: false
+  - name: Bob
+    cards:
       - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: 5
+        clue: 5
+  - space: 1
   - name: Alice
     cards:
       - type: x
@@ -19,9 +33,16 @@ players:
       - type: x
       - type: 5
         clue: 5
-        below: 5CM
       - type: g4
         border: false
         cm: true
         middleNote: g4
-        below: cm
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: 5
+        clue: 5

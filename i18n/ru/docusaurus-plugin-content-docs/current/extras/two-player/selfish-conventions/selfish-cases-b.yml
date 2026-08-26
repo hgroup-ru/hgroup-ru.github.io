@@ -1,8 +1,14 @@
 # Local H-Group RU positional overview based on IAMJEFF Selfish_Conventions.md @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
 bigText:
   text: Case B
 players:
-  - text: B1 · обычная Play Clue, Chop Focus
+  - text: B1
   - cards:
       - type: x
       - type: b
@@ -11,31 +17,25 @@ players:
       - type: x
       - type: b
         clue: b
-        above: Chop
         below: Focus
-  - text: B2 · обычная Play Clue, фокус слева
+  - text: B2
   - cards:
       - type: x
       - type: b
         clue: b
         middleNote: b2
-        below: Focus
       - type: x
       - type: b
         clue: b
         middleNote: b4
-        below: one-away
       - type: x
-        below: Chop
-  - text: B3 · Selfish Focus Inversion
+  - text: B3
   - cards:
       - type: x
       - type: b
         clue: b
       - type: b
         clue: b
-        below: SFI
+        middleNote: b2
       - type: x
-        below: one-away
       - type: x
-        below: Chop
