@@ -17,6 +17,7 @@ players:
       - type: x
       - type: x
       - type: x
+  - text: B1
   - name: Bob
     cards:
       - type: x
@@ -27,20 +28,20 @@ players:
       - type: b
         clue: b
         middleNote: b2
-        above: B1
         below: Play
+  - text: B2
   - name: Bob
     cards:
       - type: x
       - type: b
         clue: b
         middleNote: b2
-        above: B2
         below: Play
       - type: x
       - type: b
         clue: b
       - type: x
+  - text: B3
   - name: Bob
     cards:
       - type: x
@@ -49,7 +50,6 @@ players:
       - type: b
         clue: b
         middleNote: b2
-        above: B3
         below: Inversion
       - type: x
       - type: x

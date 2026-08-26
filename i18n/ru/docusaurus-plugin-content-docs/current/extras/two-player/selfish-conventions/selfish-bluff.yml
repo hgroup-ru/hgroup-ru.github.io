@@ -7,6 +7,15 @@ stacks:
   - p: 0
 players:
   - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: b1
+        border: false
+      - type: x
+      - type: x
+  - name: Bob
     cards:
       - type: x
         below: Bluff
@@ -14,14 +23,5 @@ players:
         clue: b
         middleNote: b2
       - type: x
-      - type: x
-      - type: x
-  - name: Bob
-    clueGiver: true
-    cards:
-      - type: x
-      - type: x
-      - type: b1
-        border: false
       - type: x
       - type: x
