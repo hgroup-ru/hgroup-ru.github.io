@@ -1,14 +1,18 @@
 # Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+stacks:
+  - r: 0
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
 players:
   - name: Bob
     clueGiver: true
     cards:
       - type: r1
         border: false
-        below: playable 1
       - type: b1
         border: false
-        below: playable 1
       - type: x
       - type: x
       - type: x
@@ -18,8 +22,7 @@ players:
       - type: x
       - type: x
       - type: x
-        below: new chop
+        cm: true
+        middleNote: cm
       - type: r5
         clue: 5
-        above: old chop
-        below: Save
