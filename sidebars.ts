@@ -19,7 +19,19 @@ if (twoPlayerIndex === -1) {
 
 const mainSidebarWithScoreHunting = [
   ...mainSidebar.slice(0, twoPlayerIndex + 1),
-  "extras/two-player/score-hunting-guide",
+  {
+    type: "category",
+    label: "Score Hunting Guide",
+    link: {
+      type: "doc",
+      id: "extras/two-player/score-hunting-guide",
+    },
+    items: [
+      "extras/two-player/chop-move-guide",
+      "extras/two-player/selfish-conventions",
+      "extras/two-player/analysis",
+    ],
+  },
   ...mainSidebar.slice(twoPlayerIndex + 1),
 ];
 
