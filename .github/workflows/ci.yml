@@ -58,6 +58,14 @@ jobs:
         if: ${{ always() && steps.setup.outcome == 'success' && steps.site-build.outputs.required == 'true' && !startsWith(github.head_ref, 'automation/') }}
         run: npm run build:ru
 
+      - name: Upload RU build for visual QA
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: jeff-visual-qa-build
+          path: build
+          retention-days: 1
+
   notify:
     name: Telegram notification
     needs: validate
