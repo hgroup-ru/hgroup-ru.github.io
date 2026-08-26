@@ -41,8 +41,8 @@
       ]
     },
     "Analysis.md": {
-      "local_candidate": "/two-player/analysis",
-      "publication": "pending-permission-clarification",
+      "local": "/two-player/analysis",
+      "publication": "cleared",
       "provenance": "Dr-Kakashi"
     }
   },
@@ -87,7 +87,7 @@
       "source_blob": "a5dc73e0f1e0487bdef3be9052d6f9614915221e",
       "size": 1935264,
       "used_by": ["Analysis.md"],
-      "publication": "pending-permission-clarification",
+      "publication": "cleared",
       "original_repository": "Dr-Kakashi/hanabi"
     },
     {
@@ -95,7 +95,7 @@
       "source_blob": "eb91601102628bd22c4adfb14c2208ff32262bdb",
       "size": 1904465,
       "used_by": ["Analysis.md"],
-      "publication": "pending-permission-clarification",
+      "publication": "cleared",
       "original_repository": "Dr-Kakashi/hanabi"
     },
     {
@@ -103,7 +103,7 @@
       "source_blob": "e2a1d48692dafa08d6584fca430af1fdb1c7e535",
       "size": 1975259,
       "used_by": ["Analysis.md"],
-      "publication": "pending-permission-clarification",
+      "publication": "cleared",
       "original_repository": "Dr-Kakashi/hanabi"
     }
   ],
