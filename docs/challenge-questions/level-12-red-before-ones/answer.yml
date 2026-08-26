@@ -8,7 +8,6 @@ bigText:
   text: Red first
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: x
       - type: x
@@ -20,9 +19,9 @@ players:
       - type: g4
         border: false
       - type: r1
-        clue: r
+        clueArrow: true
       - type: r3
-        clue: r
+        clueArrow: true
       - type: b2
         border: false
       - type: b1
