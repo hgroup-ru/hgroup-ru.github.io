@@ -6,8 +6,6 @@ stacks:
   - p: 0
 discarded:
   - b4
-bigText:
-  text: Alice, Bob, Donald
 players:
   - name: Alice
     cards:

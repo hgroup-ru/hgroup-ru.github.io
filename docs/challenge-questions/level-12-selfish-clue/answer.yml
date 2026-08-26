@@ -20,11 +20,14 @@ players:
       - type: b1
         border: false
       - type: r
+        clueArrow: true
         middleNote: r3
         below: Play
       - type: r
+        clueArrow: true
         middleNote: r4, r5
       - type: r
+        clueArrow: true
         middleNote: r4, r5
       - type: b1
         border: false
