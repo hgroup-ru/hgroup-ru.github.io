@@ -111,5 +111,5 @@
     "all_expected_image_sizes_match": true,
     "all_expected_git_blob_shas_match": true
   },
-  "asset_copy_status": "verified-locally-awaiting-repository-binary-upload"
+  "asset_copy_status": "copied-local-byte-for-byte-verified"
 }
