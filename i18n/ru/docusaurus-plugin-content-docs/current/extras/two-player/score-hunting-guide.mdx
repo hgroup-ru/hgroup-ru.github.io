@@ -1,0 +1,435 @@
+---
+title: "Score Hunting Guide"
+slug: /two-player/score-hunting-guide
+---
+
+:::warning[Об авторском материале]
+Это авторский материал **IAMJEFF** для score hunting вдвоём, а не современный нормативный текст H-Group. Русская версия сохраняет механику закреплённого источника и адаптирует только терминологию, ссылки и Docusaurus-оформление. IAMJEFF отдельно предупредил, что часть 2P conventions могла устареть; более новой версии он не рекомендует. Оригинал: [Score Hunting Guide](https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Score_Hunting_Guide.md), revision `cfa4007c6512edfed00ad821cca412a9fd0e6559`. Перевод и републикация — с разрешения автора, CC BY-SA 4.0.
+:::
+
+- Это руководство по score hunting в партиях вдвоём, созданное [IAMJEFF](https://github.com/waweiwoowu) в мае 2020 года.
+- Его цель — получать максимальный счёт в любом варианте за как можно меньшее число попыток. Поэтому подход намеренно довольно агрессивный и рискованный.
+- Из-за этого средний результат здесь ниже, чем при использовании более консервативных [обычных 2P conventions H-Group](/two-player). Если вам нужен стабильный подход для игры вдвоём, сначала прочитайте ту страницу.
+- Предупреждение: будьте готовы проигрывать партии, когда критические карты уходят в сброс.
+
+## Введение
+
+- Привет! Этот документ для игроков, которые хотят глубже исследовать Hanabi вдвоём. По моему опыту такие партии интересны и весёлы: они позволяют быстро накапливать опыт и всё ещё делать специальные ходы, которые отличаются от партий на 3+ игроков. Например, _Self Color Bluffs_ запрещены при 3+ игроках, но являются одними из самых распространённых ходов вдвоём.
+  - _Self Color Bluffs_ были добавлены в документ H-Group в ноябре 2020 года.
+- Хотите верьте, хотите нет, но 2P — важная часть пути к сильной игре в Hanabi. Во-первых, партии идут быстро, поэтому вы быстрее набираетесь опыта и учитесь справляться с трудными ситуациями. Во-вторых, игра вдвоём сильно зависит от контекста. Она помогает выработать стиль, при котором вы понимаете подсказки контекстуально и реагируете соответственно.
+- Сыграв более 4000 партий вдвоём, я заметил, что многие игроки испытывают трудности. Это и стало главной причиной написать этот документ — чтобы больше людей могли получать удовольствие от 2P и достигать максимального счёта в нужных им вариантах. Удачной охоты!
+
+## Общий гайд
+
+### [Chop Move Guide](./chop-move-guide) (IAMJEFF)
+
+- Chop Moves критически важны в игре вдвоём. Умение выполнять их в специальных обстоятельствах — один из ключей к идеальному счёту.
+- Подробности вынесены в отдельный companion document.
+
+### First Turn Stall Guide (IAMJEFF)
+
+> #### First Turn Stalls
+> - В самый первый ход партии, если подсказку получает известная неиграбельная карта, её следует трактовать как _Save Clue_, а не как _Self-Finesse_.
+> - Игрокам разрешено пользоваться этим даже при наличии других играбельных карт в руке.
+
+- Сначала посмотрите на руку партнёра: можно ли дать _Save Clue_, которая «подготовит» _Finesse_, _Bluff_ или даже _5 Pull_?
+- Затем проверьте, нет ли на chop критических карт (или 2), которые нужно спасти, и не собирается ли партнёр сбрасывать в свой ход — например, если у вас нет играбельных карт.
+- В такой ситуации приходится решать: рискнуть ради подготовки _Finesse_ или просто дать _Save Clue_ на chop.
+- Единственного правильного ответа нет: нужно самостоятельно взвесить плюсы и минусы конкретной позиции.
+- Пример из [Light Pink (6 Suits)](https://hanabi.live/replay/160166):
+  - вместо подсказки числом 1 eevee начинает с подсказки числом 3, затрагивающей светло-розовую 4 в слоте 1 и фиолетовую 3 в слоте 5;
+  - Piper даёт подсказку числом 4 как _4 Double Bluff_;
+  - Eevee даёт ещё одну подсказку числом 4 как второй _4 Double Bluff_.
+
+![Пример First Turn Stall](https://github.com/waweiwoowu/hanabi/blob/master/images/2-player/first_turn_stall_guide.png)
+
+### Game Flow Guide (Dr_Kakashi & Kimbifille)
+
+- Никогда не блокируйте игрока напрямую подсказкой. Используйте один из Chop Moves из [Chop Move Guide](./chop-move-guide#аварийные-chop-moves).
+  - Главная причина: прямой lock фактически сжигает подсказку. Заблокированный игрок обязан дать подсказку, поэтому у него остаётся меньше ресурсов, чтобы разблокировать себя. Именно поэтому часто предпочтителен Skipped Discard Chop Move: он дополнительно приносит команде жетон подсказки.
+- Если вы потратили подсказку, чтобы спасти карту, и партнёру остаётся одна карта до lock, лучше сделать Skipped Discard Chop Move.
+  - Вы хотите перетягивать добор на себя, пока партнёр близок к lock.
+  - Команда получает жетон подсказки.
+  - Если вы тратите подсказку на спасение, партнёр вынужден сбросить. Если после этого он доберёт критическую карту, вам всё равно придётся делать skipped discard.
+  - Партнёр должен по возможности не блокировать вас.
+  - См. candidate [Analysis](./analysis#анализ-как-не-заблокировать-партнёра).
+- Приоритетно разыгрывайте карты, которые ведут к критическим картам.
+
+### Self Color Bluff Guide (IAMJEFF)
+
+> #### Self Color Bluff (SCB)
+> - В партиях не вдвоём _Self-Bluffs_ цветом явно запрещены. В 2P они разрешены.
+> - Если цветовая подсказка не затрагивает совершенно новую карту, а получатель знает, что затронутые карты неиграбельны, он понимает это как сигнал сыграть вслепую карту в _Finesse Position_.
+> - Поэтому по бритве Оккама _Tempo Clues_ имеют приоритет над _Self Color Bluff_.
+> - _Self Color Bluff_ также разрешено делать через _Chop Moved_-карту.
+
+- Это один из самых сильных ходов вдвоём: он одновременно даёт больше информации о карте партнёра и получает бесплатный blind-play.
+- Совет: по возможности затрагивайте one-away карту — вероятность, что она играбельна, выше, чем у карты two-away или дальше.
+- При экстремально агрессивной игре _Self Color Bluff_ можно делать через любую карту, если контекст полностью показывает, что она неиграбельна, включая _Chop Moved_-карту или совершенно новую карту.
+- Пример 1, Brown & Light Pink (6 Suits):
+  - [154213, ход 21](https://hanabi.live/replay/154213/21): Bluff розовой 1 через совершенно новую зелёную 3 подсказкой зелёным;
+  - [154213, ход 33](https://hanabi.live/replay/154213/33): Bluff жёлтой 2 через совершенно новую коричневую 4 подсказкой коричневым. Это сообщает партнёру, что у него коричневая 4, и позволяет больше не беспокоиться о блокирующих картах коричневого цвета.
+- Пример 2, Light Pink (6 Suits):
+  - [160146, ход 21](https://hanabi.live/replay/160146/21): Bluff фиолетовой 1 через совершенно новую красную 5 на chop подсказкой красным. Обычно это выглядело бы как 5CE;
+  - [160146, ход 43](https://hanabi.live/replay/160146/43): Bluff зелёной 1 через совершенно новую критическую синюю 4 подсказкой синим — одновременно заранее спасая критическую карту.
+- Пример 3, Pink-Ones & Brown:
+  - [171723, ход 43](https://hanabi.live/replay/171723/43): Bluff через неизвестную играбельную карту;
+  - [171735, ход 42](https://hanabi.live/replay/171735/42): Bluff через известную играбельную карту → _Selfish Self Color Bluff_.
+
+## Гайд по вариантам
+
+### Hard Suits
+
+- Brown, Muddy Rainbow и Null считаются hard suits.
+- В вариантах с hard suit включены [Double Loaded Play Clue](#double-loaded-play-clue) и [Overloaded Play Clue](#overloaded-play-clue).
+- _Occupied Play Clue_ и _Loaded Play Clue_ в 2P отключены.
+
+### Brown
+
+- Если вы получили _Play Clue_ коричневым и через собственную руку видите у партнёра коричневую карту, всегда лучше перед розыгрышем своей карты дать _Play Clue_ или _Tempo Clue_ с фокусом на коричневой карте партнёра.
+
+### Null
+
+- _Self Color Bluffs_ отключаются в пользу _Color Positional Clues_.
+- Если ход выглядит как _Trash Chop Move_, он никогда не является _Positional Clue_, если только контекста недостаточно, чтобы исключить _Trash Chop Move_.
+
+### Clue Starved
+
+- Стратегии для соревнования: [Clue Starved 2p Strategies](https://github.com/waweiwoowu/hanabi-competition/blob/master/Clue_Starved_Strategies.md).
+- В score hunting нужно «спасать» каждую критическую карту.
+
+## Изменённые conventions
+
+### 2P conventions, которые включены
+
+- [Tempo Change](/two-player#tempo-change)
+- [Priority Change](/two-player#priority-change)
+- [First Turn Stalls](/two-player#first-turn-stalls)
+  - подробнее — [First Turn Stall Guide](#first-turn-stall-guide-iamjeff) выше;
+- [Flush Clue](/two-player#flush-clue-цветовая-подсказка-в-слот-1)
+- Self-Bluffs цветом (_Self Color Bluff_)
+  - подробнее — [Self Color Bluff Guide](#self-color-bluff-guide-iamjeff);
+- [Delayed Bluff](/two-player#delayed-bluff)
+- [Scream Discard Modification](/two-player#scream-discard-modification)
+  - здесь _Scream Discard Chop Move_ разрешено делать при любом числе жетонов подсказок;
+- [Double Scream Blind-Play](/two-player#double-scream-blind-play-розыгрыш-chop-вслепую)
+- Skipped Discard Chop Move
+- Double Skipped Discard Chop Move
+  - игроки могут отключить эту convention и трактовать ход как _Positional Discard_;
+- [Selfish Conventions](./selfish-conventions):
+  - [Selfish Chop Move](./selfish-conventions#selfish-chop-move);
+  - [Selfish Bluff](./selfish-conventions#selfish-bluff);
+  - [Selfish Focus Inversion](./selfish-conventions#selfish-focus-inversion).
+
+### 2P conventions, которые отключены
+
+- [One-Away Saves](/two-player#one-away-saves)
+- [Second Turn Stalls](/two-player#second-turn-stalls)
+- [5's Double Chop Move](/two-player#5s-double-chop-move)
+- [Double Discard Save Stalls](/two-player#double-discard-save-stalls)
+- Scream Push (Anxiety с Chop Move)
+- Scream Blind-Play
+  - blind-play chop всегда означает _Double Chop Move_ как _Double Scream Blind-Play_;
+  - если при нуле подсказок нужно Chop Move только одну карту, используйте _Skipped Discard Chop Move_.
+
+### 2P variant-specific conventions, которые включены
+
+- Flush Save
+- Dark Chop Move
+- Implied Color Truth
+  - отключите её, если хотите применять [Implied Saves](#implied-saves) к rainbow-картам.
+
+### 3P+ conventions, которые включены
+
+- 3 Bluff
+- 4 Double Bluff
+- 5's Chop Move
+- 5 Pull
+  - _5 Pull_ разрешено делать в начале Mid-Game;
+- Anxiety Play.
+
+### 3P+ conventions, которые отключены
+
+- Double Discard Avoidance
+- Occupied Play Clue
+- Loaded Play Clue
+  - _Loaded Play Clue_ можно включить, но по моему опыту лучше оставить её выключенной и использовать [Double Loaded Play Clue](#double-loaded-play-clue) и [Overloaded Play Clue](#overloaded-play-clue).
+
+# Другие conventions
+
+## О Play Clues
+
+### 4 Single Bluff
+
+- Игрокам разрешено делать _4 Single Bluff_, затрагивая подсказкой числом 4 карту two-away, если эта 4 выглядит one-away и ход получает только одну blind-card.
+- Использованная в _4 Single Bluff_ 4 не обещана как one-away. Получатель подсказки не должен записывать на ней никаких заметок.
+
+### Selfish Bluff
+
+См. [Selfish Bluff](./selfish-conventions#selfish-bluff).
+
+### Anxiety Play Shift
+
+- Применяется, когда игрок становится locked, но имеет играбельную карту либо может вывести играбельную карту через карты партнёра с подсказками.
+- Обычно в Anxiety-ситуации игрок обязан сыграть карту, которая вероятнее всего играбельна. Если вариантов несколько, он должен знать, что играбельна самая левая.
+- Но что, если эта карта неиграбельна? Партнёр обязан продолжать сбрасывать, чтобы получать подсказки и предотвращать _Anxiety Play_. Каждый такой сброс может сдвинуть _Anxiety Focus_ на один слот.
+- Пример:
+  - все 1 сыграны;
+  - Алиса locked: у неё три 5 с подсказкой числом 5, остальные карты _Chop Moved_. Рука слева направо: `g3, g5, r3, y5, b5`;
+  - у команды один жетон, ход Алисы;
+  - Алиса даёт красную подсказку красной 2 Боба в слоте 1. Жетонов становится 0;
+  - Боб знает свою красную 2, но не может сыграть её: иначе Алиса взорвётся зелёной 3 как _Anxiety Play_. Поэтому Боб сбрасывает;
+  - Алиса даёт подсказку числом 5 как _5 Stall_;
+  - Боб играет красную 2;
+  - теперь ход Алисы. По обычному _Anxiety Play_ она должна играть слот 1. Но если бы слот 1 был играбелен, Боб не сбрасывал бы в предыдущий ход. Значит, слот 1 неиграбелен;
+  - по _Anxiety Play Shift_ играбельная карта должна была бы быть в слоте 2. Но это известная 5, сейчас неиграбельная. Значит, играбельная карта — в слоте 3;
+  - Алиса вслепую играет красную 3 из слота 3.
+
+### Explosive Play & Explosive Elimination Notes
+
+- Обычно, если в руке есть неизвестная карта с подсказкой, игрок должен записать все её возможности и не играть её, пока не станет известно, что карта играбельна.
+- Но если игрок видит, что у партнёра находятся все остальные копии возможных карт, кроме играбельной, неизвестную карту разрешено сыграть как _Explosive Play_.
+- После этого партнёр должен поставить _Elimination Notes_ на всю свою руку для каждой возможной карты, которую мог разыгрывать первый игрок, кроме играбельной.
+- Пример 1:
+  - все 1 сыграны, кроме красной 1 и синей 1;
+  - у Алисы неизвестная 2 с подсказкой. У Боба без подсказок красная 2 и синяя 2;
+  - обычно Алиса не должна играть неизвестную 2: это может быть красная или синяя 2, которые сейчас неиграбельны;
+  - но Алиса видит обе такие 2 у Боба. Даже если её карта окажется красной или синей 2 и вызовет взрыв, команда не потеряет 2 — у Боба есть другая копия;
+  - Алиса играет неизвестную 2 независимо от её играбельности;
+  - Боб удивлён розыгрышу/мисплею. Единственная причина — Алиса видит другие копии возможных карт;
+  - Боб ставит по всей руке elimination notes для красной 2 и синей 2.
+- Пример 2:
+  - красная 2 сыграна;
+  - у Алисы неизвестная красная карта с подсказкой. У Боба без подсказок красная 4 и красная 5;
+  - обычно Алиса не должна её играть: это может быть неиграбельная красная 4 или 5;
+  - но Алиса видит у Боба красную 4 и 5. Если её карта окажется красной 4 и вызовет взрыв, команда не потеряет 4. Красной 5 её карта быть не может, потому что пятёрок по одной копии;
+  - Алиса играет карту независимо от играбельности;
+  - Боб понимает причину и ставит elimination notes для красной 4 и красной 5 на всю руку.
+- Игровой пример: [331127, ход 13](https://hanab.live/replay/331127#13).
+
+### Chop Overflow Positional Clue
+
+- Если игрок делает _Double Chop Move_ сбросом или мисплеем, а у партнёра есть только одна карта для Chop Move; либо делает _Triple Chop Move_, а у партнёра только одна или две такие карты, лишняя «мощность» хода превращается в _Positional Clue_.
+- То есть игрок одновременно делает Chop Move всем доступным картам и указывает позицию, соответствующую слоту, который он сбросил или мисплеил.
+- Пример:
+  - у Алисы есть играбельная карта; её chop в слоте 3;
+  - у Боба важная карта на _Finesse Chop_ — так называется ситуация, когда chop одновременно находится в _Finesse Position_;
+  - если Алиса сбрасывает слот 3, это обычный _Scream Discard Chop Move_;
+  - если Алиса сбрасывает слот 2, это выглядело бы как _Double Chop Move_ = Scream Discard + Skipped Discard. Но у Боба только одна карта для Chop Move, поэтому фактически это Single Chop Move и _Positional Clue_ на его слот 2;
+  - аналогично, мисплей слота 3 выглядел бы как Double Scream Blind-Play, но при одной доступной карте становится Single Chop Move + Positional Clue на слот 3.
+
+### Chop Overflow Finesse
+
+- Если игрок выполняет _Chop Overflow Positional Clue_, а указанная позиция неиграбельна, он одновременно делает Chop Move всем доступным картам и _Positional Clue_ на слот 1.
+
+## О Save Clues
+
+### Locked Hand Save Change
+
+- В 2P _Locked Hand Save_ всегда трактуется как _8 Clue Save_: разрешено спасать любую off-chop карту подсказкой числом или цветом.
+- Но _Flush Clue_ имеет приоритет над _Locked Hand Save_: любая цветовая подсказка с фокусом на слоте 1 всегда является _Play Clue_.
+- Если же подсказка числом, кроме 5, фокусируется на слоте 1 и для выполнения Finesse/Bluff получателю пришлось бы сделать **один или больше** blind-play, это _Locked Hand Save_; иначе — _Play Clue_.
+
+### Skipped Misplay Chop Move
+
+- По [правилам сложения Chop Moves](./chop-move-guide#правила-сложения-chop-moves), если игрок мисплеит off-chop карту, он пытается сделать _Triple Chop Move_ или _Quadruple Chop Move_ — в зависимости от числа пропущенных карт.
+- Эту convention можно отключить и трактовать ход как _Positional Misplay_, особенно в вариантах, которые полагаются на _Positional Clues_.
+
+### Selfish Chop Move
+
+См. [Selfish Chop Move](./selfish-conventions#selfish-chop-move).
+
+### Dupe Chop Move (Risk of Duplication Chop Move)
+
+- Обычно игроки стараются не рисковать дублированием карт и разыгрывают карты с подсказками, чтобы выяснить их точное значение.
+- Если игрок сознательно рискует случайным дубликатом, это должно означать что-то ещё. Здесь принято считать, что такой ход вызывает Chop Move, потому что он даёт игроку действие вместо сброса.
+- Convention отключена, если была дана подсказка 2-for-1 или лучше.
+- Пример:
+  - Алиса затрагивает две 1 в руке Боба подсказкой числом 1;
+  - рука Алисы: `X - X - X - G1 - R5`;
+  - Боб видит возможность сделать 1's Order Chop Move на R5. Но если у него нет G1, играбельная карта будет сброшена, а времени сыграть свои 1 и проверить G1 нет;
+  - Боб рискует dupe и даёт подсказку единственной 1 в руке Алисы;
+  - Алиса удивлена: Боб мог продублировать карту;
+  - поэтому Алиса играет 1 и отмечает chop-карту как Chop Moved.
+
+![Пример Dupe Chop Move](https://github.com/waweiwoowu/hanabi/blob/master/images/2-player/2020-10-05_13-42-30.png)
+
+### Occupied Tempo Clue Chop Move
+
+- Если игрок Occupied и делает tempo по карте, которая уже Chop Moved или раньше получала подсказку, это выглядит странно.
+- Обычно он мог бы просто сыграть свою карту и дать tempo партнёру следующим ходом.
+- Поэтому здесь принято считать, что такой ход помимо розыгрыша ещё и делает Chop Move.
+
+Условия:
+1. Tempo-карта должна быть известной играбельной. Иногда Self Color Bluff делается через Chop Moved или уже затронутые карты.
+2. В колоде не должно оставаться карты, которая может заблокировать tempo-карту.
+   - Например, с Omni особенно важно своевременно давать tempo: если партнёр доберёт ещё одну omni-карту, это сильно задержит розыгрыш.
+
+### Advanced form of Tempo Clue Chop Move
+
+![Первый скриншот Advanced Tempo](https://github.com/waweiwoowu/hanabi/blob/master/images/2-player/2020-09-27_07-13-33.png)
+![Второй скриншот Advanced Tempo](https://github.com/waweiwoowu/hanabi/blob/master/images/2-player/2020-09-27_07-25-03.png)
+
+- Развивая логику исторического _Tempo Clue Chop Move Change_, можно сделать ещё один шаг.
+- Должен ли Kakashi дать tempo по G4?
+  - Если Kakashi ничего не делает, действия Kimbi дадут много информации.
+  - Если Kimbi играет G4, Kakashi узнает, что одна из его 5 — G5.
+  - Если Kimbi сбрасывает, Kakashi узнает, что ни одна из его 5 не G5.
+- Кроме того, если позже Kakashi доберёт G5, Kimbi сразу сыграет G4. Тогда Kakashi вслепую сыграет G5 из слота 1.
+- Назовём такую карту _loaded_: когда она играет, она вызывает blind-play.
+- Прямая Tempo Clue по G4 от Kakashi выглядела бы странно, значит у неё должно быть дополнительное значение.
+- Kakashi хочет, чтобы Kimbi сыграла сейчас, а значит её chop важен. Поэтому Kimbi должна сделать Chop Move.
+
+Карта считается loaded, если:
+1. остальная часть цвета «critical»;
+2. карта сама вызовет blind-play, если партнёр доберёт критическую связующую карту или карты;
+3. если критическую связующую карту доберёт владелец карты с подсказкой, негативная информация заставит его разыграть весь цвет;
+4. собственный цвет карты не блокирует прямую Tempo Clue;
+   - это отдаёт приоритет tempo по картам, которые легко блокируются: Muddy Rainbow, Brown, Pink и т. п.
+
+Если карта действительно loaded и партнёр даёт по ней tempo, получатель должен сделать Chop Move.
+
+Convention отключена, если:
+1. Pace равен 1 или меньше;
+2. игрок Locked или находится в Stalling Situation.
+
+Kakashi не должен делать blind-play, если Kimbi была вынуждена сыграть — например, в Anxiety.
+
+### Sacrifice Discard Chop Move
+
+- Если игрок locked, chop партнёра находится в его _Finesse Position_, а партнёр добирает критическую карту, locked-игрок может пожертвовать одной из своих карт, чтобы сделать партнёру _Sacrifice Discard Chop Move_.
+
+### Crazy 3/4 Fake Saves
+
+- Если в сбросе есть 3 или 4, а игроки не знают, что у них есть другая копия этой карты, разрешено «ложно спасти» случайную 3 или 4 на chop. Получатель подсказки не должен играть в Finesse или Bluff.
+- Не делайте это с 3 или 4 two-away, если только не считаете карту достаточно ценной.
+
+### Implied Saves
+
+- Если игрок получает _Play Clue_, но не знает точное значение карты, и видит у партнёра потенциально «совпадающую» карту на chop, он может напрямую защитить её подсказкой. Это допускается, когда из контекста известно, что партнёр не будет мисплеить или играть в Finesse/Bluff.
+- Пример в варианте на 4 цвета:
+  - красная 1 и синяя 1 сыграны;
+  - Алиса сбросила в прошлый ход, у Боба синяя 3 на chop;
+  - Боб даёт Алисе подсказку числом 2, затрагивая красную 2 в слоте 1;
+  - Алиса знает, что эта 2 может быть красной или синей. Если это синяя 2, Боб может сбросить синюю 3, если ему нечего делать. Алиса даёт синюю подсказку синей 3 на chop Боба;
+  - Боб видит, что единственная играбельная синяя карта — синяя 2. Но если у Алисы действительно синяя 2, она не стала бы сбрасывать прошлым ходом. Он понимает, что Алиса не знает точного значения своей 2 и просто разумно защищает синюю 3;
+  - Боб записывает свою синюю карту как 3 и сбрасывает.
+
+## Разное
+
+### Sarcastic Discard (Changed)
+
+- Если _Sarcastic Discard_ может относиться к нескольким картам, он обещает самую левую.
+
+### Sarcastic Discard Shift
+
+- Если игроки откладывают _Sarcastic Discard_ на один ход и подходящих карт несколько, позиция обещанной карты сдвигается на один слот.
+
+### Self Color Ejection
+
+- Обычно, если игрок откладывает прямую _Play Clue_ на один ход, её следует трактовать как _Self Color Bluff_.
+- А если он откладывает прямую _Play Clue_ **на два хода**? Если дающий подсказку не ошибся, а получатель за эти два хода не добирал новых карт, это сигнал _Ejection_. Получатель должен вслепую сыграть _Second Finesse Position_ как _Self Color Ejection_.
+- Пример, [Black & White (5 Suits)](https://hanabi.live/replay/174021):
+  - [ход 25](https://hanabi.live/replay/174021/25): charmander сбрасывает, потому что ему нечего делать;
+  - [ход 26](https://hanabi.live/replay/174021/26): piper даёт подсказку числом 3 как _Play Clue_;
+  - [ход 27](https://hanabi.live/replay/174021/27): charmander даёт красную подсказку, повторно затрагивая красную 5 в слоте 4;
+  - Piper знает, что красная 5 неиграбельна, значит это сигнал _Self Color Bluff_. Но если бы слот 1 был играбелен, charmander сделал бы это ходом раньше. Поэтому Piper знает, что играбельная карта в слоте 2;
+  - [ход 28](https://hanabi.live/replay/174021/28): Piper вслепую играет слот 2 как _Self Color Ejection_ — успешно играет белую 5.
+- Вообще-то это просто _Self Color Bluff_ с _Focus Slide_. Но почему бы не назвать это _Ejection_? LOL.
+
+## Variant-Specific Conventions
+
+### Double Loaded Play Clue
+
+- Применяется только в вариантах с hard suit.
+- _Loaded action_ — ситуация, когда у игрока есть `играбельная карта` или `известный мусор`.
+- Если подсказка даётся карте на chop, а у игрока есть два или больше loaded actions, это _Play Clue_ на эту карту.
+- _Loaded Play Clues_ в 2P отключены.
+
+### Overloaded Play Clue
+
+- Применяется только в вариантах с hard suit.
+- Если игрок Occupied и даёт подсказку карте на chop, пока у получателя есть loaded action, это _Play Clue_ на эту карту.
+- _Occupied Play Clues_ и _Loaded Play Clues_ в 2P отключены.
+
+### Advanced Negative Information Involved with Double Loaded and Overloaded Play Clues
+
+- Поскольку в этих ситуациях подсказка может выглядеть как Save, но становиться Play Clue, по остальной руке можно записывать негативную информацию.
+- Например, 2 Save в такой ситуации будет Play Clue, поэтому на остальных картах можно записать «не 2».
+
+![Пример advanced negative information](https://github.com/waweiwoowu/hanabi/blob/master/images/2-player/2020-10-05_13-42-30.png)
+
+- На примере Kimbifille может дать подсказку числом или цветом, затрагивающую chop, как Play Clue в Overloaded или Double-Loaded ситуации.
+- Поэтому если использован цвет, а не число, можно заключить, что в руке нет других подходящих рангов.
+
+### Pink Crazy Bluff/Pull
+
+- Только для вариантов с Pink.
+- Любую розовую карту разрешено использовать для _3 Bluff_, _4 Double Bluff_ или _5 Pull_.
+- _Pink Promise_ не применяется к карте, использованной для _Pink Crazy Bluff/Pull_.
+
+### Pink Crazy 5's Chop Move
+
+- Только для вариантов с Pink.
+- В аварийной ситуации разрешено нарушить _Pink Promise_ и сделать _5's Chop Move_, затронув не-5 розовую карту подсказкой числом 5.
+- Разрешено только с `розовой 2` или `критической розовой картой`.
+
+### Null Color Positional Clue Change
+
+- Только для вариантов с Null.
+- _Color Positional Clue_ соответствует номеру слота, зависящему от порядка стопок. В 2P стопки соответствуют слотам **слева направо**; в 3+ — справа налево.
+- _Color Positional Clues_ всегда «зацикливаются» к **самой новой** карте; в 3+ — к самой старой.
+
+### Null Positional Double Bluff
+
+- Если получатель _Positional Clue_ не находит null-карту после двух blind-play играбельных карт, он должен прекратить искать null-карту: это известный _Positional Double Bluff_.
+
+## Attribution conventions (2P)
+
+### Для всех вариантов
+
+| Convention Name | Inventor |
+| --- | --- |
+| Tempo Change | Unknown |
+| Priority Change | Unknown |
+| First Turn Stalls | Unknown |
+| Flush Clue | Unknown |
+| Scream Discard Modification | Unknown |
+| Double Scream Blind-Play | Unknown |
+| Skipped Discard Chop Move | Unknown |
+| Self Color Bluff | IAMJEFF |
+| Delayed Bluff | IAMJEFF & Fireheart |
+| Sacrifice Discard Chop Move | IAMJEFF & Fireheart |
+| 4 Single Bluff | IAMJEFF |
+| Selfish Chop Move | IAMJEFF |
+| Selfish Bluff | IAMJEFF |
+| Crazy 3/4 Fake Saves | IAMJEFF |
+| Implied Saves | IAMJEFF |
+| Anxiety Play Shift | IAMJEFF |
+| Self Color Ejection | IAMJEFF |
+| Chop Overflowed Positional Clue | IAMJEFF |
+| Locked Hand Save Change | IAMJEFF |
+| Tempo Clue Chop Move Change | IAMJEFF & piper |
+| Occupied Tempo Clue Chop Move | Dr_Kakashi & Kimbifille |
+| Advanced form of Tempo Clue Chop Move Change | Dr_Kakashi & Kimbifille |
+| Dupe Chop Move | Dr_Kakashi & Kimbifille |
+| Chop Overflow Finesse | Dr_Kakashi & Kimbifille |
+| Advanced Negative Information Involved with Double Loaded and Overloaded Play Clues | Kimbifille |
+| Skipped Misplay Chop Move | Dr_Kakashi & Kimbifille |
+| Sarcastic Discard (Changed) | Libster |
+| Sarcastic Discard Shift | Libster |
+| Explosive Play & Explosive Elimination Notes | IAMJEFF |
+
+### Для конкретных вариантов
+
+| Convention Name | Inventor |
+| --- | --- |
+| Flush Save | Unknown |
+| Implied Color Truth | Unknown |
+| Null Color Positional Clue Change | IAMJEFF |
+| Null Positional Double Bluff | IAMJEFF & Fireheart |
+| Dark Chop Move | IAMJEFF |
+| Pink Crazy Bluff/Pull | IAMJEFF |
+| Pink Crazy 5's Chop Move | IAMJEFF |
+| Double Loaded Play Clue | IAMJEFF |
+| Overloaded Play Clue | IAMJEFF |

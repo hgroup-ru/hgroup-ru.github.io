@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/waweiwoowu/hanabi-iamjeff.git",
+  "revision": "cfa4007c6512edfed00ad821cca412a9fd0e6559",
+  "scope": [
+    "2-player/Score_Hunting_Guide.md",
+    "2-player/Chop_Move_Guide.md",
+    "2-player/Selfish_Conventions.md",
+    "2-player/Analysis.md"
+  ],
+  "publication": {
+    "cleared": [
+      "2-player/Score_Hunting_Guide.md",
+      "2-player/Chop_Move_Guide.md",
+      "2-player/Selfish_Conventions.md"
+    ],
+    "pending": [
+      "2-player/Analysis.md"
+    ]
+  }
+}

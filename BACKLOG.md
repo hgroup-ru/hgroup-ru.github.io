@@ -4,11 +4,15 @@
 
 ## Продукт
 
-### Jeff's 2-player Score Hunting Guide — DEFERRED / BLOCKED
+### Jeff's 2-player Score Hunting package — IN PROGRESS
 
-Не считать это текущей задачей. Возвращаться к локализации или републикации только после явного разрешения Jeff/IAMJEFF и отдельного решения о source revision, attribution и допустимом scope.
+Разрешение IAMJEFF на перевод и републикацию `Score Hunting Guide`, `Chop Move Guide`, `Selfish Conventions` и используемых ими изображений получено 23.08.2026. Материалы локализуются как авторский, более агрессивный 2P score-hunting layer рядом с консервативной страницей H-Group «Игра вдвоём», а не как современный нормативный H-Group text.
 
-До этого момента внешний материал остаётся внешним. Не представлять его как официальный H-Group text и не блокировать им остальную работу проекта.
+Закреплённый источник: `waweiwoowu/hanabi-iamjeff` @ `cfa4007c6512edfed00ad821cca412a9fd0e6559`.
+
+`Analysis.md` переводится как candidate, но его публикация остаётся отдельно заблокирована до clarification по правам, поскольку provenance связывает материал с Dr_Kakashi.
+
+До завершения текущего batch остаются technical/release gates: локальные assets без изменения, external-link registry, deterministic CI/build, semantic review и publication gate для `Analysis.md`.
 
 ### Интерактивные многошаговые примеры
 

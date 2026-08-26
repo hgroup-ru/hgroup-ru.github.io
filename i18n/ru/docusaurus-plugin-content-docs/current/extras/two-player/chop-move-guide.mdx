@@ -1,0 +1,204 @@
+---
+title: "Chop Move Guide"
+slug: /two-player/chop-move-guide
+---
+
+> Часть авторских материалов IAMJEFF для [Score Hunting Guide](./score-hunting-guide). Оригинал: [Chop Move Guide](https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Chop_Move_Guide.md). Перевод сохраняет механику source revision `cfa4007c6512edfed00ad821cca412a9fd0e6559`.
+
+- _Chop Moves_ критически важны в игре вдвоём. Умение выполнять их в специальных обстоятельствах — один из ключей к идеальному счёту.
+- Гайд создан [IAMJEFF](https://github.com/waweiwoowu) в мае 2020 года и в основном предназначен для игры вдвоём с conventions из [Score Hunting Guide](./score-hunting-guide).
+
+## Неаварийные Chop Moves
+
+### Order Chop Move
+
+- Если у игрока есть две или больше неизвестных играбельных 1, разрешено сыграть 1 _Out-of-Order_, чтобы подать сигнал _Order Chop Move_.
+  - пропущена 1 карта → _Single Chop Move_;
+  - пропущены 2 карты → _Double Chop Move_;
+  - и так далее.
+
+### Redundant Save Chop Move
+
+- Если у игрока две или больше неизвестных играбельных 1, вместо _Order Chop Move_ он может дать прямую _Save Clue_, затрагивающую **ровно одну** карту на chop партнёра. Это сигнал _Redundant Save Chop Move_.
+- Этот ход использовался редко.
+
+:::note[Исторический контекст]
+В современном общем H-Group эта convention больше не является обычной активной convention, но в специализированном 2P framework IAMJEFF она сохраняется как активная часть системы.
+:::
+
+### 5's Chop Move
+
+- Если у партнёра 5 находится one-away-from-chop, игрок может дать подсказку числом 5 как _5's Chop Move_.
+- Convention отключена в _8 Clues Situation_, включая первый ход.
+
+### Trash Chop Move
+
+- Если у партнёра есть неизвестный мусор off-chop, разрешено дать подсказку, затрагивающую этот мусор, если он выглядит как известный мусор. Это сигнал _Trash Chop Move_ для карт справа от затронутой.
+- В вариантах с Null или других вариантах, сильно зависящих от _Positional Clues_, такой ход всегда трактуется как _Trash Chop Move_, а не как _Positional Clue_.
+
+### Trash Order Chop Move
+
+- Если у игрока две или больше мусорных карт, разрешено сбросить мусор _Out-of-Order_ — справа налево — как сигнал _Trash Order Chop Move_.
+
+### Shout Discard Chop Move
+
+- Аналогично _Scream Discard Chop Move_, если у игрока есть играбельная карта и известный мусор, разрешено сделать _Shout Discard Chop Move_, сбросив известный мусор.
+
+### Tempo Clue Chop Move
+
+- Если у партнёра есть неизвестная играбельная карта, которая уже получала подсказку, в некоторых ситуациях можно дать _Tempo Clue_ как сигнал _Tempo Clue Chop Move_.
+- Подробности: [Advanced form of Tempo Clue Chop Move](./score-hunting-guide#advanced-form-of-tempo-clue-chop-move).
+
+### Dupe Chop Move
+
+- Если у игрока есть неизвестная играбельная карта, обычно 1, он может дать **1-for-1** подсказку с риском _Dupe_ как сигнал _Dupe Chop Move_.
+- Подробности: [Dupe Chop Move](./score-hunting-guide#dupe-chop-move-risk-of-duplication-chop-move).
+
+### Selfish Chop Move
+
+- Если у игрока есть играбельная карта, он может отложить розыгрыш и дать _Selfish Clue_ через собственную руку. В некоторых обстоятельствах это сигнал _Selfish Chop Move_.
+- Подробности: [Selfish Conventions](./selfish-conventions#selfish-chop-move).
+
+### Transfer Chop Move
+
+- Если у партнёра есть неизвестный мусор, который ранее получил подсказку, разрешено дать _Fix Clue_ по мусору как сигнал _Transfer Chop Move_.
+- Так же можно затрагивать _Chop Moved_-карту.
+
+### Dark Chop Move
+
+- Если у партнёра карта цвета типа One-of-Each находится one-away-from-chop, её разрешено «рано» спасти _Color Clue_, которая одновременно сигнализирует _Dark Chop Move_.
+- Этот ход использовался редко из-за существования _Self Color Bluff_.
+
+## Аварийные Chop Moves
+
+- Эти Chop Moves предназначены для аварийных ситуаций. Они рискованны и могут привести к взрыву или сбросу критической карты.
+- _Finesse Chop_ — ситуация, когда chop игрока одновременно находится в его _Finesse Position_.
+- Если у партнёра критическая или чрезвычайно важная карта на _Finesse Chop_, **не блокируйте партнёра** прямой _Save Clue_, если у команды нет достаточного числа жетонов, обычно 5 или больше. Вместо этого «спасите» карту одним из аварийных Chop Moves ниже, чтобы заработать партнёру больше жетонов для Stall и выживания.
+
+### Skipped Discard Chop Move
+
+- Если у игрока нет играбельной карты, разрешено сбросить карту one-away-from-chop как сигнал _Skipped Discard Chop Move_.
+
+### Scream Discard Chop Move
+
+- Если у игрока есть играбельная карта, разрешено сделать _Scream Discard Chop Move_, сбросив собственную chop-карту.
+- В этом 2P framework ход разрешён даже не при нуле жетонов подсказок.
+
+### Whisper Discard Chop Move
+
+- Если у игрока есть известный мусор, но нет играбельной карты, он может сбросить chop вместо известного мусора как _Whisper Discard Chop Move_.
+- В документе H-Group этот ход позже был переименован в _Scream Discard Chop Move_. Здесь старое название сохранено как исторический alias источника.
+
+### Bomb Chop Move
+
+- Если у партнёра нужно спасти две карты, игрок может мисплеить свою chop-карту как _Bomb Chop Move_, чтобы подать сигнал _Double Chop Move_.
+
+:::note[Терминология источника]
+`Bomb Chop Move` сохранён как Jeff-era термин. Он не переименовывается автоматически в современные техники H-Group, потому что простой rename не доказан.
+:::
+
+### Misplay Chop Move
+
+- Если у партнёра нужно спасти три или больше карт, игрок может дать прямую _Play Clue_ по неиграбельной карте, вызывая взрыв. Это сигнал _Misplay Chop Move_ для карт справа от затронутых.
+
+### Sacrifice Discard Chop Move
+
+- Если игрок locked, а у партнёра критическая карта на _Finesse Chop_, разрешено сбросить карту с подсказкой как сигнал _Sacrifice Discard Chop Move_.
+
+## Правила сложения Chop Moves
+
+- _Chop Moves_ можно складывать.
+- Поэтому в подходящих обстоятельствах легко сделать _Double Chop Move_, _Triple Chop Move_ или ещё больше.
+
+### Пример 1: Scream Discard Chop Move
+
+`У игрока есть известная играбельная карта и известный мусор.`
+
+- **Single Chop Move**
+  - сбросить известный мусор: _Scream Discard Chop Move_.
+- **Double Chop Move**
+  - сбросить chop: _Scream Discard Chop Move_ + _Whisper Discard Chop Move_;
+  - мисплеить известный мусор: _Bomb Chop Move_.
+- **Triple Chop Move**
+  - сбросить one-away-from-chop: Scream + Whisper + Skipped Discard;
+  - мисплеить chop: Bomb + Skipped Discard.
+
+### Пример 2: Order Chop Move
+
+`У игрока две неизвестные играбельные 1.`
+
+- **Single Chop Move**
+  - сыграть левую 1 Out-of-Order: _Order Chop Move_.
+- **Double Chop Move**
+  - сбросить chop: Order + Scream Discard.
+- **Triple Chop Move**
+  - сбросить one-away-from-chop: Order + Scream + Skipped Discard;
+  - мисплеить chop: Order + Bomb.
+
+### Пример 3: Trash Order Chop Move
+
+`У игрока две известные мусорные карты.`
+
+- **Single Chop Move**
+  - сбросить правый мусор Out-of-Order: _Trash Order Chop Move_.
+- **Double Chop Move**
+  - сбросить chop: Trash Order + Whisper Discard;
+  - мисплеить мусор в обычном порядке, слева: _Bomb Chop Move_.
+- **Triple Chop Move**
+  - сбросить one-away-from-chop: Trash Order + Whisper + Skipped Discard;
+  - мисплеить правый мусор Out-of-Order: Trash Order + Bomb.
+
+### Пример 4: две известные играбельные дублированные карты
+
+`У игрока две известные играбельные карты-дубликата.`
+
+- **Single Chop Move**
+  - сбросить левый дубликат: _Scream Discard Chop Move_.
+- **Double Chop Move**
+  - сбросить правый дубликат: Scream + Trash Order.
+- **Triple Chop Move**
+  - сбросить chop: Scream + Trash Order + Whisper.
+
+![Пример сложения Chop Moves](https://github.com/waweiwoowu/hanabi/blob/master/images/2-player/chop_move_addition_example_4.png)
+
+- Розыгрыш самой правой синей 4 запускает _Priority Finesse/Bluff_.
+
+## Контекст
+
+- _Chop Moves_ могут выполняться и интерпретироваться через контекст.
+
+### Trash Chop Move со stale 1
+
+- Если игрок получает подсказку числом 1 по карте one-or-more-away-from-chop и контекст достаточно ясно показывает, что она неиграбельна, подсказку следует трактовать как _Trash Chop Move_.
+- Пример:
+  - красная 1 сыграна;
+  - Алиса сбрасывает, затем Боб сбрасывает;
+  - Алиса даёт Бобу подсказку числом 1, затрагивая 1 в слоте 3;
+  - обычно это _Play Clue_ по 1. Но если бы 1 была играбельна, Алиса не стала бы сбрасывать ходом раньше. Значит, по контексту это мусор;
+  - Боб сбрасывает красную 1 из слота 3 и отмечает слоты 4 и 5 как Chop Moved.
+
+### Delayed Chop Move по критической карте
+
+- Если игрок получает Chop Move сразу после того, как партнёр сбросил немусорную карту, и контекст показывает, что раньше chop не был важным, Chop Moved-карта должна быть второй копией только что сброшенной карты.
+- Пример:
+  - Алиса сбрасывает; Боб сбрасывает зелёную 4;
+  - Алиса даёт Бобу подсказку числом 5 как _5 Save_;
+  - Боб даёт Алисе подсказку числом 5 по 5 one-away-from-chop — _5's Chop Move_;
+  - обычно критические карты защищают до сброса. Если бы chop Алисы уже был критическим, Боб сделал бы Chop Move ходом раньше;
+  - раз Боб тогда сбросил, карта на chop Алисы не была важной. Теперь она внезапно стала важной;
+  - поскольку Боб только что сбросил зелёную 4, Chop Moved-карта должна быть второй зелёной 4;
+  - Алиса записывает слот 5 как зелёную 4 и делает другое действие.
+
+### Delayed Chop Move по играбельной карте
+
+- Если игрок получает Chop Move сразу после того, как дал партнёру прямую _Play Clue_, и контекст показывает, что раньше chop не был важным, Chop Moved-карта должна быть играбельной через руку партнёра.
+- Пример:
+  - все 2 сыграны;
+  - Алиса сбрасывает; Боб сбрасывает **мусор**;
+  - Алиса даёт Бобу красную подсказку, затрагивая красную 3 в слоте 1;
+  - Боб даёт Алисе подсказку числом 5 по 5 one-away-from-chop — _5's Chop Move_;
+  - если бы на chop Алисы уже лежала важная карта, Боб сделал бы Chop Move до своего сброса;
+  - раз Боб сбросил мусор, Chop Moved-карта Алисы не может внезапно стать критической. Значит, это должна быть красная 4, которую Боб хочет защитить после красной подсказки;
+  - Алиса записывает слот 5 как красную 4 и делает другое действие;
+  - Боб играет красную 3;
+  - Алиса вслепую играет слот 5 — это красная 4, и она успешно играет.
