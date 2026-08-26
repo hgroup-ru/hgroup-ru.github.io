@@ -1,17 +1,19 @@
 # Local H-Group RU teaching diagram based on IAMJEFF Chop_Move_Guide.md addition example 1 @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
-bigText:
-  text: Example 1
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 0
+  - p: 0
 players:
   - cards:
       - type: b1
         clue: b
-        below: Playable
       - type: x
       - type: r1
         clue: 1
         trash: true
         middleNote: kt
-        below: Known trash
       - type: x
         below: one-away
       - type: x
