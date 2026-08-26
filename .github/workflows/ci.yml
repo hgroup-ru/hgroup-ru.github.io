@@ -4,9 +4,13 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch: {}
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.sha || github.sha }}
   cancel-in-progress: true
 
 permissions:
@@ -32,8 +36,13 @@ jobs:
 
       - name: Detect site build requirement
         id: site-build
+        shell: bash
         run: |
-          required="$(git diff --name-only HEAD^1 HEAD^2 | python3 scripts/site_build_required.py)"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            required="$(git diff --name-only HEAD^1 HEAD^2 | python3 scripts/site_build_required.py)"
+          else
+            required="true"
+          fi
           echo "required=$required" >> "$GITHUB_OUTPUT"
           echo "Site build required: $required"
 
@@ -51,7 +60,7 @@ jobs:
   notify:
     name: Telegram notification
     needs: validate
-    if: ${{ always() && !startsWith(github.head_ref, 'automation/') }}
+    if: ${{ always() && github.event_name == 'pull_request' && !startsWith(github.head_ref, 'automation/') }}
     runs-on: ubuntu-latest
     steps:
       - name: Notify Telegram

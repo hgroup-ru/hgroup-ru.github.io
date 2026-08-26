@@ -36,24 +36,45 @@
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
-    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Selfish_Conventions.md",
+    "url": "https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Number_Mute_Conventions.md",
     "classification": "third-party-resource",
     "decision": "permission-required",
-    "note": "User-facing continuation material. Do not republish automatically; verify license/permission and attribution first."
+    "note": "Number Mute remains outside the current translation scope and is intentionally kept external; URL updated to the pinned current Jeff repository."
   },
   {
-    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
-    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Number_Mute_Conventions.md",
-    "classification": "third-party-resource",
-    "decision": "permission-required",
-    "note": "User-facing continuation material. Do not republish automatically; verify license/permission and attribution first."
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player/analysis.mdx",
+    "url": "https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Analysis.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Pinned original source for the cleared Analysis translation; provenance points to Dr_Kakashi and authorship is not attributed to IAMJEFF."
   },
   {
-    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player.mdx",
-    "url": "https://github.com/iamwhoiamhahaha/hanabi/blob/master/2-player/Score_Hunting_Guide.md",
-    "classification": "third-party-resource",
-    "decision": "blocked-pending-permission",
-    "note": "Explicitly blocked in BACKLOG.md pending Jeff/IAMJEFF permission."
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player/chop-move-guide.mdx",
+    "url": "https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Chop_Move_Guide.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Pinned original source for the authorized IAMJEFF Chop Move Guide translation."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player/score-hunting-guide.mdx",
+    "url": "https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Score_Hunting_Guide.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Pinned original source for the authorized IAMJEFF Score Hunting Guide translation."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player/score-hunting-guide.mdx",
+    "url": "https://github.com/waweiwoowu/hanabi-competition/blob/master/Clue_Starved_Strategies.md",
+    "classification": "third-party-reference",
+    "decision": "keep-external",
+    "note": "Competition-specific Clue Starved strategy document linked by the original Score Hunting Guide; not part of the localized package."
+  },
+  {
+    "source": "i18n/ru/docusaurus-plugin-content-docs/current/extras/two-player/selfish-conventions.mdx",
+    "url": "https://github.com/waweiwoowu/hanabi-iamjeff/blob/cfa4007c6512edfed00ad821cca412a9fd0e6559/2-player/Selfish_Conventions.md",
+    "classification": "source-attribution",
+    "decision": "keep-external",
+    "note": "Pinned original source for the authorized IAMJEFF Selfish Conventions translation."
   },
   {
     "source": "i18n/ru/docusaurus-plugin-content-docs/current/learning-path.mdx",

@@ -10,7 +10,20 @@ if (!isArray(mainSidebar)) {
   );
 }
 
-const challengeQuestionsIndex = mainSidebar.findIndex(
+const twoPlayerIndex = mainSidebar.indexOf("extras/two-player");
+if (twoPlayerIndex === -1) {
+  throw new TypeError(
+    'Failed to find "extras/two-player" in sidebars-base.ts.',
+  );
+}
+
+const mainSidebarWithScoreHunting = [
+  ...mainSidebar.slice(0, twoPlayerIndex + 1),
+  "extras/two-player/score-hunting-guide",
+  ...mainSidebar.slice(twoPlayerIndex + 1),
+];
+
+const challengeQuestionsIndex = mainSidebarWithScoreHunting.findIndex(
   (element) => isObject(element) && "Challenge Questions" in element,
 );
 if (challengeQuestionsIndex === -1) {
@@ -19,7 +32,7 @@ if (challengeQuestionsIndex === -1) {
   );
 }
 
-const challengeQuestions = mainSidebar[challengeQuestionsIndex];
+const challengeQuestions = mainSidebarWithScoreHunting[challengeQuestionsIndex];
 if (!isObject(challengeQuestions)) {
   throw new TypeError(
     'Failed to parse "Challenge Questions" in sidebars-base.ts.',
@@ -36,7 +49,7 @@ if (!isArray(challengeQuestionItems)) {
 
 const sidebars = {
   ...baseSidebars,
-  mainSidebar: mainSidebar.map((element, index) =>
+  mainSidebar: mainSidebarWithScoreHunting.map((element, index) =>
     index === challengeQuestionsIndex
       ? {
           "Challenge Questions": [
