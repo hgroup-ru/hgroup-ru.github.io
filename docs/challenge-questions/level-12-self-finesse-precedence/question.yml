@@ -21,15 +21,14 @@ players:
   - name: Bob
     cards:
       - type: x
-      - type: 3
+      - type: rygpb3
         clue: 3
       - type: y4
         border: false
       - type: b4
         border: false
-      - type: 3
+      - type: rybp3
         clue: 3
-        crossedOut: g
   - name: Cathy
     cards:
       - type: r4
