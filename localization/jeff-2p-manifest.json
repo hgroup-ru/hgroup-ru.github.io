@@ -1,5 +1,13 @@
 {
   "source_revision": "cfa4007c6512edfed00ad821cca412a9fd0e6559",
+  "lifecycle": {
+    "stage": "clean-baseline",
+    "accepted_at": "2026-08-27",
+    "content_source_commit": "b4e18c396cb524ae0a6a50c709e6d312d1fc30b4",
+    "semantic_acceptance": "user-approved",
+    "visual_acceptance": "user-approved-on-production",
+    "technical_acceptance": "ci-and-pages-pass"
+  },
   "editorial_policy": {
     "modern_hgroup_links": true,
     "modern_hgroup_name_when_mechanically_equivalent": true,
@@ -74,10 +82,22 @@
       "delayed-playable-chop-move-2.yml",
       "delayed-playable-chop-move-3.yml"
     ],
+    "Score_Hunting_Guide.md": [
+      "anxiety-play-shift-1.yml",
+      "anxiety-play-shift-2.yml",
+      "anxiety-play-shift-3.yml",
+      "anxiety-play-shift-4.yml",
+      "anxiety-play-shift-5.yml",
+      "explosive-play.yml",
+      "occupied-tempo-chop-move.yml",
+      "implied-save-1.yml",
+      "implied-save-2.yml"
+    ],
     "notes": [
       "No local diagram is added for Trash Chop Move with a stale 1; the page links to the Level 12 Stale 1's Clue material instead.",
       "Addition Example 4 keeps IAMJEFF's original PNG rather than reconstructing it from prose.",
       "Delayed Chop Move examples are rendered as separate sequential teaching states so each move remains legible.",
+      "Score Hunting teaching diagrams were manually reviewed on production after CI and Pages deployment, including the five-state Anxiety Play Shift storyboard.",
       "Analysis keeps its existing source PNGs and receives no new local diagrams."
     ]
   },
