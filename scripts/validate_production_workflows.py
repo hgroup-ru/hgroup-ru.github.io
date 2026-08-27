@@ -60,6 +60,18 @@ def main() -> None:
     ):
         require(release, marker, "release.yml")
 
+    # Regression guard for the prod-20260827-35 preparation failure. With
+    # pipefail, `normalize_notes | grep -q .` can return non-zero for long notes:
+    # grep exits on the first match and the upstream awk receives SIGPIPE.
+    # The safe check consumes normalize_notes through command substitution.
+    require(
+        release,
+        'if [ -z "$(normalize_notes < "$notes_file")" ]; then',
+        "release.yml",
+    )
+    if 'normalize_notes < "$notes_file" | grep -q .' in release:
+        fail("release.yml reintroduced the pipefail-unsafe long release-notes check")
+
     for marker in (
         "actions/deploy-pages@",
         "actions/upload-pages-artifact@",
