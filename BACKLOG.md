@@ -68,6 +68,12 @@
 
 ## Сопровождение upstream
 
+### Завершить pin sync до `7ec4381`
+
+Перевод содержательного delta `1ef83242… → 7ec4381a…` уже выполнен для Level 10 и Special-Fives. Глобальный [`upstream.json`](upstream.json) пока остаётся на старой revision, потому что release gate требует согласовать `source_revision` у Local CQ audit evidence.
+
+Перед сдвигом pin доказать, что официальный upstream в диапазоне не менял уровни 11–25, и только после этого оформить carry-forward существующих audit records без повторной ручной вычитки и без ложного утверждения, что она была выполнена заново.
+
 ### Upstream drift check перед крупными продуктовыми изменениями
 
 Перед следующим большим product batch запустить ручной [`Maintenance Audit`](.github/workflows/maintenance-audit.yml) и проверить, совпадает ли закреплённая revision из [`upstream.json`](upstream.json) с текущим official upstream.
