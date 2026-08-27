@@ -8,6 +8,7 @@ import SelfColorBluff3 from "./special-bluffs/self-color-bluff-3.yml";
 import SelfColorDoubleBluff from "./special-bluffs/self-color-double-bluff.yml";
 import KnownPriorityBluff from "./special-bluffs/known-priority-bluff.yml";
 import PestilentTripleBluff from "./special-bluffs/pestilent-triple-bluff.yml";
+import PassBluff from "./special-bluffs/pass-bluff.yml";
 
 ### 3 Bluff {/* #the-3-bluff */}
 
@@ -57,7 +58,7 @@ import PestilentTripleBluff from "./special-bluffs/pestilent-triple-bluff.yml";
   - Алиса даёт Бобу красную подсказку, «заполняя» карту с подсказкой числом 4. Теперь глобально известно, что это красная 4.
   - Это обязательно _Play Clue_ на красную 4, потому что Алиса не находится в Stalling Situation. Если бы Алиса была в Stalling Situation, ей разрешалось бы дать «fill-in» подсказку без какого-либо дополнительного смысла.
   - Боб не видит красных карт в руках других игроков, поэтому это не может быть _Prompt_ или _Reverse Finesse_.
-  - У Боба никак не может быть красной 3 на _Finesse Position_, потому что у этой карты есть негативная информация по красному цвету.
+  - У Боба никак не может быть красная 3 на _Finesse Position_, потому что у этой карты есть негативная информация по красному цвету.
   - Значит, Боб знает, что это должен быть _Self Color Bluff_, и вслепую играет свою _Finesse Position_ как _Known Bluff_ на любую играбельную некрасную карту. Это синяя 1, и её удаётся успешно разыграть.
 
 <SelfColorBluff2 />
@@ -78,7 +79,7 @@ import PestilentTripleBluff from "./special-bluffs/pestilent-triple-bluff.yml";
   - Это обязательно _Play Clue_ на красную карту.
   - У Боба на красной карте есть негативная подсказка по числу 3, поэтому он знает, что это не может быть красная 3 — следующая играбельная красная карта.
   - Боб не видит красных карт в руках других игроков, поэтому это не может быть _Prompt_ или _Reverse Finesse_.
-  - У Боба никак не может быть красной 3 на _Finesse Position_, потому что теперь у этой карты есть негативная информация по красному цвету.
+  - У Боба никак не может быть красная 3 на _Finesse Position_, потому что теперь у этой карты есть негативная информация по красному цвету.
   - Значит, Боб знает, что это должен быть _Self Color Bluff_, и вслепую играет свою _Finesse Position_ как _Known Bluff_ на любую играбельную некрасную карту. Это синяя 1, и её удаётся успешно разыграть.
   - Боб помечает красную карту как красную 4, потому что это красная карта, находящаяся _one-away-from-playable_.
 
@@ -94,7 +95,7 @@ import PestilentTripleBluff from "./special-bluffs/pestilent-triple-bluff.yml";
   - Это обязательно _Play Clue_ на красную карту, потому что Алиса не находится в Stalling Situation. Если бы Алиса была в Stalling Situation, ей разрешалось бы дать «fill-in» подсказку без какого-либо дополнительного смысла.
   - У Боба на красной карте есть негативная подсказка по числу 3, поэтому он знает, что это не может быть красная 3 — следующая играбельная красная карта.
   - Боб не видит красных карт в руках других игроков, поэтому это не может быть _Prompt_ или _Reverse Finesse_.
-  - У Боба никак не может быть красной 3 на _Finesse Position_, потому что теперь у этой карты есть негативная информация по красному цвету.
+  - У Боба никак не может быть красная 3 на _Finesse Position_, потому что теперь у этой карты есть негативная информация по красному цвету.
   - Значит, Боб знает, что это должен быть _Self Color Bluff_, и вслепую играет свою _Finesse Position_ как _Known Bluff_ на любую играбельную некрасную карту. Это синяя 1, и её удаётся успешно разыграть.
   - Боб помечает красную карту как красную 4, потому что это красная карта, находящаяся _one-away-from-playable_.
   - Кэти видит, что Алиса сделала _Self Color Bluff_ на Боба. Но Кэти видит, что красная карта в руке Боба — красная 5, которая находится _two-away-from-playable_. Значит, Алиса имеет в виду _Self Color Double Bluff_, а не одиночный _Bluff_.
@@ -162,6 +163,10 @@ import PestilentTripleBluff from "./special-bluffs/pestilent-triple-bluff.yml";
 - Игроку, выполняющему _Pass Bluff_, чрезвычайно опасно сбрасывать карту на chop: остальные игроки ожидают, что он сыграет карту вслепую. Поэтому _Pass Bluff_ следует делать, давая несвязанную подсказку или сбрасывая известный мусор.
 - Важно: игроку запрещено выполнять _Pass Bluff_, если на нём самом может быть сделан _Bluff_. Иначе первый _Bluff_ не разрешится немедленно и нарушит [_Lie Principle_](/level-11#lie-principle).
   - По той же причине запрещено «передавать» следующему игроку _Ejection_, _Discharge_ и т. п.
+
+> **Локальная учебная диаграмма H-Group RU.** Это не официальный upstream-расклад: storyboard изолирует базовый _Pass Bluff_ — настоящий _Finesse_ на Боба, его намеренный pass, бесплатный blind-play Кэти и последующее выполнение исходного _Finesse_. _Double/Triple Pass Bluff_ повторяет тот же паттерн на следующих кругах.
+
+<PassBluff />
 
 ### Double/Triple Pass Bluff {/* #the-doubletriple-pass-bluff */}
 
