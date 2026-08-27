@@ -58,6 +58,98 @@ jobs:
         if: ${{ always() && steps.setup.outcome == 'success' && steps.site-build.outputs.required == 'true' && !startsWith(github.head_ref, 'automation/') }}
         run: npm run build:ru
 
+  visual-candidate:
+    name: visual-candidate
+    needs: validate
+    if: ${{ github.event_name == 'pull_request' && github.head_ref == 'feat/extras-teaching-diagrams-20260827' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/workflows/setup
+      - name: Build RU site
+        run: npm run build:ru
+      - name: Install Chromium harness
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve site
+        run: |
+          python3 -m http.server 4173 --directory build > /tmp/hgroup-serve.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/hgroup-serve.log
+          exit 1
+      - name: Browser visual QA
+        run: |
+          mkdir -p visual-qa
+          node --input-type=module <<'JS'
+          import { chromium } from 'playwright';
+
+          const browser = await chromium.launch({ headless: true });
+          const cases = [
+            ['ejections-bcme', '/extras/ejections#the-bad-chop-move-ejection-bcme', 'Bad Chop Move Ejection'],
+            ['special-bluffs-pass', '/extras/special-bluffs#the-pass-bluff', 'Pass Bluff'],
+            ['pushes-pulls-trash-pull', '/extras/pushes-pulls#interaction-between-the-trash-pull-and-trash-double-ignition', 'Interaction Between the Trash Pull'],
+            ['play-clues-continuation', '/extras/play-clues#the-continuation-clue-touching-both-inside-and-outside-a-layer', 'Continuation Clue'],
+          ];
+          const errors = [];
+
+          for (const theme of ['light', 'dark']) {
+            const page = await browser.newPage({ viewport: { width: 1600, height: 1200 }, colorScheme: theme });
+            page.on('pageerror', error => errors.push(`${theme}: ${String(error)}`));
+            page.on('console', msg => {
+              if (msg.type() === 'error') errors.push(`${theme}: ${msg.text()}`);
+            });
+
+            for (const [name, path, headingText] of cases) {
+              await page.goto(`http://127.0.0.1:4173${path}`, { waitUntil: 'networkidle' });
+              await page.evaluate(t => {
+                localStorage.setItem('theme', t);
+                document.documentElement.setAttribute('data-theme', t);
+              }, theme);
+              await page.reload({ waitUntil: 'networkidle' });
+              const heading = page.locator('h3').filter({ hasText: headingText }).first();
+              await heading.waitFor({ state: 'visible' });
+              await heading.scrollIntoViewIfNeeded();
+              await page.evaluate(() => window.scrollBy(0, -110));
+              await page.waitForTimeout(300);
+
+              const state = await page.evaluate((text) => {
+                const headings = [...document.querySelectorAll('h3')];
+                const heading = headings.find(h => h.textContent?.includes(text));
+                if (!heading) return { svg: 0, images: 0 };
+                let node = heading.nextElementSibling;
+                let svg = 0;
+                let images = 0;
+                while (node && node.tagName !== 'H3') {
+                  svg += node.querySelectorAll?.('svg').length ?? 0;
+                  images += node.querySelectorAll?.('img').length ?? 0;
+                  node = node.nextElementSibling;
+                }
+                return { svg, images };
+              }, headingText);
+              if (state.svg === 0 && state.images === 0) {
+                throw new Error(`${name}: no rendered diagram media found in section`);
+              }
+              await page.screenshot({ path: `visual-qa/${name}-${theme}.png`, fullPage: false });
+            }
+            await page.close();
+          }
+
+          await browser.close();
+          if (errors.length > 0) {
+            console.error(errors.join('\n'));
+            process.exit(1);
+          }
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extras-teaching-diagrams-visual-qa
+          path: visual-qa/*.png
+          if-no-files-found: error
+
   notify:
     name: Telegram notification
     needs: validate
