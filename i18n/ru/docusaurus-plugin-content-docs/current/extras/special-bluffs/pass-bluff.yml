@@ -1,0 +1,63 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 0
+  - p: 1
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+        above: Red 2
+        below: True Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+        above: Blue 1
+        below: Pass target
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Donald
+    cards:
+      - type: r3
+        clue: r
+        below: Play
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - text: "Алиса Finesse'ит красную 3 Дональда через красную 2 Боба. Боб видит настоящий Finesse, но вместо blind-play даёт несвязанную подсказку — он делает Pass Bluff."
+  - name: Cathy
+    cards:
+      - type: x
+        above: Blue 1
+        below: Blind-play
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - text: "Кэти решает, что Finesse был направлен на неё, и бесплатно играет несвязанную синюю 1. Она не продолжает копать Layered Finesse."
+  - name: Bob
+    cards:
+      - type: x
+        above: Red 2
+        below: Finesse
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - text: "Когда очередь возвращается к Бобу, он выполняет настоящий Finesse и играет красную 2."
