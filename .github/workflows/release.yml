@@ -50,7 +50,7 @@ jobs:
           }
 
           extract_notes CHANGELOG.md > "$notes_file"
-          if ! normalize_notes < "$notes_file" | grep -q .; then
+          if [ -z "$(normalize_notes < "$notes_file")" ]; then
             echo "CHANGELOG.md has no release notes in 'Следующий релиз'."
             exit 1
           fi
