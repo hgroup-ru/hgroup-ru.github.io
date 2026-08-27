@@ -1,0 +1,53 @@
+stacks:
+  - r: 0
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: b
+        clue: b
+        above: Blue 2
+        below: Inside layer
+      - type: x
+        above: Red 1
+        below: Inside layer
+      - type: x
+      - type: b
+        clue: b
+        above: Blue 3
+        below: Outside layer
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - text: "Новая синяя подсказка одновременно затрагивает карту внутри текущего Layered Finesse и карту вне слоя. По Information Lock Principle Боб трактует её как Continuation Clue на внешнюю карту."
+  - name: Bob
+    cards:
+      - type: b
+        above: Blue 2
+        below: Continue blind-play
+      - type: x
+        above: Red 1
+        below: Layer
+      - type: x
+      - type: b
+        middleNote: b3
+        above: Blue 3
+        below: New clue
+      - type: x
+  - text: "Боб продолжает разыгрывать слой. Чтобы реально остановить слой Fix Clue, подсказка должна затрагивать только карты внутри него."
