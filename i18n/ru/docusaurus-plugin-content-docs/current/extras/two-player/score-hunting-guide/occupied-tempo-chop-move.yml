@@ -6,7 +6,7 @@ stacks:
   - b: 2
   - p: 2
 bigText:
-  text: Occupied Tempo
+  text: Occupied
 players:
   - name: Alice
     clueGiver: true
@@ -20,11 +20,11 @@ players:
       - type: x
   - name: Bob
     cards:
+      - type: x
       - type: r3
         clue: r
         middleNote: Tempo
         below: Play
-      - type: x
       - type: x
       - type: x
       - type: x
