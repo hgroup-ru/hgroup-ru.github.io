@@ -5,8 +5,6 @@ stacks:
   - g: 1
   - b: 1
   - p: 1
-discarded:
-  - x
 bigText:
   text: 2. Bob discards
 players:
