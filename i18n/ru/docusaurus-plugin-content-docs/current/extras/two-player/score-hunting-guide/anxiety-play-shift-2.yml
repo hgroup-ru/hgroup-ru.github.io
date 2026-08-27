@@ -1,17 +1,19 @@
 # Local H-Group RU teaching diagram based on IAMJEFF Score_Hunting_Guide.md Anxiety Play Shift example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
 stacks:
-  - r: 2
+  - r: 1
   - y: 1
   - g: 1
   - b: 1
   - p: 1
 bigText:
-  text: 2. r2 played
+  text: 2. Bob discards
 players:
   - name: Alice
+    clueGiver: true
     cards:
       - type: g3
         cm: true
+        middleNote: "!play?"
       - type: g5
         border: true
       - type: r3
@@ -22,10 +24,10 @@ players:
         border: true
   - name: Bob
     cards:
+      - type: r2
+        border: true
       - type: x
       - type: 5
-        border: true
-        below: Stall
-      - type: x
+        border: false
       - type: x
       - type: x
