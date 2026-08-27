@@ -5,6 +5,7 @@ title: Ejections
 import RankChoice from "./ejections/rank-choice.yml";
 import BadTrashFinesseEjection from "./ejections/bad-trash-finesse-ejection.yml";
 import TrashPushEjection from "./ejections/trash-push-ejection.yml";
+import BadChopMoveEjection from "./ejections/bad-chop-move-ejection.yml";
 
 - _Ejection_ — это blind-play, при котором игрок разыгрывает карту из своей _Second Finesse Position_.
   - Например, если на руке игрока вообще нет подсказок, его _Second Finesse Position_ — слот 2.
@@ -39,6 +40,10 @@ import TrashPushEjection from "./ejections/trash-push-ejection.yml";
   - В общем случае подсказки, связанные с _Chop Move_, отключаются, как только больше не остаётся карт, которые можно пометить как _Chop Moved_. Конкретно речь идёт о _one-away-from-playable_ картах, которым нельзя дать прямую _Play Clue_ или _Save Clue_. Поэтому, если таких карт не осталось, _Bad Chop Move Ejection_ превращается во что-то другое, например в одну из форм _Double Ignition_.
   - Иногда игроки используют _Chop Move_ для другой копии уже подсказанной карты. Это бывает полезно для распределения карт, чтобы в последний круг партии у каждого была карта для розыгрыша. Поэтому _Bad Chop Move Ejection_ может сработать только тогда, когда помечаемая как _Chop Moved_ карта является копией уже сыгранной карты.
   - Помните: в _End-Game_ игрок, который даёт подсказку, похожую на _Bad Chop Move Ejection_, может на самом деле просто делать _Stall_.
+
+> **Локальная учебная диаграмма H-Group RU.** Это не официальный upstream-расклад: схема использует простой _Trash Chop Move_-подобный сигнал, при котором единственная карта, которую пришлось бы пометить _Chop Moved_, уже является сыгранным мусором. Это изолирует именно причину перехода к _Bad Chop Move Ejection_.
+
+<BadChopMoveEjection />
 
 ### Bad Trash Finesse Ejection / Bad Trash Bluff Ejection {/* #the-bad-trash-finesse-ejection--the-bad-trash-bluff-ejection */}
 

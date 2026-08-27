@@ -49,23 +49,6 @@
 
 Текущее QA-покрытие и его границы фиксируются в [`localization/QA_COVERAGE.md`](localization/QA_COVERAGE.md). Нормативный Local CQ release contract — [`localization/LOCAL_CQ_AUTONOMOUS_WORKFLOW.md`](localization/LOCAL_CQ_AUTONOMOUS_WORKFLOW.md).
 
-## Локальные учебные диаграммы
-
-### Расширить coverage в Extras и Variant-Specific
-
-Автоматически пройти Extras и подходящие Variant-Specific материалы, найти длинные или многошаговые примеры без достаточной визуализации и составить ranked candidate list.
-
-Для сильных кандидатов подготовить локальные teaching YML/diagrams, прогнать schema/render/semantic QA и затем показать человеку готовую галерею для содержательной приёмки.
-
-Не добавлять авторские схемы только ради количества: каждая должна объяснять реальную сложную структуру примера лучше текста.
-
-Текущие известные кандидаты:
-
-- [`extras/ejections`](i18n/ru/docusaurus-plugin-content-docs/current/extras/ejections.mdx) — Bad Chop Move Ejection;
-- [`extras/special-bluffs`](i18n/ru/docusaurus-plugin-content-docs/current/extras/special-bluffs.mdx) — Pass / Double Pass / Triple Pass Bluff;
-- [`extras/pushes-pulls`](i18n/ru/docusaurus-plugin-content-docs/current/extras/pushes-pulls.mdx) — Trash Pull и взаимодействие с Trash Double Ignition;
-- [`extras/play-clues`](i18n/ru/docusaurus-plugin-content-docs/current/extras/play-clues.mdx) — Continuation Clue внутри/снаружи Layered Finesse.
-
 ## Сопровождение upstream
 
 ### Завершить pin sync до `7ec4381`
