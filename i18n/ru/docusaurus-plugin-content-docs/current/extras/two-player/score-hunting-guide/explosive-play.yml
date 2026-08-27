@@ -19,12 +19,12 @@ players:
       - type: x
   - name: Bob
     cards:
-      - type: r2
-        border: false
-        middleNote: r2
-      - type: b2
-        border: false
-        middleNote: b2
       - type: x
+        middleNote: rb2?
       - type: x
+        middleNote: rb2?
+      - type: x
+        middleNote: rb2?
+      - type: x
+        middleNote: rb2?
       - type: x
