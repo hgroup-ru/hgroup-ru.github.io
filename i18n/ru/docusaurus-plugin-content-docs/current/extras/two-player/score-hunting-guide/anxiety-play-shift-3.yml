@@ -9,7 +9,6 @@ bigText:
   text: "3. Anxiety shifts"
 players:
   - name: Alice
-    clueGiver: true
     cards:
       - type: g3
         cm: true
