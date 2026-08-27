@@ -6,16 +6,14 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: 3. Anxiety shifts
+  text: 3. Shift
 players:
   - name: Alice
     cards:
       - type: g3
         cm: true
-        below: not playable
       - type: g5
         border: true
-        below: "5"
       - type: r3
         cm: true
         below: Play
