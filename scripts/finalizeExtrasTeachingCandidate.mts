@@ -1,11 +1,12 @@
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 
 const specialPath =
   "i18n/ru/docusaurus-plugin-content-docs/current/extras/special-bluffs.mdx";
 let special = fs.readFileSync(specialPath, "utf8");
 const wrong = "У Боба никак не может быть красная 3 на _Finesse Position_";
 const right = "У Боба никак не может быть красной 3 на _Finesse Position_";
-if ((special.match(new RegExp(wrong, "g")) ?? []).length !== 3) {
+if (special.split(wrong).length - 1 !== 3) {
   throw new Error("Unexpected Self Color Bluff carry-over diff");
 }
 special = special.replaceAll(wrong, right);
@@ -52,3 +53,17 @@ if (start === -1 || end === -1 || end <= start) {
 }
 backlog = `${backlog.slice(0, start)}\n${backlog.slice(end)}`;
 fs.writeFileSync(backlogPath, backlog);
+
+const packagePath = "package.json";
+let packageText = fs.readFileSync(packagePath, "utf8");
+const temporaryFormat =
+  "tsx --tsconfig ./scripts/tsconfig.json ./scripts/finalizeExtrasTeachingCandidate.mts && npm run generate-product-data && eslint --fix . && prettier --write .";
+const canonicalFormat =
+  "npm run generate-product-data && eslint --fix . && prettier --write .";
+if (!packageText.includes(temporaryFormat)) {
+  throw new Error("Temporary format hook not found");
+}
+packageText = packageText.replace(temporaryFormat, canonicalFormat);
+fs.writeFileSync(packagePath, packageText);
+
+fs.rmSync(fileURLToPath(import.meta.url));
