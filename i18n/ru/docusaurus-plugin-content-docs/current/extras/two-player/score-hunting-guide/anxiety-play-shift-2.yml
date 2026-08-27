@@ -21,7 +21,6 @@ players:
       - type: b5
         border: true
   - name: Bob
-    clueGiver: true
     cards:
       - type: x
       - type: 5
