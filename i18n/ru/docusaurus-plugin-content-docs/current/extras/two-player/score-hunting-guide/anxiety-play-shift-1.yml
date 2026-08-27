@@ -6,7 +6,7 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: 1. Bob discards
+  text: 1. Red clue
 players:
   - name: Alice
     clueGiver: true
@@ -25,7 +25,6 @@ players:
     cards:
       - type: r2
         clue: r
-        below: Do not play
       - type: x
       - type: x
       - type: x
