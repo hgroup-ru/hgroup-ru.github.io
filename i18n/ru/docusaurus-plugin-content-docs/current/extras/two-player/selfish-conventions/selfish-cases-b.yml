@@ -50,6 +50,6 @@ players:
       - type: b
         clue: b
         middleNote: b2
-        below: Inversion
+        below: Play / Inversion
       - type: x
       - type: x
