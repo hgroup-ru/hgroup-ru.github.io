@@ -13,6 +13,7 @@
 - В Variant-Specific и Extras добавлены четыре локальные учебные диаграммы H-Group RU для сложных примеров без official YML: Transparent Double Bluff, 5 Odd Ejection, U-Turn Finesse и Trash Push Ejection; локальные схемы явно отделены от официальных upstream-диаграмм.
 - Опубликован русский **Score Hunting Guide** IAMJEFF для партий вдвоём — отдельный агрессивный подход к score hunting, ориентированный на максимальный счёт даже ценой заметно большего риска проиграть партию из-за сброса критических карт.
 - Вместе с основным гайдом опубликованы три companion-документа: **Chop Move Guide**, **Selfish Conventions** и **Analysis**. Они связаны с основной страницей и читаются как единый пакет, а не как четыре независимых верхнеуровневых раздела.
+- Для ключевых многошаговых примеров Jeff package добавлены локальные teaching YML: Selfish Chop Move / Bluff / Focus Inversion и Cases A/B, Chop Move additions и delayed moves, а также Score Hunting-примеры Anxiety Play Shift, Explosive Play, Occupied Tempo Clue Chop Move и Implied Saves. Эти схемы построены по закреплённому Jeff-era тексту и не выдаются за upstream YML.
 - В пакет включены все восемь используемых исходных PNG-иллюстраций. Они скопированы локально в `static/img/jeff-2p/` без изменения байтов и используются страницами через локальные `/img/jeff-2p/...` пути вместо внешних GitHub image URL.
 - Для `Analysis` сохранено отдельное происхождение Dr_Kakashi: документ не приписывается IAMJEFF, а неполные места исходника сопровождаются редакторскими примечаниями вместо придуманного продолжения.
 
@@ -23,6 +24,12 @@
 - Исторические conventions IAMJEFF не «осовременивались» молча. `Selfish Focus Inversion` и `Redundant Save Chop Move` сохранены активными внутри Jeff framework; advanced form of `Tempo Clue Chop Move` не смешивается с удалённой `Tempo Clue Chop Move Change (Jeff)`; `Bomb Chop Move` не переименован автоматически в современный `Bomb Double Ignition`.
 - В `Analysis` сохранена исходная Priority-модель даже там, где она расходится с включённым в Score Hunting framework `Priority Change`; расхождение отмечено явно. Отсутствующий в источнике `End Game Analysis` и незавершённый Priority example не дописывались за автора.
 - При semantic review исправлена смысловая инверсия в Null-условии: если ход выглядит как `Trash Chop Move`, он не считается `Positional Clue`, кроме случая, когда контекст достаточно ясно показывает, что это не `Trash Chop Move`.
+
+### Проверено
+
+- Все четыре документа Jeff 2P package прошли содержательную вычитку относительно закреплённого источника; тексты и ключевые teaching diagrams приняты пользователем.
+- Финальные версии teaching diagrams проверены на опубликованном production-сайте после успешных `validate`, RU build и GitHub Pages deploy; отдельно принят пятикадровый storyboard Anxiety Play Shift с последовательным состоянием рук и знания игроков.
+- Jeff 2P package зафиксирован как `clean-baseline`; дальнейшие изменения считаются отдельными улучшениями или исправлениями, а не продолжением незавершённого translation batch.
 
 ### Источник и атрибуция
 
