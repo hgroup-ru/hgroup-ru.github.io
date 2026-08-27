@@ -25,4 +25,3 @@ players:
       - type: x
       - type: b3
         border: false
-        middleNote: b3
