@@ -35,5 +35,5 @@ players:
         border: false
         trash: true
         above: Would be Chop Moved
-        below: Already played
-  - text: "Единственная карта, которую такой ход обычно сделал бы Chop Moved, уже является сыгранным мусором. Поэтому Боб читает ход как Bad Chop Move Ejection и играет Second Finesse Position."
+        below: Trash duplicate
+  - text: "Единственная карта, которую такой ход обычно сделал бы Chop Moved, является копией уже сыгранной карты и потому мусором. Поэтому Боб читает ход как Bad Chop Move Ejection и играет Second Finesse Position."

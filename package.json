@@ -11,7 +11,7 @@
     "clear": "docusaurus clear",
     "compile-plugin": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/compilePlugin.mts",
     "docusaurus": "docusaurus",
-    "format": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/finalizeExtrasTeachingCandidate.mts && npm run generate-product-data && eslint --fix . && prettier --write .",
+    "format": "npm run generate-product-data && eslint --fix . && prettier --write .",
     "generate-product-data": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/generateProductData.mts",
     "lint": "npm run lint:core && npm run audit:local-cq && npm run audit:local-cq-states && npm run audit:local-cq-evidence && npm run audit:external-links",
     "lint:core": "npm run generate-product-data && tsx --tsconfig ./scripts/tsconfig.json ./scripts/lint.mts",
