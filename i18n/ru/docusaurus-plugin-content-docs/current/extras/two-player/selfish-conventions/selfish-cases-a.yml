@@ -37,6 +37,7 @@ players:
       - type: b
         clue: b
         middleNote: b2
+        below: Play
       - type: x
         cm: true
         middleNote: cm
@@ -48,6 +49,7 @@ players:
       - type: b
         clue: b
         middleNote: b2
+        below: Play
       - type: x
         cm: true
         middleNote: cm
@@ -62,6 +64,7 @@ players:
       - type: b
         clue: b
         middleNote: b2
+        below: Play
       - type: x
       - type: x
       - type: x
