@@ -6,7 +6,7 @@ stacks:
   - b: 1
   - p: 1
 bigText:
-  text: "2. r2 is played"
+  text: 2. r2 is played
 players:
   - name: Alice
     cards:
