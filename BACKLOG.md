@@ -68,18 +68,11 @@
 
 ## Сопровождение upstream
 
-### Следующий upstream localization batch: Level 10 + Special-Fives
+### Upstream drift check перед крупными продуктовыми изменениями
 
-Drift audit от закреплённой revision `1ef83242d71c62f2db6422f09e83abddba9611dd` до official upstream `7ec4381a6a01803cafa73bf925be3daec4c14d02` нашёл 4 коммита и только 2 затронутые страницы.
+Перед следующим большим product batch запустить ручной [`Maintenance Audit`](.github/workflows/maintenance-audit.yml) и проверить, совпадает ли закреплённая revision из [`upstream.json`](upstream.json) с текущим official upstream.
 
-Следующий batch:
-
-- [`docs/level-10.mdx`](i18n/ru/docusaurus-plugin-content-docs/current/level-10.mdx) — добавить новый **Directness Principle**: при одинаковом результате предпочитать менее сложную линию; «одинаковый результат» включает не только сыгранные карты, но и одинаковые superpositions на всех подсказанных картах;
-- [`docs/variant-specific/special-fives.mdx`](i18n/ru/docusaurus-plugin-content-docs/current/variant-specific/special-fives.mdx) — синхронизировать **Color Promise / Color Play Clue Lie**: исключений теперь явно два, а «неправильный» цвет может получать дополнительные карты только в той же руке и той же подсказкой.
-
-Порядок работы: перевести оба изменения source-faithfully, выполнить semantic/progression review, прогнать `validate` и RU build, затем только после принятия обновить [`upstream.json`](upstream.json) до `7ec4381a6a01803cafa73bf925be3daec4c14d02` и синхронизировать maintainer state.
-
-До завершения batch текущий upstream pin не двигать: audit зафиксирован, но перевод ещё не интегрирован.
+Не обновлять pin автоматически только ради свежести. Если drift не затрагивает наш scope или не даёт полезных изменений, оставить текущую revision.
 
 ## Кандидаты для исходного проекта
 
