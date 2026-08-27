@@ -2,6 +2,8 @@
 title: Play Clues
 ---
 
+import ContinuationClue from "./play-clues/continuation-clue.yml";
+
 ### The Prompt
 
 - _Prompt_ описан на [1-м уровне](/level-1#the-prompt).
@@ -35,3 +37,7 @@ title: Play Clues
 - Иногда игрок, который разыгрывает карты вслепую в рамках _Layered Finesse_, получает ещё одну подсказку, затрагивающую карты **и внутри слоя, и вне его**.
 - По умолчанию игрок должен считать, что это ещё одна обычная _Play Clue_ или _Save Clue_ по карте вне слоя, и **продолжать** разыгрывать карты вслепую. Это следует из _Information Lock Principle_. Такие _Play Clues_ называются _Continuation Clues_.
 - Поскольку _Continuation Clue_ является интерпретацией по умолчанию, дать _Fix Clue_ может быть сложно: _Fix Clue_ должна затрагивать **только** карты внутри слоя.
+
+> **Локальная учебная диаграмма H-Group RU.** Это не официальный upstream-расклад: схема показывает одну подсказку, одновременно затрагивающую карту внутри текущего _Layered Finesse_ и карту вне слоя, чтобы визуально отделить _Continuation Clue_ от _Fix Clue_.
+
+<ContinuationClue />
