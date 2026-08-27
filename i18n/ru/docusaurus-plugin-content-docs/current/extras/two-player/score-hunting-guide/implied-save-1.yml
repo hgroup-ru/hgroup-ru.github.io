@@ -1,0 +1,28 @@
+# Local H-Group RU teaching diagram based on IAMJEFF Score_Hunting_Guide.md Implied Saves example @ cfa4007c6512edfed00ad821cca412a9fd0e6559.
+stacks:
+  - r: 1
+  - y: 0
+  - g: 0
+  - b: 1
+bigText:
+  text: 1. Bob clues 2
+players:
+  - name: Alice
+    cards:
+      - type: rb2
+        clue: 2
+        middleNote: r2/b2
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: b3
+        border: false
+        middleNote: b3
