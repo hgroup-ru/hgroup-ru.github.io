@@ -16,12 +16,15 @@ players:
         middleNote: play?
       - type: g5
         border: true
+        middleNote: 5
       - type: r3
         cm: true
       - type: y5
         border: true
+        middleNote: 5
       - type: b5
         border: true
+        middleNote: 5
   - name: Bob
     cards:
       - type: r2

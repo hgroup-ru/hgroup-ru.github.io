@@ -13,21 +13,24 @@ players:
     cards:
       - type: g3
         cm: true
-        middleNote: "!play?"
+        middleNote: "!play"
       - type: g5
         border: true
+        middleNote: 5
       - type: r3
         cm: true
         middleNote: play
       - type: y5
         border: true
+        middleNote: 5
       - type: b5
         border: true
+        middleNote: 5
   - name: Bob
     cards:
       - type: x
+      - type: x
+      - type: x
       - type: 5
         border: true
-      - type: x
-      - type: x
       - type: x
