@@ -18,7 +18,6 @@ players:
       - type: x
       - type: x
   - name: Bob
-    clueGiver: true
     cards:
       - type: r2
         border: false
