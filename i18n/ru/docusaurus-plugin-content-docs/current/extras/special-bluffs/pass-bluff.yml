@@ -40,7 +40,7 @@ players:
       - type: x
       - type: x
       - type: x
-  - text: "Алиса Finesse'ит красную 3 Дональда через красную 2 Боба. Боб видит настоящий Finesse, но вместо blind-play даёт несвязанную подсказку — он делает Pass Bluff."
+  - text: "Алиса даёт Finesse на красную 3 Дональда через красную 2 Боба. Боб видит настоящий Finesse, но вместо blind-play даёт несвязанную подсказку — он делает Pass Bluff."
   - name: Cathy
     cards:
       - type: x
