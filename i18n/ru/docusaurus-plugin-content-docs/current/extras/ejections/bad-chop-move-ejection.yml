@@ -1,0 +1,39 @@
+stacks:
+  - r: 1
+  - y: 1
+  - g: 1
+  - b: 1
+  - p: 1
+players:
+  - name: Alice
+    clueGiver: true
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+      - type: x
+  - name: Bob
+    cards:
+      - type: x
+      - type: x
+        above: Blue 2
+        below: Ejection
+      - type: x
+      - type: x
+      - type: x
+  - name: Cathy
+    cards:
+      - type: x
+      - type: x
+      - type: x
+      - type: 1
+        clue: 1
+        trash: true
+        below: Trash clue
+      - type: r1
+        border: false
+        trash: true
+        above: Would be Chop Moved
+        below: Already played
+  - text: "Единственная карта, которую такой ход обычно сделал бы Chop Moved, уже является сыгранным мусором. Поэтому Боб читает ход как Bad Chop Move Ejection и играет Second Finesse Position."
